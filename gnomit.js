@@ -5,6 +5,7 @@ const Gtk = imports.gi.Gtk
 const GLib = imports.gi.GLib
 const Gio = imports.gi.Gio
 const System = imports.system
+const Notify = imports.gi.Notify
 
 // Get application folder and add it into the imports path
 // Courtesy: https://github.com/optimisme/gjs-examples/blob/master/egInfo.js
@@ -25,27 +26,51 @@ function getAppFileInfo() {
 const path = getAppFileInfo()[1]
 imports.searchPath.push(path)
 
+const Spawn = imports.lib.spawn
+
 class Gnomit {
     constructor () {
         this.title = 'Gnomit'
         GLib.set_prgname(this.title)
+        GLib.set_application_name('Gnomit Commit Editor')
 
         this.application = new Gtk.Application({
             application_id: 'ind.ie.gnomit',
             flags: Gio.ApplicationFlags.HANDLES_OPEN,
-
         })
+
+        this.application.set_option_context_parameter_string('')
+
+        // The option context summary is displayed above the set of options
+        // in the --help screen.
+        
+        const summary = `Helps you write better Git commit messages.
+        Helps you write better Git commit messages.
+        Moo
+        hoo 
+        woo
+        `
+        this.application.set_option_context_summary(summary)
+
+        // const help = this.application.get_main_option
+
+
+        // The option context description is displayed below the set of options
+        // in the --help screen.
+        this.application.set_option_context_description('© 2018 Aral Balkan (https://ar.al), Indie (https://ind.ie). License: GPLv3.\n')
 
         this.application.add_main_option('version',
         'v'.charCodeAt(0),
         GLib.OptionFlags.NONE,
         GLib.OptionArg.NONE,
-        "Shows program version",
+        "Show version number and exit",
         null)
 
         this.application.connect('handle_local_options', (application, options) => {
+
+            // Print a minimal version of the version string in the GNU coding standards: https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
             if (options.contains('version')) {
-                print('Version 0.1')
+                print('Gnomit 1.0.0')
                 return 0
             }
 
@@ -104,13 +129,25 @@ class Gnomit {
             // Gnomit. As Gnomit should only be run by Git, and since Git
             // always passes the commit file, we can assume if activate is
             // triggered that someone ran Gnomit directly and
-            // without a commit message file as an argument, so we show
-            // setup instructions.
-            print('\nGnomit')
-            print('——————\n')
-            print('To set Gnomit as your default editor for Git:\n')
-            print('git config --global core.editor <path-to-gnomit.js>\n')
-            this.application.quit()        
+            // without a commit message file as an argument, we show the help.
+            //
+            // This is a faff-and-a-half when using the simple signals-based
+            // approach to handling commandline arguments (in our case HANDLES_OPEN),
+            // as there is no way to get a reference to the GOptionContext of the
+            // main application to invoke its get_help() method.
+            //
+            // TODO: File an enhancement request about this with the GTK project.
+            //
+            // So, instead, as a workaround, I’m spawning another instance of
+            // the app with the --help flag set and piping the output.
+            const reader = new Spawn.SpawnReader()
+            reader.spawn(`${path}/`, ['gnomit.js', '--help'], (line) => {
+                // A new line’s been read.
+                print(line)
+            }, () => {
+                // End of stream.
+                this.application.quit()
+            })
         }
 
         this.application.connect('activate', this.activate)
