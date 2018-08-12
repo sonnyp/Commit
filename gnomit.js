@@ -142,10 +142,10 @@ class Gnomit {
             // the app with the --help flag set and piping the output.
             const reader = new Spawn.SpawnReader()
             reader.spawn(`${path}/`, ['gnomit.js', '--help'], (line) => {
-                // A new line’s been read.
+                // A new line’s been read, proxy it to stdout.
                 print(line)
             }, () => {
-                // End of stream.
+                // End of stream, quit the app.
                 this.application.quit()
             })
         }
