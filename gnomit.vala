@@ -19,7 +19,11 @@ int main (string[] args) {
     // Commit
     commitButton.clicked.connect(() => {
       stdout.printf("Commit button clicked");
-      messageText.get_buffer().text += "Hello";
+      try {
+        FileUtils.set_contents ("./test.txt", messageText.get_buffer().text);
+      } catch (Error e) {
+        stderr.printf ("Error: %s\n", e.message);
+      }
       dialogue.destroy();
     });
 
@@ -28,6 +32,17 @@ int main (string[] args) {
       stdout.printf("Cancel button clicked");
       dialogue.destroy();
     });
+
+    // Load the file
+    string text;
+    try {
+      FileUtils.get_contents ("./test.txt", out text);
+      stdout.printf(text);
+    } catch (Error e) {
+      stderr.printf ("Error: %s\n", e.message);
+    }
+
+    messageText.get_buffer().text = text;
 
     // Display the interface.
     dialogue.show_all ();
