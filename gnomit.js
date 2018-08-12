@@ -7,6 +7,23 @@ const Gio = imports.gi.Gio
 const System = imports.system
 const Notify = imports.gi.Notify
 
+const COPYRIGHT = `❤ We practice ethical design (https://ind.ie/ethical-design)
+
+Copyright © 2018 Aral Balkan (https://ar.al)
+Copyright © 2018 Ind.ie (https://ind.ie)
+
+License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.`
+
+const SUMMARY = `Helps you write better Git commit messages.
+
+To use, configure Git to use Gnomit as the default editor:
+
+  git config --global core.editor <path-to-gnomit.js>`
+
+const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your default Git editor.\n\n"
+
 // Get application folder and add it into the imports path
 // Courtesy: https://github.com/optimisme/gjs-examples/blob/master/egInfo.js
 function getAppFileInfo () {
@@ -45,21 +62,14 @@ class Gnomit {
 
     // The option context summary is displayed above the set of options
     // in the --help screen.
-
-    const summary = `Helps you write better Git commit messages.
-        Helps you write better Git commit messages.
-        Moo
-        hoo 
-        woo
-        `
-    this.application.set_option_context_summary(summary)
+    this.application.set_option_context_summary(SUMMARY)
 
     // The option context description is displayed below the set of options
-    // in the --help screen.
-    this.application.set_option_context_description(
-      '© 2018 Aral Balkan (https://ar.al)\n© Indie (https://ind.ie). License: GPLv3.\n'
-    )
+    // on the --help screen.
+    this.application.set_option_context_description(COPYRIGHT)
 
+
+    // Add option: --version, -v
     this.application.add_main_option(
       'version',
       'v'.charCodeAt(0),
@@ -69,18 +79,71 @@ class Gnomit {
       null
     )
 
+    // Add option: --install, -i
+    this.application.add_main_option(
+      'install',
+      'i'.charCodeAt(0),
+      GLib.OptionFlags.NONE,
+      GLib.OptionArg.NONE,
+      'Install Gnomit as your default Git editor',
+      null
+    )
+    
     this.application.connect('handle_local_options', (application, options) => {
-      // Print a minimal version of the version string in the GNU coding standards: https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
-      if (options.contains('version')) {
-        print('Gnomit 1.0.0')
+      // --install, -i:
+      //
+      // Install Gnomit as your default Git editor.
+      if (options.contains('install')) {
+        try {
+          let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`git config --global core.editor ${path}/gnomit.js`)
+
+          if (!success || exitStatus !== 0) {
+            // Error: Spawn successful but process did not exit successfully.
+            print(`${INSTALLATION_ERROR_SUMMARY}${standardError}`)
+
+            // Exit with generic error code.
+            return 1
+          }
+        } catch (error) {
+          // Error: Spawn failed.
+
+          // Start off by telling the person what failed.
+          let errorMessage = INSTALLATION_ERROR_SUMMARY
+
+          // Provide further information and try to help.
+          if (error.code === GLib.SpawnError.NOENT) {
+            // Git was not found: show people how to install it.
+            errorMessage += "Git is not installed.\n\nFor help on installing Git, please see:\nhttps://git-scm.com/book/en/v2/Getting-Started-Installing-Git\n"
+          } else {
+            // Some other error: show the error message.
+            errorMessage += `${error}`
+          }
+          print (errorMessage)
+
+          // Exit with generic error code.
+          return 1
+        }
+        
+        // OK.
         return 0
       }
 
-      // Let the system handle any other options.
+      // --version, -v:
+      //
+      // Print a minimal version string based on the GNU coding standards.
+      // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
+      if (options.contains('version')) {
+        print('Gnomit 1.0.0')
+
+        // OK.
+        return 0
+      }
+
+      // Let the system handle any other command-line options.
       return -1
     })
 
-    // Open gets called when a file is passed as a commandline argument.
+    // Open gets called when a file is passed as a command=line argument.
     // We expect Git to pass us one file.
     this.application.connect('open', (application, files, hint) => {
       if (files.length !== 1) {
@@ -132,7 +195,7 @@ class Gnomit {
       // without a commit message file as an argument, we show the help.
       //
       // This is a faff-and-a-half when using the simple signals-based
-      // approach to handling commandline arguments (in our case HANDLES_OPEN),
+      // approach to handling command-line arguments (in our case HANDLES_OPEN),
       // as there is no way to get a reference to the GOptionContext of the
       // main application to invoke its get_help() method.
       //
@@ -140,19 +203,20 @@ class Gnomit {
       //
       // So, instead, as a workaround, I’m spawning another instance of
       // the app with the --help flag set and piping the output.
-      const reader = new Spawn.SpawnReader()
-      reader.spawn(
-        `${path}/`,
-        ['gnomit.js', '--help'],
-        line => {
-          // A new line’s been read, proxy it to stdout.
-          print(line)
-        },
-        () => {
-          // End of stream, quit the app.
-          this.application.quit()
+
+      try {
+        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`${path}/gnomit.js --help`)
+
+        if (success) {
+          print(standardOutput)
+        } else {
+          print(standardError)
         }
-      )
+      } catch (error) {
+        print (error)
+      }
+
+      this.application.quit()
     }
 
     this.application.connect('activate', this.activate)
