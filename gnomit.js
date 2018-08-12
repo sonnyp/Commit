@@ -150,23 +150,27 @@ class Gnomit {
         return
       }
 
-      const commitFile = files[0]
+      const commitMessageFile = files[0]
 
-      commitFile.load_contents_async(null, (file, task) => {
-        let success, contents
+      commitMessageFile.load_contents_async(null, (file, task) => {
+
+        const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
+        let success, contents, entityTagLocation, error
         
         try {
-          ;[success, contents] = file.load_contents_finish(task)
+          ;[success, contents, entityTagLocation, error] = file.load_contents_finish(task)
 
-          print(success)
-          print(contents)
+          if (!success) {
+            print(`${ERROR_SUMMARY}${error}\n`)
+            application.quit()
+          }
 
           const buffer = this.messageText.get_buffer()
           buffer.text = contents.toString()
 
           this.dialogue.show_all()
         } catch (error) {
-          print(error)
+          print(`${ERROR_SUMMARY}${error}\n`)
           application.quit()
         }
       })
