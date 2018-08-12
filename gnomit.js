@@ -86,7 +86,7 @@ class Gnomit {
       'Install Gnomit as your default Git editor',
       null
     )
-    
+
     this.application.connect('handle_local_options', (application, options) => {
       // --install, -i:
       //
@@ -121,7 +121,7 @@ class Gnomit {
           // Exit with generic error code.
           return 1
         }
-        
+
         // OK.
         return 0
       }
@@ -150,13 +150,15 @@ class Gnomit {
         return
       }
 
-      const commitMessageFile = files[0]
+      this.commitMessageFile = files[0]
 
-      commitMessageFile.load_contents_async(null, (file, task) => {
+      print(this.commitMessageFile.get_path())
+
+      this.commitMessageFile.load_contents_async(null, (file, task) => {
 
         const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
         let success, contents, entityTagLocation, error
-        
+
         try {
           ;[success, contents, entityTagLocation, error] = file.load_contents_finish(task)
 
@@ -165,8 +167,8 @@ class Gnomit {
             application.quit()
           }
 
-          const buffer = this.messageText.get_buffer()
-          buffer.text = contents.toString()
+          this.buffer = this.messageText.get_buffer()
+          this.buffer.text = contents.toString()
 
           this.dialogue.show_all()
         } catch (error) {
@@ -188,18 +190,27 @@ class Gnomit {
       this.cancelButton = builder.get_object('cancelButton')
       this.commitButton = builder.get_object('commitButton')
 
-      // Response is called after dialogue closes.
-      this.dialogue.connect('response', () => {
-        print('RESPONSE')
-      })
-
-      // Add event handlers for the buttons.
       this.cancelButton.connect('clicked', () => {
-        print('Cancel button clicked')
+        this.application.quit()
       })
 
       this.commitButton.connect('clicked', () => {
-        print('Commit button clicked')
+        // Save the text.
+        this.commitMessageFile.replace_contents_async(
+          /* contents: */ this.buffer.text,
+          /* etag: */ null,
+          /* make_backup: */ true,
+          /* flags: */ Gio.FileCreateFlags.NONE,
+          /* cancellable: */ null,
+          /* callback: */ (file, task) => {
+            try {
+              let [success, newETag, error] = file.replace_contents_finish(task)
+              this.application.quit()
+            } catch (error) {
+              print(error)
+              this.application.quit()
+            }
+          })
       })
 
       // Add the dialog to the application as its main window.
