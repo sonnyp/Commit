@@ -45,8 +45,6 @@ function getAppFileInfo () {
 const path = getAppFileInfo()[1]
 imports.searchPath.push(path)
 
-const Spawn = imports.lib.spawn
-
 class Gnomit {
   constructor () {
     this.title = 'Gnomit'
@@ -154,7 +152,24 @@ class Gnomit {
 
       const commitFile = files[0]
 
-      this.dialogue.show_all()
+      commitFile.load_contents_async(null, (file, task) => {
+        let success, contents
+        
+        try {
+          ;[success, contents] = file.load_contents_finish(task)
+
+          print(success)
+          print(contents)
+
+          const buffer = this.messageText.get_buffer()
+          buffer.text = contents.toString()
+
+          this.dialogue.show_all()
+        } catch (error) {
+          print(error)
+          application.quit()
+        }
+      })
     })
 
     this.application.connect('startup', () => {
@@ -165,7 +180,7 @@ class Gnomit {
       // Get references to the components defined in the Glade file.
       this.dialogue = builder.get_object('dialogue')
       this.dialogue.set_icon_name('accessories-text-editor')
-
+      this.messageText = builder.get_object('messageText')
       this.cancelButton = builder.get_object('cancelButton')
       this.commitButton = builder.get_object('commitButton')
 
