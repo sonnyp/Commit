@@ -7,6 +7,11 @@ const Gio = imports.gi.Gio
 const System = imports.system
 const Notify = imports.gi.Notify
 
+// Keep first line line-length validation in line with
+// the original Komet behaviour for the time being.
+// (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
+const FIRST_LINE_CHARACTER_LIMIT = 69
+
 const COPYRIGHT = `❤ We practice ethical design (https://ind.ie/ethical-design)
 
 Copyright © 2018 Aral Balkan (https://ar.al)
@@ -206,6 +211,23 @@ class Gnomit {
       this.commitButton = builder.get_object('commitButton')
 
       this.buffer = this.messageText.get_buffer()
+
+      // Tag: highlight background.
+      const highlightBackgroundTag = Gtk.TextTag.new('highlightBackground')
+      highlightBackgroundTag.background = "#ffe4e1" // minty rose
+      this.buffer.tag_table.add(highlightBackgroundTag)
+
+      this.buffer.connect('changed', () => {
+        // Check first line length and highlight characters beyond the limit.
+        let text = this.buffer.text
+        let lines = text.split("\n")
+        let firstLine = lines[0]
+        if (firstLine.length > FIRST_LINE_CHARACTER_LIMIT) {
+          let start = this.buffer.get_iter_at_offset(FIRST_LINE_CHARACTER_LIMIT)
+          let end = this.buffer.get_iter_at_offset(lines[0].length)
+          this.buffer.apply_tag(highlightBackgroundTag, start, end)
+        }
+      })
 
       //
       // Cancel button clicked.
