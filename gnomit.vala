@@ -1,4 +1,4 @@
-using Gtk;
+using Gtk, Gspell;
 
 int main (string[] args) {
   Gtk.init (ref args);
@@ -11,7 +11,10 @@ int main (string[] args) {
     var dialogue = builder.get_object ("dialogue") as Dialog;
     var commitButton = builder.get_object ("commitButton") as Button;
     var cancelButton = builder.get_object ("cancelButton") as Button;
-    var messageText = builder.get_object ("messageText") as TextView;
+    var messageText = builder.get_object ("messageText") as Gtk.TextView;
+
+    var gSpellTextView = Gspell.TextView.get_from_gtk_text_view(messageText);
+    gSpellTextView.basic_setup();
 
     // When the dialogue is destroyed, the app should quit.
     dialogue.destroy.connect(Gtk.main_quit);
