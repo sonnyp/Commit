@@ -7,6 +7,10 @@ const Gio = imports.gi.Gio
 const System = imports.system
 const Notify = imports.gi.Notify
 
+// TODO: GSpell is not a default library. Find out how to
+// package it.
+const Gspell = imports.gi.Gspell
+
 // Keep first line line-length validation in line with
 // the original Komet behaviour for the time being.
 // (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
@@ -70,7 +74,6 @@ class Gnomit {
     // The option context description is displayed below the set of options
     // on the --help screen.
     this.application.set_option_context_description(COPYRIGHT)
-
 
     // Add option: --version, -v
     this.application.add_main_option(
@@ -211,6 +214,11 @@ class Gnomit {
       this.commitButton = builder.get_object('commitButton')
 
       this.buffer = this.messageText.get_buffer()
+
+      // Set up spell checking for the text view.
+      // TODO: This is incorrectly documented. File an issue / blog.
+      const gSpellTextView = Gspell.TextView.get_from_gtk_text_view(this.messageText)
+      gSpellTextView.basic_setup()
 
       // Tag: highlight background.
       const highlightBackgroundTag = Gtk.TextTag.new('highlightBackground')
