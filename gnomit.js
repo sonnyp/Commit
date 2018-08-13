@@ -151,14 +151,13 @@ class Gnomit {
       }
 
       this.commitMessageFile = files[0]
-
-      const commitMessageFilePath = this.commitMessageFile.get_path()
+      this.commitMessageFilePath = this.commitMessageFile.get_path()
 
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
       let success, commitMessage; /* String */
       try {
-        [success, commitMessage] = GLib.file_get_contents(commitMessageFilePath)
+        [success, commitMessage] = GLib.file_get_contents(this.commitMessageFilePath)
         commitMessage = commitMessage.toString()
 
         // Not sure when you would get success === false without an error being
@@ -166,10 +165,9 @@ class Gnomit {
         // to be any error information available.
         // Docs: http://devdocs.baznga.org/glib20~2.50.0/glib.file_get_contents
         if (!success) {
-          print(`${ERROR_SUMMARY}${error}\n`)
+          print(`${ERROR_SUMMARY}\n`)
           application.quit()
         }
-        print(commitMessage)
       } catch (error) {
         print(`${ERROR_SUMMARY}${error}\n`)
         application.quit()
@@ -181,29 +179,6 @@ class Gnomit {
 
       // Show the composition interface.
       this.dialogue.show_all()
-
-  //   this.commitMessageFile.load_contents_async(null, (file, task) => {
-
-  //     const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
-  //     let success, contents, entityTagLocation, error
-
-  //     try {
-  //       ;[success, contents, entityTagLocation, error] = file.load_contents_finish(task)
-
-  //       if (!success) {
-  //         print(`${ERROR_SUMMARY}${error}\n`)
-  //         application.quit()
-  //       }
-
-  //       this.buffer = this.messageText.get_buffer()
-  //       this.buffer.text = contents.toString()
-
-  //       this.dialogue.show_all()
-  //     } catch (error) {
-  //       print(`${ERROR_SUMMARY}${error}\n`)
-  //       application.quit()
-  //     }
-  //   })
     })
 
     this.application.connect('startup', () => {
@@ -224,21 +199,19 @@ class Gnomit {
 
       this.commitButton.connect('clicked', () => {
         // Save the text.
-        this.commitMessageFile.replace_contents_async(
-          /* contents: */ this.buffer.text,
-          /* etag: */ null,
-          /* make_backup: */ true,
-          /* flags: */ Gio.FileCreateFlags.NONE,
-          /* cancellable: */ null,
-          /* callback: */ (file, task) => {
-            try {
-              let [success, newETag, error] = file.replace_contents_finish(task)
-              this.application.quit()
-            } catch (error) {
-              print(error)
-              this.application.quit()
-            }
-          })
+
+        let success;
+
+        try {
+          success = GLib.file_set_contents(this.commitMessageFilePath, this.buffer.text)
+          if (!success) {
+            print(`${ERROR_SUMMARY}\n`)
+          }
+          this.application.quit()
+        } catch (error) {
+          print(error)
+          this.application.quit()
+        }
       })
 
       // Add the dialog to the application as its main window.
