@@ -176,6 +176,8 @@ class Gnomit {
       // Update the text in the interface.
       this.buffer = this.messageText.get_buffer()
       this.buffer.text = commitMessage
+      let startOfText = this.buffer.get_start_iter()
+      this.buffer.place_cursor(startOfText)
 
       // Show the composition interface.
       this.dialogue.show_all()
