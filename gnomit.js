@@ -152,30 +152,58 @@ class Gnomit {
 
       this.commitMessageFile = files[0]
 
-      print(this.commitMessageFile.get_path())
+      const commitMessageFilePath = this.commitMessageFile.get_path()
 
-      this.commitMessageFile.load_contents_async(null, (file, task) => {
+      // Try to load the commit message contents.
+      const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
+      let success, commitMessage; /* String */
+      try {
+        [success, commitMessage] = GLib.file_get_contents(commitMessageFilePath)
+        commitMessage = commitMessage.toString()
 
-        const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
-        let success, contents, entityTagLocation, error
-
-        try {
-          ;[success, contents, entityTagLocation, error] = file.load_contents_finish(task)
-
-          if (!success) {
-            print(`${ERROR_SUMMARY}${error}\n`)
-            application.quit()
-          }
-
-          this.buffer = this.messageText.get_buffer()
-          this.buffer.text = contents.toString()
-
-          this.dialogue.show_all()
-        } catch (error) {
+        // Not sure when you would get success === false without an error being
+        // thrown but handling it anyway just to be safe. There doesn’t appear
+        // to be any error information available.
+        // Docs: http://devdocs.baznga.org/glib20~2.50.0/glib.file_get_contents
+        if (!success) {
           print(`${ERROR_SUMMARY}${error}\n`)
           application.quit()
         }
-      })
+        print(commitMessage)
+      } catch (error) {
+        print(`${ERROR_SUMMARY}${error}\n`)
+        application.quit()
+      }
+
+      // Update the text in the interface.
+      this.buffer = this.messageText.get_buffer()
+      this.buffer.text = commitMessage
+
+      // Show the composition interface.
+      this.dialogue.show_all()
+
+  //   this.commitMessageFile.load_contents_async(null, (file, task) => {
+
+  //     const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
+  //     let success, contents, entityTagLocation, error
+
+  //     try {
+  //       ;[success, contents, entityTagLocation, error] = file.load_contents_finish(task)
+
+  //       if (!success) {
+  //         print(`${ERROR_SUMMARY}${error}\n`)
+  //         application.quit()
+  //       }
+
+  //       this.buffer = this.messageText.get_buffer()
+  //       this.buffer.text = contents.toString()
+
+  //       this.dialogue.show_all()
+  //     } catch (error) {
+  //       print(`${ERROR_SUMMARY}${error}\n`)
+  //       application.quit()
+  //     }
+  //   })
     })
 
     this.application.connect('startup', () => {
