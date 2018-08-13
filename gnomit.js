@@ -180,7 +180,6 @@ class Gnomit {
       }
 
       // Update the text in the interface using markup.
-      this.buffer = this.messageText.get_buffer()
       let startOfText = this.buffer.get_start_iter()
       this.buffer.insert_markup(startOfText, commitMessage, -1)
 
@@ -205,6 +204,8 @@ class Gnomit {
       this.messageText = builder.get_object('messageText')
       this.cancelButton = builder.get_object('cancelButton')
       this.commitButton = builder.get_object('commitButton')
+
+      this.buffer = this.messageText.get_buffer()
 
       //
       // Cancel button clicked.
