@@ -158,14 +158,20 @@ class Gnomit {
       let success, commitMessage; /* String */
       try {
         [success, commitMessage] = GLib.file_get_contents(this.commitMessageFilePath)
+
+        // Convert the message from ByteArray to String.
         commitMessage = commitMessage.toString()
+
+        // Add Pango markup to make the commented are appear
+        // lighter.
+        commitMessage = `<span foreground="#959595">${commitMessage}</span>`
 
         // Not sure when you would get success === false without an error being
         // thrown but handling it anyway just to be safe. There doesn’t appear
         // to be any error information available.
         // Docs: http://devdocs.baznga.org/glib20~2.50.0/glib.file_get_contents
         if (!success) {
-          print(`${ERROR_SUMMARY}\n`)
+          print(`${ERROR_SUMMARY}`)
           application.quit()
         }
       } catch (error) {
@@ -173,10 +179,15 @@ class Gnomit {
         application.quit()
       }
 
-      // Update the text in the interface.
+      // Update the text in the interface using markup.
       this.buffer = this.messageText.get_buffer()
-      this.buffer.text = commitMessage
       let startOfText = this.buffer.get_start_iter()
+      this.buffer.insert_markup(startOfText, commitMessage, -1)
+
+      // The iterator now points to the end of the inserted section.
+      // Reset it to the start and place the cursor there, ready for
+      // the commit message.
+      startOfText = this.buffer.get_start_iter()
       this.buffer.place_cursor(startOfText)
 
       // Show the composition interface.
@@ -195,23 +206,33 @@ class Gnomit {
       this.cancelButton = builder.get_object('cancelButton')
       this.commitButton = builder.get_object('commitButton')
 
+      //
+      // Cancel button clicked.
+      //
       this.cancelButton.connect('clicked', () => {
         this.application.quit()
       })
 
+      //
+      // Connect button clicked.
+      //
       this.commitButton.connect('clicked', () => {
-        // Save the text.
 
         let success;
+        const ERROR_SUMMARY = "\n\nError: could not save your commit message.\n"
 
         try {
-          success = GLib.file_set_contents(this.commitMessageFilePath, this.buffer.text)
+          // Save the text.
+          success = GLib.file_set_contents(
+            this.commitMessageFilePath,
+            this.buffer.text
+          )
           if (!success) {
-            print(`${ERROR_SUMMARY}\n`)
+            print(ERROR_SUMMARY)
           }
           this.application.quit()
         } catch (error) {
-          print(error)
+          print(`${ERROR_SUMMARY}${error}`)
           this.application.quit()
         }
       })
