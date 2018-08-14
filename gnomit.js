@@ -227,7 +227,7 @@ class Gnomit {
       highlightBackgroundTag.background = "#ffe4e1" // minty rose
       this.buffer.tag_table.add(highlightBackgroundTag)
 
-      this.buffer.connect('changed', () => {
+      const highlightText = () => {
         // Check first line length and highlight characters beyond the limit.
         let text = this.buffer.text
         let lines = text.split("\n")
@@ -236,17 +236,24 @@ class Gnomit {
 
         // Get bounding iterators for the first line.
         const startOfTextIterator = this.buffer.get_start_iter()
+        const endOfTextIterator = this.buffer.get_end_iter()
         let endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
 
-        // Start with a clean slate: remove any highlighting on the first line.
-        this.buffer.remove_tag_by_name(HIGHLIGHT_BACKGROUND_TAG_NAME, startOfTextIterator, endOfFirstLineIterator)
+        // Start with a clean slate: remove any background highlighting on the
+        // whole text. (We don’t do just the first line as someone might copy a
+        // highlighted piece of the first line and paste it and we don’t want it
+        // highlighted on subsequent lines if they do that.)
+        this.buffer.remove_tag_by_name(HIGHLIGHT_BACKGROUND_TAG_NAME, startOfTextIterator, endOfTextIterator)
 
         // Highlight the overflow area, if any.
         if (firstLineLength > FIRST_LINE_CHARACTER_LIMIT) {
           let startOfOverflowIterator = this.buffer.get_iter_at_offset(FIRST_LINE_CHARACTER_LIMIT)
           this.buffer.apply_tag(highlightBackgroundTag, startOfOverflowIterator, endOfFirstLineIterator)
         }
-      })
+      }
+
+      this.buffer.connect('changed', highlightText)
+      this.buffer.connect('paste-done', highlightText)
 
       //
       // Cancel button clicked.
