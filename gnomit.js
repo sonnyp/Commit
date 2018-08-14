@@ -35,6 +35,29 @@ const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your defaul
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 
+// Timers
+// https://github.com/optimisme/gjs-examples/blob/master/egTimers.js
+const Mainloop = imports.mainloop
+
+const setTimeout = function(func, millis /* , ... args */) {
+
+    let args = []
+    if (arguments.length > 2) {
+        args = args.slice.call(arguments, 2)
+    }
+
+    let id = Mainloop.timeout_add(millis, () => {
+        func.apply(null, args)
+        return false; // Stop repeating
+    }, null)
+
+    return id
+}
+
+const clearTimeout = function(id) {
+    Mainloop.source_remove(id)
+}
+
 // Get application folder and add it into the imports path
 // Courtesy: https://github.com/optimisme/gjs-examples/blob/master/egInfo.js
 function getAppFileInfo () {
@@ -170,7 +193,9 @@ class Gnomit {
         [success, commitMessage] = GLib.file_get_contents(this.commitMessageFilePath)
 
         // Convert the message from ByteArray to String.
-        commitMessage = commitMessage.toString()
+        commitMessage = `\n${commitMessage.toString()}`
+        // commitMessage = commitMessage.substring(0, commitMessage.length - 1)
+        print(`[${commitMessage}]`)
 
         // Add Pango markup to make the commented are appear
         // lighter.
@@ -262,6 +287,44 @@ class Gnomit {
 
       this.buffer.connect('changed', highlightText)
       this.buffer.connect('paste-done', highlightText)
+
+      this.buffer.connect('end-user-action', () => {
+        // Due to the non-editable region, the selection for a
+        // Select All is not automatically cleared by the
+        // system. So let’s detect it and clear it outselves.
+        if (this.lastActionWasSelectAll) {
+          this.lastActionWasSelectAll = false
+          const cursorIterator = this.buffer.get_iter_at_offset(this.buffer.cursor_position)
+          this.buffer.select_range(cursorIterator, cursorIterator)
+        }
+      })
+
+      this.messageText.connect('select-all', (textView, selected) => {
+        print(`Select all: ${selected}`)
+        if (selected) {
+          // Carry this out on the next stack frame. The selected signal
+          // gets called too early (you are not able to change the
+          // selection at that time.) TODO: File bug.
+          setTimeout(() => {
+            this.lastActionWasSelectAll = true
+            // Redo the selection to limit it to the commit message
+            // only (exclude the original commit comment).
+            // Assumption: that the person has not added any comments
+            // to their commit message themselves. But, I mean, come on!
+            // this.buffer.place_cursor(this.buffer.get_start_iter())
+            const mainCommitMessage = this.buffer.text.split('#')[0]
+            const selectStartIterator = this.buffer.get_start_iter()
+            const selectEndIterator = this.buffer.get_iter_at_offset(mainCommitMessage.length)
+            // this.buffer.move_mark_by_name('selection_bound', selectEndIterator)
+            this.buffer.select_range(selectStartIterator, selectEndIterator)
+          }, 0)
+        }
+      })
+
+
+      // this.buffer.connect('mark-set', (location, mark) => {
+
+      // })
 
       //
       // Cancel button clicked.
