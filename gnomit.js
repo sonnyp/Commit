@@ -33,6 +33,8 @@ To use, configure Git to use Gnomit as the default editor:
 
 const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your default Git editor.\n\n"
 
+const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
+
 // Get application folder and add it into the imports path
 // Courtesy: https://github.com/optimisme/gjs-examples/blob/master/egInfo.js
 function getAppFileInfo () {
@@ -221,7 +223,7 @@ class Gnomit {
       gSpellTextView.basic_setup()
 
       // Tag: highlight background.
-      const highlightBackgroundTag = Gtk.TextTag.new('highlightBackground')
+      const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME)
       highlightBackgroundTag.background = "#ffe4e1" // minty rose
       this.buffer.tag_table.add(highlightBackgroundTag)
 
@@ -237,7 +239,7 @@ class Gnomit {
         let endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
 
         // Start with a clean slate: remove any highlighting on the first line.
-        this.buffer.remove_all_tags(startOfTextIterator, endOfFirstLineIterator)
+        this.buffer.remove_tag_by_name(HIGHLIGHT_BACKGROUND_TAG_NAME, startOfTextIterator, endOfFirstLineIterator)
 
         // Highlight the overflow area, if any.
         if (firstLineLength > FIRST_LINE_CHARACTER_LIMIT) {
