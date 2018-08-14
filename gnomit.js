@@ -4,6 +4,7 @@ imports.gi.versions.Gtk = '3.0'
 const Gtk = imports.gi.Gtk
 const GLib = imports.gi.GLib
 const Gio = imports.gi.Gio
+const GObj = imports.gi.GObject
 const System = imports.system
 const Notify = imports.gi.Notify
 
@@ -249,6 +250,18 @@ class Gnomit {
       this.commitButton = builder.get_object('commitButton')
 
       this.buffer = this.messageText.get_buffer()
+
+      this.commitList = builder.get_object('commitList')
+      let label0 = Gtk.Label.new('MODIFIED')
+      let label1 = Gtk.Label.new('a.txt')
+      let label2 = Gtk.Label.new('ADDED')
+      let label3 = Gtk.Label.new('b.txt')
+      let label4 = Gtk.Label.new('c.txt')
+      this.commitList.insert(label0, 0)
+      this.commitList.insert(label1, 0)
+      this.commitList.insert(label2, 0)
+      this.commitList.insert(label3, 0)
+      this.commitList.insert(label4, 0)
 
       // Set up spell checking for the text view.
       // TODO: This is incorrectly documented. File an issue / blog.
