@@ -230,10 +230,19 @@ class Gnomit {
         let text = this.buffer.text
         let lines = text.split("\n")
         let firstLine = lines[0]
-        if (firstLine.length > FIRST_LINE_CHARACTER_LIMIT) {
-          let start = this.buffer.get_iter_at_offset(FIRST_LINE_CHARACTER_LIMIT)
-          let end = this.buffer.get_iter_at_offset(lines[0].length)
-          this.buffer.apply_tag(highlightBackgroundTag, start, end)
+        let firstLineLength = firstLine.length
+
+        // Get bounding iterators for the first line.
+        const startOfTextIterator = this.buffer.get_start_iter()
+        let endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
+
+        // Start with a clean slate: remove any highlighting on the first line.
+        this.buffer.remove_all_tags(startOfTextIterator, endOfFirstLineIterator)
+
+        // Highlight the overflow area, if any.
+        if (firstLineLength > FIRST_LINE_CHARACTER_LIMIT) {
+          let startOfOverflowIterator = this.buffer.get_iter_at_offset(FIRST_LINE_CHARACTER_LIMIT)
+          this.buffer.apply_tag(highlightBackgroundTag, startOfOverflowIterator, endOfFirstLineIterator)
         }
       })
 
