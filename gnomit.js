@@ -199,6 +199,14 @@ class Gnomit {
       startOfText = this.buffer.get_start_iter()
       this.buffer.place_cursor(startOfText)
 
+      // Set the original comment to be non-editable.
+      const nonEditableTag = Gtk.TextTag.new('NonEditable')
+      nonEditableTag.editable = false
+      this.buffer.tag_table.add(nonEditableTag)
+      const endOfText = this.buffer.get_end_iter()
+      this.buffer.apply_tag(nonEditableTag, startOfText, endOfText)
+
+
       // Show the composition interface.
       this.dialogue.show_all()
     })
