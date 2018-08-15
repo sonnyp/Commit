@@ -199,7 +199,6 @@ class Gnomit {
 
         // Convert the message from ByteArray to String.
         commitMessage = commitMessage.toString()
-
         const commitMessageLines = commitMessage.split("\n")
 
         // Separate the comments section from any body content that there
@@ -217,10 +216,24 @@ class Gnomit {
         // Save the number of lines in the original commit comment
         // so we have an easy way of calculating the non-comment
         // section of the commit message.
-        this.numberOfLinesInCommitComment = commitComment.split("\n").length
+        const commitCommentLines = commitComment.split("\n")
+        this.numberOfLinesInCommitComment = commitCommentLines.length
 
-        // Add Pango markup to make the commented are appear
-        // lighter.
+        // Set the title of the dialogue to ProjectFolderName (Branch):
+
+        // The commit message is always in the .git directory in the
+        // project directory. Get the project directory’s name by using this.
+        const pathComponents = this.commitMessageFilePath.split('/')
+        const projectDirectoryName = pathComponents[pathComponents.indexOf('.git') - 1]
+
+        // Try to get the branch name via a method that relies on
+        // positional aspect of the branch name so it should work with
+        // other languages.
+        const wordsOnBranchLine = commitCommentLines[5].split(" ")
+        const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
+        this.application.active_window.set_title(`${projectDirectoryName} (${branchName})`)
+
+        // Add Pango markup to make the commented are appear lighter.
         commitMessage = `${commitBody}<span foreground="#959595">${commitComment}</span>`
 
         // Not sure when you would get success === false without an error being
