@@ -21,6 +21,12 @@ This will set up Gnomit as your default editor for Git. Then just make a commit 
 
 To save your commit message, either press the Commit button or press _Ctrl+Return_.
 
+If _gnomit.js_ is not executable, either make it so (`chmod +x gnomit.js`) or run the installation via GJS explicitly:
+
+```bash
+gjs gnomit.js --install
+```
+
 ## Features
 
 Feature-compatible (sans configuration options) with [the first release of Komet](https://github.com/zorgiepoo/Komet/releases/tag/0.1).
