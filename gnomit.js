@@ -87,7 +87,7 @@ class Gnomit {
 
     this.application = new Gtk.Application({
       application_id: 'ind.ie.gnomit',
-      flags: Gio.ApplicationFlags.HANDLES_OPEN
+      flags: Gio.ApplicationFlags.HANDLES_OPEN | Gio.ApplicationFlags.NON_UNIQUE
     })
 
     this.application.set_option_context_parameter_string('')
