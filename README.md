@@ -33,6 +33,7 @@ Feature-compatible (sans configuration options) with [the first release of Komet
 
   * Highlights overflow of subject line when it exceeds 69 characters.
   * Inserts empty line between subject line and the rest of the message.
+  * Has spell checking.
   * Select All selects only your commit message, not the Git commit comment.
   * Displays the project folder and branch in the window header.
   * The Git Commit comment is not editable.
