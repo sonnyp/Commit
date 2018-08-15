@@ -39,6 +39,7 @@ Feature-compatible (sans configuration options) with [the first release of Komet
 ## Author
 
 Copyright © 2018, [Aral balkan](https://ar.al)
+Copyright © 2018, [Ind.ie](https://ind.ie)
 
 ## License
 
