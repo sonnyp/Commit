@@ -1,12 +1,14 @@
 # Gnomit
 
+![Screenshot of Gnomit showing the overflow highlighting on the subject line and the automatically inserted empty line between the subject line and the rest of the commit message.](gnomit.png)
+
 A simple Git commit message editor written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home) and inspired by the excellent [Komet app]() for macOS.
 
-There is also a very early [Vala](https://wiki.gnome.org/Projects/Vala) version that is no way near to being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
+There is also a [Vala](https://wiki.gnome.org/Projects/Vala) version that I only just started working on and which is no way near being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
 
 ## Important
 
-Gnomit has spell checking implemented via Gspell. As this is an external dependency, you may have to install it separately. I will be looking at packaging Gnomit up properly (maybe via Flatpack), but, in the meanwhile,
+Gnomit has spell checking implemented via [Gspell](https://wiki.gnome.org/Projects/gspell). I initially had trouble getting it running under GJS and had to install it separately (even though there was a version installed on my machine). I will be looking at packaging Gnomit up properly (maybe via Flatpack), but, in the meanwhile,
 please open issues for any problems you encounter while trying to run it, including dependency issues.
 
 ## Usage
