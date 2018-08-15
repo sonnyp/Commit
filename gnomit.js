@@ -293,15 +293,15 @@ class Gnomit {
 
       const highlightText = () => {
         // Check first line length and highlight characters beyond the limit.
-        let text = this.buffer.text
-        let lines = text.split("\n")
-        let firstLine = lines[0]
-        let firstLineLength = firstLine.length
+        const text = this.buffer.text
+        const lines = text.split("\n")
+        const firstLine = lines[0]
+        const firstLineLength = firstLine.length
 
         // Get bounding iterators for the first line.
         const startOfTextIterator = this.buffer.get_start_iter()
         const endOfTextIterator = this.buffer.get_end_iter()
-        let endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
+        const endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
 
         // Start with a clean slate: remove any background highlighting on the
         // whole text. (We don’t do just the first line as someone might copy a
