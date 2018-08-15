@@ -254,6 +254,11 @@ class Gnomit {
       this.cancelButton = builder.get_object('cancelButton')
       this.commitButton = builder.get_object('commitButton')
 
+      // Disable commit button initially as we don’t allow empty
+      // messages to be committed (person can always cancel).
+      // PS. set_sensitive? Really? Wow :)
+      this.commitButton.set_sensitive(false)
+
       this.buffer = this.messageText.get_buffer()
 
       // Set up spell checking for the text view.
@@ -310,17 +315,17 @@ class Gnomit {
         let lines = this.buffer.text.split("\n")
         let firstLineLength = lines[0].length
         let cursorPosition = this.buffer.cursor_position
-        let numberOfLinesInCommitMessage = lines.length
+        let numberOfLinesInCommitMessage = lines.length + 1
         print(`Len                  : ${firstLineLength}`)
         print(`Cur                  : ${cursorPosition}`)
-        print(`Lines (all, now)     : ${lines.length}`)
+        print(`Line (all, now)     : ${lines.length}`)
         print(`Lines (all, previous): ${this.previousNumberOfLinesInCommitMessage}`)
         print(`Lines (commit)       : ${this.numberOfLinesInCommitComment}`)
         print('---')
         if (
           /* in the correct place */
           cursorPosition === firstLineLength + 1
-          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 1
+          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 2
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
         ) {
@@ -333,6 +338,17 @@ class Gnomit {
         // Save the number of lines in the commit message
         // for comparison in later frames.
         this.previousNumberOfLinesInCommitMessage = numberOfLinesInCommitMessage
+
+        // Validation: Enable the Commit button only if the commit message
+        // is not empty.
+        let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
+        let commitMessageExcludingComments = ""
+        for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
+          commitMessageExcludingComments += lines[i]
+        }
+        commitMessageExcludingComments = commitMessageExcludingComments.replace(' ', '')
+        const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
+        this.commitButton.set_sensitive(!commitMessageIsEmpty)
       })
 
       this.messageText.connect('select-all', (textView, selected) => {
