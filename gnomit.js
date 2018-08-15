@@ -309,19 +309,48 @@ class Gnomit {
           this.buffer.select_range(cursorIterator, cursorIterator)
         }
 
-        // If the person has just moved to the next line after typing
-        // the first line, add an empty newline to separate the rest
-        // of the commit message from the first (summary) line.
+        // Take measurements
         let lines = this.buffer.text.split("\n")
         let firstLineLength = lines[0].length
         let cursorPosition = this.buffer.cursor_position
         let numberOfLinesInCommitMessage = lines.length + 1
-        print(`Len                  : ${firstLineLength}`)
-        print(`Cur                  : ${cursorPosition}`)
-        print(`Line (all, now)     : ${lines.length}`)
-        print(`Lines (all, previous): ${this.previousNumberOfLinesInCommitMessage}`)
-        print(`Lines (commit)       : ${this.numberOfLinesInCommitComment}`)
-        print('---')
+
+        // Debug
+        // print(`Len                  : ${firstLineLength}`)
+        // print(`Cur                  : ${cursorPosition}`)
+        // print(`Line (all, now)     : ${lines.length}`)
+        // print(`Lines (all, previous): ${this.previousNumberOfLinesInCommitMessage}`)
+        // print(`Lines (commit)       : ${this.numberOfLinesInCommitComment}`)
+        // print('---')
+
+        // Validation: disallow empty first line.
+        let justDisallowedEmptyFirstLine = false
+        if (
+          /* in the correct place */
+          cursorPosition === firstLineLength + 1
+          /* and the first line is empty */
+          && lines[0].replace(/ /g, '').length === 0
+          /* and person didn’t reach here by deleting existing content */
+          && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
+        ) {
+          //print('Empty first line not allowed.')
+
+          // Delete the newline
+          this.buffer.backspace(
+            /* iter: */ this.buffer.get_iter_at_offset(this.buffer.cursor_position),
+            /* interactive: */ true,
+            /* default_editable: */ true
+          )
+
+          // Update measurements as the buffer has changed.
+          lines = this.buffer.text.split("\n")
+          firstLineLength = lines[0].length
+          cursorPosition = this.buffer.cursor_position
+          numberOfLinesInCommitMessage = lines.length + 1
+        }
+
+        // Add an empty newline to separate the rest
+        // of the commit message from the first (summary) line.
         if (
           /* in the correct place */
           cursorPosition === firstLineLength + 1
@@ -329,7 +358,8 @@ class Gnomit {
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
         ) {
-          print("Condition reached!\n---")
+          // print("Condition reached!\n---")
+
           // Insert a second newline.
           const newline = "\n"
           this.buffer.insert_interactive_at_cursor(newline, newline.length, /* default editable */ true)
@@ -346,7 +376,7 @@ class Gnomit {
         for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
           commitMessageExcludingComments += lines[i]
         }
-        commitMessageExcludingComments = commitMessageExcludingComments.replace(' ', '')
+        commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
         const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
         this.commitButton.set_sensitive(!commitMessageIsEmpty)
       })
