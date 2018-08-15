@@ -194,8 +194,11 @@ class Gnomit {
 
         // Convert the message from ByteArray to String.
         commitMessage = `\n${commitMessage.toString()}`
-        // commitMessage = commitMessage.substring(0, commitMessage.length - 1)
-        print(`[${commitMessage}]`)
+
+        // Save the number of lines in the original commit comment
+        // so we have an easy way of calculating the non-comment
+        // section of the commit message.
+        this.numberOfLinesInCommitComment = commitMessage.split("\n").length
 
         // Add Pango markup to make the commented are appear
         // lighter.
@@ -231,12 +234,15 @@ class Gnomit {
       const endOfText = this.buffer.get_end_iter()
       this.buffer.apply_tag(nonEditableTag, startOfText, endOfText)
 
+      // Save the intial text state of the buffer
+      this.previousNumberOfLinesInCommitMessage = 1
 
       // Show the composition interface.
       this.dialogue.show_all()
     })
 
     this.application.connect('startup', () => {
+
       // Create a builder and get it to load the interface from the Glade file.
       const builder = new Gtk.Builder()
       builder.add_from_file(`${path}/gnomit.glade`)
@@ -291,12 +297,42 @@ class Gnomit {
       this.buffer.connect('end-user-action', () => {
         // Due to the non-editable region, the selection for a
         // Select All is not automatically cleared by the
-        // system. So let’s detect it and clear it outselves.
+        // system. So let’s detect it and clear it ourselves.
         if (this.lastActionWasSelectAll) {
           this.lastActionWasSelectAll = false
           const cursorIterator = this.buffer.get_iter_at_offset(this.buffer.cursor_position)
           this.buffer.select_range(cursorIterator, cursorIterator)
         }
+
+        // If the person has just moved to the next line after typing
+        // the first line, add an empty newline to separate the rest
+        // of the commit message from the first (summary) line.
+        let lines = this.buffer.text.split("\n")
+        let firstLineLength = lines[0].length
+        let cursorPosition = this.buffer.cursor_position
+        let numberOfLinesInCommitMessage = lines.length
+        print(`Len                  : ${firstLineLength}`)
+        print(`Cur                  : ${cursorPosition}`)
+        print(`Lines (all, now)     : ${lines.length}`)
+        print(`Lines (all, previous): ${this.previousNumberOfLinesInCommitMessage}`)
+        print(`Lines (commit)       : ${this.numberOfLinesInCommitComment}`)
+        print('---')
+        if (
+          /* in the correct place */
+          cursorPosition === firstLineLength + 1
+          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 1
+          /* and person didn’t reach here by deleting existing content */
+          && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
+        ) {
+          print("Condition reached!\n---")
+          // Insert a second newline.
+          const newline = "\n"
+          this.buffer.insert_interactive_at_cursor(newline, newline.length, /* default editable */ true)
+        }
+
+        // Save the number of lines in the commit message
+        // for comparison in later frames.
+        this.previousNumberOfLinesInCommitMessage = numberOfLinesInCommitMessage
       })
 
       this.messageText.connect('select-all', (textView, selected) => {
