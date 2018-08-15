@@ -90,7 +90,7 @@ class Gnomit {
       flags: Gio.ApplicationFlags.HANDLES_OPEN | Gio.ApplicationFlags.NON_UNIQUE
     })
 
-    this.application.set_option_context_parameter_string('')
+    this.application.set_option_context_parameter_string('<path-to-git-commit-message-file>')
 
     // The option context summary is displayed above the set of options
     // in the --help screen.
