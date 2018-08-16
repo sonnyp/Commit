@@ -20,6 +20,12 @@ const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your defaul
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 
+// Keep first line line-length validation in line with
+// the original Komet behaviour for the time being.
+// (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
+const FIRST_LINE_CHARACTER_LIMIT = 69
+
+
 // TODO: The Application class is doing everything right now. Refactor to offload
 //       functionality to the dialogue and to helper objects.
 
