@@ -26,6 +26,30 @@ const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 const FIRST_LINE_CHARACTER_LIMIT = 69
 
 
+// Timers
+// https://github.com/optimisme/gjs-examples/blob/master/egTimers.js
+const Mainloop = imports.mainloop
+
+const setTimeout = function(func, millis /* , ... args */) {
+
+    let args = []
+    if (arguments.length > 2) {
+        args = args.slice.call(arguments, 2)
+    }
+
+    let id = Mainloop.timeout_add(millis, () => {
+        func.apply(null, args)
+        return false; // Stop repeating
+    }, null)
+
+    return id
+}
+
+const clearTimeout = function(id) {
+    Mainloop.source_remove(id)
+}
+
+
 // TODO: The Application class is doing everything right now. Refactor to offload
 //       functionality to the dialogue and to helper objects.
 
