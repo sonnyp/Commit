@@ -22,9 +22,9 @@ const Lang = imports.lang;
 var GnomitWindow = new Lang.Class({
     Name: 'GnomitWindow',
     GTypeName: 'GnomitWindow',
-    Extends: Gtk.ApplicationWindow,
-    Template: 'resource:///ind/ie/Gnomit/window.ui',
-    InternalChildren: ['label'],
+    Extends: Gtk.Dialog,
+    Template: 'resource:///ind/ie/Gnomit/gnomit.glade',
+    InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 
     _init(application) {
         this.parent({

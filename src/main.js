@@ -44,7 +44,8 @@ function main(argv) {
       if (!win)
           win = new Window.GnomitWindow(app);
 
-      win.present();
+      print(win)
+      win.show_all();
   });
 
   return app.run(argv);

@@ -4,7 +4,6 @@ imports.gi.versions.Gtk = '3.0'
 const Gtk = imports.gi.Gtk
 const GLib = imports.gi.GLib
 const Gio = imports.gi.Gio
-const System = imports.system
 
 // TODO: GSpell is not a default library. Find out how to
 // package it.
