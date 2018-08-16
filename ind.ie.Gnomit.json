@@ -11,8 +11,12 @@
         "--socket=wayland",
         "--filesystem=xdg-run/dconf",
         "--filesystem=~/.config/dconf:ro",
+        "--filesystem=host",
         "--talk-name=ca.desrt.dconf",
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+    ],
+    "x-run-args" : [
+        "sandbox/gjs/tests/message-with-body"
     ],
     "build-options" : {
         "cflags" : "-O2 -g",

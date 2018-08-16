@@ -1,4 +1,5 @@
-const { Gtk, Gio, GLib, GObject } = imports.gi
+const { Gtk, Gio, GLib, GObject, Gspell } = imports.gi
+const {GnomitWindow} = imports.window
 
 const SUMMARY = `Helps you write better Git commit messages.
 
@@ -239,6 +240,206 @@ var Application = GObject.registerClass({
       // Show the composition interface.
       this.dialogue.show_all()
     })
+
+    //
+    // Signal: Startup
+    //
+
+    this.connect('startup', () => {
+
+
+      this.dialogue = new GnomitWindow(this)
+
+      // TODO: This is violating encapsulation: move to Window subclass.
+      this.dialogue.set_icon_name('accessories-text-editor')
+      this.messageText = this.dialogue._messageText
+      this.cancelButton = this.dialogue._cancelButton
+      this.commitButton = this.dialogue._commitButton
+      /////
+
+      // Create a builder and get it to load the interface from the Glade file.
+      // const builder = new Gtk.Builder()
+      // builder.add_from_file(`${path}/gnomit.glade`)
+
+      // Get references to the components defined in the Glade file.
+      // this.dialogue = builder.get_object('dialogue')
+      // this.dialogue.set_icon_name('accessories-text-editor')
+      // this.messageText = builder.get_object('messageText')
+      // this.cancelButton = builder.get_object('cancelButton')
+      // this.commitButton = builder.get_object('commitButton')
+
+      // Disable commit button initially as we don’t allow empty
+      // messages to be committed (person can always cancel).
+      // PS. set_sensitive? Really? Wow :)
+      this.commitButton.set_sensitive(false)
+
+      this.buffer = this.messageText.get_buffer()
+
+      // Set up spell checking for the text view.
+      // TODO: This is incorrectly documented. File an issue / blog.
+      const gSpellTextView = Gspell.TextView.get_from_gtk_text_view(this.messageText)
+      gSpellTextView.basic_setup()
+
+      // Tag: highlight background.
+      const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME)
+      highlightBackgroundTag.background = "#ffe4e1" // minty rose
+      this.buffer.tag_table.add(highlightBackgroundTag)
+
+      const highlightText = () => {
+        // Check first line length and highlight characters beyond the limit.
+        const text = this.buffer.text
+        const lines = text.split("\n")
+        const firstLine = lines[0]
+        const firstLineLength = firstLine.length
+
+        // Get bounding iterators for the first line.
+        const startOfTextIterator = this.buffer.get_start_iter()
+        const endOfTextIterator = this.buffer.get_end_iter()
+        const endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
+
+        // Start with a clean slate: remove any background highlighting on the
+        // whole text. (We don’t do just the first line as someone might copy a
+        // highlighted piece of the first line and paste it and we don’t want it
+        // highlighted on subsequent lines if they do that.)
+        this.buffer.remove_tag_by_name(HIGHLIGHT_BACKGROUND_TAG_NAME, startOfTextIterator, endOfTextIterator)
+
+        // Highlight the overflow area, if any.
+        if (firstLineLength > FIRST_LINE_CHARACTER_LIMIT) {
+          let startOfOverflowIterator = this.buffer.get_iter_at_offset(FIRST_LINE_CHARACTER_LIMIT)
+          this.buffer.apply_tag(highlightBackgroundTag, startOfOverflowIterator, endOfFirstLineIterator)
+        }
+      }
+
+      this.buffer.connect('changed', highlightText)
+      this.buffer.connect('paste-done', highlightText)
+
+      this.buffer.connect('end-user-action', () => {
+        // Due to the non-editable region, the selection for a
+        // Select All is not automatically cleared by the
+        // system. So let’s detect it and clear it ourselves.
+        if (this.lastActionWasSelectAll) {
+          this.lastActionWasSelectAll = false
+          const cursorIterator = this.buffer.get_iter_at_offset(this.buffer.cursor_position)
+          this.buffer.select_range(cursorIterator, cursorIterator)
+        }
+
+        // Take measurements
+        let lines = this.buffer.text.split("\n")
+        let firstLineLength = lines[0].length
+        let cursorPosition = this.buffer.cursor_position
+        let numberOfLinesInCommitMessage = lines.length + 1
+
+        // Validation: disallow empty first line.
+        let justDisallowedEmptyFirstLine = false
+        if (
+          /* in the correct place */
+          cursorPosition === firstLineLength + 1
+          /* and the first line is empty */
+          && lines[0].replace(/ /g, '').length === 0
+          /* and person didn’t reach here by deleting existing content */
+          && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
+        ) {
+          // Delete the newline
+          this.buffer.backspace(
+            /* iter: */ this.buffer.get_iter_at_offset(this.buffer.cursor_position),
+            /* interactive: */ true,
+            /* default_editable: */ true
+          )
+
+          // Update measurements as the buffer has changed.
+          lines = this.buffer.text.split("\n")
+          firstLineLength = lines[0].length
+          cursorPosition = this.buffer.cursor_position
+          numberOfLinesInCommitMessage = lines.length + 1
+        }
+
+        // Add an empty newline to separate the rest
+        // of the commit message from the first (summary) line.
+        if (
+          /* in the correct place */
+          cursorPosition === firstLineLength + 1
+          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 2
+          /* and person didn’t reach here by deleting existing content */
+          && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
+        ) {
+          // Insert a second newline.
+          const newline = "\n"
+          this.buffer.insert_interactive_at_cursor(newline, newline.length, /* default editable */ true)
+        }
+
+        // Save the number of lines in the commit message
+        // for comparison in later frames.
+        this.previousNumberOfLinesInCommitMessage = numberOfLinesInCommitMessage
+
+        // Validation: Enable the Commit button only if the commit message
+        // is not empty.
+        let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
+        let commitMessageExcludingComments = ""
+        for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
+          commitMessageExcludingComments += lines[i]
+        }
+        commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
+        const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
+        this.commitButton.set_sensitive(!commitMessageIsEmpty)
+      })
+
+      // Only select commit message body (not the comment) on select all.
+      this.messageText.connect('select-all', (textView, selected) => {
+        if (selected) {
+          // Carry this out on the next stack frame. The selected signal
+          // gets called too early (you are not able to change the
+          // selection at that time.) TODO: File bug.
+          setTimeout(() => {
+            this.lastActionWasSelectAll = true
+            // Redo the selection to limit it to the commit message
+            // only (exclude the original commit comment).
+            // Assumption: that the person has not added any comments
+            // to their commit message themselves. But, I mean, come on!
+            // this.buffer.place_cursor(this.buffer.get_start_iter())
+            const mainCommitMessage = this.buffer.text.split('#')[0]
+            const selectStartIterator = this.buffer.get_start_iter()
+            const selectEndIterator = this.buffer.get_iter_at_offset(mainCommitMessage.length)
+            // this.buffer.move_mark_by_name('selection_bound', selectEndIterator)
+            this.buffer.select_range(selectStartIterator, selectEndIterator)
+          }, 0)
+        }
+      })
+
+      //
+      // Cancel button clicked.
+      //
+      this.cancelButton.connect('clicked', () => {
+        this.quit()
+      })
+
+      //
+      // Connect button clicked.
+      //
+      this.commitButton.connect('clicked', () => {
+
+        let success;
+        const ERROR_SUMMARY = "\n\nError: could not save your commit message.\n"
+
+        try {
+          // Save the text.
+          success = GLib.file_set_contents(
+            this.commitMessageFilePath,
+            this.buffer.text
+          )
+          if (!success) {
+            print(ERROR_SUMMARY)
+          }
+          this.quit()
+        } catch (error) {
+          print(`${ERROR_SUMMARY}${error}`)
+          this.quit()
+        }
+      })
+
+      // Add the dialog to the application as its main window.
+      this.add_window(this.dialogue)
+    })
+
 
     //
     // Signal: Activate
