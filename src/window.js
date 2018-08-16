@@ -23,7 +23,7 @@ var GnomitWindow = new Lang.Class({
     Name: 'GnomitWindow',
     GTypeName: 'GnomitWindow',
     Extends: Gtk.ApplicationWindow,
-    Template: 'resource:///org/gnome/Gnomit/window.ui',
+    Template: 'resource:///ind/ie/Gnomit/window.ui',
     InternalChildren: ['label'],
 
     _init(application) {

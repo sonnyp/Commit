@@ -34,6 +34,25 @@
     ],
     "modules" : [
         {
+            "name" : "gspell",
+            "config-opts" : [
+                "--disable-vala",
+                "--disable-static",
+                "--disable-gtk-doc"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gspell.git",
+                    "tag" : "1.6.1",
+                    "commit" : "f2823c994b9af57d91e75c54bd1ec68a1dee5767"
+                }
+            ],
+            "cleanup" : [
+                "/bin"
+            ]
+        },
+        {
             "name" : "gnomit",
             "buildsystem" : "meson",
             "config-opts" : [

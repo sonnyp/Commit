@@ -22,6 +22,7 @@ pkg.require({
   'Gio': '2.0',
   'Gtk': '3.0'
 });
+pkg.requireSymbol('Gspell', '1', )
 
 const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
