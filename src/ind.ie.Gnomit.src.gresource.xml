@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/ind/ie/Gnomit/js">
     <file>main.js</file>
+    <file>application.js</file>
     <file>window.js</file>
   </gresource>
 </gresources>

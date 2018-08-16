@@ -19,6 +19,7 @@
 pkg.initGettext();
 pkg.initFormat();
 pkg.require({
+  'GObject': '2.0',
   'Gio': '2.0',
   'Gtk': '3.0',
   'GLib': '2.0',
@@ -30,6 +31,7 @@ const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
 
 const Window = imports.window;
+const Application = imports.application;
 
 function main(argv) {
 
