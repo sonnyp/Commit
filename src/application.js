@@ -1,12 +1,10 @@
 const { Gtk, Gio, GLib, GObject } = imports.gi
 
-
 const SUMMARY = `Helps you write better Git commit messages.
 
 To use, configure Git to use Gnomit as the default editor:
 
   git config --global core.editor <path-to-gnomit.js>`
-
 
 const COPYRIGHT = `❤ We practice ethical design (https://ind.ie/ethical-design)
 
@@ -16,6 +14,8 @@ Copyright © 2018 Ind.ie (https://ind.ie)
 License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.`
+
+const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your default Git editor.\n\n"
 
 
 var Application = GObject.registerClass({
@@ -56,7 +56,7 @@ var Application = GObject.registerClass({
     // on the --help screen.
     this.set_option_context_description(COPYRIGHT)
 
-    // Option: --version, -v
+    // Add option: --version, -v
     this.add_main_option(
       'version', 'v',
       GLib.OptionFlags.NONE,
@@ -65,7 +65,7 @@ var Application = GObject.registerClass({
       null
     )
 
-    // Option: --install, -i
+    // Add option: --install, -i
     this.add_main_option(
       'install', 'i',
       GLib.OptionFlags.NONE,
@@ -73,6 +73,59 @@ var Application = GObject.registerClass({
       'Install Gnomit as your default Git editor',
       null
     )
-  }
 
+    this.application.connect('handle_local_options', (application, options) => {
+      // Handle option: --install, -i:
+      //
+      // Install Gnomit as your default Git editor.
+      if (options.contains('install')) {
+        try {
+          let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`git config --global core.editor ${path}/gnomit.js`)
+
+          if (!success || exitStatus !== 0) {
+            // Error: Spawn successful but process did not exit successfully.
+            print(`${INSTALLATION_ERROR_SUMMARY}${standardError}`)
+
+            // Exit with generic error code.
+            return 1
+          }
+        } catch (error) {
+          // Error: Spawn failed.
+
+          // Start off by telling the person what failed.
+          let errorMessage = INSTALLATION_ERROR_SUMMARY
+
+          // Provide further information and try to help.
+          if (error.code === GLib.SpawnError.NOENT) {
+            // Git was not found: show people how to install it.
+            errorMessage += "Git is not installed.\n\nFor help on installing Git, please see:\nhttps://git-scm.com/book/en/v2/Getting-Started-Installing-Git\n"
+          } else {
+            // Some other error: show the error message.
+            errorMessage += `${error}`
+          }
+          print (errorMessage)
+
+          // Exit with generic error code.
+          return 1
+        }
+
+        // OK.
+        return 0
+      }
+
+      // Handle option: --version, -v:
+      //
+      // Print a minimal version string based on the GNU coding standards.
+      // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
+      if (options.contains('version')) {
+        print('Gnomit 1.0.0')
+
+        // OK.
+        return 0
+      }
+
+      // Let the system handle any other command-line options.
+      return -1
+    })
+  }
 })

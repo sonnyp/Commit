@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
+const Gtk = imports.gi.Gtk
+const Lang = imports.lang
 
 var GnomitWindow = new Lang.Class({
     Name: 'GnomitWindow',
@@ -29,7 +29,7 @@ var GnomitWindow = new Lang.Class({
     _init(application) {
         this.parent({
             application,
-        });
+        })
     },
-});
+})
 

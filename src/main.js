@@ -16,39 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-pkg.initGettext();
-pkg.initFormat();
+pkg.initGettext()
+pkg.initFormat()
 pkg.require({
   'GObject': '2.0',
   'Gio': '2.0',
   'Gtk': '3.0',
   'GLib': '2.0',
   'Gspell': '1'
-});
+})
 
+const Gio = imports.gi.Gio
+const Gtk = imports.gi.Gtk
 
-const Gio = imports.gi.Gio;
-const Gtk = imports.gi.Gtk;
-
-const Window = imports.window;
-const Application = imports.application;
+const {Application} = imports.application;
 
 function main(argv) {
 
-  let app = new Gtk.Application({
-      application_id: 'ind.ie.Gnomit',
-      flags: Gio.ApplicationFlags.FLAGS_NONE,
-  });
-
-  app.connect('activate', app => {
-      let win = app.active_window;
-
-      if (!win)
-          win = new Window.GnomitWindow(app);
-
-      print(win)
-      win.show_all();
-  });
-
-  return app.run(argv);
+  let application = new Application()
+  return application.run(argv)
 }
