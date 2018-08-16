@@ -38,6 +38,16 @@ Feature-compatible (sans configuration options) with [the first release of Komet
   * Displays the project folder and branch in the window header.
   * The Git Commit comment is not editable.
 
+## Development notes:
+
+Add the following to ind.ie.Gnomit.json to test the app using command-line arguments from Gnome Builder:
+
+```json
+    "x-run-args" : [
+        "sandbox/gjs/tests/message-with-body"
+    ],
+```
+
 ## Author
 
 Copyright © 2018 [Aral balkan](https://ar.al), © 2018 [Ind.ie](https://ind.ie)
