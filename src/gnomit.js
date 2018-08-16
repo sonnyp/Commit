@@ -5,7 +5,6 @@ const Gtk = imports.gi.Gtk
 const GLib = imports.gi.GLib
 const Gio = imports.gi.Gio
 const System = imports.system
-const Notify = imports.gi.Notify
 
 // TODO: GSpell is not a default library. Find out how to
 // package it.
