@@ -4,7 +4,7 @@
 
 A simple Git commit message editor for Gnome, inspired by the excellent [Komet app](https://github.com/zorgiepoo/Komet) for macOS.
 
-Gnomit is written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home). There is also a [Vala](https://wiki.gnome.org/Projects/Vala) version that I only just started working on and which is no way near being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
+Gnomit is written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home). There is also a [Vala](https://wiki.gnome.org/Projects/Vala) [version](https://source.ind.ie/gnome/gnomit/vala) that I only just started working on and which is no way near being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
 
 ## Important
 
