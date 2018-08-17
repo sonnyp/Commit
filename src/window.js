@@ -20,16 +20,16 @@ const Gtk = imports.gi.Gtk
 const Lang = imports.lang
 
 var GnomitWindow = new Lang.Class({
-    Name: 'GnomitWindow',
-    GTypeName: 'GnomitWindow',
-    Extends: Gtk.Dialog,
-    Template: 'resource:///ind/ie/Gnomit/window.glade',
-    InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
+  Name: 'GnomitWindow',
+  GTypeName: 'GnomitWindow',
+  Extends: Gtk.Dialog,
+  Template: 'resource:///ind/ie/Gnomit/window.glade',
+  InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 
-    _init(application) {
-        this.parent({
-            application,
-        })
-    },
+  _init(application) {
+    this.parent({
+        application,
+    })
+  },
 })
 
