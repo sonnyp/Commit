@@ -4,6 +4,9 @@
     "runtime-version" : "3.28",
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
+    "x-run-args" : [
+        "sandbox/gjs/tests/message-with-body"
+    ],
     "finish-args" : [
         "--share=network",
         "--share=ipc",

@@ -23,7 +23,7 @@ var GnomitWindow = new Lang.Class({
     Name: 'GnomitWindow',
     GTypeName: 'GnomitWindow',
     Extends: Gtk.Dialog,
-    Template: 'resource:///ind/ie/Gnomit/gnomit.glade',
+    Template: 'resource:///ind/ie/Gnomit/window.glade',
     InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 
     _init(application) {
