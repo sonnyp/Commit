@@ -16,20 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const Gtk = imports.gi.Gtk
-const Lang = imports.lang
+const {Gtk, GObject} = imports.gi
 
-var GnomitWindow = new Lang.Class({
+var GnomitWindow = GObject.registerClass({
   Name: 'GnomitWindow',
   GTypeName: 'GnomitWindow',
-  Extends: Gtk.Dialog,
   Template: 'resource:///ind/ie/Gnomit/window.glade',
   InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
+}, class GnomitWindow extends Gtk.Dialog {
 
   _init(application) {
-    this.parent({
+    super._init({
         application,
     })
-  },
-})
+  }
 
+})
