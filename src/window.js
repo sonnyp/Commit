@@ -29,6 +29,9 @@ var GnomitWindow = GObject.registerClass({
     super._init({
         application,
     })
+
+    this.icon_name = 'accessories-text-editor'
+
   }
 
 })

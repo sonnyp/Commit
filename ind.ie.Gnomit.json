@@ -4,8 +4,9 @@
     "runtime-version" : "3.28",
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
+    "rename-icon" : "accessories-text-editor",
     "x-run-args" : [
-        "sandbox/gjs/tests/message-with-body"
+        "sandbox/gnomit/gjs/tests/message-with-body"
     ],
     "finish-args" : [
         "--share=network",
@@ -54,6 +55,39 @@
             ],
             "cleanup" : [
                 "/bin"
+            ]
+        },
+        {
+            "name" : "icons",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "install -Dm644 accessories-text-editor-16.png /app/share/icons/hicolor/16x16/apps/accessories-text-editor.png",
+                "install -Dm644 accessories-text-editor-24.png /app/share/icons/hicolor/24x24/apps/accessories-text-editor.png",
+                "install -Dm644 accessories-text-editor-32.png /app/share/icons/hicolor/32x32/apps/accessories-text-editor.png",
+                "install -Dm644 accessories-text-editor-48.png /app/share/icons/hicolor/48x48/apps/accessories-text-editor.png",
+                "install -Dm644 accessories-text-editor-512.png /app/share/icons/hicolor/512x512/apps/accessories-text-editor.png"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "path" : "accessories-text-editor-16.png"
+                },
+                {
+                    "type" : "file",
+                    "path" : "accessories-text-editor-24.png"
+                },
+                {
+                    "type" : "file",
+                    "path" : "accessories-text-editor-32.png"
+                },
+                {
+                    "type" : "file",
+                    "path" : "accessories-text-editor-48.png"
+                },
+                {
+                    "type" : "file",
+                    "path" : "accessories-text-editor-512.png"
+                }
             ]
         },
         {
