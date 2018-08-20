@@ -50,7 +50,7 @@ Feature-compatible (sans configuration options) with [the first release of Komet
   * Select All selects only your commit message, not the Git commit comment.
   * Displays the project folder and branch in the window header.
   * The Git Commit comment is not editable.
-  
+
 ## Known issues
 
 ### Slow start-up time
@@ -66,9 +66,9 @@ Also, I’m interested in seeing if [the Vala version](https://source.ind.ie/gno
 The following setting in _ind.ie.Gnomit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line.
 
 ```json
-    "x-run-args" : [
-        "sandbox/gjs/tests/message-with-body"
-    ],
+"x-run-args" : [
+    "sandbox/gjs/tests/message-with-body"
+],
 ```
 
 ## Author
