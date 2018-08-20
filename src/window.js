@@ -30,8 +30,6 @@ var GnomitWindow = GObject.registerClass({
         application,
     })
 
-    this.icon_name = 'ind.ie.Gnomit'
-
   }
 
 })
