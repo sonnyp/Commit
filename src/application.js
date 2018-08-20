@@ -1,20 +1,11 @@
-#!/usr/bin/gjs
+const { Gtk, Gio, GLib, GObject, Gspell } = imports.gi
+const {GnomitWindow} = imports.window
 
-imports.gi.versions.Gtk = '3.0'
-const Gtk = imports.gi.Gtk
-const GLib = imports.gi.GLib
-const Gio = imports.gi.Gio
-const System = imports.system
-const Notify = imports.gi.Notify
+const SUMMARY = `Helps you write better Git commit messages.
 
-// TODO: GSpell is not a default library. Find out how to
-// package it.
-const Gspell = imports.gi.Gspell
+To use, configure Git to use Gnomit as the default editor:
 
-// Keep first line line-length validation in line with
-// the original Komet behaviour for the time being.
-// (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
-const FIRST_LINE_CHARACTER_LIMIT = 69
+  git config --global core.editor <path-to-gnomit.js>`
 
 const COPYRIGHT = `❤ We practice ethical design (https://ind.ie/ethical-design)
 
@@ -25,15 +16,15 @@ License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.`
 
-const SUMMARY = `Helps you write better Git commit messages.
-
-To use, configure Git to use Gnomit as the default editor:
-
-  git config --global core.editor <path-to-gnomit.js>`
-
 const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your default Git editor.\n\n"
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
+
+// Keep first line line-length validation in line with
+// the original Komet behaviour for the time being.
+// (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
+const FIRST_LINE_CHARACTER_LIMIT = 69
+
 
 // Timers
 // https://github.com/optimisme/gjs-examples/blob/master/egTimers.js
@@ -58,52 +49,51 @@ const clearTimeout = function(id) {
     Mainloop.source_remove(id)
 }
 
-// Get application folder and add it into the imports path
-// Courtesy: https://github.com/optimisme/gjs-examples/blob/master/egInfo.js
-function getAppFileInfo () {
-  let stack = new Error().stack,
-    stackLine = stack.split('\n')[1],
-    coincidence,
-    path,
-    file
 
-  if (!stackLine) throw new Error('Could not find current file (1)')
+// TODO: The Application class is doing everything right now. Refactor to offload
+//       functionality to the dialogue and to helper objects.
 
-  coincidence = new RegExp('@(.+):\\d+').exec(stackLine)
-  if (!coincidence) throw new Error('Could not find current file (2)')
+var Application = GObject.registerClass({
+  // Nothing yet.
+}, class Application extends Gtk.Application {
 
-  path = coincidence[1]
-  file = Gio.File.new_for_path(path)
-  return [file.get_path(), file.get_parent().get_path(), file.get_basename()]
-}
-const path = getAppFileInfo()[1]
-imports.searchPath.push(path)
+  _init() {
 
-class Gnomit {
-  constructor () {
-    this.title = 'Gnomit'
-    GLib.set_prgname(this.title)
-    GLib.set_application_name('Gnomit Commit Editor')
+    //
+    // Set application details.
+    //
 
-    this.application = new Gtk.Application({
-      application_id: 'ind.ie.gnomit',
-      flags: Gio.ApplicationFlags.HANDLES_OPEN | Gio.ApplicationFlags.NON_UNIQUE
+    super._init({
+      application_id: 'ind.ie.Gnomit',
+      flags:
+      /* We handle file opens. */
+      Gio.ApplicationFlags.HANDLES_OPEN
+      /* We can have more than one instance active at once. */
+      | Gio.ApplicationFlags.NON_UNIQUE
     })
 
-    this.application.set_option_context_parameter_string('<path-to-git-commit-message-file>')
+    GLib.set_prgname('Gnomit')
+    GLib.set_application_name('Gnomit Commit Editor')
+
+    //
+    // Set command-line option handling.
+    //
+
+    // The option context parameter string is displayed next to the
+    // list of options on the first line of the --help screen.
+    this.set_option_context_parameter_string('<path-to-git-commit-message-file>')
 
     // The option context summary is displayed above the set of options
-    // in the --help screen.
-    this.application.set_option_context_summary(SUMMARY)
+    // on the --help screen.
+    this.set_option_context_summary(SUMMARY)
 
     // The option context description is displayed below the set of options
     // on the --help screen.
-    this.application.set_option_context_description(COPYRIGHT)
+    this.set_option_context_description(COPYRIGHT)
 
     // Add option: --version, -v
-    this.application.add_main_option(
-      'version',
-      'v'.charCodeAt(0),
+    this.add_main_option(
+      'version', 'v',
       GLib.OptionFlags.NONE,
       GLib.OptionArg.NONE,
       'Show version number and exit',
@@ -111,22 +101,25 @@ class Gnomit {
     )
 
     // Add option: --install, -i
-    this.application.add_main_option(
-      'install',
-      'i'.charCodeAt(0),
+    this.add_main_option(
+      'install', 'i',
       GLib.OptionFlags.NONE,
       GLib.OptionArg.NONE,
       'Install Gnomit as your default Git editor',
       null
     )
 
-    this.application.connect('handle_local_options', (application, options) => {
-      // --install, -i:
+    //
+    // Signal: Handle local options.
+    //
+
+    this.connect('handle_local_options', (application, options) => {
+      // Handle option: --install, -i:
       //
       // Install Gnomit as your default Git editor.
       if (options.contains('install')) {
         try {
-          let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`git config --global core.editor ${path}/gnomit.js`)
+          let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`git config --global core.editor '/app/bin/ind.ie.Gnomit'`)
 
           if (!success || exitStatus !== 0) {
             // Error: Spawn successful but process did not exit successfully.
@@ -159,7 +152,7 @@ class Gnomit {
         return 0
       }
 
-      // --version, -v:
+      // Handle option: --version, -v:
       //
       // Print a minimal version string based on the GNU coding standards.
       // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
@@ -174,9 +167,13 @@ class Gnomit {
       return -1
     })
 
+    //
+    // Signal: Open.
+    //
+
     // Open gets called when a file is passed as a command=line argument.
     // We expect Git to pass us one file.
-    this.application.connect('open', (application, files, hint) => {
+    this.connect('open', (application, files, hint) => {
       if (files.length !== 1) {
         // Error: Too many files.
         this.activate()
@@ -231,7 +228,7 @@ class Gnomit {
         // other languages.
         const wordsOnBranchLine = commitCommentLines[5].split(" ")
         const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
-        this.application.active_window.set_title(`${projectDirectoryName} (${branchName})`)
+        this.active_window.set_title(`${projectDirectoryName} (${branchName})`)
 
         // Add Pango markup to make the commented are appear lighter.
         commitMessage = `${commitBody}<span foreground="#959595">${commitComment}</span>`
@@ -270,22 +267,39 @@ class Gnomit {
       // Save the number of lines in the commit message.
       this.previousNumberOfLinesInCommitMessage = 1
 
+      // Validate the commit button on start (if we have an auto-generated
+      // body of the commit message, it should be enabled).
+      this.validateCommitButton()
+
       // Show the composition interface.
       this.dialogue.show_all()
     })
 
-    this.application.connect('startup', () => {
+    //
+    // Signal: Startup
+    //
+
+    this.connect('startup', () => {
+
+      this.dialogue = new GnomitWindow(this)
+
+      // TODO: This is violating encapsulation: move to Window subclass.
+      this.dialogue.set_icon_name('accessories-text-editor')
+      this.messageText = this.dialogue._messageText
+      this.cancelButton = this.dialogue._cancelButton
+      this.commitButton = this.dialogue._commitButton
+      /////
 
       // Create a builder and get it to load the interface from the Glade file.
-      const builder = new Gtk.Builder()
-      builder.add_from_file(`${path}/gnomit.glade`)
+      // const builder = new Gtk.Builder()
+      // builder.add_from_file(`${path}/gnomit.glade`)
 
       // Get references to the components defined in the Glade file.
-      this.dialogue = builder.get_object('dialogue')
-      this.dialogue.set_icon_name('accessories-text-editor')
-      this.messageText = builder.get_object('messageText')
-      this.cancelButton = builder.get_object('cancelButton')
-      this.commitButton = builder.get_object('commitButton')
+      // this.dialogue = builder.get_object('dialogue')
+      // this.dialogue.set_icon_name('accessories-text-editor')
+      // this.messageText = builder.get_object('messageText')
+      // this.cancelButton = builder.get_object('cancelButton')
+      // this.commitButton = builder.get_object('commitButton')
 
       // Disable commit button initially as we don’t allow empty
       // messages to be committed (person can always cancel).
@@ -390,16 +404,8 @@ class Gnomit {
         // for comparison in later frames.
         this.previousNumberOfLinesInCommitMessage = numberOfLinesInCommitMessage
 
-        // Validation: Enable the Commit button only if the commit message
-        // is not empty.
-        let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
-        let commitMessageExcludingComments = ""
-        for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
-          commitMessageExcludingComments += lines[i]
-        }
-        commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
-        const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
-        this.commitButton.set_sensitive(!commitMessageIsEmpty)
+        // Validation: Enable Commit button only if commit message is not empty.
+        this.validateCommitButton()
       })
 
       // Only select commit message body (not the comment) on select all.
@@ -428,7 +434,7 @@ class Gnomit {
       // Cancel button clicked.
       //
       this.cancelButton.connect('clicked', () => {
-        this.application.quit()
+        this.quit()
       })
 
       //
@@ -448,16 +454,21 @@ class Gnomit {
           if (!success) {
             print(ERROR_SUMMARY)
           }
-          this.application.quit()
+          this.quit()
         } catch (error) {
           print(`${ERROR_SUMMARY}${error}`)
-          this.application.quit()
+          this.quit()
         }
       })
 
       // Add the dialog to the application as its main window.
-      this.application.add_window(this.dialogue)
+      this.add_window(this.dialogue)
     })
+
+
+    //
+    // Signal: Activate
+    //
 
     this.activate = () => {
       // Activate is only called if there are no file(s) passed to
@@ -477,7 +488,7 @@ class Gnomit {
       // the app with the --help flag set and piping the output.
 
       try {
-        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`${path}/gnomit.js --help`)
+        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync('/app/bin/ind.ie.Gnomit --help')
 
         if (success) {
           print(standardOutput)
@@ -488,16 +499,28 @@ class Gnomit {
         print (error)
       }
 
-      this.application.quit()
+      this.quit()
     }
 
-    this.application.connect('activate', this.activate)
+    this.connect('activate', this.activate)
+
   }
+
+  // Validate the buffer and enable/disable the commit button accordingly.
+  validateCommitButton () {
+    // Take measurements.
+    const lines = this.buffer.text.split("\n")
+    const numberOfLinesInCommitMessage = lines.length + 1
+
+    // Enable the Commit button only if the commit message is not empty.
+    let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
+    let commitMessageExcludingComments = ""
+    for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
+      commitMessageExcludingComments += lines[i]
+    }
+    commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
+    const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
+    this.commitButton.set_sensitive(!commitMessageIsEmpty)
 }
 
-let app = new Gnomit()
-
-// Workaround incompatibility between how GJS handles ARGV and how C-based libraries like Gtk.Application do.
-// (See https://stackoverflow.com/a/35237684)
-ARGV.unshift(System.programInvocationName)
-app.application.run(ARGV)
+})

@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkDialog" id="dialogue">
+  <template class="GnomitWindow" parent="GtkDialog">
     <property name="can_focus">False</property>
     <property name="default_width">586</property>
     <property name="default_height">300</property>
@@ -77,5 +77,5 @@
         </child>
       </object>
     </child>
-  </object>
+  </template>
 </interface>

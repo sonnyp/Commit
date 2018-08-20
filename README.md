@@ -6,26 +6,29 @@ A simple Git commit message editor for Gnome, inspired by the excellent [Komet a
 
 Gnomit is written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home). There is also a [Vala](https://wiki.gnome.org/Projects/Vala) [version](https://source.ind.ie/gnome/gnomit/vala) that I only just started working on and which is no way near being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
 
-## Important
+This is the Flatpak branch, built with Gnome Builder.
 
-Gnomit has spell checking implemented via [Gspell](https://wiki.gnome.org/Projects/gspell). I initially had trouble getting it running under GJS and had to install it separately (even though there was a version installed on my machine). I will be looking at packaging Gnomit up properly (maybe via Flatpack), but, in the meanwhile,
-please open issues for any problems you encounter while trying to run it, including dependency issues.
+## Work in progress
+
+This branch is a work in progress.
+
+The `--install` method of having Gnomit set itself as the default Git editor does not work.
+
+Given that I am now using Flatpak, I will look at making it do so upon installation as part of the installation process and remove this feature.
 
 ## Usage
 
+Once this branch is merged into master, I will provide a Flatpak installer. In the meanwhile, if you wan’t to run this version, clone the repository and use Gnome Builder to build it.
+
+Then, to set it up as your default Git editor:
+
 ```bash
-./gnomit.js --install
+git config --global core.editor 'flatpak run ind.ie.Gnomit'
 ```
 
-This will set up Gnomit as your default editor for Git. Then just make a commit in one of your projects.
+Then just make a commit in one of your projects.
 
 To save your commit message, either press the Commit button or press _Ctrl+Return_.
-
-If _gnomit.js_ is not executable, either make it so (`chmod +x gnomit.js`) or run the installation via GJS explicitly:
-
-```bash
-gjs gnomit.js --install
-```
 
 ## Features
 
@@ -37,6 +40,26 @@ Feature-compatible (sans configuration options) with [the first release of Komet
   * Select All selects only your commit message, not the Git commit comment.
   * Displays the project folder and branch in the window header.
   * The Git Commit comment is not editable.
+  
+## Known issues
+
+### Slow start-up time
+
+Compared to directly running the GJS script, the Flatpak version has a noticable delay which would put me off of using it.
+
+Reportedly, the issue with slow start-up times [has been fixed](https://blogs.gnome.org/alexl/2018/01/16/fixing-flatpak-startup-times/) but we won’t be seeing the improvements until Linux distributions start pushing out version 2.13.0 of the _fontconfig_ package. It remains to be seen what the performance will be like once that fix lands.
+
+Also, I’m interested in seeing if the Vala version is considerably faster in this regard.   
+
+## Development notes
+
+Add the following to ind.ie.Gnomit.json to test the app using command-line arguments from Gnome Builder:
+
+```json
+    "x-run-args" : [
+        "sandbox/gjs/tests/message-with-body"
+    ],
+```
 
 ## Author
 
