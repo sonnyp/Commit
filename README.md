@@ -10,7 +10,7 @@ Gnomit is written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home)[^1], u
 
 I plan on streamlining the installation process by submitting Gnomit to [Flathub](https://flathub.org/home) and I also plan on hosting a Flatpak repository at Ind.ie but, in the meanwhile:
 
-1. Download the [Gnomit Flatpak bundle](https://ind.ie/downloads/gnomit/1.0/ind.ie.Gnomit.flatpak) (403.6 kB) from [my personal web site](https://ar.al).
+1. Download the [Gnomit Flatpak bundle](https://ar.al/downloads/gnomit/1.0/ind.ie.Gnomit.flatpak) (403.6 kB) from [my personal web site](https://ar.al).
 
 2. Verify that the file you downloaded is the one I uploaded by running the following command in Terminal from the directory you downloaded the Gnomit Flatpak bundle into:
 
