@@ -4,7 +4,6 @@
     "runtime-version" : "3.28",
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
-    "rename-icon" : "accessories-text-editor",
     "x-run-args" : [
         "sandbox/gnomit/gjs/tests/message-with-body"
     ],
@@ -61,32 +60,32 @@
             "name" : "icons",
             "buildsystem" : "simple",
             "build-commands" : [
-                "install -Dm644 accessories-text-editor-16.png /app/share/icons/hicolor/16x16/apps/accessories-text-editor.png",
-                "install -Dm644 accessories-text-editor-24.png /app/share/icons/hicolor/24x24/apps/accessories-text-editor.png",
-                "install -Dm644 accessories-text-editor-32.png /app/share/icons/hicolor/32x32/apps/accessories-text-editor.png",
-                "install -Dm644 accessories-text-editor-48.png /app/share/icons/hicolor/48x48/apps/accessories-text-editor.png",
-                "install -Dm644 accessories-text-editor-512.png /app/share/icons/hicolor/512x512/apps/accessories-text-editor.png"
+                "install -Dm644 gnomit-16.png /app/share/icons/hicolor/16x16/apps/ind.ie.Gnomit.png",
+                "install -Dm644 gnomit-24.png /app/share/icons/hicolor/24x24/apps/ind.ie.Gnomit.png",
+                "install -Dm644 gnomit-32.png /app/share/icons/hicolor/32x32/apps/ind.ie.Gnomit.png",
+                "install -Dm644 gnomit-48.png /app/share/icons/hicolor/48x48/apps/ind.ie.Gnomit.png",
+                "install -Dm644 gnomit-512.png /app/share/icons/hicolor/512x512/apps/ind.ie.Gnomit.png"
             ],
             "sources" : [
                 {
                     "type" : "file",
-                    "path" : "accessories-text-editor-16.png"
+                    "path" : "gnomit-16.png"
                 },
                 {
                     "type" : "file",
-                    "path" : "accessories-text-editor-24.png"
+                    "path" : "gnomit-24.png"
                 },
                 {
                     "type" : "file",
-                    "path" : "accessories-text-editor-32.png"
+                    "path" : "gnomit-32.png"
                 },
                 {
                     "type" : "file",
-                    "path" : "accessories-text-editor-48.png"
+                    "path" : "gnomit-48.png"
                 },
                 {
                     "type" : "file",
-                    "path" : "accessories-text-editor-512.png"
+                    "path" : "gnomit-512.png"
                 }
             ]
         },
