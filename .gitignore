@@ -1,4 +1,4 @@
 # Ignore editor artefacts 
 \#*
 *~
-gnomit
+.buildconfig
