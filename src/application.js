@@ -267,6 +267,10 @@ var Application = GObject.registerClass({
       // Save the number of lines in the commit message.
       this.previousNumberOfLinesInCommitMessage = 1
 
+      // Validate the commit button on start (if we have an auto-generated
+      // body of the commit message, it should be enabled).
+      this.validateCommitButton()
+
       // Show the composition interface.
       this.dialogue.show_all()
     })
@@ -276,7 +280,6 @@ var Application = GObject.registerClass({
     //
 
     this.connect('startup', () => {
-
 
       this.dialogue = new GnomitWindow(this)
 
@@ -401,16 +404,8 @@ var Application = GObject.registerClass({
         // for comparison in later frames.
         this.previousNumberOfLinesInCommitMessage = numberOfLinesInCommitMessage
 
-        // Validation: Enable the Commit button only if the commit message
-        // is not empty.
-        let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
-        let commitMessageExcludingComments = ""
-        for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
-          commitMessageExcludingComments += lines[i]
-        }
-        commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
-        const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
-        this.commitButton.set_sensitive(!commitMessageIsEmpty)
+        // Validation: Enable Commit button only if commit message is not empty.
+        this.validateCommitButton()
       })
 
       // Only select commit message body (not the comment) on select all.
@@ -510,4 +505,22 @@ var Application = GObject.registerClass({
     this.connect('activate', this.activate)
 
   }
+
+  // Validate the buffer and enable/disable the commit button accordingly.
+  validateCommitButton () {
+    // Take measurements.
+    const lines = this.buffer.text.split("\n")
+    const numberOfLinesInCommitMessage = lines.length + 1
+
+    // Enable the Commit button only if the commit message is not empty.
+    let numberOfLinesInMessageExcludingComments = numberOfLinesInCommitMessage - this.numberOfLinesInCommitComment
+    let commitMessageExcludingComments = ""
+    for (let i = 0; i < numberOfLinesInMessageExcludingComments; i++) {
+      commitMessageExcludingComments += lines[i]
+    }
+    commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
+    const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
+    this.commitButton.set_sensitive(!commitMessageIsEmpty)
+}
+
 })
