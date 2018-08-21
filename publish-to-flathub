@@ -58,13 +58,12 @@ commit=$(git rev-list -n 1 "$1")
 
 echo -e "\nPublishing version $1 to Flathub…\n"
 
-# Holds the branch to push to. By default, master,
-# but might be the $APP_ID branch if this is the
-# initial submission. Also, if it is the latter,
-# we will set the -u flag.
+# Holds the git push statement we will use later.
+# By default, we push to master, but we might
+# push to the $APP_ID branch if this is the
+# initial submission.
 
-gitBranch='master'
-gitFlag=''
+gitPush='git push origin master'
 
 #
 # Create the output directories if they don’t exist
@@ -83,8 +82,7 @@ if [ ! -d "$FLATHUB_DIRECTORY" ]; then
 
   runIn "$FLATHUB_DIRECTORY" "git clone --branch=new-pr git@github.com:$GITHUB_ACCOUNT_NAME/flathub.git $RELEASE_DIRECTORY_NAME"
   runIn "$RELEASE_DIRECTORY" "git checkout -b $APP_ID"
-  gitBranch="$APP_ID"
-  gitFlag="-u"
+  gitPush="git push -u origin $APP_ID"
 
   DONE
 fi
@@ -196,7 +194,7 @@ DONE
 #
 printf "  • Pushing version $1 to Flathub…"
 
-# runIn "$RELEASE_DIRECTORY" "git push $gitFlag origin $gitBranch"
+# runIn "$RELEASE_DIRECTORY" "$gitPush"
 
 DONE
 
