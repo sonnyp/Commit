@@ -8,11 +8,33 @@
 
 set -e
 
+# Argument validation.
 if [ $# -eq 0 ]
   then
     echo -e "\nUsage: publish-to-flathub <tag>\n"
     exit 1
 fi
+
+# Constants unique to the application.
+APP_ID='ind.ie.Gnomit'
+GPG_KEY_ID='3AF2869FBAD46F4A28B39B29E23D430094E4F866'
+GITHUB_ACCOUNT_NAME='indie-mirror'
+LOCAL_URL='file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs'
+REMOTE_URL='https:\/\/source.ind.ie\/gnome\/gnomit\/gjs.git'
+
+# General constants.
+MANIFEST_FILE_NAME="$APP_ID.json"
+APPDATA_FILE_NAME="$APP_ID.appdata.xml"
+DESKTOP_FILE_NAME="$APP_ID.desktop"
+
+RELEASE_DIRECTORY_NAME="release"
+BUILD_DIRECTORY_NAME="build"
+REPOSITORY_DIRECTORY_NAME="repository"
+
+FLATHUB_DIRECTORY='../flathub'
+RELEASE_DIRECTORY="$FLATHUB_DIRECTORY/$RELEASE_DIRECTORY_NAME"
+
+INDENT='                    '
 
 #
 # Runs command in requested directory and restores the working directory at the end.
@@ -24,21 +46,74 @@ runIn(){
 	popd >/dev/null
 }
 
+# Prints “done” with a checkmark.
+DONE(){
+  printf ' done ✓\n'
+}
+
 # Get the commit that the requested tag points to.
 commit=$(git rev-list -n 1 $1)
 
 echo -e "\nPublishing version $1 to Flathub…\n"
+
+# Holds the branch to push to. By default, master,
+# but might be the $APP_ID branch if this is the
+# initial submission. Also, if it is the latter,
+# we will set the -u flag.
+
+gitBranch='master'
+gitFlag=''
+
+#
+# Create the output directories if they don’t exist
+# and clone the Flathub submission fork.
+#
+if [ ! -d "$FLATHUB_DIRECTORY" ]; then
+  printf '  • Creating Flathub directories…'
+  mkdir "$FLATHUB_DIRECTORY"
+  mkdir "$FLATHUB_DIRECTORY/$BUILD_DIRECTORY_NAME"
+  mkdir "$FLATHUB_DIRECTORY/$REPOSITORY_DIRECTORY_NAME"
+  DONE
+
+  printf '  • Cloning your Flathub fork…'
+  runIn "$FLATHUB_DIRECTORY" "git clone --branch=new-pr git@github.com:$GITHUB_ACCOUNT_NAME/flathub.git $RELEASE_DIRECTORY_NAME"
+  runIn "$RELEASE_DIRECTORY" "git checkout -b $APP_ID"
+
+  # Make the branch we push the submission branch, not master.
+  gitBranch="$APP_ID"
+  gitFlag="-u"
+
+  DONE
+fi
+
+#
+# Create the directory structure and check out the git
+#
 
 #
 # Copy Flatpak and appstream metadata.
 #
 printf '  • Copying Flatpak and appstream metadata…'
 
-cp ind.ie.Gnomit.json ../flathub
-cp data/ind.ie.Gnomit.appdata.xml.in ../flathub/ind.ie.Gnomit.appdata.xml
-cp data/ind.ie.Gnomit.desktop.in ../flathub/ind.ie.Gnomit.desktop
+# Flatpak manifest file.
+cp $MANIFEST_FILE_NAME $RELEASE_DIRECTORY
 
-printf ' done ✓\n'
+# Appstream appdata file.
+cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
+
+# Desktop file.
+cp "data/$DESKTOP_FILE_NAME.in" "$RELEASE_DIRECTORY/$DESKTOP_FILE_NAME"
+
+# Icon images.
+cp gnomit-*.png $RELEASE_DIRECTORY
+
+DONE
+
+#
+# Add .gitignore to ignore the .flatpak-builder directory that will be
+# created during testing (it doesn’t matter if we overwrite an existing one.)
+#
+echo '.flatpak-builder' > $RELEASE_DIRECTORY/.gitignore
 
 #
 # Update manifest with the tag and commit instead of
@@ -46,28 +121,64 @@ printf ' done ✓\n'
 #
 printf "  • Updating manifest with commit of tag $1…"
 
-sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"url\" : \"https:\/\/source.ind.ie\/gnome\/gnomit\/gjs.git\",\n                    \"tag\" : \"$1\",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
+sed -i -e "s/$INDENT\"url\" : \"$LOCAL_URL\"/$INDENT\"url\" : \"$REMOTE_URL\",\n$INDENT\"tag\" : \"$1\",\n$INDENT\"commit\" : \"$commit\"/" "$RELEASE_DIRECTORY/$MANIFEST_FILE_NAME"
 
-printf ' done ✓\n'
+DONE
+
+#
+# Test: build it.
+#
+printf "  • Test: building version $1…"
+
+runIn $RELEASE_DIRECTORY "flatpak-builder --force-clean --gpg-sign=$GPG_KEY_ID --repo=../$REPOSITORY_DIRECTORY_NAME ../$BUILD_DIRECTORY_NAME ./$MANIFEST_FILE_NAME"
+
+DONE
+
+#
+# Test: install it.
+#
+printf "  • Test: installing version $1…"
+
+runIn $FLATHUB_DIRECTORY "flatpak --user remote-add --if-not-exists local-gnomit-repository $REPOSITORY_DIRECTORY_NAME"
+runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository "
+
+DONE
+
+#
+# Confirm: do you want to commit and push this release?
+#
+echo ''
+echo '****************************'
+echo '* Please test the release! *'
+echo '****************************'
+echo ''
+
+printf 'Do you wish to commit and push this release to Flathub?'
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) printf " OK ✓\n"; break;;
+        No ) exit;;
+    esac
+done
 
 #
 # Commit the version
 #
 printf "  • Committing version $1…"
 
-runIn ../flathub "git add --all"
-runIn ../flathub "git commit -m \"Version $1\""
+runIn $RELEASE_DIRECTORY "git add --all"
+runIn $RELEASE_DIRECTORY "git commit -m \"Version $1\""
 
-printf ' done ✓\n'
+DONE
 
 #
 # Push to Flathub
 #
 printf "  • Pushing version $1 to Flathub…"
 
-# runIn ../flathub git push
+# runIn "$RELEASE_DIRECTORY" "git push $gitFlag origin $gitBranch"
 
-printf ' done ✓\n'
+DONE
 
 # All done! :)
-echo -e "\nDone ✓\n"
+echo -e "\n✓ Version $1 deployed to Flathub.\n"
