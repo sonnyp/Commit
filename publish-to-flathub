@@ -70,16 +70,17 @@ gitFlag=''
 #
 if [ ! -d "$FLATHUB_DIRECTORY" ]; then
   printf '  • Creating Flathub directories…'
+
   mkdir "$FLATHUB_DIRECTORY"
   mkdir "$FLATHUB_DIRECTORY/$BUILD_DIRECTORY_NAME"
   mkdir "$FLATHUB_DIRECTORY/$REPOSITORY_DIRECTORY_NAME"
+
   DONE
 
   printf '  • Cloning your Flathub fork…'
+
   runIn "$FLATHUB_DIRECTORY" "git clone --branch=new-pr git@github.com:$GITHUB_ACCOUNT_NAME/flathub.git $RELEASE_DIRECTORY_NAME"
   runIn "$RELEASE_DIRECTORY" "git checkout -b $APP_ID"
-
-  # Make the branch we push the submission branch, not master.
   gitBranch="$APP_ID"
   gitFlag="-u"
 
