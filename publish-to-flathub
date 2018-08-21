@@ -35,6 +35,9 @@ RELEASE_DIRECTORY="$FLATHUB_DIRECTORY/$RELEASE_DIRECTORY_NAME"
 
 INDENT='                    '
 
+# Test constants.
+TEST_DIRECTORY="$FLATHUB_DIRECTORY/test"
+
 #
 # Runs command in requested directory and restores the working directory at the end.
 # Usage: run <directory> "<command>"
@@ -145,19 +148,42 @@ runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository $APP_ID
 DONE
 
 #
-# Confirm: do you want to commit and push this release?
+# Create the test directory and ask the person to test the build.
 #
+
+if [ -d "$TEST_DIRECTORY" ]; then
+  printf "  • Test: deleting existing test environment…"
+  rm -rf "$TEST_DIRECTORY"
+  DONE
+fi
+
+printf "  • Test: creating test environment…"
+mkdir "$TEST_DIRECTORY"
+echo 'A test' > "$TEST_DIRECTORY/a-test.txt"
+git config --global core.editor "flatpak run ind.ie.Gnomit"
+runIn "$TEST_DIRECTORY" "git init"
+runIn "$TEST_DIRECTORY" "git add --all"
+DONE
+
+printf "  • Test: launching test…"
+runIn "$TEST_DIRECTORY" "git commit"
+DONE
+
 echo ''
 echo '****************************'
 echo '* Please test the release! *'
 echo '****************************'
 echo ''
 
-printf 'Do you wish to commit and push this release to Flathub?'
+#
+# Confirm: do you want to commit and push this release?
+#
+echo 'Do you wish to commit and push this release to Flathub?'
+
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) printf " OK ✓\n"; break;;
-        No ) exit;;
+        Yes ) echo -e "\nYes: OK, will commit and push to Flathub ✓\n"; break;;
+        No ) echo -e "\nNo: OK, exiting ✘\n"; exit;;
     esac
 done
 
