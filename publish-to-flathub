@@ -159,15 +159,15 @@ runIn "$TEST_DIRECTORY" "git init"
 runIn "$TEST_DIRECTORY" "git add --all"
 DONE
 
+echo ''
+echo '**********************************************************'
+echo '* Please test the release by making a successful commit! *'
+echo '**********************************************************'
+echo ''
+
 printf "  • Test: launching test…"
 runIn "$TEST_DIRECTORY" "git commit"
 DONE
-
-echo ''
-echo '****************************'
-echo '* Please test the release! *'
-echo '****************************'
-echo ''
 
 #
 # Confirm: do you want to commit and push this release?
