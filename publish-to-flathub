@@ -28,9 +28,9 @@ printf ' done ✓\n'
 # Update manifest with the tag and commit instead of
 # of the local repository path.
 #
-printf '    Updating manifest with commit of tag $1…'
+printf "    Updating manifest with commit of tag $1…"
 
-sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"tag\" : "$1",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
+sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"tag\" : \"$1\",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
 
 printf ' done ✓\n'
 
