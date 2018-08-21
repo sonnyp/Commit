@@ -194,7 +194,7 @@ DONE
 #
 printf "  • Pushing version $1 to Flathub…"
 
-# runIn "$RELEASE_DIRECTORY" "$gitPush"
+runIn "$RELEASE_DIRECTORY" "$gitPush"
 
 DONE
 
