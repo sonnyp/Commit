@@ -148,7 +148,7 @@ runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository $APP_ID
 DONE
 
 #
-# Create the test directory and ask the person to test the build.
+# Test: Create the test directory and ask the person to test the build.
 #
 
 if [ -d "$TEST_DIRECTORY" ]; then
