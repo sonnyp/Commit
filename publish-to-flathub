@@ -8,10 +8,20 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
+#
+# Runs command in requested directory and restores the working directory at the end.
+# Usage: run <directory> "<command>"
+#
+runIn(){
+	pushd $1 >/dev/null
+	eval $2
+	popd >/dev/null
+}
+
 # Get the commit that the requested tag points to.
 commit=$(git rev-list -n 1 $1)
 
-echo -e "\nPublishing version $1:\n"
+echo -e "\nPublishing version $1 to Flathub…\n"
 
 #
 # Copy Flatpak and appstream metadata.
@@ -28,22 +38,30 @@ printf ' done ✓\n'
 # Update manifest with the tag and commit instead of
 # of the local repository path.
 #
-printf "    Updating manifest with commit of tag $1…"
+printf "  • Updating manifest with commit of tag $1…"
 
 sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"tag\" : \"$1\",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
 
 printf ' done ✓\n'
 
-# for now
-exit
-
 #
 # Commit the version
 #
-# TODO
+printf "  • Committing version $1…"
+
+runIn ../flathub "git add --all"
+runIn ../flathub "git commit -m \"Version $1\""
+
+printf ' done ✓\n'
 
 #
 # Push to Flathub
 #
-# TODO
+printf "  • Pushing version $1 to Flathub…"
 
+# runIn ../flathub git push
+
+printf ' done ✓\n'
+
+# All done! :)
+echo -e "\nDone ✓\n"
