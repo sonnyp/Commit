@@ -4,7 +4,7 @@
   <name>Gnomit</name>
   <developer_name>Aral Balkan (Ind.ie)</developer_name>
   <update_contact>hello@ind.ie</update_contact>
-	<metadata_license>CC-BY-SA-3.0</metadata_license>
+	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
   <summary>Git commit message editor</summary>
 	<description>
@@ -44,4 +44,5 @@
       </description>
     </release>
   </releases>
+  <content_rating type="oars-1.1" />
 </component>
