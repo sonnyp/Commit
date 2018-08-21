@@ -170,7 +170,7 @@ DONE
 #
 # Confirm: do you want to commit and push this release?
 #
-echo 'Do you wish to commit and push this release to Flathub?'
+echo -e "\nDo you wish to commit and push this release to Flathub?\n"
 
 select yn in "Yes" "No"; do
     case $yn in
