@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
 	<id>ind.ie.Gnomit.desktop</id>
+  <name>Gnomit Commit Editor</name>
+  <summary>A simple Git commit message editor for Gnome.</summary>
 	<metadata_license>CC-BY-SA-3.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
 	<description>
+	  <p>Gnomit is a simple Git commit message editor for Gnome, inspired by the excellent Komet app by Mayur Pawashe that I loved using on macOS.</p>
+	  <p>Features:</p>
+	  <ul>
+	    <li>Highlights overflow of subject line when it exceeds 69 characters.</li>
+      <li>Inserts empty line between subject line and the rest of the message.</li>
+      <li>Has spell checking.</li>
+      <li>Select All selects only your commit message, not the Git commit comment.</li>
+      <li>Displays the project folder and branch in the window header.</li>
+      <li>The Git Commit comment is not editable.</li>
+	  </ul>
 	</description>
 </component>
