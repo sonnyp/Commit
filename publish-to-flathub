@@ -43,8 +43,8 @@ TEST_DIRECTORY="$FLATHUB_DIRECTORY/test"
 # Usage: run <directory> "<command>"
 #
 runIn(){
-	pushd $1 >/dev/null
-	eval $2
+	pushd "$1" >/dev/null
+	eval "$2"
 	popd >/dev/null
 }
 
@@ -54,7 +54,7 @@ DONE(){
 }
 
 # Get the commit that the requested tag points to.
-commit=$(git rev-list -n 1 $1)
+commit=$(git rev-list -n 1 "$1")
 
 echo -e "\nPublishing version $1 to Flathub…\n"
 
@@ -99,7 +99,7 @@ fi
 printf '  • Copying Flatpak and appstream metadata…'
 
 # Flatpak manifest file.
-cp $MANIFEST_FILE_NAME $RELEASE_DIRECTORY
+cp "$MANIFEST_FILE_NAME" "$RELEASE_DIRECTORY"
 
 # Appstream appdata file.
 cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
@@ -108,7 +108,7 @@ cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
 cp "data/$DESKTOP_FILE_NAME.in" "$RELEASE_DIRECTORY/$DESKTOP_FILE_NAME"
 
 # Icon images.
-cp gnomit-*.png $RELEASE_DIRECTORY
+cp gnomit-*.png "$RELEASE_DIRECTORY"
 
 DONE
 
@@ -116,35 +116,29 @@ DONE
 # Add .gitignore to ignore the .flatpak-builder directory that will be
 # created during testing (it doesn’t matter if we overwrite an existing one.)
 #
-echo '.flatpak-builder' > $RELEASE_DIRECTORY/.gitignore
+echo '.flatpak-builder' > "$RELEASE_DIRECTORY/.gitignore"
 
 #
 # Update manifest with the tag and commit instead of
 # of the local repository path.
 #
 printf "  • Updating manifest with commit of tag $1…"
-
 sed -i -e "s/$INDENT\"url\" : \"$LOCAL_URL\"/$INDENT\"url\" : \"$REMOTE_URL\",\n$INDENT\"tag\" : \"$1\",\n$INDENT\"commit\" : \"$commit\"/" "$RELEASE_DIRECTORY/$MANIFEST_FILE_NAME"
-
 DONE
 
 #
 # Test: build it.
 #
 printf "  • Test: building version $1…"
-
-runIn $RELEASE_DIRECTORY "flatpak-builder --force-clean --repo=../$REPOSITORY_DIRECTORY_NAME ../$BUILD_DIRECTORY_NAME ./$MANIFEST_FILE_NAME"
-
+runIn "$RELEASE_DIRECTORY" "flatpak-builder --force-clean --repo=../$REPOSITORY_DIRECTORY_NAME ../$BUILD_DIRECTORY_NAME ./$MANIFEST_FILE_NAME"
 DONE
 
 #
 # Test: install it.
 #
 printf "  • Test: installing version $1…"
-
-runIn $FLATHUB_DIRECTORY "flatpak --user remote-add --if-not-exists  --no-gpg-verify local-gnomit-repository $REPOSITORY_DIRECTORY_NAME"
-runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository $APP_ID"
-
+runIn "$FLATHUB_DIRECTORY" "flatpak --user remote-add --if-not-exists  --no-gpg-verify local-gnomit-repository $REPOSITORY_DIRECTORY_NAME"
+runIn "$FLATHUB_DIRECTORY" "flatpak --user install local-gnomit-repository $APP_ID"
 DONE
 
 #
@@ -192,8 +186,8 @@ done
 #
 printf "  • Committing version $1…"
 
-runIn $RELEASE_DIRECTORY "git add --all"
-runIn $RELEASE_DIRECTORY "git commit -m \"Version $1\""
+runIn "$RELEASE_DIRECTORY" "git add --all"
+runIn "$RELEASE_DIRECTORY" "git commit -m \"Version $1\""
 
 DONE
 
