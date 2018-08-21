@@ -40,7 +40,7 @@ printf ' done ✓\n'
 #
 printf "  • Updating manifest with commit of tag $1…"
 
-sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"tag\" : \"$1\",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
+sed -i -e "s/                    \"url\" : \"file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs\"/                    \"url\" : \"https:\/\/source.ind.ie\/gnome\/gnomit\/gjs.git\",\n                    \"tag\" : \"$1\",\n                    \"commit\" : \"$commit\"/" ../flathub/ind.ie.Gnomit.json
 
 printf ' done ✓\n'
 
