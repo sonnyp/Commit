@@ -17,7 +17,6 @@ fi
 
 # Constants unique to the application.
 APP_ID='ind.ie.Gnomit'
-GPG_KEY_ID='3AF2869FBAD46F4A28B39B29E23D430094E4F866'
 GITHUB_ACCOUNT_NAME='indie-mirror'
 LOCAL_URL='file:\/\/\/home\/aral\/ind.ie\/gnomit\/gjs'
 REMOTE_URL='https:\/\/source.ind.ie\/gnome\/gnomit\/gjs.git'
@@ -131,7 +130,7 @@ DONE
 #
 printf "  • Test: building version $1…"
 
-runIn $RELEASE_DIRECTORY "flatpak-builder --force-clean --gpg-sign=$GPG_KEY_ID --repo=../$REPOSITORY_DIRECTORY_NAME ../$BUILD_DIRECTORY_NAME ./$MANIFEST_FILE_NAME"
+runIn $RELEASE_DIRECTORY "flatpak-builder --force-clean --repo=../$REPOSITORY_DIRECTORY_NAME ../$BUILD_DIRECTORY_NAME ./$MANIFEST_FILE_NAME"
 
 DONE
 
@@ -140,8 +139,8 @@ DONE
 #
 printf "  • Test: installing version $1…"
 
-runIn $FLATHUB_DIRECTORY "flatpak --user remote-add --if-not-exists local-gnomit-repository $REPOSITORY_DIRECTORY_NAME"
-runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository "
+runIn $FLATHUB_DIRECTORY "flatpak --user remote-add --if-not-exists  --no-gpg-verify local-gnomit-repository $REPOSITORY_DIRECTORY_NAME"
+runIn $FLATHUB_DIRECTORY "flatpak --user install local-gnomit-repository $APP_ID"
 
 DONE
 
