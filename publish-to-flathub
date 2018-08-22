@@ -105,9 +105,6 @@ cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
 # Desktop file.
 cp "data/$DESKTOP_FILE_NAME.in" "$RELEASE_DIRECTORY/$DESKTOP_FILE_NAME"
 
-# Icon images.
-cp gnomit-*.png "$RELEASE_DIRECTORY"
-
 DONE
 
 #
