@@ -59,11 +59,11 @@ commit=$(git rev-list -n 1 "$1")
 echo -e "\nPublishing version $1 to Flathub…\n"
 
 # Holds the git push statement we will use later.
-# By default, we push to master, but we might
-# push to the $APP_ID branch if this is the
-# initial submission.
+# By default, we push the tracked branch, but we might
+# push to the $APP_ID branch and start tracking it
+# if this is the initial submission.
 
-gitPush='git push origin master'
+gitPush='git push'
 
 #
 # Create the output directories if they don’t exist
