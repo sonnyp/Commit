@@ -23,13 +23,6 @@
   <url type="bugtracker">https://github.com/indie-mirror/gnomit/issues</url>
   <url type="donation">https://ind.ie/fund/</url>
   <url type="help">https://forum.ind.ie/</url>
-  <categories>
-    <category>Development</category>
-    <category>Utility</category>
-    <category>RevisionControl</category>
-    <category>TextEditor</category>
-    <category>GNOME</category>
-  </categories>
   <icon type="remote" width="512px" height="512px">https://ar.al/2018/08/20/gnomit-flatpak-bundle/gnomit-512.png</icon>
   <screenshots>
     <screenshot type="default">
