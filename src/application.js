@@ -385,6 +385,9 @@ var Application = GObject.registerClass({
           cursorPosition === firstLineLength + 1
           /* and the first line is empty */
           && unicodeLength(lines[0].replace(/ /g, '')) === 0
+          /* and the second line is empty (to avoid
+             https://source.ind.ie/gnome/gnomit/gjs/issues/27) */
+          && unicodeLength(lines[1].replace(/ /g, '')) === 0
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
         ) {
