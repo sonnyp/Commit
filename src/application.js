@@ -25,7 +25,6 @@ const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 // (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
 const FIRST_LINE_CHARACTER_LIMIT = 69
 
-
 // Timers
 // https://github.com/optimisme/gjs-examples/blob/master/egTimers.js
 const Mainloop = imports.mainloop
@@ -47,6 +46,11 @@ const setTimeout = function(func, millis /* , ... args */) {
 
 const clearTimeout = function(id) {
     Mainloop.source_remove(id)
+}
+
+// Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
+function unicodeLength(str) {
+  return [...str].length
 }
 
 
@@ -313,17 +317,6 @@ var Application = GObject.registerClass({
       this.commitButton = this.dialogue._commitButton
       /////
 
-      // Create a builder and get it to load the interface from the Glade file.
-      // const builder = new Gtk.Builder()
-      // builder.add_from_file(`${path}/gnomit.glade`)
-
-      // Get references to the components defined in the Glade file.
-      // this.dialogue = builder.get_object('dialogue')
-      // this.dialogue.set_icon_name('accessories-text-editor')
-      // this.messageText = builder.get_object('messageText')
-      // this.cancelButton = builder.get_object('cancelButton')
-      // this.commitButton = builder.get_object('commitButton')
-
       // Disable commit button initially as we don’t allow empty
       // messages to be committed (person can always cancel).
       // PS. set_sensitive? Really? Wow :)
@@ -346,7 +339,7 @@ var Application = GObject.registerClass({
         const text = this.buffer.text
         const lines = text.split("\n")
         const firstLine = lines[0]
-        const firstLineLength = firstLine.length
+        const firstLineLength = unicodeLength(firstLine)
 
         // Get bounding iterators for the first line.
         const startOfTextIterator = this.buffer.get_start_iter()
@@ -381,7 +374,7 @@ var Application = GObject.registerClass({
 
         // Take measurements
         let lines = this.buffer.text.split("\n")
-        let firstLineLength = lines[0].length
+        let firstLineLength = unicodeLength(lines[0])
         let cursorPosition = this.buffer.cursor_position
         let numberOfLinesInCommitMessage = lines.length + 1
 
@@ -391,7 +384,7 @@ var Application = GObject.registerClass({
           /* in the correct place */
           cursorPosition === firstLineLength + 1
           /* and the first line is empty */
-          && lines[0].replace(/ /g, '').length === 0
+          && unicodeLength(lines[0].replace(/ /g, '')) === 0
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
         ) {
@@ -404,7 +397,7 @@ var Application = GObject.registerClass({
 
           // Update measurements as the buffer has changed.
           lines = this.buffer.text.split("\n")
-          firstLineLength = lines[0].length
+          firstLineLength = unicodeLength(lines[0])
           cursorPosition = this.buffer.cursor_position
           numberOfLinesInCommitMessage = lines.length + 1
         }
@@ -446,7 +439,7 @@ var Application = GObject.registerClass({
             // this.buffer.place_cursor(this.buffer.get_start_iter())
             const mainCommitMessage = this.buffer.text.split('#')[0]
             const selectStartIterator = this.buffer.get_start_iter()
-            const selectEndIterator = this.buffer.get_iter_at_offset(mainCommitMessage.length)
+            const selectEndIterator = this.buffer.get_iter_at_offset(unicodeLength(mainCommitMessage))
             // this.buffer.move_mark_by_name('selection_bound', selectEndIterator)
             this.buffer.select_range(selectStartIterator, selectEndIterator)
           }, 0)
