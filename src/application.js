@@ -244,7 +244,7 @@ var Application = GObject.registerClass({
           // Try to get the branch name via a method that relies on
           // positional aspect of the branch name so it should work with
           // other languages.
-          const wordsOnBranchLine = commitCommentLines[5].split(" ")
+          const wordsOnBranchLine = commitCommentLines[4].split(" ")
           const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
           detail = branchName
         } else if (this.isTagMessage) {

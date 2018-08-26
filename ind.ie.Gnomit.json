@@ -5,7 +5,7 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
     "x-run-args" : [
-        "ind.ie/gnomit/gjs/tests/tag-message"
+        "ind.ie/gnomit/gjs/tests/message-without-body"
     ],
     "finish-args" : [
         "--share=network",
