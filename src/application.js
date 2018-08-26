@@ -202,10 +202,13 @@ var Application = GObject.registerClass({
         // (hence the -1 adjustment).
         let firstCommentIndex = commitMessage.indexOf('#')
         commitBody = commitMessage.slice(0, firstCommentIndex-1)
-        commitComment = commitMessage.slice(firstCommentIndex-1)
 
-        print(`>${commitBody}<`)
-        print(`>${commitComment}<`)
+        // Trim any newlines there may be at the end of the commit body
+        while (commitBody[commitBody.length - 1] === "\n") {
+          commitBody = commitBody.slice(0, commitBody.length - 1)
+        }
+
+        commitComment = commitMessage.slice(firstCommentIndex-1)
 
         const commitCommentLines = commitComment.split("\n")
         this.numberOfLinesInCommitComment = commitCommentLines.length
@@ -356,6 +359,10 @@ var Application = GObject.registerClass({
         let cursorPosition = this.buffer.cursor_position
         let numberOfLinesInCommitMessage = lines.length + 1
 
+        print(firstLineLength)
+        print(cursorPosition)
+        print(numberOfLinesInCommitMessage)
+
         // Validation: disallow empty first line.
         let justDisallowedEmptyFirstLine = false
         if (
@@ -385,7 +392,7 @@ var Application = GObject.registerClass({
         if (
           /* in the correct place */
           cursorPosition === firstLineLength + 1
-          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 2
+          && numberOfLinesInCommitMessage === this.numberOfLinesInCommitComment + 3
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
         ) {
