@@ -161,7 +161,7 @@ var Application = GObject.registerClass({
       // Print a minimal version string based on the GNU coding standards.
       // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
       if (options.contains('version')) {
-        print('Gnomit 1.0.0')
+        print(`Gnomit ${pkg.version}`)
 
         // OK.
         return 0
