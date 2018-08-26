@@ -32,6 +32,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2018-08-26" version="1.0.3">
+      <description>
+        <p>Gnomit is now Unicode-aware 🤓</p>
+        <p>Also, fixes a couple of minor bugs.</p>
+      </description>
+    </release>
     <release date="2018-08-26" version="1.0.2">
       <description>
         <p>Implements support for tag messages and gracefully handles auto-generated commit message bodies longer than a single line.</p>
