@@ -192,9 +192,6 @@ var Application = GObject.registerClass({
       const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
       this.isTagMessage = isGitTagMessage || isTestTagMessage
 
-      print("Is commit message? " + this.isCommitMessage)
-      print("Is tag message? " + this.isTagMessage)
-
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
 
@@ -214,10 +211,6 @@ var Application = GObject.registerClass({
         // (hence the -1 adjustment).
         let firstCommentIndex = commitMessage.indexOf('#')
         commitBody = commitMessage.slice(0, firstCommentIndex-1)
-
-        print(`>${commitBody}<`)
-        print(`${commitBody.length}`)
-        print(`>${commitBody[commitBody.length - 1]}<`)
 
         // Trim any newlines there may be at the end of the commit body
         while (commitBody.length > 0 && commitBody[(commitBody.length - 1)] === "\n") {
@@ -391,10 +384,6 @@ var Application = GObject.registerClass({
         let firstLineLength = lines[0].length
         let cursorPosition = this.buffer.cursor_position
         let numberOfLinesInCommitMessage = lines.length + 1
-
-        print(firstLineLength)
-        print(cursorPosition)
-        print(numberOfLinesInCommitMessage)
 
         // Validation: disallow empty first line.
         let justDisallowedEmptyFirstLine = false
