@@ -183,12 +183,24 @@ var Application = GObject.registerClass({
       this.commitMessageFile = files[0]
       this.commitMessageFilePath = this.commitMessageFile.get_path()
 
+      // Save the type of this message for later
+      const isGitCommitMessage = this.commitMessageFilePath.indexOf('COMMIT_EDITMSG') > -1
+      const isTestCommitMessage = (this.commitMessageFilePath.indexOf('tests/message-with-body') > -1) || (this.commitMessageFilePath.indexOf('tests/message-without-body') > -1)
+      this.isCommitMessage = isGitCommitMessage || isTestCommitMessage
+
+      const isGitTagMessage = this.commitMessageFilePath.indexOf('TAG_EDITMSG') > -1
+      const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
+      this.isTagMessage = isGitTagMessage || isTestTagMessage
+
+      print("Is commit message? " + this.isCommitMessage)
+      print("Is tag message? " + this.isTagMessage)
+
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
 
       let success = false,
       commitMessage = '',
-      commitBody = "",
+      commitBody = '',
       commitComment = '';
 
       try {
@@ -203,8 +215,12 @@ var Application = GObject.registerClass({
         let firstCommentIndex = commitMessage.indexOf('#')
         commitBody = commitMessage.slice(0, firstCommentIndex-1)
 
+        print(`>${commitBody}<`)
+        print(`${commitBody.length}`)
+        print(`>${commitBody[commitBody.length - 1]}<`)
+
         // Trim any newlines there may be at the end of the commit body
-        while (commitBody[commitBody.length - 1] === "\n") {
+        while (commitBody.length > 0 && commitBody[(commitBody.length - 1)] === "\n") {
           commitBody = commitBody.slice(0, commitBody.length - 1)
         }
 
@@ -213,19 +229,36 @@ var Application = GObject.registerClass({
         const commitCommentLines = commitComment.split("\n")
         this.numberOfLinesInCommitComment = commitCommentLines.length
 
-        // Set the title of the dialogue to ProjectFolderName (Branch):
+        // Set the title of the dialogue to Commit: ProjectFolderName (Branch)
+        // for commit messages and Tag: ProjectFolderName (Version) for tag messages.
+
+        const action = this.isTagMessage ? "tag" : "commit"
 
         // The commit message is always in the .git directory in the
         // project directory. Get the project directory’s name by using this.
         const pathComponents = this.commitMessageFilePath.split('/')
         const projectDirectoryName = pathComponents[pathComponents.indexOf('.git') - 1]
 
-        // Try to get the branch name via a method that relies on
-        // positional aspect of the branch name so it should work with
-        // other languages.
-        const wordsOnBranchLine = commitCommentLines[5].split(" ")
-        const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
-        this.active_window.set_title(`${projectDirectoryName} (${branchName})`)
+        let detail = ''
+        if (this.isCommitMessage) {
+          // Try to get the branch name via a method that relies on
+          // positional aspect of the branch name so it should work with
+          // other languages.
+          const wordsOnBranchLine = commitCommentLines[5].split(" ")
+          const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
+          detail = branchName
+        } else if (this.isTagMessage) {
+          // Get the version number from the message
+          const version = commitCommentLines[3].slice(1).trim()
+          detail = version
+        } else {
+          // This should not happen.
+          print(`Warning: unknown Git commit type encountered in: ${this.commitMessageFilePath}`)
+
+        }
+
+        // UPDATE!!!
+        this.active_window.set_title(`Git ${action}: ${projectDirectoryName} (${detail})`)
 
         // Add Pango markup to make the commented are appear lighter.
         commitMessage = `${commitBody}<span foreground="#959595">\n${commitComment}</span>`
