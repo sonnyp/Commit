@@ -23,7 +23,7 @@ var GnomitWindow = GObject.registerClass({
   GTypeName: 'GnomitWindow',
   Template: 'resource:///ind/ie/Gnomit/window.glade',
   InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
-}, class GnomitWindow extends Gtk.Dialog {
+}, class GnomitWindow extends Gtk.Window {
 
   _init(application) {
     super._init({
