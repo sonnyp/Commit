@@ -1,4 +1,4 @@
-const { Gtk, Gio, GLib, GObject, Gspell } = imports.gi
+const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
 const {GnomitWindow} = imports.window
 
 const SUMMARY = `Helps you write better Git commit messages.
@@ -112,6 +112,7 @@ var Application = GObject.registerClass({
       'Install Gnomit as your default Git editor',
       null
     )
+
 
     //
     // Signal: Handle local options.
@@ -321,6 +322,17 @@ var Application = GObject.registerClass({
       // messages to be committed (person can always cancel).
       // PS. set_sensitive? Really? Wow :)
       this.commitButton.set_sensitive(false)
+
+      // Exit via Escape key.
+      this.dialogue.add_events(Gdk.EventMask.KEY_PRESS_MASK)
+      this.dialogue.connect('key_press_event', (widget, event) => {
+        let [ok, keyval] = event.get_keyval()
+        if (keyval == Gdk.KEY_Escape) {
+          this.quit()
+          return true
+        }
+        return false
+      })
 
       this.buffer = this.messageText.get_buffer()
 
