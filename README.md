@@ -79,8 +79,9 @@ The following setting in _ind.ie.Gnomit.json_ allows the app to use mock data wh
 To publish to Flathub (proper credentials required):
 
 1. Remember to update Flatpak metadata, including release notes.
-2. Tag your release in Git
-3. Run the publish script:
+2. Update the version string in the main _meson.build_ file.
+3. Tag the release in Git and push your tags.
+4. Run the publish script:
 
     ```bash
     ./publish-to-flathub
