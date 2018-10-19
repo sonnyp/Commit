@@ -8,37 +8,42 @@ Gnomit is written in [GJS](https://gitlab.gnome.org/GNOME/gjs/wikis/Home)[^1], u
 
 ## Installation
 
-I plan on streamlining the installation process by submitting Gnomit to [Flathub](https://flathub.org/home) and I also plan on hosting a Flatpak repository at Ind.ie but, in the meanwhile:
+You can install Gnomit [via Gnome Software](https://wiki.gnome.org/Apps/Software), [from Flathub](https://flathub.org/apps/details/ind.ie.Gnomit), or from my web site.
 
-1. Download the [Gnomit Flatpak bundle](https://ar.al/downloads/gnomit/1.0/ind.ie.Gnomit.flatpak) (403.6 kB) from [my personal web site](https://ar.al).
+### Gnome Software
 
-2. Verify that the file you downloaded is the one I uploaded by running the following command in Terminal from the directory you downloaded the Gnomit Flatpak bundle into:
-
-    ```bash
-    if [ "$(shasum -a 256 ind.ie.Gnomit.flatpak)" = "6c068fd16489a7ddc35dd53c906aeb481b40ae7a600655f0bc5a78af453ca818  ind.ie.Gnomit.flatpak" ]; then echo 'Download valid.'; else echo 'Download invalid. DO NOT INSTALL. Please alert aral@ind.ie.'; fi
-    ```
-
-3. Install it:
-
-    ```bash
-    flatpak install ind.ie.Gnomit.flatpak
-    ```
-
-    Once it installs, you should see the message _Now at a1d9a6ad1add._
-
-4. Set Gnomit as your Git editor:
+1. Launch Gnome Software and search for Gnomit.
+2. Hit the _Install_ button.
+3. Set Gnomit as your Git editor:
 
     ```bash
     git config --global core.editor "flatpak run ind.ie.Gnomit"
     ```
 
-    (I plan on looking into [automatically registering Gnomit during the Flatpak installation process](https://source.ind.ie/gnome/gnomit/gjs/issues/22) to remove this step .)
+
+### Flathub
+
+1. Go to the [Gnomit page on Flathub](https://flathub.org/apps/details/ind.ie.Gnomit)
+2. Hit the _Install_ button.
+
+    If your computer doesn’t automatically install Gnomit, in a terminal window go to the directory that the _ind.ie.Gnomit.flatpakref_ file was downloaded into (e.g., _~/Downloads_) and type:
+
+    ```bash
+    flatpak install ind.ie.Gnomit.flatpakref
+    ```
+3. Set Gnomit as your Git editor:
+
+    ```bash
+    git config --global core.editor "flatpak run ind.ie.Gnomit"
+    ```
 
 ## Usage
 
-Once you’ve installed Gnomit, just make a commit in one of your projects and it should pop up on demand.
+Gnomit will pop up automatically when you make a commit in one of your projects.
 
 To save your commit message, either press the Commit button or press _Ctrl+Return_.
+
+To dismiss Gnomit and cancel your commit message, press _Escape_.
 
 ## Features
 
@@ -59,8 +64,6 @@ Compared to [directly running the GJS script](https://source.ind.ie/gnome/gnomit
 
 Reportedly, the issue with slow start-up times [has been fixed](https://blogs.gnome.org/alexl/2018/01/16/fixing-flatpak-startup-times/) but we won’t be seeing the improvements until Linux distributions start pushing out version 2.13.0 of the _fontconfig_ package. My own Pop!_OS 18.04 distribution has it at 2.12.6. It remains to be seen what the performance will be like once that fix lands.
 
-Also, I’m interested in seeing if [the Vala version](https://source.ind.ie/gnome/gnomit/vala) will perform any differently in this regard. I plan to [benchmark startup times](https://source.ind.ie/gnome/gnomit/gjs/issues/23) to get better insight into this.
-
 ## Development notes
 
 The following setting in _ind.ie.Gnomit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line.
@@ -71,7 +74,28 @@ The following setting in _ind.ie.Gnomit.json_ allows the app to use mock data wh
 ],
 ```
 
-## Author
+## Deployment
+
+To publish to Flathub (proper credentials required):
+
+1. Remember to update Flatpak metadata, including release notes.
+2. Tag your release in Git
+3. Run the publish script:
+
+    ```bash
+    ./publish-to-flathub
+    ```
+
+    The script will create the Flathub build, run it so you can test it, and then prompt you if you want to deploy to Flathub.
+
+    That’s it! Then wait for the changes to propagate on the Flathub web site.
+
+## Contributors
+
+  * [Aral balkan](https://ar.al)
+  * [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+
+## Copyright
 
 Copyright © 2018 [Aral balkan](https://ar.al), © 2018 [Ind.ie](https://ind.ie)
 
