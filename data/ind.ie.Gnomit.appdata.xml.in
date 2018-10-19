@@ -9,7 +9,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <summary>Git commit message editor</summary>
   <description>
-    <p>Gnomit is a simple Git commit message editor for Gnome, inspired by the excellent Komet app on macOS by Mayur Pawashe.</p>
+    <p>Gnomit is a simple Git commit message editor for Gnome, inspired by the excellent Komet app on macOS.</p>
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of subject line when it exceeds 69 characters.</li>
@@ -27,11 +27,16 @@
   <icon type="remote" width="512px" height="512px">https://ar.al/2018/08/20/gnomit-flatpak-bundle/gnomit-512.png</icon>
   <screenshots>
     <screenshot type="default">
-      <image>https://ar.al/2018/08/15/introducing-gnomit-a-simple-git-commit-message-editor-for-gnome/gnomit.png</image>
+      <image>https://ar.al/2018/10/19/gnomit-1.0.4/gnomit.png</image>
       <caption>Main editor window</caption>
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2018-10-19" version="1.0.4">
+      <description>
+        <p>Gnomit has a new look thanks to Sergey Bugaev.</p>
+      </description>
+    </release>
     <release date="2018-08-26" version="1.0.3">
       <description>
         <p>Gnomit is now Unicode-aware 🤓</p>
