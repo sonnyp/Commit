@@ -23,13 +23,12 @@ You can install Gnomit [via Gnome Software](https://wiki.gnome.org/Apps/Software
 
 ### Flathub
 
-1. Go to the [Gnomit page on Flathub](https://flathub.org/apps/details/ind.ie.Gnomit)
-2. Hit the _Install_ button.
+1. Make sure you’ve [set up Flathub](https://flatpak.org/setup/).
 
-    If your computer doesn’t automatically install Gnomit, in a terminal window go to the directory that the _ind.ie.Gnomit.flatpakref_ file was downloaded into (e.g., _~/Downloads_) and type:
+2. In Terminal:
 
     ```bash
-    flatpak install ind.ie.Gnomit.flatpakref
+    flatpak install flathub ind.ie.Gnomit
     ```
 3. Set Gnomit as your Git editor:
 
