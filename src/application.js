@@ -371,7 +371,6 @@ var Application = GObject.registerClass({
       }
 
       this.dialogue.connect('style-updated', () => {
-        print("Style updated, recalculating overflow text background highlight colour.")
         setHighlightColour()
       })
 
