@@ -341,10 +341,39 @@ var Application = GObject.registerClass({
       const gSpellTextView = Gspell.TextView.get_from_gtk_text_view(this.messageText)
       gSpellTextView.basic_setup()
 
+
       // Tag: highlight background.
       const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME)
-      highlightBackgroundTag.background = "#ffe4e1" // minty rose
       this.buffer.tag_table.add(highlightBackgroundTag)
+      let setHighlightColour = () => {
+        // Set the overflow text background highlight colour based on the
+        // colour of the foreground text.
+
+        // Colour shade guide for Minty Rose: https://www.color-hex.com/color/ffe4e1
+        let darkForegroundHighlightColour = "#ffe4e1" // minty rose
+        let lightForegroundHighlightColour = "#4c4443" // darker shade of minty rose
+        var highlightColour
+        let fontColour = gSpellTextView.get_view().get_style_context().get_color(Gtk.StateFlags.NORMAL)
+
+        // Luma calculation courtesy: https://stackoverflow.com/a/12043228
+        let luma = 0.2126 * fontColour.red + 0.7152 * fontColour.green + 0.0722 * fontColour.blue // ITU-R BT.709
+
+        // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
+        // return values between 0 and 1 also.
+        if (luma > 0.5) {
+          // The foreground is light, use darker shade of highlight colour.
+          highlightColour = lightForegroundHighlightColour
+        } else {
+          // The foregorund is dark, use lighter shade of highlight colour.
+          highlightColour = darkForegroundHighlightColour
+        }
+        highlightBackgroundTag.background = highlightColour
+      }
+
+      this.dialogue.connect('style-updated', () => {
+        print("Style updated, recalculating overflow text background highlight colour.")
+        setHighlightColour()
+      })
 
       const highlightText = () => {
         // Check first line length and highlight characters beyond the limit.
