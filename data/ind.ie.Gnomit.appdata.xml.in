@@ -32,6 +32,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2018-10-22" version="1.0.5">
+      <description>
+        <p>Dark theme support</p>
+      </description>
+    </release>
     <release date="2018-10-19" version="1.0.4">
       <description>
         <p>Gnomit has a new look thanks to Sergey Bugaev.</p>
@@ -56,3 +61,4 @@
   </releases>
   <content_rating type="oars-1.1" />
 </component>
+
