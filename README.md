@@ -46,14 +46,13 @@ To dismiss Gnomit and cancel your commit message, press _Escape_.
 
 ## Features
 
-Feature-compatible (sans configuration options) with [the first release of Komet](https://github.com/zorgiepoo/Komet/releases/tag/0.1).
-
   * Highlights overflow of subject line when it exceeds 69 characters.
   * Inserts empty line between subject line and the rest of the message.
   * Has spell checking.
   * Select All selects only your commit message, not the Git commit comment.
   * Displays the project folder and branch in the window header.
   * The Git Commit comment is not editable.
+  * Dark theme support: the overflow highlight is adjusted according to your theme.
 
 ## Known issues
 
