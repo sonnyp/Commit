@@ -548,10 +548,7 @@ var Application = GObject.registerClass({
         let success;
         const ERROR_SUMMARY = "\n\nError: could not save your commit message.\n"
 
-        // Unencode tag start/end tokens
         let textToSave = this.buffer.text
-        textToSave = textToSave.replace(/&lt;/g, '<')
-        textToSave = textToSave.replace(/&gt;/g, '>')
 
         try {
           // Save the text.
