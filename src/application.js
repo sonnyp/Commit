@@ -284,8 +284,6 @@ var Application = GObject.registerClass({
           action = "add -p"
           detail = "manual hunk edit mode; instructions at end"
         } else if (this.isRebaseMessage) {
-          print("Rebase message:")
-          print(commitComment)
           action = "rebase"
           detail = "-i"
         } else {
