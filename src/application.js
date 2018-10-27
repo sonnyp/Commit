@@ -201,7 +201,11 @@ var Application = GObject.registerClass({
       const _isTestAddPHunkEditMessage = this.commitMessageFilePath.indexOf('tests/add-p-edit-hunk') > -1
       this.isAddPHunkEditMessage = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
 
-      this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage
+      const _isRebaseMessage = this.commitMessageFilePath.indexOf('rebase-merge/git-rebase-todo') > -1
+      const _isTestRebaseMessage = this.commitMessageFilePath.indexOf('tests/rebase') > -1
+      this.isRebaseMessage = _isRebaseMessage || _isTestRebaseMessage
+
+      this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage || _isTestRebaseMessage
 
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
@@ -216,6 +220,15 @@ var Application = GObject.registerClass({
 
         // Convert the message from ByteArray to String.
         commitMessage = commitMessage.toString()
+
+        // Escape tag start/end as we will be using markup to populate the buffer.
+        // (Otherwise, rebase -i commit messages fail, as they contain the strings
+        // <commit>, <label>, etc.
+        commitMessage = commitMessage.replace(/</g, '&lt;')
+        commitMessage = commitMessage.replace(/>/g, '&gt;')
+
+        // In case we need to refer to the original in the future
+        const commitMessageAsOriginallyLoaded = commitMessage
 
         // If this is a git add -p hunk edit message, then we cannot
         // split at the first comment as the message starts with a comment.
@@ -270,6 +283,11 @@ var Application = GObject.registerClass({
           // git add -p: edit hunk message
           action = "add -p"
           detail = "manual hunk edit mode; instructions at end"
+        } else if (this.isRebaseMessage) {
+          action = "rebase"
+          let _detail = commitCommentLines[1].replace('# ', '')
+          let _detailChunks = _detail.split(' ')
+          detail = `${_detailChunks[1]} → ${_detailChunks[3]}`
         } else {
           // This should not happen.
           print(`Warning: unknown Git commit type encountered in: ${this.commitMessageFilePath}`)
@@ -319,7 +337,6 @@ var Application = GObject.registerClass({
       if (this.isAddPHunkEditMessage) {
         this.buffer.place_cursor(this.buffer.get_start_iter())
       }
-
 
       // Validate the commit button on start (if we have an auto-generated
       // body of the commit message, it should be enabled).
@@ -387,10 +404,10 @@ var Application = GObject.registerClass({
         // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
         // return values between 0 and 1 also.
         if (luma > 0.5) {
-          // The foreground is light, use darker shade of highlight colour.
+          // The foreground is light, use darker shade of original highlight colour.
           highlightColour = lightForegroundHighlightColour
         } else {
-          // The foregorund is dark, use lighter shade of highlight colour.
+          // The foregorund is dark, use original highlight colour.
           highlightColour = darkForegroundHighlightColour
         }
         highlightBackgroundTag.background = highlightColour
@@ -530,11 +547,13 @@ var Application = GObject.registerClass({
         let success;
         const ERROR_SUMMARY = "\n\nError: could not save your commit message.\n"
 
+        let textToSave = this.buffer.text
+
         try {
           // Save the text.
           success = GLib.file_set_contents(
             this.commitMessageFilePath,
-            this.buffer.text
+            textToSave
           )
           if (!success) {
             print(ERROR_SUMMARY)
