@@ -197,6 +197,12 @@ var Application = GObject.registerClass({
       const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
       this.isTagMessage = isGitTagMessage || isTestTagMessage
 
+      const _isAddPHunkEditMessage = this.commitMessageFilePath.indexOf('addp-hunk-edit.diff') > -1
+      const _isTestAddPHunkEditMessage = this.commitMessageFilePath.indexOf('tests/add-p-edit-hunk') > -1
+      this.isAddPHunkEditMessage = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
+
+      this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage
+
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
 
@@ -210,6 +216,13 @@ var Application = GObject.registerClass({
 
         // Convert the message from ByteArray to String.
         commitMessage = commitMessage.toString()
+
+        // If this is a git add -p hunk edit message, then we cannot
+        // split at the first comment as the message starts with a comment.
+        // Remove that comment and instead display that info in the title bar.
+        if (this.isAddPHunkEditMessage) {
+          commitMessage = commitMessage.substr(commitMessage.indexOf("\n")+1)
+        }
 
         // Split the message into the commit body and comment at the first
         // comment but add the newline at the top of the comment to the comment
@@ -230,12 +243,16 @@ var Application = GObject.registerClass({
         // Set the title of the dialogue to Commit: ProjectFolderName (Branch)
         // for commit messages and Tag: ProjectFolderName (Version) for tag messages.
 
-        const action = this.isTagMessage ? "tag" : "commit"
+        let action = this.isTagMessage ? "tag" : "commit"
 
         // The commit message is always in the .git directory in the
         // project directory. Get the project directory’s name by using this.
         const pathComponents = this.commitMessageFilePath.split('/')
-        const projectDirectoryName = pathComponents[pathComponents.indexOf('.git') - 1]
+        let projectDirectoryName = pathComponents[pathComponents.indexOf('.git') - 1]
+
+        if (this.isTest) {
+          projectDirectoryName = "test"
+        }
 
         let detail = ''
         if (this.isCommitMessage) {
@@ -249,13 +266,16 @@ var Application = GObject.registerClass({
           // Get the version number from the message
           const version = commitCommentLines[3].slice(1).trim()
           detail = version
+        } else if (this.isAddPHunkEditMessage) {
+          // git add -p: edit hunk message
+          action = "add -p"
+          detail = "manual hunk edit mode; instructions at end"
         } else {
           // This should not happen.
           print(`Warning: unknown Git commit type encountered in: ${this.commitMessageFilePath}`)
-
         }
 
-        // UPDATE!!!
+        // Set the title.
         this.active_window.set_title(`Git ${action}: ${projectDirectoryName} (${detail})`)
 
         // Add Pango markup to make the commented are appear lighter.
@@ -294,6 +314,12 @@ var Application = GObject.registerClass({
 
       // Save the number of lines in the commit message.
       this.previousNumberOfLinesInCommitMessage = 1
+
+      // Special case: for git add -p edit hunk messages, place the cursor at start.
+      if (this.isAddPHunkEditMessage) {
+        this.buffer.place_cursor(this.buffer.get_start_iter())
+      }
+
 
       // Validate the commit button on start (if we have an auto-generated
       // body of the commit message, it should be enabled).
