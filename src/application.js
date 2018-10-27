@@ -285,7 +285,9 @@ var Application = GObject.registerClass({
           detail = "manual hunk edit mode; instructions at end"
         } else if (this.isRebaseMessage) {
           action = "rebase"
-          detail = "-i"
+          let _detail = commitCommentLines[1].replace('# ', '')
+          let _detailChunks = _detail.split(' ')
+          detail = `${_detailChunks[1]} → ${_detailChunks[3]}`
         } else {
           // This should not happen.
           print(`Warning: unknown Git commit type encountered in: ${this.commitMessageFilePath}`)
