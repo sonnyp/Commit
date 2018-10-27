@@ -338,7 +338,6 @@ var Application = GObject.registerClass({
         this.buffer.place_cursor(this.buffer.get_start_iter())
       }
 
-
       // Validate the commit button on start (if we have an auto-generated
       // body of the commit message, it should be enabled).
       this.validateCommitButton()
@@ -405,10 +404,10 @@ var Application = GObject.registerClass({
         // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
         // return values between 0 and 1 also.
         if (luma > 0.5) {
-          // The foreground is light, use darker shade of highlight colour.
+          // The foreground is light, use darker shade of original highlight colour.
           highlightColour = lightForegroundHighlightColour
         } else {
-          // The foregorund is dark, use lighter shade of highlight colour.
+          // The foregorund is dark, use original highlight colour.
           highlightColour = darkForegroundHighlightColour
         }
         highlightBackgroundTag.background = highlightColour
