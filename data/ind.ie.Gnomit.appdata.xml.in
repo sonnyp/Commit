@@ -18,7 +18,7 @@
       <li>Select All selects only your commit message, not the Git commit comment.</li>
       <li>Displays helpful information (like project folder and branch) in the window header.</li>
       <li>The Git Commit comment is not editable.</li>
-      <li>Supports git commit messages, tag messages, git add -p messages, and rebase -i messages.</li>
+      <li>Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.</li>
     </ul>
   </description>
   <url type="homepage">https://github.com/indie-mirror/gnomit</url>
@@ -33,6 +33,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2018-12-11" version="1.0.7">
+      <description>
+        <p>Add explicit support for git merge messages and remove the command-line warning about them.</p>
+        <p>Update GNOME runtime to version 3.30.</p>
+      </description>
+    </release>
     <release date="2018-10-27" version="1.0.6">
       <description>
         <p>In addition to git commit messages and tag messages, Gnomit now also supports git add -p messages and rebase -i messages. A big thank-you to Philip Chimento for reporting those issues.</p>
