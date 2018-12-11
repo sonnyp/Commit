@@ -287,7 +287,7 @@ var Application = GObject.registerClass({
         } else if (this.isMergeMessage) {
           // Display the branch name
           action = 'merge'
-          detail = commitBody.split("'")[1]
+          detail = `branch ${commitBody.split("'")[1]}`
         } else if (this.isTagMessage) {
           // Get the version number from the message
           const version = commitCommentLines[3].slice(1).trim()
