@@ -19,8 +19,6 @@
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "build-options" : {
-        "cflags" : "-O2 -g",
-        "cxxflags" : "-O2 -g",
         "env" : {
             "V" : "1"
         }
@@ -46,10 +44,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gspell.git",
-                    "tag" : "1.6.1",
-                    "commit" : "f2823c994b9af57d91e75c54bd1ec68a1dee5767"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
+                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
                 }
             ],
             "cleanup" : [
@@ -59,9 +56,6 @@
         {
             "name" : "gnomit",
             "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=lib"
-            ],
             "builddir" : true,
             "sources" : [
                 {
