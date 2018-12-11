@@ -188,24 +188,36 @@ var Application = GObject.registerClass({
       this.commitMessageFile = files[0]
       this.commitMessageFilePath = this.commitMessageFile.get_path()
 
+      //
       // Save the type of this message for later
+      //
+
+      // Generic commit message.
       const isGitCommitMessage = this.commitMessageFilePath.indexOf('COMMIT_EDITMSG') > -1
       const isTestCommitMessage = (this.commitMessageFilePath.indexOf('tests/message-with-body') > -1) || (this.commitMessageFilePath.indexOf('tests/message-without-body') > -1)
       this.isCommitMessage = isGitCommitMessage || isTestCommitMessage
 
+      // Git merge message.
+      const isMergeMessage = this.commitMessageFilePath.indexOf('MERGE_MSG') > -1
+      const isTestMergeMessage = this.commitMessageFilePath.indexOf('tests/merge') > -1
+      this.isMergeMessage = isMergeMessage || isTestMergeMessage
+
+      // Git tag message.
       const isGitTagMessage = this.commitMessageFilePath.indexOf('TAG_EDITMSG') > -1
       const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
       this.isTagMessage = isGitTagMessage || isTestTagMessage
 
+      // AddP Hunk Edit message.
       const _isAddPHunkEditMessage = this.commitMessageFilePath.indexOf('addp-hunk-edit.diff') > -1
       const _isTestAddPHunkEditMessage = this.commitMessageFilePath.indexOf('tests/add-p-edit-hunk') > -1
       this.isAddPHunkEditMessage = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
 
+      // Rebase message.
       const _isRebaseMessage = this.commitMessageFilePath.indexOf('rebase-merge/git-rebase-todo') > -1
       const _isTestRebaseMessage = this.commitMessageFilePath.indexOf('tests/rebase') > -1
       this.isRebaseMessage = _isRebaseMessage || _isTestRebaseMessage
 
-      this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage || _isTestRebaseMessage
+      this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage || _isTestRebaseMessage || isTestMergeMessage
 
       // Try to load the commit message contents.
       const ERROR_SUMMARY="\n\nError: Could not read the Git commit message file.\n\n"
@@ -253,20 +265,16 @@ var Application = GObject.registerClass({
         const commitCommentLines = commitComment.split("\n")
         this.numberOfLinesInCommitComment = commitCommentLines.length
 
-        // Set the title of the dialogue to Commit: ProjectFolderName (Branch)
-        // for commit messages and Tag: ProjectFolderName (Version) for tag messages.
-
-        let action = this.isTagMessage ? "tag" : "commit"
-
         // The commit message is always in the .git directory in the
         // project directory. Get the project directory’s name by using this.
         const pathComponents = this.commitMessageFilePath.split('/')
         let projectDirectoryName = pathComponents[pathComponents.indexOf('.git') - 1]
 
         if (this.isTest) {
-          projectDirectoryName = "test"
+          projectDirectoryName = 'test'
         }
 
+        let action = ''
         let detail = ''
         if (this.isCommitMessage) {
           // Try to get the branch name via a method that relies on
@@ -274,17 +282,23 @@ var Application = GObject.registerClass({
           // other languages.
           const wordsOnBranchLine = commitCommentLines[4].split(" ")
           const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1]
+          action = 'commit'
           detail = branchName
+        } else if (this.isMergeMessage) {
+          // Display the branch name
+          action = 'merge'
+          detail = commitBody.split("'")[1]
         } else if (this.isTagMessage) {
           // Get the version number from the message
           const version = commitCommentLines[3].slice(1).trim()
+          action = 'tag'
           detail = version
         } else if (this.isAddPHunkEditMessage) {
           // git add -p: edit hunk message
-          action = "add -p"
-          detail = "manual hunk edit mode; instructions at end"
+          action = 'add -p'
+          detail = 'manual hunk edit mode; instructions at end'
         } else if (this.isRebaseMessage) {
-          action = "rebase"
+          action = 'rebase'
           let _detail = commitCommentLines[1].replace('# ', '')
           let _detailChunks = _detail.split(' ')
           detail = `${_detailChunks[1]} → ${_detailChunks[3]}`
