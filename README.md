@@ -56,6 +56,10 @@ To dismiss Gnomit and cancel your commit message, press _Escape_.
 
 ## Known issues
 
+### Does not use your system theme
+
+Gnomit will use your system theme [if it is installed via Flatpak](https://www.linuxuprising.com/2018/05/how-to-get-flatpak-apps-to-use-correct.html).
+
 ### Slow start-up time
 
 Compared to [directly running the GJS script](https://source.ind.ie/gnome/gnomit/gjs/tree/bare), the Flatpak version has a noticable delay before the Gnomit dialogue pops up.
