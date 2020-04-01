@@ -8,7 +8,6 @@
         "ind.ie/gnomit/gjs/tests/merge"
     ],
     "finish-args" : [
-        "--share=network",
         "--share=ipc",
         "--socket=x11",
         "--socket=wayland",
