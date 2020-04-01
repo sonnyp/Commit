@@ -97,6 +97,7 @@ To publish to Flathub (proper credentials required):
 
   * [Aral balkan](https://ar.al)
   * [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+  * [Sonny Piers](https://github.com/sonnyp)
 
 ## Copyright
 
