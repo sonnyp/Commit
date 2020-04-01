@@ -1,5 +1,6 @@
 const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
 const {GnomitWindow} = imports.window
+const ByteArray = imports.byteArray;
 
 const SUMMARY = `Helps you write better Git commit messages.
 
@@ -128,7 +129,7 @@ var Application = GObject.registerClass({
 
           if (!success || exitStatus !== 0) {
             // Error: Spawn successful but process did not exit successfully.
-            print(`${INSTALLATION_ERROR_SUMMARY}${standardError}`)
+            print(`${INSTALLATION_ERROR_SUMMARY}${ByteArray.toString(standardError)}`)
 
             // Exit with generic error code.
             return 1
@@ -231,7 +232,7 @@ var Application = GObject.registerClass({
         [success, commitMessage] = GLib.file_get_contents(this.commitMessageFilePath)
 
         // Convert the message from ByteArray to String.
-        commitMessage = commitMessage.toString()
+        commitMessage = ByteArray.toString(commitMessage)
 
         // Escape tag start/end as we will be using markup to populate the buffer.
         // (Otherwise, rebase -i commit messages fail, as they contain the strings
@@ -609,9 +610,9 @@ var Application = GObject.registerClass({
         let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync('/app/bin/ind.ie.Gnomit --help')
 
         if (success) {
-          print(standardOutput)
+          print(ByteArray.toString(standardOutput))
         } else {
-          print(standardError)
+          print(ByteArray.toString(standardError))
         }
       } catch (error) {
         print (error)
