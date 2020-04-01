@@ -8,14 +8,11 @@
         "ind.ie/gnomit/gjs/tests/merge"
     ],
     "finish-args" : [
-        "--share=ipc",
-        "--socket=x11",
-        "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
         "--filesystem=host",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        /* X11 + XShm access */
+        "--share=ipc", "--socket=x11", "--socket=fallback-x11",
+        /* Wayland access */
+        "--socket=wayland"
     ],
     "build-options" : {
         "env" : {
