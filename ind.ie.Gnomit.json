@@ -57,12 +57,7 @@
             "name" : "gnomit",
             "buildsystem" : "meson",
             "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "file:///home/aral/ind.ie/gnomit/gjs"
-                }
-            ]
+            "sources" :  [{ "type": "dir", "path": "./" }]
         }
     ]
 }
