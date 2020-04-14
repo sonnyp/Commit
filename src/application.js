@@ -129,7 +129,7 @@ var Application = GObject.registerClass({
 
           if (!success || exitStatus !== 0) {
             // Error: Spawn successful but process did not exit successfully.
-            print(`${INSTALLATION_ERROR_SUMMARY}${ByteArray.toString(standardError)}`)
+            printerr(`${INSTALLATION_ERROR_SUMMARY}${ByteArray.toString(standardError)}`)
 
             // Exit with generic error code.
             return 1
@@ -148,7 +148,7 @@ var Application = GObject.registerClass({
             // Some other error: show the error message.
             errorMessage += `${error}`
           }
-          print (errorMessage)
+          printerr(errorMessage)
 
           // Exit with generic error code.
           return 1
@@ -612,10 +612,10 @@ var Application = GObject.registerClass({
         if (success) {
           print(ByteArray.toString(standardOutput))
         } else {
-          print(ByteArray.toString(standardError))
+          printerr(ByteArray.toString(standardError))
         }
       } catch (error) {
-        print (error)
+        printerr (error)
       }
 
       this.quit()
