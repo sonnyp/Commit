@@ -1,22 +1,18 @@
 {
     "app-id" : "ind.ie.Gnomit",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.30",
+    "runtime-version" : "3.36",
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
     "x-run-args" : [
         "ind.ie/gnomit/gjs/tests/merge"
     ],
     "finish-args" : [
-        "--share=network",
-        "--share=ipc",
-        "--socket=x11",
-        "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
         "--filesystem=host",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        /* X11 + XShm access */
+        "--share=ipc", "--socket=x11", "--socket=fallback-x11",
+        /* Wayland access */
+        "--socket=wayland"
     ],
     "build-options" : {
         "env" : {
@@ -45,8 +41,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.3.tar.xz",
+                    "sha256" : "5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8"
                 }
             ],
             "cleanup" : [
@@ -57,12 +53,7 @@
             "name" : "gnomit",
             "buildsystem" : "meson",
             "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "file:///home/aral/ind.ie/gnomit/gjs"
-                }
-            ]
+            "sources" :  [{ "type": "dir", "path": "./" }]
         }
     ]
 }

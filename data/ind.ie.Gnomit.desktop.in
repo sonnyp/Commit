@@ -6,3 +6,4 @@ Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
 Icon=ind.ie.Gnomit
+NoDisplay=true
