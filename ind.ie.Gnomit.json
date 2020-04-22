@@ -5,7 +5,7 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "ind.ie.Gnomit",
     "x-run-args" : [
-        "small-tech/gnomit/gjs/tests/merge"
+        "ind.ie/gnomit/gjs/tests/merge"
     ],
     "finish-args" : [
         "--filesystem=host",

@@ -41,4 +41,9 @@ if compile_schemas.found()
 endif
 
 # Install the icon.
-install_data ('ind.ie.Gnomit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
+
+install_data ('icons/16x16/ind.ie.Gnomit.png', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/16x16/apps'))
+install_data ('icons/24x24/ind.ie.Gnomit.png', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/24x24/apps'))
+install_data ('icons/32x32/ind.ie.Gnomit.png', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/32x32/apps'))
+install_data ('icons/48x48/ind.ie.Gnomit.png', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/48x48/apps'))
+install_data ('icons/512x512/ind.ie.Gnomit.png', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/512x512/apps'))
