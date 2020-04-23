@@ -102,6 +102,9 @@ cp "$MANIFEST_FILE_NAME" "$RELEASE_DIRECTORY"
 # The Flathub.json configuration file.
 cp data/flathub.json "$RELEASE_DIRECTORY"
 
+# The readme with instructions for issues and pull requests.
+cp data/README.md "$RELEASE_DIRECTORY"
+
 # Appstream appdata file.
 cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
 
@@ -180,7 +183,19 @@ select yn in "Yes" "No"; do
 done
 
 #
-# Commit the version
+# Clean the release directory.
+#
+printf "  • Cleaning the release directory…"
+
+runIn "$RELEASE_DIRECTORY" "rm .gitignore"
+runIn "$RELEASE_DIRECTORY" "rm -rf .flatpak-builder"
+runIn "$RELEASE_DIRECTORY" "git commit -m \"Version $1\""
+
+DONE
+
+
+#
+# Commit the new version.
 #
 printf "  • Committing version $1…"
 
@@ -190,7 +205,7 @@ runIn "$RELEASE_DIRECTORY" "git commit -m \"Version $1\""
 DONE
 
 #
-# Push to Flathub
+# Push to Flathub new PR fork.
 #
 printf "  • Pushing version $1 to Flathub…"
 
