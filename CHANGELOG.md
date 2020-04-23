@@ -8,9 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Nothing yet.
 
-## [2.0.0] - 2020-01-22
+## [2.0.0] - 2020-04-23
 
-Initial release under org.small_tech.Gnomit App ID.
+Initial release under the new org.small_tech.Gnomit App ID.
 
 ### Changed
 
@@ -27,6 +27,10 @@ Initial release under org.small_tech.Gnomit App ID.
 
 ## [1.1.0] - 2020-04-23
 
+This release is thanks to the work of [Sonny Piers](https://github.com/sonnyp).
+
+Note: this is the last release under the ind.ie.Gnomit App ID.
+
 ### Removed
 
   - Unnecessary permissions (network and dconf).
@@ -42,10 +46,6 @@ Initial release under org.small_tech.Gnomit App ID.
   - Update Meson minimum version to 0.50.
   - Hide desktop entry.
   - Reduce size of the screenshot in README.
-
-This release is thanks to the work of [Sonny Piers](https://github.com/sonnyp).
-
-Note: this is the release under the ind.ie.Gnomit App ID.
 
 ## [1.0.7] - 2018-12-11
 
