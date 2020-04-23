@@ -189,10 +189,8 @@ printf "  • Cleaning the release directory…"
 
 runIn "$RELEASE_DIRECTORY" "rm .gitignore"
 runIn "$RELEASE_DIRECTORY" "rm -rf .flatpak-builder"
-runIn "$RELEASE_DIRECTORY" "git commit -m \"Version $1\""
 
 DONE
-
 
 #
 # Commit the new version.
