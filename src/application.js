@@ -1,23 +1,24 @@
+const ByteArray                                = imports.byteArray
 const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
-const {GnomitWindow} = imports.window
-const ByteArray = imports.byteArray;
+const { GnomitWindow }                         = imports.window
 
 const SUMMARY = `Helps you write better Git commit messages.
 
 To use, configure Git to use Gnomit as the default editor:
 
-  git config --global core.editor <path-to-gnomit.js>`
+  git config --global core.editor "flatpak run org.small_tech.Gnomit"`
 
-const COPYRIGHT = `❤ We practice ethical design (https://ind.ie/ethical-design)
+const COPYRIGHT = `Made with ♥ by Small Technology Foundation, a tiny, independent not-for-profit (https://small-tech.org).
 
-Copyright © 2018 Aral Balkan (https://ar.al)
-Copyright © 2018 Ind.ie (https://ind.ie)
+Small Technology are everyday tools for everyday people designed to increase human welfare, not corporate profits.
+
+Like this? Fund us! https://small-tech.org/fund-us
+
+Copyright © 2020 Aral Balkan (https://ar.al)
 
 License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.`
-
-const INSTALLATION_ERROR_SUMMARY = "\nError: failed to set Gnomit as your default Git editor.\n\n"
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 
@@ -69,7 +70,7 @@ var Application = GObject.registerClass({
     //
 
     super._init({
-      application_id: 'ind.ie.Gnomit',
+      application_id: 'org.small_tech.Gnomit',
       flags:
       /* We handle file opens. */
       Gio.ApplicationFlags.HANDLES_OPEN
@@ -105,59 +106,11 @@ var Application = GObject.registerClass({
       null
     )
 
-    // Add option: --install, -i
-    this.add_main_option(
-      'install', 'i',
-      GLib.OptionFlags.NONE,
-      GLib.OptionArg.NONE,
-      'Install Gnomit as your default Git editor',
-      null
-    )
-
-
     //
     // Signal: Handle local options.
     //
 
     this.connect('handle_local_options', (application, options) => {
-      // Handle option: --install, -i:
-      //
-      // Install Gnomit as your default Git editor.
-      if (options.contains('install')) {
-        try {
-          let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`git config --global core.editor '/app/bin/ind.ie.Gnomit'`)
-
-          if (!success || exitStatus !== 0) {
-            // Error: Spawn successful but process did not exit successfully.
-            printerr(`${INSTALLATION_ERROR_SUMMARY}${ByteArray.toString(standardError)}`)
-
-            // Exit with generic error code.
-            return 1
-          }
-        } catch (error) {
-          // Error: Spawn failed.
-
-          // Start off by telling the person what failed.
-          let errorMessage = INSTALLATION_ERROR_SUMMARY
-
-          // Provide further information and try to help.
-          if (error.code === GLib.SpawnError.NOENT) {
-            // Git was not found: show people how to install it.
-            errorMessage += "Git is not installed.\n\nFor help on installing Git, please see:\nhttps://git-scm.com/book/en/v2/Getting-Started-Installing-Git\n"
-          } else {
-            // Some other error: show the error message.
-            errorMessage += `${error}`
-          }
-          printerr(errorMessage)
-
-          // Exit with generic error code.
-          return 1
-        }
-
-        // OK.
-        return 0
-      }
-
       // Handle option: --version, -v:
       //
       // Print a minimal version string based on the GNU coding standards.
@@ -199,24 +152,24 @@ var Application = GObject.registerClass({
       this.isCommitMessage = isGitCommitMessage || isTestCommitMessage
 
       // Git merge message.
-      const isMergeMessage = this.commitMessageFilePath.indexOf('MERGE_MSG') > -1
+      const isMergeMessage     = this.commitMessageFilePath.indexOf('MERGE_MSG') > -1
       const isTestMergeMessage = this.commitMessageFilePath.indexOf('tests/merge') > -1
-      this.isMergeMessage = isMergeMessage || isTestMergeMessage
+      this.isMergeMessage      = isMergeMessage || isTestMergeMessage
 
       // Git tag message.
-      const isGitTagMessage = this.commitMessageFilePath.indexOf('TAG_EDITMSG') > -1
+      const isGitTagMessage  = this.commitMessageFilePath.indexOf('TAG_EDITMSG') > -1
       const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
-      this.isTagMessage = isGitTagMessage || isTestTagMessage
+      this.isTagMessage      = isGitTagMessage || isTestTagMessage
 
       // AddP Hunk Edit message.
-      const _isAddPHunkEditMessage = this.commitMessageFilePath.indexOf('addp-hunk-edit.diff') > -1
+      const _isAddPHunkEditMessage     = this.commitMessageFilePath.indexOf('addp-hunk-edit.diff') > -1
       const _isTestAddPHunkEditMessage = this.commitMessageFilePath.indexOf('tests/add-p-edit-hunk') > -1
-      this.isAddPHunkEditMessage = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
+      this.isAddPHunkEditMessage       = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
 
       // Rebase message.
-      const _isRebaseMessage = this.commitMessageFilePath.indexOf('rebase-merge/git-rebase-todo') > -1
+      const _isRebaseMessage     = this.commitMessageFilePath.indexOf('rebase-merge/git-rebase-todo') > -1
       const _isTestRebaseMessage = this.commitMessageFilePath.indexOf('tests/rebase') > -1
-      this.isRebaseMessage = _isRebaseMessage || _isTestRebaseMessage
+      this.isRebaseMessage       = _isRebaseMessage || _isTestRebaseMessage
 
       this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage || _isTestRebaseMessage || isTestMergeMessage
 
@@ -422,7 +375,7 @@ var Application = GObject.registerClass({
           // The foreground is light, use darker shade of original highlight colour.
           highlightColour = lightForegroundHighlightColour
         } else {
-          // The foregorund is dark, use original highlight colour.
+          // The foreground is dark, use original highlight colour.
           highlightColour = darkForegroundHighlightColour
         }
         highlightBackgroundTag.background = highlightColour
@@ -434,14 +387,14 @@ var Application = GObject.registerClass({
 
       const highlightText = () => {
         // Check first line length and highlight characters beyond the limit.
-        const text = this.buffer.text
-        const lines = text.split("\n")
-        const firstLine = lines[0]
+        const text            = this.buffer.text
+        const lines           = text.split("\n")
+        const firstLine       = lines[0]
         const firstLineLength = unicodeLength(firstLine)
 
         // Get bounding iterators for the first line.
-        const startOfTextIterator = this.buffer.get_start_iter()
-        const endOfTextIterator = this.buffer.get_end_iter()
+        const startOfTextIterator    = this.buffer.get_start_iter()
+        const endOfTextIterator      = this.buffer.get_end_iter()
         const endOfFirstLineIterator = this.buffer.get_iter_at_offset(firstLineLength)
 
         // Start with a clean slate: remove any background highlighting on the
@@ -471,9 +424,9 @@ var Application = GObject.registerClass({
         }
 
         // Take measurements
-        let lines = this.buffer.text.split("\n")
-        let firstLineLength = unicodeLength(lines[0])
-        let cursorPosition = this.buffer.cursor_position
+        let lines                        = this.buffer.text.split("\n")
+        let firstLineLength              = unicodeLength(lines[0])
+        let cursorPosition               = this.buffer.cursor_position
         let numberOfLinesInCommitMessage = lines.length + 1
 
         // Validation: disallow empty first line.
@@ -484,7 +437,7 @@ var Application = GObject.registerClass({
           /* and the first line is empty */
           && unicodeLength(lines[0].replace(/ /g, '')) === 0
           /* and the second line is empty (to avoid
-             https://source.ind.ie/gnome/gnomit/gjs/issues/27) */
+             https://source.small-tech.org/gnome/gnomit/gjs/issues/27) */
           && unicodeLength(lines[1].replace(/ /g, '')) === 0
           /* and person didn’t reach here by deleting existing content */
           && numberOfLinesInCommitMessage > this.previousNumberOfLinesInCommitMessage
@@ -497,9 +450,9 @@ var Application = GObject.registerClass({
           )
 
           // Update measurements as the buffer has changed.
-          lines = this.buffer.text.split("\n")
-          firstLineLength = unicodeLength(lines[0])
-          cursorPosition = this.buffer.cursor_position
+          lines                        = this.buffer.text.split("\n")
+          firstLineLength              = unicodeLength(lines[0])
+          cursorPosition               = this.buffer.cursor_position
           numberOfLinesInCommitMessage = lines.length + 1
         }
 
@@ -538,9 +491,9 @@ var Application = GObject.registerClass({
             // Assumption: that the person has not added any comments
             // to their commit message themselves. But, I mean, come on!
             // this.buffer.place_cursor(this.buffer.get_start_iter())
-            const mainCommitMessage = this.buffer.text.split('#')[0]
+            const mainCommitMessage   = this.buffer.text.split('#')[0]
             const selectStartIterator = this.buffer.get_start_iter()
-            const selectEndIterator = this.buffer.get_iter_at_offset(unicodeLength(mainCommitMessage))
+            const selectEndIterator   = this.buffer.get_iter_at_offset(unicodeLength(mainCommitMessage))
             // this.buffer.move_mark_by_name('selection_bound', selectEndIterator)
             this.buffer.select_range(selectStartIterator, selectEndIterator)
           }, 0)
@@ -605,9 +558,8 @@ var Application = GObject.registerClass({
       //
       // So, instead, as a workaround, I’m spawning another instance of
       // the app with the --help flag set and piping the output.
-
       try {
-        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync('/app/bin/ind.ie.Gnomit --help')
+        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync('/app/bin/org.small_tech.Gnomit --help')
 
         if (success) {
           print(ByteArray.toString(standardOutput))
@@ -622,7 +574,6 @@ var Application = GObject.registerClass({
     }
 
     this.connect('activate', this.activate)
-
   }
 
   // Validate the buffer and enable/disable the commit button accordingly.
@@ -640,6 +591,5 @@ var Application = GObject.registerClass({
     commitMessageExcludingComments = commitMessageExcludingComments.replace(/ /g, '')
     const commitMessageIsEmpty = (commitMessageExcludingComments.length === 0)
     this.commitButton.set_sensitive(!commitMessageIsEmpty)
-}
-
+  }
 })

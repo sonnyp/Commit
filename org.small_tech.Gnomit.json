@@ -1,11 +1,11 @@
 {
-    "app-id" : "ind.ie.Gnomit",
+    "app-id" : "org.small_tech.Gnomit",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "3.36",
     "sdk" : "org.gnome.Sdk",
-    "command" : "ind.ie.Gnomit",
+    "command" : "org.small_tech.Gnomit",
     "x-run-args" : [
-        "ind.ie/gnomit/gjs/tests/merge"
+        "small-tech/gnomit/gjs/tests/message-with-body"
     ],
     "finish-args" : [
         "--filesystem=host",
@@ -56,7 +56,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/aral/ind.ie/gnomit/gjs"
+                    "url" : "file:///home/aral/small-tech/gnomit/gjs"
                 }
             ]
         }

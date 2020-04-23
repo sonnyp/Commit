@@ -1,5 +1,5 @@
-data/ind.ie.Gnomit.desktop.in
-data/ind.ie.Gnomit.appdata.xml.in
-data/ind.ie.Gnomit.gschema.xml
+data/org.small_tech.Gnomit.desktop.in
+data/org.small_tech.Gnomit.appdata.xml.in
+data/org.small_tech.Gnomit.gschema.xml
 src/window.uisrc/main.js
 src/window.js
