@@ -99,6 +99,9 @@ printf '  • Copying Flatpak and appstream metadata…'
 # Flatpak manifest file.
 cp "$MANIFEST_FILE_NAME" "$RELEASE_DIRECTORY"
 
+# The Flathub.json configuration file.
+cp data/flathub.json "$RELEASE_DIRECTORY"
+
 # Appstream appdata file.
 cp "data/$APPDATA_FILE_NAME.in" "$RELEASE_DIRECTORY/$APPDATA_FILE_NAME"
 
