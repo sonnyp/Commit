@@ -17,7 +17,7 @@ You can install Gnomit [via Gnome Software](https://wiki.gnome.org/Apps/Software
 3. Set Gnomit as your Git editor:
 
     ```bash
-    git config --global core.editor "flatpak run ind.ie.Gnomit"
+    git config --global core.editor "flatpak run org.small-tech.Gnomit"
     ```
 
 
@@ -28,12 +28,12 @@ You can install Gnomit [via Gnome Software](https://wiki.gnome.org/Apps/Software
 2. In Terminal:
 
     ```bash
-    flatpak install flathub ind.ie.Gnomit
+    flatpak install flathub org.small-tech.Gnomit
     ```
 3. Set Gnomit as your Git editor:
 
     ```bash
-    git config --global core.editor "flatpak run ind.ie.Gnomit"
+    git config --global core.editor "flatpak run org.small-tech.Gnomit"
     ```
 
 ## Usage
@@ -46,34 +46,39 @@ To dismiss Gnomit and cancel your commit message, press _Escape_.
 
 ## Features
 
-  * Highlights overflow of subject line when it exceeds 69 characters.
-  * Inserts empty line between subject line and the rest of the message.
-  * Has spell checking.
-  * Select All selects only your commit message, not the Git commit comment.
-  * Displays the project folder and branch in the window header.
-  * The Git Commit comment is not editable.
-  * Dark theme support: the overflow highlight is adjusted according to your theme.
+  - Highlights overflow of subject line when it exceeds 69 characters.
+  - Inserts empty line between subject line and rest of message.
+  - Has spell checking.
+  - Select All selects only your commit message, not the Git commit comment.
+  - Displays project folder and branch in window header.
+  - Git Commit comment is not editable.
+  - Dark theme support: the overflow highlight is adjusted according to your theme.
 
 ## Known issues
 
 ### Does not use your system theme
 
-Gnomit will use your system theme [if it is installed via Flatpak](https://www.linuxuprising.com/2018/05/how-to-get-flatpak-apps-to-use-correct.html).
-
-### Slow start-up time
-
-Compared to [directly running the GJS script](https://source.ind.ie/gnome/gnomit/gjs/tree/bare), the Flatpak version has a noticable delay before the Gnomit dialogue pops up.
-
-Reportedly, the issue with slow start-up times [has been fixed](https://blogs.gnome.org/alexl/2018/01/16/fixing-flatpak-startup-times/) but we won’t be seeing the improvements until Linux distributions start pushing out version 2.13.0 of the _fontconfig_ package. My own Pop!_OS 18.04 distribution has it at 2.12.6. It remains to be seen what the performance will be like once that fix lands.
+This is a Flatpak issue. Gnomit will use your system theme [if it is installed via Flatpak](https://www.linuxuprising.com/2018/05/how-to-get-flatpak-apps-to-use-correct.html).
 
 ## Development notes
 
-The following setting in _ind.ie.Gnomit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line.
+The following setting in _source.org.Gnomit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line. Also note that this path is relative to your home folder. You must update it to point to where you stored your Gnomit working directory for your Builder build to succeed.
 
 ```json
 "x-run-args" : [
-    "sandbox/gjs/tests/message-with-body"
+    "small-tech/gnomit/gjs/tests/message-with-body"
 ],
+```
+
+Similarly, the following setting is hardcoded to the source folder and is required by the deployment script:
+
+```json
+"sources" : [
+  {
+    "type" : "git",
+    "url" : "file:///home/aral/ind.ie/gnomit/gjs"
+  }
+]
 ```
 
 ## Deployment
@@ -85,8 +90,8 @@ To publish to Flathub (proper credentials required):
 3. Tag the release in Git and push your tags.
 4. Run the publish script:
 
-    ```bash
-    ./publish-to-flathub
+    ```sh
+    ./publish-to-flathub <tag>
     ```
 
     The script will create the Flathub build, run it so you can test it, and then prompt you if you want to deploy to Flathub.
@@ -101,11 +106,11 @@ To publish to Flathub (proper credentials required):
 
 ## Copyright
 
-Copyright © 2018 [Aral balkan](https://ar.al), © 2018 [Ind.ie](https://ind.ie)
+Copyright © 2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
 
-GPLv3 or later. Please see [LICENSE](https://source.ind.ie/gnome/gnomit/blob/master/LICENSE) file.
+GPLv3 or later. Please see [LICENSE](https://source.small-tech.org/gnome/gnomit/blob/master/LICENSE) file.
 
 
-[^1]: There is also a [Vala](https://wiki.gnome.org/Projects/Vala) [version](https://source.ind.ie/gnome/gnomit/vala) that I only just started working on and which is no way near being feature complete. I am using this project as a learning exercise as I begin to develop for Gnome after switching to [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) on my main development machine.
+[^1]: There is also a [Vala](https://wiki.gnome.org/Projects/Vala) [version](https://source.small-tech.org/gnome/gnomit/vala) that is far from feature complete. This project was originally a learning exercise to familiarise myself with GNOME/GTK/Linux development after switching my development machine to a Linux laptop running [Pop!_OS 18.04](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) back in 2018.
