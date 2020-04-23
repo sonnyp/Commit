@@ -19,7 +19,7 @@ fi
 APP_ID='org.small_tech.Gnomit'
 GITHUB_ACCOUNT_NAME='small-tech'
 LOCAL_URL='file:\/\/\/home\/aral\/small-tech\/gnomit\/gjs'
-REMOTE_URL='https:\/\/source.small-tech\/gnome\/gnomit\/gjs.git'
+REMOTE_URL='https:\/\/source.small-tech.org\/gnome\/gnomit\/gjs.git'
 
 # General constants.
 MANIFEST_FILE_NAME="$APP_ID.json"
