@@ -21,7 +21,7 @@ const {Gtk, GObject} = imports.gi
 var GnomitWindow = GObject.registerClass({
   Name: 'GnomitWindow',
   GTypeName: 'GnomitWindow',
-  Template: 'resource:///ind/ie/Gnomit/window.glade',
+  Template: 'resource:///org/small_tech/Gnomit/window.glade',
   InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 }, class GnomitWindow extends Gtk.Window {
 
@@ -29,7 +29,5 @@ var GnomitWindow = GObject.registerClass({
     super._init({
         application,
     })
-
   }
-
 })

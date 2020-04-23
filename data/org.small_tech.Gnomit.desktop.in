@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Gnomit
-Exec=ind.ie.Gnomit
+Exec=org.small_tech.Gnomit
 Terminal=false
 Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
-Icon=ind.ie.Gnomit
+Icon=org.small_tech.Gnomit
 NoDisplay=true

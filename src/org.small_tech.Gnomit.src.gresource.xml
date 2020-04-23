@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/ind/ie/Gnomit/js">
+  <gresource prefix="/org/small_tech/Gnomit/js">
     <file>main.js</file>
     <file>application.js</file>
     <file>window.js</file>

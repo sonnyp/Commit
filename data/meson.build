@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-  input: 'ind.ie.Gnomit.desktop.in',
-  output: 'ind.ie.Gnomit.desktop',
+  input: 'org.small_tech.Gnomit.desktop.in',
+  output: 'org.small_tech.Gnomit.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -15,8 +15,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 'ind.ie.Gnomit.appdata.xml.in',
-  output: 'ind.ie.Gnomit.appdata.xml',
+  input: 'org.small_tech.Gnomit.appdata.xml.in',
+  output: 'org.small_tech.Gnomit.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -29,7 +29,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('ind.ie.Gnomit.gschema.xml',
+install_data('org.small_tech.Gnomit.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 
@@ -41,4 +41,4 @@ if compile_schemas.found()
 endif
 
 # Install the icon.
-install_data ('ind.ie.Gnomit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
+install_data ('icons/org.small_tech.Gnomit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))

@@ -10,11 +10,11 @@ Nothing yet.
 
 ## [2.0.0] - 2020-01-22
 
-Initial release under org.small-tech.Gnomit App ID.
+Initial release under org.small_tech.Gnomit App ID.
 
 ### Changed
 
-  - (Breaking Change) App ID is now org.small-tech.Gnomit.
+  - (Breaking Change) App ID is now org.small_tech.Gnomit.
   - Publish delay hours set to 0 to remove Flathub publishing delay.
 
 ### Removed
