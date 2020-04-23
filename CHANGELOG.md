@@ -15,6 +15,7 @@ Initial release under the new org.small_tech.Gnomit App ID.
 ### Changed
 
   - (Breaking Change) App ID is now org.small_tech.Gnomit.
+  - New icon.
   - Publish delay hours set to 0 to remove Flathub publishing delay.
 
 ### Removed
