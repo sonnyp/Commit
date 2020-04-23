@@ -36,7 +36,7 @@
     <release date="2020-04-22" version="1.1.0">
       <description>
         <p>A number of housekeeping updates thanks to Sonny Piers that fix a warning, update dependencies, hide the desktop entry, and reduce permissions.</p>
-        <p>This is the last release that will use the App ID ind.ie.Gnomit. Future updates will be released under <a href="https://flathub.org/apps/details/org.small-tech.Gnomit">org.small-tech.Gnomit</a>.</p>
+        <p>This is the last release that will use the App ID ind.ie.Gnomit. Future updates will be released under org.small-tech.Gnomit.</p>
       </description>
     </release>
     <release date="2018-12-11" version="1.0.7">
