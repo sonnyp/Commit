@@ -1,6 +1,7 @@
 const ByteArray                                = imports.byteArray
 const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
 const { GnomitWindow }                         = imports.window
+const { programInvocationName }                = imports.system
 
 const SUMMARY = `Helps you write better Git commit messages.
 
@@ -559,7 +560,7 @@ var Application = GObject.registerClass({
       // So, instead, as a workaround, I’m spawning another instance of
       // the app with the --help flag set and piping the output.
       try {
-        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync('/app/bin/org.small_tech.Gnomit --help')
+        let [success, standardOutput, standardError, exitStatus] = GLib.spawn_command_line_sync(`${programInvocationName} --help`)
 
         if (success) {
           print(ByteArray.toString(standardOutput))
