@@ -148,28 +148,28 @@ var Application = GObject.registerClass({
       //
 
       // Generic commit message.
-      const isGitCommitMessage = this.commitMessageFilePath.indexOf('COMMIT_EDITMSG') > -1
-      const isTestCommitMessage = (this.commitMessageFilePath.indexOf('tests/message-with-body') > -1) || (this.commitMessageFilePath.indexOf('tests/message-without-body') > -1)
+      const isGitCommitMessage = this.commitMessageFilePath.includes('COMMIT_EDITMSG')
+      const isTestCommitMessage = this.commitMessageFilePath.includes('tests/message-with-body') || this.commitMessageFilePath.includes('tests/message-without-body')
       this.isCommitMessage = isGitCommitMessage || isTestCommitMessage
 
       // Git merge message.
-      const isMergeMessage     = this.commitMessageFilePath.indexOf('MERGE_MSG') > -1
-      const isTestMergeMessage = this.commitMessageFilePath.indexOf('tests/merge') > -1
+      const isMergeMessage     = this.commitMessageFilePath.includes('MERGE_MSG')
+      const isTestMergeMessage = this.commitMessageFilePath.includes('tests/merge')
       this.isMergeMessage      = isMergeMessage || isTestMergeMessage
 
       // Git tag message.
-      const isGitTagMessage  = this.commitMessageFilePath.indexOf('TAG_EDITMSG') > -1
-      const isTestTagMessage = this.commitMessageFilePath.indexOf('tests/tag-message') > -1
+      const isGitTagMessage  = this.commitMessageFilePath.includes('TAG_EDITMSG')
+      const isTestTagMessage = this.commitMessageFilePath.includes('tests/tag-message')
       this.isTagMessage      = isGitTagMessage || isTestTagMessage
 
       // AddP Hunk Edit message.
-      const _isAddPHunkEditMessage     = this.commitMessageFilePath.indexOf('addp-hunk-edit.diff') > -1
-      const _isTestAddPHunkEditMessage = this.commitMessageFilePath.indexOf('tests/add-p-edit-hunk') > -1
+      const _isAddPHunkEditMessage     = this.commitMessageFilePath.includes('addp-hunk-edit.diff')
+      const _isTestAddPHunkEditMessage = this.commitMessageFilePath.includes('tests/add-p-edit-hunk')
       this.isAddPHunkEditMessage       = _isAddPHunkEditMessage || _isTestAddPHunkEditMessage
 
       // Rebase message.
-      const _isRebaseMessage     = this.commitMessageFilePath.indexOf('rebase-merge/git-rebase-todo') > -1
-      const _isTestRebaseMessage = this.commitMessageFilePath.indexOf('tests/rebase') > -1
+      const _isRebaseMessage     = this.commitMessageFilePath.includes('rebase-merge/git-rebase-todo')
+      const _isTestRebaseMessage = this.commitMessageFilePath.includes('tests/rebase')
       this.isRebaseMessage       = _isRebaseMessage || _isTestRebaseMessage
 
       this.isTest = isTestCommitMessage || isTestTagMessage || _isTestAddPHunkEditMessage || _isTestRebaseMessage || isTestMergeMessage
@@ -204,18 +204,15 @@ var Application = GObject.registerClass({
           commitMessage = commitMessage.substr(commitMessage.indexOf("\n")+1)
         }
 
-        // Split the message into the commit body and comment at the first
-        // comment but add the newline at the top of the comment to the comment
-        // (hence the -1 adjustment).
-        let firstCommentIndex = commitMessage.indexOf('#')
-        commitBody = commitMessage.slice(0, firstCommentIndex-1)
+        // Split the message into the commit body and comment
+        let firstCommentIndex = commitMessage.indexOf('\n# ')
+        commitBody = commitMessage.slice(0, firstCommentIndex)
+        commitComment = commitMessage.slice(firstCommentIndex)
 
         // Trim any newlines there may be at the end of the commit body
         while (commitBody.length > 0 && commitBody[(commitBody.length - 1)] === "\n") {
           commitBody = commitBody.slice(0, commitBody.length - 1)
         }
-
-        commitComment = commitMessage.slice(firstCommentIndex-1)
 
         const commitCommentLines = commitComment.split("\n")
         this.numberOfLinesInCommitComment = commitCommentLines.length
@@ -271,7 +268,7 @@ var Application = GObject.registerClass({
         // Not sure when you would get success === false without an error being
         // thrown but handling it anyway just to be safe. There doesn’t appear
         // to be any error information available.
-        // Docs: http://devdocs.baznga.org/glib20~2.50.0/glib.file_get_contents
+        // Docs: https://gjs-docs.gnome.org/glib20~2.64.1/glib.file_get_contents
         if (!success) {
           print(`${ERROR_SUMMARY}`)
           application.quit()
