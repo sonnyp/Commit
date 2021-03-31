@@ -1,4 +1,4 @@
-project('gnomit', version: '2.0.0', meson_version: '>= 0.50.0',)
+project('Commit', version: '1.0.0', meson_version: '>= 0.50.0',)
 
 i18n = import('i18n')
 

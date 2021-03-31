@@ -4,9 +4,6 @@
     "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
     "command" : "re.sonny.Commit",
-    "x-run-args" : [
-        "small-tech/gnomit/gjs/tests/message-with-body"
-    ],
     "finish-args" : [
         "--filesystem=host",
         /* X11 + XShm access */
@@ -50,7 +47,7 @@
             ]
         },
         {
-            "name" : "gnomit",
+            "name" : "Commit",
             "buildsystem" : "meson",
             "builddir" : true,
             "sources" : [{ "type": "dir", "path": "./" }]

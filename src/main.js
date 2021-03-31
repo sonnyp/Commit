@@ -1,5 +1,6 @@
 /* main.js
  *
+ * Copyright 2021 Sonny Piers
  * Copyright 2018 Aral Balkan
  *
  * This program is free software: you can redistribute it and/or modify

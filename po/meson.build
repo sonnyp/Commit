@@ -1,1 +1,1 @@
-i18n.gettext('gnomit', preset: 'glib')
+i18n.gettext('Commit', preset: 'glib')

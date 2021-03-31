@@ -1,21 +1,17 @@
 const ByteArray                                = imports.byteArray
 const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
-const { GnomitWindow }                         = imports.window
+const { CommitWindow }                         = imports.window
 const { programInvocationName }                = imports.system
 
 const SUMMARY = `Helps you write better Git commit messages.
 
-To use, configure Git to use Gnomit as the default editor:
+To use, configure Git to use Commit as the default editor:
 
   git config --global core.editor "flatpak run re.sonny.Commit"`
 
-const COPYRIGHT = `Made with ♥ by Small Technology Foundation, a tiny, independent not-for-profit (https://small-tech.org).
+const COPYRIGHT = `Copyright © 2020 Aral Balkan (https://ar.al)
 
-Small Technology are everyday tools for everyday people designed to increase human welfare, not corporate profits.
-
-Like this? Fund us! https://small-tech.org/fund-us
-
-Copyright © 2020 Aral Balkan (https://ar.al)
+Copyright © 2021 Sonny Piers
 
 License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
 This is free software: you are free to change and redistribute it.
@@ -79,8 +75,8 @@ var Application = GObject.registerClass({
       | Gio.ApplicationFlags.NON_UNIQUE
     })
 
-    GLib.set_prgname('Gnomit')
-    GLib.set_application_name('Gnomit Commit Editor')
+    GLib.set_prgname('Commit')
+    GLib.set_application_name('Commit Editor')
 
     //
     // Set command-line option handling.
@@ -117,7 +113,7 @@ var Application = GObject.registerClass({
       // Print a minimal version string based on the GNU coding standards.
       // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
       if (options.contains('version')) {
-        print(`Gnomit ${pkg.version}`)
+        print(`Commit ${pkg.version}`)
 
         // OK.
         return 0
@@ -318,7 +314,7 @@ var Application = GObject.registerClass({
 
     this.connect('startup', () => {
 
-      this.dialogue = new GnomitWindow(this)
+      this.dialogue = new CommitWindow(this)
 
       // TODO: This is violating encapsulation: move to Window subclass.
       this.dialogue.set_icon_name('accessories-text-editor')
@@ -542,9 +538,9 @@ var Application = GObject.registerClass({
 
     this.activate = () => {
       // Activate is only called if there are no file(s) passed to
-      // Gnomit. As Gnomit should only be run by Git, and since Git
+      // Commit. As Commit should only be run by Git, and since Git
       // always passes the commit file, we can assume if activate is
-      // triggered that someone ran Gnomit directly and
+      // triggered that someone ran Commit directly and
       // without a commit message file as an argument, we show the help.
       //
       // This is a faff-and-a-half when using the simple signals-based

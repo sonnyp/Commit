@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Gnomit
+Name=Commit
 Exec=re.sonny.Commit
 Terminal=false
 Type=Application
