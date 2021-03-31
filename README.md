@@ -1,8 +1,10 @@
 <img style="vertical-align: middle;" src="data/icons/re.sonny.Commit.svg" width="120" height="120">
 
+Git commit message editor
+
 # Commit
 
-Git commit message editor.
+Helps you write better Git commit messages.
 
 <!-- <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='200' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
 
@@ -43,22 +45,49 @@ To dismiss Commit and cancel your commit message, press _Escape_.
 
 ```
 cd Commit
-./run.sh tests/message-with-body
+./re.sonny.Commit tests/message-with-body
 # Make changes
 # Ctrl+Shift+R to restart
 ```
 
+## Building
+
+<details>
+  <summary>host</summary>
+
+```sh
+cd Commit
+meson --prefix $PWD/install build
+ninja -C build install
+```
+
+</details>
+
+<details>
+  <summary>Flatpak</summary>
+
+Use [GNOME Builder](https://wiki.gnome.org/Apps/Builder) or
+
+```sh
+cd Commit
+flatpak-builder --user --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
+flatpak --user remote-add --no-gpg-verify --if-not-exists Commit repo
+flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
+```
+
+</details>
+
 ## Contributors
 
-  * [Sonny Piers](https://github.com/sonnyp)
-  * [Aral Balkan](https://ar.al)
-  * [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+* [Aral Balkan](https://ar.al)
+* [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+* [Sonny Piers](https://github.com/sonnyp)
 
 ## Copyright
 
-* Copyright © 2021 Sonny Piers
-* Copyright © 2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
+* © 2020-2021 Sonny Piers
+* © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
 
-GPLv3 or later. Please see [LICENSE](LICENSE) file.
+GPLv3 or later. Please see [COPYING](COPYING) file.

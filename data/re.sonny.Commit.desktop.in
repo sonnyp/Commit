@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Commit
+Comment=Helps you write better Git commit messages.
 Exec=re.sonny.Commit
 Terminal=false
 Type=Application

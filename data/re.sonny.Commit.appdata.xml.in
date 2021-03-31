@@ -9,7 +9,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <summary>Git commit message editor</summary>
   <description>
-    <p>Git commit message editor.</p>
+    <p>Helps you write better Git commit messages.</p>
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of subject line when it exceeds 69 characters.</li>
