@@ -10,7 +10,7 @@ Initial release. Forked from Gnomit 2.0 .
 https://github.com/small-tech/gnomit
 
 ### Fixed
-  - Support "#" in commit body
+  - Support "#" in commit message
   - Properly recognize executable path
 
 ### Changed

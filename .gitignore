@@ -1,8 +1,5 @@
-# Ignore editor artefacts 
-\#*
-*~
-.buildconfig
+.flatpak
 .flatpak-builder
 flatpak
 repo
-
+*.gresource

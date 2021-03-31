@@ -39,6 +39,15 @@ To save your commit message, either press the Commit button or press _Ctrl+Retur
 
 To dismiss Commit and cancel your commit message, press _Escape_.
 
+## Development
+
+```
+cd Commit
+./run.sh tests/message-with-body
+# Make changes
+# Ctrl+Shift+R to restart
+```
+
 ## Contributors
 
   * [Sonny Piers](https://github.com/sonnyp)

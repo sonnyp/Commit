@@ -29,11 +29,38 @@ pkg.require({
 
 const Gio = imports.gi.Gio
 const Gtk = imports.gi.Gtk
+const GLib = imports.gi.GLib
+const {programInvocationName} = imports.system;
 
 const {Application} = imports.application;
 
-function main(argv) {
 
+function main(argv) {
   let application = new Application()
+
+  if (GLib.getenv("DEV")) {
+    log("argv " + argv.join(" "));
+
+    log(`programInvocationName: ${programInvocationName}`);
+    log(`_: ${GLib.getenv("_")}`);
+    for (const i in pkg) {
+      if (typeof pkg[i] === "string") {
+        log(`pkg.${i}: ${pkg[i]}`);
+      }
+    }
+
+    const restart = new Gio.SimpleAction({
+      name: "restart",
+      parameter_type: null,
+    });
+    restart.connect("activate", () => {
+      application.quit();
+      log(argv);
+      GLib.spawn_async(null, argv, null, GLib.SpawnFlags.DEFAULT, null);
+    });
+    application.add_action(restart);
+    application.set_accels_for_action("app.restart", ["<Ctrl><Shift>Q"]);
+  }
+
   return application.run(argv)
 }

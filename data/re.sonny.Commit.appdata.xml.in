@@ -27,6 +27,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot.png</image>
+      <captio>Commit main window</captio>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png</image>
+      <captio>Commit main window - dark theme</captio>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
