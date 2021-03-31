@@ -1,9 +1,9 @@
 {
-    "app-id" : "org.small_tech.Gnomit",
+    "app-id" : "re.sonny.Commit",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
-    "command" : "org.small_tech.Gnomit",
+    "command" : "re.sonny.Commit",
     "x-run-args" : [
         "small-tech/gnomit/gjs/tests/message-with-body"
     ],

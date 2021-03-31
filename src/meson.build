@@ -1,15 +1,15 @@
 pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
-src_res = gnome.compile_resources('org.small_tech.Gnomit.src',
-  'org.small_tech.Gnomit.src.gresource.xml',
+src_res = gnome.compile_resources('re.sonny.Commit.src',
+  're.sonny.Commit.src.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
 )
 
-data_res = gnome.compile_resources('org.small_tech.Gnomit.data',
-  'org.small_tech.Gnomit.data.gresource.xml',
+data_res = gnome.compile_resources('re.sonny.Commit.data',
+  're.sonny.Commit.data.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
@@ -24,8 +24,8 @@ bin_conf.set('libdir', join_paths(get_option('prefix'), get_option('libdir')))
 bin_conf.set('datadir', join_paths(get_option('prefix'), get_option('datadir')))
 
 configure_file(
-  input: 'org.small_tech.Gnomit.in',
-  output: 'org.small_tech.Gnomit',
+  input: 're.sonny.Commit.in',
+  output: 're.sonny.Commit',
   configuration: bin_conf,
   install: true,
   install_dir: get_option('bindir')

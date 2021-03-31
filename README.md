@@ -24,7 +24,7 @@ We exist in part thanks to patronage by people like you. If you share [our visio
 
 ## Installation
 
-You can install Gnomit using [Gnome Software](https://wiki.gnome.org/Apps/Software) and [Pop!_Shop](https://github.com/pop-os/shop) ([Pop!_OS](https://system76.com/pop) 20.04+), [from Flathub](https://flathub.org/apps/details/org.small_tech.Gnomit), or from [my web site](https://ar.al).
+You can install Gnomit using [Gnome Software](https://wiki.gnome.org/Apps/Software) and [Pop!_Shop](https://github.com/pop-os/shop) ([Pop!_OS](https://system76.com/pop) 20.04+), [from Flathub](https://flathub.org/apps/details/re.sonny.Commit), or from [my web site](https://ar.al).
 
 ### Gnome Software & Pop!_Shop
 
@@ -33,7 +33,7 @@ You can install Gnomit using [Gnome Software](https://wiki.gnome.org/Apps/Softwa
 3. Set Gnomit as your Git editor:
 
     ```sh
-    git config --global core.editor "flatpak run org.small_tech.Gnomit"
+    git config --global core.editor "flatpak run re.sonny.Commit"
     ```
 
 ### Flathub
@@ -43,13 +43,13 @@ You can install Gnomit using [Gnome Software](https://wiki.gnome.org/Apps/Softwa
 2. In Terminal:
 
     ```sh
-    flatpak install flathub org.small_tech.Gnomit
+    flatpak install flathub re.sonny.Commit
     ```
 
 3. Set Gnomit as your Git editor:
 
     ```sh
-    git config --global core.editor "flatpak run org.small_tech.Gnomit"
+    git config --global core.editor "flatpak run re.sonny.Commit"
     ```
 
 ### From my web site
@@ -60,18 +60,18 @@ That said, it is nice not to have to rely solely on centralised App Stores.
 
 So, if you want to, you can also install Gnomit directly from my web site:
 
-  1. Download [Gnomit version 2.0.0](https://ar.al/downloads/gnomit/2.0.0/org.small_tech.Gnomit.flatpak).
+  1. Download [Gnomit version 2.0.0](https://ar.al/downloads/gnomit/2.0.0/re.sonny.Commit.flatpak).
 
   2. In Terminal, from the directory you downloaded the Gnomit flatpak to:
 
       ```sh
-      flatpak install org.small_tech.Gnomit.flatpak
+      flatpak install re.sonny.Commit.flatpak
       ```
 
   3. Set Gnomit as your Git editor:
 
       ```sh
-      git config --global core.editor "flatpak run org.small_tech.Gnomit"
+      git config --global core.editor "flatpak run re.sonny.Commit"
       ```
 
 ## Usage
@@ -87,7 +87,7 @@ To dismiss Gnomit and cancel your commit message, press _Escape_.
 To see the help screen, in Terminal:
 
 ```sh
-flatpak run org.small_tech.Gnomit --help
+flatpak run re.sonny.Commit --help
 ```
 
 ## Known issues
@@ -98,7 +98,7 @@ This is a Flatpak issue. Gnomit will use your system theme [if it is installed v
 
 ## Development notes
 
-The following setting in _org.small_tech.Gnomit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line. Also note that this path is relative to your home folder. You must update it to point to where you stored your Gnomit working directory for your Builder build to succeed.
+The following setting in _re.sonny.Commit.json_ allows the app to use mock data when run from Gnome Builder. If you want to test the behaviour of the app when it receives no command-line arguments from within Builder, remove this line. Also note that this path is relative to your home folder. You must update it to point to where you stored your Gnomit working directory for your Builder build to succeed.
 
 ```json
 "x-run-args" : [

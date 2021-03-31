@@ -16,7 +16,7 @@ if [ $# -eq 0 ]
 fi
 
 # Constants unique to the application.
-APP_ID='org.small_tech.Gnomit'
+APP_ID='re.sonny.Commit'
 GITHUB_ACCOUNT_NAME='small-tech'
 LOCAL_URL='file:\/\/\/home\/aral\/small-tech\/gnomit\/gjs'
 REMOTE_URL='https:\/\/source.small-tech.org\/gnome\/gnomit\/gjs.git'
@@ -155,7 +155,7 @@ fi
 printf "  • Test: creating test environment…"
 mkdir "$TEST_DIRECTORY"
 echo 'A test' > "$TEST_DIRECTORY/a-test.txt"
-git config --global core.editor "flatpak run org.small_tech.Gnomit"
+git config --global core.editor "flatpak run re.sonny.Commit"
 runIn "$TEST_DIRECTORY" "git init"
 runIn "$TEST_DIRECTORY" "git add --all"
 DONE

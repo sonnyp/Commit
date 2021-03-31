@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>org.small_tech.Gnomit</id>
-  <launchable type="desktop-id">org.small_tech.Gnomit.desktop</launchable>
+  <id>re.sonny.Commit</id>
+  <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
   <name>Gnomit</name>
   <developer_name>Aral Balkan, Small Technology Foundation</developer_name>
   <update_contact>hello@small-tech.org</update_contact>
@@ -26,7 +26,7 @@
   <url type="bugtracker">https://github.com/small-tech/gnomit/issues</url>
   <url type="donation">https://small-tech.org/fund/</url>
   <url type="help">https://small-tech.org/</url>
-  <icon type="remote" width="512px" height="512px">https://ar.al/org.small_tech.Gnomit.png</icon>
+  <icon type="remote" width="512px" height="512px">https://ar.al/re.sonny.Commit.png</icon>
   <screenshots>
     <screenshot type="default">
       <image>https://ar.al/2018/10/19/gnomit-1.0.4/gnomit.png</image>
@@ -43,7 +43,7 @@
     <release date="2020-04-22" version="1.1.0">
       <description>
         <p>A number of housekeeping updates thanks to Sonny Piers that fix a warning, update dependencies, hide the desktop entry, and reduce permissions.</p>
-        <p>This is the last release that will use the App ID ind.ie.Gnomit. Future updates will be released under org.small_tech.Gnomit.</p>
+        <p>This is the last release that will use the App ID ind.ie.Gnomit. Future updates will be released under re.sonny.Commit.</p>
       </description>
     </release>
     <release date="2018-12-11" version="1.0.7">
@@ -86,5 +86,3 @@
   </releases>
   <content_rating type="oars-1.1" />
 </component>
-
-

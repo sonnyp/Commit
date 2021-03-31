@@ -7,7 +7,7 @@ const SUMMARY = `Helps you write better Git commit messages.
 
 To use, configure Git to use Gnomit as the default editor:
 
-  git config --global core.editor "flatpak run org.small_tech.Gnomit"`
+  git config --global core.editor "flatpak run re.sonny.Commit"`
 
 const COPYRIGHT = `Made with ♥ by Small Technology Foundation, a tiny, independent not-for-profit (https://small-tech.org).
 
@@ -71,7 +71,7 @@ var Application = GObject.registerClass({
     //
 
     super._init({
-      application_id: 'org.small_tech.Gnomit',
+      application_id: 're.sonny.Commit',
       flags:
       /* We handle file opens. */
       Gio.ApplicationFlags.HANDLES_OPEN

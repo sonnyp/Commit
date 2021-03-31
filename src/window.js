@@ -1,6 +1,7 @@
 /* window.js
  *
  * Copyright 2018 Aral Balkan
+ * Copyright 2021 Sonny Piers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +22,7 @@ const {Gtk, GObject} = imports.gi
 var GnomitWindow = GObject.registerClass({
   Name: 'GnomitWindow',
   GTypeName: 'GnomitWindow',
-  Template: 'resource:///org/small_tech/Gnomit/window.glade',
+  Template: 'resource:///re/sonny/Commit/window.glade',
   InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 }, class GnomitWindow extends Gtk.Window {
 

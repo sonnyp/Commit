@@ -10,11 +10,11 @@ Nothing yet.
 
 ## [2.0.0] - 2020-04-23
 
-Initial release under the new org.small_tech.Gnomit App ID.
+Initial release under the new re.sonny.Commit App ID.
 
 ### Changed
 
-  - (Breaking Change) App ID is now org.small_tech.Gnomit.
+  - (Breaking Change) App ID is now re.sonny.Commit.
   - New icon.
   - Publish delay hours set to 0 to remove Flathub publishing delay.
 
