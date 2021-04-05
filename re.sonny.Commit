@@ -6,5 +6,5 @@ import { programInvocationName } from "system";
 
 import main from "./src/main.js";
 main([programInvocationName, ...ARGV], {
-  version: "dev"
+  version: "dev",
 });

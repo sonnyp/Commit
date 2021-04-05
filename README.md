@@ -12,14 +12,14 @@ Helps you write better Git commit messages.
 
 ## Features
 
-  - Highlights overflow of subject line when it exceeds 69 characters.
-  - Inserts empty line between subject line and rest of message.
-  - Spell checking.
-  - Select All selects only your commit message, not the Git commit comment.
-  - Displays project folder and branch in window header.
-  - Git Commit comment is not editable.
-  - Dark theme support: the overflow highlight is adjusted according to your theme.
-  - Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.
+- Highlights overflow of subject line when it exceeds 69 characters.
+- Inserts empty line between subject line and rest of message.
+- Spell checking.
+- Select All selects only your commit message, not the Git commit comment.
+- Displays project folder and branch in window header.
+- Git Commit comment is not editable.
+- Dark theme support: the overflow highlight is adjusted according to your theme.
+- Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.
 
 ## Installation
 
@@ -45,6 +45,7 @@ To dismiss Commit and cancel your commit message, press _Escape_.
 
 ```
 cd Commit
+npm install
 ./re.sonny.Commit tests/message-with-body
 # Make changes
 # Ctrl+Shift+R to restart
@@ -79,14 +80,14 @@ flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 
 ## Contributors
 
-* [Aral Balkan](https://ar.al)
-* [Sergey Bugaev](https://mastodon.technology/@bugaevc)
-* [Sonny Piers](https://github.com/sonnyp)
+- [Aral Balkan](https://ar.al)
+- [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+- [Sonny Piers](https://github.com/sonnyp)
 
 ## Copyright
 
-* © 2020-2021 Sonny Piers
-* © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
+- © 2020-2021 Sonny Piers
+- © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
 

@@ -17,24 +17,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Gtk from 'gi://Gtk'
-import GObject from 'gi://GObject'
-import Gio from 'gi://Gio'
+import Gtk from "gi://Gtk";
+import GObject from "gi://GObject";
+import Gio from "gi://Gio";
 
 const file = Gio.File.new_for_uri(import.meta.url);
-const windowFile = file.get_parent().resolve_relative_path('window.glade');
+const windowFile = file.get_parent().resolve_relative_path("window.glade");
 const [, Template] = windowFile.load_contents(null);
 
-export default GObject.registerClass({
-  Name: 'CommitWindow',
-  GTypeName: 'CommitWindow',
-  Template,
-  InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
-}, class CommitWindow extends Gtk.Window {
-
-  _init(application) {
-    super._init({
+export default GObject.registerClass(
+  {
+    Name: "CommitWindow",
+    GTypeName: "CommitWindow",
+    Template,
+    InternalChildren: ["messageText", "commitButton", "cancelButton"],
+  },
+  class CommitWindow extends Gtk.Window {
+    _init(application) {
+      super._init({
         application,
-    })
-  }
-})
+      });
+    }
+  },
+);

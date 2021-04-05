@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.1 -->
 <interface>
-  <requires lib="gtk+" version="3.20"/>
+  <requires lib="gtk+" version="3.20" />
   <template class="CommitWindow" parent="GtkWindow">
     <property name="can_focus">False</property>
     <property name="resizable">True</property>
@@ -27,9 +27,9 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <accelerator key="Return" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
+            <accelerator key="Return" signal="clicked" modifiers="GDK_CONTROL_MASK" />
             <style>
-              <class name="suggested-action"/>
+              <class name="suggested-action" />
             </style>
           </object>
           <packing>

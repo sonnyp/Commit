@@ -17,16 +17,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import './setup.js'
+import "./setup.js";
 
-import Gio from 'gi://Gio'
-import GLib from 'gi://GLib'
-import {programInvocationName} from 'system'
+import Gio from "gi://Gio";
+import GLib from "gi://GLib";
+import { programInvocationName } from "system";
 
-import Application from './application.js'
+import Application from "./application.js";
 
-export default function main(argv, {version}) {
-  let application = new Application({version})
+export default function main(argv, { version }) {
+  const application = new Application({ version });
 
   if (__DEV__) {
     log("argv " + argv.join(" "));
@@ -45,5 +45,5 @@ export default function main(argv, {version}) {
     application.set_accels_for_action("app.restart", ["<Ctrl><Shift>Q"]);
   }
 
-  return application.run(argv)
+  return application.run(argv);
 }

@@ -1,11 +1,12 @@
 #!/usr/bin/env -S gjs -m
 
-globalThis.__DEV__ = false
+globalThis.__DEV__ = false;
 
 import { programInvocationName } from "system";
 
+// eslint-disable-next-line import/no-unresolved
 import main from "file://@datadir@/@PACKAGE_NAME@/main.js";
 
 main([programInvocationName, ...ARGV], {
-  version: "@PACKAGE_VERSION@"
+  version: "@PACKAGE_VERSION@",
 });

@@ -10,9 +10,11 @@ Initial release. Forked from Gnomit 2.0 .
 https://github.com/small-tech/gnomit
 
 ### Fixed
-  - Support "#" in commit message
-  - Properly recognize executable path
+
+- Support "#" in commit message
+- Properly recognize executable path
 
 ### Changed
-  - Upgrade to GNOME platform 40
-  - Upgrade to gspell 1.9.1
+
+- Upgrade to GNOME platform 40
+- Upgrade to gspell 1.9.1

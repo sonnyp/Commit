@@ -2,7 +2,7 @@
 // https://gitlab.gnome.org/GNOME/gjs/-/blob/master/doc/ESModules.md
 // import "gi://Gio";
 // import "gi://GLib";
-// import "gi://GObject"; 
+// import "gi://GObject";
 
 // FIXME: Gspell does not support GTK 4 currently
 // https://gitlab.gnome.org/GNOME/gspell/-/issues/17
