@@ -2,4 +2,6 @@
 .flatpak-builder
 flatpak
 repo
-*.gresource
+builddir
+build
+install

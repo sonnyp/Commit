@@ -1,21 +1,22 @@
-const ByteArray                                = imports.byteArray
-const { Gdk, Gtk, Gio, GLib, GObject, Gspell } = imports.gi
-const { CommitWindow }                         = imports.window
-const { programInvocationName }                = imports.system
+import Gdk from 'gi://Gdk'
+import Gtk from 'gi://Gtk'
+import Gio from 'gi://Gio'
+import GLib from 'gi://GLib'
+import GObject from 'gi://GObject'
+import Gspell from 'gi://Gspell'
+import { programInvocationName } from "system"
 
-const SUMMARY = `Helps you write better Git commit messages.
+import CommitWindow from './window.js'
+
+const ByteArray = imports.byteArray
+
+const SUMMARY = `
+Helps you write better Git commit messages.
 
 To use, configure Git to use Commit as the default editor:
 
-  git config --global core.editor "flatpak run re.sonny.Commit"`
-
-const COPYRIGHT = `Copyright © 2020 Aral Balkan (https://ar.al)
-
-Copyright © 2021 Sonny Piers
-
-License GPLv3+: GNU GPL version 3 or later (http://gnu.org/licenses/gpl.html)
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.`
+  git config --global core.editor "flatpak run re.sonny.Commit"
+`.trim()
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = 'highlightBackground'
 
@@ -56,12 +57,11 @@ function unicodeLength(str) {
 // TODO: The Application class is doing everything right now. Refactor to offload
 //       functionality to the dialogue and to helper objects.
 
-var Application = GObject.registerClass({
+export default GObject.registerClass({
   // Nothing yet.
 }, class Application extends Gtk.Application {
 
-  _init() {
-
+  _init({version}) {
     //
     // Set application details.
     //
@@ -90,10 +90,6 @@ var Application = GObject.registerClass({
     // on the --help screen.
     this.set_option_context_summary(SUMMARY)
 
-    // The option context description is displayed below the set of options
-    // on the --help screen.
-    this.set_option_context_description(COPYRIGHT)
-
     // Add option: --version, -v
     this.add_main_option(
       'version', 'v',
@@ -113,7 +109,7 @@ var Application = GObject.registerClass({
       // Print a minimal version string based on the GNU coding standards.
       // https://www.gnu.org/prep/standards/standards.html#g_t_002d_002dversion
       if (options.contains('version')) {
-        print(`Commit ${pkg.version}`)
+        print(`Commit ${version}`)
 
         // OK.
         return 0

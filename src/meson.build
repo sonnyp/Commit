@@ -1,18 +1,9 @@
 pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
-src_res = gnome.compile_resources('re.sonny.Commit.src',
-  're.sonny.Commit.src.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
-)
-
-data_res = gnome.compile_resources('re.sonny.Commit.data',
-  're.sonny.Commit.data.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
+install_data(
+  ['application.js', 'main.js', 'setup.js', 'window.glade', 'window.js'],
+  install_dir : pkgdatadir
 )
 
 bin_conf = configuration_data()
@@ -30,3 +21,4 @@ configure_file(
   install: true,
   install_dir: get_option('bindir')
 )
+

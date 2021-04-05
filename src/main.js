@@ -1,7 +1,7 @@
 /* main.js
  *
- * Copyright 2021 Sonny Piers
- * Copyright 2018 Aral Balkan
+ * Copyright 2020-2021 Sonny Piers
+ * Copyright 2018-2020 Aral Balkan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,37 +17,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-pkg.initGettext()
-pkg.initFormat()
-pkg.require({
-  'GObject': '2.0',
-  'Gio': '2.0',
-  'Gtk': '3.0',
-  'GLib': '2.0',
-  'Gspell': '1'
-})
+import './setup.js'
 
-const Gio = imports.gi.Gio
-const Gtk = imports.gi.Gtk
-const GLib = imports.gi.GLib
-const {programInvocationName} = imports.system;
+import Gio from 'gi://Gio'
+import GLib from 'gi://GLib'
+import {programInvocationName} from 'system'
 
-const {Application} = imports.application;
+import Application from './application.js'
 
+export default function main(argv, {version}) {
+  let application = new Application({version})
 
-function main(argv) {
-  let application = new Application()
-
-  if (GLib.getenv("DEV")) {
+  if (__DEV__) {
     log("argv " + argv.join(" "));
-
     log(`programInvocationName: ${programInvocationName}`);
     log(`_: ${GLib.getenv("_")}`);
-    for (const i in pkg) {
-      if (typeof pkg[i] === "string") {
-        log(`pkg.${i}: ${pkg[i]}`);
-      }
-    }
 
     const restart = new Gio.SimpleAction({
       name: "restart",
@@ -55,7 +39,6 @@ function main(argv) {
     });
     restart.connect("activate", () => {
       application.quit();
-      log(argv);
       GLib.spawn_async(null, argv, null, GLib.SpawnFlags.DEFAULT, null);
     });
     application.add_action(restart);

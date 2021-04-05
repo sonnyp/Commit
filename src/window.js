@@ -1,7 +1,7 @@
 /* window.js
  *
- * Copyright 2018 Aral Balkan
- * Copyright 2021 Sonny Piers
+ * Copyright 2020-2021 Sonny Piers
+ * Copyright 2018-2020 Aral Balkan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const {Gtk, GObject} = imports.gi
+import Gtk from 'gi://Gtk'
+import GObject from 'gi://GObject'
+import Gio from 'gi://Gio'
 
-var CommitWindow = GObject.registerClass({
+const file = Gio.File.new_for_uri(import.meta.url);
+const windowFile = file.get_parent().resolve_relative_path('window.glade');
+const [, Template] = windowFile.load_contents(null);
+
+export default GObject.registerClass({
   Name: 'CommitWindow',
   GTypeName: 'CommitWindow',
-  Template: 'resource:///re/sonny/Commit/window.glade',
+  Template,
   InternalChildren: ['messageText', 'commitButton', 'cancelButton'],
 }, class CommitWindow extends Gtk.Window {
 
