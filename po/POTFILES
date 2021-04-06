@@ -1,5 +1,4 @@
-data/re.sonny.Commit.desktop.in
-data/re.sonny.Commit.appdata.xml.in
+data/re.sonny.Commit.desktop
+data/re.sonny.Commit.appdata.xml
 data/re.sonny.Commit.gschema.xml
-src/window.uisrc/main.js
-src/window.js
+src/window.glade

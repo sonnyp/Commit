@@ -1,8 +1,9 @@
 .flatpak
 .flatpak-builder
+build
+builddir
 flatpak
 node_modules/
 repo
-build
 install
 .eslintcache

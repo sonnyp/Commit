@@ -1,5 +1,5 @@
 desktop_file = i18n.merge_file(
-  input: 're.sonny.Commit.desktop.in',
+  input: 're.sonny.Commit.desktop',
   output: 're.sonny.Commit.desktop',
   type: 'desktop',
   po_dir: '../po',
@@ -15,7 +15,7 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 're.sonny.Commit.appdata.xml.in',
+  input: 're.sonny.Commit.appdata.xml',
   output: 're.sonny.Commit.appdata.xml',
   po_dir: '../po',
   install: true,

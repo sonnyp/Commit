@@ -1,10 +1,13 @@
 #!/usr/bin/env -S gjs -m
 
+// -*- mode: js; -*-
+
 globalThis.__DEV__ = true;
 
 import { programInvocationName } from "system";
 
 import main from "./src/main.js";
+
 main([programInvocationName, ...ARGV], {
   version: "dev",
 });

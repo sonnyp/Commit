@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop">
   <id>re.sonny.Commit</id>
   <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
@@ -12,29 +12,44 @@
     <p>Helps you write better Git commit messages.</p>
     <p>Features:</p>
     <ul>
-      <li>Highlights overflow of subject line when it exceeds 69 characters.</li>
+      <li
+      >Highlights overflow of subject line when it exceeds 69 characters.</li>
       <li>Inserts empty line between subject line and rest of message.</li>
       <li>Spell checking.</li>
-      <li>Select All selects only your commit message, not the Git commit comment.</li>
+      <li
+      >Select All selects only your commit message, not the Git commit comment.</li>
       <li>Displays project folder and branch in window header.</li>
       <li>Git Commit comment is not editable</li>
-      <li>Dark theme support: the overflow highlight is adjusted according to your theme.</li>
-      <li>Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.</li>
+      <li
+      >Dark theme support: the overflow highlight is adjusted according to your theme.</li>
+      <li
+      >Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.</li>
     </ul>
   </description>
-  <url type="homepage">https://github.com/sonnyp/commit</url>
+  <url type="homepage">https://github.com/sonnyp/Commit</url>
   <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot.png</image>
+      <image
+      >https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot.png</image>
       <captio>Commit main window</captio>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png</image>
+      <image
+      >https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png</image>
       <captio>Commit main window - dark theme</captio>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
-  <!-- <releases>
-  </releases> -->
+  <releases>
+    <release version="1.0.0" date="2021-04-05">
+      <description>
+        <p>Initial release. Forked from Gnomit 2.0.</p>
+        <ul>
+          <li>Fix authentication on some websites.</li>
+          <li>Implement same site navigation</li>
+        </ul>
+      </description>
+      </release>
+  </releases>
 </component>
