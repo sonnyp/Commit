@@ -42,12 +42,12 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="1.0.0" date="2021-04-05">
+    <release version="1.0.0" date="2021-04-06">
       <description>
         <p>Initial release. Forked from Gnomit 2.0.</p>
         <ul>
-          <li>Fix authentication on some websites.</li>
-          <li>Implement same site navigation</li>
+          <li>Support "#" in commit message</li>
+          <li>Properly recognize executable path</li>
         </ul>
       </description>
       </release>
