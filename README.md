@@ -6,30 +6,18 @@ Git commit message editor
 
 Helps you write better Git commit messages.
 
-<!-- <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='200' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
+<!-- <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
 
 ![screenshot](data/screenshot.png)
 
-## Features
-
-- Highlights overflow of subject line when it exceeds 69 characters.
-- Inserts empty line between subject line and rest of message.
-- Spell checking.
-- Select All selects only your commit message, not the Git commit comment.
-- Displays project folder and branch in window header.
-- Git Commit comment is not editable.
-- Dark theme support: the overflow highlight is adjusted according to your theme.
-- Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.
-
 ## Installation
 
+Setup flatpak and flathub if you haven't https://flatpak.org/setup/
+
+Then run
+
 ```sh
-cd Commit
-
-flatpak-builder --user --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
-flatpak --user remote-add --no-gpg-verify --if-not-exists Commit repo
-flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
-
+flatpak install re.sonny.Commit
 git config --global core.editor "flatpak run re.sonny.Commit"
 ```
 
@@ -37,19 +25,31 @@ git config --global core.editor "flatpak run re.sonny.Commit"
 
 Commit will pop up automatically when you make a commit in one of your projects.
 
-To save your commit message, either press the Commit button or press _Ctrl+Return_.
+To save your commit message, press the Commit button or the _Ctrl+Return_ key combination.
 
-To dismiss Commit and cancel your commit message, press _Escape_.
+To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
+
+## Features
+
+- Highlights overflow of subject line when it exceeds 69 characters
+- Inserts empty line between subject line and rest of message
+- Spell checking
+- Select All selects only your commit message, not the Git commit comment
+- Displays project folder and branch in window header
+- Git Commit comment is not editable
+- Dark theme support: the overflow highlight is adjusted according to your theme
+- Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
+- Auto inserts blank line for commit description
 
 ## Development
 
-```
+```sh
 cd Commit
-npm install
+npm install # Install development dependencies
 ./re.sonny.Commit tests/message-with-body
-# Make changes
-# Ctrl+Shift+R to restart
 ```
+
+Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.
 
 ## Building
 

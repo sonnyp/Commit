@@ -10,10 +10,9 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{xml,css,md,yml,yaml}": "prettier --write"
+    "*.{xml,css,md,yml,yaml,json}": "prettier --write"
   },
   "scripts": {
-    "test": "eslint --cache .",
     "prepare": "husky install"
   }
 }

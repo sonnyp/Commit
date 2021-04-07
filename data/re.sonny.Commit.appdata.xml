@@ -12,18 +12,18 @@
     <p>Helps you write better Git commit messages.</p>
     <p>Features:</p>
     <ul>
+      <li>Highlights overflow of subject line when it exceeds 69 characters</li>
+      <li>Inserts empty line between subject line and rest of message</li>
+      <li>Spell checking</li>
       <li
-      >Highlights overflow of subject line when it exceeds 69 characters.</li>
-      <li>Inserts empty line between subject line and rest of message.</li>
-      <li>Spell checking.</li>
-      <li
-      >Select All selects only your commit message, not the Git commit comment.</li>
-      <li>Displays project folder and branch in window header.</li>
+      >Select All selects only your commit message, not the Git commit comment</li>
+      <li>Displays project folder and branch in window header</li>
       <li>Git Commit comment is not editable</li>
       <li
-      >Dark theme support: the overflow highlight is adjusted according to your theme.</li>
+      >Dark theme support: the overflow highlight is adjusted according to your theme</li>
       <li
-      >Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages.</li>
+      >Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages</li>
+      <li>Auto inserts blank line for commit description</li>
     </ul>
   </description>
   <url type="homepage">https://github.com/sonnyp/Commit</url>
@@ -52,4 +52,9 @@
       </description>
       </release>
   </releases>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>HighContrast</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
 </component>
