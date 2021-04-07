@@ -18,25 +18,19 @@
  */
 
 import Gtk from "gi://Gtk";
-import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 
 const file = Gio.File.new_for_uri(import.meta.url);
 const windowFile = file.get_parent().resolve_relative_path("window.ui");
-const [, Template] = windowFile.load_contents(null);
+const builder = Gtk.Builder.new_from_file(windowFile.get_path());
 
-export default GObject.registerClass(
-  {
-    Name: "CommitWindow",
-    GTypeName: "CommitWindow",
-    Template,
-    InternalChildren: ["messageText", "commitButton", "cancelButton"],
-  },
-  class CommitWindow extends Gtk.Window {
-    _init(application) {
-      super._init({
-        application,
-      });
-    }
-  },
-);
+export default function Window(application) {
+  const window = builder.get_object("window");
+  const cancelButton = builder.get_object("cancelButton");
+  const commitButton = builder.get_object("commitButton");
+  const messageText = builder.get_object("messageText");
+
+  window.set_application(application);
+
+  return { window, cancelButton, commitButton, messageText };
+}

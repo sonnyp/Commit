@@ -6,7 +6,7 @@ import GObject from "gi://GObject";
 import Gspell from "gi://Gspell";
 import { programInvocationName } from "system";
 
-import CommitWindow from "./window.js";
+import Window from "./window.js";
 
 const ByteArray = imports.byteArray;
 
@@ -53,7 +53,7 @@ function unicodeLength(str) {
 }
 
 // TODO: The Application class is doing everything right now. Refactor to offload
-//       functionality to the dialogue and to helper objects.
+//       functionality to the window and to helper objects.
 
 export default GObject.registerClass(
   {
@@ -340,7 +340,7 @@ export default GObject.registerClass(
         this.validateCommitButton();
 
         // Show the composition interface.
-        this.dialogue.show_all();
+        this.window.show_all();
       });
 
       //
@@ -348,14 +348,16 @@ export default GObject.registerClass(
       //
 
       this.connect("startup", () => {
-        this.dialogue = new CommitWindow(this);
+        const { window, messageText, cancelButton, commitButton } = Window(
+          this,
+        );
 
-        // TODO: This is violating encapsulation: move to Window subclass.
-        this.dialogue.set_icon_name("accessories-text-editor");
-        this.messageText = this.dialogue._messageText;
-        this.cancelButton = this.dialogue._cancelButton;
-        this.commitButton = this.dialogue._commitButton;
-        /////
+        Object.assign(this, {
+          window,
+          messageText,
+          cancelButton,
+          commitButton,
+        });
 
         // Disable commit button initially as we don’t allow empty
         // messages to be committed (person can always cancel).
@@ -363,8 +365,8 @@ export default GObject.registerClass(
         this.commitButton.set_sensitive(false);
 
         // Exit via Escape key.
-        this.dialogue.add_events(Gdk.EventMask.KEY_PRESS_MASK);
-        this.dialogue.connect("key_press_event", (widget, event) => {
+        this.window.add_events(Gdk.EventMask.KEY_PRESS_MASK);
+        this.window.connect("key_press_event", (widget, event) => {
           const [, keyval] = event.get_keyval();
           if (keyval === Gdk.KEY_Escape) {
             this.quit();
@@ -418,7 +420,7 @@ export default GObject.registerClass(
           highlightBackgroundTag.background = highlightColour;
         };
 
-        this.dialogue.connect("style-updated", () => {
+        this.window.connect("style-updated", () => {
           setHighlightColour();
         });
 
@@ -594,7 +596,7 @@ export default GObject.registerClass(
         });
 
         // Add the dialog to the application as its main window.
-        this.add_window(this.dialogue);
+        this.add_window(this.window);
       });
 
       //
