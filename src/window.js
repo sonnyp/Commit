@@ -22,7 +22,7 @@ import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 
 const file = Gio.File.new_for_uri(import.meta.url);
-const windowFile = file.get_parent().resolve_relative_path("window.glade");
+const windowFile = file.get_parent().resolve_relative_path("window.ui");
 const [, Template] = windowFile.load_contents(null);
 
 export default GObject.registerClass(
