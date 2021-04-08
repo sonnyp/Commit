@@ -18,11 +18,15 @@
  */
 
 import Gtk from "gi://Gtk";
-import Gio from "gi://Gio";
+import GLib from "gi://GLib";
 
-const file = Gio.File.new_for_uri(import.meta.url);
-const windowFile = file.get_parent().resolve_relative_path("window.ui");
-const builder = Gtk.Builder.new_from_file(windowFile.get_path());
+// FIXME: Doc says return type is string but it is an array
+// https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/603
+const [filename] = GLib.filename_from_uri(import.meta.url);
+const dirname = GLib.path_get_dirname(filename);
+const builder = Gtk.Builder.new_from_file(
+  GLib.build_filenamev([dirname, "window.ui"]),
+);
 
 export default function Window(application) {
   const window = builder.get_object("window");
