@@ -20,8 +20,6 @@
 import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 
-// FIXME: Doc says return type is string but it is an array
-// https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/603
 const [filename] = GLib.filename_from_uri(import.meta.url);
 const dirname = GLib.path_get_dirname(filename);
 const builder = Gtk.Builder.new_from_file(

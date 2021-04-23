@@ -45,11 +45,21 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 
 ```sh
 cd Commit
-npm install # Install development dependencies
-./re.sonny.Commit tests/message-with-body
+
+# Install development dependencies
+sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk3-devel
+npm install
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user --assumeyes --noninteractive flathub org.freedesktop.appstream-glib
+
+./re.sonny.Commit tests/with-body/COMMIT_EDITMSG
 ```
 
 Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.
+
+```
+make test
+```
 
 ## Building
 
