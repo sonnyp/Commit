@@ -8,3 +8,4 @@
 8. [ ] GTK 4 - depends on https://gitlab.gnome.org/GNOME/gspell/-/issues/17
    1. [ ] undo/redo support depends on GTK 4 where GTKTextView natively supports it
    2. [ ] emoji autocomplete - gitmoji shortcuts? https://gitlab.gnome.org/GNOME/gtk/-/issues/86
+9. Cancel / esc does not abort rebase
