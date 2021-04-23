@@ -7,16 +7,19 @@ import Gspell from "gi://Gspell";
 import Window from "./window.js";
 import showHelp from "./showHelp.js";
 import validateCommitButton from "./validateCommitButton.js";
-import { getType, parse } from "./git.js";
+import { getType, parse } from "./scm.js";
 
 const ByteArray = imports.byteArray;
 
 const SUMMARY = `
-Helps you write better Git commit messages.
+Helps you write better commit messages.
 
-To use, configure Git to use Commit as the default editor:
-
+To use with Git, set Commit as the default editor:
   git config --global core.editor "flatpak run re.sonny.Commit"
+
+To use with Mercurial (hg), set the following in your ~/.hgrc
+  [ui]
+  editor=flatpak run re.sonny.Commit
 `.trim();
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
@@ -52,7 +55,7 @@ export default function Application({ version }) {
   // The option context parameter string is displayed next to the
   // list of options on the first line of the --help screen.
   application.set_option_context_parameter_string(
-    "<path-to-git-commit-message-file>",
+    "<path-to-commit-message-file>",
   );
 
   // The option context summary is displayed above the set of options
@@ -86,7 +89,7 @@ export default function Application({ version }) {
   });
 
   // Open gets called when a file is passed as a command=line argument.
-  // We expect Git to pass us one file.
+  // We expect Git or Mercurial to pass us one file.
   application.connect("open", (self, files, hint) => {
     if (files.length !== 1) {
       // Error: Too many files.
@@ -99,7 +102,7 @@ export default function Application({ version }) {
 
     // Try to load the commit message contents.
     const ERROR_SUMMARY =
-      "\n\nError: Could not read the Git commit message file.\n\n";
+      "\n\nError: Could not read the commit message file.\n\n";
 
     let success = false,
       commitMessage = "",
@@ -124,7 +127,7 @@ export default function Application({ version }) {
       // This should not happen.
       if (!type) {
         print(
-          `Warning: unknown Git commit type encountered in: ${application.commitMessageFilePath}`,
+          `Warning: unknown commit type encountered in: ${application.commitMessageFilePath}`,
         );
       }
 
@@ -136,16 +139,15 @@ export default function Application({ version }) {
       const commitCommentLines = commitComment.split("\n");
       application.numberOfLinesInCommitComment = commitCommentLines.length;
 
-      // The commit message is always in the .git directory in the
-      // project directory. Get the project directory’s name by using this.
-      const pathComponents = application.commitMessageFilePath.split("/");
-      const projectDirectoryName =
-        pathComponents[pathComponents.indexOf(".git") - 1];
-
-      // Set the title.
-      application.active_window.set_title(
-        `Git ${type}: ${projectDirectoryName} (${detail})`,
+      const projectDirectoryName = GLib.path_get_basename(
+        GLib.get_current_dir(),
       );
+
+      if (type) {
+        application.active_window.set_title(
+          `${type}: ${projectDirectoryName} (${detail})`,
+        );
+      }
 
       // Add Pango markup to make the commented are appear lighter.
       commitMessage = `${commitBody}<span foreground="#959595">\n${commitComment}</span>`;

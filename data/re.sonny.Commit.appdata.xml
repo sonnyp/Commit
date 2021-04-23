@@ -7,23 +7,23 @@
   <update_contact>sonny@fastmail.net</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
-  <summary>Git commit message editor</summary>
+  <summary>Commit message editor</summary>
   <description>
-    <p>Helps you write better Git commit messages.</p>
+    <p
+    >Commit is an editor that helps you write better Git and Mercurial commit messages.</p>
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of subject line when it exceeds 69 characters</li>
       <li>Inserts empty line between subject line and rest of message</li>
       <li>Spell checking</li>
-      <li
-      >Select All selects only your commit message, not the Git commit comment</li>
+      <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
-      <li>Git Commit comment is not editable</li>
       <li
       >Dark theme support: the overflow highlight is adjusted according to your theme</li>
+      <li>Auto inserts blank line for commit description</li>
       <li
       >Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages</li>
-      <li>Auto inserts blank line for commit description</li>
+      <li>Supports Mercurial commit messages</li>
     </ul>
   </description>
   <url type="homepage">https://github.com/sonnyp/Commit</url>
@@ -42,6 +42,11 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.1.0" date="2021-04-23">
+      <description>
+        <p>Add support for Mercurial</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2021-04-06">
       <description>
         <p>Initial release. Forked from Gnomit 2.0.</p>
@@ -50,7 +55,7 @@
           <li>Properly recognize executable path</li>
         </ul>
       </description>
-      </release>
+    </release>
   </releases>
   <kudos>
     <kudo>HiDpiIcon</kudo>

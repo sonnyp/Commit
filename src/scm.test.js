@@ -1,5 +1,5 @@
 import Gio from "gi://Gio";
-import { parse, getType } from "./git.js";
+import { parse, getType } from "./scm.js";
 
 const { byteArray } = imports;
 
@@ -27,6 +27,7 @@ is(getType("/foo/bar/COMMIT_EDITMSG"), "commit");
 is(getType("/foo/bar/rebase-merge/git-rebase-todo"), "rebase");
 is(getType("/foo/bar/MERGE_MSG"), "merge");
 is(getType("/foo/bar/TAG_EDITMSG"), "tag");
+is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
 
 function readTest(name) {
   const file = Gio.File.new_for_uri(import.meta.url);
@@ -184,4 +185,43 @@ is(
 # Write a message for tag:
 #   1.0.0
 # Lines starting with '#' will be ignored.`,
+);
+
+is(parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").body, ``);
+is(
+  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").detail,
+  "default",
+);
+is(
+  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").comment,
+  `
+HG: Enter commit message.  Lines beginning with 'HG:' are removed.
+HG: Leave message empty to abort commit.
+HG: --
+HG: user: Sonny Piers <sonny@fastmail.net>
+HG: branch 'default'
+HG: added foobar
+`,
+);
+
+is(
+  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
+  `foo this is great
+
+hello`,
+);
+is(
+  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").detail,
+  "default",
+);
+is(
+  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").comment,
+  `
+HG: Enter commit message.  Lines beginning with 'HG:' are removed.
+HG: Leave message empty to abort commit.
+HG: --
+HG: user: Sonny Piers <sonny@fastmail.net>
+HG: branch 'default'
+HG: added foobar
+`,
 );
