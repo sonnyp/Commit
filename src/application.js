@@ -7,6 +7,7 @@ import Gspell from "gi://Gspell";
 import Window from "./window.js";
 import showHelp from "./showHelp.js";
 import validateCommitButton from "./validateCommitButton.js";
+import { getType, parse } from "./git.js";
 
 const ByteArray = imports.byteArray;
 
@@ -34,7 +35,7 @@ function unicodeLength(str) {
 //       functionality to the window and to helper objects.
 
 export default function Application({ version }) {
-  let buffer;
+  let buffer, type;
 
   const application = new Gtk.Application({
     application_id: "re.sonny.Commit",
@@ -96,63 +97,6 @@ export default function Application({ version }) {
     application.commitMessageFile = files[0];
     application.commitMessageFilePath = application.commitMessageFile.get_path();
 
-    //
-    // Save the type of this message for later
-    //
-
-    // Generic commit message.
-    const isGitCommitMessage = application.commitMessageFilePath.includes(
-      "COMMIT_EDITMSG",
-    );
-    const isTestCommitMessage =
-      application.commitMessageFilePath.includes("tests/message-with-body") ||
-      application.commitMessageFilePath.includes("tests/message-without-body");
-    application.isCommitMessage = isGitCommitMessage || isTestCommitMessage;
-
-    // Git merge message.
-    const isMergeMessage = application.commitMessageFilePath.includes(
-      "MERGE_MSG",
-    );
-    const isTestMergeMessage = application.commitMessageFilePath.includes(
-      "tests/merge",
-    );
-    application.isMergeMessage = isMergeMessage || isTestMergeMessage;
-
-    // Git tag message.
-    const isGitTagMessage = application.commitMessageFilePath.includes(
-      "TAG_EDITMSG",
-    );
-    const isTestTagMessage = application.commitMessageFilePath.includes(
-      "tests/tag-message",
-    );
-    application.isTagMessage = isGitTagMessage || isTestTagMessage;
-
-    // AddP Hunk Edit message.
-    const _isAddPHunkEditMessage = application.commitMessageFilePath.includes(
-      "addp-hunk-edit.diff",
-    );
-    const _isTestAddPHunkEditMessage = application.commitMessageFilePath.includes(
-      "tests/add-p-edit-hunk",
-    );
-    application.isAddPHunkEditMessage =
-      _isAddPHunkEditMessage || _isTestAddPHunkEditMessage;
-
-    // Rebase message.
-    const _isRebaseMessage = application.commitMessageFilePath.includes(
-      "rebase-merge/git-rebase-todo",
-    );
-    const _isTestRebaseMessage = application.commitMessageFilePath.includes(
-      "tests/rebase",
-    );
-    application.isRebaseMessage = _isRebaseMessage || _isTestRebaseMessage;
-
-    application.isTest =
-      isTestCommitMessage ||
-      isTestTagMessage ||
-      _isTestAddPHunkEditMessage ||
-      _isTestRebaseMessage ||
-      isTestMergeMessage;
-
     // Try to load the commit message contents.
     const ERROR_SUMMARY =
       "\n\nError: Could not read the Git commit message file.\n\n";
@@ -160,14 +104,14 @@ export default function Application({ version }) {
     let success = false,
       commitMessage = "",
       commitBody = "",
-      commitComment = "";
+      commitComment = "",
+      detail = "";
 
     try {
       [success, commitMessage] = GLib.file_get_contents(
         application.commitMessageFilePath,
       );
 
-      // Convert the message from ByteArray to String.
       commitMessage = ByteArray.toString(commitMessage);
 
       // Escape tag start/end as we will be using markup to populate the buffer.
@@ -176,25 +120,18 @@ export default function Application({ version }) {
       commitMessage = commitMessage.replace(/</g, "&lt;");
       commitMessage = commitMessage.replace(/>/g, "&gt;");
 
-      // If this is a git add -p hunk edit message, then we cannot
-      // split at the first comment as the message starts with a comment.
-      // Remove that comment and instead display that info in the title bar.
-      if (application.isAddPHunkEditMessage) {
-        commitMessage = commitMessage.substr(commitMessage.indexOf("\n") + 1);
+      type = getType(application.commitMessageFilePath);
+      // This should not happen.
+      if (!type) {
+        print(
+          `Warning: unknown Git commit type encountered in: ${application.commitMessageFilePath}`,
+        );
       }
 
-      // Split the message into the commit body and comment
-      const firstCommentIndex = commitMessage.indexOf("\n# ");
-      commitBody = commitMessage.slice(0, firstCommentIndex);
-      commitComment = commitMessage.slice(firstCommentIndex);
-
-      // Trim any newlines there may be at the end of the commit body
-      while (
-        commitBody.length > 0 &&
-        commitBody[commitBody.length - 1] === "\n"
-      ) {
-        commitBody = commitBody.slice(0, commitBody.length - 1);
-      }
+      ({ body: commitBody, comment: commitComment, detail } = parse(
+        commitMessage,
+        type,
+      ));
 
       const commitCommentLines = commitComment.split("\n");
       application.numberOfLinesInCommitComment = commitCommentLines.length;
@@ -202,51 +139,12 @@ export default function Application({ version }) {
       // The commit message is always in the .git directory in the
       // project directory. Get the project directory’s name by using this.
       const pathComponents = application.commitMessageFilePath.split("/");
-      let projectDirectoryName =
+      const projectDirectoryName =
         pathComponents[pathComponents.indexOf(".git") - 1];
-
-      if (application.isTest) {
-        projectDirectoryName = "test";
-      }
-
-      let action = "";
-      let detail = "";
-      if (application.isCommitMessage) {
-        // Try to get the branch name via a method that relies on
-        // positional aspect of the branch name so it should work with
-        // other languages.
-        const wordsOnBranchLine = commitCommentLines[4].split(" ");
-        const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1];
-        action = "commit";
-        detail = branchName;
-      } else if (application.isMergeMessage) {
-        // Display the branch name
-        action = "merge";
-        detail = `branch ${commitBody.split("'")[1]}`;
-      } else if (application.isTagMessage) {
-        // Get the version number from the message
-        const version = commitCommentLines[3].slice(1).trim();
-        action = "tag";
-        detail = version;
-      } else if (application.isAddPHunkEditMessage) {
-        // git add -p: edit hunk message
-        action = "add -p";
-        detail = "manual hunk edit mode; instructions at end";
-      } else if (application.isRebaseMessage) {
-        action = "rebase";
-        const _detail = commitCommentLines[1].replace("# ", "");
-        const _detailChunks = _detail.split(" ");
-        detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
-      } else {
-        // This should not happen.
-        print(
-          `Warning: unknown Git commit type encountered in: ${application.commitMessageFilePath}`,
-        );
-      }
 
       // Set the title.
       application.active_window.set_title(
-        `Git ${action}: ${projectDirectoryName} (${detail})`,
+        `Git ${type}: ${projectDirectoryName} (${detail})`,
       );
 
       // Add Pango markup to make the commented are appear lighter.
@@ -290,7 +188,7 @@ export default function Application({ version }) {
     application.previousNumberOfLinesInCommitMessage = 1;
 
     // Special case: for git add -p edit hunk messages, place the cursor at start.
-    if (application.isAddPHunkEditMessage) {
+    if (type === "add -p") {
       buffer.place_cursor(buffer.get_start_iter());
     }
 

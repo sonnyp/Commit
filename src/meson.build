@@ -2,7 +2,7 @@ pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
 install_data(
-  ['application.js', 'main.js', 'setup.js', 'showHelp.js', 'validateCommitButton.js', 'window.glade', 'window.js'],
+  ['application.js', 'git.js', 'main.js', 'setup.js', 'showHelp.js', 'validateCommitButton.js', 'window.js', 'window.ui'],
   install_dir : pkgdatadir
 )
 

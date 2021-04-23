@@ -25,3 +25,4 @@ test:
 	flatpak run org.freedesktop.appstream-glib validate data/re.sonny.Commit.appdata.xml
 	desktop-file-validate data/re.sonny.Commit.desktop
 	gtk-builder-tool validate src/window.ui
+	gjs -m src/git.test.js
