@@ -42,4 +42,4 @@ jobs:
           # Requires display server
           # Unable to init server: Could not connect: Connection refused
           # gtk-builder-tool validate src/window.ui
-          gjs -m src/git.test.js
+          gjs -m src/scm.test.js

@@ -1,10 +1,10 @@
 <img style="vertical-align: middle;" src="data/icons/re.sonny.Commit.svg" width="120" height="120">
 
-Git commit message editor
+Commit message editor
 
 # Commit
 
-Helps you write better Git commit messages.
+Commit is an editor that helps you write better Git and Mercurial commit messages.
 
 <!-- <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
 
@@ -18,8 +18,28 @@ Then run
 
 ```sh
 flatpak install re.sonny.Commit
+```
+
+### Git
+
+To set Commit as default editor for Git run the following command
+
+```sh
 git config --global core.editor "flatpak run re.sonny.Commit"
 ```
+
+See also https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor
+
+### Mercurial
+
+To set commit as default editor for Mercurial, set the following in your `hgrc`
+
+```ini
+[ui]
+editor=flatpak run re.sonny.Commit
+```
+
+See also https://www.mercurial-scm.org/wiki/editor
 
 ## Usage
 
@@ -34,12 +54,12 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 - Highlights overflow of subject line when it exceeds 69 characters
 - Inserts empty line between subject line and rest of message
 - Spell checking
-- Select All selects only your commit message, not the Git commit comment
+- Comments are readonly and excluded from "Select All"
 - Displays project folder and branch in window header
-- Git Commit comment is not editable
 - Dark theme support: the overflow highlight is adjusted according to your theme
-- Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
 - Auto inserts blank line for commit description
+- Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
+- Supports Mercurial commit messages
 
 ## Development
 

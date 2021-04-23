@@ -1,6 +1,13 @@
 export function parse(commit, type) {
   let body;
   let detail;
+  let comment_prefix = "#";
+
+  if (type === "hg") {
+    comment_prefix = "HG:";
+  }
+
+  const comment_separator = `\n${comment_prefix}`;
 
   // If this is a git add -p hunk edit message, then we cannot
   // split at the first comment as the message starts with a comment.
@@ -11,7 +18,7 @@ export function parse(commit, type) {
   }
 
   // Split the message into the commit body and comment
-  const firstCommentIndex = commit.indexOf("\n#");
+  const firstCommentIndex = commit.indexOf(comment_separator);
   body = commit.slice(0, firstCommentIndex).trimEnd();
   const comment = commit.slice(firstCommentIndex);
 
@@ -19,15 +26,10 @@ export function parse(commit, type) {
   body = body.trimEnd();
 
   const commentLines = comment.split("\n");
-  if (type === "commit") {
-    // Try to get the branch name via a method that relies on
-    // positional aspect of the branch name so it should work with
-    // other languages.
-    // FIXME: I guess we could bundle and use git instead see gitg for flatpak
-    // or https://wiki.gnome.org/Projects/Libgit2-glib
-    const wordsOnBranchLine = commentLines[4].split(" ");
-    const branchName = wordsOnBranchLine[wordsOnBranchLine.length - 1];
-    detail = branchName;
+  if (type === "hg") {
+    detail = getMercurialBranch(commentLines);
+  } else if (type === "commit") {
+    detail = getGitBranch(commentLines);
   } else if (type === "merge") {
     // Display the branch name
     detail = `branch ${body.split("'")[1]}`;
@@ -45,10 +47,30 @@ export function parse(commit, type) {
 }
 
 export function getType(filename) {
+  // Git
   if (filename.endsWith("COMMIT_EDITMSG")) return "commit";
   if (filename.endsWith("MERGE_MSG")) return "merge";
   if (filename.endsWith("TAG_EDITMSG")) return "tag";
   if (filename.endsWith("addp-hunk-edit.diff")) return "add -p";
   if (filename.endsWith("rebase-merge/git-rebase-todo")) return "rebase";
+  // Mercurial
+  if (filename.endsWith(".commit.hg.txt")) return "hg";
+  // Unknown
   return null;
+}
+
+export function getMercurialBranch(commentLines) {
+  // Try to get the branch name via a method that relies on
+  // positional aspect of the branch name so it should work with
+  // other languages.
+  const wordsOnBranchLine = commentLines[5].split(" ");
+  return wordsOnBranchLine[wordsOnBranchLine.length - 1].split("'")[1];
+}
+
+export function getGitBranch(commentLines) {
+  // Try to get the branch name via a method that relies on
+  // positional aspect of the branch name so it should work with
+  // other languages.
+  const wordsOnBranchLine = commentLines[4].split(" ");
+  return wordsOnBranchLine[wordsOnBranchLine.length - 1];
 }

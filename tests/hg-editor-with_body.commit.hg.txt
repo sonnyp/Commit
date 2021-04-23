@@ -1,0 +1,11 @@
+foo this is great
+
+hello
+
+
+HG: Enter commit message.  Lines beginning with 'HG:' are removed.
+HG: Leave message empty to abort commit.
+HG: --
+HG: user: Sonny Piers <sonny@fastmail.net>
+HG: branch 'default'
+HG: added foobar

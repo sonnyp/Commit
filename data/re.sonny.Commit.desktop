@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Commit
-Comment=Helps you write better Git commit messages.
+Comment=Commit message editor
 Exec=re.sonny.Commit
 Terminal=false
 Type=Application
