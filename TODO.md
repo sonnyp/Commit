@@ -11,3 +11,4 @@
 11. [ ] undo/redo support depends on GTK 4 where GTKTextView natively supports it
 12. [ ] emoji autocomplete - gitmoji shortcuts? https://gitlab.gnome.org/GNOME/gtk/-/issues/86
 13. [ ] Cancel / esc does not abort rebase or git commit amend
+14. [ ] bug: select all selects mercurial comments
