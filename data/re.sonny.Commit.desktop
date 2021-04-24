@@ -7,4 +7,4 @@ Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
 Icon=re.sonny.Commit
-NoDisplay=true
+Keywords=git;mercurial;hg;scm;

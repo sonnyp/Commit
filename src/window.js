@@ -1,20 +1,18 @@
-import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 import Gdk from "gi://Gdk";
+import Gtk from "gi://Gtk";
 
 import Editor from "./editor.js";
 
-const [filename] = GLib.filename_from_uri(import.meta.url);
-const dirname = GLib.path_get_dirname(filename);
-const builder = Gtk.Builder.new_from_file(
-  GLib.build_filenamev([dirname, "window.ui"]),
-);
+import { relativePath } from "./util.js";
 
 export default function Window({
   application,
   file,
   numberOfLinesInCommitComment,
 }) {
+  const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
+
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
