@@ -52,12 +52,11 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 ## Features
 
 - Highlights overflow of subject line when it exceeds 69 characters
-- Inserts empty line between subject line and rest of message
+- Inserts blank line between subject line and description
 - Spell checking
 - Comments are readonly and excluded from "Select All"
 - Displays project folder and branch in window header
 - Dark theme support: the overflow highlight is adjusted according to your theme
-- Auto inserts blank line for commit description
 - Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
 - Supports Mercurial commit messages
 
@@ -65,7 +64,7 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 
 ```sh
 cd Commit
-./re.sonny.Commit tests/with-body/COMMIT_EDITMSG
+./re.sonny.Commit test/with-body/COMMIT_EDITMSG
 ```
 
 Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.

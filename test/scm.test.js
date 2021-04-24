@@ -1,5 +1,5 @@
 import Gio from "gi://Gio";
-import { parse, getType } from "./scm.js";
+import { parse, getType } from "../src/scm.js";
 
 const { byteArray } = imports;
 
@@ -31,10 +31,7 @@ is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
 
 function readTest(name) {
   const file = Gio.File.new_for_uri(import.meta.url);
-  const data = file
-    .get_parent()
-    .get_parent()
-    .resolve_relative_path(`tests/${name}`);
+  const data = file.get_parent().resolve_relative_path(`${name}`);
   const [, contents] = data.load_contents(null);
   return byteArray.toString(contents);
 }

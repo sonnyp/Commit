@@ -1,10 +1,7 @@
 pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
-install_data(
-  ['application.js', 'scm.js', 'main.js', 'setup.js', 'showHelp.js', 'validateCommitButton.js', 'window.js', 'window.ui'],
-  install_dir : pkgdatadir
-)
+install_subdir('.', install_dir : pkgdatadir)
 
 bin_conf = configuration_data()
 bin_conf.set('GJS', find_program('gjs').path())
