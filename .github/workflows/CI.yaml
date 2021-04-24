@@ -41,5 +41,5 @@ jobs:
           desktop-file-validate --no-hints data/re.sonny.Commit.desktop
           # Requires display server
           # Unable to init server: Could not connect: Connection refused
-          # gtk-builder-tool validate src/window.ui
-          gjs -m src/scm.test.js
+          # gtk-builder-tool validate src/*.ui
+          gjs -m test/*.test.js

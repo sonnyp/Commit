@@ -24,8 +24,6 @@ To use with Mercurial (hg), set the following in your ~/.hgrc
 //       functionality to the window and to helper objects.
 
 export default function Application({ version }) {
-  let buffer, type;
-
   const application = new Gtk.Application({
     application_id: "re.sonny.Commit",
     flags:
@@ -36,7 +34,7 @@ export default function Application({ version }) {
   });
 
   GLib.set_prgname("Commit");
-  GLib.set_application_name("Commit Editor");
+  GLib.set_application_name("Commit");
 
   // The option context parameter string is displayed next to the
   // list of options on the first line of the --help screen.
@@ -77,78 +75,65 @@ export default function Application({ version }) {
   // Open gets called when a file is passed as a command=line argument.
   // We expect Git or Mercurial to pass us one file.
   application.connect("open", (self, files, hint) => {
+    if (__DEV__) log("open");
     if (files.length !== 1) {
       // Error: Too many files.
       showHelp(application);
       return;
     }
 
-    application.commitMessageFile = files[0];
-    application.commitMessageFilePath = application.commitMessageFile.get_path();
+    const file = files[0];
+    const filePath = file.get_path();
 
-    // Try to load the commit message contents.
-    const ERROR_SUMMARY =
-      "\n\nError: Could not read the commit message file.\n\n";
-
-    let success = false,
-      commitMessage = "",
-      commitBody = "",
-      commitComment = "",
-      detail = "";
-
+    let commitMessage;
     try {
-      [success, commitMessage] = GLib.file_get_contents(
-        application.commitMessageFilePath,
-      );
+      [, commitMessage] = GLib.file_get_contents(filePath);
+    } catch (err) {
+      printerr(err);
+      application.quit();
+      return;
+    }
 
-      commitMessage = ByteArray.toString(commitMessage);
+    commitMessage = ByteArray.toString(commitMessage);
 
-      // Escape tag start/end as we will be using markup to populate the buffer.
-      // (Otherwise, rebase -i commit messages fail, as they contain the strings
-      // <commit>, <label>, etc.
-      commitMessage = commitMessage.replace(/</g, "&lt;");
-      commitMessage = commitMessage.replace(/>/g, "&gt;");
+    // Escape tag start/end as we will be using markup to populate the buffer.
+    // (Otherwise, rebase -i commit messages fail, as they contain the strings
+    // <commit>, <label>, etc.
+    commitMessage = commitMessage.replace(/</g, "&lt;");
+    commitMessage = commitMessage.replace(/>/g, "&gt;");
 
-      type = getType(application.commitMessageFilePath);
-      // This should not happen.
-      if (!type) {
-        print(
-          `Warning: unknown commit type encountered in: ${application.commitMessageFilePath}`,
-        );
-      }
+    const type = getType(filePath);
+    // This should not happen.
+    if (!type) {
+      print(`Warning: unknown commit type encountered in: ${filePath}`);
+    }
 
-      ({ body: commitBody, comment: commitComment, detail } = parse(
-        commitMessage,
-        type,
-      ));
+    const { body: commitBody, comment: commitComment, detail } = parse(
+      commitMessage,
+      type,
+    );
 
-      const commitCommentLines = commitComment.split("\n");
-      application.numberOfLinesInCommitComment = commitCommentLines.length;
+    const commitCommentLines = commitComment.split("\n");
+    const numberOfLinesInCommitComment = commitCommentLines.length;
 
+    // Add Pango markup to make the commented area appear lighter.
+    commitMessage = `${commitBody}<span foreground="#959595">\n${commitComment}</span>`;
+
+    const { window, commitButton, buffer } = Window({
+      application,
+      file,
+      numberOfLinesInCommitComment,
+    });
+    // Add the dialog to the application as its main window.
+    application.add_window(window);
+
+    if (type) {
       const projectDirectoryName = GLib.path_get_basename(
         GLib.get_current_dir(),
       );
-
-      if (type) {
-        application.active_window.set_title(
-          `${type}: ${projectDirectoryName} (${detail})`,
-        );
-      }
-
-      // Add Pango markup to make the commented are appear lighter.
-      commitMessage = `${commitBody}<span foreground="#959595">\n${commitComment}</span>`;
-
-      // Not sure when you would get success === false without an error being
-      // thrown but handling it anyway just to be safe. There doesn’t appear
-      // to be any error information available.
-      // Docs: https://gjs-docs.gnome.org/glib20~2.64.1/glib.file_get_contents
-      if (!success) {
-        print(`${ERROR_SUMMARY}`);
-        application.quit();
-      }
-    } catch (error) {
-      print(`${ERROR_SUMMARY}${error}\n`);
-      application.quit();
+      application.active_window.set_title(
+        `${type}: ${projectDirectoryName} (${detail})`,
+      );
     }
 
     // Update the text in the interface using markup.
@@ -172,9 +157,6 @@ export default function Application({ version }) {
     const endOfText = buffer.get_end_iter();
     buffer.apply_tag(nonEditableTag, startOfText, endOfText);
 
-    // Save the number of lines in the commit message.
-    application.previousNumberOfLinesInCommitMessage = 1;
-
     // Special case: for git add -p edit hunk messages, place the cursor at start.
     if (type === "add -p") {
       buffer.place_cursor(buffer.get_start_iter());
@@ -184,31 +166,21 @@ export default function Application({ version }) {
     // body of the commit message, it should be enabled).
     validateCommitButton({
       buffer,
-      numberOfLinesInCommitComment: application.numberOfLinesInCommitComment,
-      commitButton: application.commitButton,
-    });
-
-    // Show the composition interface.
-    application.window.show_all();
-  });
-
-  application.connect("startup", () => {
-    const result = Window(application);
-    const { window, messageText, cancelButton, commitButton } = result;
-    ({ buffer } = result);
-
-    Object.assign(application, {
-      window,
-      messageText,
-      cancelButton,
+      numberOfLinesInCommitComment,
       commitButton,
     });
 
-    // Add the dialog to the application as its main window.
-    application.add_window(application.window);
+    window.show_all();
   });
 
-  application.connect("activate", showHelp);
+  application.connect("startup", () => {
+    if (__DEV__) log("startup");
+  });
+
+  application.connect("activate", () => {
+    if (__DEV__) log("activate");
+    showHelp(application);
+  });
 
   return application;
 }

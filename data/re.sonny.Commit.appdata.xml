@@ -14,15 +14,14 @@
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of subject line when it exceeds 69 characters</li>
-      <li>Inserts empty line between subject line and rest of message</li>
+      <li>Inserts blank line between subject line and description</li>
       <li>Spell checking</li>
       <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
       <li
       >Dark theme support: the overflow highlight is adjusted according to your theme</li>
-      <li>Auto inserts blank line for commit description</li>
       <li
-      >Supports git commit messages, merge messages, tag messages, git add -p messages, and rebase -i messages</li>
+      >Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages</li>
       <li>Supports Mercurial commit messages</li>
     </ul>
   </description>
