@@ -25,7 +25,7 @@ flatpak install re.sonny.Commit
 To set Commit as default editor for Git run the following command
 
 ```sh
-git config --global core.editor "flatpak run re.sonny.Commit"
+git config --global core.editor "flatpak run --file-forwarding re.sonny.Commit @@"
 ```
 
 See also https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor
@@ -36,7 +36,7 @@ To set commit as default editor for Mercurial, set the following in your `hgrc`
 
 ```ini
 [ui]
-editor=flatpak run re.sonny.Commit
+editor=flatpak run --file-forwarding re.sonny.Commit @@
 ```
 
 See also https://www.mercurial-scm.org/wiki/editor
