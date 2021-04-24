@@ -42,9 +42,13 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="1.1.0" date="2021-04-23">
+    <release version="2.0.0" date="2021-04-23">
       <description>
-        <p>Add support for Mercurial</p>
+        <p>Action required. Please see the setup instruction. #TODO</p>
+        <ul>
+          <li>Add support for Mercurial</li>
+          <li>Remove filesystem permission</li>
+        </ul>
       </description>
     </release>
     <release version="1.0.0" date="2021-04-06">

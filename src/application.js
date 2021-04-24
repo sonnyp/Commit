@@ -15,11 +15,11 @@ const SUMMARY = `
 Helps you write better commit messages.
 
 To use with Git, set Commit as the default editor:
-  git config --global core.editor "flatpak run re.sonny.Commit"
+  git config --global core.editor "flatpak run --file-forwarding re.sonny.Commit @@"
 
 To use with Mercurial (hg), set the following in your ~/.hgrc
   [ui]
-  editor=flatpak run re.sonny.Commit
+  editor=flatpak run --file-forwarding re.sonny.Commit @@
 `.trim();
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
