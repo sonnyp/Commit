@@ -43,7 +43,7 @@ export function parse(commit, type) {
     detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
   }
 
-  return { body, comment, detail };
+  return { body, comment, detail, comment_prefix, comment_separator };
 }
 
 export function getType(filename) {

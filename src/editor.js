@@ -14,6 +14,7 @@ export default function Editor({
   builder,
   commitButton,
   numberOfLinesInCommitComment,
+  comment_separator,
 }) {
   let lastActionWasSelectAll;
 
@@ -186,7 +187,7 @@ export default function Editor({
       // Assumption: that the person has not added any comments
       // to their commit message themselves. But, I mean, come on!
       // buffer.place_cursor(buffer.get_start_iter())
-      const mainCommitMessage = buffer.text.split("#")[0];
+      const mainCommitMessage = buffer.text.split(comment_separator)[0];
       const selectStartIterator = buffer.get_start_iter();
       const selectEndIterator = buffer.get_iter_at_offset(
         unicodeLength(mainCommitMessage),

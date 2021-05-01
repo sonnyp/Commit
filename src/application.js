@@ -99,10 +99,12 @@ function openEditor({ file, application }) {
     print(`Warning: unknown commit type encountered in: ${filePath}`);
   }
 
-  const { body: commitBody, comment: commitComment, detail } = parse(
-    commitMessage,
-    type,
-  );
+  const {
+    body: commitBody,
+    comment: commitComment,
+    detail,
+    comment_separator,
+  } = parse(commitMessage, type);
 
   const commitCommentLines = commitComment.split("\n");
   const numberOfLinesInCommitComment = commitCommentLines.length;
@@ -114,6 +116,7 @@ function openEditor({ file, application }) {
     application,
     file,
     numberOfLinesInCommitComment,
+    comment_separator,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);

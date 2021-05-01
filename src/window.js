@@ -10,6 +10,7 @@ export default function Window({
   application,
   file,
   numberOfLinesInCommitComment,
+  comment_separator,
 }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
@@ -43,6 +44,7 @@ export default function Window({
     builder,
     commitButton,
     numberOfLinesInCommitComment,
+    comment_separator,
   });
 
   window.connect("style-updated", () => {

@@ -62,6 +62,8 @@ is(
 # edit again.  If all lines of the hunk are removed, then the edit is
 # aborted and the hunk is left unchanged.`,
 );
+is(parse(readTest("addp-hunk-edit.diff"), "add -p").comment_prefix, "#");
+is(parse(readTest("addp-hunk-edit.diff"), "add -p").comment_separator, "\n#");
 
 is(parse(readTest("MERGE_MSG"), "merge").body, `Merge branch 'test'`);
 is(parse(readTest("MERGE_MSG"), "merge").detail, `branch test`);
@@ -199,6 +201,15 @@ HG: user: Sonny Piers <sonny@fastmail.net>
 HG: branch 'default'
 HG: added foobar
 `,
+);
+is(
+  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").comment_prefix,
+  "HG:",
+);
+is(
+  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
+    .comment_separator,
+  "\nHG:",
 );
 
 is(
