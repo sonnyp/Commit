@@ -19,12 +19,21 @@ export default function Window({
 
   window.set_application(application);
 
+  function onCancel() {
+    save({ file, application, value: "" });
+  }
+
+  function onCommit() {
+    const value = buffer.text;
+    save({ file, application, value });
+  }
+
   // Exit via Escape key.
   window.add_events(Gdk.EventMask.KEY_PRESS_MASK);
   window.connect("key_press_event", (self, event) => {
     const [, keyval] = event.get_keyval();
     if (keyval === Gdk.KEY_Escape) {
-      application.quit();
+      onCancel();
       return true;
     }
     return false;
@@ -40,28 +49,20 @@ export default function Window({
     setHighlightColour();
   });
 
-  cancelButton.connect("clicked", () => {
-    application.quit();
-  });
+  cancelButton.connect("clicked", onCancel);
 
-  commitButton.connect("clicked", () => {
-    let success;
-    const ERROR_SUMMARY = "\n\nError: could not save your commit message.\n";
-
-    const textToSave = buffer.text;
-
-    try {
-      // Save the text.
-      success = GLib.file_set_contents(file.get_path(), textToSave);
-      if (!success) {
-        print(ERROR_SUMMARY);
-      }
-      application.quit();
-    } catch (error) {
-      print(`${ERROR_SUMMARY}${error}`);
-      application.quit();
-    }
-  });
+  commitButton.connect("clicked", onCommit);
 
   return { window, cancelButton, commitButton, buffer };
+}
+
+function save({ file, value, application }) {
+  try {
+    GLib.file_set_contents(file.get_path(), value);
+    application.quit();
+  } catch (err) {
+    printerr(err);
+  }
+
+  application.quit();
 }
