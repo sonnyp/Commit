@@ -10,11 +10,6 @@ const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 // (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
 const FIRST_LINE_CHARACTER_LIMIT = 69;
 
-// Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
-function unicodeLength(str) {
-  return [...str].length;
-}
-
 export default function Editor({
   builder,
   commitButton,
@@ -201,4 +196,9 @@ export default function Editor({
     });
   });
   return { messageText, buffer, setHighlightColour };
+}
+
+// Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
+function unicodeLength(str) {
+  return [...str].length;
 }

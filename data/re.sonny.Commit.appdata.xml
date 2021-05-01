@@ -9,8 +9,14 @@
   <project_license>GPL-3.0-or-later</project_license>
   <summary>Commit message editor</summary>
   <description>
-    <p
-    >Commit is an editor that helps you write better Git and Mercurial commit messages.</p>
+    <p>
+      Commit is an editor that helps you write better Git and Mercurial commit
+      messages.
+    </p>
+    <p>
+      After installing make sure to launch the application and follow the
+      instructions.
+    </p>
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of subject line when it exceeds 69 characters</li>
@@ -18,33 +24,44 @@
       <li>Spell checking</li>
       <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
-      <li
-      >Dark theme support: the overflow highlight is adjusted according to your theme</li>
-      <li
-      >Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages</li>
+      <li>
+        Dark theme support: the overflow highlight is adjusted according to your
+        theme
+      </li>
+      <li>
+        Supports git commit messages, merge messages, tag messages, add -p
+        messages, and rebase -i messages
+      </li>
       <li>Supports Mercurial commit messages</li>
+      <li>Shows a welcome window when launched from desktop</li>
     </ul>
   </description>
   <url type="homepage">https://github.com/sonnyp/Commit</url>
   <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
   <screenshots>
     <screenshot type="default">
-      <image
-      >https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot.png</image>
+      <image>
+        https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot.png
+      </image>
       <captio>Commit main window</captio>
     </screenshot>
     <screenshot>
-      <image
-      >https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png</image>
+      <image>
+        https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png
+      </image>
       <captio>Commit main window - dark theme</captio>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="2.0.0" date="2021-04-23">
+    <release version="2.0.0" date="2021-05-01">
       <description>
-        <p>Action required. Please see the setup instruction. #TODO</p>
+        <p>
+          ⚠️ Action required. After updating, please launch the application and
+          follow the instructions.
+        </p>
         <ul>
+          <li>Show a welcome window when launched from desktop</li>
           <li>Add support for Mercurial</li>
           <li>Remove filesystem permission</li>
         </ul>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <requires lib="gtk+" version="3.24" />
+  <object class="GtkApplicationWindow" id="window">
+    <property name="resizable">True</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="title">Commit</property>
+        <property name="show-close-button">True</property>
+        <child>
+          <object class="GtkMenuButton" id="menu-button">
+            <property name="popover">app-menu</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">open-menu-symbolic</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">18</property>
+        <property name="margin">18</property>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property
+                  name="label"
+                >&lt;big&gt;&lt;b&gt;Git&lt;/b&gt;&lt;/big&gt;
+
+To set Commit as default editor for Git run the following command in Terminal</property>
+                <property name="use-markup">True</property>
+                <property name="wrap">True</property>
+                <property name="halign">GTK_ALIGN_START</property>
+                <property name="xalign">0</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="git_text">
+                <property name="use-markup">True</property>
+                <property name="wrap">True</property>
+                <property name="selectable">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="code" />
+                  <!--
+                    Only way to get correct color
+                    https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
+                  -->
+                  <class name="view" />
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">horizontal</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkButton" id="git_copy">
+                    <property name="visible">True</property>
+                    <property name="label">Copy to Clipboard</property>
+                    <!--
+                      Prevents the first GtkLabel selectable to get default focus
+                      couldn't find a way not to focus anything specific by default
+                     -->
+                    <property name="has-focus">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLinkButton">
+                    <property name="visible">True</property>
+                    <property name="label">Documentation</property>
+                    <!-- FIXME: report bugs - uri with whitespaces characters at start/end don't work
+                    Which is why we have to disable prettier here -->
+                    <!-- prettier-ignore-start -->
+                    <property name="uri">https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor</property>
+                    <!-- prettier-ignore-end -->
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property
+                  name="label"
+                >&lt;big&gt;&lt;b&gt;Mercurial&lt;/b&gt;&lt;/big&gt;
+
+To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
+                <property name="use-markup">True</property>
+                <property name="wrap">True</property>
+                <property name="halign">GTK_ALIGN_START</property>
+                <property name="xalign">0</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="hg_text">
+                <property name="use-markup">True</property>
+                <property name="wrap">True</property>
+                <property name="selectable">True</property>
+                <!-- <property name="can_focus">False</property> -->
+
+                <property name="xalign">0</property>
+                <style>
+                  <class name="code" />
+                  <!--
+                    Only way to get correct color
+                    https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
+                  -->
+                  <class name="view" />
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">horizontal</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkButton" id="hg_copy">
+                    <property name="visible">True</property>
+                    <property name="label">Copy to Clipboard</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLinkButton">
+                    <property name="visible">True</property>
+                    <property name="label">Documentation</property>
+                    <!-- FIXME: report bugs - uri with whitespaces characters at start/end don't work
+                    Which is why we have to disable prettier here -->
+                    <!-- prettier-ignore-start -->
+                    <property name="uri">https://www.mercurial-scm.org/wiki/editor</property>
+                    <!-- prettier-ignore-end -->
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing />
+    </child>
+  </object>
+  <object class="GtkPopoverMenu" id="app-menu">
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="margin">10</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="text" translatable="yes">About Commit</property>
+            <property name="action-name">app.about</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="text" translatable="yes">Quit</property>
+            <property name="action-name">app.quit</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

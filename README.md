@@ -6,40 +6,18 @@ Commit message editor
 
 Commit is an editor that helps you write better Git and Mercurial commit messages.
 
-<!-- <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
+<a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
 
 ![screenshot](data/screenshot.png)
 
 ## Installation
 
-Setup flatpak and flathub if you haven't https://flatpak.org/setup/
-
-Then run
+[Setup flatpak](https://flatpak.org/setup/) then
 
 ```sh
 flatpak install re.sonny.Commit
+flatpak run re.sonny.Commit # Follow instructions
 ```
-
-### Git
-
-To set Commit as default editor for Git run the following command
-
-```sh
-git config --global core.editor "flatpak run --file-forwarding re.sonny.Commit @@"
-```
-
-See also https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor
-
-### Mercurial
-
-To set commit as default editor for Mercurial, set the following in your `hgrc`
-
-```ini
-[ui]
-editor=flatpak run --file-forwarding re.sonny.Commit @@
-```
-
-See also https://www.mercurial-scm.org/wiki/editor
 
 ## Usage
 
@@ -59,6 +37,7 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 - Dark theme support: the overflow highlight is adjusted according to your theme
 - Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
 - Supports Mercurial commit messages
+- Welcome window when launched from desktop (or without argument)
 
 ## Development
 
