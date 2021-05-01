@@ -16,3 +16,4 @@
 14. [ ] Usage (README.md) in instructions? userdoc?
 15. [ ] preview commit from welcome?
 16. [ ] screenshots welcome window?
+17. [ ] localization
