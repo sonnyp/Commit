@@ -81,7 +81,7 @@ Use [GNOME Builder](https://wiki.gnome.org/Apps/Builder) or
 
 ```sh
 cd Commit
-flatpak-builder --user --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
+flatpak-builder --user --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.yaml
 flatpak --user remote-add --no-gpg-verify --if-not-exists Commit repo
 flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 ```

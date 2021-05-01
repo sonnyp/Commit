@@ -11,13 +11,13 @@ run-host:
 	GSETTINGS_SCHEMA_DIR=./data ./install/bin/re.sonny.Commit
 
 flatpak:
-	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
+	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.yaml
 	flatpak --user remote-add --no-gpg-verify --if-not-exists Commit repo
 	flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 	flatpak run re.sonny.Commit
 
 bundle:
-	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
+	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.yaml
 	flatpak build-bundle repo Commit.flatpak re.sonny.Commit --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
 
 test:
