@@ -52,7 +52,7 @@ To pass the tests you will have to install a few dependencies
 
 ```
 # Install development dependencies
-sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk3-devel
+sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk3-devel libhandy
 npm install
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user --assumeyes --noninteractive flathub org.freedesktop.appstream-glib
@@ -88,17 +88,19 @@ flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 
 </details>
 
-## Contributors
+## Credits
+
+Commit is a fork of [Gnomit](https://github.com/small-tech/gnomit/) wich was inspired by [Komet](https://github.com/zorgiepoo/Komet).
+
+Many thanks to its original author [Aral balkan](https://ar.al) of [Small Technology Foundation](https://small-tech.org).
+
+### Contributors
 
 - [Aral Balkan](https://ar.al)
 - [Sergey Bugaev](https://mastodon.technology/@bugaevc)
 - [Sonny Piers](https://github.com/sonnyp)
 
 ## Copyright
-
-Commit is a fork of [Gnomit](https://github.com/small-tech/gnomit/).
-
-Many thanks to its original author [Aral balkan](https://ar.al) of [Small Technology Foundation](https://small-tech.org).
 
 - © 2020-2021 [Sonny Piers](https://github.com/sonnyp)
 - © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)

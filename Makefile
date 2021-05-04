@@ -24,7 +24,7 @@ test:
 	./node_modules/.bin/eslint --cache .
 	flatpak run org.freedesktop.appstream-glib validate data/re.sonny.Commit.appdata.xml
 	desktop-file-validate --no-hints data/re.sonny.Commit.desktop
-	gtk-builder-tool validate src/*.ui
+	# gtk-builder-tool validate src/*.ui
 	gjs -m test/*.test.js
 
 clean:
