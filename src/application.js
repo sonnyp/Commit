@@ -7,6 +7,7 @@ import Welcome from "./welcome.js";
 import validateCommitButton from "./validateCommitButton.js";
 import { getType, parse } from "./scm.js";
 import About from "./about.js";
+import Preferences from "./Preferences.js";
 
 const ByteArray = imports.byteArray;
 
@@ -54,6 +55,15 @@ export default function Application({ version }) {
     About({ application, version });
   });
   application.add_action(showAboutDialog);
+
+  const showPrefencesWindow = new Gio.SimpleAction({
+    name: "preferences",
+    parameter_type: null,
+  });
+  showPrefencesWindow.connect("activate", () => {
+    Preferences({ application });
+  });
+  application.add_action(showPrefencesWindow);
 
   return application;
 }

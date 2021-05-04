@@ -52,7 +52,7 @@ export function getType(filename) {
   if (filename.endsWith("MERGE_MSG")) return "merge";
   if (filename.endsWith("TAG_EDITMSG")) return "tag";
   if (filename.endsWith("addp-hunk-edit.diff")) return "add -p";
-  if (filename.endsWith("rebase-merge/git-rebase-todo")) return "rebase";
+  if (filename.endsWith("git-rebase-todo")) return "rebase";
   // Mercurial
   if (filename.endsWith(".commit.hg.txt")) return "hg";
   // Unknown

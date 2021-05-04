@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <requires lib="gtk+" version="3.24" />
+  <requires lib="libhandy" version="1.0" />
+  <object class="HdyPreferencesWindow" id="window">
+    <child>
+      <object class="HdyPreferencesPage">
+        <property name="visible">True</property>
+        <child>
+          <object class="HdyPreferencesGroup">
+            <property name="visible">True</property>
+            <child>
+              <object class="HdyPreferencesRow">
+                <property name="visible">True</property>
+                <property name="title" translatable="yes">
+                  Message title length hint
+                </property>
+                <child>
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="ellipsize">end</property>
+                        <!-- prettier-ignore-start -->
+                        <property name="label" translatable="yes">Message title length hint</property>
+                        <!-- prettier-ignore-end -->
+                        <property name="hexpand">True</property>
+                        <property name="halign">GTK_ALIGN_START</property>
+                        <property name="margin">12</property>
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="spinButton">
+                        <property name="value">50</property>
+                        <property name='numeric'>True</property>
+                        <property name='valign'>center</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

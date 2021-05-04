@@ -31,8 +31,8 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 
 ## Features
 
-- Highlights overflow of subject line when it exceeds 69 characters
-- Inserts blank line between subject line and description
+- Highlights overflow of title when it exceeds 50 characters (customizable)
+- Inserts blank line between title and description
 - Spell checking
 - Comments are readonly and excluded from "Select All"
 - Displays project folder and branch in window header

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist gettext-domain="Commit">
-  <schema id="re.sonny.Commit" path="/re/sonny/Commit/" />
+  <schema id="re.sonny.Commit" path="/re/sonny/Commit/">
+    <key name='title-length-hint' type='i'>
+      <default>50</default>
+      <range min="1" />
+      <summary>Message title length hint</summary>
+    </key>
+  </schema>
 </schemalist>

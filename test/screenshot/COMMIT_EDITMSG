@@ -1,0 +1,14 @@
+This is the commit title; it should be short. Commit will highlight if it exceeds 50 characters (customizable).
+
+Everything after the first blank line is the commit description. It can be as long as you like. Commit also comes with spel checkng.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   a.txt
+#
