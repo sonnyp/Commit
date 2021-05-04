@@ -96,7 +96,11 @@ flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 
 ## Copyright
 
-- © 2020-2021 Sonny Piers
+Commit is a fork of [Gnomit](https://github.com/small-tech/gnomit/).
+
+Many thanks to its original author [Aral balkan](https://ar.al) of [Small Technology Foundation](https://small-tech.org).
+
+- © 2020-2021 [Sonny Piers](https://github.com/sonnyp)
 - © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
