@@ -12,4 +12,7 @@ import Gtk from "gi://Gtk?version=3.0";
 // import "gi://Gdk?version=4.0";
 import "gi://Gspell?version=1";
 
+import Handy from "gi://Handy";
+
 Gtk.init(null);
+Handy.init();

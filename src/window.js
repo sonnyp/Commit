@@ -11,12 +11,20 @@ export default function Window({
   file,
   numberOfLinesInCommitComment,
   comment_separator,
+  type,
+  detail,
 }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
+
+  const header = builder.get_object("header");
+  if (type) {
+    const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
+    header.set_title(`${type}: ${projectDirectoryName} (${detail})`);
+  }
 
   window.set_application(application);
 

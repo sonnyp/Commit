@@ -61,7 +61,6 @@ export default function Application({ version }) {
 function openWelcome({ application }) {
   Welcome({ application });
 
-  // https://gjs-docs.gnome.org/gio20~2.0_api/gio.simpleaction
   const quit = new Gio.SimpleAction({
     name: "quit",
     parameter_type: null,
@@ -117,16 +116,11 @@ function openEditor({ file, application }) {
     file,
     numberOfLinesInCommitComment,
     comment_separator,
+    type,
+    detail,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
-
-  if (type) {
-    const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
-    application.active_window.set_title(
-      `${type}: ${projectDirectoryName} (${detail})`,
-    );
-  }
 
   // Update the text in the interface using markup.
   let startOfText = buffer.get_start_iter();
