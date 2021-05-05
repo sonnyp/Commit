@@ -1,14 +1,12 @@
-<img style="vertical-align: middle;" src="data/icons/re.sonny.Commit.svg" width="120" height="120">
-
-Commit message editor
+<img style="vertical-align: middle;" src="data/icons/re.sonny.Commit.svg" width="120" height="120" align="left">
 
 # Commit
 
 Commit is an editor that helps you write better Git and Mercurial commit messages.
 
-<a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
-
 ![screenshot](data/screenshot.png)
+
+<a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
 
 ## Installation
 
@@ -18,6 +16,10 @@ Commit is an editor that helps you write better Git and Mercurial commit message
 flatpak install re.sonny.Commit
 flatpak run re.sonny.Commit # Follow instructions
 ```
+
+|      Distro      |                   Package Name/Link                    |                   Maintainer                    |
+| :--------------: | :----------------------------------------------------: | :---------------------------------------------: |
+| Arch Linux (aur) | [`commit`](https://aur.archlinux.org/packages/commit/) | [Mark Wagie](https://github.com/yochananmarqos) |
 
 ## Usage
 
