@@ -86,11 +86,8 @@ function openEditor({ file, application }) {
 
   commitMessage = ByteArray.toString(commitMessage);
 
-  // Escape tag start/end as we will be using markup to populate the buffer.
-  // (Otherwise, rebase -i commit messages fail, as they contain the strings
-  // <commit>, <label>, etc.
-  commitMessage = commitMessage.replace(/</g, "&lt;");
-  commitMessage = commitMessage.replace(/>/g, "&gt;");
+  // Escape text as we will be using markup to populate the buffer.
+  commitMessage = GLib.markup_escape_text(commitMessage, -1);
 
   const type = getType(filePath);
   // This should not happen.
