@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface>
   <requires lib="gtk+" version="3.24" />
+  <requires lib="libhandy" version="1.0" />
   <object class="HdyApplicationWindow" id="window">
     <property name="resizable">True</property>
     <child>
@@ -168,6 +169,13 @@
         <property name="visible">True</property>
         <property name="margin">10</property>
         <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="text" translatable="yes">Preferences</property>
+            <property name="action-name">app.preferences</property>
+          </object>
+        </child>
         <child>
           <object class="GtkModelButton">
             <property name="visible">True</property>

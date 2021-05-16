@@ -19,8 +19,11 @@
     </p>
     <p>Features:</p>
     <ul>
-      <li>Highlights overflow of subject line when it exceeds 69 characters</li>
-      <li>Inserts blank line between subject line and description</li>
+      <li>
+        Highlights overflow of title when it exceeds 50 characters
+        (customizable)
+      </li>
+      <li>Inserts blank line between title and description</li>
       <li>Spell checking</li>
       <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
@@ -41,19 +44,43 @@
   <screenshots>
     <screenshot type="default">
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-light.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshot-light.png
       </image>
       <caption>Commit main window</caption>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/master/data/screenshot-dark.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshot-dark.png
       </image>
       <caption>Commit main window - dark mode</caption>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/welcome-light.png
+      </image>
+      <caption>Commit welcome window</caption>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/welcome-dark.png
+      </image>
+      <caption>Commit welcome window - dark mode</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="2.1.0" date="2021-05-16">
+      <description>
+        <ul>
+          <li>Add a Preferences window</li>
+          <li>Set default title length hint to 50 characters</li>
+          <li>Fix reading commits with special characters</li>
+          <li>Fix git rebase not recognized</li>
+          <li>Make windows bottom corners rounded</li>
+          <li>Add 6px margin to editor</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.0.0" date="2021-05-01">
       <description>
         <p>

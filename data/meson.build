@@ -41,4 +41,4 @@ if compile_schemas.found()
 endif
 
 # Install the icon.
-install_data ('icons/re.sonny.Commit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
+install_data('icons/re.sonny.Commit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))

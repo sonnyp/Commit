@@ -8,3 +8,4 @@ repo
 install
 .eslintcache
 *~
+*.compiled

@@ -2,13 +2,9 @@ import Gtk from "gi://Gtk";
 import Gspell from "gi://Gspell";
 
 import validateCommitButton from "./validateCommitButton.js";
+import settings from "./settings.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
-
-// Keep first line line-length validation in line with
-// the original Komet behaviour for the time being.
-// (See https://github.com/zorgiepoo/Komet/releases/tag/0.1)
-const FIRST_LINE_CHARACTER_LIMIT = 69;
 
 export default function Editor({
   builder,
@@ -86,10 +82,11 @@ export default function Editor({
       endOfTextIterator,
     );
 
+    const title_length_hint = settings.get_int("title-length-hint");
     // Highlight the overflow area, if any.
-    if (firstLineLength > FIRST_LINE_CHARACTER_LIMIT) {
+    if (firstLineLength > title_length_hint) {
       const startOfOverflowIterator = buffer.get_iter_at_offset(
-        FIRST_LINE_CHARACTER_LIMIT,
+        title_length_hint,
       );
       buffer.apply_tag(
         highlightBackgroundTag,
