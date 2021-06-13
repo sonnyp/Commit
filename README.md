@@ -41,6 +41,24 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 - Supports Mercurial commit messages
 - Welcome window when launched from desktop (or without argument)
 
+## Tips and trick
+
+### Open Commit in the center of the screen
+
+On GNOME you can make all new windows open in the center using
+
+```sh
+gsettings set org.gnome.mutter center-new-windows true
+```
+
+or set and use the move-to-center keybinding
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings move-to-center "['<Super><Control><Shift>Space']"
+```
+
+</details>
+
 ## Development
 
 ```sh
@@ -50,7 +68,7 @@ cd Commit
 
 Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.
 
-To pass the tests you will have to install a few dependencies
+To pass the tests you have to install a few dependencies
 
 ```
 # Install development dependencies
@@ -62,6 +80,8 @@ flatpak install --user --assumeyes --noninteractive flathub org.freedesktop.apps
 # Run tests
 make test
 ```
+
+Flathub builds https://flathub.org/builds/#/apps/re.sonny.Commit
 
 ## Building
 

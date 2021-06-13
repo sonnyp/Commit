@@ -3,4 +3,3 @@ install/
 flatpak/
 node_modules/
 repo/
-tests/

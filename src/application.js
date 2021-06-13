@@ -21,9 +21,6 @@ export default function Application({ version }) {
       Gio.ApplicationFlags.NON_UNIQUE,
   });
 
-  GLib.set_prgname("re.sonny.Commit");
-  GLib.set_application_name("Commit");
-
   // Open gets called when a file is passed as a command=line argument.
   // We expect Git or Mercurial to pass us one file.
   application.connect("open", (self, files, hint) => {

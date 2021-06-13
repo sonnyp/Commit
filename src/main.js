@@ -6,6 +6,9 @@ import { programInvocationName } from "system";
 
 import Application from "./application.js";
 
+GLib.set_prgname("re.sonny.Commit");
+GLib.set_application_name("Commit");
+
 export default function main(argv, { version }) {
   const application = new Application({ version });
 
