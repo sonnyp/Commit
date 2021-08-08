@@ -139,16 +139,17 @@ is(
 
 is(
   parse(readTest("rebase-merge/git-rebase-todo"), "rebase").body,
-  `pick a7ad46b Latest changes`,
+  `pick f353b3a this commit message is too long please fix me! wow so long commit message! damn!
+pick 688174c Im ok`,
 );
 is(
   parse(readTest("rebase-merge/git-rebase-todo"), "rebase").detail,
-  `df3db1d..a7ad46b → df3db1d`,
+  `d44e355..688174c → d44e355`,
 );
 is(
   parse(readTest("rebase-merge/git-rebase-todo"), "rebase").comment,
   `
-# Rebase df3db1d..a7ad46b onto df3db1d (1 command)
+# Rebase d44e355..688174c onto d44e355 (2 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -157,6 +158,7 @@ is(
 # s, squash <commit> = use commit, but meld into previous commit
 # f, fixup <commit> = like "squash", but discard this commit's log message
 # x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
 # d, drop <commit> = remove commit
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
@@ -169,11 +171,9 @@ is(
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 #
-#	However, if you remove everything, the rebase will be aborted.
+# However, if you remove everything, the rebase will be aborted.
 #
-#
-# Note that empty commits are commented out`,
-);
+`);
 
 is(parse(readTest("TAG_EDITMSG"), "tag").body, ``);
 is(parse(readTest("TAG_EDITMSG"), "tag").detail, `1.0.0`);

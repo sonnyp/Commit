@@ -11,6 +11,7 @@ export default function Editor({
   commitButton,
   numberOfLinesInCommitComment,
   comment_separator,
+  type,
 }) {
   let lastActionWasSelectAll;
 
@@ -30,37 +31,12 @@ export default function Editor({
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
   buffer.tag_table.add(highlightBackgroundTag);
   function setHighlightColour() {
-    // Set the overflow text background highlight colour based on the
-    // colour of the foreground text.
-
-    // Colour shade guide for Minty Rose: https://www.color-hex.com/color/ffe4e1
-    const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
-    const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
-    let highlightColour;
-    const fontColour = gSpellTextView
-      .get_view()
-      .get_style_context()
-      .get_color(Gtk.StateFlags.NORMAL);
-
-    // Luma calculation courtesy: https://stackoverflow.com/a/12043228
-    const luma =
-      0.2126 * fontColour.red +
-      0.7152 * fontColour.green +
-      0.0722 * fontColour.blue; // ITU-R BT.709
-
-    // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
-    // return values between 0 and 1 also.
-    if (luma > 0.5) {
-      // The foreground is light, use darker shade of original highlight colour.
-      highlightColour = lightForegroundHighlightColour;
-    } else {
-      // The foreground is dark, use original highlight colour.
-      highlightColour = darkForegroundHighlightColour;
-    }
-    highlightBackgroundTag.background = highlightColour;
+    highlightBackgroundTag.background = getHighlightColour(gSpellTextView);
   }
 
   function highlightText() {
+    if (!['commit', 'merge', 'hg'].includes(type)) return
+
     // Check first line length and highlight characters beyond the limit.
     const text = buffer.text;
     const lines = text.split("\n");
@@ -199,4 +175,36 @@ export default function Editor({
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
 function unicodeLength(str) {
   return [...str].length;
+}
+
+function getHighlightColour(gSpellTextView) {
+  // Get the overflow text background highlight colour based on the
+  // colour of the foreground text.
+
+  // Colour shade guide for Minty Rose: https://www.color-hex.com/color/ffe4e1
+  const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
+  const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
+  let highlightColour;
+  const fontColour = gSpellTextView
+    .get_view()
+    .get_style_context()
+    .get_color(Gtk.StateFlags.NORMAL);
+
+  // Luma calculation courtesy: https://stackoverflow.com/a/12043228
+  const luma =
+    0.2126 * fontColour.red +
+    0.7152 * fontColour.green +
+    0.0722 * fontColour.blue; // ITU-R BT.709
+
+  // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
+  // return values between 0 and 1 also.
+  if (luma > 0.5) {
+    // The foreground is light, use darker shade of original highlight colour.
+    highlightColour = lightForegroundHighlightColour;
+  } else {
+    // The foreground is dark, use original highlight colour.
+    highlightColour = darkForegroundHighlightColour;
+  }
+
+  return highlightColour;
 }
