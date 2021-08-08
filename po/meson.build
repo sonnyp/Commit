@@ -1,1 +1,1 @@
-i18n.gettext('Commit', preset: 'glib')
+i18n.gettext('re.sonny.Commit', preset: 'glib')

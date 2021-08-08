@@ -2,8 +2,8 @@
 <component type="desktop">
   <id>re.sonny.Commit</id>
   <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
-  <name>Commit</name>
-  <developer_name>Sonny Piers</developer_name>
+  <name translatable="no">Commit</name>
+  <developer_name translatable="no">Sonny Piers</developer_name>
   <update_contact>sonny@fastmail.net</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>

@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "@prettier/plugin-xml": "^0.13.1",
+    "@prettier/plugin-xml": "^1.0.2",
     "eslint": "^7.17.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^6.0.0",

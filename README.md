@@ -83,6 +83,39 @@ make test
 
 Flathub builds https://flathub.org/builds/#/apps/re.sonny.Commit
 
+## Maintainer
+
+<details>
+
+  <summary>i18n</summary>
+
+```sh
+# To update the pot file
+xgettext -f po/POTFILES -o po/re.sonny.Commit.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
+sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Commit/" po/re.sonny.Commit.pot
+
+# To create a translation
+msginit -i po/re.sonny.Commit.pot -o po/fr.po -l fr_FR.UTF-8
+
+# To update translations
+msgmerge -U po/*.po po/re.sonny.Commit.pot
+```
+
+See https://github.com/sonnyp/Commit/pull/14#issuecomment-894070878
+
+</details>
+
+<details>
+
+<summary>Publish new version</summary>
+
+- `make update-locales`
+- Update version in `meson.build`
+- git tag
+- flathub
+
+</details>
+
 ## Building
 
 <details>

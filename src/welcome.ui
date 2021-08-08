@@ -42,10 +42,20 @@
                     <property name="visible">True</property>
                     <property
                       name="label"
-                    >&lt;big&gt;&lt;b&gt;Git&lt;/b&gt;&lt;/big&gt;
-
-    To set Commit as default editor for Git run the following command in Terminal</property>
+                    >&lt;big&gt;&lt;b&gt;Git&lt;/b&gt;&lt;/big&gt;</property>
                     <property name="use-markup">True</property>
+                    <property name="wrap">True</property>
+                    <property name="halign">GTK_ALIGN_START</property>
+                    <property name="xalign">0</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property
+                      name="label"
+                      translatable="yes"
+                    >To set Commit as default editor for Git run the following command in Terminal</property>
                     <property name="wrap">True</property>
                     <property name="halign">GTK_ALIGN_START</property>
                     <property name="xalign">0</property>
@@ -74,7 +84,10 @@
                     <child>
                       <object class="GtkButton" id="git_copy">
                         <property name="visible">True</property>
-                        <property name="label">Copy to Clipboard</property>
+                        <property
+                          name="label"
+                          translatable="yes"
+                        >Copy to Clipboard</property>
                         <!--
                           Prevents the first GtkLabel selectable to get default focus
                           couldn't find a way not to focus anything specific by default
@@ -85,12 +98,14 @@
                     <child>
                       <object class="GtkLinkButton">
                         <property name="visible">True</property>
-                        <property name="label">Documentation</property>
-                        <!-- FIXME: report bugs - uri with whitespaces characters at start/end don't work
-                        Which is why we have to disable prettier here -->
-                        <!-- prettier-ignore-start -->
-                        <property name="uri">https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor</property>
-                        <!-- prettier-ignore-end -->
+                        <property
+                          name="label"
+                          translatable="yes"
+                        >Documentation</property>
+                        <property
+                          name="uri"
+                          translatable="yes"
+                        >https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor</property>
                       </object>
                     </child>
                   </object>
@@ -107,9 +122,21 @@
                     <property name="visible">True</property>
                     <property
                       name="label"
-                    >&lt;big&gt;&lt;b&gt;Mercurial&lt;/b&gt;&lt;/big&gt;
-
-    To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
+                    >&lt;big&gt;&lt;b&gt;Mercurial&lt;/b&gt;&lt;/big&gt;</property>
+                    <property name="use-markup">True</property>
+                    <property name="wrap">True</property>
+                    <property name="halign">GTK_ALIGN_START</property>
+                    <property name="xalign">0</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <!-- TRANSLATORS: Don't translate <tt>hgrc</tt> -->
+                    <property
+                      name="label"
+                      translatable="yes"
+                    >To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
                     <property name="use-markup">True</property>
                     <property name="wrap">True</property>
                     <property name="halign">GTK_ALIGN_START</property>
@@ -139,18 +166,23 @@
                     <child>
                       <object class="GtkButton" id="hg_copy">
                         <property name="visible">True</property>
-                        <property name="label">Copy to Clipboard</property>
+                        <property
+                          name="label"
+                          translatable="yes"
+                        >Copy to Clipboard</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkLinkButton">
                         <property name="visible">True</property>
-                        <property name="label">Documentation</property>
-                        <!-- FIXME: report bugs - uri with whitespaces characters at start/end don't work
-                        Which is why we have to disable prettier here -->
-                        <!-- prettier-ignore-start -->
-                        <property name="uri">https://www.mercurial-scm.org/wiki/editor</property>
-                        <!-- prettier-ignore-end -->
+                        <property
+                          name="label"
+                          translatable="yes"
+                        >Documentation</property>
+                        <property
+                          name="uri"
+                          translatable="yes"
+                        >https://www.mercurial-scm.org/wiki/editor</property>
                       </object>
                     </child>
                   </object>
