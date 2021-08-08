@@ -53,6 +53,7 @@ export default function Window({
     commitButton,
     numberOfLinesInCommitComment,
     comment_separator,
+    type,
   });
 
   window.connect("style-updated", () => {
