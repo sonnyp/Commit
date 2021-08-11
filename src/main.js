@@ -3,13 +3,17 @@ import "./setup.js";
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 import { programInvocationName } from "system";
+import { bindtextdomain, textdomain } from "gettext";
 
 import Application from "./application.js";
 
 GLib.set_prgname("re.sonny.Commit");
 GLib.set_application_name("Commit");
 
-export default function main(argv, { version }) {
+export default function main(argv, { version, datadir }) {
+  bindtextdomain("re.sonny.Commit", GLib.build_filenamev([datadir, "locale"]));
+  textdomain("re.sonny.Commit");
+
   const application = new Application({ version });
 
   if (__DEV__) {

@@ -25,7 +25,7 @@
             </child>
             <child>
               <object class="GtkButton" id="commitButton">
-                <property name="label" translatable="yes">Commit</property>
+                <property name="label">Commit</property>
                 <property name="visible">True</property>
                 <property name="receives_default">True</property>
                 <property name="sensitive">False</property>

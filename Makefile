@@ -29,3 +29,8 @@ test:
 
 clean:
 	rm -rf build install .eslintcache
+
+update-locales:
+	xgettext -f po/POTFILES -o po/re.sonny.Commit.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
+	sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Commit/" po/re.sonny.Commit.pot
+	msgmerge -U po/*.po po/re.sonny.Commit.pot

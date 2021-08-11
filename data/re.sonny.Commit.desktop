@@ -1,4 +1,5 @@
 [Desktop Entry]
+# TRANSLATORS: Don't translate
 Name=Commit
 Comment=Commit message editor
 Exec=re.sonny.Commit
@@ -7,4 +8,5 @@ Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
 Icon=re.sonny.Commit
+# TRANSLATORS: Don't translate
 Keywords=git;mercurial;hg;scm;
