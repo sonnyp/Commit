@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the re.sonny.Commit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 13:02+0200\n"
+"POT-Creation-Date: 2021-08-12 13:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,15 @@ msgid "git;mercurial;hg;scm;"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:12
-msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:16
-msgid "After installing make sure to launch the application and follow the instructions."
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:20
@@ -45,7 +49,8 @@ msgid "Features:"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:22
-msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
+msgid ""
+"Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:26
@@ -65,11 +70,15 @@ msgid "Displays project folder and branch in window header"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:30
-msgid "Dark theme support: the overflow highlight is adjusted according to your theme"
+msgid ""
+"Dark theme support: the overflow highlight is adjusted according to your "
+"theme"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:34
-msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
+msgid ""
+"Supports git commit messages, merge messages, tag messages, add -p messages, "
+"and rebase -i messages"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:38
@@ -121,7 +130,9 @@ msgid "Add 6px margin to editor"
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:86
-msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
 msgstr ""
 
 #: data/re.sonny.Commit.appdata.xml:91
@@ -153,8 +164,8 @@ msgstr ""
 msgid "Message title length hint"
 msgstr ""
 
-#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name <https://website.example>'
-#: src/about.js:19
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:18
 msgid "translator-credits"
 msgstr ""
 
@@ -167,7 +178,8 @@ msgid "Preferences"
 msgstr ""
 
 #: src/welcome.ui:58
-msgid "To set Commit as default editor for Git run the following command in Terminal"
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
 
 #: src/welcome.ui:90 src/welcome.ui:172
@@ -179,12 +191,15 @@ msgid "Documentation"
 msgstr ""
 
 #: src/welcome.ui:108
-msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:139
-msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
 msgstr ""
 
 #: src/welcome.ui:185

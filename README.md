@@ -91,14 +91,19 @@ Flathub builds https://flathub.org/builds/#/apps/re.sonny.Commit
 
 ```sh
 # To update the pot file
-xgettext -f po/POTFILES -o po/re.sonny.Commit.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
-sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Commit/" po/re.sonny.Commit.pot
+# xgettext -f po/POTFILES -o po/re.sonny.Commit.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
+# sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Commit/" po/re.sonny.Commit.pot
+meson compile re.sonny.Commit-pot -C _build
+
 
 # To create a translation
-msginit -i po/re.sonny.Commit.pot -o po/fr.po -l fr_FR.UTF-8
+# msginit -i po/re.sonny.Commit.pot -o po/fr.po -l fr_FR.UTF-8
+echo -n " fr" >> po/LINGUAS
+meson compile re.sonny.Commit-update-po -C _build
 
 # To update translations
-msgmerge -U po/*.po po/re.sonny.Commit.pot
+# msgmerge -U po/*.po po/re.sonny.Commit.pot
+meson compile re.sonny.Commit-update-po -C _build
 ```
 
 See https://github.com/sonnyp/Commit/pull/14#issuecomment-894070878
@@ -109,7 +114,7 @@ See https://github.com/sonnyp/Commit/pull/14#issuecomment-894070878
 
 <summary>Publish new version</summary>
 
-- `make update-locales`
+- `meson compile re.sonny.Commit-update-po -C _build`
 - Update version in `meson.build`
 - git tag
 - flathub
