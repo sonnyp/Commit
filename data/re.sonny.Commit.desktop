@@ -9,4 +9,4 @@ Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
 Icon=re.sonny.Commit
 # TRANSLATORS: Don't translate
-Keywords=git;mercurial;hg;scm;
+Keywords=git;mercurial;hg;scm;gnomit;komet;

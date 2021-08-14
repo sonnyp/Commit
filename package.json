@@ -2,11 +2,11 @@
   "private": true,
   "devDependencies": {
     "@prettier/plugin-xml": "^1.0.2",
-    "eslint": "^7.17.0",
-    "eslint-plugin-import": "^2.22.1",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1"
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
