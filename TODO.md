@@ -10,12 +10,8 @@
 7. [ ] Usage (README.md) in instructions? userdoc?
 8. [ ] preview commit from welcome?
 9. [ ] screenshots welcome window? screenshots emoji selector
-10. [ ] localization
-11. [ ] menu in editor window headerbar center
-12. [ ] find good ideas at https://github.com/zorgiepoo/Komet/releases/tag/0.1
-13. [ ] gnome circle https://gitlab.gnome.org/Teams/Circle/-/issues/83
-14. [ ] awesome-gnome
-15. [ ] https://gitlab.gnome.org/GNOME/gjs/-/blob/master/doc/Home.md
-16. [ ] max length 72 (github/gitlab wraps)
-17. [ ] tips?
-    1. [ ] ctrl + . to open emoji picker
+10. [ ] menu in editor window headerbar center
+11. [ ] find good ideas at https://github.com/zorgiepoo/Komet/releases/tag/0.1
+12. [ ] gnome circle https://gitlab.gnome.org/Teams/Circle/-/issues/83
+13. [ ] awesome-gnome
+14. [ ] max length 72 (github/gitlab wraps)

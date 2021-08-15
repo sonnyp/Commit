@@ -43,6 +43,11 @@ To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
 
 ## Tips and trick
 
+### Emojis
+
+right-click ➞ Insert Emoji or use the shortcut _Ctrl+._ 🎉️
+The Emoji picker works in any GNOME app 👣️
+
 ### Open Commit in the center of the screen
 
 On GNOME you can make all new windows open in the center using
@@ -50,6 +55,8 @@ On GNOME you can make all new windows open in the center using
 ```sh
 gsettings set org.gnome.mutter center-new-windows true
 ```
+
+See https://gitlab.gnome.org/GNOME/mutter/-/issues/246
 
 or set and use the move-to-center keybinding
 
