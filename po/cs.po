@@ -23,7 +23,7 @@ msgstr ""
 msgid "Commit"
 msgstr "Commit"
 
-#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.appdata.xml:10
+#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
 msgstr "Editor zpráv commitů"
@@ -33,7 +33,7 @@ msgstr "Editor zpráv commitů"
 msgid "git;mercurial;hg;scm;"
 msgstr "git;mercurial;hg;scm;"
 
-#: data/re.sonny.Commit.appdata.xml:12
+#: data/re.sonny.Commit.metainfo.xml:12
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
@@ -41,39 +41,39 @@ msgstr ""
 "Commit je editor, který vám pomůže lépe napsat zprávy commitů v systému Git "
 "a Mercurial."
 
-#: data/re.sonny.Commit.appdata.xml:16
+#: data/re.sonny.Commit.metainfo.xml:16
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
 msgstr "Po instalaci nezapomeňte aplikaci spustit a postupujte podle pokynů."
 
-#: data/re.sonny.Commit.appdata.xml:20
+#: data/re.sonny.Commit.metainfo.xml:20
 msgid "Features:"
 msgstr "Funkce:"
 
-#: data/re.sonny.Commit.appdata.xml:22
+#: data/re.sonny.Commit.metainfo.xml:22
 msgid ""
 "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgstr "Zvýraznění překročení délky titulku 50 znaků (přizpůsobitelné)"
 
-#: data/re.sonny.Commit.appdata.xml:26
+#: data/re.sonny.Commit.metainfo.xml:26
 msgid "Inserts blank line between title and description"
 msgstr "Vkládání prázdného řádku mezi titulek a popis"
 
-#: data/re.sonny.Commit.appdata.xml:27
+#: data/re.sonny.Commit.metainfo.xml:27
 msgid "Spell checking"
 msgstr "Kontrola pravopisu"
 
-#: data/re.sonny.Commit.appdata.xml:28
+#: data/re.sonny.Commit.metainfo.xml:28
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr ""
 "Komentáře jsou pouze pro čtení a jsou vyloučeny z možnosti \"Vybrat vše\""
 
-#: data/re.sonny.Commit.appdata.xml:29
+#: data/re.sonny.Commit.metainfo.xml:29
 msgid "Displays project folder and branch in window header"
 msgstr "Zobrazení složky projektu a věteve v záhlaví okna"
 
-#: data/re.sonny.Commit.appdata.xml:30
+#: data/re.sonny.Commit.metainfo.xml:30
 msgid ""
 "Dark theme support: the overflow highlight is adjusted according to your "
 "theme"
@@ -81,7 +81,7 @@ msgstr ""
 "Podpora tmavých témat: zvýraznění překročení délky titulku je upraveno podle "
 "vašeho tématu"
 
-#: data/re.sonny.Commit.appdata.xml:34
+#: data/re.sonny.Commit.metainfo.xml:34
 msgid ""
 "Supports git commit messages, merge messages, tag messages, add -p messages, "
 "and rebase -i messages"
@@ -89,82 +89,82 @@ msgstr ""
 "Podporuje zprávy git commit, zprávy merge, zprávy tag, zprávy add -p a "
 "zprávy rebase -i."
 
-#: data/re.sonny.Commit.appdata.xml:38
+#: data/re.sonny.Commit.metainfo.xml:38
 msgid "Supports Mercurial commit messages"
 msgstr "Podporuje zprávy commitů Mercurial"
 
-#: data/re.sonny.Commit.appdata.xml:39
+#: data/re.sonny.Commit.metainfo.xml:39
 msgid "Shows a welcome window when launched from desktop"
 msgstr "Při spuštění z plochy zobrazí uvítací okno"
 
-#: data/re.sonny.Commit.appdata.xml:49
+#: data/re.sonny.Commit.metainfo.xml:49
 msgid "Commit main window"
 msgstr "Hlavní okno Commitu"
 
-#: data/re.sonny.Commit.appdata.xml:55
+#: data/re.sonny.Commit.metainfo.xml:55
 msgid "Commit main window - dark mode"
 msgstr "Hlavní okno Commitu - tmavý režim"
 
-#: data/re.sonny.Commit.appdata.xml:61
+#: data/re.sonny.Commit.metainfo.xml:61
 msgid "Commit welcome window"
 msgstr "Uvítací okno Commitu"
 
-#: data/re.sonny.Commit.appdata.xml:67
+#: data/re.sonny.Commit.metainfo.xml:67
 msgid "Commit welcome window - dark mode"
 msgstr "Uvítací okno Commitu - tmavý režim"
 
-#: data/re.sonny.Commit.appdata.xml:75
+#: data/re.sonny.Commit.metainfo.xml:75
 msgid "Add a Preferences window"
 msgstr "Přidáno okno Předvolby"
 
-#: data/re.sonny.Commit.appdata.xml:76
+#: data/re.sonny.Commit.metainfo.xml:76
 msgid "Set default title length hint to 50 characters"
 msgstr "Nastavena výchozí délka titulku na 50 znaků"
 
-#: data/re.sonny.Commit.appdata.xml:77
+#: data/re.sonny.Commit.metainfo.xml:77
 msgid "Fix reading commits with special characters"
 msgstr "Opraveno čtení commitů se speciálními znaky"
 
-#: data/re.sonny.Commit.appdata.xml:78
+#: data/re.sonny.Commit.metainfo.xml:78
 msgid "Fix git rebase not recognized"
 msgstr "Opraveno nerozpoznání git rebase"
 
-#: data/re.sonny.Commit.appdata.xml:79
+#: data/re.sonny.Commit.metainfo.xml:79
 msgid "Make windows bottom corners rounded"
 msgstr "Spodní rohy okna jsou zakulacené"
 
-#: data/re.sonny.Commit.appdata.xml:80
+#: data/re.sonny.Commit.metainfo.xml:80
 msgid "Add 6px margin to editor"
 msgstr "Přidán 6px okraj do editoru"
 
-#: data/re.sonny.Commit.appdata.xml:86
+#: data/re.sonny.Commit.metainfo.xml:86
 msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
 "⚠️ Požadovaná akce. Po aktualizaci spusťte aplikaci a postupujte podle pokynů."
 
-#: data/re.sonny.Commit.appdata.xml:91
+#: data/re.sonny.Commit.metainfo.xml:91
 msgid "Show a welcome window when launched from desktop"
 msgstr "Zobrazení uvítacího okna při spuštění z plochy"
 
-#: data/re.sonny.Commit.appdata.xml:92
+#: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add support for Mercurial"
 msgstr "Přidána podpora pro Mercurial"
 
-#: data/re.sonny.Commit.appdata.xml:93
+#: data/re.sonny.Commit.metainfo.xml:93
 msgid "Remove filesystem permission"
 msgstr "Odebráno oprávnění souborového systému"
 
-#: data/re.sonny.Commit.appdata.xml:99
+#: data/re.sonny.Commit.metainfo.xml:99
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "První vydání. Převzato z Gnomit 2.0."
 
-#: data/re.sonny.Commit.appdata.xml:101
+#: data/re.sonny.Commit.metainfo.xml:101
 msgid "Support \"#\" in commit message"
 msgstr "Podpora \"#\" ve zprávách commitů"
 
-#: data/re.sonny.Commit.appdata.xml:102
+#: data/re.sonny.Commit.metainfo.xml:102
 msgid "Properly recognize executable path"
 msgstr "Správné rozpoznání cesty ke spustitelnému souboru"
 

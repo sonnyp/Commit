@@ -15,8 +15,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 're.sonny.Commit.appdata.xml',
-  output: 're.sonny.Commit.appdata.xml',
+  input: 're.sonny.Commit.metainfo.xml',
+  output: 're.sonny.Commit.metainfo.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
