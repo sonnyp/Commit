@@ -1,1 +1,10 @@
 trailingComma: all
+overrides:
+  - files: re.sonny.Commit
+    options:
+      parser: babel
+  - files:
+      - "*.xml.in"
+      - "*.doap"
+    options:
+      parser: xml
