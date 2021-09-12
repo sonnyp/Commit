@@ -8,7 +8,7 @@ export default function Preferences({ application }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./preferences.ui"));
 
   const window = builder.get_object("window");
-  window.set_application(application);
+  window.set_transient_for(application.get_active_window());
 
   const spinButton = builder.get_object("spinButton");
   spinButton.set_range(50, 200);
