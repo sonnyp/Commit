@@ -3,6 +3,5 @@ data/re.sonny.Commit.metainfo.xml
 data/re.sonny.Commit.gschema.xml
 src/about.js
 src/window.ui
-src/preferences.ui
 src/welcome.js
 src/welcome.ui

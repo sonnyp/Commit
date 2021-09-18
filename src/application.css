@@ -1,4 +1,5 @@
 .code {
   padding: 12px;
   border: solid 1px @borders;
+  border-radius: 8px;
 }
