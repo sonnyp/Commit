@@ -35,7 +35,7 @@ export default function Editor({
   }
 
   function highlightText() {
-    if (!['commit', 'merge', 'hg'].includes(type)) return
+    if (!["commit", "merge", "hg"].includes(type)) return;
 
     // Check first line length and highlight characters beyond the limit.
     const text = buffer.text;
@@ -61,9 +61,8 @@ export default function Editor({
     const title_length_hint = settings.get_int("title-length-hint");
     // Highlight the overflow area, if any.
     if (firstLineLength > title_length_hint) {
-      const startOfOverflowIterator = buffer.get_iter_at_offset(
-        title_length_hint,
-      );
+      const startOfOverflowIterator =
+        buffer.get_iter_at_offset(title_length_hint);
       buffer.apply_tag(
         highlightBackgroundTag,
         startOfOverflowIterator,
