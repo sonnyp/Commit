@@ -70,6 +70,18 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="2.2.0" date="2021-09-20">
+      <description>
+        <ul>
+          <li>Move preferences to welcome window</li>
+          <li>Only highlight text overflow on commits</li>
+          <li>Add Czech translation @pervoj</li>
+          <li>Add Spanish translation @oscfdezdz</li>
+          <li>New app icon @bertob</li>
+          <li>Remove double border</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.1.0" date="2021-05-16">
       <description>
         <ul>

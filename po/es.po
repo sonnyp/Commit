@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-18 14:29+0200\n"
+"POT-Creation-Date: 2021-09-20 16:36+0200\n"
 "PO-Revision-Date: 2021-09-09 11:22+0200\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: none\n"
@@ -187,10 +187,6 @@ msgstr "Óscar Fernández Díaz <oscfdezdz@tuta.io>"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/welcome.ui:46
-msgid "Preferences"
-msgstr "Preferencias"
-
 #: src/welcome.ui:79
 msgid "Git"
 msgstr ""
@@ -236,6 +232,9 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #: src/welcome.ui:242
 msgid "About Commit"
 msgstr "Acerca de Commit"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferencias"
 
 #~ msgid "Quit"
 #~ msgstr "Salir"

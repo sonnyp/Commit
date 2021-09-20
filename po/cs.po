@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-18 14:29+0200\n"
+"POT-Creation-Date: 2021-09-20 16:36+0200\n"
 "PO-Revision-Date: 2021-08-11 13:42+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -182,10 +182,6 @@ msgstr "Vojtěch Perník <translations@pervoj.cz>"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/welcome.ui:46
-msgid "Preferences"
-msgstr "Předvolby"
-
 #: src/welcome.ui:79
 msgid "Git"
 msgstr ""
@@ -231,6 +227,9 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #: src/welcome.ui:242
 msgid "About Commit"
 msgstr "O Commitu"
+
+#~ msgid "Preferences"
+#~ msgstr "Předvolby"
 
 #~ msgid "Quit"
 #~ msgstr "Ukončit"

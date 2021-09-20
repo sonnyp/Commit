@@ -26,6 +26,7 @@ test:
 	desktop-file-validate --no-hints data/re.sonny.Commit.desktop
 	# gtk-builder-tool validate src/*.ui
 	gjs -m test/*.test.js
+	flatpak-builder --show-manifest re.sonny.Commit.json
 
 clean:
 	rm -rf build install .eslintcache

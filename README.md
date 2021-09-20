@@ -166,6 +166,7 @@ Many thanks to its original author [Aral balkan](https://ar.al) of [Small Techno
 - [Aral Balkan](https://ar.al)
 - [Sergey Bugaev](https://mastodon.technology/@bugaevc)
 - [Sonny Piers](https://github.com/sonnyp)
+- [Tobias Bernard](https://tobiasbernard.com/)
 
 ## Copyright
 
