@@ -38,15 +38,50 @@
                 <property name="orientation">vertical</property>
                 <property name="spacing">12</property>
                 <child>
+                  <object class="HdyPreferencesGroup">
+                    <property name="visible">True</property>
+                    <!-- <property
+                      name="title"
+                      translatable="yes"
+                    >Preferences</property> -->
+                    <child>
+                      <object class="HdyPreferencesRow">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="HdyActionRow">
+                            <property name="visible">True</property>
+                            <property
+                              name="title"
+                              translatable="yes"
+                            >Message title length hint</property>
+                            <child>
+                              <object class="GtkSpinButton" id="spinButton">
+                                <property name="value">50</property>
+                                <property name='numeric'>True</property>
+                                <property name='valign'>center</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">12</property>
+                <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property
-                      name="label"
-                    >&lt;big&gt;&lt;b&gt;Git&lt;/b&gt;&lt;/big&gt;</property>
-                    <property name="use-markup">True</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">Git</property>
                     <property name="halign">GTK_ALIGN_START</property>
-                    <property name="xalign">0</property>
+                    <style>
+                      <class name="heading" />
+                      <class name="h4" />
+                    </style>
                   </object>
                 </child>
                 <child>
@@ -112,7 +147,6 @@
                 </child>
               </object>
             </child>
-
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
@@ -122,11 +156,13 @@
                     <property name="visible">True</property>
                     <property
                       name="label"
-                    >&lt;big&gt;&lt;b&gt;Mercurial&lt;/b&gt;&lt;/big&gt;</property>
-                    <property name="use-markup">True</property>
-                    <property name="wrap">True</property>
+                      translatable="yes"
+                    >Mercurial</property>
                     <property name="halign">GTK_ALIGN_START</property>
-                    <property name="xalign">0</property>
+                    <style>
+                      <class name="heading" />
+                      <class name="h4" />
+                    </style>
                   </object>
                 </child>
                 <child>
@@ -190,7 +226,6 @@
               </object>
             </child>
           </object>
-          <packing />
         </child>
       </object>
     </child>
@@ -201,13 +236,6 @@
         <property name="visible">True</property>
         <property name="margin">10</property>
         <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkModelButton">
-            <property name="visible">True</property>
-            <property name="text" translatable="yes">Preferences</property>
-            <property name="action-name">app.preferences</property>
-          </object>
-        </child>
         <child>
           <object class="GtkModelButton">
             <property name="visible">True</property>

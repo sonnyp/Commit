@@ -15,3 +15,5 @@
 12. [ ] gnome circle https://gitlab.gnome.org/Teams/Circle/-/issues/83
 13. [ ] awesome-gnome
 14. [ ] max length 72 (github/gitlab wraps)
+15. [ ] Auto capitalize first letter
+16. [ ] detect non imperative mood

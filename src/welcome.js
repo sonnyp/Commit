@@ -2,15 +2,27 @@ import Gtk from "gi://Gtk";
 import Gdk from "gi://Gdk";
 import system from "system";
 import GLib from "gi://GLib";
+import Gio from "gi://Gio";
 
+import settings from "./settings.js";
 import { relativePath, loadStyleSheet } from "./util.js";
 
 export default function Welcome({ application }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./welcome.ui"));
 
-  const Clipboard = Gtk.Clipboard.get_default(Gdk.Display.get_default());
-
   loadStyleSheet(relativePath("./application.css"));
+
+  const spinButton = builder.get_object("spinButton");
+  spinButton.set_range(50, 200);
+  spinButton.set_increments(1, 10);
+  settings.bind(
+    "title-length-hint",
+    spinButton,
+    "value",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+
+  const Clipboard = Gtk.Clipboard.get_default(Gdk.Display.get_default());
 
   const window = builder.get_object("window");
   window.set_application(application);
