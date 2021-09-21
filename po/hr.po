@@ -217,7 +217,7 @@ msgid ""
 "<tt>hgrc</tt>"
 msgstr ""
 "Za postavljanje Commita kao standardnog uređivača za Mercurial, postavi "
-sljedeće u svoj <tt>hgrc</tt>"
+"sljedeće u svoj <tt>hgrc</tt>"
 
 #: src/welcome.ui:221
 msgid "https://www.mercurial-scm.org/wiki/editor"
