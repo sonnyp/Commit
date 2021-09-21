@@ -2,7 +2,6 @@
 # TRANSLATORS: Don't translate
 Name=Commit
 Comment=Commit message editor
-Comment[hr]=Uređivač commit poruka
 Exec=re.sonny.Commit
 Terminal=false
 Type=Application
