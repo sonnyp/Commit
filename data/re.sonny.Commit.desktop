@@ -2,10 +2,12 @@
 # TRANSLATORS: Don't translate
 Name=Commit
 Comment=Commit message editor
+Comment[hr]=Uređivač commit poruka
 Exec=re.sonny.Commit
 Terminal=false
 Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
+Categories[hr]=razvoj;uslužni program;kontrola revizija;uređivač teksta;GNOME;GTK;
 StartupNotify=true
 Icon=re.sonny.Commit
 # TRANSLATORS: Don't translate
