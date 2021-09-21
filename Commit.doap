@@ -19,6 +19,12 @@
     <foaf:Person>
       <foaf:name>Sonny Piers</foaf:name>
       <foaf:mbox rdf:resource="mailto:sonny@fastmail.net" />
+      <foaf:account>
+        <foaf:OnlineAccount>
+            <foaf:accountServiceHomepage rdf:resource="https://github.com/"/>
+            <foaf:accountName>sonnyp</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
     </foaf:Person>
   </maintainer>
 </Project>
