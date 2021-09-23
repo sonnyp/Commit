@@ -19,34 +19,23 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="spacing">18</property>
-            <property name="margin-start">18</property>
-            <property name="margin-end">18</property>
-            <property name="margin-top">18</property>
-            <property name="margin-bottom">18</property>
+          <object class="AdwPreferencesPage">
+            <property name="vexpand">True</property>
             <child>
-              <object class="GtkBox">
-                <property name="orientation">vertical</property>
-                <property name="spacing">12</property>
+              <object class="AdwPreferencesGroup">
                 <child>
-                  <object class="AdwPreferencesGroup">
+                  <object class="AdwPreferencesRow">
                     <child>
-                      <object class="AdwPreferencesRow">
+                      <object class="AdwActionRow">
+                        <property
+                          name="title"
+                          translatable="yes"
+                        >Message title length hint</property>
                         <child>
-                          <object class="AdwActionRow">
-                            <property
-                              name="title"
-                              translatable="yes"
-                            >Message title length hint</property>
-                            <child>
-                              <object class="GtkSpinButton" id="spinButton">
-                                <property name="value">50</property>
-                                <property name='numeric'>True</property>
-                                <property name='valign'>center</property>
-                              </object>
-                            </child>
+                          <object class="GtkSpinButton" id="spinButton">
+                            <property name="value">50</property>
+                            <property name='numeric'>True</property>
+                            <property name='valign'>center</property>
                           </object>
                         </child>
                       </object>
@@ -56,73 +45,58 @@
               </object>
             </child>
             <child>
-              <object class="GtkBox">
-                <property name="orientation">vertical</property>
-                <property name="spacing">12</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label" translatable="yes">Git</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <style>
-                      <class name="heading" />
-                      <class name="h4" />
-                    </style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property
-                      name="label"
-                      translatable="yes"
-                    >To set Commit as default editor for Git run the following command in Terminal</property>
-                    <property name="wrap">True</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <property name="xalign">0</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="git_text">
-                    <property name="use-markup">True</property>
-                    <property name="wrap">True</property>
-                    <property name="selectable">True</property>
-                    <property name="xalign">0</property>
-                    <style>
-                      <class name="code" />
-                      <!--
-                        Only way to get correct color
-                        https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
-                      -->
-                      <class name="view" />
-                    </style>
-                  </object>
-                </child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Git</property>
+                <property name="description" translatable="yes">To set Commit as default editor for Git run the following command in Terminal</property>
                 <child>
                   <object class="GtkBox">
-                    <property name="orientation">horizontal</property>
-                    <property name="spacing">6</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkButton" id="git_copy">
-                        <property
-                          name="label"
-                          translatable="yes"
-                        >Copy to Clipboard</property>
-                        <!--
-                          Prevents the first GtkLabel selectable to get default focus
-                          couldn't find a way not to focus anything specific by default
-                         -->
-                        <property name="has-focus">True</property>
+                      <object class="GtkLabel" id="git_text">
+                        <property name="use-markup">True</property>
+                        <property name="wrap">True</property>
+                        <property name="selectable">True</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="code" />
+                          <!--
+                            Only way to get correct color
+                            https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
+                          -->
+                          <class name="view" />
+                        </style>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkLinkButton">
-                        <property
-                          name="label"
-                          translatable="yes"
-                        >Documentation</property>
-                        <property
-                          name="uri"
-                          translatable="yes"
-                        >https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor</property>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">6</property>
+                        <child>
+                          <object class="GtkButton" id="git_copy">
+                            <property
+                              name="label"
+                              translatable="yes"
+                            >Copy to Clipboard</property>
+                            <!--
+                              Prevents the first GtkLabel selectable to get default focus
+                              couldn't find a way not to focus anything specific by default
+                             -->
+                            <property name="has-focus">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLinkButton">
+                            <property
+                              name="label"
+                              translatable="yes"
+                            >Documentation</property>
+                            <property
+                              name="uri"
+                              translatable="yes"
+                            >https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
@@ -130,73 +104,54 @@
               </object>
             </child>
             <child>
-              <object class="GtkBox">
-                <property name="orientation">vertical</property>
-                <property name="spacing">12</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property
-                      name="label"
-                      translatable="yes"
-                    >Mercurial</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <style>
-                      <class name="heading" />
-                      <class name="h4" />
-                    </style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <!-- TRANSLATORS: Don't translate <tt>hgrc</tt> -->
-                    <property
-                      name="label"
-                      translatable="yes"
-                    >To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
-                    <property name="use-markup">True</property>
-                    <property name="wrap">True</property>
-                    <property name="halign">GTK_ALIGN_START</property>
-                    <property name="xalign">0</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="hg_text">
-                    <property name="use-markup">True</property>
-                    <property name="wrap">True</property>
-                    <property name="selectable">True</property>
-                    <property name="xalign">0</property>
-                    <style>
-                      <class name="code" />
-                      <!--
-                        Only way to get correct color
-                        https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
-                      -->
-                      <class name="view" />
-                    </style>
-                  </object>
-                </child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Mercurial</property>
+                <!-- TRANSLATORS: Don't translate <tt>hgrc</tt> -->
+                <property name="description" translatable="yes">To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
                 <child>
                   <object class="GtkBox">
-                    <property name="orientation">horizontal</property>
-                    <property name="spacing">6</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkButton" id="hg_copy">
-                        <property
-                          name="label"
-                          translatable="yes"
-                        >Copy to Clipboard</property>
+                      <object class="GtkLabel" id="hg_text">
+                        <property name="use-markup">True</property>
+                        <property name="wrap">True</property>
+                        <property name="selectable">True</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="code" />
+                          <!--
+                            Only way to get correct color
+                            https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
+                          -->
+                          <class name="view" />
+                        </style>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkLinkButton">
-                        <property
-                          name="label"
-                          translatable="yes"
-                        >Documentation</property>
-                        <property
-                          name="uri"
-                          translatable="yes"
-                        >https://www.mercurial-scm.org/wiki/editor</property>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">6</property>
+                        <child>
+                          <object class="GtkButton" id="hg_copy">
+                            <property
+                              name="label"
+                              translatable="yes"
+                            >Copy to Clipboard</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLinkButton">
+                            <property
+                              name="label"
+                              translatable="yes"
+                            >Documentation</property>
+                            <property
+                              name="uri"
+                              translatable="yes"
+                            >https://www.mercurial-scm.org/wiki/editor</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
