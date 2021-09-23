@@ -1,5 +1,4 @@
 import Gtk from "gi://Gtk";
-import Gspell from "gi://Gspell";
 
 import validateCommitButton from "./validateCommitButton.js";
 import settings from "./settings.js";
@@ -22,16 +21,11 @@ export default function Editor({
 
   const buffer = messageText.get_buffer();
 
-  // Set up spell checking for the text view.
-  // TODO: This is incorrectly documented. File an issue / blog.
-  const gSpellTextView = Gspell.TextView.get_from_gtk_text_view(messageText);
-  gSpellTextView.basic_setup();
-
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
   buffer.tag_table.add(highlightBackgroundTag);
   function setHighlightColour() {
-    highlightBackgroundTag.background = getHighlightColour(gSpellTextView);
+    highlightBackgroundTag.background = getHighlightColour(messageText);
   }
 
   function highlightText() {
@@ -168,6 +162,9 @@ export default function Editor({
       buffer.select_range(selectStartIterator, selectEndIterator);
     });
   });
+
+  messageText.grab_focus();
+
   return { messageText, buffer, setHighlightColour };
 }
 
@@ -176,7 +173,7 @@ function unicodeLength(str) {
   return [...str].length;
 }
 
-function getHighlightColour(gSpellTextView) {
+function getHighlightColour(messageText) {
   // Get the overflow text background highlight colour based on the
   // colour of the foreground text.
 
@@ -184,10 +181,9 @@ function getHighlightColour(gSpellTextView) {
   const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
   const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
   let highlightColour;
-  const fontColour = gSpellTextView
-    .get_view()
+  const fontColour = messageText
     .get_style_context()
-    .get_color(Gtk.StateFlags.NORMAL);
+    .get_color();
 
   // Luma calculation courtesy: https://stackoverflow.com/a/12043228
   const luma =

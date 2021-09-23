@@ -4,15 +4,10 @@
 // import "gi://GLib";
 // import "gi://GObject";
 
-// FIXME: Gspell does not support GTK 4 currently
-// https://gitlab.gnome.org/GNOME/gspell/-/issues/17
+// FIXME: Implement spell check with future GTK4 API
+import Gtk from "gi://Gtk?version=4.0";
 
-// Gtk and Gdk are required by Gspell
-import Gtk from "gi://Gtk?version=3.0";
-// import "gi://Gdk?version=4.0";
-import "gi://Gspell?version=1";
+import Adw from "gi://Adw";
 
-import Handy from "gi://Handy";
-
-Gtk.init(null);
-Handy.init();
+Gtk.init();
+Adw.init();

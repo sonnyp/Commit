@@ -2,58 +2,45 @@
 <interface>
   <requires lib="gtk+" version="3.24" />
   <requires lib="libhandy" version="1.0" />
-  <object class="HdyApplicationWindow" id="window">
+  <object class="AdwApplicationWindow" id="window">
     <property name="resizable">True</property>
     <property name="default_width">560</property>
     <property name="default_height">240</property>
-    <property name="type_hint">dialog</property>
-    <property name="urgency_hint">True</property>
+    <property name="title">Commit</property>
     <child>
       <object class="GtkBox">
-        <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="HdyHeaderBar" id="header">
-            <property name="visible">True</property>
-            <property name="title">Commit</property>
+          <object class="AdwHeaderBar" id="header">
+            <property name="show_start_title_buttons">False</property>
+            <property name="show_end_title_buttons">False</property>
             <child>
               <object class="GtkButton" id="cancelButton">
                 <property name="label" translatable="yes">Cancel</property>
-                <property name="visible">True</property>
-                <property name="receives_default">True</property>
               </object>
             </child>
-            <child>
+            <child type="end">
               <object class="GtkButton" id="commitButton">
                 <property name="label">Commit</property>
-                <property name="visible">True</property>
-                <property name="receives_default">True</property>
                 <property name="sensitive">False</property>
-                <accelerator
+                <!-- ><accelerator
                   key="Return"
                   signal="clicked"
                   modifiers="GDK_CONTROL_MASK"
-                />
+                /> -->
                 <style>
                   <class name="suggested-action" />
                 </style>
               </object>
-              <packing>
-                <property name="pack_type">end</property>
-                <property name="position">1</property>
-              </packing>
             </child>
           </object>
         </child>
 
         <child>
           <object class="GtkScrolledWindow">
-            <property name="visible">True</property>
             <property name="vexpand">True</property>
             <child>
               <object class="GtkTextView" id="messageText">
-                <property name="visible">True</property>
-                <property name="has_focus">True</property>
                 <property name="wrap_mode">word</property>
                 <property name="top-margin">6</property>
                 <property name="left-margin">6</property>
@@ -69,6 +56,9 @@
           </object>
         </child>
       </object>
+    </child>
+    <child>
+      <object class="GtkEventControllerKey" id="eventController"/>
     </child>
   </object>
 </interface>
