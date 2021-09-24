@@ -1,0 +1,231 @@
+# Brazilian Portuguese translation for re.sonny.Commit.
+# Copyright (C) 2021 re.sonny.Commit'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Commit package.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Commit\n"
+"Report-Msgid-Bugs-To: https://github.com/sonnyp/Commit/issues\n"
+"POT-Creation-Date: 2021-09-20 16:36+0200\n"
+"PO-Revision-Date: 2021-09-23 16:17-0300\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 40.0\n"
+"X-Project-Style: gnome\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:4
+msgid "Commit"
+msgstr "Commit"
+
+#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
+#: src/about.js:10
+msgid "Commit message editor"
+msgstr "Editor de mensagens de commit"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:13
+msgid "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;"
+
+#: data/re.sonny.Commit.metainfo.xml:13
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
+msgstr ""
+"Commit é um editor que lhe ajuda a escrever melhores mensagens de commit Git "
+"e Mercurial."
+
+#: data/re.sonny.Commit.metainfo.xml:17
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
+msgstr ""
+"Após a instalação, certifique-se de iniciar o aplicativo e seguir as "
+"instruções."
+
+#: data/re.sonny.Commit.metainfo.xml:21
+msgid "Features:"
+msgstr "Recursos:"
+
+#: data/re.sonny.Commit.metainfo.xml:23
+msgid ""
+"Highlights overflow of title when it exceeds 50 characters (customizable)"
+msgstr ""
+"Realça estouro do título quando ele excede 50 caracteres (personalizável)"
+
+#: data/re.sonny.Commit.metainfo.xml:27
+msgid "Inserts blank line between title and description"
+msgstr "Insere uma linha vazia entre título e descrição"
+
+#: data/re.sonny.Commit.metainfo.xml:28
+msgid "Spell checking"
+msgstr "Verificação ortográfica"
+
+#: data/re.sonny.Commit.metainfo.xml:29
+msgid "Comments are readonly and excluded from \"Select All\""
+msgstr "Comentários são somente leitura e excluídos de “Selecionar tudo”"
+
+#: data/re.sonny.Commit.metainfo.xml:30
+msgid "Displays project folder and branch in window header"
+msgstr "Exibe pastas e branches de projeto no cabeçalho da janela"
+
+#: data/re.sonny.Commit.metainfo.xml:31
+msgid ""
+"Dark theme support: the overflow highlight is adjusted according to your "
+"theme"
+msgstr ""
+"Tem suporte a tema escuro: o realce de estouro é ajustado conforme seu tema"
+
+#: data/re.sonny.Commit.metainfo.xml:35
+msgid ""
+"Supports git commit messages, merge messages, tag messages, add -p messages, "
+"and rebase -i messages"
+msgstr ""
+"Suporte a mensagens de commit, mensagens de mesclagem e mensagens de tag, "
+"mensagens de add -p e mensagens de rebase -i do git"
+
+#: data/re.sonny.Commit.metainfo.xml:39
+msgid "Supports Mercurial commit messages"
+msgstr "Tem suporte a mensagens de commit do Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:40
+msgid "Shows a welcome window when launched from desktop"
+msgstr "Mostra uma janela de boas-vindas quando iniciado do desktop"
+
+#: data/re.sonny.Commit.metainfo.xml:50
+msgid "Commit main window"
+msgstr "Janela principal do Commit"
+
+#: data/re.sonny.Commit.metainfo.xml:56
+msgid "Commit main window - dark mode"
+msgstr "Janela principal do Commit - modo escuro"
+
+#: data/re.sonny.Commit.metainfo.xml:62
+msgid "Commit welcome window"
+msgstr "Janela de boas-vindas do Commit"
+
+#: data/re.sonny.Commit.metainfo.xml:68
+msgid "Commit welcome window - dark mode"
+msgstr "Janela de boas-vindas do Commit - modo escuro"
+
+#: data/re.sonny.Commit.metainfo.xml:76
+msgid "Add a Preferences window"
+msgstr "Adiciona uma janela de Preferências"
+
+#: data/re.sonny.Commit.metainfo.xml:77
+msgid "Set default title length hint to 50 characters"
+msgstr ""
+"Define uma sugestão de comprimento padrão de título para 50 caracteres"
+
+#: data/re.sonny.Commit.metainfo.xml:78
+msgid "Fix reading commits with special characters"
+msgstr "Correção da leitura de commits com caracteres especiais"
+
+#: data/re.sonny.Commit.metainfo.xml:79
+msgid "Fix git rebase not recognized"
+msgstr "Correção do git rebase não ser reconhecido"
+
+#: data/re.sonny.Commit.metainfo.xml:80
+msgid "Make windows bottom corners rounded"
+msgstr "Arredonda os cantos inferiores das janelas"
+
+#: data/re.sonny.Commit.metainfo.xml:81
+msgid "Add 6px margin to editor"
+msgstr "Adiciona uma margem de 6px ao editor"
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
+msgstr ""
+"⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."
+
+#: data/re.sonny.Commit.metainfo.xml:92
+msgid "Show a welcome window when launched from desktop"
+msgstr "Mostra uma janela de boas-vindas ao iniciar da área de trabalho"
+
+#: data/re.sonny.Commit.metainfo.xml:93
+msgid "Add support for Mercurial"
+msgstr "Adiciona suporte ao Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:94
+msgid "Remove filesystem permission"
+msgstr "Remove permissão de sistema de arquivos"
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Initial release. Forked from Gnomit 2.0."
+msgstr "Lançamento inicial. Feito fork do Gnomit 2.0."
+
+#: data/re.sonny.Commit.metainfo.xml:102
+msgid "Support \"#\" in commit message"
+msgstr "Suporte a “#” na mensagem de commit"
+
+#: data/re.sonny.Commit.metainfo.xml:103
+msgid "Properly recognize executable path"
+msgstr "Reconhece adequadamente o caminho do executável"
+
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:56
+msgid "Message title length hint"
+msgstr "Sugestão de cumprimento do título da mensagem"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "Rafael Fontenelle <rafaelff@gnome.org>"
+
+#: src/window.ui:21
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/welcome.ui:79
+msgid "Git"
+msgstr "Git"
+
+#: src/welcome.ui:93
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
+msgstr ""
+"Para definir Commit como o editor padrão para Git, execute o seguinte comando "
+"no Terminal"
+
+#: src/welcome.ui:125 src/welcome.ui:208
+msgid "Copy to Clipboard"
+msgstr "Copiar para a área de transferência"
+
+#: src/welcome.ui:139 src/welcome.ui:217
+msgid "Documentation"
+msgstr "Documentação"
+
+#: src/welcome.ui:143
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+
+#: src/welcome.ui:160
+msgid "Mercurial"
+msgstr "Mercurial"
+
+#. TRANSLATORS: Don't translate <tt>hgrc</tt>
+#: src/welcome.ui:175
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
+msgstr ""
+"Para definir Commit como o editor padrão para Mercurial, defina o seguinte em "
+"seu <tt>hgrc</tt>"
+
+#: src/welcome.ui:221
+msgid "https://www.mercurial-scm.org/wiki/editor"
+msgstr "https://www.mercurial-scm.org/wiki/editor"
+
+#: src/welcome.ui:242
+msgid "About Commit"
+msgstr "Sobre o Commit"
