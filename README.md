@@ -159,7 +159,7 @@ flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
 
 Commit is a fork of [Gnomit](https://github.com/small-tech/gnomit/) wich was inspired by [Komet](https://github.com/zorgiepoo/Komet).
 
-Many thanks to its original author [Aral balkan](https://ar.al) of [Small Technology Foundation](https://small-tech.org).
+Many thanks to its original author [Aral Balkan](https://ar.al) of [Small Technology Foundation](https://small-tech.org).
 
 ### Contributors
 
@@ -171,7 +171,7 @@ Many thanks to its original author [Aral balkan](https://ar.al) of [Small Techno
 ## Copyright
 
 - © 2020-2021 [Sonny Piers](https://github.com/sonnyp)
-- © 2018-2020 [Aral balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
+- © 2018-2020 [Aral Balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
 
