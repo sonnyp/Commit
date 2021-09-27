@@ -21,8 +21,16 @@
       <foaf:mbox rdf:resource="mailto:sonny@fastmail.net" />
       <foaf:account>
         <foaf:OnlineAccount>
-            <foaf:accountServiceHomepage rdf:resource="https://github.com/"/>
+            <foaf:accountServiceHomepage rdf:resource="https://github.com/" />
             <foaf:accountName>sonnyp</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
+      <foaf:account>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage
+            rdf:resource="https://gitlab.gnome.org"
+          />
+          <foaf:accountName>sonny</foaf:accountName>
         </foaf:OnlineAccount>
       </foaf:account>
     </foaf:Person>
