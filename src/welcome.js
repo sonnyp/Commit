@@ -1,5 +1,4 @@
 import Gtk from "gi://Gtk";
-import Gdk from "gi://Gdk";
 import system from "system";
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
@@ -22,8 +21,6 @@ export default function Welcome({ application }) {
     Gio.SettingsBindFlags.DEFAULT,
   );
 
-  const Clipboard = Gdk.Display.get_default().get_clipboard();
-
   const window = builder.get_object("window");
   window.set_application(application);
 
@@ -34,15 +31,16 @@ export default function Welcome({ application }) {
   const git_copy = builder.get_object("git_copy");
   git_copy.connect("clicked", () => {
     selectNone(git_text);
-    Clipboard.set_text(git_text.get_text());
+    git_copy.get_clipboard().set(git_text.get_text());
   });
 
   const hg_text = builder.get_object("hg_text");
   hg_text.label = `<tt>[ui]\neditor=${command}</tt>`;
   const hg_copy = builder.get_object("hg_copy");
+
   hg_copy.connect("clicked", () => {
     selectNone(hg_text);
-    Clipboard.set_text(hg_text.get_text());
+    hg_copy.get_clipboard().set(hg_text.get_text());
   });
 
   window.show();
