@@ -114,27 +114,27 @@ msgstr "Welkomstvenster - donker thema"
 
 #: data/re.sonny.Commit.metainfo.xml:76
 msgid "Add a Preferences window"
-msgstr "[NIEUW] Voorkeurenvenster"
+msgstr "Nieuw: voorkeurenvenster"
 
 #: data/re.sonny.Commit.metainfo.xml:77
 msgid "Set default title length hint to 50 characters"
-msgstr "[NIEUW] De standaard berichtlengte is voortaan 50 tekens"
+msgstr "Nieuw: de standaard berichtlengte is voortaan 50 tekens"
 
 #: data/re.sonny.Commit.metainfo.xml:78
 msgid "Fix reading commits with special characters"
-msgstr "[OPGELOST] Uitlezen van commits met speciale tekens"
+msgstr "Opgelost: uitlezen van commits met speciale tekens"
 
 #: data/re.sonny.Commit.metainfo.xml:79
 msgid "Fix git rebase not recognized"
-msgstr "[OPGELOST] git rebase werd niet herkend"
+msgstr "Opgelost: git rebase werd niet herkend"
 
 #: data/re.sonny.Commit.metainfo.xml:80
 msgid "Make windows bottom corners rounded"
-msgstr "[NIEUW] Vensterhoeken zijn voortaan afgerond"
+msgstr "Nieuw: vensterhoeken zijn voortaan afgerond"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Add 6px margin to editor"
-msgstr "[NIEUW] 6px-marge in bewerker"
+msgstr "Nieuw: 6px-marge in bewerker"
 
 #: data/re.sonny.Commit.metainfo.xml:87
 msgid ""
@@ -145,15 +145,15 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Show a welcome window when launched from desktop"
-msgstr "[NIEUW] Welkomstvenster na de eerste opstart"
+msgstr "Nieuw: welkomstvenster na de eerste opstart"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Add support for Mercurial"
-msgstr "[NIEUW] Mercurial-ondersteuning"
+msgstr "Nieuw: Mercurial-ondersteuning"
 
 #: data/re.sonny.Commit.metainfo.xml:94
 msgid "Remove filesystem permission"
-msgstr "[VERBETERD] Bestandssysteemrecht verwijderd"
+msgstr "Verbeterd: bestandssysteemrecht verwijderd"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Initial release. Forked from Gnomit 2.0."
@@ -161,11 +161,11 @@ msgstr "Eerste uitgave, afgesplitst van Gnomit 2.0."
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support \"#\" in commit message"
-msgstr "[NIEUW] Ondersteuning voor ‘#’ in commitberichten"
+msgstr "Nieuw: ondersteuning voor ‘#’ in commitberichten"
 
 #: data/re.sonny.Commit.metainfo.xml:103
 msgid "Properly recognize executable path"
-msgstr "[VERBETERD] Het uitvoerbare bestand wordt voortaan juist herkend"
+msgstr "Verbeterd: het uitvoerbare bestand wordt voortaan juist herkend"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:56
 msgid "Message title length hint"
