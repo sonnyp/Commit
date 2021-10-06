@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Commit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Commit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-20 16:36+0200\n"
+"PO-Revision-Date: 2021-10-04 17:50+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:4
+msgid "Commit"
+msgstr "Commit"
+
+#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
+#: src/about.js:10
+msgid "Commit message editor"
+msgstr "Commitberichtbewerker"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:13
+msgid "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;"
+
+#: data/re.sonny.Commit.metainfo.xml:13
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
+msgstr ""
+"Commit is een bewerker die je helpt betere Git- en Mercurial-berichten te "
+"schrijven."
+
+#: data/re.sonny.Commit.metainfo.xml:17
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
+msgstr "Installeer Commit, open een nieuw venster en volg de instructies."
+
+#: data/re.sonny.Commit.metainfo.xml:21
+msgid "Features:"
+msgstr "Kenmerken:"
+
+#: data/re.sonny.Commit.metainfo.xml:23
+msgid ""
+"Highlights overflow of title when it exceeds 50 characters (customizable)"
+msgstr "Geeft aan als het bericht meer dan 50 tekens bevat (instelbaar)"
+
+#: data/re.sonny.Commit.metainfo.xml:27
+msgid "Inserts blank line between title and description"
+msgstr "Voegt een blanco regel toe tussen de naam en omschrijving"
+
+#: data/re.sonny.Commit.metainfo.xml:28
+msgid "Spell checking"
+msgstr "Spellingcontrole"
+
+#: data/re.sonny.Commit.metainfo.xml:29
+msgid "Comments are readonly and excluded from \"Select All\""
+msgstr "Reacties zijn alleen-lezen en uitgesloten van ‘Alles selecteren’"
+
+#: data/re.sonny.Commit.metainfo.xml:30
+msgid "Displays project folder and branch in window header"
+msgstr "Toont de projectmap en -tak op de titelbalk"
+
+#: data/re.sonny.Commit.metainfo.xml:31
+msgid ""
+"Dark theme support: the overflow highlight is adjusted according to your "
+"theme"
+msgstr ""
+"Ondersteuning voor donkere thema's: markeringen maken gebruik van de "
+"themakleuren"
+
+#: data/re.sonny.Commit.metainfo.xml:35
+msgid ""
+"Supports git commit messages, merge messages, tag messages, add -p messages, "
+"and rebase -i messages"
+msgstr ""
+"Ondersteunt git-commitberichten, samenvoegberichten, tag-berichten, ‘add -p’-"
+"berichten en ‘rebase -i’-berichten"
+
+#: data/re.sonny.Commit.metainfo.xml:39
+msgid "Supports Mercurial commit messages"
+msgstr "Ondersteunt Mercurial-commitberichten"
+
+#: data/re.sonny.Commit.metainfo.xml:40
+msgid "Shows a welcome window when launched from desktop"
+msgstr "Toont een welkomstvenster na de eerste opstart"
+
+#: data/re.sonny.Commit.metainfo.xml:50
+msgid "Commit main window"
+msgstr "Hoofdvenster"
+
+#: data/re.sonny.Commit.metainfo.xml:56
+msgid "Commit main window - dark mode"
+msgstr "Hoofdvenster - donker thema"
+
+#: data/re.sonny.Commit.metainfo.xml:62
+msgid "Commit welcome window"
+msgstr "Welkomstvenster"
+
+#: data/re.sonny.Commit.metainfo.xml:68
+msgid "Commit welcome window - dark mode"
+msgstr "Welkomstvenster - donker thema"
+
+#: data/re.sonny.Commit.metainfo.xml:76
+msgid "Add a Preferences window"
+msgstr "Nieuw: voorkeurenvenster"
+
+#: data/re.sonny.Commit.metainfo.xml:77
+msgid "Set default title length hint to 50 characters"
+msgstr "Nieuw: de standaard berichtlengte is voortaan 50 tekens"
+
+#: data/re.sonny.Commit.metainfo.xml:78
+msgid "Fix reading commits with special characters"
+msgstr "Opgelost: uitlezen van commits met speciale tekens"
+
+#: data/re.sonny.Commit.metainfo.xml:79
+msgid "Fix git rebase not recognized"
+msgstr "Opgelost: git rebase werd niet herkend"
+
+#: data/re.sonny.Commit.metainfo.xml:80
+msgid "Make windows bottom corners rounded"
+msgstr "Nieuw: vensterhoeken zijn voortaan afgerond"
+
+#: data/re.sonny.Commit.metainfo.xml:81
+msgid "Add 6px margin to editor"
+msgstr "Nieuw: 6px-marge in bewerker"
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
+msgstr ""
+"⚠️ LET OP: open na het bijwerken een nieuw venster en volg de instructies."
+
+#: data/re.sonny.Commit.metainfo.xml:92
+msgid "Show a welcome window when launched from desktop"
+msgstr "Nieuw: welkomstvenster na de eerste opstart"
+
+#: data/re.sonny.Commit.metainfo.xml:93
+msgid "Add support for Mercurial"
+msgstr "Nieuw: Mercurial-ondersteuning"
+
+#: data/re.sonny.Commit.metainfo.xml:94
+msgid "Remove filesystem permission"
+msgstr "Verbeterd: bestandssysteemrecht verwijderd"
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Initial release. Forked from Gnomit 2.0."
+msgstr "Eerste uitgave, afgesplitst van Gnomit 2.0."
+
+#: data/re.sonny.Commit.metainfo.xml:102
+msgid "Support \"#\" in commit message"
+msgstr "Nieuw: ondersteuning voor ‘#’ in commitberichten"
+
+#: data/re.sonny.Commit.metainfo.xml:103
+msgid "Properly recognize executable path"
+msgstr "Verbeterd: het uitvoerbare bestand wordt voortaan juist herkend"
+
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:56
+msgid "Message title length hint"
+msgstr "Lengtemelding bij berichten"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#: src/window.ui:21
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/welcome.ui:79
+msgid "Git"
+msgstr "Git"
+
+#: src/welcome.ui:93
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
+msgstr ""
+"Voer de volgende terminalopdracht uit om Commit in te stellen als standaard "
+"Git-bewerker"
+
+#: src/welcome.ui:125 src/welcome.ui:208
+msgid "Copy to Clipboard"
+msgstr "Kopiëren naar klembord"
+
+#: src/welcome.ui:139 src/welcome.ui:217
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: src/welcome.ui:143
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+
+#: src/welcome.ui:160
+msgid "Mercurial"
+msgstr "Mercurial"
+
+#. TRANSLATORS: Don't translate <tt>hgrc</tt>
+#: src/welcome.ui:175
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
+msgstr ""
+"Stel het volgende in in je <tt>hgrc</tt> om Commit in te stellen als "
+"standaard Mercurial-bewerker"
+
+#: src/welcome.ui:221
+msgid "https://www.mercurial-scm.org/wiki/editor"
+msgstr "https://www.mercurial-scm.org/wiki/editor"
+
+#: src/welcome.ui:242
+msgid "About Commit"
+msgstr "Over Commit"
