@@ -22,7 +22,7 @@ export default function Welcome({ application }) {
     Gio.SettingsBindFlags.DEFAULT,
   );
 
-  const Clipboard = Gtk.Clipboard.get_default(Gdk.Display.get_default());
+  const Clipboard = Gdk.Display.get_default().get_clipboard();
 
   const window = builder.get_object("window");
   window.set_application(application);
@@ -34,13 +34,7 @@ export default function Welcome({ application }) {
   const git_copy = builder.get_object("git_copy");
   git_copy.connect("clicked", () => {
     selectNone(git_text);
-    Clipboard.set_text(git_text.get_text(), -1);
-  });
-  git_text.connect("grab-focus", () => {
-    Promise.resolve().then(() => {
-      selectAll(git_text);
-    });
-    return false;
+    Clipboard.set_text(git_text.get_text());
   });
 
   const hg_text = builder.get_object("hg_text");
@@ -48,16 +42,10 @@ export default function Welcome({ application }) {
   const hg_copy = builder.get_object("hg_copy");
   hg_copy.connect("clicked", () => {
     selectNone(hg_text);
-    Clipboard.set_text(hg_text.get_text(), -1);
-  });
-  hg_text.connect("grab-focus", () => {
-    Promise.resolve().then(() => {
-      selectAll(hg_text);
-    });
-    return false;
+    Clipboard.set_text(hg_text.get_text());
   });
 
-  window.show_all();
+  window.show();
 
   return { window };
 }

@@ -150,5 +150,5 @@ function openEditor({ file, application }) {
     commitButton,
   });
 
-  window.show_all();
+  window.show();
 }

@@ -11,8 +11,8 @@ export function relativePath(path) {
 export function loadStyleSheet(path) {
   const provider = new Gtk.CssProvider();
   provider.load_from_path(path);
-  Gtk.StyleContext.add_provider_for_screen(
-    Gdk.Screen.get_default(),
+  Gtk.StyleContext.add_provider_for_display(
+    Gdk.Display.get_default(),
     provider,
     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
   );

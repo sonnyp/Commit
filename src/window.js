@@ -19,11 +19,12 @@ export default function Window({
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
+  const eventController = builder.get_object("eventController");
 
   const header = builder.get_object("header");
   if (type) {
     const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
-    header.set_title(`${type}: ${projectDirectoryName} (${detail})`);
+    window.set_title(`${type}: ${projectDirectoryName} (${detail})`);
   }
 
   window.set_application(application);
@@ -38,9 +39,7 @@ export default function Window({
   }
 
   // Exit via Escape key.
-  window.add_events(Gdk.EventMask.KEY_PRESS_MASK);
-  window.connect("key_press_event", (self, event) => {
-    const [, keyval] = event.get_keyval();
+  eventController.connect("key-pressed", (_self, keyval, _keycode, _state) => {
     if (keyval === Gdk.KEY_Escape) {
       onCancel();
       return true;
@@ -54,10 +53,6 @@ export default function Window({
     numberOfLinesInCommitComment,
     comment_separator,
     type,
-  });
-
-  window.connect("style-updated", () => {
-    setHighlightColour();
   });
 
   cancelButton.connect("clicked", onCancel);
