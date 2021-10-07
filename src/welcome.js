@@ -9,7 +9,7 @@ import { relativePath, loadStyleSheet } from "./util.js";
 export default function Welcome({ application }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./welcome.ui"));
 
-  loadStyleSheet(relativePath("./application.css"));
+  loadStyleSheet(relativePath("./style.css"));
 
   const spinButton = builder.get_object("spinButton");
   spinButton.set_range(50, 200);

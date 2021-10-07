@@ -1,4 +1,4 @@
-import "./setup.js";
+import "gi://Adw?version=1";
 
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";

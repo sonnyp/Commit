@@ -79,7 +79,7 @@ To pass the tests you have to install a few dependencies
 
 ```
 # Install development dependencies
-sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk3-devel libhandy
+sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk4-devel libadwaita
 npm install
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user --assumeyes --noninteractive flathub org.freedesktop.appstream-glib

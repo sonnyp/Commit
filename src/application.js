@@ -1,6 +1,7 @@
 import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
+import Adw from "gi://Adw";
 
 import Window from "./window.js";
 import Welcome from "./welcome.js";
@@ -11,7 +12,7 @@ import About from "./about.js";
 const ByteArray = imports.byteArray;
 
 export default function Application({ version }) {
-  const application = new Gtk.Application({
+  const application = new Adw.Application({
     application_id: "re.sonny.Commit",
     flags:
       /* We handle file opens. */
