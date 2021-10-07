@@ -87,7 +87,7 @@ msgid ""
 "Supports git commit messages, merge messages, tag messages, add -p messages, "
 "and rebase -i messages"
 msgstr ""
-"Podrška za git commit, merge, tag, add -p, rebase -i poruke
+"Podrška za git commit, merge, tag, add -p, rebase -i poruke"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Supports Mercurial commit messages"

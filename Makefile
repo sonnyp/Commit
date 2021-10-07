@@ -27,6 +27,7 @@ test:
 	# gtk-builder-tool validate src/*.ui
 	gjs -m test/*.test.js
 	flatpak-builder --show-manifest re.sonny.Commit.json
+	find po/ -type f -name "*po" -exec msgfmt --check {} -o /dev/null \;
 
 clean:
 	rm -rf build install .eslintcache
