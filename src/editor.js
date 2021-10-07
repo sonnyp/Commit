@@ -163,8 +163,6 @@ export default function Editor({
     });
   });
 
-  messageText.grab_focus();
-
   return { messageText, buffer, setHighlightColour };
 }
 
@@ -181,9 +179,7 @@ function getHighlightColour(messageText) {
   const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
   const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
   let highlightColour;
-  const fontColour = messageText
-    .get_style_context()
-    .get_color();
+  const fontColour = messageText.get_style_context().get_color();
 
   // Luma calculation courtesy: https://stackoverflow.com/a/12043228
   const luma =

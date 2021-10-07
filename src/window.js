@@ -54,6 +54,9 @@ export default function Window({
     type,
   });
 
+  // https://github.com/sonnyp/Commit/issues/33
+  window.set_focus(cancelButton);
+
   setHighlightColour();
 
   cancelButton.connect("clicked", onCancel);
