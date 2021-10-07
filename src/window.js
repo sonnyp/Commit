@@ -21,7 +21,6 @@ export default function Window({
   const commitButton = builder.get_object("commitButton");
   const eventController = builder.get_object("eventController");
 
-  const header = builder.get_object("header");
   if (type) {
     const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
     window.set_title(`${type}: ${projectDirectoryName} (${detail})`);
@@ -54,6 +53,8 @@ export default function Window({
     comment_separator,
     type,
   });
+
+  setHighlightColour();
 
   cancelButton.connect("clicked", onCancel);
 

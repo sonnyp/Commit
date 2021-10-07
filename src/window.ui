@@ -11,7 +11,7 @@
       <object class="GtkBox">
         <property name="orientation">vertical</property>
         <child>
-          <object class="AdwHeaderBar" id="header">
+          <object class="AdwHeaderBar">
             <property name="show_start_title_buttons">False</property>
             <property name="show_end_title_buttons">False</property>
             <child>
@@ -58,7 +58,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkEventControllerKey" id="eventController"/>
+      <object class="GtkEventControllerKey" id="eventController" />
     </child>
   </object>
 </interface>
