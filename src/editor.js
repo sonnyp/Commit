@@ -1,4 +1,5 @@
 import Gtk from "gi://Gtk";
+import GLib from "gi://GLib";
 
 import validateCommitButton from "./validateCommitButton.js";
 import settings from "./settings.js";
@@ -146,7 +147,7 @@ export default function Editor({
     // Carry this out on the next stack frame. The selected signal
     // gets called too early (you are not able to change the
     // selection at that time.) TODO: File bug.
-    Promise.resolve().then(() => {
+    return GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
       lastActionWasSelectAll = true;
       // Redo the selection to limit it to the commit message
       // only (exclude the original commit comment).
@@ -160,6 +161,7 @@ export default function Editor({
       );
       // buffer.move_mark_by_name('selection_bound', selectEndIterator)
       buffer.select_range(selectStartIterator, selectEndIterator);
+      return GLib.SOURCE_REMOVE;
     });
   });
 
