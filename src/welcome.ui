@@ -47,7 +47,10 @@
             <child>
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Git</property>
-                <property name="description" translatable="yes">To set Commit as default editor for Git run the following command in Terminal</property>
+                <property
+                  name="description"
+                  translatable="yes"
+                >To set Commit as default editor for Git run the following command in Terminal</property>
                 <child>
                   <object class="GtkBox">
                     <property name="orientation">vertical</property>
@@ -78,11 +81,6 @@
                               name="label"
                               translatable="yes"
                             >Copy to Clipboard</property>
-                            <!--
-                              Prevents the first GtkLabel selectable to get default focus
-                              couldn't find a way not to focus anything specific by default
-                             -->
-                            <property name="has-focus">True</property>
                           </object>
                         </child>
                         <child>
@@ -107,7 +105,10 @@
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Mercurial</property>
                 <!-- TRANSLATORS: Don't translate <tt>hgrc</tt> -->
-                <property name="description" translatable="yes">To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
+                <property
+                  name="description"
+                  translatable="yes"
+                >To set Commit as default editor for Mercurial, set the following in your &lt;tt&gt;hgrc&lt;/tt&gt;</property>
                 <child>
                   <object class="GtkBox">
                     <property name="orientation">vertical</property>
