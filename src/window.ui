@@ -17,17 +17,14 @@
             <child>
               <object class="GtkButton" id="cancelButton">
                 <property name="label" translatable="yes">Cancel</property>
+                <property name="action-name">win.cancel</property>
               </object>
             </child>
             <child type="end">
               <object class="GtkButton" id="commitButton">
                 <property name="label">Commit</property>
                 <property name="sensitive">False</property>
-                <!-- ><accelerator
-                  key="Return"
-                  signal="clicked"
-                  modifiers="GDK_CONTROL_MASK"
-                /> -->
+                <property name="action-name">win.commit</property>
                 <style>
                   <class name="suggested-action" />
                 </style>
@@ -56,9 +53,6 @@
           </object>
         </child>
       </object>
-    </child>
-    <child>
-      <object class="GtkEventControllerKey" id="eventController" />
     </child>
   </object>
 </interface>

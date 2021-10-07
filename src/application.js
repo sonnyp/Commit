@@ -52,6 +52,9 @@ export default function Application({ version }) {
   });
   application.add_action(showAboutDialog);
 
+  application.set_accels_for_action("win.cancel", ["Escape"]);
+  application.set_accels_for_action("win.commit", ["<Ctrl>Return"]);
+
   return application;
 }
 

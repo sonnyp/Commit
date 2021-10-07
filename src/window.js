@@ -1,6 +1,6 @@
 import GLib from "gi://GLib";
-import Gdk from "gi://Gdk";
 import Gtk from "gi://Gtk";
+import Gio from "gi://Gio";
 
 import Editor from "./editor.js";
 
@@ -19,7 +19,6 @@ export default function Window({
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
-  const eventController = builder.get_object("eventController");
 
   if (type) {
     const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
@@ -28,23 +27,24 @@ export default function Window({
 
   window.set_application(application);
 
-  function onCancel() {
+  const cancelAction = new Gio.SimpleAction({
+    name: "cancel",
+    parameter_type: null,
+  });
+  cancelAction.connect("activate", () => {
     save({ file, application, value: "" });
-  }
+  });
+  window.add_action(cancelAction);
 
-  function onCommit() {
+  const commitAction = new Gio.SimpleAction({
+    name: "commit",
+    parameter_type: null,
+  });
+  commitAction.connect("activate", () => {
     const value = buffer.text;
     save({ file, application, value });
-  }
-
-  // Exit via Escape key.
-  eventController.connect("key-pressed", (_self, keyval, _keycode, _state) => {
-    if (keyval === Gdk.KEY_Escape) {
-      onCancel();
-      return true;
-    }
-    return false;
   });
+  window.add_action(commitAction);
 
   const { buffer, setHighlightColour } = Editor({
     builder,
@@ -58,10 +58,6 @@ export default function Window({
   window.set_focus(cancelButton);
 
   setHighlightColour();
-
-  cancelButton.connect("clicked", onCancel);
-
-  commitButton.connect("clicked", onCommit);
 
   return { window, cancelButton, commitButton, buffer };
 }
