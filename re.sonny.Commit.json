@@ -24,53 +24,37 @@
   ],
   "modules": [
     {
-        "name" : "libsass",
-        "buildsystem" : "meson",
-        "sources" : [
-            {
-                "type" : "git",
-                "url" : "https://github.com/lazka/libsass.git",
-                "branch" : "meson"
-            }
-        ]
-    },
-    {
-        "name" : "sassc",
-        "buildsystem" : "meson",
-        "sources" : [
-            {
-                "type" : "git",
-                "url" : "https://github.com/lazka/sassc.git",
-                "branch" : "meson"
-            }
-        ]
-    },
-    {
-        "name" : "libadwaita",
-        "buildsystem" : "meson",
-        "sources" : [
-            {
-                "type" : "git",
-                "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                "branch" : "main"
-            }
-        ]
-    },
-    {
-      "name": "gspell",
-      "config-opts": [
-        "--disable-vala",
-        "--disable-static",
-        "--disable-gtk-doc"
-      ],
+      "name": "libsass",
+      "buildsystem": "meson",
       "sources": [
         {
-          "type": "archive",
-          "url": "https://download-fallback.gnome.org/sources/gspell/1.9/gspell-1.9.1.tar.xz",
-          "sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd"
+          "type": "git",
+          "url": "https://github.com/lazka/libsass.git",
+          "branch": "meson"
         }
-      ],
-      "cleanup": ["/bin"]
+      ]
+    },
+    {
+      "name": "sassc",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/lazka/sassc.git",
+          "branch": "meson"
+        }
+      ]
+    },
+    {
+      "name": "libadwaita",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
+          "branch": "main"
+        }
+      ]
     },
     {
       "name": "Commit",
