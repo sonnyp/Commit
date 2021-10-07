@@ -26,6 +26,7 @@ export default function About({ application, version }) {
     // or
     // "John Doe https://john.com",
     "Sergey Bugaev https://mastodon.technology/@bugaevc",
+    "Christopher Davis https://social.libre.fi/brainblasted",
   ]);
   dialog.present();
 
