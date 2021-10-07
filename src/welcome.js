@@ -30,30 +30,19 @@ export default function Welcome({ application }) {
   git_text.label = `<tt>git config --global core.editor "${command}"</tt>`;
   const git_copy = builder.get_object("git_copy");
   git_copy.connect("clicked", () => {
-    selectNone(git_text);
     git_copy.get_clipboard().set(git_text.get_text());
   });
 
   const hg_text = builder.get_object("hg_text");
   hg_text.label = `<tt>[ui]\neditor=${command}</tt>`;
   const hg_copy = builder.get_object("hg_copy");
-
   hg_copy.connect("clicked", () => {
-    selectNone(hg_text);
     hg_copy.get_clipboard().set(hg_text.get_text());
   });
 
   window.show();
 
   return { window };
-}
-
-function selectAll(GTKLabel) {
-  GTKLabel.select_region(0, -1);
-}
-
-function selectNone(GTKLabel) {
-  GTKLabel.select_region(0, 0);
 }
 
 function getCommand() {
