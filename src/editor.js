@@ -3,6 +3,7 @@ import GLib from "gi://GLib";
 
 import validateCommitButton from "./validateCommitButton.js";
 import settings from "./settings.js";
+import TextView from "./TextView.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 
@@ -18,7 +19,9 @@ export default function Editor({
   // Save the number of lines in the commit message.
   let previousNumberOfLinesInCommitMessage = 1;
 
-  const messageText = builder.get_object("messageText");
+  const scrolled_window = builder.get_object("scrolledWindow");
+  const messageText = new TextView();
+  scrolled_window.set_child(messageText);
 
   const buffer = messageText.get_buffer();
 
@@ -165,7 +168,9 @@ export default function Editor({
     });
   });
 
-  return { messageText, buffer, setHighlightColour };
+  messageText.connect("style-updated", setHighlightColour);
+
+  return { messageText, buffer };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686

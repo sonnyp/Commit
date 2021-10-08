@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <template class="TextView" parent="GtkTextView">
+    <property name="wrap_mode">word</property>
+    <property name="top-margin">6</property>
+    <property name="left-margin">6</property>
+    <property name="right-margin">6</property>
+    <property name="bottom-margin">6</property>
+    <property name="input_hints">
+      GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_WORD_COMPLETION |
+      GTK_INPUT_HINT_EMOJI | GTK_INPUT_HINT_UPPERCASE_SENTENCES
+    </property>
+    <property name="monospace">True</property>
+  </template>
+</interface>

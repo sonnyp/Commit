@@ -46,7 +46,7 @@ export default function Window({
   });
   window.add_action(commitAction);
 
-  const { buffer, setHighlightColour } = Editor({
+  const { buffer } = Editor({
     builder,
     commitButton,
     numberOfLinesInCommitComment,
@@ -56,8 +56,6 @@ export default function Window({
 
   // https://github.com/sonnyp/Commit/issues/33
   window.set_focus(cancelButton);
-
-  setHighlightColour();
 
   return { window, cancelButton, commitButton, buffer };
 }

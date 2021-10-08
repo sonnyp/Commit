@@ -66,6 +66,7 @@
                           <!--
                             Only way to get correct color
                             https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
+                            or lookup_color see https://discourse.gnome.org/t/how-to-read-theme-link-color-and-selection-background-color-programmatically-in-gtk4/5734/2
                           -->
                           <class name="view" />
                         </style>
