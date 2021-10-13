@@ -42,6 +42,24 @@
                     </child>
                   </object>
                 </child>
+                <child>
+                  <object class="AdwPreferencesRow">
+                    <child>
+                      <object class="AdwActionRow">
+                        <property
+                          name="title"
+                          translatable="yes"
+                        >Use dark mode</property>
+                        <child>
+                          <object class="GtkSwitch" id="darkSwitch">
+                            <property name="active">false</property>
+                            <property name='valign'>center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
               </object>
             </child>
             <child>

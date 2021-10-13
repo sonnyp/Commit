@@ -1,6 +1,7 @@
 import Gtk from "gi://Gtk";
 import Gdk from "gi://Gdk";
 import GLib from "gi://GLib";
+import Gio from "gi://Gio";
 
 export function relativePath(path) {
   const [filename] = GLib.filename_from_uri(import.meta.url);
@@ -17,3 +18,8 @@ export function loadStyleSheet(path) {
     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
   );
 }
+
+export const settings = new Gio.Settings({
+  schema_id: "re.sonny.Commit",
+  path: "/re/sonny/Commit/",
+});

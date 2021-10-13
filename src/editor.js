@@ -2,8 +2,9 @@ import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 
 import validateCommitButton from "./validateCommitButton.js";
-import settings from "./settings.js";
 import TextView from "./TextView.js";
+
+import { settings } from "./util.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 

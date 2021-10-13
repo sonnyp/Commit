@@ -6,5 +6,9 @@
       <range min="1" />
       <summary>Message title length hint</summary>
     </key>
+    <key name='dark-mode' type='b'>
+      <default>false</default>
+      <summary>Use dark mode</summary>
+    </key>
   </schema>
 </schemalist>
