@@ -5,7 +5,7 @@ Everything after the first blank line is the commit description. It can be as lo
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# On branch master
+# On branch main
 #
 # Initial commit
 #

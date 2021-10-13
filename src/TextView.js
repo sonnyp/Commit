@@ -16,9 +16,10 @@ export default GObject.registerClass(
     },
   },
   class TextView extends Gtk.TextView {
-    vfunc_css_changed() {
-      // In GTK3 we had a signal widget.connect("style-updated")
-      // but there is only vfunc options in GTK4
+    // In GTK3 we had a signal widget.connect("style-updated")
+    // but there is only vfunc options in GTK4
+    vfunc_css_changed(...args) {
+      super.vfunc_css_changed(...args);
       super.emit("style-updated");
     }
   },
