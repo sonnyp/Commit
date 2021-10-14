@@ -21,17 +21,17 @@ export default function Editor({
   let previousNumberOfLinesInCommitMessage = 1;
 
   const scrolled_window = builder.get_object("scrolledWindow");
-  const messageText = new TextView();
-  scrolled_window.set_child(messageText);
+  const textView = new TextView();
+  scrolled_window.set_child(textView);
 
-  const buffer = messageText.get_buffer();
+  const buffer = textView.get_buffer();
   buffer.set_enable_undo(true);
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
   buffer.tag_table.add(highlightBackgroundTag);
   function setHighlightColour() {
-    highlightBackgroundTag.background = getHighlightColour(messageText);
+    highlightBackgroundTag.background = getHighlightColour(textView);
   }
 
   function highlightText() {
@@ -146,7 +146,7 @@ export default function Editor({
   });
 
   // Only select commit message body (not the comment) on select all.
-  messageText.connect("select-all", (self, selected) => {
+  textView.connect("select-all", (self, selected) => {
     if (!selected) return;
 
     // Carry this out on the next stack frame. The selected signal
@@ -170,9 +170,9 @@ export default function Editor({
     });
   });
 
-  messageText.connect("style-updated", setHighlightColour);
+  textView.connect("style-updated", setHighlightColour);
 
-  return { messageText, buffer };
+  return { textView, buffer };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
@@ -180,7 +180,7 @@ function unicodeLength(str) {
   return [...str].length;
 }
 
-function getHighlightColour(messageText) {
+function getHighlightColour(textView) {
   // Get the overflow text background highlight colour based on the
   // colour of the foreground text.
 
@@ -188,7 +188,7 @@ function getHighlightColour(messageText) {
   const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
   const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
   let highlightColour;
-  const fontColour = messageText.get_style_context().get_color();
+  const fontColour = textView.get_style_context().get_color();
 
   // Luma calculation courtesy: https://stackoverflow.com/a/12043228
   const luma =

@@ -46,7 +46,7 @@ export default function Window({
   });
   window.add_action(commitAction);
 
-  const { buffer } = Editor({
+  const { buffer, textView } = Editor({
     builder,
     commitButton,
     numberOfLinesInCommitComment,
@@ -55,7 +55,7 @@ export default function Window({
   });
 
   // https://github.com/sonnyp/Commit/issues/33
-  window.set_focus(cancelButton);
+  window.set_focus(textView);
 
   return { window, cancelButton, commitButton, buffer };
 }
