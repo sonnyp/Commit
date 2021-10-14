@@ -25,6 +25,7 @@ export default function Editor({
   scrolled_window.set_child(messageText);
 
   const buffer = messageText.get_buffer();
+  buffer.set_enable_undo(true);
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
