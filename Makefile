@@ -14,7 +14,7 @@ flatpak:
 	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json
 	flatpak --user remote-add --no-gpg-verify --if-not-exists Commit repo
 	flatpak --user install --reinstall --assumeyes Commit re.sonny.Commit
-	flatpak run re.sonny.Commit
+	# flatpak run re.sonny.Commit
 
 bundle:
 	flatpak-builder --user  --force-clean --repo=repo --install-deps-from=flathub flatpak re.sonny.Commit.json

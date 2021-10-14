@@ -2,9 +2,11 @@
 
 # Commit
 
-Commit is an editor that helps you write better Git and Mercurial commit messages.
+Commit is an editor that helps you write better Git and Mercurial commit messages.<img style="vertical-align: middle;" src="data/icons/re.sonny.Commit-symbolic.svg" width="16" height="16">
 
 ![screenshot](data/screenshot.png)
+
+https://apps.gnome.org/app/re.sonny.Commit/
 
 <a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
 
@@ -20,26 +22,6 @@ flatpak run re.sonny.Commit # Follow instructions
 |      Distro      |                   Package Name/Link                    |                   Maintainer                    |
 | :--------------: | :----------------------------------------------------: | :---------------------------------------------: |
 | Arch Linux (aur) | [`commit`](https://aur.archlinux.org/packages/commit/) | [Mark Wagie](https://github.com/yochananmarqos) |
-
-## Usage
-
-Commit will pop up automatically when you make a commit in one of your projects.
-
-To save your commit message, press the Commit button or the _Ctrl+Return_ key combination.
-
-To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
-
-## Features
-
-- Highlights overflow of title when it exceeds 50 characters (customizable)
-- Inserts blank line between title and description
-- Spell checking
-- Comments are readonly and excluded from "Select All"
-- Displays project folder and branch in window header
-- Dark theme support: the overflow highlight is adjusted according to your theme
-- Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages
-- Supports Mercurial commit messages
-- Welcome window when launched from desktop (or without argument)
 
 ## Tips and trick
 
