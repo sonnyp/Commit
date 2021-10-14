@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 16:36+0200\n"
+"POT-Creation-Date: 2021-10-14 23:35+0200\n"
 "PO-Revision-Date: 2021-10-04 17:50+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.0\n"
-"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Commit.desktop:4
+#: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
 msgid "Commit"
 msgstr "Commit"
 
@@ -32,6 +32,14 @@ msgstr "Commitberichtbewerker"
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;"
 msgstr "git;mercurial;hg;scm;gnomit;komet;"
+
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:33
+msgid "Message title length hint"
+msgstr "Lengtemelding bij berichten"
+
+#: data/re.sonny.Commit.gschema.xml:11 src/welcome.ui:52
+msgid "Use dark mode"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
@@ -48,39 +56,40 @@ msgid ""
 msgstr "Installeer Commit, open een nieuw venster en volg de instructies."
 
 #: data/re.sonny.Commit.metainfo.xml:21
+msgid ""
+"Commit will pop up automatically when you make a commit in one of your "
+"projects. To save your commit message, press the Commit button or the _Ctrl"
+"+Return_ key combination. To abort and dismiss Commit, press the Cancel "
+"button or the _Escape_ key."
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
 msgstr "Kenmerken:"
 
-#: data/re.sonny.Commit.metainfo.xml:23
+#: data/re.sonny.Commit.metainfo.xml:28
 msgid ""
 "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgstr "Geeft aan als het bericht meer dan 50 tekens bevat (instelbaar)"
 
-#: data/re.sonny.Commit.metainfo.xml:27
+#: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts blank line between title and description"
 msgstr "Voegt een blanco regel toe tussen de naam en omschrijving"
 
-#: data/re.sonny.Commit.metainfo.xml:28
-msgid "Spell checking"
-msgstr "Spellingcontrole"
-
-#: data/re.sonny.Commit.metainfo.xml:29
+#. <li>Spell checking</li>
+#: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr "Reacties zijn alleen-lezen en uitgesloten van ‘Alles selecteren’"
 
-#: data/re.sonny.Commit.metainfo.xml:30
+#: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
 msgstr "Toont de projectmap en -tak op de titelbalk"
 
-#: data/re.sonny.Commit.metainfo.xml:31
-msgid ""
-"Dark theme support: the overflow highlight is adjusted according to your "
-"theme"
+#: data/re.sonny.Commit.metainfo.xml:36
+msgid "Dark mode support"
 msgstr ""
-"Ondersteuning voor donkere thema's: markeringen maken gebruik van de "
-"themakleuren"
 
-#: data/re.sonny.Commit.metainfo.xml:35
+#: data/re.sonny.Commit.metainfo.xml:37
 msgid ""
 "Supports git commit messages, merge messages, tag messages, add -p messages, "
 "and rebase -i messages"
@@ -88,129 +97,202 @@ msgstr ""
 "Ondersteunt git-commitberichten, samenvoegberichten, tag-berichten, ‘add -p’-"
 "berichten en ‘rebase -i’-berichten"
 
-#: data/re.sonny.Commit.metainfo.xml:39
+#: data/re.sonny.Commit.metainfo.xml:41
 msgid "Supports Mercurial commit messages"
 msgstr "Ondersteunt Mercurial-commitberichten"
 
-#: data/re.sonny.Commit.metainfo.xml:40
-msgid "Shows a welcome window when launched from desktop"
-msgstr "Toont een welkomstvenster na de eerste opstart"
+#: data/re.sonny.Commit.metainfo.xml:42
+msgid "Welcome window with settings and instructions"
+msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:50
+#: data/re.sonny.Commit.metainfo.xml:43
+msgid "Undo and redo support"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:53
 msgid "Commit main window"
 msgstr "Hoofdvenster"
 
-#: data/re.sonny.Commit.metainfo.xml:56
+#: data/re.sonny.Commit.metainfo.xml:59
 msgid "Commit main window - dark mode"
 msgstr "Hoofdvenster - donker thema"
 
-#: data/re.sonny.Commit.metainfo.xml:62
+#: data/re.sonny.Commit.metainfo.xml:65
 msgid "Commit welcome window"
 msgstr "Welkomstvenster"
 
-#: data/re.sonny.Commit.metainfo.xml:68
+#: data/re.sonny.Commit.metainfo.xml:71
 msgid "Commit welcome window - dark mode"
 msgstr "Welkomstvenster - donker thema"
 
-#: data/re.sonny.Commit.metainfo.xml:76
+#: data/re.sonny.Commit.metainfo.xml:79
+msgid "Remove spell check temporarily"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:80
+msgid "Support undo and redo"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:81
+msgid "Add symbolic icon"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:82
+msgid "Add dark mode setting"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:83
+msgid "Focus the text editor"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:84
+msgid "Translate to French"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:85
+msgid "Translate to Croatian"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:86
+msgid "Translate to German"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid "Translate to Russian"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:88
+msgid "Translate to Dutch"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:89
+msgid "Translate to Brazilien Portguese"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:90
+msgid "Port to GTK 4 and libadwaita"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:97
+#, fuzzy
+msgid "Move preferences to welcome window"
+msgstr "Nieuw: voorkeurenvenster"
+
+#: data/re.sonny.Commit.metainfo.xml:98
+msgid "Only highlight text overflow on commits"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:99
+msgid "Add Czech translation"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Add Spanish translation"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:101
+msgid "New app icon"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:102
+msgid "Remove double border"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:109
 msgid "Add a Preferences window"
 msgstr "Nieuw: voorkeurenvenster"
 
-#: data/re.sonny.Commit.metainfo.xml:77
+#: data/re.sonny.Commit.metainfo.xml:110
 msgid "Set default title length hint to 50 characters"
 msgstr "Nieuw: de standaard berichtlengte is voortaan 50 tekens"
 
-#: data/re.sonny.Commit.metainfo.xml:78
+#: data/re.sonny.Commit.metainfo.xml:111
 msgid "Fix reading commits with special characters"
 msgstr "Opgelost: uitlezen van commits met speciale tekens"
 
-#: data/re.sonny.Commit.metainfo.xml:79
+#: data/re.sonny.Commit.metainfo.xml:112
 msgid "Fix git rebase not recognized"
 msgstr "Opgelost: git rebase werd niet herkend"
 
-#: data/re.sonny.Commit.metainfo.xml:80
+#: data/re.sonny.Commit.metainfo.xml:113
 msgid "Make windows bottom corners rounded"
 msgstr "Nieuw: vensterhoeken zijn voortaan afgerond"
 
-#: data/re.sonny.Commit.metainfo.xml:81
+#: data/re.sonny.Commit.metainfo.xml:114
 msgid "Add 6px margin to editor"
 msgstr "Nieuw: 6px-marge in bewerker"
 
-#: data/re.sonny.Commit.metainfo.xml:87
+#: data/re.sonny.Commit.metainfo.xml:120
 msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
 "⚠️ LET OP: open na het bijwerken een nieuw venster en volg de instructies."
 
-#: data/re.sonny.Commit.metainfo.xml:92
+#: data/re.sonny.Commit.metainfo.xml:125
 msgid "Show a welcome window when launched from desktop"
 msgstr "Nieuw: welkomstvenster na de eerste opstart"
 
-#: data/re.sonny.Commit.metainfo.xml:93
+#: data/re.sonny.Commit.metainfo.xml:126
 msgid "Add support for Mercurial"
 msgstr "Nieuw: Mercurial-ondersteuning"
 
-#: data/re.sonny.Commit.metainfo.xml:94
+#: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove filesystem permission"
 msgstr "Verbeterd: bestandssysteemrecht verwijderd"
 
-#: data/re.sonny.Commit.metainfo.xml:100
+#: data/re.sonny.Commit.metainfo.xml:133
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "Eerste uitgave, afgesplitst van Gnomit 2.0."
 
-#: data/re.sonny.Commit.metainfo.xml:102
+#: data/re.sonny.Commit.metainfo.xml:135
 msgid "Support \"#\" in commit message"
 msgstr "Nieuw: ondersteuning voor ‘#’ in commitberichten"
 
-#: data/re.sonny.Commit.metainfo.xml:103
+#: data/re.sonny.Commit.metainfo.xml:136
 msgid "Properly recognize executable path"
 msgstr "Verbeterd: het uitvoerbare bestand wordt voortaan juist herkend"
-
-#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:56
-msgid "Message title length hint"
-msgstr "Lengtemelding bij berichten"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:19
 msgid "translator-credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
-#: src/window.ui:21
+#: src/window.ui:17
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/welcome.ui:79
+#: src/welcome.ui:67
 msgid "Git"
 msgstr "Git"
 
-#: src/welcome.ui:93
+#: src/welcome.ui:71
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
 "Voer de volgende terminalopdracht uit om Commit in te stellen als standaard "
 "Git-bewerker"
 
-#: src/welcome.ui:125 src/welcome.ui:208
+#: src/welcome.ui:102 src/welcome.ui:160
 msgid "Copy to Clipboard"
 msgstr "Kopiëren naar klembord"
 
-#: src/welcome.ui:139 src/welcome.ui:217
+#: src/welcome.ui:110 src/welcome.ui:168
 msgid "Documentation"
 msgstr "Documentatie"
 
-#: src/welcome.ui:143
+#: src/welcome.ui:114
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
-#: src/welcome.ui:160
+#: src/welcome.ui:125
 msgid "Mercurial"
 msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
-#: src/welcome.ui:175
+#: src/welcome.ui:130
 msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
@@ -218,10 +300,23 @@ msgstr ""
 "Stel het volgende in in je <tt>hgrc</tt> om Commit in te stellen als "
 "standaard Mercurial-bewerker"
 
-#: src/welcome.ui:221
+#: src/welcome.ui:172
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: src/welcome.ui:242
+#: src/welcome.ui:189
 msgid "About Commit"
 msgstr "Over Commit"
+
+#~ msgid "Spell checking"
+#~ msgstr "Spellingcontrole"
+
+#~ msgid ""
+#~ "Dark theme support: the overflow highlight is adjusted according to your "
+#~ "theme"
+#~ msgstr ""
+#~ "Ondersteuning voor donkere thema's: markeringen maken gebruik van de "
+#~ "themakleuren"
+
+#~ msgid "Shows a welcome window when launched from desktop"
+#~ msgstr "Toont een welkomstvenster na de eerste opstart"
