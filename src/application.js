@@ -70,7 +70,7 @@ function openWelcome({ application }) {
     application.quit();
   });
   application.add_action(quit);
-  application.set_accels_for_action("app.quit", ["<Ctrl>Q", "Escape"]);
+  application.set_accels_for_action("app.quit", ["<Ctrl>Q"]);
 }
 
 function openEditor({ file, application }) {
