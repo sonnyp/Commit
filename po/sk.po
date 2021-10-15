@@ -1,0 +1,336 @@
+# Slovak translations for re.sonny.Commit package.
+# Copyright (C) 2021 THE re.sonny.Commit'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Commit package.
+# MartinIIOT <https://www.github.com/MartinIIOT>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Commit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 23:35+0200\n"
+"PO-Revision-Date: 2021-08-11 13:42+0200\n"
+"Last-Translator: MartinIIOT <https://www.github.com/MartinIIOT>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"X-Generator: Gtranslator 40.0\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
+msgid "Commit"
+msgstr "Commit"
+
+#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
+#: src/about.js:10
+msgid "Commit message editor"
+msgstr "Editor správ commitov"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:13
+#, fuzzy
+msgid "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;"
+
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:33
+msgid "Message title length hint"
+msgstr "Zobrazenie nápovedy dĺžky titulku"
+
+#: data/re.sonny.Commit.gschema.xml:11 src/welcome.ui:52
+msgid "Use dark mode"
+msgstr "Použiť tmavý režim"
+
+#: data/re.sonny.Commit.metainfo.xml:13
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
+msgstr ""
+"Commit je editor, ktorý vám pomôže lepšie napísať správy commitov v systéme Git "
+"a Mercurial."
+
+#: data/re.sonny.Commit.metainfo.xml:17
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
+msgstr "Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa "
+"inštrukcií."
+
+#: data/re.sonny.Commit.metainfo.xml:21
+msgid ""
+"Commit will pop up automatically when you make a commit in one of your "
+"projects. To save your commit message, press the Commit button or the _Ctrl"
+"+Return_ key combination. To abort and dismiss Commit, press the Cancel "
+"button or the _Escape_ key."
+msgstr ""
+"Commit sa zobrazí automaticky po vykonaní commitu v jednom z vašich "
+"projektov. Pre uloženie commit správ, stlačte Commit tlačidlo alebo kombináciu "
+"_Ctrl+Enter_. Pre zrušenie a neuloženie Commitu, stlačte Zrušiť alebo _Esc."
+
+#: data/re.sonny.Commit.metainfo.xml:26
+msgid "Features:"
+msgstr "Funkcie:"
+
+#: data/re.sonny.Commit.metainfo.xml:28
+msgid ""
+"Highlights overflow of title when it exceeds 50 characters (customizable)"
+msgstr "Zvýraznenie prekročenia dĺžky titulku po 50 znakoch (nastaviteľné)"
+
+#: data/re.sonny.Commit.metainfo.xml:32
+msgid "Inserts blank line between title and description"
+msgstr "Vložiť prázdny riadok medzi titulok a popis"
+
+#. <li>Spell checking</li>
+#: data/re.sonny.Commit.metainfo.xml:34
+msgid "Comments are readonly and excluded from \"Select All\""
+msgstr "Komentáre sú len na čitanie a sú vylúčené z \"Vybrať všetko\""
+
+#: data/re.sonny.Commit.metainfo.xml:35
+msgid "Displays project folder and branch in window header"
+msgstr "Zobrazenie zložky projektu a vetvy v záhlaví okna"
+
+#: data/re.sonny.Commit.metainfo.xml:36
+msgid "Dark mode support"
+msgstr "Podpora tmavého režimu"
+
+#: data/re.sonny.Commit.metainfo.xml:37
+msgid ""
+"Supports git commit messages, merge messages, tag messages, add -p messages, "
+"and rebase -i messages"
+msgstr ""
+"Podporuje správy git commitov, merge správy, správy tagov, správy add -p a "
+"správy rebase -i."
+
+#: data/re.sonny.Commit.metainfo.xml:41
+msgid "Supports Mercurial commit messages"
+msgstr "Podporuje správy commitov Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:42
+msgid "Welcome window with settings and instructions"
+msgstr "Uvítacie okno s nastaveniami a pokynmi"
+
+#: data/re.sonny.Commit.metainfo.xml:43
+msgid "Undo and redo support"
+msgstr "Podporuje späť a znovu"
+
+#: data/re.sonny.Commit.metainfo.xml:53
+msgid "Commit main window"
+msgstr "Hlavné okno Commitu"
+
+#: data/re.sonny.Commit.metainfo.xml:59
+msgid "Commit main window - dark mode"
+msgstr "Hlavné okno Commitu - tmavý režim"
+
+#: data/re.sonny.Commit.metainfo.xml:65
+msgid "Commit welcome window"
+msgstr "Uvítacie okno Commitu"
+
+#: data/re.sonny.Commit.metainfo.xml:71
+msgid "Commit welcome window - dark mode"
+msgstr "Uvítacie okno Commitu - tmavý režim"
+
+#: data/re.sonny.Commit.metainfo.xml:79
+msgid "Remove spell check temporarily"
+msgstr "Dočasne odstráňte kontrolu pravopisu"
+
+#: data/re.sonny.Commit.metainfo.xml:80
+msgid "Support undo and redo"
+msgstr "Podporuje späť a znovu"
+
+#: data/re.sonny.Commit.metainfo.xml:81
+msgid "Add symbolic icon"
+msgstr "Pridané symbolické ikony"
+
+#: data/re.sonny.Commit.metainfo.xml:82
+msgid "Add dark mode setting"
+msgstr "Pridané nastavenie tmavého režimu"
+
+#: data/re.sonny.Commit.metainfo.xml:83
+msgid "Focus the text editor"
+msgstr "Zameranie na textový editor"
+
+#: data/re.sonny.Commit.metainfo.xml:84
+msgid "Translate to French"
+msgstr "Francúzsky preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:85
+msgid "Translate to Croatian"
+msgstr "Chorvátsky preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:86
+msgid "Translate to German"
+msgstr "Nemecký preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid "Translate to Russian"
+msgstr "Ruský preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:88
+msgid "Translate to Dutch"
+msgstr "Holandský preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:89
+msgid "Translate to Brazilien Portguese"
+msgstr "Preklad do Brazílskej Portugalčiny"
+
+#: data/re.sonny.Commit.metainfo.xml:90
+msgid "Port to GTK 4 and libadwaita"
+msgstr "Port na GTK 4 a libadwaita"
+
+#: data/re.sonny.Commit.metainfo.xml:97
+#, fuzzy
+msgid "Move preferences to welcome window"
+msgstr "Predvoľby presunuté do uvítacieho okna"
+
+#: data/re.sonny.Commit.metainfo.xml:98
+msgid "Only highlight text overflow on commits"
+msgstr "Zvýraznenie iba pretečenia textu pri commitoch"
+
+#: data/re.sonny.Commit.metainfo.xml:99
+msgid "Add Czech translation"
+msgstr "Český preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Add Spanish translation"
+msgstr "Španielsky preklad"
+
+#: data/re.sonny.Commit.metainfo.xml:101
+msgid "New app icon"
+msgstr "Nová ikona aplikácie"
+
+#: data/re.sonny.Commit.metainfo.xml:102
+msgid "Remove double border"
+msgstr "Odstránené dvojité orámovanie"
+
+#: data/re.sonny.Commit.metainfo.xml:109
+msgid "Add a Preferences window"
+msgstr "Pridáné okno Predvoľby"
+
+#: data/re.sonny.Commit.metainfo.xml:110
+msgid "Set default title length hint to 50 characters"
+msgstr "Nastavenie predvolenej dĺžky titulku na 50 znakov"
+
+#: data/re.sonny.Commit.metainfo.xml:111
+msgid "Fix reading commits with special characters"
+msgstr "Opravené čítanie commitov so špeciálnymi znakmi"
+
+#: data/re.sonny.Commit.metainfo.xml:112
+msgid "Fix git rebase not recognized"
+msgstr "Opravené nerozpoznanie git rebase"
+
+#: data/re.sonny.Commit.metainfo.xml:113
+msgid "Make windows bottom corners rounded"
+msgstr "Zaoblenie spodných okrajov okien"
+
+#: data/re.sonny.Commit.metainfo.xml:114
+msgid "Add 6px margin to editor"
+msgstr "Pridaný 6px okraj do editoru"
+
+#: data/re.sonny.Commit.metainfo.xml:120
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
+msgstr ""
+"⚠️ Požadovaná akcia. Po aktualizácii spustite aplikáciu a postupujte podľa pokynov."
+
+#: data/re.sonny.Commit.metainfo.xml:125
+msgid "Show a welcome window when launched from desktop"
+msgstr "Zobrazenie uvítacieho okna pri spustení z plochy"
+
+#: data/re.sonny.Commit.metainfo.xml:126
+msgid "Add support for Mercurial"
+msgstr "Pridaná podpora pre Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:127
+msgid "Remove filesystem permission"
+msgstr "Odstránené oprávnenie súborového systému"
+
+#: data/re.sonny.Commit.metainfo.xml:133
+msgid "Initial release. Forked from Gnomit 2.0."
+msgstr "Prvé vydanie. Prevzaté z Gnomit 2.0."
+
+#: data/re.sonny.Commit.metainfo.xml:135
+msgid "Support \"#\" in commit message"
+msgstr "Podpora \"#\" v správach commitov"
+
+#: data/re.sonny.Commit.metainfo.xml:136
+msgid "Properly recognize executable path"
+msgstr "Správne rozpoznanie cesty ku spustiteľnému súboru"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "MartinIIOT https://www.github.com/MartinIIOT"
+
+#: src/window.ui:17
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: src/welcome.ui:67
+msgid "Git"
+msgstr "Git"
+
+#: src/welcome.ui:71
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
+msgstr ""
+"Pokiaľ chcete nastaviť Commit ako predvolený editor pre Git, spustite v terminály "
+"nasledujúci príkaz"
+
+#: src/welcome.ui:102 src/welcome.ui:160
+msgid "Copy to Clipboard"
+msgstr "Skopírovať do schránky"
+
+#: src/welcome.ui:110 src/welcome.ui:168
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#: src/welcome.ui:114
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+
+#: src/welcome.ui:125
+msgid "Mercurial"
+msgstr "Mercurial"
+
+#. TRANSLATORS: Don't translate <tt>hgrc</tt>
+#: src/welcome.ui:130
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
+msgstr ""
+"Pokiaľ chcete nastaviť Commit ako predvolený editor pre Mercurial, nastavte "
+"nasledujúce vo vašom <tt>hgrc</tt>"
+
+#: src/welcome.ui:172
+msgid "https://www.mercurial-scm.org/wiki/editor"
+msgstr "https://www.mercurial-scm.org/wiki/editor"
+
+#: src/welcome.ui:189
+msgid "About Commit"
+msgstr "O Commite"
+
+#~ msgid "Spell checking"
+#~ msgstr "Kontrola pravopisu"
+
+#~ msgid ""
+#~ "Dark theme support: the overflow highlight is adjusted according to your "
+#~ "theme"
+#~ msgstr ""
+#~ "Podpora tmavých tém: zvýraznenie prekročenia dĺžky titulku je upravené "
+#~ "podľa vašej témy"
+
+#~ msgid "Shows a welcome window when launched from desktop"
+#~ msgstr "Pri spustení z plochy zobraziť uvítacie okno"
+
+#~ msgid "Preferences"
+#~ msgstr "Predvoľby"
+
+#~ msgid "Quit"
+#~ msgstr "Ukončiť"
+
+#~ msgid "Sonny Piers"
+#~ msgstr "Sonny Piers"
