@@ -34,6 +34,8 @@
       <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
       <li>Dark mode support</li>
+      <li>Custom theme support</li>
+      <li>Keyboard navigation and shortcuts</li>
       <li>Undo and redo support</li>
       <li>Emoji picker</li>
       <li>
@@ -64,6 +66,12 @@
         https://raw.githubusercontent.com/sonnyp/Commit/main/data/emoji.png
       </image>
       <caption>Emoji selector</caption>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/shortcuts.png
+      </image>
+      <caption>Shortcuts</caption>
     </screenshot>
     <screenshot>
       <image>

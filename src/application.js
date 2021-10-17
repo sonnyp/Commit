@@ -8,6 +8,7 @@ import Welcome from "./welcome.js";
 import validateCommitButton from "./validateCommitButton.js";
 import { getType, parse } from "./scm.js";
 import About from "./about.js";
+import ShortcutsWindow from "./ShortcutsWindow.js";
 
 const ByteArray = imports.byteArray;
 
@@ -53,8 +54,18 @@ export default function Application({ version }) {
   });
   application.add_action(showAboutDialog);
 
+  const showShortCutsWindow = new Gio.SimpleAction({
+    name: "shortcuts",
+    parameter_type: null,
+  });
+  showShortCutsWindow.connect("activate", () => {
+    ShortcutsWindow({ application });
+  });
+  application.add_action(showShortCutsWindow);
+  application.set_accels_for_action("app.shortcuts", ["<Primary>question"]);
+
   application.set_accels_for_action("win.cancel", ["Escape"]);
-  application.set_accels_for_action("win.commit", ["<Ctrl>Return"]);
+  application.set_accels_for_action("win.commit", ["<Primary>Return"]);
 
   return application;
 }
@@ -70,7 +81,7 @@ function openWelcome({ application }) {
     application.quit();
   });
   application.add_action(quit);
-  application.set_accels_for_action("app.quit", ["<Ctrl>Q"]);
+  application.set_accels_for_action("app.quit", ["<Primary>Q"]);
 }
 
 function openEditor({ file, application }) {
