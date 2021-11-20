@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-14 23:35+0200\n"
-"PO-Revision-Date: 2021-09-09 11:22+0200\n"
+"POT-Creation-Date: 2021-11-18 19:08+0100\n"
+"PO-Revision-Date: 2021-11-19 15:50+0100\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -39,7 +39,7 @@ msgstr "Sugerencia sobre la longitud del título del mensaje"
 
 #: data/re.sonny.Commit.gschema.xml:11 src/welcome.ui:52
 msgid "Use dark mode"
-msgstr ""
+msgstr "Usar el modo oscuro"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
@@ -64,6 +64,10 @@ msgid ""
 "+Return_ key combination. To abort and dismiss Commit, press the Cancel "
 "button or the _Escape_ key."
 msgstr ""
+"Commit aparecerá automáticamente cuando realice una confirmación en uno de "
+"sus proyectos. Para guardar su mensaje de confirmación, pulse el botón de "
+"confirmación o el atajo _Ctrl+Retorno_. Para abortar y descartar Commit, "
+"pulse el botón Cancelar o la tecla _Esc_."
 
 #: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
@@ -92,9 +96,25 @@ msgstr "Muestra la carpeta del proyecto y la rama en la cabecera de la ventana"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Soporte del modo oscuro"
 
 #: data/re.sonny.Commit.metainfo.xml:37
+msgid "Custom theme support"
+msgstr "Soporte de temas personalizados"
+
+#: data/re.sonny.Commit.metainfo.xml:38
+msgid "Keyboard navigation and shortcuts"
+msgstr "Navegación y atajos del teclado"
+
+#: data/re.sonny.Commit.metainfo.xml:39
+msgid "Undo and redo support"
+msgstr "Soporte para deshacer y rehacer"
+
+#: data/re.sonny.Commit.metainfo.xml:40
+msgid "Emoji picker"
+msgstr "Selector de emojis"
+
+#: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit messages, merge messages, tag messages, add -p messages, "
 "and rebase -i messages"
@@ -102,133 +122,136 @@ msgstr ""
 "Soporta mensajes git commit, mensajes merge, mensajes tag, mensajes add -p y "
 "mensajes rebase -i"
 
-#: data/re.sonny.Commit.metainfo.xml:41
+#: data/re.sonny.Commit.metainfo.xml:45
 msgid "Supports Mercurial commit messages"
 msgstr "Soporta mensajes de confirmación de Mercurial"
 
-#: data/re.sonny.Commit.metainfo.xml:42
+#: data/re.sonny.Commit.metainfo.xml:46
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Ventana de bienvenida con la configuración y las instrucciones"
 
-#: data/re.sonny.Commit.metainfo.xml:43
-msgid "Undo and redo support"
-msgstr ""
+#: data/re.sonny.Commit.metainfo.xml:56
+msgid "Main window"
+msgstr "Ventana principal"
 
-#: data/re.sonny.Commit.metainfo.xml:53
-msgid "Commit main window"
-msgstr "Ventana principal de Commit"
+#: data/re.sonny.Commit.metainfo.xml:62
+msgid "Main window - dark mode"
+msgstr "Ventana principal - modo oscuro"
 
-#: data/re.sonny.Commit.metainfo.xml:59
-msgid "Commit main window - dark mode"
-msgstr "Ventana principal de Commit - modo oscuro"
+#: data/re.sonny.Commit.metainfo.xml:68
+msgid "Emoji selector"
+msgstr "Selector de emojis"
 
-#: data/re.sonny.Commit.metainfo.xml:65
-msgid "Commit welcome window"
-msgstr "Ventana de bienvenida de Commit"
-
-#: data/re.sonny.Commit.metainfo.xml:71
-msgid "Commit welcome window - dark mode"
-msgstr "Ventana de bienvenida de Commit - modo oscuro"
-
-#: data/re.sonny.Commit.metainfo.xml:79
-msgid "Remove spell check temporarily"
-msgstr ""
+#: data/re.sonny.Commit.metainfo.xml:74
+msgid "Shortcuts"
+msgstr "Atajos"
 
 #: data/re.sonny.Commit.metainfo.xml:80
-msgid "Support undo and redo"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:81
-msgid "Add symbolic icon"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:82
-msgid "Add dark mode setting"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:83
-msgid "Focus the text editor"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:84
-msgid "Translate to French"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:85
-msgid "Translate to Croatian"
-msgstr ""
+msgid "Welcome window"
+msgstr "Ventana de bienvenida"
 
 #: data/re.sonny.Commit.metainfo.xml:86
-msgid "Translate to German"
-msgstr ""
+msgid "Welcome window - dark mode"
+msgstr "Ventana de bienvenida - modo oscuro"
 
-#: data/re.sonny.Commit.metainfo.xml:87
-msgid "Translate to Russian"
-msgstr ""
+#: data/re.sonny.Commit.metainfo.xml:94
+msgid "Remove spell check temporarily"
+msgstr "Elimina el corrector ortográfico temporalmente"
 
-#: data/re.sonny.Commit.metainfo.xml:88
-msgid "Translate to Dutch"
-msgstr ""
+#: data/re.sonny.Commit.metainfo.xml:95
+msgid "Support undo and redo"
+msgstr "Soporte para deshacer y rehacer"
 
-#: data/re.sonny.Commit.metainfo.xml:89
-msgid "Translate to Brazilien Portguese"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:90
-msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+#: data/re.sonny.Commit.metainfo.xml:96
+msgid "Add symbolic icon"
+msgstr "Añade un icono simbólico"
 
 #: data/re.sonny.Commit.metainfo.xml:97
-#, fuzzy
-msgid "Move preferences to welcome window"
-msgstr "Añade una ventana de Preferencias"
+msgid "Add dark mode setting"
+msgstr "Añade la configuración del modo oscuro"
 
 #: data/re.sonny.Commit.metainfo.xml:98
-msgid "Only highlight text overflow on commits"
-msgstr ""
+msgid "Focus the text editor"
+msgstr "Enfoca el editor de texto"
 
 #: data/re.sonny.Commit.metainfo.xml:99
-msgid "Add Czech translation"
-msgstr ""
+msgid "Translate to French"
+msgstr "Traducida al francés"
 
 #: data/re.sonny.Commit.metainfo.xml:100
-msgid "Add Spanish translation"
-msgstr ""
+msgid "Translate to Croatian"
+msgstr "Traducida al croata"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-msgid "New app icon"
-msgstr ""
+msgid "Translate to German"
+msgstr "Traducida al alemán"
 
 #: data/re.sonny.Commit.metainfo.xml:102
-msgid "Remove double border"
-msgstr ""
+msgid "Translate to Russian"
+msgstr "Traducida al ruso"
 
-#: data/re.sonny.Commit.metainfo.xml:109
+#: data/re.sonny.Commit.metainfo.xml:103
+msgid "Translate to Dutch"
+msgstr "Traducida al holandés"
+
+#: data/re.sonny.Commit.metainfo.xml:104
+msgid "Translate to Brazilien Portguese"
+msgstr "Traducida a portugués brasileño"
+
+#: data/re.sonny.Commit.metainfo.xml:105
+msgid "Port to GTK 4 and libadwaita"
+msgstr "Adaptación a GTK 4 y libadwaita"
+
+#: data/re.sonny.Commit.metainfo.xml:112
+msgid "Move preferences to welcome window"
+msgstr "Movidas las preferencias a la ventana de bienvenida"
+
+#: data/re.sonny.Commit.metainfo.xml:113
+msgid "Only highlight text overflow on commits"
+msgstr "Sólo resalta el excedente de texto en las confirmaciones"
+
+#: data/re.sonny.Commit.metainfo.xml:114
+msgid "Add Czech translation"
+msgstr "Añade la traducción al checo"
+
+#: data/re.sonny.Commit.metainfo.xml:115
+msgid "Add Spanish translation"
+msgstr "Añade la traducción al español"
+
+#: data/re.sonny.Commit.metainfo.xml:116
+msgid "New app icon"
+msgstr "Nuevo icono de la aplicación"
+
+#: data/re.sonny.Commit.metainfo.xml:117
+msgid "Remove double border"
+msgstr "Elimina el borde doble"
+
+#: data/re.sonny.Commit.metainfo.xml:124
 msgid "Add a Preferences window"
 msgstr "Añade una ventana de Preferencias"
 
-#: data/re.sonny.Commit.metainfo.xml:110
+#: data/re.sonny.Commit.metainfo.xml:125
 msgid "Set default title length hint to 50 characters"
 msgstr ""
 "Establece la sugerencia de longitud del título por defecto a 50 caracteres"
 
-#: data/re.sonny.Commit.metainfo.xml:111
+#: data/re.sonny.Commit.metainfo.xml:126
 msgid "Fix reading commits with special characters"
 msgstr "Corrige la lectura de confirmaciones con caracteres especiales"
 
-#: data/re.sonny.Commit.metainfo.xml:112
+#: data/re.sonny.Commit.metainfo.xml:127
 msgid "Fix git rebase not recognized"
 msgstr "Corrige git rebase no reconocido"
 
-#: data/re.sonny.Commit.metainfo.xml:113
+#: data/re.sonny.Commit.metainfo.xml:128
 msgid "Make windows bottom corners rounded"
 msgstr "Redondea las esquinas inferiores de las ventanas"
 
-#: data/re.sonny.Commit.metainfo.xml:114
+#: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add 6px margin to editor"
 msgstr "Añade un margen de 6px al editor"
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:135
 msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
@@ -236,27 +259,27 @@ msgstr ""
 "⚠️ Acción requerida. Tras la actualización, inicie la aplicación y siga las "
 "instrucciones."
 
-#: data/re.sonny.Commit.metainfo.xml:125
+#: data/re.sonny.Commit.metainfo.xml:140
 msgid "Show a welcome window when launched from desktop"
 msgstr "Muestra una ventana de bienvenida cuando se lanza desde el escritorio"
 
-#: data/re.sonny.Commit.metainfo.xml:126
+#: data/re.sonny.Commit.metainfo.xml:141
 msgid "Add support for Mercurial"
 msgstr "Añade soporte para Mercurial"
 
-#: data/re.sonny.Commit.metainfo.xml:127
+#: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove filesystem permission"
 msgstr "Elimina el permiso del sistema de archivos"
 
-#: data/re.sonny.Commit.metainfo.xml:133
+#: data/re.sonny.Commit.metainfo.xml:148
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "Versión inicial. Bifurcado de Gnomit 2.0."
 
-#: data/re.sonny.Commit.metainfo.xml:135
+#: data/re.sonny.Commit.metainfo.xml:150
 msgid "Support \"#\" in commit message"
 msgstr "Soporte de \"#\" en el mensaje de confirmación"
 
-#: data/re.sonny.Commit.metainfo.xml:136
+#: data/re.sonny.Commit.metainfo.xml:151
 msgid "Properly recognize executable path"
 msgstr "Reconoce correctamente la ruta del ejecutable"
 
@@ -271,7 +294,7 @@ msgstr "Cancelar"
 
 #: src/welcome.ui:67
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:71
 msgid ""
@@ -296,7 +319,7 @@ msgstr ""
 
 #: src/welcome.ui:125
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:130
@@ -311,26 +334,10 @@ msgstr ""
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: src/welcome.ui:189
+#: src/welcome.ui:192
+msgid "Keyboard Shortcuts"
+msgstr "Atajos del teclado"
+
+#: src/welcome.ui:196
 msgid "About Commit"
 msgstr "Acerca de Commit"
-
-#~ msgid "Spell checking"
-#~ msgstr "Comprobación ortográfica"
-
-#~ msgid ""
-#~ "Dark theme support: the overflow highlight is adjusted according to your "
-#~ "theme"
-#~ msgstr ""
-#~ "Soporte de tema oscuro: el resaltado del excedente se ajusta de acuerdo a "
-#~ "su tema"
-
-#~ msgid "Shows a welcome window when launched from desktop"
-#~ msgstr ""
-#~ "Muestra una ventana de bienvenida cuando se lanza desde el escritorio"
-
-#~ msgid "Preferences"
-#~ msgstr "Preferencias"
-
-#~ msgid "Quit"
-#~ msgstr "Salir"
