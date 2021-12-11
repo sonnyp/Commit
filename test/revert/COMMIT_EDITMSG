@@ -1,0 +1,59 @@
+Revert "[pkg-upd] dash-to-dock: 71-3"
+
+This reverts commit 810ab4dccad6aeff977c110230e04755841f3606.
+
+False alarm
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   gnome-shell-extension-dash-to-dock/PKGBUILD
+#
+# Changes not staged for commit:
+#	deleted:    gnome-shell-extension-desktop-icons-reworked/PKGBUILD
+#	deleted:    gnome-shell-extension-desktop-icons/10_desktop-icons.gschema.override
+#	deleted:    gnome-shell-extension-desktop-icons/PKGBUILD
+#	deleted:    gnome-shell-extension-desktop-icons/desktop-icons-workaround.hook
+#	deleted:    gnome-shell-extension-fly-pie/PKGBUILD
+#	deleted:    gnome-shell-extension-manjaro-update/10_manjaro-update.gschema.override
+#	deleted:    gnome-shell-extension-manjaro-update/PKGBUILD
+#	deleted:    gnome-shell-extension-manjaro-update/manjaro-update.install
+#	deleted:    gnome-shell-extension-manjaro-update/no-tray-icon-install.hook
+#	deleted:    gnome-shell-extension-manjaro-update/no-tray-icon-install.script
+#	deleted:    gnome-shell-extension-manjaro-update/no-tray-icon-remove.hook
+#	deleted:    gnome-shell-extension-manjaro-update/no-tray-icon-remove.script
+#	deleted:    gnome-shell-extension-openweather/PKGBUILD
+#	deleted:    gnome-shell-extension-taskbar/PKGBUILD
+#	deleted:    gnome-shell-extension-taskbar/manjaro.patch
+#	deleted:    gnome-shell-extension-topicons-plus-huttli/PKGBUILD
+#	modified:   gnome-shell-extension-vertical-overview/PKGBUILD
+#
+# Untracked files:
+#	gnome-shell-extension-appindicator/gnome-shell-extension-appindicator-40.tar.gz
+#	gnome-shell-extension-arcmenu/ArcMenu/
+#	gnome-shell-extension-background-logo/PKGBUILD-AUR
+#	gnome-shell-extension-background-logo/background-logo-extension/
+#	gnome-shell-extension-background-logo/src/
+#	gnome-shell-extension-dash-to-dock/dash-to-dock-4.patch
+#	gnome-shell-extension-dash-to-dock/dash-to-dock/
+#	gnome-shell-extension-dash-to-dock/pkg/
+#	gnome-shell-extension-dash-to-dock/src/
+#	gnome-shell-extension-dash-to-panel/dash-to-panel/
+#	gnome-shell-extension-desktop-icons-ng/desktop-icons-ng/
+#	gnome-shell-extension-gamemode/gamemode-extension/
+#	gnome-shell-extension-gnome-ui-tune/Link to PKGBUILD
+#	gnome-shell-extension-gnome-ui-tune/gnome-ui-tune/
+#	gnome-shell-extension-gsconnect/gnome-shell-extension-gsconnect/
+#	gnome-shell-extension-material-shell/material-shell/
+#	gnome-shell-extension-nightthemeswitcher/nightthemeswitcher-gnome-shell-extension/
+#	gnome-shell-extension-no-overview/no-overview/
+#	gnome-shell-extension-pop-shell/1260.patch
+#	gnome-shell-extension-pop-shell/shell/
+#	gnome-shell-extension-unite/unite-shell/
+#	gnome-shell-extension-vertical-overview/vertical-overview/
+#	gnome-shell-extension-x11gestures/x11gestures@joseexposito.github.io-13.zip
+#
