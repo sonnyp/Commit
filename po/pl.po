@@ -234,7 +234,7 @@ msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
-"⚠️ Wymagane działanie. Po aktualizacji, proszę uruchomić aplikacje i postępować "
+"⚠️ Wymagane działanie. Po aktualizacji proszę uruchomić aplikacje i postępować "
 "zgodnie z instrukcjami."
 
 #: data/re.sonny.Commit.metainfo.xml:125
@@ -278,7 +278,7 @@ msgstr "Git"
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
-"Aby ustawić Commit jako domyślny edytor Git'a wykonaj następującą komende w terminalu"
+"Aby ustawić Commit jako domyślny edytor Git'a wykonaj następującą komendę w terminalu"
 
 #: src/welcome.ui:102 src/welcome.ui:160
 msgid "Copy to Clipboard"
