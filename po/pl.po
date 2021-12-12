@@ -1,0 +1,315 @@
+# Polish translations for re.sonny.Commit package.
+# Copyright (C) 2021 THE re.sonny.Commit'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Commit package.
+# realis <realiss@protonmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Commit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 23:35+0200\n"
+"PO-Revision-Date: 2021-12-12 14:26+0100\n"
+"Last-Translator: realis <realiss@protonmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
+msgid "Commit"
+msgstr "Commit"
+
+#: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
+#: src/about.js:10
+msgid "Commit message editor"
+msgstr "Edytor wiadomości Commit"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Commit.desktop:13
+msgid "git;mercurial;hg;scm;gnomit;komet;"
+msgstr ""
+
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:33
+msgid "Message title length hint"
+msgstr "Wskazówka dotycząca długości tytułu wiadomości"
+
+#: data/re.sonny.Commit.gschema.xml:11 src/welcome.ui:52
+msgid "Use dark mode"
+msgstr "Użyj trybu ciemnego"
+
+#: data/re.sonny.Commit.metainfo.xml:13
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
+msgstr ""
+"Commit jest edytorem, który pomaga lepiej napisać wiadomości commit w Git "
+"i Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:17
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
+msgstr ""
+"Po zainstalowaniu, uruchom aplikacje i postępuj zgodnie z instrukcjami."
+
+#: data/re.sonny.Commit.metainfo.xml:21
+msgid ""
+"Commit will pop up automatically when you make a commit in one of your "
+"projects. To save your commit message, press the Commit button or the _Ctrl"
+"+Return_ key combination. To abort and dismiss Commit, press the Cancel "
+"button or the _Escape_ key."
+msgstr ""
+"Commit pojawi się automatycznie, gdy zrobisz commit w jednym swoich "
+"projektów. Aby zapisać wiadomość commit, naciśnij przycisk Commit lub "
+"kombinacje klawiszy _Ctrl+Return_. Aby przerwać lub odrzucić Commit, wciśnij "
+"przycisk Anuluj lub klawisz _Escape_."
+
+#: data/re.sonny.Commit.metainfo.xml:26
+msgid "Features:"
+msgstr "Funkcje:"
+
+#: data/re.sonny.Commit.metainfo.xml:28
+msgid ""
+"Highlights overflow of title when it exceeds 50 characters (customizable)"
+msgstr ""
+"Podkreśla przepełnienie tytułu, gdy przekracza 50 znaków (możliwość dostosowania)"
+
+#: data/re.sonny.Commit.metainfo.xml:32
+msgid "Inserts blank line between title and description"
+msgstr ""
+"Wstawia pustą linię między tytułem a opisem"
+
+#. <li>Spell checking</li>
+#: data/re.sonny.Commit.metainfo.xml:34
+msgid "Comments are readonly and excluded from \"Select All\""
+msgstr ""
+"Komentarze są tylko do odczytu i wykluczone z opcji \"Zaznacz wszystko\""
+
+#: data/re.sonny.Commit.metainfo.xml:35
+msgid "Displays project folder and branch in window header"
+msgstr "Wyświetla folder projektu i gałąź w nagłówku okna"
+
+#: data/re.sonny.Commit.metainfo.xml:36
+msgid "Dark mode support"
+msgstr "Obsługa trybu ciemnego"
+
+#: data/re.sonny.Commit.metainfo.xml:37
+msgid ""
+"Supports git commit messages, merge messages, tag messages, add -p messages, "
+"and rebase -i messages"
+msgstr ""
+"Obsługuje wiadomości git commit, wiadomości merge, wiadomości tag, wiadomości "
+"add -p i wiadomości rebase -i"
+
+#: data/re.sonny.Commit.metainfo.xml:41
+msgid "Supports Mercurial commit messages"
+msgstr "Obsługa wiadomości commit w Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:42
+msgid "Welcome window with settings and instructions"
+msgstr "Okno powitalne z ustawieniami i instrukcjami"
+
+#: data/re.sonny.Commit.metainfo.xml:43
+msgid "Undo and redo support"
+msgstr "Obsługa cofania i ponawiania"
+
+#: data/re.sonny.Commit.metainfo.xml:53
+msgid "Commit main window"
+msgstr "Główne okno Commit"
+
+#: data/re.sonny.Commit.metainfo.xml:59
+msgid "Commit main window - dark mode"
+msgstr "Główne okno Commit - tryb ciemny"
+
+#: data/re.sonny.Commit.metainfo.xml:65
+msgid "Commit welcome window"
+msgstr "Okno powitalne Commit"
+
+#: data/re.sonny.Commit.metainfo.xml:71
+msgid "Commit welcome window - dark mode"
+msgstr "Okno powitalne Commit - tryb ciemny"
+
+#: data/re.sonny.Commit.metainfo.xml:79
+msgid "Remove spell check temporarily"
+msgstr "Usuń tymczasowo sprawdzanie pisowni"
+
+#: data/re.sonny.Commit.metainfo.xml:80
+msgid "Support undo and redo"
+msgstr "Obsługa cofania i ponawiania"
+
+#: data/re.sonny.Commit.metainfo.xml:81
+msgid "Add symbolic icon"
+msgstr "Dodanie symbolicznej ikony"
+
+#: data/re.sonny.Commit.metainfo.xml:82
+msgid "Add dark mode setting"
+msgstr "Dodanie ustawienia trybu ciemnego"
+
+#: data/re.sonny.Commit.metainfo.xml:83
+msgid "Focus the text editor"
+msgstr "Skoncentruj edytor tekstu"
+
+#: data/re.sonny.Commit.metainfo.xml:84
+msgid "Translate to French"
+msgstr "Tłumczenie na język francuski"
+
+#: data/re.sonny.Commit.metainfo.xml:85
+msgid "Translate to Croatian"
+msgstr "Tłumaczenie na język chorwacki"
+
+#: data/re.sonny.Commit.metainfo.xml:86
+msgid "Translate to German"
+msgstr "Tłumaczenie na język niemiecki"
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid "Translate to Russian"
+msgstr "Tłumaczenie na język rosyjski"
+
+#: data/re.sonny.Commit.metainfo.xml:88
+msgid "Translate to Dutch"
+msgstr "Tłumaczenie na język niderlandzki"
+
+#: data/re.sonny.Commit.metainfo.xml:89
+msgid "Translate to Brazilien Portguese"
+msgstr "Tłumaczenie na język portugalski odmiany brazylijskiej"
+
+#: data/re.sonny.Commit.metainfo.xml:90
+msgid "Port to GTK 4 and libadwaita"
+msgstr "Przeniesienie do GTK4 i libadwaita"
+
+#: data/re.sonny.Commit.metainfo.xml:97
+msgid "Move preferences to welcome window"
+msgstr "Przeniesienie preferencji okna do okna powitalnego"
+
+#: data/re.sonny.Commit.metainfo.xml:98
+msgid "Only highlight text overflow on commits"
+msgstr "Podświetlanie tylko przepełnienie tekstu w commitach"
+
+#: data/re.sonny.Commit.metainfo.xml:99
+msgid "Add Czech translation"
+msgstr "Dodanie tłumaczenia języka czeskiego"
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Add Spanish translation"
+msgstr "Dodanie tłumaczenia języka hiszpańskiego"
+
+#: data/re.sonny.Commit.metainfo.xml:101
+msgid "New app icon"
+msgstr "Nowa ikonka aplikacji"
+
+#: data/re.sonny.Commit.metainfo.xml:102
+msgid "Remove double border"
+msgstr "Usunięcie podwójnego obramowania"
+
+#: data/re.sonny.Commit.metainfo.xml:109
+msgid "Add a Preferences window"
+msgstr "Dodanie okna preferencji"
+
+#: data/re.sonny.Commit.metainfo.xml:110
+msgid "Set default title length hint to 50 characters"
+msgstr "Ustawienie domyślnej wskazówki długości tytułu na 50 znaków"
+
+#: data/re.sonny.Commit.metainfo.xml:111
+msgid "Fix reading commits with special characters"
+msgstr "Poprawka odczytywania commitów zawierających znaki specjalne"
+
+#: data/re.sonny.Commit.metainfo.xml:112
+msgid "Fix git rebase not recognized"
+msgstr "Poprawka git rebase not recognized"
+
+#: data/re.sonny.Commit.metainfo.xml:113
+msgid "Make windows bottom corners rounded"
+msgstr "Zaokrąglenie dolnych rogów okien"
+
+#: data/re.sonny.Commit.metainfo.xml:114
+msgid "Add 6px margin to editor"
+msgstr "Dodanie 6px marginesu do edytora"
+
+#: data/re.sonny.Commit.metainfo.xml:120
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
+msgstr ""
+"⚠️ Wymagane działanie. Po aktualizacji, proszę uruchomić aplikacje i postępować "
+"zgodnie z instrukcjami."
+
+#: data/re.sonny.Commit.metainfo.xml:125
+msgid "Show a welcome window when launched from desktop"
+msgstr "Pokazywanie okna powitalnego przy uruchamianiu z pulpitu"
+
+#: data/re.sonny.Commit.metainfo.xml:126
+msgid "Add support for Mercurial"
+msgstr "Dodanie obsługi dla Mercurial"
+
+#: data/re.sonny.Commit.metainfo.xml:127
+msgid "Remove filesystem permission"
+msgstr "Usunięcie uprawnień do systemu plików"
+
+#: data/re.sonny.Commit.metainfo.xml:133
+msgid "Initial release. Forked from Gnomit 2.0."
+msgstr "Wydanie początkowe. Rozwidlenie z Gnomit 2.0."
+
+#: data/re.sonny.Commit.metainfo.xml:135
+msgid "Support \"#\" in commit message"
+msgstr "Obsługa \"#\" w wiadomościach commit"
+
+#: data/re.sonny.Commit.metainfo.xml:136
+msgid "Properly recognize executable path"
+msgstr "Prawidłowe rozpoznawanie ścieżki do pliku wykonywalnego"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "realis <realiss@protonmail.com>"
+
+#: src/window.ui:17
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: src/welcome.ui:67
+msgid "Git"
+msgstr "Git"
+
+#: src/welcome.ui:71
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
+msgstr ""
+"Aby ustawić Commit jako domyślny edytor Git'a wykonaj następującą komende w terminalu"
+
+#: src/welcome.ui:102 src/welcome.ui:160
+msgid "Copy to Clipboard"
+msgstr "Skopiuj do schowka"
+
+#: src/welcome.ui:110 src/welcome.ui:168
+msgid "Documentation"
+msgstr "Dokumentacja"
+
+#: src/welcome.ui:114
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+
+#: src/welcome.ui:125
+msgid "Mercurial"
+msgstr "Mercurial"
+
+#. TRANSLATORS: Don't translate <tt>hgrc</tt>
+#: src/welcome.ui:130
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
+msgstr ""
+"Aby ustawić Commit jako domyślny edytor dla Mercuriala, ustaw następujące "
+"ustawienia w twoim <tt>hgrc</tt>"
+
+#: src/welcome.ui:172
+msgid "https://www.mercurial-scm.org/wiki/editor"
+msgstr "https://www.mercurial-scm.org/wiki/editor"
+
+#: src/welcome.ui:189
+msgid "About Commit"
+msgstr "O Commit"
