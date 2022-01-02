@@ -96,12 +96,6 @@
           <li>Add symbolic icon</li>
           <li>Add dark mode setting</li>
           <li>Focus the text editor</li>
-          <li>Translate to French</li>
-          <li>Translate to Croatian</li>
-          <li>Translate to German</li>
-          <li>Translate to Russian</li>
-          <li>Translate to Dutch</li>
-          <li>Translate to Brazilien Portguese</li>
           <li>Port to GTK 4 and libadwaita</li>
         </ul>
       </description>
@@ -111,8 +105,6 @@
         <ul>
           <li>Move preferences to welcome window</li>
           <li>Only highlight text overflow on commits</li>
-          <li>Add Czech translation</li>
-          <li>Add Spanish translation</li>
           <li>New app icon</li>
           <li>Remove double border</li>
         </ul>
