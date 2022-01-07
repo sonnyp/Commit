@@ -48,6 +48,16 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-center "['<Super><Control
 
 </details>
 
+## Translation
+
+If you'd like to help translating Commit into your language, please head over to [Weblate](https://hosted.weblate.org/engage/commit/).
+
+<a href="https://hosted.weblate.org/engage/commit/">
+  <img src="https://hosted.weblate.org/widgets/commit/-/commit/multi-auto.svg" alt="Translation status" />
+</a>
+
+Thank you for your help!
+
 ## Development
 
 ```sh
