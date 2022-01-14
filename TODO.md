@@ -14,3 +14,6 @@
 13. [ ] max length 72 (github/gitlab wraps)
 14. [ ] Auto capitalize first letter
 15. [ ] detect non imperative mood
+
+https://tekin.co.uk/2020/03/git-commit-verbose-mode
+capitalize first word

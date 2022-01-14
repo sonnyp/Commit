@@ -2,13 +2,13 @@ import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 
 import validateCommitButton from "./validateCommitButton.js";
-import TextView from "./TextView.js";
+import Editor from "./Editor.js";
 
 import { settings } from "./util.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 
-export default function Editor({
+export default function editor({
   builder,
   commitButton,
   numberOfLinesInCommitComment,
@@ -20,18 +20,19 @@ export default function Editor({
   // Save the number of lines in the commit message.
   let previousNumberOfLinesInCommitMessage = 1;
 
-  const scrolled_window = builder.get_object("scrolledWindow");
-  const textView = new TextView();
-  scrolled_window.set_child(textView);
+  const main = builder.get_object("main");
+  const widget = new Editor();
+  main.append(widget);
+  const source_view = widget.view;
 
-  const buffer = textView.get_buffer();
+  const buffer = source_view.get_buffer();
   buffer.set_enable_undo(true);
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
   buffer.tag_table.add(highlightBackgroundTag);
   function setHighlightColour() {
-    highlightBackgroundTag.background = getHighlightColour(textView);
+    highlightBackgroundTag.background = getHighlightColour(source_view);
   }
 
   function highlightText() {
@@ -146,7 +147,7 @@ export default function Editor({
   });
 
   // Only select commit message body (not the comment) on select all.
-  textView.connect("select-all", (self, selected) => {
+  source_view.connect("select-all", (self, selected) => {
     if (!selected) return;
 
     // Carry this out on the next stack frame. The selected signal
@@ -170,9 +171,9 @@ export default function Editor({
     });
   });
 
-  textView.connect("style-updated", setHighlightColour);
+  widget.connect("style-updated", setHighlightColour);
 
-  return { textView, buffer };
+  return { source_view, buffer };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686

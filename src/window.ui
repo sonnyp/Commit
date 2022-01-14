@@ -6,7 +6,7 @@
     <property name="default_height">240</property>
     <property name="title">Commit</property>
     <child>
-      <object class="GtkBox">
+      <object class="GtkBox" id="main">
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
@@ -32,11 +32,7 @@
             </child>
           </object>
         </child>
-        <child>
-          <object class="GtkScrolledWindow" id="scrolledWindow">
-            <property name="vexpand">True</property>
-          </object>
-        </child>
+        <!-- editor goes here -->
       </object>
     </child>
   </object>

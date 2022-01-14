@@ -34,6 +34,17 @@
                 >Open emoji chooser</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property
+                  name="accelerator"
+                >&lt;Alt&gt;Up &lt;Alt&gt;Down</property>
+                <property
+                  name="title"
+                  translatable="yes"
+                >Move current line up/down</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>

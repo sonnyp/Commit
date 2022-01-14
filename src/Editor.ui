@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <template class="Editor" parent="GtkScrolledWindow">
+    <property name="vexpand">true</property>
+    <child>
+      <object class="GtkSourceView" id="view">
+
+        <property name="buffer">
+          <object class="GtkSourceBuffer" id="buffer" />
+        </property>
+
+        <property name="monospace">true</property>
+
+
+        <!-- <property name="auto-indent">true</property> -->
+        <!-- <property name="background-pattern">grid</property> -->
+        <!-- <property name="highlight-current-line">true</property> -->
+        <!-- <property name="indent-on-tab">true</property> -->
+        <!-- <property name="indent-width">2</property> -->
+        <!-- <property name="insert-spaces-instead-of-tabs">true</property> -->
+        <!-- <property name="show-line-marks">true</property> -->
+        <!-- <property name="show-line-numbers">true</property> -->
+        <!-- <property name="smart-backspace">true</property> -->
+        <!-- <property name="tab-width">2</property> -->
+        <!-- <property name="smart-home-end">true</property> -->
+
+        <property name="show-right-margin">true</property>
+
+
+        <property name="wrap_mode">word</property>
+        <property name="top-margin">6</property>
+        <property name="left-margin">6</property>
+        <property name="right-margin">6</property>
+        <property name="bottom-margin">6</property>
+        <property name="input_hints">
+          GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_WORD_COMPLETION |
+          GTK_INPUT_HINT_EMOJI | GTK_INPUT_HINT_UPPERCASE_SENTENCES
+        </property>
+      </object>
+    </child>
+  </template>
+</interface>
