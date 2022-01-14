@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-14 23:35+0200\n"
-"PO-Revision-Date: 2021-09-22 09:40+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2022-01-09 15:53+0000\n"
+"Last-Translator: Sonny Piers <sonny@sonny.re>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/commit/commit/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
@@ -39,7 +39,7 @@ msgstr "Indice de la longueur du titre du message"
 
 #: data/re.sonny.Commit.gschema.xml:11 src/welcome.ui:52
 msgid "Use dark mode"
-msgstr ""
+msgstr "Utiliser le mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
