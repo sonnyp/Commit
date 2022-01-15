@@ -1,10 +1,11 @@
 export function parse(commit, type) {
-  // let body;
   let detail;
   let comment_prefix = "#";
+  let language = "git";
 
   if (type === "hg") {
     comment_prefix = "HG:";
+    language = "hg";
   }
 
   const comment_separator = `\n${comment_prefix}`;
@@ -13,8 +14,7 @@ export function parse(commit, type) {
   // split at the first comment as the message starts with a comment.
   // Remove that comment and instead display that info in the title bar.
   if (type === "add -p") {
-    detail = commit.substr(2 /* "# " */, commit.indexOf("\n") - 1).trim();
-    commit = commit.substr(commit.indexOf("\n") + 1);
+    language = "diff";
   } else if (
     type === "commit" &&
     commit.startsWith("Squashed commit of the following")
@@ -71,6 +71,7 @@ export function parse(commit, type) {
     comment_separator,
     cursor_position,
     read_only_index,
+    language,
   };
 }
 

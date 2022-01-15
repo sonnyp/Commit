@@ -38,16 +38,14 @@ function readTest(name) {
 
 is(
   parse(readTest("addp-hunk-edit.diff"), "add -p").body,
-  `@@ -1,3 +1,4 @@
+  `# Manual hunk edit mode -- see bottom for a quick guide.
+@@ -1,3 +1,4 @@
  d
  b
  c
 +e`,
 );
-is(
-  parse(readTest("addp-hunk-edit.diff"), "add -p").detail,
-  `Manual hunk edit mode -- see bottom for a quick guide.`,
-);
+is(parse(readTest("addp-hunk-edit.diff"), "add -p").detail, undefined);
 is(
   parse(readTest("addp-hunk-edit.diff"), "add -p").comment,
   `

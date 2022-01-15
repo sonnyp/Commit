@@ -121,23 +121,20 @@ function openEditor({ file, application, readonly }) {
     print(`Warning: unknown commit type encountered in: ${filePath}`);
   }
 
-  const {
-    comment: commitComment,
-    detail,
-    cursor_position,
-    read_only_index,
-  } = parse(commitMessage, type);
+  const { body, comment, detail, cursor_position, read_only_index, language } =
+    parse(commitMessage, type);
 
-  const commitCommentLines = commitComment.split("\n");
-  const numberOfLinesInCommitComment = commitCommentLines.length;
+  const commentLines = comment.split("\n");
+  const numberOfLinesInComment = commentLines.length;
 
   const { window, commitButton, buffer } = Window({
     application,
     file,
-    numberOfLinesInCommitComment,
+    numberOfLinesInComment,
     type,
     detail,
     readonly,
+    language,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
@@ -146,7 +143,7 @@ function openEditor({ file, application, readonly }) {
   // if it was we could wrap it between
   // buffer.begin_irreversible_action();
   // buffer.end_irreversible_action();
-  buffer.set_text(commitMessage, -1);
+  buffer.set_text(`${body}\n${comment}`, -1);
 
   buffer.place_cursor(buffer.get_iter_at_offset(cursor_position));
 
@@ -159,7 +156,7 @@ function openEditor({ file, application, readonly }) {
   // body of the commit message, it should be enabled).
   validateCommitButton({
     buffer,
-    numberOfLinesInCommitComment,
+    numberOfLinesInComment,
     commitButton,
   });
 

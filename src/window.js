@@ -9,10 +9,11 @@ import { relativePath } from "./util.js";
 export default function Window({
   application,
   file,
-  numberOfLinesInCommitComment,
+  numberOfLinesInComment,
   type,
   detail,
   readonly,
+  language,
 }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
@@ -51,8 +52,9 @@ export default function Window({
   const { buffer, source_view } = Editor({
     builder,
     commitButton,
-    numberOfLinesInCommitComment,
+    numberOfLinesInComment,
     type,
+    language,
   });
 
   // https://github.com/sonnyp/Commit/issues/33

@@ -11,8 +11,9 @@ const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 export default function editor({
   builder,
   commitButton,
-  numberOfLinesInCommitComment,
+  numberOfLinesInComment,
   type,
+  language,
 }) {
   let lastActionWasSelectAll;
 
@@ -20,7 +21,7 @@ export default function editor({
   let previousNumberOfLinesInCommitMessage = 1;
 
   const main = builder.get_object("main");
-  const widget = new Editor({ type: type === "hg" ? "hg" : "git" });
+  const widget = new Editor({ language });
   main.append(widget);
   const source_view = widget.view;
 
@@ -120,7 +121,7 @@ export default function editor({
     if (
       /* in the correct place */
       cursorPosition === firstLineLength + 1 &&
-      numberOfLinesInCommitMessage === numberOfLinesInCommitComment + 3 &&
+      numberOfLinesInCommitMessage === numberOfLinesInComment + 3 &&
       /* and person didn’t reach here by deleting existing content */
       numberOfLinesInCommitMessage > previousNumberOfLinesInCommitMessage
     ) {
@@ -140,7 +141,7 @@ export default function editor({
     // Validation: Enable Commit button only if commit message is not empty.
     validateCommitButton({
       buffer,
-      numberOfLinesInCommitComment,
+      numberOfLinesInComment,
       commitButton,
     });
   });
@@ -149,10 +150,8 @@ export default function editor({
   source_view.connect("select-all", (self, selected) => {
     if (!selected) return;
 
-    // Carry this out on the next stack frame. The selected signal
-    // gets called too early (you are not able to change the
-    // selection at that time.) TODO: File bug.
-    return GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
+    // Carry this out on the next stack frame.
+    GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
       lastActionWasSelectAll = true;
       // Redo the selection to limit it to the commit message
       // only (exclude the original commit comment).
@@ -164,6 +163,8 @@ export default function editor({
       buffer.select_range(selectStartIterator, selectEndIterator);
       return GLib.SOURCE_REMOVE;
     });
+
+    return false;
   });
 
   widget.connect("style-updated", setHighlightColour);

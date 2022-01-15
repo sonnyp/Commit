@@ -23,10 +23,10 @@ export default GObject.registerClass(
   {
     GTypeName: "Editor",
     Properties: {
-      type: GObject.ParamSpec.string(
-        "type",
-        "The editor type",
-        "Set to hg or git",
+      language: GObject.ParamSpec.string(
+        "language",
+        "",
+        "",
         GObject.ParamFlags.READWRITE,
         null,
       ),
@@ -41,7 +41,7 @@ export default GObject.registerClass(
     _init(params = {}) {
       super._init(params);
 
-      this.buffer.set_language(language_manager.get_language(this.type));
+      this.buffer.set_language(language_manager.get_language(this.language));
 
       this.update_css();
       style_manager.connect("notify::dark", this.update_css.bind(this));
