@@ -126,6 +126,7 @@ function openEditor({ file, application, readonly }) {
     detail,
     comment_separator,
     cursor_position,
+    read_only_index,
   } = parse(commitMessage, type);
 
   const commitCommentLines = commitComment.split("\n");
@@ -139,6 +140,7 @@ function openEditor({ file, application, readonly }) {
     type,
     detail,
     readonly,
+    read_only_index,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
@@ -151,12 +153,10 @@ function openEditor({ file, application, readonly }) {
 
   buffer.place_cursor(buffer.get_iter_at_offset(cursor_position));
 
-  // Set the original comment to be non-editable.
-  const nonEditableTag = Gtk.TextTag.new("NonEditable");
-  nonEditableTag.editable = false;
-  buffer.tag_table.add(nonEditableTag);
-  const endOfText = buffer.get_end_iter();
-  buffer.apply_tag(nonEditableTag, buffer.get_start_iter(), endOfText);
+  markCommentReadonly({
+    buffer,
+    read_only_index,
+  });
 
   // Validate the commit button on start (if we have an auto-generated
   // body of the commit message, it should be enabled).
@@ -167,4 +167,17 @@ function openEditor({ file, application, readonly }) {
   });
 
   window.show();
+}
+
+const readonlyTag = Gtk.TextTag.new("readonly");
+readonlyTag.editable = false;
+function markCommentReadonly({ buffer, read_only_index }) {
+  buffer.tag_table.add(readonlyTag);
+
+  const endOfText = buffer.get_end_iter();
+  buffer.apply_tag(
+    readonlyTag,
+    buffer.get_iter_at_offset(read_only_index),
+    endOfText,
+  );
 }

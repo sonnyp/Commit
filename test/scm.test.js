@@ -307,8 +307,44 @@ is(
 );
 
 is(
+  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").body,
+  `# This is a combination of 3 commits.
+# This is the 1st commit message:
+
+add a.txt
+
+# This is the commit message #2:
+
+add foo to a.txt
+
+# This is the commit message #3:
+
+add b.txt`,
+);
+is(
   parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").detail,
   undefined,
+);
+is(
+  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").comment,
+  `
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Jan 15 16:42:00 2022 +0100
+#
+# interactive rebase in progress; onto aa57d6b
+# Last commands done (4 commands done):
+#    squash de9914c add foo to a.txt
+#    squash a0cd27f add b.txt
+# No commands remaining.
+# You are currently rebasing branch 'test-squash' on 'aa57d6b'.
+#
+# Changes to be committed:
+#	new file:   a.txt
+#	new file:   b.txt
+#
+`,
 );
 is(
   parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").cursor_position,

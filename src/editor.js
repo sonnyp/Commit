@@ -14,6 +14,7 @@ export default function editor({
   numberOfLinesInCommitComment,
   comment_separator,
   type,
+  read_only_index,
 }) {
   let lastActionWasSelectAll;
 
