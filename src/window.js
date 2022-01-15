@@ -10,7 +10,6 @@ export default function Window({
   application,
   file,
   numberOfLinesInCommitComment,
-  comment_separator,
   type,
   detail,
   readonly,
@@ -53,7 +52,6 @@ export default function Window({
     builder,
     commitButton,
     numberOfLinesInCommitComment,
-    comment_separator,
     type,
   });
 

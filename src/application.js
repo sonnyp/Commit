@@ -1,7 +1,7 @@
 import Gio from "gi://Gio";
-import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 import Adw from "gi://Adw";
+import Gtk from "gi://Gtk";
 
 import Window from "./window.js";
 import Welcome from "./welcome.js";
@@ -124,7 +124,6 @@ function openEditor({ file, application, readonly }) {
   const {
     comment: commitComment,
     detail,
-    comment_separator,
     cursor_position,
     read_only_index,
   } = parse(commitMessage, type);
@@ -136,11 +135,9 @@ function openEditor({ file, application, readonly }) {
     application,
     file,
     numberOfLinesInCommitComment,
-    comment_separator,
     type,
     detail,
     readonly,
-    read_only_index,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
@@ -175,9 +172,10 @@ function markCommentReadonly({ buffer, read_only_index }) {
   buffer.tag_table.add(readonlyTag);
 
   const endOfText = buffer.get_end_iter();
-  buffer.apply_tag(
-    readonlyTag,
-    buffer.get_iter_at_offset(read_only_index),
-    endOfText,
-  );
+  const comment_iter = buffer.get_iter_at_offset(read_only_index - 1);
+
+  buffer.apply_tag(readonlyTag, comment_iter, endOfText);
+
+  // This is used for select-all
+  buffer.create_mark("comment", comment_iter, false);
 }

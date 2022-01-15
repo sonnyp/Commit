@@ -12,9 +12,7 @@ export default function editor({
   builder,
   commitButton,
   numberOfLinesInCommitComment,
-  comment_separator,
   type,
-  read_only_index,
 }) {
   let lastActionWasSelectAll;
 
@@ -158,13 +156,9 @@ export default function editor({
       lastActionWasSelectAll = true;
       // Redo the selection to limit it to the commit message
       // only (exclude the original commit comment).
-      // Assumption: that the person has not added any comments
-      // to their commit message themselves. But, I mean, come on!
-      // buffer.place_cursor(buffer.get_start_iter())
-      const mainCommitMessage = buffer.text.split(comment_separator)[0];
       const selectStartIterator = buffer.get_start_iter();
-      const selectEndIterator = buffer.get_iter_at_offset(
-        unicodeLength(mainCommitMessage),
+      const selectEndIterator = buffer.get_iter_at_mark(
+        buffer.get_mark("comment"),
       );
       // buffer.move_mark_by_name('selection_bound', selectEndIterator)
       buffer.select_range(selectStartIterator, selectEndIterator);

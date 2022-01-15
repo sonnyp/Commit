@@ -45,6 +45,22 @@
                 >Move current line up/down</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property
+                  name="accelerator"
+                >&lt;Primary&gt;a &lt;Primary&gt;slash</property>
+                <property name="title" translatable="yes">Select All</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property
+                  name="accelerator"
+                >&lt;Shift&gt;&lt;Primary&gt;a &lt;Primary&gt;backslash</property>
+                <property name="title" translatable="yes">Unelect All</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
