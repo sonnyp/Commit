@@ -13,6 +13,7 @@ export default function Window({
   comment_separator,
   type,
   detail,
+  readonly,
 }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
@@ -34,7 +35,7 @@ export default function Window({
     parameter_type: null,
   });
   cancelAction.connect("activate", () => {
-    save({ file, application, value: "" });
+    save({ file, application, value: "", readonly });
   });
   window.add_action(cancelAction);
 
@@ -44,7 +45,7 @@ export default function Window({
   });
   commitAction.connect("activate", () => {
     const value = buffer.text;
-    save({ file, application, value });
+    save({ file, application, value, readonly });
   });
   window.add_action(commitAction);
 
@@ -62,12 +63,13 @@ export default function Window({
   return { window, cancelButton, commitButton, buffer };
 }
 
-function save({ file, value, application }) {
-  try {
-    GLib.file_set_contents(file.get_path(), value);
-    application.quit();
-  } catch (err) {
-    printerr(err);
+function save({ file, value, application, readonly }) {
+  if (!readonly) {
+    try {
+      GLib.file_set_contents(file.get_path(), value);
+    } catch (err) {
+      printerr(err);
+    }
   }
 
   application.quit();

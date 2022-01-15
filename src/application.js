@@ -22,6 +22,23 @@ export default function Application({ version }) {
       Gio.ApplicationFlags.NON_UNIQUE,
   });
 
+  let readonly = false;
+
+  application.add_main_option(
+    "readonly",
+    null,
+    GLib.OptionFlags.NONE,
+    GLib.OptionArg.NONE,
+    "Prevent Commit from making changes - useful for testing",
+    null,
+  );
+
+  application.connect("handle-local-options", (self, options) => {
+    if (options.contains("readonly")) readonly = true;
+
+    return -1;
+  });
+
   // Open gets called when a file is passed as a command=line argument.
   // We expect Git or Mercurial to pass us one file.
   application.connect("open", (self, files, hint) => {
@@ -33,7 +50,7 @@ export default function Application({ version }) {
     }
 
     const file = files[0];
-    openEditor({ file, application });
+    openEditor({ file, application, readonly });
   });
 
   application.connect("startup", () => {
@@ -84,7 +101,7 @@ function openWelcome({ application }) {
   application.set_accels_for_action("app.quit", ["<Primary>Q"]);
 }
 
-function openEditor({ file, application }) {
+function openEditor({ file, application, readonly }) {
   const filePath = file.get_path();
 
   let commitMessage;
@@ -121,6 +138,7 @@ function openEditor({ file, application }) {
     comment_separator,
     type,
     detail,
+    readonly,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
