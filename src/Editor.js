@@ -13,6 +13,12 @@ const [, template] = file.load_contents(null);
 
 const scheme_manager = GtkSource.StyleSchemeManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
+const language_manager = GtkSource.LanguageManager.get_default();
+language_manager.set_search_path([
+  ...language_manager.get_search_path(),
+  relativePath("."),
+]);
+const language = language_manager.get_language("scm");
 
 export default GObject.registerClass(
   {
@@ -27,12 +33,14 @@ export default GObject.registerClass(
     _init(params = {}) {
       super._init(params);
 
+      this.buffer.set_language(language);
+
       this.update_css();
       style_manager.connect("notify::dark", this.update_css.bind(this));
     }
 
     update_css() {
-      const scheme = style_manager.dark ? "Builder-dark" : "Builder";
+      const scheme = style_manager.dark ? "Adwaita-dark" : "Adwaita";
       this.buffer.set_style_scheme(scheme_manager.get_scheme(scheme));
     }
 

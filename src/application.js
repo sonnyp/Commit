@@ -117,9 +117,6 @@ function openEditor({ file, application }) {
   const commitCommentLines = commitComment.split("\n");
   const numberOfLinesInCommitComment = commitCommentLines.length;
 
-  // Add Pango markup to make the commented area appear lighter.
-  commitMessage = `${commitBody}<span foreground="#959595">\n${commitComment}</span>`;
-
   const { window, commitButton, buffer } = Window({
     application,
     file,
