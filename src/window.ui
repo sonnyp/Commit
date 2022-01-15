@@ -14,9 +14,9 @@
             <property name="show_end_title_buttons">False</property>
             <child>
               <object class="GtkButton" id="cancelButton">
-                <property name="label" translatable="yes">Cancel</property>
+                <property name="label" translatable="yes">Abort</property>
                 <property name="action-name">win.cancel</property>
-                <property name="tooltip-text">Abort and dismiss</property>
+                <property name="tooltip-text">Cancel and dismiss</property>
               </object>
             </child>
             <child type="end">
