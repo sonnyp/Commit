@@ -9,24 +9,15 @@ import { relativePath } from "./util.js";
 export default function Window({
   application,
   file,
-  numberOfLinesInComment,
+  commitMessage,
   type,
-  detail,
   readonly,
-  language,
 }) {
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
-
-  if (type) {
-    const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
-    let title = `${type}: ${projectDirectoryName}`;
-    if (detail) title += ` (${detail})`;
-    window.set_title(title);
-  }
 
   window.set_application(application);
 
@@ -52,9 +43,9 @@ export default function Window({
   const { buffer, source_view } = Editor({
     builder,
     commitButton,
-    numberOfLinesInComment,
     type,
-    language,
+    commitMessage,
+    window,
   });
 
   // https://github.com/sonnyp/Commit/issues/33

@@ -1,5 +1,5 @@
 import Gio from "gi://Gio";
-import { parse, getType } from "../src/scm.js";
+import { parse, getType, hasCommitMessage } from "../src/scm.js";
 
 const { byteArray } = imports;
 
@@ -28,6 +28,14 @@ is(getType("/foo/bar/rebase-merge/git-rebase-todo"), "rebase");
 is(getType("/foo/bar/MERGE_MSG"), "merge");
 is(getType("/foo/bar/TAG_EDITMSG"), "tag");
 is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
+
+is(hasCommitMessage("foo\n#hello", "#"), true);
+is(hasCommitMessage("foo", "#"), true);
+is(hasCommitMessage("# hello\nfoo", "#"), true);
+is(hasCommitMessage("", "#"), false);
+is(hasCommitMessage("# hello", "#"), false);
+is(hasCommitMessage(" ", "#"), false);
+is(hasCommitMessage(" \n#\n ", "#"), false);
 
 function readTest(name) {
   const file = Gio.File.new_for_uri(import.meta.url);
@@ -79,7 +87,7 @@ is(parse(readTest("MERGE_MSG"), "merge").cursor_position, 19);
 
 is(
   parse(readTest("with-body/COMMIT_EDITMSG"), "commit").body,
-  `Merge branch 'master' of source.small-tech.org:gnome/gnomit
+  `Do something great with this commit message, perhaps tell of your adventures?
 
 This is another line.`,
 );
@@ -97,7 +105,7 @@ is(
 #	modified:   README.md
 #`,
 );
-is(parse(readTest("with-body/COMMIT_EDITMSG"), "commit").cursor_position, 82);
+is(parse(readTest("with-body/COMMIT_EDITMSG"), "commit").cursor_position, 100);
 
 is(
   parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").body,

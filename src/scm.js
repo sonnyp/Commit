@@ -131,3 +131,10 @@ function splitMessage(commit, comment_prefix) {
 
   return { body, comment, read_only_index: idx };
 }
+
+export function hasCommitMessage(str, comment_prefix) {
+  return str.split("\n").some((line) => {
+    line = line.trim();
+    return line.length > 0 && !line.startsWith(comment_prefix);
+  });
+}

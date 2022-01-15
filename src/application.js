@@ -1,12 +1,10 @@
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 import Adw from "gi://Adw";
-import Gtk from "gi://Gtk";
 
 import Window from "./window.js";
 import Welcome from "./welcome.js";
-import validateCommitButton from "./validateCommitButton.js";
-import { getType, parse } from "./scm.js";
+import { getType } from "./scm.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
 
@@ -121,58 +119,15 @@ function openEditor({ file, application, readonly }) {
     print(`Warning: unknown commit type encountered in: ${filePath}`);
   }
 
-  const { body, comment, detail, cursor_position, read_only_index, language } =
-    parse(commitMessage, type);
-
-  const commentLines = comment.split("\n");
-  const numberOfLinesInComment = commentLines.length;
-
-  const { window, commitButton, buffer } = Window({
+  const { window } = Window({
     application,
     file,
-    numberOfLinesInComment,
+    commitMessage,
     type,
-    detail,
     readonly,
-    language,
   });
   // Add the dialog to the application as its main window.
   application.add_window(window);
 
-  // This is not user undo-able
-  // if it was we could wrap it between
-  // buffer.begin_irreversible_action();
-  // buffer.end_irreversible_action();
-  buffer.set_text(`${body}\n${comment}`, -1);
-
-  buffer.place_cursor(buffer.get_iter_at_offset(cursor_position));
-
-  markCommentReadonly({
-    buffer,
-    read_only_index,
-  });
-
-  // Validate the commit button on start (if we have an auto-generated
-  // body of the commit message, it should be enabled).
-  validateCommitButton({
-    buffer,
-    numberOfLinesInComment,
-    commitButton,
-  });
-
   window.show();
-}
-
-const readonlyTag = Gtk.TextTag.new("readonly");
-readonlyTag.editable = false;
-function markCommentReadonly({ buffer, read_only_index }) {
-  buffer.tag_table.add(readonlyTag);
-
-  const endOfText = buffer.get_end_iter();
-  const comment_iter = buffer.get_iter_at_offset(read_only_index - 1);
-
-  buffer.apply_tag(readonlyTag, comment_iter, endOfText);
-
-  // This is used for select-all
-  buffer.create_mark("comment", comment_iter, false);
 }
