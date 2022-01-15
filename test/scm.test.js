@@ -64,6 +64,7 @@ is(
 );
 is(parse(readTest("addp-hunk-edit.diff"), "add -p").comment_prefix, "#");
 is(parse(readTest("addp-hunk-edit.diff"), "add -p").comment_separator, "\n#");
+is(parse(readTest("addp-hunk-edit.diff"), "add -p").cursor_position, 0);
 
 is(parse(readTest("MERGE_MSG"), "merge").body, `Merge branch 'test'`);
 is(parse(readTest("MERGE_MSG"), "merge").detail, `branch test`);
@@ -76,6 +77,7 @@ is(
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.`,
 );
+is(parse(readTest("MERGE_MSG"), "merge").cursor_position, 19);
 
 is(
   parse(readTest("with-body/COMMIT_EDITMSG"), "commit").body,
@@ -97,6 +99,7 @@ is(
 #	modified:   README.md
 #`,
 );
+is(parse(readTest("with-body/COMMIT_EDITMSG"), "commit").cursor_position, 82);
 
 is(
   parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").body,
@@ -119,6 +122,10 @@ is(
 #	new file:   a.txt
 #`,
 );
+is(
+  parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").cursor_position,
+  42,
+);
 
 is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").body, ``);
 is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").detail, `master`);
@@ -136,6 +143,7 @@ is(
 #	new file:   a.txt
 #`,
 );
+is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").cursor_position, 0);
 
 is(
   parse(readTest("rebase-merge/git-rebase-todo"), "rebase").body,
@@ -173,7 +181,12 @@ is(
 #
 # However, if you remove everything, the rebase will be aborted.
 #
-`);
+`,
+);
+is(
+  parse(readTest("rebase-merge/git-rebase-todo"), "rebase").cursor_position,
+  0,
+);
 
 is(parse(readTest("TAG_EDITMSG"), "tag").body, ``);
 is(parse(readTest("TAG_EDITMSG"), "tag").detail, `1.0.0`);
@@ -185,6 +198,7 @@ is(
 #   1.0.0
 # Lines starting with '#' will be ignored.`,
 );
+is(parse(readTest("TAG_EDITMSG"), "tag").cursor_position, 0);
 
 is(parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").body, ``);
 is(
@@ -211,6 +225,10 @@ is(
     .comment_separator,
   "\nHG:",
 );
+is(
+  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").cursor_position,
+  0,
+);
 
 is(
   parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
@@ -232,4 +250,67 @@ HG: user: Sonny Piers <sonny@fastmail.net>
 HG: branch 'default'
 HG: added foobar
 `,
+);
+is(
+  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").cursor_position,
+  24,
+);
+
+is(
+  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").body,
+  `Squashed commit of the following:
+
+commit a0cd27f9567cfaf278b0af1e5f8e158397babb35
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:24 2022 +0100
+
+    add b.txt
+
+commit de9914cb5224550b41b6880da31a11a143be04b2
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:12 2022 +0100
+
+    add foo to a.txt
+
+commit 44b63dfb9196a4dbd71d027cad6575494472d970
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:00 2022 +0100
+
+    add a.txt`,
+);
+is(
+  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").detail,
+  undefined,
+);
+is(
+  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").comment,
+  `
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   a.txt
+#	new file:   b.txt
+#
+# Changes not staged for commit:
+#	modified:   src/application.js
+#
+`,
+);
+is(
+  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").cursor_position,
+  0,
+);
+
+is(
+  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").detail,
+  undefined,
+);
+is(
+  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").cursor_position,
+  0,
 );

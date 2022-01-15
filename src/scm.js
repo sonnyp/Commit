@@ -15,6 +15,16 @@ export function parse(commit, type) {
   if (type === "add -p") {
     detail = commit.substr(2 /* "# " */, commit.indexOf("\n") - 1).trim();
     commit = commit.substr(commit.indexOf("\n") + 1);
+  } else if (
+    type === "commit" &&
+    commit.startsWith("Squashed commit of the following")
+  ) {
+    type = "git-merge-squash";
+  } else if (
+    type === "commit" &&
+    commit.startsWith("# This is a combination of")
+  ) {
+    type = "git-rebase-squash";
   }
 
   // Split the message into the commit body and comment
@@ -26,6 +36,7 @@ export function parse(commit, type) {
   body = body.trimEnd();
 
   const commentLines = comment.split("\n");
+  let cursor_position = body.length;
   if (type === "hg") {
     detail = getMercurialBranch(commentLines);
   } else if (type === "commit") {
@@ -41,9 +52,21 @@ export function parse(commit, type) {
     const _detail = commentLines[1].replace("# ", "");
     const _detailChunks = _detail.split(" ");
     detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
+    cursor_position = 0;
+  } else if (
+    ["add -p", "git-merge-squash", "git-rebase-squash"].includes(type)
+  ) {
+    cursor_position = 0;
   }
 
-  return { body, comment, detail, comment_prefix, comment_separator };
+  return {
+    body,
+    comment,
+    detail,
+    comment_prefix,
+    comment_separator,
+    cursor_position,
+  };
 }
 
 export function getType(filename) {

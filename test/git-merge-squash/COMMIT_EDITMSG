@@ -1,0 +1,34 @@
+Squashed commit of the following:
+
+commit a0cd27f9567cfaf278b0af1e5f8e158397babb35
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:24 2022 +0100
+
+    add b.txt
+
+commit de9914cb5224550b41b6880da31a11a143be04b2
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:12 2022 +0100
+
+    add foo to a.txt
+
+commit 44b63dfb9196a4dbd71d027cad6575494472d970
+Author: Sonny Piers <sonny@fastmail.net>
+Date:   Sat Jan 15 16:42:00 2022 +0100
+
+    add a.txt
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   a.txt
+#	new file:   b.txt
+#
+# Changes not staged for commit:
+#	modified:   src/application.js
+#

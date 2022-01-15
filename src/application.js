@@ -105,10 +105,10 @@ function openEditor({ file, application }) {
   }
 
   const {
-    body: commitBody,
     comment: commitComment,
     detail,
     comment_separator,
+    cursor_position,
   } = parse(commitMessage, type);
 
   const commitCommentLines = commitComment.split("\n");
@@ -125,35 +125,20 @@ function openEditor({ file, application }) {
   // Add the dialog to the application as its main window.
   application.add_window(window);
 
-  let startOfText = buffer.get_start_iter();
-
   // This is not user undo-able
   // if it was we could wrap it between
   // buffer.begin_irreversible_action();
   // buffer.end_irreversible_action();
   buffer.set_text(commitMessage, -1);
 
-  // The iterator now points to the end of the inserted section.
-  // Reset it to either the start of the body of the commit message
-  // (if there is one) or to the very start of the text and place the
-  // cursor there, ready for person to start editing it.
-  startOfText =
-    commitBody.length > 0
-      ? buffer.get_iter_at_offset(commitBody.length)
-      : buffer.get_start_iter();
-  buffer.place_cursor(startOfText);
+  buffer.place_cursor(buffer.get_iter_at_offset(cursor_position));
 
   // Set the original comment to be non-editable.
   const nonEditableTag = Gtk.TextTag.new("NonEditable");
   nonEditableTag.editable = false;
   buffer.tag_table.add(nonEditableTag);
   const endOfText = buffer.get_end_iter();
-  buffer.apply_tag(nonEditableTag, startOfText, endOfText);
-
-  // Special case: for git add -p edit hunk messages, place the cursor at start.
-  if (type === "add -p") {
-    buffer.place_cursor(buffer.get_start_iter());
-  }
+  buffer.apply_tag(nonEditableTag, buffer.get_start_iter(), endOfText);
 
   // Validate the commit button on start (if we have an auto-generated
   // body of the commit message, it should be enabled).
