@@ -10,7 +10,7 @@ import { getType, parse } from "./scm.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
 
-const ByteArray = imports.byteArray;
+const textDecoder = new TextDecoder();
 
 export default function Application({ version }) {
   const application = new Adw.Application({
@@ -96,10 +96,7 @@ function openEditor({ file, application }) {
     return;
   }
 
-  commitMessage = ByteArray.toString(commitMessage);
-
-  // Escape text as we will be using markup to populate the buffer.
-  commitMessage = GLib.markup_escape_text(commitMessage, -1);
+  commitMessage = textDecoder.decode(commitMessage);
 
   const type = getType(filePath);
   // This should not happen.
@@ -128,9 +125,13 @@ function openEditor({ file, application }) {
   // Add the dialog to the application as its main window.
   application.add_window(window);
 
-  // Update the text in the interface using markup.
   let startOfText = buffer.get_start_iter();
-  buffer.insert_markup(startOfText, commitMessage, -1);
+
+  // This is not user undo-able
+  // if it was we could wrap it between
+  // buffer.begin_irreversible_action();
+  // buffer.end_irreversible_action();
+  buffer.set_text(commitMessage, -1);
 
   // The iterator now points to the end of the inserted section.
   // Reset it to either the start of the body of the commit message

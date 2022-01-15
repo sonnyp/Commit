@@ -18,6 +18,8 @@ globals:
   window: readonly
   globalThis: readonly
   __DEV__: readonly
+  TextDecoder: readonly
+  TextEncoder: readonly
 parserOptions:
   sourceType: module
 rules:
