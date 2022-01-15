@@ -35,8 +35,6 @@ export default function editor({
   const commentLines = comment.split("\n");
   const numberOfLinesInComment = commentLines.length;
 
-  let lastActionWasSelectAll;
-
   // Save the number of lines in the commit message.
   let previousNumberOfLinesInCommitMessage = 1;
 
@@ -109,15 +107,6 @@ export default function editor({
   });
 
   buffer.connect("end-user-action", () => {
-    // Due to the non-editable region, the selection for a
-    // Select All is not automatically cleared by the
-    // system. So let’s detect it and clear it ourselves.
-    if (lastActionWasSelectAll) {
-      lastActionWasSelectAll = false;
-      const cursorIterator = buffer.get_iter_at_offset(buffer.cursor_position);
-      buffer.select_range(cursorIterator, cursorIterator);
-    }
-
     // Take measurements
     let lines = buffer.text.split("\n");
     let firstLineLength = unicodeLength(lines[0]);
@@ -178,7 +167,6 @@ export default function editor({
 
     // Carry this out on the next stack frame.
     GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
-      lastActionWasSelectAll = true;
       // Redo the selection to limit it to the commit message
       // only (exclude the original commit comment).
       const selectStartIterator = buffer.get_start_iter();
