@@ -16,7 +16,10 @@
               <object class="GtkButton" id="cancelButton">
                 <property name="label" translatable="yes">Abort</property>
                 <property name="action-name">win.cancel</property>
-                <property name="tooltip-text">Cancel and dismiss</property>
+                <property
+                  name="tooltip-text"
+                  translatable="yes"
+                >Cancel and dismiss</property>
               </object>
             </child>
             <child type="end">
@@ -24,7 +27,10 @@
                 <property name="label">Commit</property>
                 <property name="sensitive">False</property>
                 <property name="action-name">win.commit</property>
-                <property name="tooltip-text">Save and confirm</property>
+                <property
+                  name="tooltip-text"
+                  translatable="yes"
+                >Save and confirm</property>
                 <style>
                   <class name="suggested-action" />
                 </style>
