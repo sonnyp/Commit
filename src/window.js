@@ -22,7 +22,9 @@ export default function Window({
 
   if (type) {
     const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
-    window.set_title(`${type}: ${projectDirectoryName} (${detail})`);
+    let title = `${type}: ${projectDirectoryName}`;
+    if (detail) title += ` (${detail})`;
+    window.set_title(title);
   }
 
   window.set_application(application);
