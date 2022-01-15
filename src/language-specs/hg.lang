@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  This is very simple for now but we hope to add support for rebase and so on
+  and contribute it to GtkSourceView
+  https://wiki.gnome.org/Projects/GtkSourceView/LanguageDefinitions
+  https://builder.readthedocs.io/en/latest/plugins/editor/highlighting.html
+  https://gnome.pages.gitlab.gnome.org/gtksourceview/gtksourceview5/lang-tutorial.html
+  https://gnome.pages.gitlab.gnome.org/gtksourceview/gtksourceview5/lang-reference.html
+  https://gitlab.gnome.org/GNOME/gtksourceview/-/tree/master/data/language-specs
+ -->
+<language id="hg" name="Mercurial" version="2.0" _section="Other">
+  <metadata>
+    <property name="line-comment-start">HG:</property>
+  </metadata>
+
+    <styles>
+
+    <!-- General -->
+    <style id="comment" name="Comment" map-to="def:comment" />
+
+</styles>
+
+  <definitions>
+
+
+    <context id="_comment-content" class-disabled="no-spell-check">
+      <include>
+        <context ref="def:in-comment" />
+      </include>
+    </context> <!-- /_comment-content -->
+
+    <context id="_single-line-comment-content">
+      <include>
+        <context ref="_comment-content" />
+      </include>
+    </context> <!-- /_single-line-comment-content -->
+
+
+   <context id="comments">
+      <include>
+        <context ref="_single-line-comments" />
+      </include>
+    </context> <!-- /comments -->
+
+    <context
+      id="_single-line-comments"
+      style-ref="comment"
+      end-at-line-end="true"
+      class-disabled="no-spell-check"
+      class="comment"
+    >
+      <start>HG:</start>
+      <include>
+        <context ref="_single-line-comment-content" />
+      </include>
+    </context> <!-- /_git-comments -->
+
+    <context id="hg">
+      <include>
+        <context ref="comments" />
+      </include>
+    </context>
+  </definitions>
+</language>

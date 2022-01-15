@@ -16,13 +16,21 @@ const style_manager = Adw.StyleManager.get_default();
 const language_manager = GtkSource.LanguageManager.get_default();
 language_manager.set_search_path([
   ...language_manager.get_search_path(),
-  relativePath("."),
+  relativePath("language-specs"),
 ]);
-const language = language_manager.get_language("scm");
 
 export default GObject.registerClass(
   {
     GTypeName: "Editor",
+    Properties: {
+      type: GObject.ParamSpec.string(
+        "type",
+        "The editor type",
+        "Set to hg or git",
+        GObject.ParamFlags.READWRITE,
+        null,
+      ),
+    },
     Template: template,
     Children: ["view", "buffer"],
     Signals: {
@@ -33,7 +41,7 @@ export default GObject.registerClass(
     _init(params = {}) {
       super._init(params);
 
-      this.buffer.set_language(language);
+      this.buffer.set_language(language_manager.get_language(this.type));
 
       this.update_css();
       style_manager.connect("notify::dark", this.update_css.bind(this));

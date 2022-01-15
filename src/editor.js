@@ -21,7 +21,7 @@ export default function editor({
   let previousNumberOfLinesInCommitMessage = 1;
 
   const main = builder.get_object("main");
-  const widget = new Editor();
+  const widget = new Editor({ type: type === "hg" ? "hg" : "git" });
   main.append(widget);
   const source_view = widget.view;
 
