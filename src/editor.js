@@ -30,10 +30,9 @@ export default function editor({
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
+  // yellow_1 - works well with light and dark mode
+  highlightBackgroundTag.background = "#F9F06B";
   buffer.tag_table.add(highlightBackgroundTag);
-  function setHighlightColour() {
-    highlightBackgroundTag.background = getHighlightColour(source_view);
-  }
 
   function highlightText() {
     if (!["commit", "merge", "hg"].includes(type)) return;
@@ -167,41 +166,10 @@ export default function editor({
     return false;
   });
 
-  widget.connect("style-updated", setHighlightColour);
-
   return { source_view, buffer };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686
 function unicodeLength(str) {
   return [...str].length;
-}
-
-function getHighlightColour(textView) {
-  // Get the overflow text background highlight colour based on the
-  // colour of the foreground text.
-
-  // Colour shade guide for Minty Rose: https://www.color-hex.com/color/ffe4e1
-  const darkForegroundHighlightColour = "#ffe4e1"; // minty rose
-  const lightForegroundHighlightColour = "#4c4443"; // darker shade of minty rose
-  let highlightColour;
-  const fontColour = textView.get_style_context().get_color();
-
-  // Luma calculation courtesy: https://stackoverflow.com/a/12043228
-  const luma =
-    0.2126 * fontColour.red +
-    0.7152 * fontColour.green +
-    0.0722 * fontColour.blue; // ITU-R BT.709
-
-  // As get_color() returns r/g/b values between 0 and 1, the luma calculation will
-  // return values between 0 and 1 also.
-  if (luma > 0.5) {
-    // The foreground is light, use darker shade of original highlight colour.
-    highlightColour = lightForegroundHighlightColour;
-  } else {
-    // The foreground is dark, use original highlight colour.
-    highlightColour = darkForegroundHighlightColour;
-  }
-
-  return highlightColour;
 }

@@ -43,20 +43,13 @@ export default GObject.registerClass(
 
       this.buffer.set_language(language_manager.get_language(this.language));
 
-      this.update_css();
-      style_manager.connect("notify::dark", this.update_css.bind(this));
+      this.update_style();
+      style_manager.connect("notify::dark", this.update_style.bind(this));
     }
 
-    update_css() {
+    update_style() {
       const scheme = style_manager.dark ? "Adwaita-dark" : "Adwaita";
       this.buffer.set_style_scheme(scheme_manager.get_scheme(scheme));
-    }
-
-    // In GTK3 we had a signal widget.connect("style-updated")
-    // but there is only vfunc options in GTK4
-    vfunc_css_changed(...args) {
-      super.vfunc_css_changed(...args);
-      super.emit("style-updated");
     }
   },
 );
