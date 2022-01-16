@@ -32,10 +32,9 @@ export function parse(commit, type) {
   // body = commit.slice(0, firstCommentIndex).trimEnd();
   // const comment = commit.slice(firstCommentIndex);
 
-  const { body, comment, read_only_index } = splitMessage(
-    commit,
-    comment_prefix,
-  );
+  const split = splitMessage(commit, comment_prefix);
+  let { body } = split;
+  const { comment, read_only_index } = split;
 
   // Trim any newlines there may be at the end of the commit body
   // body = body.trimEnd();
@@ -63,6 +62,12 @@ export function parse(commit, type) {
     cursor_position = 0;
   }
 
+  let capitalize = false;
+  if (["hg", "commit", "merge", "tag"].includes(type)) {
+    body = body.charAt(0).toUpperCase() + body.slice(1);
+    capitalize = true;
+  }
+
   return {
     body,
     comment,
@@ -72,6 +77,7 @@ export function parse(commit, type) {
     cursor_position,
     read_only_index,
     language,
+    capitalize,
   };
 }
 

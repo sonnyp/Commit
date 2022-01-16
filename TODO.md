@@ -12,8 +12,6 @@
 11. [ ] menu in editor window headerbar center
 12. [ ] find good ideas at https://github.com/zorgiepoo/Komet/releases/tag/0.1
 13. [ ] max length 72 (github/gitlab wraps)
-14. [ ] Auto capitalize first letter
-15. [ ] detect non imperative mood
+14. [ ] detect non imperative mood
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
-capitalize first word

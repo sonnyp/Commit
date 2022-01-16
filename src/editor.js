@@ -1,5 +1,6 @@
 import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
+import GtkSource from "gi://GtkSource";
 
 import Editor from "./Editor.js";
 
@@ -23,6 +24,7 @@ export default function editor({
     read_only_index,
     language,
     comment_prefix,
+    capitalize,
   } = parse(commitMessage, type);
 
   if (type) {
@@ -108,15 +110,29 @@ export default function editor({
   });
 
   buffer.connect("end-user-action", () => {
+    let { cursor_position } = buffer;
+
+    // Auto capitalize first character
+    if (capitalize === true && cursor_position === 1) {
+      const first_character = buffer.text[0];
+      const first_character_uppercase = first_character.toUpperCase();
+      if (first_character !== first_character_uppercase) {
+        buffer.change_case(
+          GtkSource.ChangeCaseType.UPPER,
+          buffer.get_start_iter(),
+          buffer.get_iter_at_offset(1),
+        );
+      }
+    }
+
     // Take measurements
     let lines = buffer.text.split("\n");
     let firstLineLength = unicodeLength(lines[0]);
-    let cursorPosition = buffer.cursor_position;
     let numberOfLinesInCommitMessage = lines.length + 1;
 
     if (
       /* in the correct place */
-      cursorPosition === firstLineLength + 1 &&
+      cursor_position === firstLineLength + 1 &&
       /* and the first line is empty */
       unicodeLength(lines[0].replace(/ /g, "")) === 0 &&
       /* and the second line is empty (to avoid
@@ -135,7 +151,7 @@ export default function editor({
       // Update measurements as the buffer has changed.
       lines = buffer.text.split("\n");
       firstLineLength = unicodeLength(lines[0]);
-      cursorPosition = buffer.cursor_position;
+      cursor_position = buffer.cursor_position;
       numberOfLinesInCommitMessage = lines.length + 1;
     }
 
@@ -143,7 +159,7 @@ export default function editor({
     // of the commit message from the first (summary) line.
     if (
       /* in the correct place */
-      cursorPosition === firstLineLength + 1 &&
+      cursor_position === firstLineLength + 1 &&
       numberOfLinesInCommitMessage === numberOfLinesInComment + 3 &&
       /* and person didn’t reach here by deleting existing content */
       numberOfLinesInCommitMessage > previousNumberOfLinesInCommitMessage

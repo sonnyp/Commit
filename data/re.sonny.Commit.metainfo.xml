@@ -42,8 +42,10 @@
         Supports git commit messages, merge messages, tag messages, add -p
         messages, and rebase -i messages
       </li>
+      <li>Auto capitalize the commit title</li>
       <li>Supports Mercurial commit messages</li>
       <li>Welcome window with settings and instructions</li>
+      <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
   </description>
   <url type="homepage">https://github.com/sonnyp/Commit</url>
@@ -96,6 +98,7 @@
           <li>Highlight syntax for Git, Mercurial and diffs</li>
           <li>Add a shortcuts window</li>
           <li>Support for multiple comments</li>
+          <li>Auto capitalize the commit title</li>
           <li>Various fixes</li>
         </ul>
       </description>

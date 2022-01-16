@@ -238,7 +238,7 @@ is(
 
 is(
   parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
-  `foo this is great
+  `Foo this is great
 
 hello`,
 );
