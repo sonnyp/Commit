@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 12:51+0100\n"
+"POT-Creation-Date: 2022-01-16 13:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "Commit"
 msgstr ""
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
-#: src/about.js:10
+#: src/about.js:9
 msgid "Commit message editor"
 msgstr ""
 
@@ -259,7 +259,7 @@ msgid "Properly recognize executable path"
 msgstr ""
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
-#: src/about.js:19
+#: src/about.js:18
 msgid "translator-credits"
 msgstr ""
 

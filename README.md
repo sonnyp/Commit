@@ -19,10 +19,6 @@ flatpak install re.sonny.Commit
 flatpak run re.sonny.Commit # Follow instructions
 ```
 
-|      Distro      |                   Package Name/Link                    |                   Maintainer                    |
-| :--------------: | :----------------------------------------------------: | :---------------------------------------------: |
-| Arch Linux (aur) | [`commit`](https://aur.archlinux.org/packages/commit/) | [Mark Wagie](https://github.com/yochananmarqos) |
-
 ## Tips and trick
 
 ### Emojis
@@ -163,7 +159,7 @@ Many thanks to its original author [Aral Balkan](https://ar.al) of [Small Techno
 
 ## Copyright
 
-- © 2020-2021 [Sonny Piers](https://github.com/sonnyp)
+- © 2020-2022 [Sonny Piers](https://github.com/sonnyp)
 - © 2018-2020 [Aral Balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License

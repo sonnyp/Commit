@@ -2,13 +2,12 @@ import Gtk from "gi://Gtk";
 import { gettext as _ } from "gettext";
 
 export default function About({ application, version }) {
-  // https://gjs-docs.gnome.org/gtk30~3.24.8/gtk.aboutdialog
   const dialog = new Gtk.AboutDialog({
     application,
     authors: ["Sonny Piers https://sonny.re", "Aral Balkan https://ar.al/"],
     artists: ["Tobias Bernard <tbernard@gnome.org>"],
     comments: _("Commit message editor"),
-    copyright: "© 2020-2021 Sonny Piers\n© 2018-2020 Aral Balkan",
+    copyright: "© 2020-2022 Sonny Piers\n© 2018-2020 Aral Balkan",
     license_type: Gtk.License.GPL_3_0,
     version,
     website: "https://github.com/sonnyp/Commit",
