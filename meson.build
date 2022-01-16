@@ -1,9 +1,18 @@
-project('re.sonny.Commit', version: '3.0.0', meson_version: '>= 0.50.0',)
+project('re.sonny.Commit',
+  version: '3.0.0',
+  meson_version: '>= 0.59.0',
+  license: 'GPL-3.0'
+)
 
+gnome = import('gnome')
 i18n = import('i18n')
 
 subdir('data')
 subdir('src')
 subdir('po')
 
-meson.add_install_script('build-aux/meson/postinstall.py')
+gnome.post_install(
+  glib_compile_schemas: true,
+  gtk_update_icon_cache: true,
+  update_desktop_database: true
+)
