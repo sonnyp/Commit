@@ -48,8 +48,9 @@ export default function editor({
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
-  // yellow_1 - works well with light and dark mode
-  highlightBackgroundTag.background = "#F9F06B";
+  // Works well with light and dark mode
+  const [, color] = source_view.get_style_context().lookup_color("yellow_1");
+  highlightBackgroundTag.background = color.to_string();
   buffer.tag_table.add(highlightBackgroundTag);
 
   buffer.connect("changed", () => {
