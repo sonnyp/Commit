@@ -1,12 +1,10 @@
 import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
-import GtkSource from "gi://GtkSource?version=5";
+import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
 
 import { relativePath } from "./util.js";
-
-GtkSource.init();
 
 const file = Gio.File.new_for_path(relativePath("./Editor.ui"));
 const [, template] = file.load_contents(null);

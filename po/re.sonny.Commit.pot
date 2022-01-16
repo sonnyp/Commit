@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 23:40+0100\n"
+"POT-Creation-Date: 2022-01-16 10:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,6 +259,46 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
+#: src/ShortcutsWindow.ui:9
+msgid "Editing"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:16 src/window.ui:33
+msgid "Save and confirm"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:25 src/window.ui:22
+msgid "Cancel and dismiss"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:34
+msgid "Open emoji chooser"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:45
+msgid "Move current line up/down"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:53
+msgid "Select All"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:61
+msgid "Unelect All"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:68
+msgid "General"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:75 src/welcome.ui:192
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: src/ShortcutsWindow.ui:81
+msgid "Quit"
+msgstr ""
+
 #: src/window.ui:17
 msgid "Abort"
 msgstr ""
@@ -298,10 +338,6 @@ msgstr ""
 
 #: src/welcome.ui:172
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
-
-#: src/welcome.ui:192
-msgid "Keyboard Shortcuts"
 msgstr ""
 
 #: src/welcome.ui:196

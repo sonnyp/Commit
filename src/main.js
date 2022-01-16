@@ -1,4 +1,5 @@
 import Adw from "gi://Adw?version=1";
+import GtkSource from "gi://GtkSource?version=5";
 
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
@@ -10,6 +11,8 @@ import Application from "./application.js";
 
 GLib.set_prgname("re.sonny.Commit");
 GLib.set_application_name("Commit");
+
+GtkSource.init();
 
 function updateDarkMode() {
   Adw.StyleManager.get_default().set_color_scheme(

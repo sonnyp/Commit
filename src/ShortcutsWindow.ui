@@ -22,7 +22,7 @@
                 <property
                   name="title"
                   translatable="yes"
-                >Abort and dismiss</property>
+                >Cancel and dismiss</property>
               </object>
             </child>
             <child>
