@@ -16,6 +16,16 @@ export default function editor({
   commitMessage,
   window,
 }) {
+  let parsed = {};
+
+  try {
+    parsed = parse(commitMessage, type);
+  } catch (err) {
+    if (__DEV__) {
+      logError(err);
+    }
+  }
+
   const {
     body,
     comment,
@@ -25,7 +35,7 @@ export default function editor({
     language,
     comment_prefix,
     capitalize,
-  } = parse(commitMessage, type);
+  } = parsed;
 
   if (type) {
     const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());

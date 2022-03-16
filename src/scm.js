@@ -114,7 +114,7 @@ export function getGitTag(commentLines) {
   // Try to get the tag via a method that relies on
   // positional aspect of the branch name so it should work with
   // other languages.
-  return commentLines[3].slice(1).trim();
+  return commentLines[3]?.slice(1).trim();
 }
 
 function splitMessage(commit, comment_prefix) {

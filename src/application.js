@@ -40,7 +40,12 @@ export default function Application({ version }) {
   // Open gets called when a file is passed as a command=line argument.
   // We expect Git or Mercurial to pass us one file.
   application.connect("open", (self, files, hint) => {
-    if (__DEV__) log("open");
+    if (__DEV__) {
+      console.log(
+        "open",
+        files.map((file) => file.get_path()),
+      );
+    }
 
     if (files.length !== 1) {
       openWelcome({ application });
