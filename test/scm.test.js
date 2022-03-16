@@ -356,3 +356,5 @@ is(
   parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").cursor_position,
   0,
 );
+
+is(parse(readTest("empty-tag-msg/TAG_EDITMSG"), "tag").tag, undefined);
