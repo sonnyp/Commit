@@ -25,16 +25,13 @@
     </p>
     <p>Features:</p>
     <ul>
-      <li>
-        Highlights overflow of title when it exceeds 50 characters
-        (customizable)
-      </li>
-      <li>Inserts blank line between title and description</li>
+      <li>Highlights overflow of the commit title</li>
+      <li>Automatically wraps the commit body</li>
+      <li>Inserts a blank line between title and body</li>
       <!-- <li>Spell checking</li> -->
       <li>Comments are readonly and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
       <li>Dark mode support</li>
-      <li>Custom theme support</li>
       <li>Keyboard navigation and shortcuts</li>
       <li>Undo and redo support</li>
       <li>Emoji picker</li>
@@ -42,8 +39,8 @@
         Supports git commit messages, merge messages, tag messages, add -p
         messages, and rebase -i messages
       </li>
-      <li>Auto capitalize the commit title</li>
       <li>Supports Mercurial commit messages</li>
+      <li>Auto capitalize the commit title</li>
       <li>Welcome window with settings and instructions</li>
       <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
@@ -97,8 +94,9 @@
           <li>Add keyboard shortcuts for moving lines up and down</li>
           <li>Highlight syntax for Git, Mercurial and diffs</li>
           <li>Add a shortcuts window</li>
-          <li>Support for multiple comments</li>
+          <li>Support multiple comments</li>
           <li>Auto capitalize the commit title</li>
+          <li>Automatically wrap commit message body</li>
           <li>Various fixes</li>
         </ul>
       </description>

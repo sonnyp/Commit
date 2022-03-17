@@ -2,10 +2,10 @@ import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 import GtkSource from "gi://GtkSource";
 
-import Editor from "./Editor.js";
+import CommitEditor from "./CommitEditor.js";
 
 import { settings } from "./util.js";
-import { parse, hasCommitMessage } from "./scm.js";
+import { hasCommitMessage } from "./scm.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 
@@ -13,19 +13,9 @@ export default function editor({
   builder,
   commitButton,
   type,
-  commitMessage,
   window,
+  parsed,
 }) {
-  let parsed = {};
-
-  try {
-    parsed = parse(commitMessage, type);
-  } catch (err) {
-    if (__DEV__) {
-      logError(err);
-    }
-  }
-
   const {
     body,
     comment,
@@ -51,7 +41,7 @@ export default function editor({
   let previousNumberOfLinesInCommitMessage = 1;
 
   const main = builder.get_object("main");
-  const widget = new Editor({ language });
+  const widget = new CommitEditor({ language });
   main.append(widget);
   const source_view = widget.view;
 

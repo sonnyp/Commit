@@ -111,7 +111,7 @@ function openEditor({ file, application, readonly }) {
   try {
     [, commitMessage] = GLib.file_get_contents(filePath);
   } catch (err) {
-    printerr(err);
+    logError(err);
     application.quit();
     return;
   }

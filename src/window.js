@@ -4,7 +4,8 @@ import Gio from "gi://Gio";
 
 import Editor from "./editor.js";
 
-import { relativePath } from "./util.js";
+import { relativePath, settings } from "./util.js";
+import { parse, wrap } from "./scm.js";
 
 export default function Window({
   application,
@@ -13,11 +14,27 @@ export default function Window({
   type,
   readonly,
 }) {
-  const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
+  let parsed = {};
+  try {
+    parsed = parse(commitMessage, type);
+  } catch (err) {
+    if (__DEV__) {
+      logError(err);
+    }
+  }
 
+  const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
   const window = builder.get_object("window");
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
+
+  const { buffer, source_view } = Editor({
+    builder,
+    commitButton,
+    type,
+    window,
+    parsed,
+  });
 
   window.set_application(application);
 
@@ -35,18 +52,18 @@ export default function Window({
     parameter_type: null,
   });
   commitAction.connect("activate", () => {
-    const value = buffer.text;
-    save({ file, application, value, readonly });
+    const { text } = buffer;
+    const value = parsed.wrap
+      ? wrap(text, settings.get_int("body-length-wrap"))
+      : text;
+    save({
+      file,
+      application,
+      value,
+      readonly,
+    });
   });
   window.add_action(commitAction);
-
-  const { buffer, source_view } = Editor({
-    builder,
-    commitButton,
-    type,
-    commitMessage,
-    window,
-  });
 
   // https://github.com/sonnyp/Commit/issues/33
   window.set_focus(source_view);
@@ -59,7 +76,7 @@ function save({ file, value, application, readonly }) {
     try {
       GLib.file_set_contents(file.get_path(), value);
     } catch (err) {
-      printerr(err);
+      logError(err);
     }
   }
 

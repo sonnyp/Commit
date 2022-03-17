@@ -42,7 +42,6 @@
       </include>
     </context> <!-- /comments -->
 
-
     <context
       id="_single-line-comments"
       style-ref="comment"

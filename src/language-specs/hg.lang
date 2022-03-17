@@ -53,7 +53,7 @@
       <include>
         <context ref="_single-line-comment-content" />
       </include>
-    </context> <!-- /_git-comments -->
+    </context> <!-- /_single-line-comments -->
 
     <context id="hg">
       <include>
