@@ -23,6 +23,7 @@
             <property name="vexpand">True</property>
             <child>
               <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Preferences</property>
                 <child>
                   <object class="AdwPreferencesRow">
                     <child>
@@ -30,11 +31,28 @@
                         <property
                           name="title"
                           translatable="yes"
-                        >Message title length hint</property>
+                        >Title maximum length (in characters)</property>
                         <child>
-                          <object class="GtkSpinButton" id="spinButton">
-                            <property name="value">50</property>
-                            <property name='numeric'>True</property>
+                          <object class="GtkSpinButton" id="button_hint">
+                            <property name='numeric'>true</property>
+                            <property name='valign'>center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPreferencesRow">
+                    <child>
+                      <object class="AdwActionRow">
+                        <property
+                          name="title"
+                          translatable="yes"
+                        >Body lines maximum length (in characters)</property>
+                        <child>
+                          <object class="GtkSpinButton" id="button_wrap">
+                            <property name='numeric'>true</property>
                             <property name='valign'>center</property>
                           </object>
                         </child>

@@ -3,9 +3,16 @@
   <schema id="re.sonny.Commit" path="/re/sonny/Commit/">
     <key name='title-length-hint' type='i'>
       <default>50</default>
-      <range min="1" />
-      <summary>Message title length hint</summary>
+      <range min="50" />
+      <summary>Title maximum length (in characters)</summary>
     </key>
+
+    <key name='body-length-wrap' type='i'>
+      <default>72</default>
+      <range min="72" />
+      <summary>Body lines maximum length (in characters)</summary>
+    </key>
+
     <key name='dark-mode' type='b'>
       <default>false</default>
       <summary>Use dark mode</summary>

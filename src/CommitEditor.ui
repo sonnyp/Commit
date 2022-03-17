@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <template class="CommitEditor" parent="GtkScrolledWindow">
+    <property name="vexpand">true</property>
+    <child>
+      <object class="GtkSourceView" id="view">
+        <property name="buffer">
+          <object class="GtkSourceBuffer" id="buffer" />
+        </property>
+        <property name="monospace">true</property>
+        <!-- <property name="show-right-margin">true</property> -->
+        <property name="wrap_mode">word-char</property>
+        <property name="top-margin">6</property>
+        <property name="left-margin">6</property>
+        <property name="right-margin">6</property>
+        <property name="bottom-margin">6</property>
+        <property name="input_hints">
+          GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_WORD_COMPLETION |
+          GTK_INPUT_HINT_EMOJI | GTK_INPUT_HINT_UPPERCASE_SENTENCES
+        </property>
+      </object>
+    </child>
+  </template>
+</interface>

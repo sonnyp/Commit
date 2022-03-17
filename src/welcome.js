@@ -12,15 +12,26 @@ export default function Welcome({ application }) {
 
   loadStyleSheet(relativePath("./style.css"));
 
-  const spinButton = builder.get_object("spinButton");
-  spinButton.set_range(50, 200);
-  spinButton.set_increments(1, 10);
+  const button_hint = builder.get_object("button_hint");
+  button_hint.set_range(...getRange("title-length-hint"));
+  button_hint.set_increments(1, 10);
   settings.bind(
     "title-length-hint",
-    spinButton,
+    button_hint,
     "value",
     Gio.SettingsBindFlags.DEFAULT,
   );
+
+  const button_wrap = builder.get_object("button_wrap");
+  button_wrap.set_range(...getRange("body-length-wrap"));
+  button_wrap.set_increments(1, 10);
+  settings.bind(
+    "body-length-wrap",
+    button_wrap,
+    "value",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+
   const darkSwitch = builder.get_object("darkSwitch");
   Adw.StyleManager.get_default().bind_property(
     "dark",
@@ -77,4 +88,13 @@ function getCommand() {
     programInvocationName,
     GLib.get_current_dir(),
   );
+}
+
+function getRange(key) {
+  const range = settings.get_range(key).unpack()[1].unpack();
+
+  return [
+    range.get_child_value(0).get_int32(),
+    range.get_child_value(1).get_int32(),
+  ];
 }

@@ -15,3 +15,7 @@
 14. [ ] detect non imperative mood
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
+https://robertcooper.me/post/git-commit-messages
+https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+https://wiki.gnome.org/Git/CommitMessages
+https://cbea.ms/git-commit/

@@ -1,5 +1,5 @@
 import Gio from "gi://Gio";
-import { parse, getType, hasCommitMessage } from "../src/scm.js";
+import { parse, getType, hasCommitMessage, wrap } from "../src/scm.js";
 
 const { byteArray } = imports;
 
@@ -21,6 +21,33 @@ export function is(actual, expected, message) {
     );
   }
 }
+
+is(
+  wrap(
+    `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
+
+This is the commit body and it should wrap at the specified length. This follows various recommendations and is useful for terminal.
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+# Comment shouldn't be stripped, hg/git takes care of that
+
+By the way it should work with multiple commit body lines so let's see if this is wrapped as well.
+`,
+    75,
+  ),
+  `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
+
+This is the commit body and it should wrap at the specified length. This
+follows various recommendations and is useful for terminal.
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+# Comment shouldn't be stripped, hg/git takes care of that
+
+By the way it should work with multiple commit body lines so let's see if
+this is wrapped as well.
+`,
+);
 
 is(getType("/foo/bar/addp-hunk-edit.diff"), "add -p");
 is(getType("/foo/bar/COMMIT_EDITMSG"), "commit");

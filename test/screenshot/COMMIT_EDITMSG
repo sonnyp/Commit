@@ -1,6 +1,9 @@
-This is the commit title; it should be short. Commit will highlight if it exceeds 72 characters (customizable).
+This is the commit title; it should be short. Commit will highlight if it exceeds 50 characters.
 
-Everything after the first blank line is the commit description. It can be as long as you like.
+Everything after the first blank line is the commit body. It can be as long
+as you like. Commit will automatically wrap it to 75 characters.
+
+Both options are customizable.
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -10,5 +13,5 @@ Everything after the first blank line is the commit description. It can be as lo
 # Initial commit
 #
 # Changes to be committed:
-#	new file:   a.txt
+#   new file: a.txt
 #

@@ -6,7 +6,7 @@ import Adw from "gi://Adw";
 
 import { relativePath } from "./util.js";
 
-const file = Gio.File.new_for_path(relativePath("./Editor.ui"));
+const file = Gio.File.new_for_path(relativePath("./CommitEditor.ui"));
 const [, template] = file.load_contents(null);
 
 const scheme_manager = GtkSource.StyleSchemeManager.get_default();
@@ -19,7 +19,7 @@ language_manager.set_search_path([
 
 export default GObject.registerClass(
   {
-    GTypeName: "Editor",
+    GTypeName: "CommitEditor",
     Properties: {
       language: GObject.ParamSpec.string(
         "language",
@@ -35,7 +35,7 @@ export default GObject.registerClass(
       "style-updated": {},
     },
   },
-  class Editor extends Gtk.ScrolledWindow {
+  class CommitEditor extends Gtk.ScrolledWindow {
     _init(params = {}) {
       super._init(params);
 

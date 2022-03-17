@@ -1,3 +1,5 @@
+import wordwrap from "./wordwrap.js";
+
 export function parse(commit, type) {
   let detail;
   let comment_prefix = "#";
@@ -28,10 +30,6 @@ export function parse(commit, type) {
   }
 
   // Split the message into the commit body and comment
-  // const firstCommentIndex = commit.indexOf(comment_separator);
-  // body = commit.slice(0, firstCommentIndex).trimEnd();
-  // const comment = commit.slice(firstCommentIndex);
-
   const split = splitMessage(commit, comment_prefix);
   let { body } = split;
   const { comment, read_only_index } = split;
@@ -78,6 +76,13 @@ export function parse(commit, type) {
     read_only_index,
     language,
     capitalize,
+    wrap: [
+      "hg",
+      "commit",
+      "git-merge-squash",
+      "git-rebase-squash",
+      "merge",
+    ].includes(type),
   };
 }
 
@@ -143,4 +148,9 @@ export function hasCommitMessage(str, comment_prefix) {
     line = line.trim();
     return line.length > 0 && !line.startsWith(comment_prefix);
   });
+}
+
+export function wrap(text, length = 75) {
+  const [, title, body] = text.match(/^(.+)\n\n([\s\S]*)$/);
+  return title + `\n\n` + wordwrap(0, length, { mode: "hard" })(body);
 }
