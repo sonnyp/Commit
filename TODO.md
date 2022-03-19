@@ -16,6 +16,11 @@
 15. [ ] show warning when there is a period at the end of the title
 16. [ ] deduplicate spaces between words
 
+add one use instructions with GIT_EDITOR=... git commit and equivalent for hg
+make ure we don' wrap body at "# and it becomes a comment by having "#" put on the next line
+UI for rebase
+prevent #stuff from being highlighted as a comment if it's not at the start of line
+
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
 https://robertcooper.me/post/git-commit-messages
 https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/

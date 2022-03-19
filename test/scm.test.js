@@ -19,13 +19,10 @@ function readTest(name) {
   return new TextDecoder().decode(contents);
 }
 
-// test("scm", () => {
-
-// });
-
-assert.is(
-  wrap(
-    `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
+test("wrap", () => {
+  assert.is(
+    wrap(
+      `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
 
 This is the commit body and it should wrap at the specified length. This follows various recommendations and is useful for terminal.
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -35,10 +32,10 @@ And this is not a comment so let's make sure noting happens to it hehe # I am no
 
 By the way it should work with multiple commit body lines so let's see if this is wrapped as well.
 `,
-    75,
-    "#",
-  ),
-  `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
+      75,
+      "#",
+    ),
+    `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
 
 This is the commit body and it should wrap at the specified length. This
 follows various recommendations and is useful for terminal.
@@ -52,36 +49,61 @@ am not a comment
 By the way it should work with multiple commit body lines so let's see if
 this is wrapped as well.
 `,
-);
+  );
+});
 
-assert.is(getType("/foo/bar/addp-hunk-edit.diff"), "add -p");
-assert.is(getType("/foo/bar/COMMIT_EDITMSG"), "commit");
-assert.is(getType("/foo/bar/rebase-merge/git-rebase-todo"), "rebase");
-assert.is(getType("/foo/bar/MERGE_MSG"), "merge");
-assert.is(getType("/foo/bar/TAG_EDITMSG"), "tag");
-assert.is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
+test.skip("wrap does not move comment prefix to the start of next line", () => {
+  const comment_prefix = "#";
+  assert.is(
+    wrap(
+      `Some commit title
 
-assert.is(hasCommitMessage("foo\n#hello", "#"), true);
-assert.is(hasCommitMessage("foo", "#"), true);
-assert.is(hasCommitMessage("# hello\nfoo", "#"), true);
-assert.is(hasCommitMessage("", "#"), false);
-assert.is(hasCommitMessage("# hello", "#"), false);
-assert.is(hasCommitMessage(" ", "#"), false);
-assert.is(hasCommitMessage(" \n#\n ", "#"), false);
+123456789${comment_prefix}hello
+`,
+      9,
+      comment_prefix,
+    ),
+    `Some commit title
 
-assert.is(
-  parse(readTest("addp-hunk-edit.diff"), "add -p").body,
-  `# Manual hunk edit mode -- see bottom for a quick guide.
+    12345678
+    9${comment_prefix}hello
+`,
+  );
+});
+
+test("getType", () => {
+  assert.is(getType("/foo/bar/addp-hunk-edit.diff"), "add -p");
+  assert.is(getType("/foo/bar/COMMIT_EDITMSG"), "commit");
+  assert.is(getType("/foo/bar/rebase-merge/git-rebase-todo"), "rebase");
+  assert.is(getType("/foo/bar/MERGE_MSG"), "merge");
+  assert.is(getType("/foo/bar/TAG_EDITMSG"), "tag");
+  assert.is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
+});
+
+test("hasCommitMessage", () => {
+  assert.is(hasCommitMessage("foo\n#hello", "#"), true);
+  assert.is(hasCommitMessage("foo", "#"), true);
+  assert.is(hasCommitMessage("# hello\nfoo", "#"), true);
+  assert.is(hasCommitMessage("", "#"), false);
+  assert.is(hasCommitMessage("# hello", "#"), false);
+  assert.is(hasCommitMessage(" ", "#"), false);
+  assert.is(hasCommitMessage(" \n#\n ", "#"), false);
+});
+
+test("parse", () => {
+  assert.is(
+    parse(readTest("addp-hunk-edit.diff"), "add -p").body,
+    `# Manual hunk edit mode -- see bottom for a quick guide.
 @@ -1,3 +1,4 @@
  d
  b
  c
 +e`,
-);
-assert.is(parse(readTest("addp-hunk-edit.diff"), "add -p").detail, undefined);
-assert.is(
-  parse(readTest("addp-hunk-edit.diff"), "add -p").comment,
-  `
+  );
+  assert.is(parse(readTest("addp-hunk-edit.diff"), "add -p").detail, undefined);
+  assert.is(
+    parse(readTest("addp-hunk-edit.diff"), "add -p").comment,
+    `
 # ---
 # To remove '-' lines, make them ' ' lines (context).
 # To remove '+' lines, delete them.
@@ -92,40 +114,46 @@ assert.is(
 # If it does not apply cleanly, you will be given an opportunity to
 # edit again.  If all lines of the hunk are removed, then the edit is
 # aborted and the hunk is left unchanged.`,
-);
-assert.is(parse(readTest("addp-hunk-edit.diff"), "add -p").comment_prefix, "#");
-assert.is(
-  parse(readTest("addp-hunk-edit.diff"), "add -p").comment_separator,
-  "\n#",
-);
-assert.is(parse(readTest("addp-hunk-edit.diff"), "add -p").cursor_position, 0);
+  );
+  assert.is(
+    parse(readTest("addp-hunk-edit.diff"), "add -p").comment_prefix,
+    "#",
+  );
+  assert.is(
+    parse(readTest("addp-hunk-edit.diff"), "add -p").comment_separator,
+    "\n#",
+  );
+  assert.is(
+    parse(readTest("addp-hunk-edit.diff"), "add -p").cursor_position,
+    0,
+  );
 
-assert.is(parse(readTest("MERGE_MSG"), "merge").body, `Merge branch 'test'`);
-assert.is(parse(readTest("MERGE_MSG"), "merge").detail, `branch test`);
-assert.is(
-  parse(readTest("MERGE_MSG"), "merge").comment,
-  `
+  assert.is(parse(readTest("MERGE_MSG"), "merge").body, `Merge branch 'test'`);
+  assert.is(parse(readTest("MERGE_MSG"), "merge").detail, `branch test`);
+  assert.is(
+    parse(readTest("MERGE_MSG"), "merge").comment,
+    `
 # Please enter a commit message to explain why this merge is necessary,
 # especially if it merges an updated upstream into a topic branch.
 #
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.`,
-);
-assert.is(parse(readTest("MERGE_MSG"), "merge").cursor_position, 19);
+  );
+  assert.is(parse(readTest("MERGE_MSG"), "merge").cursor_position, 19);
 
-assert.is(
-  parse(readTest("with-body/COMMIT_EDITMSG"), "commit").body,
-  `Do something great with this commit message, perhaps tell of your adventures?
+  assert.is(
+    parse(readTest("with-body/COMMIT_EDITMSG"), "commit").body,
+    `Do something great with this commit message, perhaps tell of your adventures?
 
 This is another line.`,
-);
-assert.is(
-  parse(readTest("with-body/COMMIT_EDITMSG"), "commit").detail,
-  `master`,
-);
-assert.is(
-  parse(readTest("with-body/COMMIT_EDITMSG"), "commit").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("with-body/COMMIT_EDITMSG"), "commit").detail,
+    `master`,
+  );
+  assert.is(
+    parse(readTest("with-body/COMMIT_EDITMSG"), "commit").comment,
+    `
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
@@ -135,25 +163,25 @@ assert.is(
 # Changes to be committed:
 #	modified:   README.md
 #`,
-);
-assert.is(
-  parse(readTest("with-body/COMMIT_EDITMSG"), "commit").cursor_position,
-  100,
-);
+  );
+  assert.is(
+    parse(readTest("with-body/COMMIT_EDITMSG"), "commit").cursor_position,
+    100,
+  );
 
-assert.is(
-  parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").body,
-  `Implement awesome new feature
+  assert.is(
+    parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").body,
+    `Implement awesome new feature
 
 Closes #123`,
-);
-assert.is(
-  parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").detail,
-  `master`,
-);
-assert.is(
-  parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").detail,
+    `master`,
+  );
+  assert.is(
+    parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").comment,
+    `
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
@@ -164,20 +192,20 @@ assert.is(
 # Changes to be committed:
 #	new file:   a.txt
 #`,
-);
-assert.is(
-  parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").cursor_position,
-  42,
-);
+  );
+  assert.is(
+    parse(readTest("with-octohorpe/COMMIT_EDITMSG"), "commit").cursor_position,
+    42,
+  );
 
-assert.is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").body, ``);
-assert.is(
-  parse(readTest("without-body/COMMIT_EDITMSG"), "commit").detail,
-  `master`,
-);
-assert.is(
-  parse(readTest("without-body/COMMIT_EDITMSG"), "commit").comment,
-  `
+  assert.is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").body, ``);
+  assert.is(
+    parse(readTest("without-body/COMMIT_EDITMSG"), "commit").detail,
+    `master`,
+  );
+  assert.is(
+    parse(readTest("without-body/COMMIT_EDITMSG"), "commit").comment,
+    `
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
@@ -188,24 +216,24 @@ assert.is(
 # Changes to be committed:
 #	new file:   a.txt
 #`,
-);
-assert.is(
-  parse(readTest("without-body/COMMIT_EDITMSG"), "commit").cursor_position,
-  0,
-);
+  );
+  assert.is(
+    parse(readTest("without-body/COMMIT_EDITMSG"), "commit").cursor_position,
+    0,
+  );
 
-assert.is(
-  parse(readTest("rebase-merge/git-rebase-todo"), "rebase").body,
-  `pick f353b3a this commit message is too long please fix me! wow so long commit message! damn!
+  assert.is(
+    parse(readTest("rebase-merge/git-rebase-todo"), "rebase").body,
+    `pick f353b3a this commit message is too long please fix me! wow so long commit message! damn!
 pick 688174c Im ok`,
-);
-assert.is(
-  parse(readTest("rebase-merge/git-rebase-todo"), "rebase").detail,
-  `d44e355..688174c → d44e355`,
-);
-assert.is(
-  parse(readTest("rebase-merge/git-rebase-todo"), "rebase").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("rebase-merge/git-rebase-todo"), "rebase").detail,
+    `d44e355..688174c → d44e355`,
+  );
+  assert.is(
+    parse(readTest("rebase-merge/git-rebase-todo"), "rebase").comment,
+    `
 # Rebase d44e355..688174c onto d44e355 (2 commands)
 #
 # Commands:
@@ -231,35 +259,35 @@ assert.is(
 # However, if you remove everything, the rebase will be aborted.
 #
 `,
-);
-assert.is(
-  parse(readTest("rebase-merge/git-rebase-todo"), "rebase").cursor_position,
-  0,
-);
+  );
+  assert.is(
+    parse(readTest("rebase-merge/git-rebase-todo"), "rebase").cursor_position,
+    0,
+  );
 
-assert.is(parse(readTest("TAG_EDITMSG"), "tag").body, ``);
-assert.is(parse(readTest("TAG_EDITMSG"), "tag").detail, `1.0.0`);
-assert.is(
-  parse(readTest("TAG_EDITMSG"), "tag").comment,
-  `
+  assert.is(parse(readTest("TAG_EDITMSG"), "tag").body, ``);
+  assert.is(parse(readTest("TAG_EDITMSG"), "tag").detail, `1.0.0`);
+  assert.is(
+    parse(readTest("TAG_EDITMSG"), "tag").comment,
+    `
 #
 # Write a message for tag:
 #   1.0.0
 # Lines starting with '#' will be ignored.`,
-);
-assert.is(parse(readTest("TAG_EDITMSG"), "tag").cursor_position, 0);
+  );
+  assert.is(parse(readTest("TAG_EDITMSG"), "tag").cursor_position, 0);
 
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").body,
-  ``,
-);
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").detail,
-  "default",
-);
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").comment,
-  `
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").body,
+    ``,
+  );
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").detail,
+    "default",
+  );
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").comment,
+    `
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
 HG: Leave message empty to abort commit.
 HG: --
@@ -267,34 +295,36 @@ HG: user: Sonny Piers <sonny@fastmail.net>
 HG: branch 'default'
 HG: added foobar
 `,
-);
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").comment_prefix,
-  "HG:",
-);
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
-    .comment_separator,
-  "\nHG:",
-);
-assert.is(
-  parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg").cursor_position,
-  0,
-);
+  );
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
+      .comment_prefix,
+    "HG:",
+  );
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
+      .comment_separator,
+    "\nHG:",
+  );
+  assert.is(
+    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
+      .cursor_position,
+    0,
+  );
 
-assert.is(
-  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
-  `Foo this is great
+  assert.is(
+    parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
+    `Foo this is great
 
 hello`,
-);
-assert.is(
-  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").detail,
-  "default",
-);
-assert.is(
-  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").detail,
+    "default",
+  );
+  assert.is(
+    parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").comment,
+    `
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
 HG: Leave message empty to abort commit.
 HG: --
@@ -302,15 +332,15 @@ HG: user: Sonny Piers <sonny@fastmail.net>
 HG: branch 'default'
 HG: added foobar
 `,
-);
-assert.is(
-  parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").cursor_position,
-  24,
-);
+  );
+  assert.is(
+    parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").cursor_position,
+    24,
+  );
 
-assert.is(
-  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").body,
-  `Squashed commit of the following:
+  assert.is(
+    parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").body,
+    `Squashed commit of the following:
 
 commit a0cd27f9567cfaf278b0af1e5f8e158397babb35
 Author: Sonny Piers <sonny@fastmail.net>
@@ -329,14 +359,14 @@ Author: Sonny Piers <sonny@fastmail.net>
 Date:   Sat Jan 15 16:42:00 2022 +0100
 
     add a.txt`,
-);
-assert.is(
-  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").detail,
-  undefined,
-);
-assert.is(
-  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").detail,
+    undefined,
+  );
+  assert.is(
+    parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").comment,
+    `
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
@@ -352,15 +382,16 @@ assert.is(
 #	modified:   src/application.js
 #
 `,
-);
-assert.is(
-  parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit").cursor_position,
-  0,
-);
+  );
+  assert.is(
+    parse(readTest("git-merge-squash/COMMIT_EDITMSG"), "commit")
+      .cursor_position,
+    0,
+  );
 
-assert.is(
-  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").body,
-  `# This is a combination of 3 commits.
+  assert.is(
+    parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").body,
+    `# This is a combination of 3 commits.
 # This is the 1st commit message:
 
 add a.txt
@@ -372,14 +403,14 @@ add foo to a.txt
 # This is the commit message #3:
 
 add b.txt`,
-);
-assert.is(
-  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").detail,
-  undefined,
-);
-assert.is(
-  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").comment,
-  `
+  );
+  assert.is(
+    parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").detail,
+    undefined,
+  );
+  assert.is(
+    parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").comment,
+    `
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
@@ -397,13 +428,15 @@ assert.is(
 #	new file:   b.txt
 #
 `,
-);
-assert.is(
-  parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit").cursor_position,
-  0,
-);
+  );
+  assert.is(
+    parse(readTest("git-rebase-squash/COMMIT_EDITMSG"), "commit")
+      .cursor_position,
+    0,
+  );
 
-assert.is(parse(readTest("empty-tag-msg/TAG_EDITMSG"), "tag").tag, undefined);
+  assert.is(parse(readTest("empty-tag-msg/TAG_EDITMSG"), "tag").tag, undefined);
+});
 
 test.run();
 loop.run();

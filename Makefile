@@ -22,8 +22,8 @@ bundle:
 
 test:
 	./node_modules/.bin/eslint --cache .
-	flatpak run org.freedesktop.appstream-glib validate data/re.sonny.Commit.metainfo.xml
-	appstreamcli validate data/re.sonny.Commit.metainfo.xml
+	# flatpak run org.freedesktop.appstream-glib validate data/re.sonny.Commit.metainfo.xml
+	appstreamcli validate --no-net data/re.sonny.Commit.metainfo.xml
 	desktop-file-validate --no-hints data/re.sonny.Commit.desktop
 	# gtk-builder-tool validate src/*.ui
 	gjs -m test/*.test.js
