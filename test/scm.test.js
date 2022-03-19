@@ -12,6 +12,13 @@ test.after(() => {
   loop.quit();
 });
 
+function readTest(name) {
+  const file = Gio.File.new_for_uri(import.meta.url);
+  const data = file.get_parent().resolve_relative_path(`fixtures/${name}`);
+  const [, contents] = data.load_contents(null);
+  return new TextDecoder().decode(contents);
+}
+
 // test("scm", () => {
 
 // });
@@ -61,13 +68,6 @@ assert.is(hasCommitMessage("", "#"), false);
 assert.is(hasCommitMessage("# hello", "#"), false);
 assert.is(hasCommitMessage(" ", "#"), false);
 assert.is(hasCommitMessage(" \n#\n ", "#"), false);
-
-function readTest(name) {
-  const file = Gio.File.new_for_uri(import.meta.url);
-  const data = file.get_parent().resolve_relative_path(`${name}`);
-  const [, contents] = data.load_contents(null);
-  return new TextDecoder().decode(contents);
-}
 
 assert.is(
   parse(readTest("addp-hunk-edit.diff"), "add -p").body,

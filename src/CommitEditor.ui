@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <requires lib="GtkSource" version="5.0" />
   <template class="CommitEditor" parent="GtkScrolledWindow">
     <property name="vexpand">true</property>
     <child>

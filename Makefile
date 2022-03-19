@@ -23,10 +23,11 @@ bundle:
 test:
 	./node_modules/.bin/eslint --cache .
 	flatpak run org.freedesktop.appstream-glib validate data/re.sonny.Commit.metainfo.xml
+	appstreamcli validate data/re.sonny.Commit.metainfo.xml
 	desktop-file-validate --no-hints data/re.sonny.Commit.desktop
 	# gtk-builder-tool validate src/*.ui
 	gjs -m test/*.test.js
-	flatpak-builder --show-manifest re.sonny.Commit.json
+	flatpak-builder --show-manifest re.sonny.Commit.json > /dev/null
 	find po/ -type f -name "*po" -print0 | xargs -0 -n1 msgfmt -o /dev/null --check
 
 clean:
