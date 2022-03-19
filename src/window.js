@@ -54,7 +54,7 @@ export default function Window({
   commitAction.connect("activate", () => {
     const { text } = buffer;
     const value = parsed.wrap
-      ? wrap(text, settings.get_int("body-length-wrap"))
+      ? wrap(text, settings.get_int("body-length-wrap"), parsed.comment_prefix)
       : text;
     save({
       file,

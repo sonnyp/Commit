@@ -29,11 +29,13 @@ is(
 This is the commit body and it should wrap at the specified length. This follows various recommendations and is useful for terminal.
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-# Comment shouldn't be stripped, hg/git takes care of that
+# Comment should be stripped, wordwrap does not support prefixing and hg/git will take care of it anyway.
+And this is not a comment so let's make sure noting happens to it hehe # I am not a comment
 
 By the way it should work with multiple commit body lines so let's see if this is wrapped as well.
 `,
     75,
+    "#",
   ),
   `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
 
@@ -42,7 +44,9 @@ follows various recommendations and is useful for terminal.
 fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 fffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-# Comment shouldn't be stripped, hg/git takes care of that
+# Comment should be stripped, wordwrap does not support prefixing and hg/git will take care of it anyway.
+And this is not a comment so let's make sure noting happens to it hehe # I
+am not a comment
 
 By the way it should work with multiple commit body lines so let's see if
 this is wrapped as well.
