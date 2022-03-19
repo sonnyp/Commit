@@ -8,7 +8,7 @@
           <object class="GtkSourceBuffer" id="buffer" />
         </property>
         <property name="monospace">true</property>
-        <!-- <property name="show-right-margin">true</property> -->
+        <property name="show-right-margin">false</property>
         <property name="wrap_mode">word-char</property>
         <property name="top-margin">6</property>
         <property name="left-margin">6</property>

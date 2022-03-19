@@ -4,7 +4,7 @@ import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
 
-import { relativePath } from "./util.js";
+import { relativePath, settings } from "./util.js";
 
 const file = Gio.File.new_for_path(relativePath("./CommitEditor.ui"));
 const [, template] = file.load_contents(null);
@@ -43,6 +43,13 @@ export default GObject.registerClass(
 
       this.update_style();
       style_manager.connect("notify::dark", this.update_style.bind(this));
+
+      settings.bind(
+        "body-length-wrap",
+        this.view,
+        "right-margin-position",
+        Gio.SettingsBindFlags.DEFAULT,
+      );
     }
 
     update_style() {

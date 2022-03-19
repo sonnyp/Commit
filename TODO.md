@@ -13,6 +13,8 @@
 12. [ ] find good ideas at https://github.com/zorgiepoo/Komet/releases/tag/0.1
 13. [ ] max length 72 (github/gitlab wraps)
 14. [ ] detect non imperative mood
+15. [ ] show warning when there is a period at the end of the title
+16. [ ] deduplicate spaces between words
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
 https://robertcooper.me/post/git-commit-messages

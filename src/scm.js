@@ -151,6 +151,8 @@ export function hasCommitMessage(str, comment_prefix) {
 }
 
 export function wrap(text, length = 75) {
-  const [, title, body] = text.match(/^(.+)\n\n([\s\S]*)$/);
+  const match = text.match(/^(.+)\n\n([\s\S]*)$/);
+  if (!match) return text;
+  const [, title, body] = match;
   return title + `\n\n` + wordwrap(0, length, { mode: "hard" })(body);
 }
