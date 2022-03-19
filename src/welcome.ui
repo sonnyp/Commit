@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface>
   <object class="AdwApplicationWindow" id="window">
-    <property name="resizable">True</property>
+    <property name="resizable">true</property>
     <property name="default_width">560</property>
     <property name="default_height">660</property>
     <property name="title" translatable="yes">Commit</property>
@@ -20,7 +20,7 @@
         </child>
         <child>
           <object class="AdwPreferencesPage">
-            <property name="vexpand">True</property>
+            <property name="vexpand">true</property>
             <child>
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Preferences</property>
@@ -93,9 +93,9 @@
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="git_text">
-                        <property name="use-markup">True</property>
-                        <property name="wrap">True</property>
-                        <property name="selectable">True</property>
+                        <property name="use-markup">true</property>
+                        <property name="wrap">true</property>
+                        <property name="selectable">true</property>
                         <property name="xalign">0</property>
                         <style>
                           <class name="code" />
@@ -152,9 +152,9 @@
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="hg_text">
-                        <property name="use-markup">True</property>
-                        <property name="wrap">True</property>
-                        <property name="selectable">True</property>
+                        <property name="use-markup">true</property>
+                        <property name="wrap">true</property>
+                        <property name="selectable">true</property>
                         <property name="xalign">0</property>
                         <style>
                           <class name="code" />

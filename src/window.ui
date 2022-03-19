@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface>
   <object class="AdwApplicationWindow" id="window">
-    <property name="resizable">True</property>
-    <property name="default_width">560</property>
-    <property name="default_height">240</property>
+    <property name="resizable">true</property>
+    <property name="default_width">654</property>
+    <property name="default_height">272</property>
     <property name="title">Commit</property>
     <child>
       <object class="GtkBox" id="main">
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
-            <property name="show_start_title_buttons">False</property>
-            <property name="show_end_title_buttons">False</property>
+            <property name="show_start_title_buttons">false</property>
+            <property name="show_end_title_buttons">false</property>
             <child>
               <object class="GtkButton" id="cancelButton">
                 <property name="label" translatable="yes">Abort</property>
@@ -25,7 +25,7 @@
             <child type="end">
               <object class="GtkButton" id="commitButton">
                 <property name="label">Commit</property>
-                <property name="sensitive">False</property>
+                <property name="sensitive">false</property>
                 <property name="action-name">win.commit</property>
                 <property
                   name="tooltip-text"
