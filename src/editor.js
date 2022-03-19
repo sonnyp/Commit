@@ -55,9 +55,12 @@ export default function editor({
   highlightBackgroundTag.background = color.to_string();
   buffer.tag_table.add(highlightBackgroundTag);
 
+  let has_commit_message = false;
+
   buffer.connect("changed", () => {
-    // Set commit button sensitive if there is a commit message
-    commitButton.set_sensitive(hasCommitMessage(buffer.text, comment_prefix));
+    has_commit_message = hasCommitMessage(buffer.text, comment_prefix);
+
+    commitButton.set_sensitive(has_commit_message);
 
     // Do not highlight any other type
     if (!["commit", "merge", "hg"].includes(type)) return;
@@ -109,21 +112,12 @@ export default function editor({
     read_only_index,
   });
 
+  const capitalizer = Capitalizer({ capitalize, comment_prefix });
+
   buffer.connect("end-user-action", () => {
     let { cursor_position } = buffer;
 
-    // Auto capitalize first character
-    if (capitalize === true && cursor_position === 1) {
-      const first_character = buffer.text[0];
-      const first_character_uppercase = first_character.toUpperCase();
-      if (first_character !== first_character_uppercase) {
-        buffer.change_case(
-          GtkSource.ChangeCaseType.UPPER,
-          buffer.get_start_iter(),
-          buffer.get_iter_at_offset(1),
-        );
-      }
-    }
+    capitalizer(buffer, cursor_position, has_commit_message);
 
     // Take measurements
     let lines = buffer.text.split("\n");
@@ -218,4 +212,79 @@ function markCommentReadonly({ buffer, read_only_index }) {
 
   // This is used for select-all
   buffer.create_mark("comment", comment_iter, false);
+}
+
+function Capitalizer({ capitalize }) {
+  let capitalized_first_character;
+  let capitalized_after_tag;
+  let tag_detected;
+  let complete;
+
+  function reset() {
+    capitalized_first_character = false;
+    capitalized_after_tag = false;
+    tag_detected = false;
+    complete = !capitalize;
+  }
+
+  reset();
+
+  return function capitalizer(buffer, cursor_position, has_commit_message) {
+    if (!has_commit_message) {
+      reset();
+    }
+
+    if (complete) return;
+
+    // First, we upper case the very first letter
+    if (cursor_position === 1 && !capitalized_first_character) {
+      capitalized_first_character = true;
+      if (!buffer.text[0].match(/[a-z]/)) return;
+      buffer.change_case(
+        GtkSource.ChangeCaseType.UPPER,
+        buffer.get_start_iter(),
+        buffer.get_iter_at_offset(1),
+      );
+      return;
+    }
+
+    if (capitalized_after_tag) return;
+
+    const last_chars = buffer.text.slice(cursor_position - 3, cursor_position);
+
+    // then, if we detect a tag - like "feat: " - we undo first step
+    if (!tag_detected && last_chars.match(/\S: /)) {
+      tag_detected = !!buffer
+        .get_slice(
+          buffer.get_start_iter(),
+          buffer.get_iter_at_offset(cursor_position),
+          false,
+        )
+        .match(/^\S+: /);
+      if (!tag_detected) {
+        complete = true;
+        return;
+      }
+
+      if (capitalized_first_character) {
+        buffer.change_case(
+          GtkSource.ChangeCaseType.LOWER,
+          buffer.get_start_iter(),
+          buffer.get_iter_at_offset(1),
+        );
+      }
+      return;
+    }
+
+    // Finally, we uppercase the first latter afte the tag "feat: A"
+    if (tag_detected && last_chars.startsWith(": ")) {
+      capitalized_after_tag = true;
+      buffer.change_case(
+        GtkSource.ChangeCaseType.UPPER,
+        buffer.get_iter_at_offset(cursor_position - 1),
+        buffer.get_iter_at_offset(cursor_position),
+      );
+      complete = true;
+    }
+  };
 }
