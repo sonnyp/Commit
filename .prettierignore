@@ -4,3 +4,5 @@ flatpak/
 node_modules/
 repo/
 src/wordwrap.js
+test/assert.js
+test/uvu.js
