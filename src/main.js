@@ -48,7 +48,7 @@ export default function main(argv, { version, datadir }) {
       GLib.spawn_async(null, argv, null, GLib.SpawnFlags.DEFAULT, null);
     });
     application.add_action(restart);
-    application.set_accels_for_action("app.restart", ["<Primary><Shift>Q"]);
+    application.set_accels_for_action("app.restart", ["<Control><Shift>Q"]);
   }
 
   return application.run(argv);

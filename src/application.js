@@ -82,10 +82,10 @@ export default function Application({ version }) {
     ShortcutsWindow({ application });
   });
   application.add_action(showShortCutsWindow);
-  application.set_accels_for_action("app.shortcuts", ["<Primary>question"]);
+  application.set_accels_for_action("app.shortcuts", ["<Control>question"]);
 
   application.set_accels_for_action("win.cancel", ["Escape"]);
-  application.set_accels_for_action("win.commit", ["<Primary>Return"]);
+  application.set_accels_for_action("win.commit", ["<Control>Return"]);
 
   return application;
 }
@@ -101,7 +101,7 @@ function openWelcome({ application }) {
     application.quit();
   });
   application.add_action(quit);
-  application.set_accels_for_action("app.quit", ["<Primary>Q"]);
+  application.set_accels_for_action("app.quit", ["<Control>Q"]);
 }
 
 function openEditor({ file, application, readonly }) {

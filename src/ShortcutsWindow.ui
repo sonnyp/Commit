@@ -10,7 +10,7 @@
             <property name="title" translatable="yes">Editing</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;Return</property>
+                <property name="accelerator">&lt;Control&gt;Return</property>
                 <property
                   name="title"
                   translatable="yes"
@@ -28,7 +28,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;period</property>
+                <property name="accelerator">&lt;Control&gt;period</property>
                 <property
                   name="title"
                   translatable="yes"
@@ -50,7 +50,7 @@
               <object class="GtkShortcutsShortcut">
                 <property
                   name="accelerator"
-                >&lt;Primary&gt;a &lt;Primary&gt;slash</property>
+                >&lt;Control&gt;a &lt;Control&gt;slash</property>
                 <property name="title" translatable="yes">Select All</property>
               </object>
             </child>
@@ -58,7 +58,7 @@
               <object class="GtkShortcutsShortcut">
                 <property
                   name="accelerator"
-                >&lt;Shift&gt;&lt;Primary&gt;a &lt;Primary&gt;backslash</property>
+                >&lt;Shift&gt;&lt;Control&gt;a &lt;Control&gt;backslash</property>
                 <property name="title" translatable="yes">Unelect All</property>
               </object>
             </child>
@@ -69,7 +69,7 @@
             <property name="title" translatable="yes">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;question</property>
+                <property name="accelerator">&lt;Control&gt;question</property>
                 <property
                   name="title"
                   translatable="yes"
@@ -78,7 +78,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;Primary&gt;Q</property>
+                <property name="accelerator">&lt;Control&gt;Q</property>
                 <property name="title" translatable="yes">Quit</property>
               </object>
             </child>
