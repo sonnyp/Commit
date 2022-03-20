@@ -28,7 +28,7 @@ export default function Window({
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
 
-  const { buffer, source_view } = Editor({
+  const { buffer, source_view, editor } = Editor({
     builder,
     commitButton,
     type,
@@ -53,13 +53,15 @@ export default function Window({
   });
   commitAction.connect("activate", () => {
     const { text } = buffer;
-    const value = parsed.wrap
-      ? format(
-          text,
-          settings.get_int("body-length-wrap"),
-          parsed.comment_prefix,
-        )
-      : text;
+
+    const value =
+      parsed.wrap && !editor.isWiderThanWrapWidthRequest()
+        ? format(
+            text,
+            settings.get_int("body-length-wrap"),
+            parsed.comment_prefix,
+          )
+        : text;
     save({
       file,
       application,

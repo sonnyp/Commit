@@ -1,5 +1,6 @@
 import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
+import Gio from "gi://Gio";
 import GtkSource from "gi://GtkSource";
 
 import CommitEditor from "./CommitEditor.js";
@@ -44,6 +45,13 @@ export default function editor({
   const widget = new CommitEditor({ language });
   main.append(widget);
   const source_view = widget.view;
+
+  settings.bind(
+    "body-length-wrap",
+    widget,
+    "wrap-width-request",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
 
   const buffer = source_view.get_buffer();
   buffer.set_enable_undo(true);
@@ -192,7 +200,7 @@ export default function editor({
     return false;
   });
 
-  return { source_view, buffer };
+  return { source_view, buffer, editor: widget };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686

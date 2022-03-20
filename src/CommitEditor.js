@@ -3,8 +3,9 @@ import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
+import Pango from "gi://Pango";
 
-import { relativePath, settings } from "./util.js";
+import { relativePath } from "./util.js";
 
 const file = Gio.File.new_for_path(relativePath("./CommitEditor.ui"));
 const [, template] = file.load_contents(null);
@@ -28,6 +29,16 @@ export default GObject.registerClass(
         GObject.ParamFlags.READWRITE,
         null,
       ),
+      wrap_width_request: GObject.ParamSpec.int(
+        "wrap_width_request",
+        "",
+        "",
+        GObject.ParamFlags.READWRITE,
+        0,
+        9999,
+        // Number.MAX_SAFE_INTEGER,
+        0,
+      ),
     },
     Template: template,
     Children: ["view", "buffer"],
@@ -43,13 +54,36 @@ export default GObject.registerClass(
 
       this.update_style();
       style_manager.connect("notify::dark", this.update_style.bind(this));
+    }
 
-      settings.bind(
-        "body-length-wrap",
-        this.view,
-        "right-margin-position",
-        Gio.SettingsBindFlags.DEFAULT,
+    set wrap_width_request(val) {
+      this.view.right_margin_position = val;
+      this._wrap_width_request = val;
+    }
+
+    get wrap_width_request() {
+      return this._wrap_width_request;
+    }
+
+    isWiderThanWrapWidthRequest() {
+      return (
+        this.view.get_width() >=
+        getWrapPixelWidth(this.view, this._wrap_width_request) +
+          this.view.left_margin
       );
+    }
+
+    _setWrapMode() {
+      this.view.set_wrap_mode(
+        this.isWiderThanWrapWidthRequest()
+          ? Gtk.WrapMode.NONE
+          : Gtk.WrapMode.WORD,
+      );
+    }
+
+    vfunc_size_allocate(width, height, baseline) {
+      this._setWrapMode();
+      return super.vfunc_size_allocate(width, height, baseline);
     }
 
     update_style() {
@@ -58,3 +92,12 @@ export default GObject.registerClass(
     }
   },
 );
+
+function getWrapPixelWidth(textview, length) {
+  const metrics = textview.get_pango_context()?.get_metrics(null, null);
+  const character_width = metrics.get_approximate_char_width() / Pango.SCALE;
+
+  const total_width = character_width * length;
+
+  return Math.ceil(total_width);
+}
