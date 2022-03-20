@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-20 11:42+0100\n"
+"POT-Creation-Date: 2022-03-20 21:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Highlights overflow of the commit title"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:29
+#: data/re.sonny.Commit.metainfo.xml:29 data/re.sonny.Commit.metainfo.xml:96
 msgid "Smart body wrapping"
 msgstr ""
 
@@ -98,170 +98,161 @@ msgid "Keyboard navigation and shortcuts"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:36
-msgid "Undo and redo support"
+msgid "Undo/Redo support"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:38
+#: data/re.sonny.Commit.metainfo.xml:39
 msgid ""
-"Supports git commit messages, merge messages, tag messages, add -p messages, "
-"and rebase -i messages"
+"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:42
-msgid "Supports Mercurial commit messages"
+#: data/re.sonny.Commit.metainfo.xml:40
+msgid "Supports Mercurial commit"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:98
+#: data/re.sonny.Commit.metainfo.xml:41 data/re.sonny.Commit.metainfo.xml:95
 msgid "Auto capitalize the commit title"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:44
+#: data/re.sonny.Commit.metainfo.xml:42
 msgid "Welcome window with settings and instructions"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:45 data/re.sonny.Commit.metainfo.xml:95
+#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:93
 msgid "Highlight syntax for Git, Mercurial and diffs"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:56
+#: data/re.sonny.Commit.metainfo.xml:54
 msgid "Main window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:62
+#: data/re.sonny.Commit.metainfo.xml:60
 msgid "Main window - dark mode"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:68
+#: data/re.sonny.Commit.metainfo.xml:66
 msgid "Emoji selector"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:74
+#: data/re.sonny.Commit.metainfo.xml:72
 msgid "Shortcuts"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:80
+#: data/re.sonny.Commit.metainfo.xml:78
 msgid "Welcome window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:86
+#: data/re.sonny.Commit.metainfo.xml:84
 msgid "Welcome window - dark mode"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:94
+#: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:96
+#: data/re.sonny.Commit.metainfo.xml:94
 msgid "Add a shortcuts window"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:97
-msgid "Support multiple comments"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:99
-msgid "Automatically wrap commit message body"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:100
 msgid "Various fixes"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:107
+#: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:108
+#: data/re.sonny.Commit.metainfo.xml:105
 msgid "Support undo and redo"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:109
+#: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add symbolic icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:110
+#: data/re.sonny.Commit.metainfo.xml:107
 msgid "Add dark mode setting"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:111
+#: data/re.sonny.Commit.metainfo.xml:108
 msgid "Focus the text editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:112
+#: data/re.sonny.Commit.metainfo.xml:109
 msgid "Port to GTK 4 and libadwaita"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:119
+#: data/re.sonny.Commit.metainfo.xml:116
 msgid "Move preferences to welcome window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:117
 msgid "Only highlight text overflow on commits"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:121
+#: data/re.sonny.Commit.metainfo.xml:118
 msgid "New app icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:122
+#: data/re.sonny.Commit.metainfo.xml:119
 msgid "Remove double border"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:129
+#: data/re.sonny.Commit.metainfo.xml:126
 msgid "Add a Preferences window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:130
+#: data/re.sonny.Commit.metainfo.xml:127
 msgid "Set default title length hint to 50 characters"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:131
+#: data/re.sonny.Commit.metainfo.xml:128
 msgid "Fix reading commits with special characters"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:132
+#: data/re.sonny.Commit.metainfo.xml:129
 msgid "Fix git rebase not recognized"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:133
+#: data/re.sonny.Commit.metainfo.xml:130
 msgid "Make windows bottom corners rounded"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:134
+#: data/re.sonny.Commit.metainfo.xml:131
 msgid "Add 6px margin to editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:140
+#: data/re.sonny.Commit.metainfo.xml:137
 msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:145
+#: data/re.sonny.Commit.metainfo.xml:142
 msgid "Show a welcome window when launched from desktop"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:146
+#: data/re.sonny.Commit.metainfo.xml:143
 msgid "Add support for Mercurial"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:147
+#: data/re.sonny.Commit.metainfo.xml:144
 msgid "Remove filesystem permission"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:153
+#: data/re.sonny.Commit.metainfo.xml:150
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:155
+#: data/re.sonny.Commit.metainfo.xml:152
 msgid "Support \"#\" in commit message"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:156
+#: data/re.sonny.Commit.metainfo.xml:153
 msgid "Properly recognize executable path"
 msgstr ""
 

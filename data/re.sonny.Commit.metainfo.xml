@@ -86,13 +86,12 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="3.1.0" date="2022-01-15">
+    <release version="3.1.0" date="2022-03-20">
       <description>
         <ul>
           <li>Add keyboard shortcuts for moving lines up and down</li>
           <li>Highlight syntax for Git, Mercurial and diffs</li>
           <li>Add a shortcuts window</li>
-          <li>Support multiple comments</li>
           <li>Auto capitalize the commit title</li>
           <li>Smart body wrapping</li>
           <li>Various fixes</li>
