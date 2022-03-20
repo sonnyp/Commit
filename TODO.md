@@ -11,18 +11,13 @@
 10. [ ] screenshots welcome window? screenshots emoji selector
 11. [ ] menu in editor window headerbar center
 12. [ ] find good ideas at https://github.com/zorgiepoo/Komet/releases/tag/0.1
-13. [ ] max length 72 (github/gitlab wraps)
-14. [ ] detect non imperative mood
-15. [ ] show warning when there is a period at the end of the title
-16. [ ] deduplicate spaces between words
+13. [ ] detect non imperative mood
+14. [ ] show warning when there is a period at the end of the title
+15. [ ] deduplicate spaces between words
 
 add one use instructions with GIT_EDITOR=... git commit and equivalent for hg
-make ure we don' wrap body at "# and it becomes a comment by having "#" put on the next line
 UI for rebase
-prevent #stuff from being highlighted as a comment if it's not at the start of line
-diasble textview wrap when textview > wrap limit
 autoremove \n when backspacing from the commit body to the commit title
-do not insert newline in rebase
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
 https://robertcooper.me/post/git-commit-messages

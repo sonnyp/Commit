@@ -133,6 +133,7 @@ export default function editor({
     let numberOfLinesInCommitMessage = lines.length + 1;
 
     if (
+      ["commit", "merge", "hg"].includes(type) &&
       /* in the correct place */
       cursor_position === firstLineLength + 1 &&
       /* and the first line is empty */
@@ -160,6 +161,7 @@ export default function editor({
     // Add an empty newline to separate the rest
     // of the commit message from the first (summary) line.
     if (
+      ["commit", "merge", "hg"].includes(type) &&
       /* in the correct place */
       cursor_position === firstLineLength + 1 &&
       numberOfLinesInCommitMessage === numberOfLinesInComment + 3 &&

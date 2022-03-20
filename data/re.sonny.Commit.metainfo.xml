@@ -33,13 +33,11 @@
       <li>Displays project folder and branch in window header</li>
       <li>Dark mode support</li>
       <li>Keyboard navigation and shortcuts</li>
-      <li>Undo and redo support</li>
+      <li>Undo/Redo support</li>
       <li>Emoji picker</li>
-      <li>
-        Supports git commit messages, merge messages, tag messages, add -p
-        messages, and rebase -i messages
-      </li>
-      <li>Supports Mercurial commit messages</li>
+      <li
+      >Supports git commit, merge, tag --annotate, add --patch, rebase --interactive</li>
+      <li>Supports Mercurial commit</li>
       <li>Auto capitalize the commit title</li>
       <li>Welcome window with settings and instructions</li>
       <li>Highlight syntax for Git, Mercurial and diffs</li>
@@ -96,7 +94,7 @@
           <li>Add a shortcuts window</li>
           <li>Support multiple comments</li>
           <li>Auto capitalize the commit title</li>
-          <li>Automatically wrap commit message body</li>
+          <li>Smart body wrapping</li>
           <li>Various fixes</li>
         </ul>
       </description>
