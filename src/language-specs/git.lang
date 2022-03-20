@@ -49,7 +49,7 @@
       class-disabled="no-spell-check"
       class="comment"
     >
-      <start>#</start>
+      <start>^#</start>
       <include>
         <context ref="_single-line-comment-content" />
       </include>
