@@ -1,4 +1,4 @@
-import wordwrap from "./wordwrap.js";
+import wrapbody from "./wrap.js";
 
 export function parse(commit, type) {
   let detail;
@@ -150,18 +150,12 @@ export function hasCommitMessage(str, comment_prefix) {
   });
 }
 
-export function wrap(text, length = 75, comment_prefix) {
+export function format(text, length, comment_prefix) {
   const match = text.match(/^(.+)\n\n([\s\S]*)$/);
   if (!match) return text;
   const [, title, body] = match;
-  const wrap = wordwrap(0, length, { mode: "hard" });
-  const wrapped_body = body
-    .split("\n")
-    .map((line) => {
-      return line.startsWith(comment_prefix) ? line : wrap(line);
-    })
-    .join("\n");
-  return title + `\n\n` + wrapped_body;
+  const wrapped_body = wrapbody(body, length, comment_prefix);
+  return title.trim() + `\n\n` + wrapped_body.trimStart();
 }
 
 export function stripComments(text, comment_prefix) {

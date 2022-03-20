@@ -5,7 +5,7 @@ import * as assert from "./assert.js";
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 
-import { parse, getType, hasCommitMessage, wrap } from "../src/scm.js";
+import { parse, getType, hasCommitMessage, format } from "../src/scm.js";
 
 const loop = GLib.MainLoop.new(null, false);
 test.after(() => {
@@ -19,18 +19,20 @@ function readTest(name) {
   return new TextDecoder().decode(contents);
 }
 
-test("wrap", () => {
+test("format", () => {
   assert.is(
-    wrap(
+    format(
       `This is a very long commit title and it shouldn't wrap, no matter how long it is. No really - no matter how long it is.
 
 This is the commit body and it should wrap at the specified length. This follows various recommendations and is useful for terminal.
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-# Comment should be stripped, wordwrap does not support prefixing and hg/git will take care of it anyway.
+# Comments should be ignore, no matter how long they are, git/hg will stream them anyway.
 And this is not a comment so let's make sure noting happens to it hehe # I am not a comment
 
 By the way it should work with multiple commit body lines so let's see if this is wrapped as well.
+
+# Ignore me
 `,
       75,
       "#",
@@ -39,34 +41,16 @@ By the way it should work with multiple commit body lines so let's see if this i
 
 This is the commit body and it should wrap at the specified length. This
 follows various recommendations and is useful for terminal.
-fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-fffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-# Comment should be stripped, wordwrap does not support prefixing and hg/git will take care of it anyway.
+# Comments should be ignore, no matter how long they are, git/hg will stream them anyway.
 And this is not a comment so let's make sure noting happens to it hehe # I
 am not a comment
 
 By the way it should work with multiple commit body lines so let's see if
 this is wrapped as well.
-`,
-  );
-});
 
-test.skip("wrap does not move comment prefix to the start of next line", () => {
-  const comment_prefix = "#";
-  assert.is(
-    wrap(
-      `Some commit title
-
-123456789${comment_prefix}hello
-`,
-      9,
-      comment_prefix,
-    ),
-    `Some commit title
-
-    12345678
-    9${comment_prefix}hello
+# Ignore me
 `,
   );
 });

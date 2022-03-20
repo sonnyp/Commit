@@ -1,9 +1,6 @@
 import "gi://Gtk?version=4.0";
 import GLib from "gi://GLib";
 
-import System from "system";
-log(System.version);
-
 // https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/696
 export const stdout = (() => {
   const { DataOutputStream, UnixOutputStream } = imports.gi.Gio;

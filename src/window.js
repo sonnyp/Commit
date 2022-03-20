@@ -5,7 +5,7 @@ import Gio from "gi://Gio";
 import Editor from "./editor.js";
 
 import { relativePath, settings } from "./util.js";
-import { parse, wrap } from "./scm.js";
+import { parse, format } from "./scm.js";
 
 export default function Window({
   application,
@@ -54,7 +54,11 @@ export default function Window({
   commitAction.connect("activate", () => {
     const { text } = buffer;
     const value = parsed.wrap
-      ? wrap(text, settings.get_int("body-length-wrap"), parsed.comment_prefix)
+      ? format(
+          text,
+          settings.get_int("body-length-wrap"),
+          parsed.comment_prefix,
+        )
       : text;
     save({
       file,
