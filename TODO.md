@@ -22,6 +22,7 @@ UI for rebase
 prevent #stuff from being highlighted as a comment if it's not at the start of line
 diasble textview wrap when textview > wrap limit
 autoremove \n when backspacing from the commit body to the commit title
+do not insert newline in rebase
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
 https://robertcooper.me/post/git-commit-messages
