@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-18 00:06+0100\n"
-"PO-Revision-Date: 2022-01-09 15:53+0000\n"
-"Last-Translator: Sonny Piers <sonny@sonny.re>\n"
+"PO-Revision-Date: 2022-03-23 11:57+0000\n"
+"Last-Translator: Alexis Metaireau <alexis@notmyidea.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/commit/commit/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
@@ -59,7 +59,7 @@ msgstr "Après l'installation assurez-vous de lancer l'application et de suivre 
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
-msgstr ""
+msgstr "Commit se lancera automatiquement lors d'un commit dans l'un de vos projets. Pour enregistrer votre message de commit, appuyez sur le bouton « Commit » ou bien utilisez la combinaison de touches _Ctrl+Entrée_. Pour abandonner votre message, appuyez sur « Annuler » ou sur la touche _Echap_."
 
 #: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
@@ -92,7 +92,7 @@ msgstr "Affiche le dossier du projet et la branche dans l'en-tête de la fenêtr
 
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Dark mode support"
-msgstr ""
+msgstr "Support du mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Undo and redo support"
-msgstr ""
+msgstr "Support de l'historique d'annulation"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Écran d'accueil avec les paramètres et instructions"
 
 #: data/re.sonny.Commit.metainfo.xml:45 data/re.sonny.Commit.metainfo.xml:95
 msgid "Highlight syntax for Git, Mercurial and diffs"
@@ -184,44 +184,43 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Désactiver temporairement la correction orthographique"
 
 #: data/re.sonny.Commit.metainfo.xml:108
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Support de l'historique d'annulation"
 
 #: data/re.sonny.Commit.metainfo.xml:109
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Ajout d'une icône symbolique"
 
 #: data/re.sonny.Commit.metainfo.xml:110
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Ajout d'un paramètre pour le mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:111
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Donner le focus à l'éditeur de texte"
 
 #: data/re.sonny.Commit.metainfo.xml:112
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "Migration vers GTK4 et libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:119
-#, fuzzy
 msgid "Move preferences to welcome window"
-msgstr "Ajouter une fenêtre de Préférences"
+msgstr "Déplacement des paramètres vers la fenêtre d'accueil"
 
 #: data/re.sonny.Commit.metainfo.xml:120
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Surligner uniquement le dépassement de texte pour les commits"
 
 #: data/re.sonny.Commit.metainfo.xml:121
 msgid "New app icon"
-msgstr ""
+msgstr "Nouvelle icône de l'application"
 
 #: data/re.sonny.Commit.metainfo.xml:122
 msgid "Remove double border"
-msgstr ""
+msgstr "Supprimer la bordure double"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add a Preferences window"
