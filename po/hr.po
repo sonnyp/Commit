@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-18 00:06+0100\n"
-"PO-Revision-Date: 2021-09-21 12:42+0100\n"
+"PO-Revision-Date: 2022-03-23 11:57+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: none\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
@@ -46,7 +47,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:70
 msgid "Use dark mode"
-msgstr ""
+msgstr "Koristi tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
@@ -91,7 +92,7 @@ msgstr "Prikaz mape projekta i grane u zaglavlju prozora"
 
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Dark mode support"
-msgstr ""
+msgstr "Porška za tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
@@ -99,7 +100,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Undo and redo support"
-msgstr ""
+msgstr "Podrška za poništavanje i ponavljanje radnji"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
@@ -119,7 +120,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Uvodni prozor s postavkama i instrukcijama"
 
 #: data/re.sonny.Commit.metainfo.xml:45 data/re.sonny.Commit.metainfo.xml:95
 msgid "Highlight syntax for Git, Mercurial and diffs"
@@ -183,11 +184,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Ukloni provjeru pravopisa privremeno"
 
 #: data/re.sonny.Commit.metainfo.xml:108
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Podrži poništavanje i ponavljanje radnji"
 
 #: data/re.sonny.Commit.metainfo.xml:109
 msgid "Add symbolic icon"
