@@ -42,7 +42,7 @@ msgstr "Nastavenie predvolenej dĺžky titulku na 50 znakov"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:52
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Maximálna dĺžka (v znakoch)"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:70
 msgid "Use dark mode"
@@ -72,7 +72,7 @@ msgstr "Zvýraznenie iba pretečenia textu pri commitoch"
 
 #: data/re.sonny.Commit.metainfo.xml:29
 msgid "Automatically wraps the commit body"
-msgstr ""
+msgstr "Automaticky zalomiť telo správy"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 #, fuzzy
@@ -95,7 +95,7 @@ msgstr "Podpora tmavého režimu"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Navigácia pomocou klávesnice a skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Undo and redo support"
@@ -103,7 +103,7 @@ msgstr "Podporuje späť a znovu"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
-msgstr ""
+msgstr "Výber emodži"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
@@ -115,7 +115,7 @@ msgstr "Podporuje správy commitov Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:98
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Automaticky použiť veľké písmená v titulku"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
@@ -123,7 +123,7 @@ msgstr "Uvítacie okno s nastaveniami a pokynmi"
 
 #: data/re.sonny.Commit.metainfo.xml:45 data/re.sonny.Commit.metainfo.xml:95
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Zvýrazniť syntax pre Git, Mercurial a diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:56
 #, fuzzy
@@ -139,11 +139,11 @@ msgstr "Hlavné okno Commitu - tmavý režim"
 
 #: data/re.sonny.Commit.metainfo.xml:68
 msgid "Emoji selector"
-msgstr ""
+msgstr "Výber emodži"
 
 #: data/re.sonny.Commit.metainfo.xml:74
 msgid "Shortcuts"
-msgstr ""
+msgstr "Skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:80
 #, fuzzy
@@ -159,13 +159,13 @@ msgstr "Uvítacie okno Commitu - tmavý režim"
 
 #: data/re.sonny.Commit.metainfo.xml:94
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Pridajte klávesové skratky na posúvanie riadkov nahor a nadol"
 
 #: data/re.sonny.Commit.metainfo.xml:96
 #, fuzzy
 #| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
-msgstr "Pridáné okno Predvoľby"
+msgstr "Pridať okno Skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 #, fuzzy
@@ -175,11 +175,11 @@ msgstr "Podporuje správy commitov Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:99
 msgid "Automatically wrap commit message body"
-msgstr ""
+msgstr "Automaticky zalomiť telo správy"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Various fixes"
-msgstr ""
+msgstr "Rôzne opravy"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Remove spell check temporarily"
@@ -224,7 +224,7 @@ msgstr "Odstránené dvojité orámovanie"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add a Preferences window"
-msgstr "Pridáné okno Predvoľby"
+msgstr "Pridané okno Predvoľby"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Set default title length hint to 50 characters"
@@ -281,39 +281,39 @@ msgstr "MartinIIOT https://www.github.com/MartinIIOT"
 
 #: src/ShortcutsWindow.ui:9
 msgid "Editing"
-msgstr ""
+msgstr "Úprava"
 
 #: src/ShortcutsWindow.ui:16 src/window.ui:33
 msgid "Save and confirm"
-msgstr ""
+msgstr "Uložiť a potvrdiť"
 
 #: src/ShortcutsWindow.ui:25 src/window.ui:22
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Zrušiť a odmietnuť"
 
 #: src/ShortcutsWindow.ui:34
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Otvorte výber emodži"
 
 #: src/ShortcutsWindow.ui:45
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Posunúť aktuálny riadok nahor/nadol"
 
 #: src/ShortcutsWindow.ui:53
 msgid "Select All"
-msgstr ""
+msgstr "Vybrať všetko"
 
 #: src/ShortcutsWindow.ui:61
 msgid "Unelect All"
-msgstr ""
+msgstr "Odznačiť všetko"
 
 #: src/ShortcutsWindow.ui:68
 msgid "General"
-msgstr ""
+msgstr "Všeobecné"
 
 #: src/ShortcutsWindow.ui:75 src/welcome.ui:210
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Klávesové skratky"
 
 #: src/ShortcutsWindow.ui:81
 msgid "Quit"
@@ -321,7 +321,7 @@ msgstr "Ukončiť"
 
 #: src/window.ui:17
 msgid "Abort"
-msgstr ""
+msgstr "Zrušiť"
 
 #: src/welcome.ui:26
 msgid "Preferences"
