@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2021-11-19 15:50+0100\n"
+"PO-Revision-Date: 2022-03-24 15:54+0000\n"
 "Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
-"Language-Team: none\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/commit/commit/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -30,20 +30,16 @@ msgstr "Editor de mensajes de confirmación"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
-#, fuzzy
-#| msgid "git;mercurial;hg;scm;gnomit;komet;"
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
-#| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
-msgstr "Establece la sugerencia de longitud del título por defecto a 50 caracteres"
+msgstr "Longitud máxima del título (en caracteres)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Longitud máxima de las líneas del cuerpo (en caracteres)"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
@@ -66,20 +62,16 @@ msgid "Features:"
 msgstr "Características:"
 
 #: data/re.sonny.Commit.metainfo.xml:28
-#, fuzzy
-#| msgid "Only highlight text overflow on commits"
 msgid "Highlights overflow of the commit title"
-msgstr "Sólo resalta el excedente de texto en las confirmaciones"
+msgstr "Destaca el excedente del título de la confirmación"
 
 #: data/re.sonny.Commit.metainfo.xml:29 data/re.sonny.Commit.metainfo.xml:96
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Envoltura del cuerpo inteligente"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
-#| msgid "Inserts blank line between title and description"
 msgid "Inserts a blank line between title and body"
-msgstr "Inserta una línea en blanco entre el título y la descripción"
+msgstr "Inserta una línea en blanco entre el título y el cuerpo"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:32
@@ -99,30 +91,24 @@ msgid "Keyboard navigation and shortcuts"
 msgstr "Navegación y atajos del teclado"
 
 #: data/re.sonny.Commit.metainfo.xml:36
-#, fuzzy
-#| msgid "Undo and redo support"
 msgid "Undo/Redo support"
-msgstr "Soporte para deshacer y rehacer"
+msgstr "Soporte para deshacer/rehacer"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
 msgstr "Selector de emojis"
 
 #: data/re.sonny.Commit.metainfo.xml:39
-#, fuzzy
-#| msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Soporta mensajes git commit, mensajes merge, mensajes tag, mensajes add -p y mensajes rebase -i"
+msgstr "Soporta git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:40
-#, fuzzy
-#| msgid "Supports Mercurial commit messages"
 msgid "Supports Mercurial commit"
-msgstr "Soporta mensajes de confirmación de Mercurial"
+msgstr "Soporta confirmación de Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:41 data/re.sonny.Commit.metainfo.xml:95
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Capitalizar automáticamente el título de la confirmación"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Welcome window with settings and instructions"
@@ -130,7 +116,7 @@ msgstr "Ventana de bienvenida con la configuración y las instrucciones"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:93
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Resaltar la sintaxis de Git, Mercurial y diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:54
 msgid "Main window"
@@ -158,17 +144,15 @@ msgstr "Ventana de bienvenida - modo oscuro"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Añadir atajos del teclado para mover las líneas hacia arriba y hacia abajo"
 
 #: data/re.sonny.Commit.metainfo.xml:94
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
-msgstr "Añade una ventana de Preferencias"
+msgstr "Añadir una ventana de atajos"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 msgid "Various fixes"
-msgstr ""
+msgstr "Varias correcciones"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
@@ -269,35 +253,35 @@ msgstr "Óscar Fernández Díaz <oscfdezdz@tuta.io>"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Edición"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:35
 msgid "Save and confirm"
-msgstr ""
+msgstr "Guardar y confirmar"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:24
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Cancelar y descartar"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Abrir selector de emojis"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Mover la línea actual hacia arriba/abajo"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Seleccionar todo"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Deseleccionar todo"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/ShortcutsWindow.ui:76 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
@@ -305,17 +289,15 @@ msgstr "Atajos del teclado"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 #: src/window.ui:19
 msgid "Abort"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/welcome.ui:28
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Preferences"
-msgstr "Añade una ventana de Preferencias"
+msgstr "Preferencias"
 
 #: src/welcome.ui:87
 msgid "Git"
