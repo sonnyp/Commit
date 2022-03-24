@@ -20,8 +20,10 @@
     </p>
     <p>
       Commit will pop up automatically when you make a commit in one of your projects.
-      To save your commit message, press the Commit button or the _Ctrl+Return_ key combination.
-      To abort and dismiss Commit, press the Cancel button or the _Escape_ key.
+      To save your commit message, press the Commit button or the <code
+      >Ctrl+Return</code> shortcut.
+      To abort and dismiss Commit, press the Abort button or the <code
+      >Escape</code> key.
     </p>
     <p>Features:</p>
     <ul>
@@ -43,9 +45,10 @@
       <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
   </description>
-  <url type="homepage">https://github.com/sonnyp/Commit</url>
-  <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
-  <url type="translate">https://hosted.weblate.org/engage/commit/</url>
+  <url type="homepage">https://commit.sonny.re</url>
+  <url type="bugtracker">https://commit.sonny.re/feedback</url>
+  <url type="donation">https://commit.sonny.re/donate</url>
+  <url type="translate">https://commit.sonny.re/translate</url>
   <screenshots>
     <screenshot type="default">
       <image>
@@ -90,7 +93,7 @@
       <description>
         <ul>
           <li>Add keyboard shortcuts for moving lines up and down</li>
-          <li>Highlight syntax for Git, Mercurial and diffs</li>
+          <li>Highlight syntax for Git, Mercurial, and diffs</li>
           <li>Add a shortcuts window</li>
           <li>Auto capitalize the commit title</li>
           <li>Smart body wrapping</li>

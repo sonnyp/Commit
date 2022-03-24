@@ -19,6 +19,7 @@ add one use instructions with GIT_EDITOR=... git commit and equivalent for hg
 UI for rebase
 autoremove \n when backspacing from the commit body to the commit title
 shortcut for comment/uncomment lines https://stackoverflow.com/questions/10465933/gtk-gtksourceview-how-to-insert-line-comment-or-block-comment
+support markdown formatting https://joshuatauberer.medium.com/write-joyous-git-commit-messages-2f98891114c4
 
 https://tekin.co.uk/2020/03/git-commit-verbose-mode
 https://robertcooper.me/post/git-commit-messages

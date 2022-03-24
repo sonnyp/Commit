@@ -37,10 +37,4 @@ export default function wrap(text, width, comment_prefix) {
   }
 
   return wrapped;
-  // return text.split("\n").reduce((accumulator, line) => {
-  //   if (accumulator) accumulator += "\n";
-  //   if (line.startsWith(comment_prefix)) return accumulator + line;
-  //   if (line.length <= width) return accumulator + line;
-  //   return accumulator + wrapLine(line, width, comment_prefix);
-  // }, "");
 }
