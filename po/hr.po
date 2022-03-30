@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2022-03-30 10:13+0000\n"
+"PO-Revision-Date: 2022-03-30 10:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
 "Language: hr\n"
@@ -55,11 +55,11 @@ msgstr "Nakon instaliranja pokreni program i slijedi upute."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
-msgstr ""
+msgstr "Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili kombinaciju tipki _Ctrl+Return_. Za prekidanje i odbacivanje izmjene, pritisni gumb „Odustani” ili tipku _Escape_."
 
 #: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
-msgstr "Karakteristike:"
+msgstr "Značajke:"
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Highlights overflow of the commit title"
@@ -144,11 +144,11 @@ msgstr "Uvodni prozor – tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "Dodani su tipkovni prečaci za pomicanje redaka prema gore i dolje"
+msgstr "Dodaj tipkovne prečace za pomicanje redaka prema gore i dolje"
 
 #: data/re.sonny.Commit.metainfo.xml:94
 msgid "Add a shortcuts window"
-msgstr "Dodan je prozor za prečace"
+msgstr "Dodaj prozor za prečace"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 msgid "Various fixes"
@@ -156,36 +156,35 @@ msgstr "Razni ispravci"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
-msgstr "Privremeno je uklonjena provjera pravopisa"
+msgstr "Privremeno ukloni provjeru pravopisa"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Support undo and redo"
-msgstr "Podrška za Poništi/Ponovi"
+msgstr "Podrži funkcije Poništi i Ponovi"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add symbolic icon"
-msgstr "Dodana je simbolska ikona"
+msgstr "Dodaj simboličnu ikonu"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Add dark mode setting"
-msgstr "Dodana je postavka za tamni modus"
+msgstr "Dodaj postavku za tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:108
 msgid "Focus the text editor"
-msgstr "Postavlja uređivač teksta aktivnim"
+msgstr "Postavi uređivač teksta aktivnim"
 
 #: data/re.sonny.Commit.metainfo.xml:109
 msgid "Port to GTK 4 and libadwaita"
-msgstr "Prilagođen na GTK 4 i libadwaita"
+msgstr "Prilagodi program za GTK 4 i libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:116
-#, fuzzy
 msgid "Move preferences to welcome window"
-msgstr "Dodan je prozor za postavke"
+msgstr "Pomakni osobne postavke u uvodni prozor"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Istakni samo predugački tekst commit poruka"
 
 #: data/re.sonny.Commit.metainfo.xml:118
 msgid "New app icon"
@@ -193,31 +192,31 @@ msgstr "Nova ikona programa"
 
 #: data/re.sonny.Commit.metainfo.xml:119
 msgid "Remove double border"
-msgstr "Uklonjen je dvostruki rub"
+msgstr "Ukloni dvostruki rub"
 
 #: data/re.sonny.Commit.metainfo.xml:126
 msgid "Add a Preferences window"
-msgstr "Dodan je prozor za postavke"
+msgstr "Dodan je prozor za osobne postavke"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Set default title length hint to 50 characters"
-msgstr "Savjet za duljinu naslova postavljen je na 50 znakova"
+msgstr "Postavi savjet za duljinu naslova na 50 znakova"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Fix reading commits with special characters"
-msgstr "Ispravljeno je čitanje commitova s posebnim znakovima"
+msgstr "Ispravi čitanje commit poruka s posebnim znakovima"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Fix git rebase not recognized"
-msgstr "Ispravljeno je neprepoznavanje funkcije git rebase"
+msgstr "Ispravi neprepoznavanje git rebase funkcije"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Make windows bottom corners rounded"
-msgstr "Zaobljavanje donjih kutova prozora"
+msgstr "Zaobli donje kutova prozora"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Add 6px margin to editor"
-msgstr "Uređivaču je dodan rub od 6 px"
+msgstr "Uređivaču dodaj rub od 6 px"
 
 #: data/re.sonny.Commit.metainfo.xml:137
 msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
@@ -225,15 +224,15 @@ msgstr "⚠️ Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi 
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Show a welcome window when launched from desktop"
-msgstr "Prikaz uvodnog prozora kad se pokrene s radne površine"
+msgstr "Prikaži uvodni prozor kad se pokrene s radne površine"
 
 #: data/re.sonny.Commit.metainfo.xml:143
 msgid "Add support for Mercurial"
-msgstr "Dodana je podrška za Mercurial"
+msgstr "Dodaj podršku za Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:144
 msgid "Remove filesystem permission"
-msgstr "Uklonjena je dozvola datotečnog sustava"
+msgstr "Ukloni dozvolu datotečnog sustava"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Initial release. Forked from Gnomit 2.0."
@@ -241,11 +240,11 @@ msgstr "Prvo izdanje. Kopija od Gnomit 2.0."
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Support \"#\" in commit message"
-msgstr "Podrška za „#” u commit poruci"
+msgstr "Podrži „#” u commit poruci"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Properly recognize executable path"
-msgstr "Ispravno prepoznavanje putanje do izvršne datoteke"
+msgstr "Ispravno prepoznaj stazu do izvršne datoteke"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
@@ -254,53 +253,51 @@ msgstr "Milo Ivir <mail@milotype.de>"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Uređivanje"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:35
 msgid "Save and confirm"
-msgstr ""
+msgstr "Spremi i potvrdi"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:24
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Odustani i odbaci"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Otvori birač emojija"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Pomakni trenutačni redak gore/dolje"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Označi sve"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Odznači sve"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Opće"
 
 #: src/ShortcutsWindow.ui:76 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Tipkovni prečaci"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Zatvori program"
 
 #: src/window.ui:19
 msgid "Abort"
-msgstr ""
+msgstr "Prekini"
 
 #: src/welcome.ui:28
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Preferences"
-msgstr "Dodan je prozor za postavke"
+msgstr "Osobne postavke"
 
 #: src/welcome.ui:87
 msgid "Git"
