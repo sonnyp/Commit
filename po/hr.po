@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2022-03-23 11:57+0000\n"
+"PO-Revision-Date: 2022-03-30 10:13+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
 "Language: hr\n"
@@ -30,20 +30,16 @@ msgstr "Uređivač commit poruka"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
-#, fuzzy
-#| msgid "git;mercurial;hg;scm;gnomit;komet;"
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
-#| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
-msgstr "Savjet za duljinu naslova postavljen je na 50 znakova"
+msgstr "Maksimalna duljina naslova (broj znakova)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Maksimalna duljina redaka teksta (broj znakova)"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
@@ -66,20 +62,16 @@ msgid "Features:"
 msgstr "Karakteristike:"
 
 #: data/re.sonny.Commit.metainfo.xml:28
-#, fuzzy
-#| msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgid "Highlights overflow of the commit title"
-msgstr "Označavanje naslova kad je duži od 50 znakova (prilagodljivo)"
+msgstr "Ističe predugačke naslove commit poruka"
 
 #: data/re.sonny.Commit.metainfo.xml:29 data/re.sonny.Commit.metainfo.xml:96
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Pametni prijelom teksta"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
-#| msgid "Inserts blank line between title and description"
 msgid "Inserts a blank line between title and body"
-msgstr "Dodavanje praznog retka između naslova i opisa"
+msgstr "Dodaje prazni redak između naslova i teksta"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:32
@@ -88,41 +80,35 @@ msgstr "Komentari su samo-za-čitanje i isključeni su iz „Odaberi sve”"
 
 #: data/re.sonny.Commit.metainfo.xml:33
 msgid "Displays project folder and branch in window header"
-msgstr "Prikaz mape projekta i grane u zaglavlju prozora"
+msgstr "Prikazuje mapu projekta i granu u zaglavlju prozora"
 
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Dark mode support"
-msgstr "Porška za tamni modus"
+msgstr "Podrška za tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Navigacija tipkovnicom i prečaci"
 
 #: data/re.sonny.Commit.metainfo.xml:36
-#, fuzzy
-#| msgid "Undo and redo support"
 msgid "Undo/Redo support"
-msgstr "Podrška za poništavanje i ponavljanje radnji"
+msgstr "Podrška za Poništi/Ponovi"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
-msgstr ""
+msgstr "Birač emojija"
 
 #: data/re.sonny.Commit.metainfo.xml:39
-#, fuzzy
-#| msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Podrška za git commit, merge, tag, add -p, rebase -i poruke"
+msgstr "Podržava git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:40
-#, fuzzy
-#| msgid "Supports Mercurial commit messages"
 msgid "Supports Mercurial commit"
-msgstr "Podrška za Mercurial commit poruke"
+msgstr "Podržava Mercurial commit"
 
 #: data/re.sonny.Commit.metainfo.xml:41 data/re.sonny.Commit.metainfo.xml:95
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Automatski koristi velika slova za naslov commit poruke"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Welcome window with settings and instructions"
@@ -130,77 +116,67 @@ msgstr "Uvodni prozor s postavkama i instrukcijama"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:93
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Ističe sintaksu za Git, Mercurial i diffs (razlike)"
 
 #: data/re.sonny.Commit.metainfo.xml:54
-#, fuzzy
-#| msgid "Commit main window"
 msgid "Main window"
-msgstr "Glavni prozor Commita"
+msgstr "Glavni prozor"
 
 #: data/re.sonny.Commit.metainfo.xml:60
-#, fuzzy
-#| msgid "Commit main window - dark mode"
 msgid "Main window - dark mode"
-msgstr "Glavni prozor Commita – tamni modus"
+msgstr "Glavni prozor – tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:66
 msgid "Emoji selector"
-msgstr ""
+msgstr "Birač emojija"
 
 #: data/re.sonny.Commit.metainfo.xml:72
 msgid "Shortcuts"
-msgstr ""
+msgstr "Prečaci"
 
 #: data/re.sonny.Commit.metainfo.xml:78
-#, fuzzy
-#| msgid "Commit welcome window"
 msgid "Welcome window"
-msgstr "Uvodni prozor Commita"
+msgstr "Uvodni prozor"
 
 #: data/re.sonny.Commit.metainfo.xml:84
-#, fuzzy
-#| msgid "Commit welcome window - dark mode"
 msgid "Welcome window - dark mode"
-msgstr "Uvodni prozor Commita – tamni modus"
+msgstr "Uvodni prozor – tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Dodani su tipkovni prečaci za pomicanje redaka prema gore i dolje"
 
 #: data/re.sonny.Commit.metainfo.xml:94
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
-msgstr "Dodan je prozor za postavke"
+msgstr "Dodan je prozor za prečace"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 msgid "Various fixes"
-msgstr ""
+msgstr "Razni ispravci"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
-msgstr "Ukloni provjeru pravopisa privremeno"
+msgstr "Privremeno je uklonjena provjera pravopisa"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Support undo and redo"
-msgstr "Podrži poništavanje i ponavljanje radnji"
+msgstr "Podrška za Poništi/Ponovi"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Dodana je simbolska ikona"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Dodana je postavka za tamni modus"
 
 #: data/re.sonny.Commit.metainfo.xml:108
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Postavlja uređivač teksta aktivnim"
 
 #: data/re.sonny.Commit.metainfo.xml:109
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "Prilagođen na GTK 4 i libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 #, fuzzy
@@ -213,11 +189,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:118
 msgid "New app icon"
-msgstr ""
+msgstr "Nova ikona programa"
 
 #: data/re.sonny.Commit.metainfo.xml:119
 msgid "Remove double border"
-msgstr ""
+msgstr "Uklonjen je dvostruki rub"
 
 #: data/re.sonny.Commit.metainfo.xml:126
 msgid "Add a Preferences window"
