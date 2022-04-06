@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2021-10-09 10:30+0100\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-04-07 15:10+0000\n"
+"Last-Translator: Christian Rodriguez Benthake <chris.ben9@gmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/commit/commit/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -29,24 +30,20 @@ msgstr "Commit Nachrichteneditor"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
-#, fuzzy
-#| msgid "git;mercurial;hg;scm;gnomit;komet;"
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
-#| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
-msgstr "Standardhinweis für die Titellänge auf 50 Zeichen festgelegt"
+msgstr "Maximale Titellänge (in Zeichen)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Maximale Textlänge (in Zeichen)"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
-msgstr ""
+msgstr "Verwende dunkle Oberfläche"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
@@ -58,7 +55,7 @@ msgstr "Nach der Installation die Anwendung starten und den Anweisungen folgen."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
-msgstr ""
+msgstr "Commit öffnet sich automatisch, wenn du ein commit in eines deiner Projekte machst. Um eine commit-Nachricht zu speichern, drücke den Commit-Button oder die Tastenkombination _Ctrl+Return_. Zum Abbrechen oder Beenden von Commit, drücke Cancel oder die _Escape_ Taste."
 
 #: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
