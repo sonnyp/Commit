@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2022-03-23 11:57+0000\n"
-"Last-Translator: Alexis Metaireau <alexis@notmyidea.org>\n"
+"PO-Revision-Date: 2022-04-09 01:11+0000\n"
+"Last-Translator: JeanDeLaMouche <urgau@numericable.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/commit/commit/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -30,20 +30,16 @@ msgstr "Éditeur de message de commit"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
-#, fuzzy
-#| msgid "git;mercurial;hg;scm;gnomit;komet;"
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
-#| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
-msgstr "Définir la longueur du titre par défaut à 50 caractères"
+msgstr "Longueur maximale du titre (en caractères)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Longueur maximale des lignes du corps (en caractères)"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
@@ -66,20 +62,16 @@ msgid "Features:"
 msgstr "Fonctionnalités :"
 
 #: data/re.sonny.Commit.metainfo.xml:28
-#, fuzzy
-#| msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgid "Highlights overflow of the commit title"
-msgstr "Met en évidence le dépassement du titre lorsqu'il dépasse 50 caractères (personnalisable)"
+msgstr "Mettre en évidence le trop-plein de caractères du titre de la livraison"
 
 #: data/re.sonny.Commit.metainfo.xml:29 data/re.sonny.Commit.metainfo.xml:96
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Enveloppement intelligent du corps"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
-#| msgid "Inserts blank line between title and description"
 msgid "Inserts a blank line between title and body"
-msgstr "Insère une ligne vierge entre le titre et la description"
+msgstr "Insère une ligne vierge entre le titre et le corps"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:32
@@ -96,87 +88,71 @@ msgstr "Support du mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Navigation et raccourcis clavier"
 
 #: data/re.sonny.Commit.metainfo.xml:36
-#, fuzzy
-#| msgid "Undo and redo support"
 msgid "Undo/Redo support"
 msgstr "Support de l'historique d'annulation"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
-msgstr ""
+msgstr "Sélecteur d'emoji"
 
 #: data/re.sonny.Commit.metainfo.xml:39
-#, fuzzy
-#| msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Supporte les messages de commit git, les messages de fusion, les messages d'étiquettes, les messages avec add -p, et les messages avec rebase -i"
+msgstr "Supporte git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:40
-#, fuzzy
-#| msgid "Supports Mercurial commit messages"
 msgid "Supports Mercurial commit"
-msgstr "Supporte les messages de commit Mercurial"
+msgstr "Supporte les commit Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:41 data/re.sonny.Commit.metainfo.xml:95
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Mise en majuscule automatique du titre du commit"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Welcome window with settings and instructions"
-msgstr "Écran d'accueil avec les paramètres et instructions"
+msgstr "Fenêtre de bienvenue avec les paramètres et les instructions"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:93
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Mise en évidence de la syntaxe pour Git, Mercurial et diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:54
-#, fuzzy
-#| msgid "Commit main window"
 msgid "Main window"
-msgstr "Fenêtre principale de Commit"
+msgstr "Fenêtre principale"
 
 #: data/re.sonny.Commit.metainfo.xml:60
-#, fuzzy
-#| msgid "Commit main window - dark mode"
 msgid "Main window - dark mode"
-msgstr "Fenêtre principale de Commit - mode sombre"
+msgstr "Fenêtre principale - mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:66
 msgid "Emoji selector"
-msgstr ""
+msgstr "Sélecteur d'emoji"
 
 #: data/re.sonny.Commit.metainfo.xml:72
 msgid "Shortcuts"
-msgstr ""
+msgstr "Raccourcis"
 
 #: data/re.sonny.Commit.metainfo.xml:78
-#, fuzzy
-#| msgid "Commit welcome window"
 msgid "Welcome window"
-msgstr "Fenêtre de bienvenue de Commit"
+msgstr "Fenêtre de bienvenue"
 
 #: data/re.sonny.Commit.metainfo.xml:84
-#, fuzzy
-#| msgid "Commit welcome window - dark mode"
 msgid "Welcome window - dark mode"
-msgstr "Fenêtre de bienvenue de Commit - mode sombre"
+msgstr "Fenêtre de bienvenue - mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Ajout de raccourcis clavier pour déplacer les lignes vers le haut et le bas"
 
 #: data/re.sonny.Commit.metainfo.xml:94
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
-msgstr "Ajouter une fenêtre de Préférences"
+msgstr "Ajouts d'une fenêtre de raccourcis"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 msgid "Various fixes"
-msgstr ""
+msgstr "Diverses corrections"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
@@ -273,57 +249,57 @@ msgstr "Détection correcte du chemin vers l'exécutable"
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr "Thomas Citharel <gnome@tcit.fr>"
+msgstr ""
+"Thomas Citharel <gnome@tcit.fr>\n"
+"JeanDeLaMouche @JeanDeLaMouche"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Modification de"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:35
 msgid "Save and confirm"
-msgstr ""
+msgstr "Sauvegarder et confirmer"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:24
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Annuler et rejeter"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Ouvrir le sélecteur d'emoji"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Déplacer la ligne actuelle vers le haut/bas"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Sélectionner tout"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Désélectionner tout"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: src/ShortcutsWindow.ui:76 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Raccourcis clavier"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: src/window.ui:19
 msgid "Abort"
-msgstr ""
+msgstr "Abandonner"
 
 #: src/welcome.ui:28
-#, fuzzy
-#| msgid "Add a Preferences window"
 msgid "Preferences"
-msgstr "Ajouter une fenêtre de Préférences"
+msgstr "Préférences"
 
 #: src/welcome.ui:87
 msgid "Git"
