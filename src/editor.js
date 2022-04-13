@@ -125,7 +125,7 @@ export default function editor({
   buffer.connect("end-user-action", () => {
     let { cursor_position } = buffer;
 
-    capitalizer(buffer, cursor_position, has_commit_message);
+    capitalizer(buffer, cursor_position);
 
     // Take measurements
     let lines = buffer.text.split("\n");
@@ -225,76 +225,31 @@ function markCommentReadonly({ buffer, read_only_index }) {
 }
 
 function Capitalizer({ capitalize }) {
-  let capitalized_first_character;
-  let capitalized_after_tag;
-  let tag_detected;
-  let complete;
+  let complete = false;
 
-  function reset() {
-    capitalized_first_character = false;
-    capitalized_after_tag = false;
-    tag_detected = false;
-    complete = !capitalize;
-  }
-
-  reset();
-
-  return function capitalizer(buffer, cursor_position, has_commit_message) {
-    if (!has_commit_message) {
-      reset();
-    }
-
+  return function capitalizer(buffer, cursor_position) {
     if (complete) return;
 
-    // First, we upper case the very first letter
-    if (cursor_position === 1 && !capitalized_first_character) {
-      capitalized_first_character = true;
-      if (!buffer.text[0].match(/[a-z]/)) return;
-      buffer.change_case(
-        GtkSource.ChangeCaseType.UPPER,
-        buffer.get_start_iter(),
-        buffer.get_iter_at_offset(1),
-      );
-      return;
-    }
+    const last_chars = buffer.text.slice(
+      cursor_position - 3,
+      cursor_position - 1,
+    );
+    if (last_chars[1] !== " ") return;
 
-    if (capitalized_after_tag) return;
+    complete = true;
 
-    const last_chars = buffer.text.slice(cursor_position - 3, cursor_position);
-
-    // then, if we detect a tag - like "feat: " - we undo first step
-    if (!tag_detected && last_chars.match(/\S: /)) {
-      tag_detected = !!buffer
-        .get_slice(
-          buffer.get_start_iter(),
-          buffer.get_iter_at_offset(cursor_position),
-          false,
-        )
-        .match(/^\S+: /);
-      if (!tag_detected) {
-        complete = true;
-        return;
-      }
-
-      if (capitalized_first_character) {
-        buffer.change_case(
-          GtkSource.ChangeCaseType.LOWER,
-          buffer.get_start_iter(),
-          buffer.get_iter_at_offset(1),
-        );
-      }
-      return;
-    }
-
-    // Finally, we uppercase the first latter afte the tag "feat: A"
-    if (tag_detected && last_chars.startsWith(": ")) {
-      capitalized_after_tag = true;
+    if (last_chars[0] === ":") {
       buffer.change_case(
         GtkSource.ChangeCaseType.UPPER,
         buffer.get_iter_at_offset(cursor_position - 1),
         buffer.get_iter_at_offset(cursor_position),
       );
-      complete = true;
+    } else {
+      buffer.change_case(
+        GtkSource.ChangeCaseType.UPPER,
+        buffer.get_start_iter(),
+        buffer.get_iter_at_offset(1),
+      );
     }
   };
 }

@@ -31,7 +31,7 @@ export function parse(commit, type) {
 
   // Split the message into the commit body and comment
   const split = splitMessage(commit, comment_prefix);
-  let { body } = split;
+  const { body } = split;
   const { comment, read_only_index } = split;
 
   // Trim any newlines there may be at the end of the commit body
@@ -62,7 +62,6 @@ export function parse(commit, type) {
 
   let capitalize = false;
   if (["hg", "commit", "merge", "tag"].includes(type)) {
-    body = body.charAt(0).toUpperCase() + body.slice(1);
     capitalize = true;
   }
 

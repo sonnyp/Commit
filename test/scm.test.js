@@ -298,7 +298,7 @@ HG: added foobar
 
   assert.is(
     parse(readTest("hg-editor-with_body.commit.hg.txt"), "hg").body,
-    `Foo this is great
+    `foo this is great
 
 hello`,
   );

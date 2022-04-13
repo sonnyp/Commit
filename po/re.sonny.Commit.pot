@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-13 20:49+0200\n"
+"POT-Creation-Date: 2022-04-13 21:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Highlights overflow of the commit title"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:99
+#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:107
 msgid "Smart body wrapping"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Supports Mercurial commit"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:98
+#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:106
 msgid "Auto capitalize the commit title"
 msgstr ""
 
@@ -151,112 +151,120 @@ msgid "Welcome window - dark mode"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:95
-msgid "Add keyboard shortcuts for moving lines up and down"
+msgid "Improve auto capitalizzation"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:96
+msgid "GNOME Platform 42"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:103
+msgid "Add keyboard shortcuts for moving lines up and down"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:104
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:97
+#: data/re.sonny.Commit.metainfo.xml:105
 msgid "Add a shortcuts window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:100
+#: data/re.sonny.Commit.metainfo.xml:108
 msgid "Various fixes"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:107
+#: data/re.sonny.Commit.metainfo.xml:115
 msgid "Remove spell check temporarily"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:108
+#: data/re.sonny.Commit.metainfo.xml:116
 msgid "Support undo and redo"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:109
+#: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add symbolic icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:110
+#: data/re.sonny.Commit.metainfo.xml:118
 msgid "Add dark mode setting"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:111
+#: data/re.sonny.Commit.metainfo.xml:119
 msgid "Focus the text editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:112
+#: data/re.sonny.Commit.metainfo.xml:120
 msgid "Port to GTK 4 and libadwaita"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:119
+#: data/re.sonny.Commit.metainfo.xml:127
 msgid "Move preferences to welcome window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:128
 msgid "Only highlight text overflow on commits"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:121
+#: data/re.sonny.Commit.metainfo.xml:129
 msgid "New app icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:122
+#: data/re.sonny.Commit.metainfo.xml:130
 msgid "Remove double border"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:129
+#: data/re.sonny.Commit.metainfo.xml:137
 msgid "Add a Preferences window"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:130
+#: data/re.sonny.Commit.metainfo.xml:138
 msgid "Set default title length hint to 50 characters"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:131
+#: data/re.sonny.Commit.metainfo.xml:139
 msgid "Fix reading commits with special characters"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:132
+#: data/re.sonny.Commit.metainfo.xml:140
 msgid "Fix git rebase not recognized"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:133
+#: data/re.sonny.Commit.metainfo.xml:141
 msgid "Make windows bottom corners rounded"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:134
+#: data/re.sonny.Commit.metainfo.xml:142
 msgid "Add 6px margin to editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:140
+#: data/re.sonny.Commit.metainfo.xml:148
 msgid ""
 "⚠️ Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:145
+#: data/re.sonny.Commit.metainfo.xml:153
 msgid "Show a welcome window when launched from desktop"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:146
+#: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add support for Mercurial"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:147
+#: data/re.sonny.Commit.metainfo.xml:155
 msgid "Remove filesystem permission"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:153
+#: data/re.sonny.Commit.metainfo.xml:161
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:155
+#: data/re.sonny.Commit.metainfo.xml:163
 msgid "Support \"#\" in commit message"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:156
+#: data/re.sonny.Commit.metainfo.xml:164
 msgid "Properly recognize executable path"
 msgstr ""
 
