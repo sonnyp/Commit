@@ -31,8 +31,7 @@ export function parse(commit, type) {
 
   // Split the message into the commit body and comment
   const split = splitMessage(commit, comment_prefix);
-  const { body } = split;
-  const { comment, read_only_index } = split;
+  const { body, comment, read_only_index } = split;
 
   // Trim any newlines there may be at the end of the commit body
   // body = body.trimEnd();
@@ -102,16 +101,16 @@ export function getMercurialBranch(commentLines) {
   // Try to get the branch name via a method that relies on
   // positional aspect of the branch name so it should work with
   // other languages.
-  const wordsOnBranchLine = commentLines[5].split(" ");
-  return wordsOnBranchLine[wordsOnBranchLine.length - 1].split("'")[1];
+  const wordsOnBranchLine = commentLines[5]?.split(" ");
+  return wordsOnBranchLine?.[wordsOnBranchLine.length - 1].split("'")[1];
 }
 
 export function getGitBranch(commentLines) {
   // Try to get the branch name via a method that relies on
   // positional aspect of the branch name so it should work with
   // other languages.
-  const wordsOnBranchLine = commentLines[4].split(" ");
-  return wordsOnBranchLine[wordsOnBranchLine.length - 1];
+  const wordsOnBranchLine = commentLines[4]?.split(" ");
+  return wordsOnBranchLine?.[wordsOnBranchLine.length - 1];
 }
 
 export function getGitTag(commentLines) {

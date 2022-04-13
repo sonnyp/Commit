@@ -420,6 +420,34 @@ add b.txt`,
   );
 
   assert.is(parse(readTest("empty-tag-msg/TAG_EDITMSG"), "tag").tag, undefined);
+
+  assert.is(parse(readTest("empty/COMMIT_EDITMSG"), "commit").body, ``);
+  assert.is(
+    parse(readTest("empty/COMMIT_EDITMSG"), "commit").detail,
+    undefined,
+  );
+  assert.is(parse(readTest("empty/COMMIT_EDITMSG"), "commit").comment, ``);
+  assert.is(
+    parse(readTest("empty/COMMIT_EDITMSG"), "commit").cursor_position,
+    0,
+  );
+
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").body, ``);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").detail, undefined);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").comment, ``);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").cursor_position, 0);
+
+  assert.is(parse(readTest("empty/git-rebase-todo"), "commit").body, ``);
+  assert.is(
+    parse(readTest("empty/git-rebase-todo"), "commit").detail,
+    undefined,
+  );
+  assert.is(parse(readTest("empty/git-rebase-todo"), "commit").comment, ``);
+  console.log("cool");
+  assert.is(
+    parse(readTest("empty/git-rebase-todo"), "commit").cursor_position,
+    0,
+  );
 });
 
 test.run();
