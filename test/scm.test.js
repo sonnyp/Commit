@@ -1,16 +1,10 @@
-import "./setup.js";
+import tst, { assert } from "../troll/tst/tst.js";
 
-import { test } from "./uvu.js";
-import * as assert from "./assert.js";
-import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 
 import { parse, getType, hasCommitMessage, format } from "../src/scm.js";
 
-const loop = GLib.MainLoop.new(null, false);
-test.after(() => {
-  loop.quit();
-});
+const test = tst("scm");
 
 function readTest(name) {
   const file = Gio.File.new_for_uri(import.meta.url);
@@ -419,8 +413,6 @@ add b.txt`,
     0,
   );
 
-  assert.is(parse(readTest("empty-tag-msg/TAG_EDITMSG"), "tag").tag, undefined);
-
   assert.is(parse(readTest("empty/COMMIT_EDITMSG"), "commit").body, ``);
   assert.is(
     parse(readTest("empty/COMMIT_EDITMSG"), "commit").detail,
@@ -443,12 +435,10 @@ add b.txt`,
     undefined,
   );
   assert.is(parse(readTest("empty/git-rebase-todo"), "commit").comment, ``);
-  console.log("cool");
   assert.is(
     parse(readTest("empty/git-rebase-todo"), "commit").cursor_position,
     0,
   );
 });
 
-test.run();
-loop.run();
+export default test;

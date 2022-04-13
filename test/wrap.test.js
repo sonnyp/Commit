@@ -1,15 +1,8 @@
-import "./setup.js";
-
-import { test } from "./uvu.js";
-import * as assert from "./assert.js";
-import GLib from "gi://GLib";
+import tst, { assert } from "../troll/tst/tst.js";
 
 import wrap from "../src/wrap.js";
 
-const loop = GLib.MainLoop.new(null, false);
-test.after(() => {
-  loop.quit();
-});
+const test = tst("wrap");
 
 test("preserves newlines", () => {
   assert.is(wrap("hello\nworld", 100, "#"), "hello\nworld");
@@ -48,5 +41,4 @@ test("does not wrap at the commit_prefix", () => {
   assert.is(wrap("1234567890#1234567890", 10, "#"), "1234567890#1234567890");
 });
 
-test.run();
-loop.run();
+export default test;
