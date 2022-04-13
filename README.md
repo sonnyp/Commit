@@ -66,6 +66,8 @@ Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.
 To pass the tests you have to install a few dependencies
 
 ```
+git submodule update --init --recursive
+
 # Install development dependencies
 sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk4-devel libadwaita
 npm install

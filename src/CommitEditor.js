@@ -57,7 +57,7 @@ export default GObject.registerClass(
     }
 
     set wrap_width_request(val) {
-      this.view.right_margin_position = val;
+      this.view.set_right_margin_position(val);
       this._wrap_width_request = val;
     }
 
