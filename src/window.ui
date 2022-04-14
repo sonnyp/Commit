@@ -8,7 +8,7 @@
     <property name="default_height">272</property>
     <property name="title">Commit</property>
     <child>
-      <object class="GtkBox" id="main">
+      <object class="GtkBox">
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
@@ -40,8 +40,41 @@
             </child>
           </object>
         </child>
-        <!-- editor goes here -->
+        <child>
+          <object class="GtkOverlay" id="overlay">
+            <child type="overlay">
+              <object class="GtkMenuButton" id="menubutton">
+                <property name="primary">true</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">app-menu</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+                <property name="margin-end">12</property>
+                <property name="margin-bottom">12</property>
+                <style>
+                  <class name="circular" />
+                </style>
+              </object>
+            </child>
+            <!-- editor goes here -->
+          </object>
+        </child>
       </object>
     </child>
   </object>
+  <menu id="app-menu">
+    <section>
+      <item>
+        <attribute
+          name="label"
+          translatable="yes"
+        >Keyboard Shortcuts</attribute>
+        <attribute name="action">app.shortcuts</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About Commit</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>

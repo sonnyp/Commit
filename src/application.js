@@ -65,23 +65,23 @@ export default function Application({ version }) {
     openWelcome({ application });
   });
 
-  const showAboutDialog = new Gio.SimpleAction({
+  const action_about = new Gio.SimpleAction({
     name: "about",
     parameter_type: null,
   });
-  showAboutDialog.connect("activate", () => {
+  action_about.connect("activate", () => {
     About({ application, version });
   });
-  application.add_action(showAboutDialog);
+  application.add_action(action_about);
 
-  const showShortCutsWindow = new Gio.SimpleAction({
+  const action_shortcuts = new Gio.SimpleAction({
     name: "shortcuts",
     parameter_type: null,
   });
-  showShortCutsWindow.connect("activate", () => {
+  action_shortcuts.connect("activate", () => {
     ShortcutsWindow({ application });
   });
-  application.add_action(showShortCutsWindow);
+  application.add_action(action_shortcuts);
   application.set_accels_for_action("app.shortcuts", ["<Control>question"]);
 
   application.set_accels_for_action("win.cancel", ["Escape"]);

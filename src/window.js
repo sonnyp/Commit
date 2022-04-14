@@ -28,6 +28,17 @@ export default function Window({
   const cancelButton = builder.get_object("cancelButton");
   const commitButton = builder.get_object("commitButton");
 
+  // Set a 3px padding on the bottom right floating menu button
+  {
+    const margin_box = builder
+      .get_object("menubutton")
+      .get_first_child()
+      .get_first_child();
+    ["top", "end", "start", "bottom"].forEach((dir) => {
+      margin_box["margin_" + dir] = 10;
+    });
+  }
+
   const { buffer, source_view, editor } = Editor({
     builder,
     commitButton,

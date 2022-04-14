@@ -41,9 +41,9 @@ export default function editor({
   // Save the number of lines in the commit message.
   let previousNumberOfLinesInCommitMessage = 1;
 
-  const main = builder.get_object("main");
+  const overlay = builder.get_object("overlay");
   const widget = new CommitEditor({ language });
-  main.append(widget);
+  overlay.set_child(widget);
   const source_view = widget.view;
 
   settings.bind(
