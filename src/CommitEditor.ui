@@ -13,6 +13,8 @@
         <property name="monospace">true</property>
         <property name="show-right-margin">true</property>
         <property name="wrap_mode">word</property>
+        <property name="tab-width">2</property>
+        <property name="insert-spaces-instead-of-tabs">true</property>
         <property name="top-margin">12</property>
         <property name="left-margin">12</property>
         <property name="right-margin">12</property>
