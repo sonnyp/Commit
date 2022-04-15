@@ -3,7 +3,6 @@ import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
-import Pango from "gi://Pango";
 
 import { relativePath } from "./util.js";
 
@@ -68,8 +67,7 @@ export default GObject.registerClass(
     vfunc_size_allocate(width, height, baseline) {
       const is_wider_than_wrap_width_request =
         this.view.get_width() >=
-        getWrapPixelWidth(this.view, this._wrap_width_request) +
-          this.view.left_margin;
+        getRulerPosition(this.view, this._wrap_width_request);
 
       this.view.set_wrap_mode(
         is_wider_than_wrap_width_request
@@ -87,11 +85,13 @@ export default GObject.registerClass(
   },
 );
 
+// https://gitlab.gnome.org/GNOME/gtksourceview/-/blob/bbf355ae4da03e4d7442e6749c2005a2e905e36c/gtksourceview/gtksourceview.c#L2801
 function getWrapPixelWidth(textview, length) {
-  const metrics = textview.get_pango_context()?.get_metrics(null, null);
-  const character_width = metrics.get_approximate_char_width() / Pango.SCALE;
-
-  const total_width = character_width * length;
-
-  return Math.ceil(total_width);
+  const layout = textview.create_pango_layout("_");
+  const [character_width] = layout.get_pixel_size();
+  return character_width * length;
+}
+// https://gitlab.gnome.org/GNOME/gtksourceview/-/blob/bbf355ae4da03e4d7442e6749c2005a2e905e36c/gtksourceview/gtksourceview.c#L2565
+function getRulerPosition(sourceview, length) {
+  return getWrapPixelWidth(sourceview, length) + sourceview.get_left_margin();
 }
