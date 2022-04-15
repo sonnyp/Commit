@@ -65,24 +65,18 @@ export default GObject.registerClass(
       return this._wrap_width_request;
     }
 
-    isWiderThanWrapWidthRequest() {
-      return (
+    vfunc_size_allocate(width, height, baseline) {
+      const is_wider_than_wrap_width_request =
         this.view.get_width() >=
         getWrapPixelWidth(this.view, this._wrap_width_request) +
-          this.view.left_margin
-      );
-    }
+          this.view.left_margin;
 
-    _setWrapMode() {
       this.view.set_wrap_mode(
-        this.isWiderThanWrapWidthRequest()
+        is_wider_than_wrap_width_request
           ? Gtk.WrapMode.NONE
           : Gtk.WrapMode.WORD,
       );
-    }
 
-    vfunc_size_allocate(width, height, baseline) {
-      this._setWrapMode();
       return super.vfunc_size_allocate(width, height, baseline);
     }
 
