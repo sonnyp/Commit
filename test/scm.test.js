@@ -413,6 +413,17 @@ add b.txt`,
     0,
   );
 
+  assert.is(parse(readTest("empty/addp-hunk-edit.diff"), "add -p").body, ``);
+  assert.is(
+    parse(readTest("empty/addp-hunk-edit.diff"), "add -p").detail,
+    undefined,
+  );
+  assert.is(parse(readTest("empty/addp-hunk-edit.diff"), "add -p").comment, ``);
+  assert.is(
+    parse(readTest("empty/addp-hunk-edit.diff"), "add -p").cursor_position,
+    0,
+  );
+
   assert.is(parse(readTest("empty/COMMIT_EDITMSG"), "commit").body, ``);
   assert.is(
     parse(readTest("empty/COMMIT_EDITMSG"), "commit").detail,
@@ -424,21 +435,26 @@ add b.txt`,
     0,
   );
 
-  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").body, ``);
-  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").detail, undefined);
-  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").comment, ``);
-  assert.is(parse(readTest("empty/TAG_EDITMSG"), "commit").cursor_position, 0);
-
-  assert.is(parse(readTest("empty/git-rebase-todo"), "commit").body, ``);
+  assert.is(parse(readTest("empty/git-rebase-todo"), "rebase").body, ``);
   assert.is(
-    parse(readTest("empty/git-rebase-todo"), "commit").detail,
+    parse(readTest("empty/git-rebase-todo"), "rebase").detail,
     undefined,
   );
-  assert.is(parse(readTest("empty/git-rebase-todo"), "commit").comment, ``);
+  assert.is(parse(readTest("empty/git-rebase-todo"), "rebase").comment, ``);
   assert.is(
-    parse(readTest("empty/git-rebase-todo"), "commit").cursor_position,
+    parse(readTest("empty/git-rebase-todo"), "rebase").cursor_position,
     0,
   );
+
+  assert.is(parse(readTest("empty/MERGE_MSG"), "merge").body, ``);
+  assert.is(parse(readTest("empty/MERGE_MSG"), "merge").detail, undefined);
+  assert.is(parse(readTest("empty/MERGE_MSG"), "merge").comment, ``);
+  assert.is(parse(readTest("empty/MERGE_MSG"), "merge").cursor_position, 0);
+
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "tag").body, ``);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "tag").detail, undefined);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "tag").comment, ``);
+  assert.is(parse(readTest("empty/TAG_EDITMSG"), "tag").cursor_position, 0);
 });
 
 export default test;

@@ -44,14 +44,19 @@ export function parse(commit, type) {
     detail = getGitBranch(commentLines);
   } else if (type === "merge") {
     // Display the branch name
-    detail = `branch ${body.split("'")[1]}`;
+    const branch = getMergeBranch(body);
+    if (branch) {
+      detail = `branch ${branch}`;
+    }
   } else if (type === "tag") {
     // Get the version number from the message
     detail = getGitTag(commentLines);
   } else if (type === "rebase") {
-    const _detail = commentLines[1].replace("# ", "");
-    const _detailChunks = _detail.split(" ");
-    detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
+    const _detail = commentLines[1]?.replace("# ", "");
+    const _detailChunks = _detail?.split(" ");
+    if (_detailChunks?.length > 1) {
+      detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
+    }
     cursor_position = 0;
   } else if (
     ["add -p", "git-merge-squash", "git-rebase-squash"].includes(type)
@@ -118,6 +123,10 @@ export function getGitTag(commentLines) {
   // positional aspect of the branch name so it should work with
   // other languages.
   return commentLines[3]?.slice(1).trim();
+}
+
+function getMergeBranch(body) {
+  return body.split("'")[1];
 }
 
 function splitMessage(commit, comment_prefix) {
