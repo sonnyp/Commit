@@ -1,9 +1,21 @@
 import wrapbody from "./wrap.js";
+import { gettext as _ } from "gettext";
+
+const actions = {
+  commit: _("Commit"),
+  hg: _("Commit"),
+  merge: _("Merge"),
+  tag: _("Tag"),
+  "add -p": _("Add"),
+  rebase: _("Rebase"),
+};
 
 export function parse(commit, type) {
   let detail;
   let comment_prefix = "#";
   let language = "git";
+
+  const action = actions[type] || _("Save");
 
   if (type === "hg") {
     comment_prefix = "HG:";
@@ -37,7 +49,6 @@ export function parse(commit, type) {
   // body = body.trimEnd();
 
   const commentLines = comment.split("\n");
-  let cursor_position = body.length;
   if (type === "hg") {
     detail = getMercurialBranch(commentLines);
   } else if (type === "commit") {
@@ -57,9 +68,11 @@ export function parse(commit, type) {
     if (_detailChunks?.length > 1) {
       detail = `${_detailChunks[1]} → ${_detailChunks[3]}`;
     }
-    cursor_position = 0;
-  } else if (
-    ["add -p", "git-merge-squash", "git-rebase-squash"].includes(type)
+  }
+
+  let cursor_position = body.length;
+  if (
+    ["rebase", "add -p", "git-merge-squash", "git-rebase-squash"].includes(type)
   ) {
     cursor_position = 0;
   }
@@ -79,6 +92,7 @@ export function parse(commit, type) {
     read_only_index,
     language,
     capitalize,
+    action,
     wrap: [
       "hg",
       "commit",

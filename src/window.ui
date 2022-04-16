@@ -15,7 +15,7 @@
             <property name="show_start_title_buttons">false</property>
             <property name="show_end_title_buttons">false</property>
             <child>
-              <object class="GtkButton" id="cancelButton">
+              <object class="GtkButton">
                 <property name="label" translatable="yes">Abort</property>
                 <property name="action-name">win.cancel</property>
                 <property
@@ -25,10 +25,10 @@
               </object>
             </child>
             <child type="end">
-              <object class="GtkButton" id="commitButton">
-                <property name="label">Commit</property>
+              <object class="GtkButton" id="button_save">
+                <property name="label" translatable="yes">Save</property>
                 <property name="sensitive">false</property>
-                <property name="action-name">win.commit</property>
+                <property name="action-name">win.save</property>
                 <property
                   name="tooltip-text"
                   translatable="yes"

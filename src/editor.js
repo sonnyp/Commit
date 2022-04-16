@@ -10,13 +10,7 @@ import { hasCommitMessage } from "./scm.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 
-export default function editor({
-  builder,
-  commitButton,
-  type,
-  window,
-  parsed,
-}) {
+export default function editor({ builder, button_save, type, window, parsed }) {
   const {
     body,
     comment,
@@ -68,7 +62,7 @@ export default function editor({
   buffer.connect("changed", () => {
     has_commit_message = hasCommitMessage(buffer.text, comment_prefix);
 
-    commitButton.set_sensitive(has_commit_message);
+    button_save.set_sensitive(has_commit_message);
 
     // Do not highlight any other type
     if (!["commit", "merge", "hg"].includes(type)) return;
@@ -120,12 +114,12 @@ export default function editor({
     read_only_index,
   });
 
-  const capitalizer = Capitalizer({ capitalize, comment_prefix });
+  const capitalizer = capitalize ? Capitalizer() : null;
 
   buffer.connect("end-user-action", () => {
     let { cursor_position } = buffer;
 
-    capitalizer(buffer, cursor_position);
+    capitalizer?.(buffer, cursor_position);
 
     // Take measurements
     let lines = buffer.text.split("\n");
@@ -224,7 +218,7 @@ function markCommentReadonly({ buffer, read_only_index }) {
   buffer.create_mark("comment", comment_iter, false);
 }
 
-function Capitalizer({ capitalize }) {
+function Capitalizer() {
   let complete = false;
 
   return function capitalizer(buffer, cursor_position) {

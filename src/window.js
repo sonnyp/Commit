@@ -25,8 +25,8 @@ export default function Window({
 
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
   const window = builder.get_object("window");
-  const cancelButton = builder.get_object("cancelButton");
-  const commitButton = builder.get_object("commitButton");
+  const button_save = builder.get_object("button_save");
+  button_save.label = parsed.action;
 
   // Set a 3px padding on the bottom right floating menu button
   {
@@ -41,7 +41,7 @@ export default function Window({
 
   const { buffer, source_view, editor } = Editor({
     builder,
-    commitButton,
+    button_save,
     type,
     window,
     parsed,
@@ -49,20 +49,23 @@ export default function Window({
 
   window.set_application(application);
 
-  const cancelAction = new Gio.SimpleAction({
+  const action_cancel = new Gio.SimpleAction({
     name: "cancel",
     parameter_type: null,
   });
-  cancelAction.connect("activate", () => {
-    save({ file, application, value: "", readonly });
+  action_cancel.connect("activate", () => {
+    if (type) {
+      save({ file, value: "", readonly });
+    }
+    application.quit();
   });
-  window.add_action(cancelAction);
+  window.add_action(action_cancel);
 
-  const commitAction = new Gio.SimpleAction({
-    name: "commit",
+  const action_save = new Gio.SimpleAction({
+    name: "save",
     parameter_type: null,
   });
-  commitAction.connect("activate", () => {
+  action_save.connect("activate", () => {
     const { text } = buffer;
 
     const value =
@@ -73,22 +76,23 @@ export default function Window({
             parsed.comment_prefix,
           )
         : text;
+
     save({
       file,
-      application,
       value,
       readonly,
     });
+    application.quit();
   });
-  window.add_action(commitAction);
+  window.add_action(action_save);
 
   // https://github.com/sonnyp/Commit/issues/33
   window.set_focus(source_view);
 
-  return { window, cancelButton, commitButton, buffer };
+  return { window };
 }
 
-function save({ file, value, application, readonly }) {
+function save({ file, value, readonly }) {
   if (!readonly) {
     try {
       GLib.file_set_contents(file.get_path(), value);
@@ -96,6 +100,4 @@ function save({ file, value, application, readonly }) {
       logError(err);
     }
   }
-
-  application.quit();
 }
