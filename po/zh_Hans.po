@@ -1,21 +1,21 @@
-# Croatian translation for re.sonny.Commit package.
-# Copyright (C) 2021 THE re.sonny.Commit'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the re.sonny.Commit package.
-# Milo Ivir <mail@milotype.de>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-20 21:46+0100\n"
-"PO-Revision-Date: 2022-03-30 10:49+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
-"Language: hr\n"
+"PO-Revision-Date: 2022-03-28 01:10+0000\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/commit/commit/zh_Hans/>\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
@@ -26,297 +26,310 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Uređivač commit poruka"
+msgstr "提交信息编辑器"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;提交;合并;开发;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr "Maksimalna duljina naslova (broj znakova)"
+msgstr "标题最大长度（字符数）"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr "Maksimalna duljina redaka teksta (broj znakova)"
+msgstr "正文行最大长度（字符数）"
 
 #: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
-msgstr "Koristi tamni modus"
+msgstr "使用暗色模式"
 
 #: data/re.sonny.Commit.metainfo.xml:13
-msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
-msgstr "Commit je uređivač koji pomaže pisati bolje commit poruke za Git i Mercurial."
+msgid ""
+"Commit is an editor that helps you write better Git and Mercurial commit "
+"messages."
+msgstr "Commit 是帮助您更好编写 Git 和 Mercurial 提交信息的编辑器。"
 
 #: data/re.sonny.Commit.metainfo.xml:17
-msgid "After installing make sure to launch the application and follow the instructions."
-msgstr "Nakon instaliranja pokreni program i slijedi upute."
+msgid ""
+"After installing make sure to launch the application and follow the "
+"instructions."
+msgstr "安装之后请确保启动该应用程序并遵循介绍。"
 
 #: data/re.sonny.Commit.metainfo.xml:21
-msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
-msgstr "Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili kombinaciju tipki _Ctrl+Return_. Za prekidanje i odbacivanje izmjene, pritisni gumb „Odustani” ili tipku _Escape_."
+msgid ""
+"Commit will pop up automatically when you make a commit in one of your "
+"projects. To save your commit message, press the Commit button or the "
+"_Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel "
+"button or the _Escape_ key."
+msgstr "Commit 会在您向工程作出提交时自动弹出。要保存您的提交信息，可按提交按钮或 _Ctrl+Return_ 组合键。要放弃提交，可按取消按钮或 _Escape_ 按键。"
 
 #: data/re.sonny.Commit.metainfo.xml:26
 msgid "Features:"
-msgstr "Značajke:"
+msgstr "特性："
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Highlights overflow of the commit title"
-msgstr "Ističe predugačke naslove commit poruka"
+msgstr "提交标题高亮显示"
 
 #: data/re.sonny.Commit.metainfo.xml:29 data/re.sonny.Commit.metainfo.xml:96
 msgid "Smart body wrapping"
-msgstr "Pametni prijelom teksta"
+msgstr "智能正文折行"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Inserts a blank line between title and body"
-msgstr "Dodaje prazni redak između naslova i teksta"
+msgstr "在标题和正文间插入空行"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr "Komentari su samo-za-čitanje i isključeni su iz „Odaberi sve”"
+msgstr "注释为只读且从“选择全部”中排除"
 
 #: data/re.sonny.Commit.metainfo.xml:33
 msgid "Displays project folder and branch in window header"
-msgstr "Prikazuje mapu projekta i granu u zaglavlju prozora"
+msgstr "在窗口头部栏显示工程文件夹和分支"
 
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Dark mode support"
-msgstr "Podrška za tamni modus"
+msgstr "支持暗色模式"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Keyboard navigation and shortcuts"
-msgstr "Navigacija tipkovnicom i prečaci"
+msgstr "键盘导航和快捷键"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Undo/Redo support"
-msgstr "Podrška za Poništi/Ponovi"
+msgstr "支持撤销/重做"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Emoji picker"
-msgstr "Birač emojija"
+msgstr "表情选择器"
 
 #: data/re.sonny.Commit.metainfo.xml:39
-msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Podržava git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgid ""
+"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "支持 git commit、merge、tag --annotate、add --patch、rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:40
 msgid "Supports Mercurial commit"
-msgstr "Podržava Mercurial commit"
+msgstr "支持 Mercurial 提交"
 
 #: data/re.sonny.Commit.metainfo.xml:41 data/re.sonny.Commit.metainfo.xml:95
 msgid "Auto capitalize the commit title"
-msgstr "Automatski koristi velika slova za naslov commit poruke"
+msgstr "提交标题自动首字母大写"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Welcome window with settings and instructions"
-msgstr "Uvodni prozor s postavkama i instrukcijama"
+msgstr "带有设置和介绍的欢迎窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:93
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "Ističe sintaksu za Git, Mercurial i diffs (razlike)"
+msgstr "用于 Git、Mercurial 和 diffs 的语法高亮"
 
 #: data/re.sonny.Commit.metainfo.xml:54
 msgid "Main window"
-msgstr "Glavni prozor"
+msgstr "主窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:60
 msgid "Main window - dark mode"
-msgstr "Glavni prozor – tamni modus"
+msgstr "主窗口 - 暗色模式"
 
 #: data/re.sonny.Commit.metainfo.xml:66
 msgid "Emoji selector"
-msgstr "Birač emojija"
+msgstr "表情选择器"
 
 #: data/re.sonny.Commit.metainfo.xml:72
 msgid "Shortcuts"
-msgstr "Prečaci"
+msgstr "快捷键"
 
 #: data/re.sonny.Commit.metainfo.xml:78
 msgid "Welcome window"
-msgstr "Uvodni prozor"
+msgstr "欢迎窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:84
 msgid "Welcome window - dark mode"
-msgstr "Uvodni prozor – tamni modus"
+msgstr "欢迎窗口 - 暗色模式"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "Dodaj tipkovne prečace za pomicanje redaka prema gore i dolje"
+msgstr "为文本行上移和下移添加键盘快捷键"
 
 #: data/re.sonny.Commit.metainfo.xml:94
 msgid "Add a shortcuts window"
-msgstr "Dodaj prozor za prečace"
+msgstr "添加快捷键窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:97
 msgid "Various fixes"
-msgstr "Razni ispravci"
+msgstr "多处修复"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Remove spell check temporarily"
-msgstr "Privremeno ukloni provjeru pravopisa"
+msgstr "临时移除拼写检查"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Support undo and redo"
-msgstr "Podrži funkcije Poništi i Ponovi"
+msgstr "支持撤销和重做"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add symbolic icon"
-msgstr "Dodaj simboličnu ikonu"
+msgstr "添加符号图标"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "Add dark mode setting"
-msgstr "Dodaj postavku za tamni modus"
+msgstr "添加暗色模式设置"
 
 #: data/re.sonny.Commit.metainfo.xml:108
 msgid "Focus the text editor"
-msgstr "Postavi uređivač teksta aktivnim"
+msgstr "聚焦文本编辑器"
 
 #: data/re.sonny.Commit.metainfo.xml:109
 msgid "Port to GTK 4 and libadwaita"
-msgstr "Prilagodi program za GTK 4 i libadwaita"
+msgstr "移植到 GTK4 和 libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Move preferences to welcome window"
-msgstr "Pomakni osobne postavke u uvodni prozor"
+msgstr "将首选项移至欢迎窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Only highlight text overflow on commits"
-msgstr "Istakni samo predugački tekst commit poruka"
+msgstr "仅在提交上高亮文本"
 
 #: data/re.sonny.Commit.metainfo.xml:118
 msgid "New app icon"
-msgstr "Nova ikona programa"
+msgstr "新的应用图标"
 
 #: data/re.sonny.Commit.metainfo.xml:119
 msgid "Remove double border"
-msgstr "Ukloni dvostruki rub"
+msgstr "移除双重边框"
 
 #: data/re.sonny.Commit.metainfo.xml:126
 msgid "Add a Preferences window"
-msgstr "Dodan je prozor za osobne postavke"
+msgstr "添加首选项窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Set default title length hint to 50 characters"
-msgstr "Postavi savjet za duljinu naslova na 50 znakova"
+msgstr "设置默认标题长度提示为 50 个字符"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Fix reading commits with special characters"
-msgstr "Ispravi čitanje commit poruka s posebnim znakovima"
+msgstr "修复对带有特殊字符提交的读取"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Fix git rebase not recognized"
-msgstr "Ispravi neprepoznavanje git rebase funkcije"
+msgstr "修复未识别 git rebase"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Make windows bottom corners rounded"
-msgstr "Zaobli donje kutova prozora"
+msgstr "使窗口底部角圆滑"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Add 6px margin to editor"
-msgstr "Uređivaču dodaj rub od 6 px"
+msgstr "对编辑器添加 6 像素边界"
 
 #: data/re.sonny.Commit.metainfo.xml:137
-msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
+msgid ""
+"⚠️ Action required. After updating, please launch the application and follow "
+"the instructions."
+msgstr "⚠️需要处理。更新之后请启动该应用程序并遵循介绍。"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Show a welcome window when launched from desktop"
-msgstr "Prikaži uvodni prozor kad se pokrene s radne površine"
+msgstr "从桌面启动时显示欢迎窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:143
 msgid "Add support for Mercurial"
-msgstr "Dodaj podršku za Mercurial"
+msgstr "为 Mercurial 添加支持"
 
 #: data/re.sonny.Commit.metainfo.xml:144
 msgid "Remove filesystem permission"
-msgstr "Ukloni dozvolu datotečnog sustava"
+msgstr "移除文件系统权限"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr "Prvo izdanje. Kopija od Gnomit 2.0."
+msgstr "初始发布。来自 Gnomit 2.0 的分支。"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Support \"#\" in commit message"
-msgstr "Podrži „#” u commit poruci"
+msgstr "在提交信息中支持“#”"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Properly recognize executable path"
-msgstr "Ispravno prepoznaj stazu do izvršne datoteke"
+msgstr "正确识别可执行程序路径"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr "Milo Ivir <mail@milotype.de>"
+msgstr "lumingzh <lumingzh@qq.com>"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr "Uređivanje"
+msgstr "编辑"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:35
 msgid "Save and confirm"
-msgstr "Spremi i potvrdi"
+msgstr "保存和确认"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:24
 msgid "Cancel and dismiss"
-msgstr "Odustani i odbaci"
+msgstr "取消和放弃"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr "Otvori birač emojija"
+msgstr "打开表情选择器"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr "Pomakni trenutačni redak gore/dolje"
+msgstr "当前行上/下移"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr "Označi sve"
+msgstr "选择全部"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr "Odznači sve"
+msgstr "取消选择全部"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr "Opće"
+msgstr "常规"
 
 #: src/ShortcutsWindow.ui:76 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
-msgstr "Tipkovni prečaci"
+msgstr "键盘快捷键"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr "Zatvori program"
+msgstr "退出"
 
 #: src/window.ui:19
 msgid "Abort"
-msgstr "Prekini"
+msgstr "放弃"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr "Osobne postavke"
+msgstr "首选项"
 
 #: src/welcome.ui:87
 msgid "Git"
 msgstr "Git"
 
 #: src/welcome.ui:91
-msgid "To set Commit as default editor for Git run the following command in Terminal"
-msgstr "Za postavljanje Commita kao standardnog uređivača za Git, pokreni sljedeću naredbu u terminalu"
+msgid ""
+"To set Commit as default editor for Git run the following command in Terminal"
+msgstr "要将 Commit 设为 Git 的默认编辑器请在终端中运行以下命令"
 
 #: src/welcome.ui:122 src/welcome.ui:180
 msgid "Copy to Clipboard"
-msgstr "Kopiraj u međuspremnik"
+msgstr "粘贴至剪贴板"
 
 #: src/welcome.ui:130 src/welcome.ui:188
 msgid "Documentation"
-msgstr "Dokumentacija"
+msgstr "文档"
 
 #: src/welcome.ui:134
-msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgid ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:145
@@ -325,8 +338,10 @@ msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:150
-msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
-msgstr "Za postavljanje Commita kao standardnog uređivača za Mercurial, postavi sljedeće u svoj <tt>hgrc</tt>"
+msgid ""
+"To set Commit as default editor for Mercurial, set the following in your "
+"<tt>hgrc</tt>"
+msgstr "要将 Commit 设为 Mercurial 的默认编辑器，请在您的 <tt>hgrc</tt> 中如下设置"
 
 #: src/welcome.ui:192
 msgid "https://www.mercurial-scm.org/wiki/editor"
@@ -334,24 +349,4 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 
 #: src/welcome.ui:216
 msgid "About Commit"
-msgstr "O programu Commit"
-
-#, fuzzy
-#~| msgid "Supports Mercurial commit messages"
-#~ msgid "Support multiple comments"
-#~ msgstr "Podrška za Mercurial commit poruke"
-
-#~ msgid "Message title length hint"
-#~ msgstr "Savjet za duljinu naslova poruke"
-
-#~ msgid "Cancel"
-#~ msgstr "Odustani"
-
-#~ msgid "Spell checking"
-#~ msgstr "Provjera pravopisa"
-
-#~ msgid "Dark theme support: the overflow highlight is adjusted according to your theme"
-#~ msgstr "Podrška za tamnu temu: označavanje predugačkog teksta prilagođava se tvojoj temi"
-
-#~ msgid "Shows a welcome window when launched from desktop"
-#~ msgstr "Prikaz uvodnog prozora pri pokretanju s radne površine"
+msgstr "关于 Commit"
