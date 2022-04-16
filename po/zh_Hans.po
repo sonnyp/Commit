@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-13 21:58+0200\n"
-"PO-Revision-Date: 2022-03-28 01:10+0000\n"
+"PO-Revision-Date: 2022-04-18 00:07+0000\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/commit/commit/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -54,10 +54,8 @@ msgid "After installing make sure to launch the application and follow the instr
 msgstr "安装之后请确保启动该应用程序并遵循介绍。"
 
 #: data/re.sonny.Commit.metainfo.xml:21
-#, fuzzy
-#| msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
-msgstr "Commit 会在您向工程作出提交时自动弹出。要保存您的提交信息，可按提交按钮或 _Ctrl+Return_ 组合键。要放弃提交，可按取消按钮或 _Escape_ 按键。"
+msgstr "Commit 会在您向工程作出提交时自动弹出。要保存您的提交信息，可按提交按钮或 <code>Ctrl+Return</code> 组合键。要放弃提交，可按放弃按钮或 <code>Escape</code> 按键。"
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -146,19 +144,17 @@ msgstr "欢迎窗口 - 暗色模式"
 
 #: data/re.sonny.Commit.metainfo.xml:95
 msgid "Improve auto capitalizzation"
-msgstr ""
+msgstr "优化自动大写"
 
 #: data/re.sonny.Commit.metainfo.xml:96
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME 平台 42"
 
 #: data/re.sonny.Commit.metainfo.xml:103
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "为文本行上移和下移添加键盘快捷键"
 
 #: data/re.sonny.Commit.metainfo.xml:104
-#, fuzzy
-#| msgid "Highlight syntax for Git, Mercurial and diffs"
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "用于 Git、Mercurial 和 diffs 的语法高亮"
 
