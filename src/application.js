@@ -85,7 +85,7 @@ export default function Application({ version }) {
   application.set_accels_for_action("app.shortcuts", ["<Control>question"]);
 
   application.set_accels_for_action("win.cancel", ["Escape"]);
-  application.set_accels_for_action("win.commit", ["<Control>Return"]);
+  application.set_accels_for_action("win.save", ["<Control>Return"]);
 
   return application;
 }
