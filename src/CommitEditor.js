@@ -65,12 +65,8 @@ export default GObject.registerClass(
     }
 
     vfunc_size_allocate(width, height, baseline) {
-      const is_wider_than_wrap_width_request =
-        this.view.get_width() >=
-        getRulerPosition(this.view, this._wrap_width_request);
-
       this.view.set_wrap_mode(
-        is_wider_than_wrap_width_request
+        this.isWiderThanWrapWidthRequest()
           ? Gtk.WrapMode.NONE
           : Gtk.WrapMode.WORD,
       );
@@ -81,6 +77,13 @@ export default GObject.registerClass(
     update_style() {
       const scheme = style_manager.dark ? "Adwaita-dark" : "Adwaita";
       this.buffer.set_style_scheme(scheme_manager.get_scheme(scheme));
+    }
+
+    isWiderThanWrapWidthRequest() {
+      return (
+        this.view.get_width() >=
+        getRulerPosition(this.view, this._wrap_width_request)
+      );
     }
   },
 );

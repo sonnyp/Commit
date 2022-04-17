@@ -12,6 +12,7 @@ import Application from "./application.js";
 GLib.set_prgname("re.sonny.Commit");
 GLib.set_application_name("Commit");
 
+Adw.init();
 GtkSource.init();
 
 function updateDarkMode() {
