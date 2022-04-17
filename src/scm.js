@@ -77,10 +77,14 @@ export function parse(commit, type) {
     cursor_position = 0;
   }
 
-  let capitalize = false;
-  if (["hg", "commit", "merge", "tag"].includes(type)) {
-    capitalize = true;
-  }
+  const is_message = [
+    "hg",
+    "commit",
+    "git-merge-squash",
+    "git-rebase-squash",
+    "merge",
+    "tag",
+  ].includes(type);
 
   return {
     body,
@@ -91,15 +95,8 @@ export function parse(commit, type) {
     cursor_position,
     read_only_index,
     language,
-    capitalize,
     action,
-    wrap: [
-      "hg",
-      "commit",
-      "git-merge-squash",
-      "git-rebase-squash",
-      "merge",
-    ].includes(type),
+    is_message,
   };
 }
 
@@ -164,8 +161,8 @@ function splitMessage(commit, comment_prefix) {
   return { body, comment, read_only_index: idx };
 }
 
-export function hasCommitMessage(str, comment_prefix) {
-  return str.split("\n").some((line) => {
+export function isEmptyCommitMessage(str, comment_prefix) {
+  return !str.split("\n").some((line) => {
     line = line.trim();
     return line.length > 0 && !line.startsWith(comment_prefix);
   });

@@ -2,7 +2,7 @@ import tst, { assert } from "../troll/tst/tst.js";
 
 import Gio from "gi://Gio";
 
-import { parse, getType, hasCommitMessage, format } from "../src/scm.js";
+import { parse, getType, isEmptyCommitMessage, format } from "../src/scm.js";
 
 const test = tst("scm");
 
@@ -58,14 +58,14 @@ test("getType", () => {
   assert.is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
 });
 
-test("hasCommitMessage", () => {
-  assert.is(hasCommitMessage("foo\n#hello", "#"), true);
-  assert.is(hasCommitMessage("foo", "#"), true);
-  assert.is(hasCommitMessage("# hello\nfoo", "#"), true);
-  assert.is(hasCommitMessage("", "#"), false);
-  assert.is(hasCommitMessage("# hello", "#"), false);
-  assert.is(hasCommitMessage(" ", "#"), false);
-  assert.is(hasCommitMessage(" \n#\n ", "#"), false);
+test("isEmptyCommitMessage", () => {
+  assert.is(isEmptyCommitMessage("foo\n#hello", "#"), false);
+  assert.is(isEmptyCommitMessage("foo", "#"), false);
+  assert.is(isEmptyCommitMessage("# hello\nfoo", "#"), false);
+  assert.is(isEmptyCommitMessage("", "#"), true);
+  assert.is(isEmptyCommitMessage("# hello", "#"), true);
+  assert.is(isEmptyCommitMessage(" ", "#"), true);
+  assert.is(isEmptyCommitMessage(" \n#\n ", "#"), true);
 });
 
 test("parse", () => {

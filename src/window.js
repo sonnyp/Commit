@@ -25,6 +25,11 @@ export default function Window({
 
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
   const window = builder.get_object("window");
+
+  let title = GLib.path_get_basename(GLib.get_current_dir());
+  if (parsed.detail) title += ` (${parsed.detail})`;
+  window.set_title(title);
+
   const button_save = builder.get_object("button_save");
   button_save.label = parsed.action;
 
@@ -43,7 +48,6 @@ export default function Window({
     builder,
     button_save,
     type,
-    window,
     parsed,
   });
 
@@ -69,7 +73,7 @@ export default function Window({
     const { text } = buffer;
 
     const value =
-      parsed.wrap && !editor.isWiderThanWrapWidthRequest()
+      parsed.is_message && !editor.isWiderThanWrapWidthRequest()
         ? format(
             text,
             settings.get_int("body-length-wrap"),

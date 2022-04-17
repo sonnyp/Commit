@@ -6,28 +6,20 @@ import GtkSource from "gi://GtkSource";
 import CommitEditor from "./CommitEditor.js";
 
 import { settings } from "./util.js";
-import { hasCommitMessage } from "./scm.js";
+import { isEmptyCommitMessage } from "./scm.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 
-export default function editor({ builder, button_save, type, window, parsed }) {
+export default function editor({ builder, button_save, type, parsed }) {
   const {
     body,
     comment,
-    detail,
     cursor_position,
     read_only_index,
     language,
     comment_prefix,
-    capitalize,
+    is_message,
   } = parsed;
-
-  if (type) {
-    const projectDirectoryName = GLib.path_get_basename(GLib.get_current_dir());
-    let title = `${type}: ${projectDirectoryName}`;
-    if (detail) title += ` (${detail})`;
-    window.set_title(title);
-  }
 
   const commentLines = comment.split("\n");
   const numberOfLinesInComment = commentLines.length;
@@ -39,6 +31,8 @@ export default function editor({ builder, button_save, type, window, parsed }) {
   const widget = new CommitEditor({ language });
   overlay.set_child(widget);
   const source_view = widget.view;
+
+  source_view.set_show_right_margin(is_message);
 
   settings.bind(
     "body-length-wrap",
@@ -57,15 +51,11 @@ export default function editor({ builder, button_save, type, window, parsed }) {
   highlightBackgroundTag.background = color.to_string();
   buffer.tag_table.add(highlightBackgroundTag);
 
-  let has_commit_message = false;
-
   buffer.connect("changed", () => {
-    has_commit_message = hasCommitMessage(buffer.text, comment_prefix);
+    const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
+    button_save.set_sensitive(!is_empty);
 
-    button_save.set_sensitive(has_commit_message);
-
-    // Do not highlight any other type
-    if (!["commit", "merge", "hg"].includes(type)) return;
+    if (!is_message) return;
 
     // Check first line length and highlight characters beyond the limit.
     const text = buffer.text;
@@ -114,7 +104,7 @@ export default function editor({ builder, button_save, type, window, parsed }) {
     read_only_index,
   });
 
-  const capitalizer = capitalize ? Capitalizer() : null;
+  const capitalizer = is_message ? Capitalizer() : null;
 
   buffer.connect("end-user-action", () => {
     let { cursor_position } = buffer;
