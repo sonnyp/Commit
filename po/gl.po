@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-13 21:58+0200\n"
-"PO-Revision-Date: 2022-04-18 00:07+0000\n"
-"Last-Translator: antonpaidoslalin <anton.paidoslalin@gmail.com>\n"
+"PO-Revision-Date: 2022-04-19 03:07+0000\n"
+"Last-Translator: Jorge Teijeiro <jorge.teijeiro.ramos@gmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/commit/commit/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Editor de mensaxes de remisión (de Commit)"
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr ""
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
@@ -338,7 +338,7 @@ msgstr "Mercurial"
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:150
 msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
-msgstr "Para establecer Commit como editor por defecto para Mercurial, establecer o seguinte no teu  <tt>hgrc</tt>"
+msgstr "Para establecer Commit como editor por defecto para Mercurial, establecer o seguinte no teu <tt>hgrc</tt>"
 
 #: src/welcome.ui:192
 msgid "https://www.mercurial-scm.org/wiki/editor"
