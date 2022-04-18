@@ -52,7 +52,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_cancel.connect("activate", () => {
-    if (type) {
+    if (type && type !== "config") {
       save({ file, value: "", readonly });
     }
     application.quit();
