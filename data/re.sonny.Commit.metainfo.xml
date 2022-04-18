@@ -92,8 +92,15 @@
     <release version="3.2.0" date="2022-04-13">
       <description>
         <ul>
-          <li>Improve auto capitalizzation</li>
+          <li>Improve auto capitalization</li>
+          <li>Add support for gitconfig and hgrc</li>
+          <li>Support editing any file</li>
+          <li
+          >Make the primary button label reflect the current action (Tag, Rebase, Commit, ...)</li>
+          <li>Use 2 spaces indentation</li>
+          <li>Add menu button</li>
           <li>GNOME Platform 42</li>
+          <li>Various fixes</li>
         </ul>
       </description>
     </release>

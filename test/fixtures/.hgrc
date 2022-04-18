@@ -1,0 +1,2 @@
+[ui]
+editor=flatpak run --file-forwarding re.sonny.Commit @@

@@ -7,16 +7,10 @@ import Editor from "./editor.js";
 import { relativePath, settings } from "./util.js";
 import { parse, format } from "./scm.js";
 
-export default function Window({
-  application,
-  file,
-  commitMessage,
-  type,
-  readonly,
-}) {
+export default function Window({ application, file, text, type, readonly }) {
   let parsed = {};
   try {
-    parsed = parse(commitMessage, type);
+    parsed = parse(text, type);
   } catch (err) {
     if (__DEV__) {
       logError(err);

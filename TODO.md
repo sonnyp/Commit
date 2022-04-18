@@ -1,5 +1,5 @@
-1. [ ] cancel shouldn't save empty file if type is not recognized
-2. [ ] Commit button should say "Save" if type isn't recognize (editing a regular file) and set title to filename and disable cancel
+1. [x] cancel shouldn't save empty file if type is not recognized
+2. [x] Commit button should say "Save" if type isn't recognize (editing a regular file) and set title to filename and disable cancel
 3. [ ] conventional commit? https://www.conventionalcommits.org/en/v1.0.0/
 4. [ ] spell checking
    1. [ ] 1. [ ] depends on https://gitlab.gnome.org/GNOME/gspell/-/issues/17

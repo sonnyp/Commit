@@ -105,29 +105,23 @@ function openWelcome({ application }) {
 }
 
 function openEditor({ file, application, readonly }) {
-  const filePath = file.get_path();
+  const file_path = file.get_path();
 
-  let commitMessage;
+  let text;
   try {
-    [, commitMessage] = GLib.file_get_contents(filePath);
+    const [, contents] = GLib.file_get_contents(file_path);
+    text = textDecoder.decode(contents);
   } catch (err) {
     logError(err);
     application.quit();
     return;
   }
 
-  commitMessage = textDecoder.decode(commitMessage);
-
-  const type = getType(filePath);
-  // This should not happen.
-  if (!type) {
-    print(`Warning: unknown commit type encountered in: ${filePath}`);
-  }
-
+  const type = getType(GLib.path_get_basename(file_path));
   const { window } = Window({
     application,
     file,
-    commitMessage,
+    text,
     type,
     readonly,
   });

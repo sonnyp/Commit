@@ -10,12 +10,23 @@ const actions = {
   rebase: _("Rebase"),
 };
 
-export function parse(commit, type) {
+export function parse(text, type) {
+  const action = actions[type] || _("Save");
+
+  if (type === "config") {
+    return {
+      cursor_position: 0,
+      action,
+      body: text,
+      comment: "",
+      text,
+      language: "ini",
+    };
+  }
+
   let detail;
   let comment_prefix = "#";
   let language = "git";
-
-  const action = actions[type] || _("Save");
 
   if (type === "hg") {
     comment_prefix = "HG:";
@@ -31,18 +42,18 @@ export function parse(commit, type) {
     language = "diff";
   } else if (
     type === "commit" &&
-    commit.startsWith("Squashed commit of the following")
+    text.startsWith("Squashed commit of the following")
   ) {
     type = "git-merge-squash";
   } else if (
     type === "commit" &&
-    commit.startsWith("# This is a combination of")
+    text.startsWith("# This is a combination of")
   ) {
     type = "git-rebase-squash";
   }
 
   // Split the message into the commit body and comment
-  const split = splitMessage(commit, comment_prefix);
+  const split = splitMessage(text, comment_prefix);
   const { body, comment, read_only_index } = split;
 
   // Trim any newlines there may be at the end of the commit body
@@ -97,6 +108,7 @@ export function parse(commit, type) {
     language,
     action,
     is_message,
+    text,
   };
 }
 
@@ -107,6 +119,8 @@ export function getType(filename) {
   if (filename.endsWith("TAG_EDITMSG")) return "tag";
   if (filename.endsWith("addp-hunk-edit.diff")) return "add -p";
   if (filename.endsWith("git-rebase-todo")) return "rebase";
+  if (filename.endsWith(".gitconfig")) return "config";
+  if (filename.endsWith(".hgrc")) return "config";
   // Mercurial
   if (filename.endsWith(".commit.hg.txt")) return "hg";
   // Unknown
@@ -140,29 +154,30 @@ function getMergeBranch(body) {
   return body.split("'")[1];
 }
 
-function splitMessage(commit, comment_prefix) {
+function splitMessage(text, comment_prefix) {
   const exp = new RegExp(
     `^${comment_prefix}.*\n${comment_prefix}.*\n${comment_prefix}`,
     "m",
   );
 
-  const idx = commit.search(exp);
+  const idx = text.search(exp);
   if (idx === -1) {
     return {
-      body: commit,
+      body: text,
       comment: "",
+      read_only_index: -1,
     };
   }
 
-  const body = commit.slice(0, idx).trim();
+  const body = text.slice(0, idx).trim();
 
-  const comment = "\n" + commit.slice(idx);
+  const comment = "\n" + text.slice(idx);
 
   return { body, comment, read_only_index: idx };
 }
 
-export function isEmptyCommitMessage(str, comment_prefix) {
-  return !str.split("\n").some((line) => {
+export function isEmptyCommitMessage(text, comment_prefix) {
+  return !text.split("\n").some((line) => {
     line = line.trim();
     return line.length > 0 && !line.startsWith(comment_prefix);
   });
