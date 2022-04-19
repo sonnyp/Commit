@@ -14,50 +14,24 @@
   </metadata>
 
     <styles>
-
-    <!-- General -->
-    <style id="comment" name="Comment" map-to="def:comment" />
-
-</styles>
+      <style id="comment" name="Comment" map-to="def:comment" />
+    </styles>
 
   <definitions>
 
-
-    <context id="_comment-content" class-disabled="no-spell-check">
-      <include>
-        <context ref="def:in-comment" />
-      </include>
-    </context> <!-- /_comment-content -->
-
-    <context id="_single-line-comment-content">
-      <include>
-        <context ref="_comment-content" />
-      </include>
-    </context> <!-- /_single-line-comment-content -->
-
-
-   <context id="comments">
-      <include>
-        <context ref="_single-line-comments" />
-      </include>
-    </context> <!-- /comments -->
-
     <context
-      id="_single-line-comments"
+      id="line-comment"
       style-ref="comment"
       end-at-line-end="true"
-      class-disabled="no-spell-check"
       class="comment"
+      class-disabled="no-spell-check"
     >
       <start>^#</start>
-      <include>
-        <context ref="_single-line-comment-content" />
-      </include>
-    </context> <!-- /_single-line-comments -->
+    </context>
 
     <context id="git">
       <include>
-        <context ref="comments" />
+        <context ref="line-comment" />
       </include>
     </context>
   </definitions>
