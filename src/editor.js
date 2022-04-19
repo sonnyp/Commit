@@ -1,5 +1,4 @@
 import Gtk from "gi://Gtk";
-import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 import GtkSource from "gi://GtkSource";
 
@@ -36,7 +35,6 @@ export default function editor({ builder, button_save, parsed }) {
   );
 
   const buffer = source_view.get_buffer();
-  buffer.set_enable_undo(true);
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
@@ -169,22 +167,18 @@ export default function editor({ builder, button_save, parsed }) {
   }
 
   // Only select commit message body (not the comment) on select all.
-  source_view.connect("select-all", (self, selected) => {
+  source_view.connect_after("select-all", (self, selected) => {
     if (!selected) return;
 
-    // Carry this out on the next stack frame.
-    GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
-      // Redo the selection to limit it to the commit message
-      // only (exclude the original commit comment).
-      const mark = buffer.get_mark("comment");
-      if (mark) {
-        const selectStartIterator = buffer.get_start_iter();
-        const selectEndIterator = buffer.get_iter_at_mark(mark);
-        // buffer.move_mark_by_name('selection_bound', selectEndIterator)
-        buffer.select_range(selectStartIterator, selectEndIterator);
-      }
-      return GLib.SOURCE_REMOVE;
-    });
+    // Redo the selection to limit it to the commit message
+    // only (exclude the original commit comment).
+    const mark = buffer.get_mark("comment");
+    if (mark) {
+      const selectStartIterator = buffer.get_start_iter();
+      const selectEndIterator = buffer.get_iter_at_mark(mark);
+      // buffer.move_mark_by_name('selection_bound', selectEndIterator)
+      buffer.select_range(selectStartIterator, selectEndIterator);
+    }
 
     return false;
   });

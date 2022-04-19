@@ -8,7 +8,9 @@
     <child>
       <object class="GtkSourceView" id="view">
         <property name="buffer">
-          <object class="GtkSourceBuffer" id="buffer" />
+          <object class="GtkSourceBuffer" id="buffer">
+            <property name="enable-undo">true</property>
+          </object>
         </property>
         <property name="monospace">true</property>
         <property name="show-right-margin">true</property>
