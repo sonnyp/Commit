@@ -58,7 +58,7 @@ Thank you for your help!
 
 ```sh
 cd Commit
-./re.sonny.Commit --readonly test/fixtures/with-body/COMMIT_EDITMSG
+G_MESSAGES_DEBUG=Gjs-Console ./re.sonny.Commit --readonly test/fixtures/with-body/COMMIT_EDITMSG
 ```
 
 Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.

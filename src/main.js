@@ -34,12 +34,12 @@ export default function main(argv, { version, datadir }) {
 
   const application = new Application({ version });
 
-  if (__DEV__) {
-    log("argv " + argv.join(" "));
-    log(`programInvocationName: ${programInvocationName}`);
-    log(`_: ${GLib.getenv("_")}`);
-    log(`PWD: ${GLib.get_current_dir()}`);
+  console.debug("argv", argv);
+  console.debug("programInvocationName", programInvocationName);
+  console.debug("_", GLib.getenv("_"));
+  console.debug("PWD", GLib.get_current_dir());
 
+  if (__DEV__) {
     const restart = new Gio.SimpleAction({
       name: "restart",
       parameter_type: null,
