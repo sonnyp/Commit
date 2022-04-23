@@ -4,7 +4,7 @@
 
 Commit is an editor that helps you write better Git and Mercurial commit messages.<img style="vertical-align: middle;" src="data/icons/re.sonny.Commit-symbolic.svg" width="16" height="16">
 
-![screenshot](data/screenshot.png)
+![screenshot](data/screenshots/editor.png)
 
 https://apps.gnome.org/app/re.sonny.Commit/
 

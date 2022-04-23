@@ -52,51 +52,45 @@
   <screenshots>
     <screenshot type="default">
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshot-light.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/editor.png
       </image>
       <caption>Main window</caption>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshot-dark.png
-      </image>
-      <caption>Main window - dark mode</caption>
-    </screenshot>
-    <screenshot>
-      <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/emoji.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/emoji.png
       </image>
       <caption>Emoji selector</caption>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/shortcuts.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/shortcuts.png
       </image>
       <caption>Shortcuts</caption>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/welcome-light.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/welcome.png
       </image>
       <caption>Welcome window</caption>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/welcome-dark.png
+        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/resize.png
       </image>
-      <caption>Welcome window - dark mode</caption>
+      <caption>Resize the window to disable auto formatting</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="3.2.0" date="2022-04-13">
+    <release version="3.2.0" date="2022-04-23">
       <description>
         <ul>
           <li>Improve auto capitalization</li>
           <li>Add support for gitconfig and hgrc</li>
           <li>Support editing any file</li>
           <li
-          >Make the primary button label reflect the current action (Tag, Rebase, Commit, ...)</li>
+          >Make the primary button label dynamic (Tag, Rebase, Commit, ...)</li>
           <li>Use 2 spaces indentation</li>
           <li>Add menu button</li>
           <li>GNOME Platform 42</li>

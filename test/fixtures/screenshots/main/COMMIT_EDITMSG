@@ -1,7 +1,6 @@
 This is the commit title; it should be short. Commit will highlight if it exceeds 50 characters.
 
-Everything after the first blank line is the commit body. It can be as long
-as you like. Commit will automatically wrap it to 75 characters.
+Everything after the first blank line is the commit body. It can be as long as you like. Commit will automatically wrap it to 72 characters.
 
 Both options are customizable.
 

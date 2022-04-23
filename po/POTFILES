@@ -2,6 +2,7 @@ data/re.sonny.Commit.desktop
 data/re.sonny.Commit.gschema.xml
 data/re.sonny.Commit.metainfo.xml
 src/about.js
+src/scm.js
 src/ShortcutsWindow.ui
 src/window.ui
 src/welcome.ui
