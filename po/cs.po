@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 00:06+0100\n"
+"POT-Creation-Date: 2022-04-13 21:58+0200\n"
 "PO-Revision-Date: 2021-08-11 13:42+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Gtranslator 40.0\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Commit.desktop:4 src/welcome.ui:7
+#: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
 msgstr "Commit"
 
@@ -34,17 +34,17 @@ msgstr "Editor zpráv commitů"
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
 msgstr "git;mercurial;hg;scm;"
 
-#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:34
+#: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 #, fuzzy
 #| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
 msgstr "Nastavena výchozí délka titulku na 50 znaků"
 
-#: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:52
+#: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
 msgstr ""
 
-#: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:70
+#: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
 msgid "Use dark mode"
 msgstr ""
 
@@ -57,63 +57,67 @@ msgid "After installing make sure to launch the application and follow the instr
 msgstr "Po instalaci nezapomeňte aplikaci spustit a postupujte podle pokynů."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
+msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:26
+#: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
 msgstr "Funkce:"
 
-#: data/re.sonny.Commit.metainfo.xml:28
+#: data/re.sonny.Commit.metainfo.xml:30
 #, fuzzy
 #| msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgid "Highlights overflow of the commit title"
 msgstr "Zvýraznění překročení délky titulku 50 znaků (přizpůsobitelné)"
 
-#: data/re.sonny.Commit.metainfo.xml:29
-msgid "Automatically wraps the commit body"
+#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:107
+msgid "Smart body wrapping"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:30
+#: data/re.sonny.Commit.metainfo.xml:32
 #, fuzzy
 #| msgid "Inserts blank line between title and description"
 msgid "Inserts a blank line between title and body"
 msgstr "Vkládání prázdného řádku mezi titulek a popis"
 
 #. <li>Spell checking</li>
-#: data/re.sonny.Commit.metainfo.xml:32
+#: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr "Komentáře jsou pouze pro čtení a jsou vyloučeny z možnosti \"Vybrat vše\""
 
-#: data/re.sonny.Commit.metainfo.xml:33
+#: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
 msgstr "Zobrazení složky projektu a věteve v záhlaví okna"
 
-#: data/re.sonny.Commit.metainfo.xml:34
+#: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:35
+#: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:36
-msgid "Undo and redo support"
+#: data/re.sonny.Commit.metainfo.xml:38
+msgid "Undo/Redo support"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:37
+#: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:38
-msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
+#: data/re.sonny.Commit.metainfo.xml:41
+#, fuzzy
+#| msgid "Supports git commit messages, merge messages, tag messages, add -p messages, and rebase -i messages"
+msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr "Podporuje zprávy git commit, zprávy merge, zprávy tag, zprávy add -p a zprávy rebase -i."
 
 #: data/re.sonny.Commit.metainfo.xml:42
-msgid "Supports Mercurial commit messages"
+#, fuzzy
+#| msgid "Supports Mercurial commit messages"
+msgid "Supports Mercurial commit"
 msgstr "Podporuje zprávy commitů Mercurial"
 
-#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:98
+#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:106
 msgid "Auto capitalize the commit title"
 msgstr ""
 
@@ -121,156 +125,158 @@ msgstr ""
 msgid "Welcome window with settings and instructions"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:45 data/re.sonny.Commit.metainfo.xml:95
+#: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:56
+#: data/re.sonny.Commit.metainfo.xml:57
 #, fuzzy
 #| msgid "Commit main window"
 msgid "Main window"
 msgstr "Hlavní okno Commitu"
 
-#: data/re.sonny.Commit.metainfo.xml:62
+#: data/re.sonny.Commit.metainfo.xml:63
 #, fuzzy
 #| msgid "Commit main window - dark mode"
 msgid "Main window - dark mode"
 msgstr "Hlavní okno Commitu - tmavý režim"
 
-#: data/re.sonny.Commit.metainfo.xml:68
+#: data/re.sonny.Commit.metainfo.xml:69
 msgid "Emoji selector"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:74
+#: data/re.sonny.Commit.metainfo.xml:75
 msgid "Shortcuts"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:80
+#: data/re.sonny.Commit.metainfo.xml:81
 #, fuzzy
 #| msgid "Commit welcome window"
 msgid "Welcome window"
 msgstr "Uvítací okno Commitu"
 
-#: data/re.sonny.Commit.metainfo.xml:86
+#: data/re.sonny.Commit.metainfo.xml:87
 #, fuzzy
 #| msgid "Commit welcome window - dark mode"
 msgid "Welcome window - dark mode"
 msgstr "Uvítací okno Commitu - tmavý režim"
 
-#: data/re.sonny.Commit.metainfo.xml:94
-msgid "Add keyboard shortcuts for moving lines up and down"
+#: data/re.sonny.Commit.metainfo.xml:95
+msgid "Improve auto capitalizzation"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:96
+msgid "GNOME Platform 42"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:103
+msgid "Add keyboard shortcuts for moving lines up and down"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:104
+msgid "Highlight syntax for Git, Mercurial, and diffs"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:105
 #, fuzzy
 #| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
 msgstr "Přidáno okno Předvolby"
 
-#: data/re.sonny.Commit.metainfo.xml:97
-#, fuzzy
-#| msgid "Supports Mercurial commit messages"
-msgid "Support multiple comments"
-msgstr "Podporuje zprávy commitů Mercurial"
-
-#: data/re.sonny.Commit.metainfo.xml:99
-msgid "Automatically wrap commit message body"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:100
+#: data/re.sonny.Commit.metainfo.xml:108
 msgid "Various fixes"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:107
+#: data/re.sonny.Commit.metainfo.xml:115
 msgid "Remove spell check temporarily"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:108
+#: data/re.sonny.Commit.metainfo.xml:116
 msgid "Support undo and redo"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:109
+#: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add symbolic icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:110
+#: data/re.sonny.Commit.metainfo.xml:118
 msgid "Add dark mode setting"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:111
+#: data/re.sonny.Commit.metainfo.xml:119
 msgid "Focus the text editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:112
+#: data/re.sonny.Commit.metainfo.xml:120
 msgid "Port to GTK 4 and libadwaita"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:119
+#: data/re.sonny.Commit.metainfo.xml:127
 #, fuzzy
 msgid "Move preferences to welcome window"
 msgstr "Přidáno okno Předvolby"
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:128
 msgid "Only highlight text overflow on commits"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:121
+#: data/re.sonny.Commit.metainfo.xml:129
 msgid "New app icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:122
+#: data/re.sonny.Commit.metainfo.xml:130
 msgid "Remove double border"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:129
+#: data/re.sonny.Commit.metainfo.xml:137
 msgid "Add a Preferences window"
 msgstr "Přidáno okno Předvolby"
 
-#: data/re.sonny.Commit.metainfo.xml:130
+#: data/re.sonny.Commit.metainfo.xml:138
 msgid "Set default title length hint to 50 characters"
 msgstr "Nastavena výchozí délka titulku na 50 znaků"
 
-#: data/re.sonny.Commit.metainfo.xml:131
+#: data/re.sonny.Commit.metainfo.xml:139
 msgid "Fix reading commits with special characters"
 msgstr "Opraveno čtení commitů se speciálními znaky"
 
-#: data/re.sonny.Commit.metainfo.xml:132
+#: data/re.sonny.Commit.metainfo.xml:140
 msgid "Fix git rebase not recognized"
 msgstr "Opraveno nerozpoznání git rebase"
 
-#: data/re.sonny.Commit.metainfo.xml:133
+#: data/re.sonny.Commit.metainfo.xml:141
 msgid "Make windows bottom corners rounded"
 msgstr "Spodní rohy okna jsou zakulacené"
 
-#: data/re.sonny.Commit.metainfo.xml:134
+#: data/re.sonny.Commit.metainfo.xml:142
 msgid "Add 6px margin to editor"
 msgstr "Přidán 6px okraj do editoru"
 
-#: data/re.sonny.Commit.metainfo.xml:140
+#: data/re.sonny.Commit.metainfo.xml:148
 msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
 msgstr "⚠️ Požadovaná akce. Po aktualizaci spusťte aplikaci a postupujte podle pokynů."
 
-#: data/re.sonny.Commit.metainfo.xml:145
+#: data/re.sonny.Commit.metainfo.xml:153
 msgid "Show a welcome window when launched from desktop"
 msgstr "Zobrazení uvítacího okna při spuštění z plochy"
 
-#: data/re.sonny.Commit.metainfo.xml:146
+#: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add support for Mercurial"
 msgstr "Přidána podpora pro Mercurial"
 
-#: data/re.sonny.Commit.metainfo.xml:147
+#: data/re.sonny.Commit.metainfo.xml:155
 msgid "Remove filesystem permission"
 msgstr "Odebráno oprávnění souborového systému"
 
-#: data/re.sonny.Commit.metainfo.xml:153
+#: data/re.sonny.Commit.metainfo.xml:161
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "První vydání. Převzato z Gnomit 2.0."
 
-#: data/re.sonny.Commit.metainfo.xml:155
+#: data/re.sonny.Commit.metainfo.xml:163
 msgid "Support \"#\" in commit message"
 msgstr "Podpora \"#\" ve zprávách commitů"
 
-#: data/re.sonny.Commit.metainfo.xml:156
+#: data/re.sonny.Commit.metainfo.xml:164
 msgid "Properly recognize executable path"
 msgstr "Správné rozpoznání cesty ke spustitelnému souboru"
 
@@ -279,90 +285,95 @@ msgstr "Správné rozpoznání cesty ke spustitelnému souboru"
 msgid "translator-credits"
 msgstr "Vojtěch Perník <translations@pervoj.cz>"
 
-#: src/ShortcutsWindow.ui:9
+#: src/ShortcutsWindow.ui:10
 msgid "Editing"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:16 src/window.ui:33
+#: src/ShortcutsWindow.ui:17 src/window.ui:35
 msgid "Save and confirm"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:25 src/window.ui:22
+#: src/ShortcutsWindow.ui:26 src/window.ui:24
 msgid "Cancel and dismiss"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:34
+#: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:45
+#: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:53
+#: src/ShortcutsWindow.ui:54
 msgid "Select All"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:61
+#: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:68
+#: src/ShortcutsWindow.ui:69
 msgid "General"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:75 src/welcome.ui:210
+#: src/ShortcutsWindow.ui:76 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:81
+#: src/ShortcutsWindow.ui:82
 msgid "Quit"
 msgstr "Ukončit"
 
-#: src/window.ui:17
+#: src/window.ui:19
 msgid "Abort"
 msgstr ""
 
-#: src/welcome.ui:26
+#: src/welcome.ui:28
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: src/welcome.ui:85
+#: src/welcome.ui:87
 msgid "Git"
 msgstr ""
 
-#: src/welcome.ui:89
+#: src/welcome.ui:91
 msgid "To set Commit as default editor for Git run the following command in Terminal"
 msgstr "Chcete-li nastavit Commit jako výchozí editor pro Git, spusťte v terminálu následující příkaz"
 
-#: src/welcome.ui:120 src/welcome.ui:178
+#: src/welcome.ui:122 src/welcome.ui:180
 msgid "Copy to Clipboard"
 msgstr "Zkopírovat do schránky"
 
-#: src/welcome.ui:128 src/welcome.ui:186
+#: src/welcome.ui:130 src/welcome.ui:188
 msgid "Documentation"
 msgstr "Dokumentace"
 
-#: src/welcome.ui:132
+#: src/welcome.ui:134
 msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
-#: src/welcome.ui:143
+#: src/welcome.ui:145
 msgid "Mercurial"
 msgstr ""
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
-#: src/welcome.ui:148
+#: src/welcome.ui:150
 msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
 msgstr "Chcete-li nastavit Commit jako výchozí editor pro Mercurial, nastavte následující ve svém <tt>hgrc</tt>"
 
-#: src/welcome.ui:190
+#: src/welcome.ui:192
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: src/welcome.ui:214
+#: src/welcome.ui:216
 msgid "About Commit"
 msgstr "O Commitu"
+
+#, fuzzy
+#~| msgid "Supports Mercurial commit messages"
+#~ msgid "Support multiple comments"
+#~ msgstr "Podporuje zprávy commitů Mercurial"
 
 #~ msgid "Message title length hint"
 #~ msgstr "Zvýraznění překročení délky titulku"
