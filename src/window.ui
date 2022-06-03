@@ -16,7 +16,8 @@
             <property name="show_end_title_buttons">false</property>
             <child>
               <object class="GtkButton">
-                <property name="label" translatable="yes">Abort</property>
+                <property name="label" translatable="yes">_Abort</property>
+                <property name="use-underline">true</property>
                 <property name="action-name">win.cancel</property>
                 <property
                   name="tooltip-text"
@@ -26,7 +27,8 @@
             </child>
             <child type="end">
               <object class="GtkButton" id="button_save">
-                <property name="label" translatable="yes">Save</property>
+                <property name="label" translatable="yes">_Save</property>
+                <property name="use-underline">true</property>
                 <property name="sensitive">false</property>
                 <property name="action-name">win.save</property>
                 <property
