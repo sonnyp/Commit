@@ -2,16 +2,16 @@ import wrapbody from "./wrap.js";
 import { gettext as _ } from "gettext";
 
 const actions = {
-  commit: _("Commit"),
-  hg: _("Commit"),
-  merge: _("Merge"),
-  tag: _("Tag"),
-  "add -p": _("Add"),
-  rebase: _("Rebase"),
+  commit: _("_Commit"),
+  hg: _("_Commit"),
+  merge: _("_Merge"),
+  tag: _("_Tag"),
+  "add -p": _("A_dd"),
+  rebase: _("_Rebase"),
 };
 
 export function parse(text, type) {
-  const action = actions[type] || _("Save");
+  const action = actions[type] || _("_Save");
 
   if (type === "config") {
     return {
