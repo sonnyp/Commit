@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-23 16:24+0200\n"
-"PO-Revision-Date: 2022-03-30 10:49+0000\n"
+"PO-Revision-Date: 2022-07-16 16:54+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
 "Language: hr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/scm.js:5 src/scm.js:6 src/welcome.ui:9
@@ -54,10 +54,8 @@ msgid "After installing make sure to launch the application and follow the instr
 msgstr "Nakon instaliranja pokreni program i slijedi upute."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-#, fuzzy
-#| msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
-msgstr "Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili kombinaciju tipki _Ctrl+Return_. Za prekidanje i odbacivanje izmjene, pritisni gumb „Odustani” ili tipku _Escape_."
+msgstr "Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili prečac <code>Ctrl+Return</code>. Za prekidanje i odbacivanje izmjene, pritisni gumb „Prekini” ili tipku <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -102,7 +100,7 @@ msgstr "Birač emojija"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Podržava git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "Podržava git commit, sjedini, oznaka --annotate, dodaj --patch, presloži --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
@@ -118,7 +116,7 @@ msgstr "Uvodni prozor s postavkama i instrukcijama"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "Ističe sintaksu za Git, Mercurial i diffs (razlike)"
+msgstr "Ističe sintaksu za Git, Mercurial i razlike"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
@@ -138,35 +136,31 @@ msgstr "Uvodni prozor"
 
 #: data/re.sonny.Commit.metainfo.xml:83
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Poboljšaj automatsku upotrebu velikih slova"
 
 #: data/re.sonny.Commit.metainfo.xml:84
-#, fuzzy
-#| msgid "Add support for Mercurial"
 msgid "Add support for gitconfig and hgrc"
-msgstr "Dodaj podršku za Mercurial"
+msgstr "Dodaj podršku za gitconfig i hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:85
-#, fuzzy
-#| msgid "Support undo and redo"
 msgid "Support editing any file"
-msgstr "Podrži funkcije Poništi i Ponovi"
+msgstr "Podrži uređivanje bilo koje datoteke"
 
 #: data/re.sonny.Commit.metainfo.xml:87
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Izradi oznaku primarnog gumba dinamičnom (oznaka, presloži, commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:88
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Koristi 2 znaka razmaka za uvlaku"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add menu button"
-msgstr ""
+msgstr "Dodaj gumb izbornika"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME platforma 42"
 
 #: data/re.sonny.Commit.metainfo.xml:91 data/re.sonny.Commit.metainfo.xml:103
 msgid "Various fixes"
@@ -177,10 +171,8 @@ msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "Dodaj tipkovne prečace za pomicanje redaka prema gore i dolje"
 
 #: data/re.sonny.Commit.metainfo.xml:99
-#, fuzzy
-#| msgid "Highlight syntax for Git, Mercurial and diffs"
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "Ističe sintaksu za Git, Mercurial i diffs (razlike)"
+msgstr "Istakni sintaksu za Git, Mercurial i razlike"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Add a shortcuts window"
@@ -240,7 +232,7 @@ msgstr "Ispravi čitanje commit poruka s posebnim znakovima"
 
 #: data/re.sonny.Commit.metainfo.xml:135
 msgid "Fix git rebase not recognized"
-msgstr "Ispravi neprepoznavanje git rebase funkcije"
+msgstr "Ispravi neprepoznavanje git preslaganja"
 
 #: data/re.sonny.Commit.metainfo.xml:136
 msgid "Make windows bottom corners rounded"
@@ -251,10 +243,8 @@ msgid "Add 6px margin to editor"
 msgstr "Uređivaču dodaj rub od 6 px"
 
 #: data/re.sonny.Commit.metainfo.xml:143
-#, fuzzy
-#| msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
+msgstr "Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
 
 #: data/re.sonny.Commit.metainfo.xml:148
 msgid "Show a welcome window when launched from desktop"
@@ -287,23 +277,23 @@ msgstr "Milo Ivir <mail@milotype.de>"
 
 #: src/scm.js:7
 msgid "Merge"
-msgstr ""
+msgstr "Sjedini"
 
 #: src/scm.js:8
 msgid "Tag"
-msgstr ""
+msgstr "Oznaka"
 
 #: src/scm.js:9
 msgid "Add"
-msgstr ""
+msgstr "Dodaj"
 
 #: src/scm.js:10
 msgid "Rebase"
-msgstr ""
+msgstr "Presloži"
 
 #: src/scm.js:14 src/window.ui:29
 msgid "Save"
-msgstr ""
+msgstr "Spremi"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
