@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-23 16:24+0200\n"
-"PO-Revision-Date: 2022-07-19 15:22+0000\n"
+"PO-Revision-Date: 2022-07-20 23:22+0000\n"
 "Last-Translator: Tulili <arthurvergino@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/commit/commit/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -63,10 +63,8 @@ msgid "Features:"
 msgstr "Recursos:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
-#| msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
 msgid "Highlights overflow of the commit title"
-msgstr "Realça estouro do título quando ele excede 50 caracteres (personalizável)"
+msgstr "Destaca estouro do título do commit"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:102
 msgid "Smart body wrapping"
@@ -146,10 +144,8 @@ msgid "Add support for gitconfig and hgrc"
 msgstr "Adiciona suporte a gitconfig e hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:85
-#, fuzzy
-#| msgid "Support undo and redo"
 msgid "Support editing any file"
-msgstr "Suporte desfazer e refazer"
+msgstr "Suporte para modificar quaisquer arquivos"
 
 #: data/re.sonny.Commit.metainfo.xml:87
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
