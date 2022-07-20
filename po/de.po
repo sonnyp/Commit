@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-13 21:58+0200\n"
+"POT-Creation-Date: 2022-04-23 16:24+0200\n"
 "PO-Revision-Date: 2022-04-07 15:10+0000\n"
 "Last-Translator: Christian Rodriguez Benthake <chris.ben9@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/commit/commit/de/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
+#: data/re.sonny.Commit.desktop:4 src/scm.js:5 src/scm.js:6 src/welcome.ui:9
 msgid "Commit"
 msgstr "Commit"
 
@@ -69,7 +69,7 @@ msgstr "Merkmale:"
 msgid "Highlights overflow of the commit title"
 msgstr "Titel wird hervorgehebt, wenn er mehr als 50 Zeichen lang ist (anpassbar)"
 
-#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:107
+#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:102
 msgid "Smart body wrapping"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr "Unterstützt git commit Nachrichten, merge Nachrichten, tag Nachrichten,
 msgid "Supports Mercurial commit"
 msgstr "Untrestüzt Mercurial commit Nachrichten"
 
-#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:106
+#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:101
 msgid "Auto capitalize the commit title"
 msgstr ""
 
@@ -135,147 +135,159 @@ msgid "Main window"
 msgstr "Commit Hauptfenster"
 
 #: data/re.sonny.Commit.metainfo.xml:63
-#, fuzzy
-#| msgid "Commit main window - dark mode"
-msgid "Main window - dark mode"
-msgstr "Commit Hauptfenster – dunkle Arbeitsumgebung"
-
-#: data/re.sonny.Commit.metainfo.xml:69
 msgid "Emoji selector"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:75
+#: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:81
+#: data/re.sonny.Commit.metainfo.xml:75
 #, fuzzy
 #| msgid "Commit welcome window"
 msgid "Welcome window"
 msgstr "Commit Willkommensfenster"
 
-#: data/re.sonny.Commit.metainfo.xml:87
-#, fuzzy
-#| msgid "Commit welcome window - dark mode"
-msgid "Welcome window - dark mode"
-msgstr "Commit Willkommensfenster – dunkle Arbeitsumgebung"
-
-#: data/re.sonny.Commit.metainfo.xml:95
-msgid "Improve auto capitalizzation"
+#: data/re.sonny.Commit.metainfo.xml:83
+msgid "Improve auto capitalization"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:96
+#: data/re.sonny.Commit.metainfo.xml:84
+#, fuzzy
+#| msgid "Add support for Mercurial"
+msgid "Add support for gitconfig and hgrc"
+msgstr "Unterstützung für Mercurial hinzugefügt"
+
+#: data/re.sonny.Commit.metainfo.xml:85
+msgid "Support editing any file"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:88
+msgid "Use 2 spaces indentation"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:89
+msgid "Add menu button"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:90
 msgid "GNOME Platform 42"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:103
+#: data/re.sonny.Commit.metainfo.xml:91 data/re.sonny.Commit.metainfo.xml:103
+msgid "Various fixes"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:98
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:104
+#: data/re.sonny.Commit.metainfo.xml:99
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:105
+#: data/re.sonny.Commit.metainfo.xml:100
 #, fuzzy
 #| msgid "Add a Preferences window"
 msgid "Add a shortcuts window"
 msgstr "Einstellungsfenster hinzufügt"
 
-#: data/re.sonny.Commit.metainfo.xml:108
-msgid "Various fixes"
-msgstr ""
-
-#: data/re.sonny.Commit.metainfo.xml:115
+#: data/re.sonny.Commit.metainfo.xml:110
 msgid "Remove spell check temporarily"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:116
+#: data/re.sonny.Commit.metainfo.xml:111
 msgid "Support undo and redo"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:117
+#: data/re.sonny.Commit.metainfo.xml:112
 msgid "Add symbolic icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:118
+#: data/re.sonny.Commit.metainfo.xml:113
 msgid "Add dark mode setting"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:119
+#: data/re.sonny.Commit.metainfo.xml:114
 msgid "Focus the text editor"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:115
 msgid "Port to GTK 4 and libadwaita"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:127
+#: data/re.sonny.Commit.metainfo.xml:122
 #, fuzzy
 msgid "Move preferences to welcome window"
 msgstr "Einstellungsfenster hinzufügt"
 
-#: data/re.sonny.Commit.metainfo.xml:128
+#: data/re.sonny.Commit.metainfo.xml:123
 msgid "Only highlight text overflow on commits"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:129
+#: data/re.sonny.Commit.metainfo.xml:124
 msgid "New app icon"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:130
+#: data/re.sonny.Commit.metainfo.xml:125
 msgid "Remove double border"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:137
+#: data/re.sonny.Commit.metainfo.xml:132
 msgid "Add a Preferences window"
 msgstr "Einstellungsfenster hinzufügt"
 
-#: data/re.sonny.Commit.metainfo.xml:138
+#: data/re.sonny.Commit.metainfo.xml:133
 msgid "Set default title length hint to 50 characters"
 msgstr "Standardhinweis für die Titellänge auf 50 Zeichen festgelegt"
 
-#: data/re.sonny.Commit.metainfo.xml:139
+#: data/re.sonny.Commit.metainfo.xml:134
 msgid "Fix reading commits with special characters"
 msgstr "Fehler beim Lesen von commits mit Sonderzeichen behoben"
 
-#: data/re.sonny.Commit.metainfo.xml:140
+#: data/re.sonny.Commit.metainfo.xml:135
 msgid "Fix git rebase not recognized"
 msgstr "Fehler von nicht erkanntem git rebase behoben"
 
-#: data/re.sonny.Commit.metainfo.xml:141
+#: data/re.sonny.Commit.metainfo.xml:136
 msgid "Make windows bottom corners rounded"
 msgstr "Untere Fensterecken abgerundet"
 
-#: data/re.sonny.Commit.metainfo.xml:142
+#: data/re.sonny.Commit.metainfo.xml:137
 msgid "Add 6px margin to editor"
 msgstr "Dem Editor 6 px Rand hinzufügt"
 
-#: data/re.sonny.Commit.metainfo.xml:148
-msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#: data/re.sonny.Commit.metainfo.xml:143
+#, fuzzy
+#| msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+msgid "Action required. After updating, please launch the application and follow the instructions."
 msgstr "⚠️ Aktion erforderlich. Anwendong nach der Aktualisierung neu starten und den Anweisungen folgen."
 
-#: data/re.sonny.Commit.metainfo.xml:153
+#: data/re.sonny.Commit.metainfo.xml:148
 msgid "Show a welcome window when launched from desktop"
 msgstr "Zeigt beim Start vom Desktop ein Willkommensfenster an"
 
-#: data/re.sonny.Commit.metainfo.xml:154
+#: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add support for Mercurial"
 msgstr "Unterstützung für Mercurial hinzugefügt"
 
-#: data/re.sonny.Commit.metainfo.xml:155
+#: data/re.sonny.Commit.metainfo.xml:150
 msgid "Remove filesystem permission"
 msgstr "Dateisystemberechtigung entfernt"
 
-#: data/re.sonny.Commit.metainfo.xml:161
+#: data/re.sonny.Commit.metainfo.xml:156
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "Erstveröffentlichung. Fork von Gnomit 2.0."
 
-#: data/re.sonny.Commit.metainfo.xml:163
+#: data/re.sonny.Commit.metainfo.xml:158
 msgid "Support \"#\" in commit message"
 msgstr "Unterstützung für „#“ in der commit Nachricht"
 
-#: data/re.sonny.Commit.metainfo.xml:164
+#: data/re.sonny.Commit.metainfo.xml:159
 msgid "Properly recognize executable path"
 msgstr "Korretes Erkennen des Pfades der ausführbaren Datei"
 
@@ -283,6 +295,26 @@ msgstr "Korretes Erkennen des Pfades der ausführbaren Datei"
 #: src/about.js:18
 msgid "translator-credits"
 msgstr "Milo Ivir <mail@milotype.de>"
+
+#: src/scm.js:7
+msgid "Merge"
+msgstr ""
+
+#: src/scm.js:8
+msgid "Tag"
+msgstr ""
+
+#: src/scm.js:9
+msgid "Add"
+msgstr ""
+
+#: src/scm.js:10
+msgid "Rebase"
+msgstr ""
+
+#: src/scm.js:14 src/window.ui:29
+msgid "Save"
+msgstr ""
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -316,7 +348,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/ShortcutsWindow.ui:76 src/welcome.ui:212
+#: src/ShortcutsWindow.ui:76 src/window.ui:71 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
 msgstr ""
 
@@ -327,6 +359,10 @@ msgstr ""
 #: src/window.ui:19
 msgid "Abort"
 msgstr ""
+
+#: src/window.ui:75 src/welcome.ui:216
+msgid "About Commit"
+msgstr "Über Commit"
 
 #: src/welcome.ui:28
 #, fuzzy
@@ -367,9 +403,15 @@ msgstr "Um Commit als Standardeditor für Mercurial festzulegen, Folgendes im ei
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: src/welcome.ui:216
-msgid "About Commit"
-msgstr "Über Commit"
+#, fuzzy
+#~| msgid "Commit main window - dark mode"
+#~ msgid "Main window - dark mode"
+#~ msgstr "Commit Hauptfenster – dunkle Arbeitsumgebung"
+
+#, fuzzy
+#~| msgid "Commit welcome window - dark mode"
+#~ msgid "Welcome window - dark mode"
+#~ msgstr "Commit Willkommensfenster – dunkle Arbeitsumgebung"
 
 #, fuzzy
 #~| msgid "Supports Mercurial commit messages"
