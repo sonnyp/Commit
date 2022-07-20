@@ -211,12 +211,21 @@ function Capitalizer() {
   return function capitalizer(buffer, cursor_position) {
     if (complete) return;
 
+    // Get the last 3 characters
+    // for example ": h" in "fix: h"
     const last_chars = buffer.text.slice(
       cursor_position - 3,
       cursor_position - 1,
     );
     if (last_chars[1] !== " ") return;
 
+    const iter = buffer.get_iter_at_offset(cursor_position);
+    // "fix: h" is 2 words
+    if (!iter.backward_word_starts(2)) return;
+    if (!iter.is_start()) return;
+
+    // Only capitalize once in case that's not what the user wants
+    // so that if they backspace - Commit does not repeat the same mistake
     complete = true;
 
     if (last_chars[0] === ":") {
