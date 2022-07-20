@@ -220,8 +220,9 @@ function Capitalizer() {
     if (last_chars[1] !== " ") return;
 
     const iter = buffer.get_iter_at_offset(cursor_position - 3);
-    const match_found = iter.backward_find_char(
-      (char) => char === " ", // pred
+    const [match_found] = iter.backward_search(
+      " ", // str
+      null, // flags
       null, // limit
     );
     if (match_found) return;
