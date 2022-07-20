@@ -2,8 +2,6 @@ import Gtk from "gi://Gtk";
 import system from "system";
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
-import Adw from "gi://Adw";
-import GObject from "gi://GObject";
 
 import { relativePath, loadStyleSheet, settings } from "./util.js";
 
@@ -31,19 +29,6 @@ export default function Welcome({ application }) {
     "value",
     Gio.SettingsBindFlags.DEFAULT,
   );
-
-  const darkSwitch = builder.get_object("darkSwitch");
-  Adw.StyleManager.get_default().bind_property(
-    "dark",
-    darkSwitch,
-    "active",
-    GObject.BindingFlags.SYNC_CREATE,
-  );
-  darkSwitch.connect("state-set", (self, state) => {
-    // The switch was enabled by the system dark mode
-    if (state === true && Adw.StyleManager.get_default().dark) return;
-    settings.set_boolean("dark-mode", state);
-  });
 
   const window = builder.get_object("window");
   window.set_application(application);

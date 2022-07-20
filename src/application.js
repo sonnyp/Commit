@@ -7,8 +7,11 @@ import Welcome from "./welcome.js";
 import { getType } from "./scm.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
+import { settings } from "./util.js";
 
 const textDecoder = new TextDecoder();
+
+const style_manager = Adw.StyleManager.get_default();
 
 export default function Application({ version }) {
   const application = new Adw.Application({
@@ -83,7 +86,12 @@ export default function Application({ version }) {
   application.set_accels_for_action("app.shortcuts", ["<Control>question"]);
 
   application.set_accels_for_action("win.cancel", ["Escape"]);
-  application.set_accels_for_action("win.save", ["<Control>Return", "<Control>KP_Enter"]);
+  application.set_accels_for_action("win.save", [
+    "<Control>Return",
+    "<Control>KP_Enter",
+  ]);
+
+  application.add_action(settings.create_action("color-scheme"));
 
   return application;
 }
@@ -128,3 +136,10 @@ function openEditor({ file, application, readonly }) {
 
   window.show();
 }
+
+function setColorScheme() {
+  const color_scheme = settings.get_int("color-scheme");
+  style_manager.set_color_scheme(color_scheme);
+}
+setColorScheme();
+settings.connect("changed::color-scheme", setColorScheme);

@@ -13,7 +13,7 @@
         <child>
           <object class="AdwHeaderBar">
             <child type="end">
-              <object class="GtkMenuButton" id="menu-button">
+              <object class="GtkMenuButton" id="menubutton">
                 <property name="menu-model">app-menu</property>
                 <property name="icon-name">open-menu-symbolic</property>
               </object>
@@ -62,24 +62,6 @@
                     </child>
                   </object>
                 </child>
-                <child>
-                  <object class="AdwPreferencesRow">
-                    <child>
-                      <object class="AdwActionRow">
-                        <property
-                          name="title"
-                          translatable="yes"
-                        >Use dark mode</property>
-                        <child>
-                          <object class="GtkSwitch" id="darkSwitch">
-                            <property name="active">false</property>
-                            <property name='valign'>center</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
               </object>
             </child>
             <child>
@@ -101,12 +83,8 @@
                         <property name="xalign">0</property>
                         <style>
                           <class name="code" />
-                          <!--
-                            Only way to get correct color
-                            https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
-                            or lookup_color see https://discourse.gnome.org/t/how-to-read-theme-link-color-and-selection-background-color-programmatically-in-gtk4/5734/2
-                          -->
                           <class name="view" />
+                          <class name="frame" />
                         </style>
                       </object>
                     </child>
@@ -160,11 +138,8 @@
                         <property name="xalign">0</property>
                         <style>
                           <class name="code" />
-                          <!--
-                            Only way to get correct color
-                            https://gitlab.gnome.org/GNOME/gtk/-/blob/27dad4b90a974795237253effa6f77a23eeac274/gtk/theme/Adwaita/gtk-contained.css#L22
-                          -->
                           <class name="view" />
+                          <class name="frame" />
                         </style>
                       </object>
                     </child>
@@ -205,13 +180,6 @@
   </object>
   <menu id="app-menu">
     <section>
-      <item>
-        <attribute
-          name="label"
-          translatable="yes"
-        >Keyboard Shortcuts</attribute>
-        <attribute name="action">app.shortcuts</attribute>
-      </item>
       <item>
         <attribute name="label" translatable="yes">About Commit</attribute>
         <attribute name="action">app.about</attribute>

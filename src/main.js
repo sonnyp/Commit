@@ -6,7 +6,6 @@ import GLib from "gi://GLib";
 import { programInvocationName } from "system";
 import { bindtextdomain, textdomain } from "gettext";
 
-import { settings } from "./util.js";
 import Application from "./application.js";
 
 GLib.set_prgname("re.sonny.Commit");
@@ -15,22 +14,9 @@ GLib.set_application_name("Commit");
 Adw.init();
 GtkSource.init();
 
-function updateDarkMode() {
-  Adw.StyleManager.get_default().set_color_scheme(
-    settings.get_boolean("dark-mode")
-      ? Adw.ColorScheme.FORCE_DARK
-      : Adw.ColorScheme.DEFAULT,
-  );
-}
-
 export default function main(argv, { version, datadir }) {
   bindtextdomain("re.sonny.Commit", GLib.build_filenamev([datadir, "locale"]));
   textdomain("re.sonny.Commit");
-
-  // gjs doesn't have bind_with_mapping
-  // https://gitlab.gnome.org/GNOME/gjs/-/issues/397
-  updateDarkMode();
-  settings.connect("changed::dark-mode", updateDarkMode);
 
   const application = new Application({ version });
 
