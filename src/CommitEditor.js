@@ -45,8 +45,8 @@ export default GObject.registerClass(
     },
   },
   class CommitEditor extends Gtk.ScrolledWindow {
-    _init(params = {}) {
-      super._init(params);
+    constructor(params = {}) {
+      super(params);
 
       this.buffer.set_language(language_manager.get_language(this.language));
 

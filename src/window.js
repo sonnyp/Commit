@@ -4,8 +4,9 @@ import Gio from "gi://Gio";
 
 import Editor from "./editor.js";
 
-import { relativePath, settings } from "./util.js";
+import { loadStyleSheet, relativePath, settings } from "./util.js";
 import { parse, format } from "./scm.js";
+import ThemeSelector from "./ThemeSelector.js";
 
 export default function Window({ application, file, text, type, readonly }) {
   let parsed = {};
@@ -18,11 +19,19 @@ export default function Window({ application, file, text, type, readonly }) {
   }
 
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
+
+  loadStyleSheet(relativePath("./style.css"));
+
   const window = builder.get_object("window");
 
   let title = GLib.path_get_basename(GLib.get_current_dir());
   if (parsed.detail) title += ` (${parsed.detail})`;
   window.set_title(title);
+
+  // Popover menu theme switcher
+  const button_menu = builder.get_object("menubutton");
+  const popover = button_menu.get_popover();
+  popover.add_child(new ThemeSelector(), "themeswitcher");
 
   const button_save = builder.get_object("button_save");
   button_save.label = parsed.action;

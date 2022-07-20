@@ -67,6 +67,12 @@
   <menu id="app-menu">
     <section>
       <item>
+        <attribute name="custom">themeswitcher</attribute>
+      </item>
+    </section>
+
+    <section>
+      <item>
         <attribute
           name="label"
           translatable="yes"
