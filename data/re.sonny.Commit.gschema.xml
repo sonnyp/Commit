@@ -9,7 +9,7 @@
 
     <key name='body-length-wrap' type='i'>
       <default>72</default>
-      <range min="72" />
+      <range min="50" />
       <summary>Body lines maximum length (in characters)</summary>
     </key>
 
