@@ -83,6 +83,17 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="3.3.0" date="2022-07-21">
+      <description>
+        <ul>
+          <li>Add a theme switcher</li>
+          <li>Improve dark mode support</li>
+          <li>Support numpad enter</li>
+          <li>Add mnemonics for buttons</li>
+          <li>Fix capitalization when amending</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.2.0" date="2022-04-23">
       <description>
         <ul>
