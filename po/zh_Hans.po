@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-13 21:58+0200\n"
+"POT-Creation-Date: 2022-04-23 16:24+0200\n"
 "PO-Revision-Date: 2022-04-18 00:07+0000\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/commit/commit/zh_Hans/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 4.12-dev\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
+#: data/re.sonny.Commit.desktop:4 src/scm.js:5 src/scm.js:6 src/welcome.ui:9
 msgid "Commit"
 msgstr "Commit"
 
@@ -65,7 +65,7 @@ msgstr "特性："
 msgid "Highlights overflow of the commit title"
 msgstr "提交标题高亮显示"
 
-#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:107
+#: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:102
 msgid "Smart body wrapping"
 msgstr "智能正文折行"
 
@@ -106,7 +106,7 @@ msgstr "支持 git commit、merge、tag --annotate、add --patch、rebase --inte
 msgid "Supports Mercurial commit"
 msgstr "支持 Mercurial 提交"
 
-#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:106
+#: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:101
 msgid "Auto capitalize the commit title"
 msgstr "提交标题自动首字母大写"
 
@@ -123,138 +123,158 @@ msgid "Main window"
 msgstr "主窗口"
 
 #: data/re.sonny.Commit.metainfo.xml:63
-msgid "Main window - dark mode"
-msgstr "主窗口 - 暗色模式"
-
-#: data/re.sonny.Commit.metainfo.xml:69
 msgid "Emoji selector"
 msgstr "表情选择器"
 
-#: data/re.sonny.Commit.metainfo.xml:75
+#: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
 msgstr "快捷键"
 
-#: data/re.sonny.Commit.metainfo.xml:81
+#: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
 msgstr "欢迎窗口"
 
-#: data/re.sonny.Commit.metainfo.xml:87
-msgid "Welcome window - dark mode"
-msgstr "欢迎窗口 - 暗色模式"
-
-#: data/re.sonny.Commit.metainfo.xml:95
-msgid "Improve auto capitalizzation"
+#: data/re.sonny.Commit.metainfo.xml:83
+#, fuzzy
+#| msgid "Improve auto capitalizzation"
+msgid "Improve auto capitalization"
 msgstr "优化自动大写"
 
-#: data/re.sonny.Commit.metainfo.xml:96
+#: data/re.sonny.Commit.metainfo.xml:84
+#, fuzzy
+#| msgid "Add support for Mercurial"
+msgid "Add support for gitconfig and hgrc"
+msgstr "为 Mercurial 添加支持"
+
+#: data/re.sonny.Commit.metainfo.xml:85
+#, fuzzy
+#| msgid "Support undo and redo"
+msgid "Support editing any file"
+msgstr "支持撤销和重做"
+
+#: data/re.sonny.Commit.metainfo.xml:87
+msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:88
+msgid "Use 2 spaces indentation"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:89
+msgid "Add menu button"
+msgstr ""
+
+#: data/re.sonny.Commit.metainfo.xml:90
 msgid "GNOME Platform 42"
 msgstr "GNOME 平台 42"
 
-#: data/re.sonny.Commit.metainfo.xml:103
-msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "为文本行上移和下移添加键盘快捷键"
-
-#: data/re.sonny.Commit.metainfo.xml:104
-msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "用于 Git、Mercurial 和 diffs 的语法高亮"
-
-#: data/re.sonny.Commit.metainfo.xml:105
-msgid "Add a shortcuts window"
-msgstr "添加快捷键窗口"
-
-#: data/re.sonny.Commit.metainfo.xml:108
+#: data/re.sonny.Commit.metainfo.xml:91 data/re.sonny.Commit.metainfo.xml:103
 msgid "Various fixes"
 msgstr "多处修复"
 
-#: data/re.sonny.Commit.metainfo.xml:115
+#: data/re.sonny.Commit.metainfo.xml:98
+msgid "Add keyboard shortcuts for moving lines up and down"
+msgstr "为文本行上移和下移添加键盘快捷键"
+
+#: data/re.sonny.Commit.metainfo.xml:99
+msgid "Highlight syntax for Git, Mercurial, and diffs"
+msgstr "用于 Git、Mercurial 和 diffs 的语法高亮"
+
+#: data/re.sonny.Commit.metainfo.xml:100
+msgid "Add a shortcuts window"
+msgstr "添加快捷键窗口"
+
+#: data/re.sonny.Commit.metainfo.xml:110
 msgid "Remove spell check temporarily"
 msgstr "临时移除拼写检查"
 
-#: data/re.sonny.Commit.metainfo.xml:116
+#: data/re.sonny.Commit.metainfo.xml:111
 msgid "Support undo and redo"
 msgstr "支持撤销和重做"
 
-#: data/re.sonny.Commit.metainfo.xml:117
+#: data/re.sonny.Commit.metainfo.xml:112
 msgid "Add symbolic icon"
 msgstr "添加符号图标"
 
-#: data/re.sonny.Commit.metainfo.xml:118
+#: data/re.sonny.Commit.metainfo.xml:113
 msgid "Add dark mode setting"
 msgstr "添加暗色模式设置"
 
-#: data/re.sonny.Commit.metainfo.xml:119
+#: data/re.sonny.Commit.metainfo.xml:114
 msgid "Focus the text editor"
 msgstr "聚焦文本编辑器"
 
-#: data/re.sonny.Commit.metainfo.xml:120
+#: data/re.sonny.Commit.metainfo.xml:115
 msgid "Port to GTK 4 and libadwaita"
 msgstr "移植到 GTK4 和 libadwaita"
 
-#: data/re.sonny.Commit.metainfo.xml:127
+#: data/re.sonny.Commit.metainfo.xml:122
 msgid "Move preferences to welcome window"
 msgstr "将首选项移至欢迎窗口"
 
-#: data/re.sonny.Commit.metainfo.xml:128
+#: data/re.sonny.Commit.metainfo.xml:123
 msgid "Only highlight text overflow on commits"
 msgstr "仅在提交上高亮文本"
 
-#: data/re.sonny.Commit.metainfo.xml:129
+#: data/re.sonny.Commit.metainfo.xml:124
 msgid "New app icon"
 msgstr "新的应用图标"
 
-#: data/re.sonny.Commit.metainfo.xml:130
+#: data/re.sonny.Commit.metainfo.xml:125
 msgid "Remove double border"
 msgstr "移除双重边框"
 
-#: data/re.sonny.Commit.metainfo.xml:137
+#: data/re.sonny.Commit.metainfo.xml:132
 msgid "Add a Preferences window"
 msgstr "添加首选项窗口"
 
-#: data/re.sonny.Commit.metainfo.xml:138
+#: data/re.sonny.Commit.metainfo.xml:133
 msgid "Set default title length hint to 50 characters"
 msgstr "设置默认标题长度提示为 50 个字符"
 
-#: data/re.sonny.Commit.metainfo.xml:139
+#: data/re.sonny.Commit.metainfo.xml:134
 msgid "Fix reading commits with special characters"
 msgstr "修复对带有特殊字符提交的读取"
 
-#: data/re.sonny.Commit.metainfo.xml:140
+#: data/re.sonny.Commit.metainfo.xml:135
 msgid "Fix git rebase not recognized"
 msgstr "修复未识别 git rebase"
 
-#: data/re.sonny.Commit.metainfo.xml:141
+#: data/re.sonny.Commit.metainfo.xml:136
 msgid "Make windows bottom corners rounded"
 msgstr "使窗口底部角圆滑"
 
-#: data/re.sonny.Commit.metainfo.xml:142
+#: data/re.sonny.Commit.metainfo.xml:137
 msgid "Add 6px margin to editor"
 msgstr "对编辑器添加 6 像素边界"
 
-#: data/re.sonny.Commit.metainfo.xml:148
-msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#: data/re.sonny.Commit.metainfo.xml:143
+#, fuzzy
+#| msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+msgid "Action required. After updating, please launch the application and follow the instructions."
 msgstr "⚠️需要处理。更新之后请启动该应用程序并遵循介绍。"
 
-#: data/re.sonny.Commit.metainfo.xml:153
+#: data/re.sonny.Commit.metainfo.xml:148
 msgid "Show a welcome window when launched from desktop"
 msgstr "从桌面启动时显示欢迎窗口"
 
-#: data/re.sonny.Commit.metainfo.xml:154
+#: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add support for Mercurial"
 msgstr "为 Mercurial 添加支持"
 
-#: data/re.sonny.Commit.metainfo.xml:155
+#: data/re.sonny.Commit.metainfo.xml:150
 msgid "Remove filesystem permission"
 msgstr "移除文件系统权限"
 
-#: data/re.sonny.Commit.metainfo.xml:161
+#: data/re.sonny.Commit.metainfo.xml:156
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "初始发布。来自 Gnomit 2.0 的分支。"
 
-#: data/re.sonny.Commit.metainfo.xml:163
+#: data/re.sonny.Commit.metainfo.xml:158
 msgid "Support \"#\" in commit message"
 msgstr "在提交信息中支持“#”"
 
-#: data/re.sonny.Commit.metainfo.xml:164
+#: data/re.sonny.Commit.metainfo.xml:159
 msgid "Properly recognize executable path"
 msgstr "正确识别可执行程序路径"
 
@@ -262,6 +282,26 @@ msgstr "正确识别可执行程序路径"
 #: src/about.js:18
 msgid "translator-credits"
 msgstr "lumingzh <lumingzh@qq.com>"
+
+#: src/scm.js:7
+msgid "Merge"
+msgstr ""
+
+#: src/scm.js:8
+msgid "Tag"
+msgstr ""
+
+#: src/scm.js:9
+msgid "Add"
+msgstr ""
+
+#: src/scm.js:10
+msgid "Rebase"
+msgstr ""
+
+#: src/scm.js:14 src/window.ui:29
+msgid "Save"
+msgstr ""
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -295,7 +335,7 @@ msgstr "取消选择全部"
 msgid "General"
 msgstr "常规"
 
-#: src/ShortcutsWindow.ui:76 src/welcome.ui:212
+#: src/ShortcutsWindow.ui:76 src/window.ui:71 src/welcome.ui:212
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
@@ -306,6 +346,10 @@ msgstr "退出"
 #: src/window.ui:19
 msgid "Abort"
 msgstr "放弃"
+
+#: src/window.ui:75 src/welcome.ui:216
+msgid "About Commit"
+msgstr "关于 Commit"
 
 #: src/welcome.ui:28
 msgid "Preferences"
@@ -344,6 +388,8 @@ msgstr "要将 Commit 设为 Mercurial 的默认编辑器，请在您的 <tt>hgr
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: src/welcome.ui:216
-msgid "About Commit"
-msgstr "关于 Commit"
+#~ msgid "Main window - dark mode"
+#~ msgstr "主窗口 - 暗色模式"
+
+#~ msgid "Welcome window - dark mode"
+#~ msgstr "欢迎窗口 - 暗色模式"
