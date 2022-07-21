@@ -1,6 +1,7 @@
 import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
 import GtkSource from "gi://GtkSource";
+import Adw from "gi://Adw";
 
 import CommitEditor from "./CommitEditor.js";
 
@@ -8,6 +9,7 @@ import { settings } from "./util.js";
 import { isEmptyCommitMessage } from "./scm.js";
 
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
+const style_manager = Adw.StyleManager.get_default();
 
 export default function editor({ builder, button_save, parsed }) {
   const {
@@ -38,10 +40,16 @@ export default function editor({ builder, button_save, parsed }) {
 
   // Tag: highlight background.
   const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
-  // Works well with light and dark mode
-  const [, color] = source_view.get_style_context().lookup_color("yellow_1");
-  highlightBackgroundTag.background = color.to_string();
   buffer.tag_table.add(highlightBackgroundTag);
+
+  function setHighlightTagColor() {
+    const [, color] = source_view
+      .get_style_context()
+      .lookup_color(style_manager.dark ? "purple_5" : "yellow_1");
+    highlightBackgroundTag.background = color.to_string();
+  }
+  setHighlightTagColor();
+  style_manager.connect("notify::dark", setHighlightTagColor);
 
   buffer.connect("changed", () => {
     const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
