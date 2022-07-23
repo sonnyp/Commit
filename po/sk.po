@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-23 16:24+0200\n"
-"PO-Revision-Date: 2021-08-11 13:42+0200\n"
-"Last-Translator: MartinIIOT <https://www.github.com/MartinIIOT>\n"
-"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"PO-Revision-Date: 2022-07-24 07:26+0000\n"
+"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/scm.js:5 src/scm.js:6 src/welcome.ui:9
@@ -35,10 +35,8 @@ msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
 msgstr "git;mercurial;hg;scm;gnomit;komet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
-#| msgid "Set default title length hint to 50 characters"
 msgid "Title maximum length (in characters)"
-msgstr "Nastavenie predvolenej dĺžky titulku na 50 znakov"
+msgstr "Maximálna dĺžka titulku (v znakoch)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
@@ -60,7 +58,7 @@ msgstr "Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa in�
 #, fuzzy
 #| msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the _Ctrl+Return_ key combination. To abort and dismiss Commit, press the Cancel button or the _Escape_ key."
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
-msgstr "Commit sa zobrazí automaticky po vykonaní commitu v jednom z vašich projektov. Pre uloženie commit správ, stlačte Commit tlačidlo alebo kombináciu _Ctrl+Enter_. Pre zrušenie a neuloženie Commitu, stlačte Zrušiť alebo _Esc."
+msgstr "Commit sa zobrazí automaticky po vykonaní commitu v jednom z vašich projektov. Pre uloženie commit správ, stlačte Commit tlačítko, alebo kombináciu _Ctrl+Enter_. Pre zrušenie a neuloženie Commitu, stlačte Zrušiť alebo _Esc."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
