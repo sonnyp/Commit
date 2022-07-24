@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-07-17 17:21+0000\n"
-"Last-Translator: Germe the fur star <FOSSgerme.deb@tuta.io>\n"
+"PO-Revision-Date: 2022-07-26 12:17+0000\n"
+"Last-Translator: Óscar Fernández Díaz <oscfdezdz@tuta.io>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/commit/commit/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -132,29 +132,27 @@ msgstr "Ventana de bienvenida"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Cambiar el tamaño de la ventana para desactivar el formato automático"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Añade un selector de temas"
 
 #: data/re.sonny.Commit.metainfo.xml:90
-#, fuzzy
 msgid "Improve dark mode support"
-msgstr "Soporte del modo oscuro"
+msgstr "Mejora de la compatibilidad con el modo oscuro"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Soporte para deshacer y rehacer"
+msgstr "Soporte de entrada del teclado numérico"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Añade mnemónicos para los botones"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Corregir las mayúsculas al modificar"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
@@ -170,19 +168,19 @@ msgstr "Soporte para editar cualquier archivo"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Hacer que la etiqueta del botón primario sea dinámica (Tag, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Usar 2 espacios de sangría"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Añade un botón de menú"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "Plataforma GNOME 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
@@ -193,7 +191,6 @@ msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "Añadir atajos del teclado para mover las líneas hacia arriba y hacia abajo"
 
 #: data/re.sonny.Commit.metainfo.xml:116
-#, fuzzy
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "Resaltar la sintaxis de Git, Mercurial y diffs"
 
@@ -266,9 +263,8 @@ msgid "Add 6px margin to editor"
 msgstr "Añade un margen de 6px al editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Acción requerida. Tras la actualización, inicie la aplicación y siga las instrucciones."
+msgstr "Acción requerida. Tras la actualización, inicie la aplicación y siga las instrucciones."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -300,29 +296,28 @@ msgid "translator-credits"
 msgstr "Óscar Fernández Díaz <oscfdezdz@tuta.io>"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Confirmar"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Fusionar"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Etiquetar"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "_Añadir"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebasar"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Guardar"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -365,9 +360,8 @@ msgid "Quit"
 msgstr "Salir"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Cancelar"
+msgstr "_Cancelar"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
