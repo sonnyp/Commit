@@ -10,18 +10,16 @@ msgstr ""
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
 "PO-Revision-Date: 2022-07-16 16:54+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/"
-"hr/>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/commit/commit/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14-dev\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Commit.desktop:4 src/welcome.ui:9 src/scm.js:5 src/scm.js:6
+#: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
 msgstr "Commit"
 
@@ -44,29 +42,16 @@ msgid "Body lines maximum length (in characters)"
 msgstr "Maksimalna duljina redaka teksta (broj znakova)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
-msgid ""
-"Commit is an editor that helps you write better Git and Mercurial commit "
-"messages."
-msgstr ""
-"Commit je uređivač koji pomaže pisati bolje commit poruke za Git i Mercurial."
+msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
+msgstr "Commit je uređivač koji pomaže pisati bolje commit poruke za Git i Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
-msgid ""
-"After installing make sure to launch the application and follow the "
-"instructions."
+msgid "After installing make sure to launch the application and follow the instructions."
 msgstr "Nakon instaliranja pokreni program i slijedi upute."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-msgid ""
-"Commit will pop up automatically when you make a commit in one of your "
-"projects. To save your commit message, press the Commit button or the "
-"<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
-"Abort button or the <code>Escape</code> key."
-msgstr ""
-"Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih "
-"projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili "
-"prečac <code>Ctrl+Return</code>. Za prekidanje i odbacivanje izmjene, "
-"pritisni gumb „Prekini” ili tipku <code>Escape</code>."
+msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
+msgstr "Commit će se automatski pojaviti kad učiniš izmjenu u jednom od svojih projekata. Za spremanje tvoje poruke o izmjeni, pritisni gumb „Commit” ili prečac <code>Ctrl+Return</code>. Za prekidanje i odbacivanje izmjene, pritisni gumb „Prekini” ili tipku <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -77,7 +62,6 @@ msgid "Highlights overflow of the commit title"
 msgstr "Ističe predugačke naslove commit poruka"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
-#: data/re.sonny.Commit.metainfo.xml:102
 msgid "Smart body wrapping"
 msgstr "Pametni prijelom teksta"
 
@@ -111,18 +95,14 @@ msgid "Emoji picker"
 msgstr "Birač emojija"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-msgid ""
-"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
-"Podržava git commit, sjedini, oznaka --annotate, dodaj --patch, presloži --"
-"interactive"
+msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "Podržava git commit, sjedini, oznaka --annotate, dodaj --patch, presloži --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
 msgstr "Podržava Mercurial commit"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
-#: data/re.sonny.Commit.metainfo.xml:101
 msgid "Auto capitalize the commit title"
 msgstr "Automatski koristi velika slova za naslov commit poruke"
 
@@ -177,144 +157,139 @@ msgstr "Dodaj gumb izbornika"
 msgid "Fix capitalization when amending"
 msgstr ""
 
-#: data/re.sonny.Commit.metainfo.xml:100 data/re.sonny.Commit.metainfo.xml:83
+#: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
 msgstr "Poboljšaj automatsku upotrebu velikih slova"
 
-#: data/re.sonny.Commit.metainfo.xml:101 data/re.sonny.Commit.metainfo.xml:84
+#: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
 msgstr "Dodaj podršku za gitconfig i hgrc"
 
-#: data/re.sonny.Commit.metainfo.xml:102 data/re.sonny.Commit.metainfo.xml:85
+#: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
 msgstr "Podrži uređivanje bilo koje datoteke"
 
-#: data/re.sonny.Commit.metainfo.xml:104 data/re.sonny.Commit.metainfo.xml:87
+#: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
-"Izradi oznaku primarnog gumba dinamičnom (oznaka, presloži, commit, ...)"
+msgstr "Izradi oznaku primarnog gumba dinamičnom (oznaka, presloži, commit, ...)"
 
-#: data/re.sonny.Commit.metainfo.xml:105 data/re.sonny.Commit.metainfo.xml:88
+#: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
 msgstr "Koristi 2 znaka razmaka za uvlaku"
 
-#: data/re.sonny.Commit.metainfo.xml:106 data/re.sonny.Commit.metainfo.xml:89
+#: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
 msgstr "Dodaj gumb izbornika"
 
-#: data/re.sonny.Commit.metainfo.xml:107 data/re.sonny.Commit.metainfo.xml:90
+#: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
 msgstr "GNOME platforma 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
-#: data/re.sonny.Commit.metainfo.xml:91 data/re.sonny.Commit.metainfo.xml:103
 msgid "Various fixes"
 msgstr "Razni ispravci"
 
-#: data/re.sonny.Commit.metainfo.xml:115 data/re.sonny.Commit.metainfo.xml:98
+#: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "Dodaj tipkovne prečace za pomicanje redaka prema gore i dolje"
 
-#: data/re.sonny.Commit.metainfo.xml:116 data/re.sonny.Commit.metainfo.xml:99
+#: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "Istakni sintaksu za Git, Mercurial i razlike"
 
-#: data/re.sonny.Commit.metainfo.xml:117 data/re.sonny.Commit.metainfo.xml:100
+#: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
 msgstr "Dodaj prozor za prečace"
 
-#: data/re.sonny.Commit.metainfo.xml:127 data/re.sonny.Commit.metainfo.xml:110
+#: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
 msgstr "Privremeno ukloni provjeru pravopisa"
 
-#: data/re.sonny.Commit.metainfo.xml:128 data/re.sonny.Commit.metainfo.xml:111
+#: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
 msgstr "Podrži funkcije Poništi i Ponovi"
 
-#: data/re.sonny.Commit.metainfo.xml:129 data/re.sonny.Commit.metainfo.xml:112
+#: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
 msgstr "Dodaj simboličnu ikonu"
 
-#: data/re.sonny.Commit.metainfo.xml:130 data/re.sonny.Commit.metainfo.xml:113
+#: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
 msgstr "Dodaj postavku za tamni modus"
 
-#: data/re.sonny.Commit.metainfo.xml:131 data/re.sonny.Commit.metainfo.xml:114
+#: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
 msgstr "Postavi uređivač teksta aktivnim"
 
-#: data/re.sonny.Commit.metainfo.xml:132 data/re.sonny.Commit.metainfo.xml:115
+#: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
 msgstr "Prilagodi program za GTK 4 i libadwaita"
 
-#: data/re.sonny.Commit.metainfo.xml:139 data/re.sonny.Commit.metainfo.xml:122
+#: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
 msgstr "Pomakni osobne postavke u uvodni prozor"
 
-#: data/re.sonny.Commit.metainfo.xml:140 data/re.sonny.Commit.metainfo.xml:123
+#: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
 msgstr "Istakni samo predugački tekst commit poruka"
 
-#: data/re.sonny.Commit.metainfo.xml:141 data/re.sonny.Commit.metainfo.xml:124
+#: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
 msgstr "Nova ikona programa"
 
-#: data/re.sonny.Commit.metainfo.xml:142 data/re.sonny.Commit.metainfo.xml:125
+#: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
 msgstr "Ukloni dvostruki rub"
 
-#: data/re.sonny.Commit.metainfo.xml:149 data/re.sonny.Commit.metainfo.xml:132
+#: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
 msgstr "Dodan je prozor za osobne postavke"
 
-#: data/re.sonny.Commit.metainfo.xml:150 data/re.sonny.Commit.metainfo.xml:133
+#: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
 msgstr "Postavi savjet za duljinu naslova na 50 znakova"
 
-#: data/re.sonny.Commit.metainfo.xml:151 data/re.sonny.Commit.metainfo.xml:134
+#: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
 msgstr "Ispravi čitanje commit poruka s posebnim znakovima"
 
-#: data/re.sonny.Commit.metainfo.xml:152 data/re.sonny.Commit.metainfo.xml:135
+#: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
 msgstr "Ispravi neprepoznavanje git preslaganja"
 
-#: data/re.sonny.Commit.metainfo.xml:153 data/re.sonny.Commit.metainfo.xml:136
+#: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
 msgstr "Zaobli donje kutova prozora"
 
-#: data/re.sonny.Commit.metainfo.xml:154 data/re.sonny.Commit.metainfo.xml:137
+#: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
 msgstr "Uređivaču dodaj rub od 6 px"
 
-#: data/re.sonny.Commit.metainfo.xml:160 data/re.sonny.Commit.metainfo.xml:143
-msgid ""
-"Action required. After updating, please launch the application and follow "
-"the instructions."
-msgstr ""
-"Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
+#: data/re.sonny.Commit.metainfo.xml:160
+msgid "Action required. After updating, please launch the application and follow the instructions."
+msgstr "Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
 
-#: data/re.sonny.Commit.metainfo.xml:165 data/re.sonny.Commit.metainfo.xml:148
+#: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
 msgstr "Prikaži uvodni prozor kad se pokrene s radne površine"
 
-#: data/re.sonny.Commit.metainfo.xml:166 data/re.sonny.Commit.metainfo.xml:149
+#: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
 msgstr "Dodaj podršku za Mercurial"
 
-#: data/re.sonny.Commit.metainfo.xml:167 data/re.sonny.Commit.metainfo.xml:150
+#: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
 msgstr "Ukloni dozvolu datotečnog sustava"
 
-#: data/re.sonny.Commit.metainfo.xml:173 data/re.sonny.Commit.metainfo.xml:156
+#: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
 msgstr "Prvo izdanje. Kopija od Gnomit 2.0."
 
-#: data/re.sonny.Commit.metainfo.xml:175 data/re.sonny.Commit.metainfo.xml:158
+#: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
 msgstr "Podrži „#” u commit poruci"
 
-#: data/re.sonny.Commit.metainfo.xml:176 data/re.sonny.Commit.metainfo.xml:159
+#: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
 msgstr "Ispravno prepoznaj stazu do izvršne datoteke"
 
@@ -355,11 +330,11 @@ msgstr "Spremi"
 msgid "Editing"
 msgstr "Uređivanje"
 
-#: src/ShortcutsWindow.ui:17 src/window.ui:37 src/window.ui:35
+#: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
 msgstr "Spremi i potvrdi"
 
-#: src/ShortcutsWindow.ui:26 src/window.ui:25 src/window.ui:24
+#: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
 msgstr "Odustani i odbaci"
 
@@ -383,8 +358,7 @@ msgstr "Odznači sve"
 msgid "General"
 msgstr "Opće"
 
-#: src/ShortcutsWindow.ui:76 src/window.ui:79 src/window.ui:71
-#: src/welcome.ui:212
+#: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
 msgstr "Tipkovni prečaci"
 
@@ -397,7 +371,7 @@ msgstr "Zatvori program"
 msgid "_Abort"
 msgstr "Prekini"
 
-#: src/window.ui:83 src/welcome.ui:184 src/window.ui:75 src/welcome.ui:216
+#: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
 msgstr "O programu Commit"
 
@@ -405,75 +379,59 @@ msgstr "O programu Commit"
 msgid "Preferences"
 msgstr "Osobne postavke"
 
-#: src/welcome.ui:69 src/welcome.ui:87
+#: src/welcome.ui:69
 msgid "Git"
 msgstr "Git"
 
-#: src/welcome.ui:73 src/welcome.ui:91
-msgid ""
-"To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
-"Za postavljanje Commita kao standardnog uređivača za Git, pokreni sljedeću "
-"naredbu u terminalu"
+#: src/welcome.ui:73
+msgid "To set Commit as default editor for Git run the following command in Terminal"
+msgstr "Za postavljanje Commita kao standardnog uređivača za Git, pokreni sljedeću naredbu u terminalu"
 
-#: src/welcome.ui:100 src/welcome.ui:155 src/welcome.ui:122 src/welcome.ui:180
+#: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
 msgstr "Kopiraj u međuspremnik"
 
-#: src/welcome.ui:108 src/welcome.ui:163 src/welcome.ui:130 src/welcome.ui:188
+#: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
 msgstr "Dokumentacija"
 
-#: src/welcome.ui:112 src/welcome.ui:134
-msgid ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+#: src/welcome.ui:112
+msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
-#: src/welcome.ui:123 src/welcome.ui:145
+#: src/welcome.ui:123
 msgid "Mercurial"
 msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
-#: src/welcome.ui:128 src/welcome.ui:150
-msgid ""
-"To set Commit as default editor for Mercurial, set the following in your "
-"<tt>hgrc</tt>"
-msgstr ""
-"Za postavljanje Commita kao standardnog uređivača za Mercurial, postavi "
-"sljedeće u svoj <tt>hgrc</tt>"
+#: src/welcome.ui:128
+msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
+msgstr "Za postavljanje Commita kao standardnog uređivača za Mercurial, postavi sljedeće u svoj <tt>hgrc</tt>"
 
-#: src/welcome.ui:167 src/welcome.ui:192
+#: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
 msgstr "https://www.mercurial-scm.org/wiki/editor"
 
-#: data/re.sonny.Commit.gschema.xml:18 src/welcome.ui:72
-msgid "Use dark mode"
-msgstr "Koristi tamni modus"
+#~ msgid "Use dark mode"
+#~ msgstr "Koristi tamni modus"
 
-#: src/scm.js:8
-msgid "Tag"
-msgstr "Oznaka"
+#~ msgid "Tag"
+#~ msgstr "Oznaka"
 
-#: src/scm.js:9
-msgid "Add"
-msgstr "Dodaj"
+#~ msgid "Add"
+#~ msgstr "Dodaj"
 
-#: src/scm.js:7
-msgid "Merge"
-msgstr "Sjedini"
+#~ msgid "Merge"
+#~ msgstr "Sjedini"
 
-#: src/scm.js:10
-msgid "Rebase"
-msgstr "Presloži"
+#~ msgid "Rebase"
+#~ msgstr "Presloži"
 
-#: src/scm.js:14 src/window.ui:29
-msgid "Save"
-msgstr "Spremi"
+#~ msgid "Save"
+#~ msgstr "Spremi"
 
-#: src/window.ui:19
-msgid "Abort"
-msgstr "Prekini"
+#~ msgid "Abort"
+#~ msgstr "Prekini"
 
 #~ msgid "Main window - dark mode"
 #~ msgstr "Glavni prozor – tamni modus"
@@ -494,18 +452,11 @@ msgstr "Prekini"
 #~ msgid "Spell checking"
 #~ msgstr "Provjera pravopisa"
 
-#~ msgid ""
-#~ "Dark theme support: the overflow highlight is adjusted according to your "
-#~ "theme"
-#~ msgstr ""
-#~ "Podrška za tamnu temu: označavanje predugačkog teksta prilagođava se "
-#~ "tvojoj temi"
+#~ msgid "Dark theme support: the overflow highlight is adjusted according to your theme"
+#~ msgstr "Podrška za tamnu temu: označavanje predugačkog teksta prilagođava se tvojoj temi"
 
 #~ msgid "Shows a welcome window when launched from desktop"
 #~ msgstr "Prikaz uvodnog prozora pri pokretanju s radne površine"
 
-#~ msgid ""
-#~ "⚠️ Action required. After updating, please launch the application and "
-#~ "follow the instructions."
-#~ msgstr ""
-#~ "⚠️ Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
+#~ msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#~ msgstr "⚠️ Zahtijeva radnju. Nakon aktualiziranja pokreni program i slijedi upute."
