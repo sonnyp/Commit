@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-01 11:19+0000\n"
+"PO-Revision-Date: 2022-08-02 21:19+0000\n"
 "Last-Translator: Henri <contact@hen.ee>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/commit/commit/et/>\n"
 "Language: et\n"
@@ -26,7 +26,7 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr ""
+msgstr "Commit sõnumiredaktor"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
@@ -35,23 +35,23 @@ msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr ""
+msgstr "Pealkirja maksimaalne pikkus (tähtedes)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Põhiteksti maksimaalne pikkus (tähtedes)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
-msgstr ""
+msgstr "Commit on redaktor, mis aitab Sinul kirjutada paremaid Git ja Mercurial commit'i sõnumeid."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
-msgstr ""
+msgstr "Pärast programmi allalaadimist, käivita rakendus ja järgi juhiseid."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -59,15 +59,16 @@ msgid ""
 "projects. To save your commit message, press the Commit button or the "
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
-msgstr ""
+msgstr "Commit automaatselt avaneb, kui teed sinu projektile commit'i. Et salvestada commit'i sõnum, vajuta Commit nupule või <code>ctrl+return</code> kiirklahvikombinatsioonile. Et commit'i tühistada, vajuta Tühista nupule või <code>escape</code> klahvile."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr ""
+msgstr "Funktsioonid:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
+#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "Näitab, et ei ületaks commit pealkirja pikkust"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
@@ -109,7 +110,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr ""
+msgstr "Mercurial commit'i tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
@@ -125,15 +126,15 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr ""
+msgstr "Põhiaken"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Emoji valija"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Kiirklahvid"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
@@ -189,11 +190,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME platvorm 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Veaparandused"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
@@ -229,7 +230,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "GTK4 ja libadwaita uuendus"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
@@ -241,7 +242,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "Uus rakenduse ikoon"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
@@ -304,11 +305,11 @@ msgstr ""
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr ""
+msgstr "Henri https://hen.ee"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
@@ -336,15 +337,15 @@ msgstr ""
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Salvesta ja kinnita"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Tühista"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Ava emoji menüü"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
@@ -376,45 +377,45 @@ msgstr ""
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "Teave"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "Eelistused"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
+msgstr "Et seadistada Commit Git'i vaikeredaktoriks, käivita antud käsk terminalis (konsoolis)"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Kopeeri lõikelauda"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentatsioon"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
 msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
-msgstr ""
+msgstr "Et seadistada Commit Mercurial'i vaikeredaktoriks, lisa antud read <tt>hgrc</tt>'sse"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
