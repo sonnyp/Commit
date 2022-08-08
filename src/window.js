@@ -4,9 +4,11 @@ import Gio from "gi://Gio";
 
 import Editor from "./editor.js";
 
-import { loadStyleSheet, relativePath, settings } from "./util.js";
+import { loadStyleSheet, settings } from "./util.js";
 import { parse, format } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
+import Builder from "./window.ui";
+import style from "./style.css";
 
 export default function Window({ application, file, text, type, readonly }) {
   let parsed = {};
@@ -18,9 +20,9 @@ export default function Window({ application, file, text, type, readonly }) {
     }
   }
 
-  const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
+  const builder = Gtk.Builder.new_from_resource(Builder);
 
-  loadStyleSheet(relativePath("./style.css"));
+  loadStyleSheet(style);
 
   const window = builder.get_object("window");
 

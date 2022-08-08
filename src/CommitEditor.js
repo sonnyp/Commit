@@ -3,18 +3,23 @@ import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
+import GLib from "gi://GLib";
 
-import { relativePath } from "./util.js";
+import Template from "./CommitEditor.ui";
 
-const file = Gio.File.new_for_path(relativePath("./CommitEditor.ui"));
-const [, template] = file.load_contents(null);
+import "./language-specs/git.lang";
+import "./language-specs/hg.lang";
 
 const scheme_manager = GtkSource.StyleSchemeManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
 const language_manager = GtkSource.LanguageManager.get_default();
 language_manager.set_search_path([
   ...language_manager.get_search_path(),
-  relativePath("language-specs"),
+  GLib.Uri.resolve_relative(
+    import.meta.url,
+    "language-specs",
+    GLib.UriFlags.NONE,
+  ),
 ]);
 
 export default GObject.registerClass(
@@ -38,7 +43,7 @@ export default GObject.registerClass(
         0,
       ),
     },
-    Template: template,
+    Template: Gio.resources_lookup_data(Template, null),
     Children: ["view", "buffer"],
     Signals: {
       "style-updated": {},

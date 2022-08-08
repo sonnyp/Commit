@@ -3,12 +3,14 @@ import system from "system";
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 
-import { relativePath, loadStyleSheet, settings } from "./util.js";
+import { loadStyleSheet, settings } from "./util.js";
+import Builder from "./welcome.ui";
+import Style from "./style.css";
 
 export default function Welcome({ application }) {
-  const builder = Gtk.Builder.new_from_file(relativePath("./welcome.ui"));
+  const builder = Gtk.Builder.new_from_resource(Builder);
 
-  loadStyleSheet(relativePath("./style.css"));
+  loadStyleSheet(Style);
 
   const button_hint = builder.get_object("button_hint");
   button_hint.set_range(...getRange("title-length-hint"));

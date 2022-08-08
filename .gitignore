@@ -10,3 +10,4 @@ install
 *~
 *.compiled
 *.flatpak
+src/re.sonny.Commit.gresource
