@@ -6,7 +6,7 @@ import Editor from "./editor.js";
 import { settings } from "./util.js";
 import { parse, format } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
-import builder from "./window.ui" assert { type: "builder" };
+import builder from "./window.blp" assert { type: "builder" };
 
 export default function Window({ application, file, text, type, readonly }) {
   let parsed = {};

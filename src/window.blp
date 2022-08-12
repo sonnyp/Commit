@@ -1,0 +1,75 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ApplicationWindow window {
+  resizable: true;
+  default-width: 654;
+  default-height: 272;
+  title: "Commit";
+
+  Box {
+    orientation: vertical;
+
+    Adw.HeaderBar {
+      show-start-title-buttons: false;
+      show-end-title-buttons: false;
+
+      Button {
+        label: _("_Abort");
+        use-underline: true;
+        action-name: "win.cancel";
+        tooltip-text: _("Cancel and dismiss");
+      }
+
+      [end]
+      Button button_save {
+        label: _("_Save");
+        use-underline: true;
+        sensitive: false;
+        action-name: "win.save";
+        tooltip-text: _("Save and confirm");
+
+        styles [
+          "suggested-action",
+        ]
+      }
+    }
+
+    Overlay overlay {
+      [overlay]
+      MenuButton menubutton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        menu-model: app-menu;
+        halign: end;
+        valign: end;
+        margin-end: 12;
+        margin-bottom: 12;
+
+        styles [
+          "circular",
+        ]
+      }
+    }
+  }
+}
+
+menu app-menu {
+  section {
+    item {
+      custom: "themeswitcher";
+    }
+  }
+
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About Commit");
+      action: "app.about";
+    }
+  }
+}

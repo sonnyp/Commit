@@ -4,7 +4,7 @@ import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 
-import Template from "./CommitEditor.ui" assert { type: "uri" };
+import Template from "./CommitEditor.blp" assert { type: "uri" };
 
 import "./language-specs/git.lang";
 import "./language-specs/hg.lang";

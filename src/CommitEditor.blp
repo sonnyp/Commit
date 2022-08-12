@@ -1,0 +1,21 @@
+using Gtk 4.0;
+
+template CommitEditor : ScrolledWindow {
+  vexpand: true;
+
+  .GtkSourceView view {
+    buffer: .GtkSourceBuffer buffer {
+      enable-undo: "true";
+    };
+    monospace: "true";
+    show-right-margin: "true";
+    wrap-mode: "word";
+    tab-width: "2";
+    insert-spaces-instead-of-tabs: "true";
+    top-margin: "12";
+    left-margin: "12";
+    right-margin: "12";
+    bottom-margin: "12";
+    input-hints: "GTK_INPUT_HINT_SPELLCHECK | GTK_INPUT_HINT_WORD_COMPLETION | GTK_INPUT_HINT_EMOJI | GTK_INPUT_HINT_UPPERCASE_SENTENCES";
+  }
+}

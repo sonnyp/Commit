@@ -1,0 +1,134 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ApplicationWindow window {
+  resizable: true;
+  default-width: 560;
+  default-height: 660;
+  title: _("Commit");
+
+  Box {
+    orientation: vertical;
+
+    Adw.HeaderBar {
+      [end]
+      MenuButton menubutton {
+        menu-model: app-menu;
+        icon-name: "open-menu-symbolic";
+      }
+    }
+
+    Adw.PreferencesPage {
+      vexpand: true;
+
+      Adw.PreferencesGroup {
+        title: _("Preferences");
+
+        Adw.PreferencesRow {
+          Adw.ActionRow {
+            title: _("Title maximum length (in characters)");
+
+            SpinButton button_hint {
+              numeric: true;
+              valign: center;
+            }
+          }
+        }
+
+        Adw.PreferencesRow {
+          Adw.ActionRow {
+            title: _("Body lines maximum length (in characters)");
+
+            SpinButton button_wrap {
+              numeric: true;
+              valign: center;
+            }
+          }
+        }
+      }
+
+      Adw.PreferencesGroup {
+        title: _("Git");
+        description: _("To set Commit as default editor for Git run the following command in Terminal");
+
+        Box {
+          orientation: vertical;
+          spacing: 12;
+
+          Label git_text {
+            use-markup: true;
+            wrap: true;
+            selectable: true;
+            xalign: 0;
+
+            styles [
+              "code",
+              "view",
+              "frame",
+            ]
+          }
+
+          Box {
+            orientation: horizontal;
+            spacing: 6;
+
+            Button git_copy {
+              label: _("Copy to Clipboard");
+            }
+
+            LinkButton {
+              label: _("Documentation");
+              uri: _("https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor");
+            }
+          }
+        }
+      }
+
+      Adw.PreferencesGroup {
+        title: _("Mercurial");
+        description: _("To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>");
+
+        Box {
+          orientation: vertical;
+          spacing: 12;
+
+          Label hg_text {
+            use-markup: true;
+            wrap: true;
+            selectable: true;
+            xalign: 0;
+
+            styles [
+              "code",
+              "view",
+              "frame",
+            ]
+          }
+
+          Box {
+            orientation: horizontal;
+            spacing: 6;
+
+            Button hg_copy {
+              label: _("Copy to Clipboard");
+            }
+
+            LinkButton {
+              label: _("Documentation");
+              uri: _("https://www.mercurial-scm.org/wiki/editor");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+menu app-menu {
+  section {
+    item {
+      label: _("About Commit");
+      action: "app.about";
+    }
+  }
+}

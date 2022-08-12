@@ -1,0 +1,55 @@
+using Gtk 4.0;
+
+ShortcutsWindow shortcuts_window {
+  modal: true;
+
+  ShortcutsSection {
+    ShortcutsGroup {
+      title: _("Editing");
+
+      ShortcutsShortcut {
+        accelerator: "<Control>Return";
+        title: _("Save and confirm");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "Escape";
+        title: _("Cancel and dismiss");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Control>period";
+        title: _("Open emoji chooser");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Alt>Up <Alt>Down";
+        title: _("Move current line up/down");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Control>a <Control>slash";
+        title: _("Select All");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Shift><Control>a <Control>backslash";
+        title: _("Unelect All");
+      }
+    }
+
+    ShortcutsGroup {
+      title: _("General");
+
+      ShortcutsShortcut {
+        accelerator: "<Control>question";
+        title: _("Keyboard Shortcuts");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Control>Q";
+        title: _("Quit");
+      }
+    }
+  }
+}
