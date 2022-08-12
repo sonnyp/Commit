@@ -2,7 +2,7 @@ pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
 gjspack = find_program('../troll/gjspack/bin/gjspack')
-run_command(gjspack, '--appid=' + meson.project_name(), '--no-executable', 'src/main.js', 'src', check: true)
+run_command(gjspack, '--appid=' + meson.project_name(), '--no-executable', 'src/main.js', '--potfiles', 'po/POTFILES', 'src', check: true)
 
 install_data('re.sonny.Commit.gresource',
   install_dir: pkgdatadir

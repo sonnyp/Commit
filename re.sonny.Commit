@@ -13,6 +13,7 @@ const { gresource_path, prefix } = gjspack({
   appid: "re.sonny.Commit",
   entry: Gio.File.new_for_path("./src/main.js"),
   output: Gio.File.new_for_path("./src"),
+  potfiles: Gio.File.new_for_path("./po/POTFILES"),
 });
 const resource = Gio.resource_load(gresource_path);
 Gio.resources_register(resource);
