@@ -58,6 +58,7 @@ Thank you for your help!
 
 ```sh
 cd Commit
+git submodule update --init --recursive
 G_MESSAGES_DEBUG=Gjs-Console ./re.sonny.Commit --readonly test/fixtures/with-body/COMMIT_EDITMSG
 ```
 
@@ -66,8 +67,6 @@ Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.
 To pass the tests you have to install a few dependencies
 
 ```
-git submodule update --init --recursive
-
 # Install development dependencies
 sudo dnf install --assumeyes npm flatpak make desktop-file-utils gjs gtk4-devel libadwaita
 npm install
