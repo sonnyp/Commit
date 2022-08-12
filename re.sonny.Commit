@@ -10,7 +10,7 @@ import Gio from "gi://Gio";
 import { build as gjspack } from "./troll/gjspack/src/gjspack.js";
 
 const { gresource_path, prefix } = gjspack({
-  app_id: "re.sonny.Commit",
+  appid: "re.sonny.Commit",
   entry: Gio.File.new_for_path("./src/main.js"),
   output: Gio.File.new_for_path("./src"),
 });
@@ -37,7 +37,7 @@ GLib.setenv(
 );
 
 const loop = GLib.MainLoop.new(null, false);
-import(`resource://${prefix}/main.js`)
+import(`resource://${prefix}/src/main.js`)
   .then(({ default: main }) => {
     loop.quit();
     main([programInvocationName, ...ARGV], {

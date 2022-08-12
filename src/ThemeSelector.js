@@ -1,9 +1,8 @@
 import GObject from "gi://GObject";
 import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
-import Gio from "gi://Gio";
 
-import Template from "./ThemeSelector.ui";
+import Template from "./ThemeSelector.ui" assert { type: "uri" };
 
 // Adapted to JavaScript from https://gitlab.gnome.org/GNOME/gnome-text-editor/-/blob/cd6e111e3142a80f509684e65c104c8b3a097761/src/editor-theme-selector.c
 
@@ -40,7 +39,7 @@ class ThemeSelector extends Gtk.Widget {
 export default GObject.registerClass(
   {
     GTypeName: "ThemeSelector",
-    Template: Gio.resources_lookup_data(Template, null),
+    Template,
     CssName: "themeselector",
     InternalChildren: ["follow"],
     Properties: {

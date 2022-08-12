@@ -8,6 +8,8 @@ import { bindtextdomain, textdomain } from "gettext";
 
 import Application from "./application.js";
 
+import "./style.css";
+
 GLib.set_prgname("re.sonny.Commit");
 GLib.set_application_name("Commit");
 

@@ -1,14 +1,12 @@
 import GLib from "gi://GLib";
-import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
 
 import Editor from "./editor.js";
 
-import { loadStyleSheet, settings } from "./util.js";
+import { settings } from "./util.js";
 import { parse, format } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
-import Builder from "./window.ui";
-import style from "./style.css";
+import builder from "./window.ui" assert { type: "builder" };
 
 export default function Window({ application, file, text, type, readonly }) {
   let parsed = {};
@@ -20,11 +18,8 @@ export default function Window({ application, file, text, type, readonly }) {
     }
   }
 
-  const builder = Gtk.Builder.new_from_resource(Builder);
-
-  loadStyleSheet(style);
-
   const window = builder.get_object("window");
+  if (__DEV__) window.add_css_class("devel");
 
   let title = GLib.path_get_basename(GLib.get_current_dir());
   if (parsed.detail) title += ` (${parsed.detail})`;

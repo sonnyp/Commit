@@ -22,6 +22,7 @@ export default function Application({ version }) {
       /* We can have more than one instance active at once. */
       Gio.ApplicationFlags.NON_UNIQUE,
   });
+  application.set_resource_base_path("/re/sonny/Commit/src");
 
   let readonly = false;
 
@@ -134,7 +135,7 @@ function openEditor({ file, application, readonly }) {
   // Add the dialog to the application as its main window.
   application.add_window(window);
 
-  window.show();
+  window.present();
 }
 
 function setColorScheme() {

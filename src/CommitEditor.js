@@ -1,11 +1,10 @@
 import GObject from "gi://GObject";
-import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 
-import Template from "./CommitEditor.ui";
+import Template from "./CommitEditor.ui" assert { type: "uri" };
 
 import "./language-specs/git.lang";
 import "./language-specs/hg.lang";
@@ -43,7 +42,7 @@ export default GObject.registerClass(
         0,
       ),
     },
-    Template: Gio.resources_lookup_data(Template, null),
+    Template,
     Children: ["view", "buffer"],
     Signals: {
       "style-updated": {},
