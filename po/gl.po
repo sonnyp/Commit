@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
 "PO-Revision-Date: 2022-04-19 03:07+0000\n"
 "Last-Translator: Jorge Teijeiro <jorge.teijeiro.ramos@gmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/commit/commit/"
-"gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/commit/commit/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,32 +42,16 @@ msgid "Body lines maximum length (in characters)"
 msgstr "Máxima lonxitude de liñas do corpo (en caracteres)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
-msgid ""
-"Commit is an editor that helps you write better Git and Mercurial commit "
-"messages."
-msgstr ""
-"Commit é un editor que axuda a escribir mellores mensaxes de remisión "
-"(commit) en Git e Mercurial."
+msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
+msgstr "Commit é un editor que axuda a escribir mellores mensaxes de remisión (commit) en Git e Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
-msgid ""
-"After installing make sure to launch the application and follow the "
-"instructions."
-msgstr ""
-"Despois de instalala, asegúrese de lanzar a aplicación e segui-las "
-"instrucións."
+msgid "After installing make sure to launch the application and follow the instructions."
+msgstr "Despois de instalala, asegúrese de lanzar a aplicación e segui-las instrucións."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-msgid ""
-"Commit will pop up automatically when you make a commit in one of your "
-"projects. To save your commit message, press the Commit button or the "
-"<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
-"Abort button or the <code>Escape</code> key."
-msgstr ""
-"Commit iniciarase automáticamente cando fagas unha remisión(commit) a un dos "
-"teus proxectos. Para gardar a mensaxe de remisión(commit), prema o botón ou "
-"o atallo <code>Ctrl+Return</code>. Para abortar ou desestimar Commit, prema "
-"o botón Abortar ou a tecla <code>Escape</code>."
+msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
+msgstr "Commit iniciarase automáticamente cando fagas unha remisión(commit) a un dos teus proxectos. Para gardar a mensaxe de remisión(commit), prema o botón ou o atallo <code>Ctrl+Return</code>. Para abortar ou desestimar Commit, prema o botón Abortar ou a tecla <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -112,10 +95,8 @@ msgid "Emoji picker"
 msgstr "Selector de Emojis"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-msgid ""
-"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
-"Soporta git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "Soporta git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
@@ -288,12 +269,8 @@ msgstr "Engador marxe de 6px ao editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 #, fuzzy
-msgid ""
-"Action required. After updating, please launch the application and follow "
-"the instructions."
-msgstr ""
-"⚠️ Precísase actuar. Logo da actualización, por favor, inicie a aplicación e "
-"siga as instrucións."
+msgid "Action required. After updating, please launch the application and follow the instructions."
+msgstr "⚠️ Precísase actuar. Logo da actualización, por favor, inicie a aplicación e siga as instrucións."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -407,11 +384,8 @@ msgid "Git"
 msgstr "Git"
 
 #: src/welcome.ui:73
-msgid ""
-"To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
-"Para establecer Commit como editor por defecto para Git, empregue o seguinte "
-"comando no Terminal"
+msgid "To set Commit as default editor for Git run the following command in Terminal"
+msgstr "Para establecer Commit como editor por defecto para Git, empregue o seguinte comando no Terminal"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
@@ -422,10 +396,8 @@ msgid "Documentation"
 msgstr "Documentación"
 
 #: src/welcome.ui:112
-msgid ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
@@ -433,12 +405,8 @@ msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
-msgid ""
-"To set Commit as default editor for Mercurial, set the following in your "
-"<tt>hgrc</tt>"
-msgstr ""
-"Para establecer Commit como editor por defecto para Mercurial, establecer o "
-"seguinte no teu <tt>hgrc</tt>"
+msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
+msgstr "Para establecer Commit como editor por defecto para Mercurial, establecer o seguinte no teu <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
@@ -447,8 +415,17 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgid "Use dark mode"
 #~ msgstr "Usar modo escuro"
 
+#~ msgid "Abort"
+#~ msgstr "Abortar"
+
 #~ msgid "Main window - dark mode"
 #~ msgstr "Xanela principal - modo escuro"
 
 #~ msgid "Welcome window - dark mode"
 #~ msgstr "Xanela de benvida - modo escuro"
+
+#~ msgid "Improve auto capitalizzation"
+#~ msgstr "Mellora a autocapitalización (maiúsculas)"
+
+#~ msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#~ msgstr "⚠️ Precísase actuar. Logo da actualización, por favor, inicie a aplicación e siga as instrucións."

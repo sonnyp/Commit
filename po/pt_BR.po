@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
 "PO-Revision-Date: 2022-07-20 23:22+0000\n"
 "Last-Translator: Tulili <arthurvergino@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
-"commit/commit/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/commit/commit/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,32 +43,16 @@ msgid "Body lines maximum length (in characters)"
 msgstr "Comprimento máximo das linhas do corpo (em caracteres)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
-msgid ""
-"Commit is an editor that helps you write better Git and Mercurial commit "
-"messages."
-msgstr ""
-"Commit é um editor que lhe ajuda a escrever melhores mensagens de commit Git "
-"e Mercurial."
+msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
+msgstr "Commit é um editor que lhe ajuda a escrever melhores mensagens de commit Git e Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
-msgid ""
-"After installing make sure to launch the application and follow the "
-"instructions."
-msgstr ""
-"Após a instalação, certifique-se de iniciar o aplicativo e seguir as "
-"instruções."
+msgid "After installing make sure to launch the application and follow the instructions."
+msgstr "Após a instalação, certifique-se de iniciar o aplicativo e seguir as instruções."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-msgid ""
-"Commit will pop up automatically when you make a commit in one of your "
-"projects. To save your commit message, press the Commit button or the "
-"<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
-"Abort button or the <code>Escape</code> key."
-msgstr ""
-"O Commit aparecerá automaticamente quando você fizer um commit em um de seus "
-"projetos. Para salvar sua mensagem de commit, pressione o botão Commit ou a "
-"combinação de teclas <code>Ctrl+Return</code>. Para abortar e dispensar o "
-"Commit, pressione o botão Cancelar ou a tecla <code>Escape</code>."
+msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
+msgstr "O Commit aparecerá automaticamente quando você fizer um commit em um de seus projetos. Para salvar sua mensagem de commit, pressione o botão Commit ou a combinação de teclas <code>Ctrl+Return</code>. Para abortar e dispensar o Commit, pressione o botão Cancelar ou a tecla <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -113,10 +96,8 @@ msgid "Emoji picker"
 msgstr "Seletor de emojis"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-msgid ""
-"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
-"Suporta git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "Suporta git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
@@ -287,11 +268,8 @@ msgstr "Adiciona uma margem de 6px ao editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 #, fuzzy
-msgid ""
-"Action required. After updating, please launch the application and follow "
-"the instructions."
-msgstr ""
-"⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."
+msgid "Action required. After updating, please launch the application and follow the instructions."
+msgstr "⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -405,11 +383,8 @@ msgid "Git"
 msgstr "Git"
 
 #: src/welcome.ui:73
-msgid ""
-"To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
-"Para definir Commit como o editor padrão para Git, execute o seguinte "
-"comando no Terminal"
+msgid "To set Commit as default editor for Git run the following command in Terminal"
+msgstr "Para definir Commit como o editor padrão para Git, execute o seguinte comando no Terminal"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
@@ -420,10 +395,8 @@ msgid "Documentation"
 msgstr "Documentação"
 
 #: src/welcome.ui:112
-msgid ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
@@ -431,12 +404,8 @@ msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
-msgid ""
-"To set Commit as default editor for Mercurial, set the following in your "
-"<tt>hgrc</tt>"
-msgstr ""
-"Para definir Commit como o editor padrão para Mercurial, defina o seguinte "
-"em seu <tt>hgrc</tt>"
+msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
+msgstr "Para definir Commit como o editor padrão para Mercurial, defina o seguinte em seu <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
@@ -445,6 +414,9 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgid "Use dark mode"
 #~ msgstr "Usar modo escuro"
 
+#~ msgid "Abort"
+#~ msgstr "Abortar"
+
 #~ msgid "Main window - dark mode"
 #~ msgstr "Janela principal - modo escuro"
 
@@ -452,7 +424,6 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgstr "Janela de boas-vindas - modo escuro"
 
 #, fuzzy
-#~| msgid "Supports Mercurial commit messages"
 #~ msgid "Support multiple comments"
 #~ msgstr "Tem suporte a mensagens de commit do Mercurial"
 
@@ -465,12 +436,11 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgid "Spell checking"
 #~ msgstr "Verificação ortográfica"
 
-#~ msgid ""
-#~ "Dark theme support: the overflow highlight is adjusted according to your "
-#~ "theme"
-#~ msgstr ""
-#~ "Tem suporte a tema escuro: o realce de estouro é ajustado conforme seu "
-#~ "tema"
+#~ msgid "Dark theme support: the overflow highlight is adjusted according to your theme"
+#~ msgstr "Tem suporte a tema escuro: o realce de estouro é ajustado conforme seu tema"
 
 #~ msgid "Shows a welcome window when launched from desktop"
 #~ msgstr "Mostra uma janela de boas-vindas quando iniciado do desktop"
+
+#~ msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#~ msgstr "⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."

@@ -35,41 +35,25 @@ msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
 msgstr "git;mercurial;hg;scm;gnomit;komet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
 msgid "Title maximum length (in characters)"
-msgstr "Nastavenie predvolenej dĺžky titulku na 50 znakov"
+msgstr "Maximálna dĺžka titulku (v znakoch)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:13
-msgid ""
-"Commit is an editor that helps you write better Git and Mercurial commit "
-"messages."
-msgstr ""
-"Commit je editor, ktorý vám pomôže lepšie napísať správy commitov v systéme "
-"Git a Mercurial."
+msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
+msgstr "Commit je editor, ktorý vám pomôže lepšie napísať správy commitov v systéme Git a Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
-msgid ""
-"After installing make sure to launch the application and follow the "
-"instructions."
-msgstr ""
-"Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa inštrukcií."
+msgid "After installing make sure to launch the application and follow the instructions."
+msgstr "Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa inštrukcií."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 #, fuzzy
-msgid ""
-"Commit will pop up automatically when you make a commit in one of your "
-"projects. To save your commit message, press the Commit button or the "
-"<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
-"Abort button or the <code>Escape</code> key."
-msgstr ""
-"Commit sa zobrazí automaticky po vykonaní commitu v jednom z vašich "
-"projektov. Pre uloženie commit správ, stlačte Commit tlačidlo alebo "
-"kombináciu _Ctrl+Enter_. Pre zrušenie a neuloženie Commitu, stlačte Zrušiť "
-"alebo _Esc."
+msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
+msgstr "Commit sa zobrazí automaticky po vykonaní commitu v jednom z vašich projektov. Pre uloženie commit správ, stlačte Commit tlačítko, alebo kombináciu _Ctrl+Enter_. Pre zrušenie a neuloženie Commitu, stlačte Zrušiť alebo _Esc."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -117,11 +101,8 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:41
 #, fuzzy
-msgid ""
-"Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
-"Podporuje správy git commitov, merge správy, správy tagov, správy add -p a "
-"správy rebase -i."
+msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
+msgstr "Podporuje správy git commitov, merge správy, správy tagov, správy add -p a správy rebase -i."
 
 #: data/re.sonny.Commit.metainfo.xml:42
 #, fuzzy
@@ -298,12 +279,8 @@ msgstr "Pridaný 6px okraj do editoru"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 #, fuzzy
-msgid ""
-"Action required. After updating, please launch the application and follow "
-"the instructions."
-msgstr ""
-"⚠️ Požadovaná akcia. Po aktualizácii spustite aplikáciu a postupujte podľa "
-"pokynov."
+msgid "Action required. After updating, please launch the application and follow the instructions."
+msgstr "⚠️ Požadovaná akcia. Po aktualizácii spustite aplikáciu a postupujte podľa pokynov."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -416,11 +393,8 @@ msgid "Git"
 msgstr "Git"
 
 #: src/welcome.ui:73
-msgid ""
-"To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
-"Pokiaľ chcete nastaviť Commit ako predvolený editor pre Git, spustite v "
-"terminály nasledujúci príkaz"
+msgid "To set Commit as default editor for Git run the following command in Terminal"
+msgstr "Pokiaľ chcete nastaviť Commit ako predvolený editor pre Git, spustite v terminály nasledujúci príkaz"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
@@ -431,10 +405,8 @@ msgid "Documentation"
 msgstr "Dokumentácia"
 
 #: src/welcome.ui:112
-msgid ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
-"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgid "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
+msgstr "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
@@ -442,12 +414,8 @@ msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
-msgid ""
-"To set Commit as default editor for Mercurial, set the following in your "
-"<tt>hgrc</tt>"
-msgstr ""
-"Pokiaľ chcete nastaviť Commit ako predvolený editor pre Mercurial, nastavte "
-"nasledujúce vo vašom <tt>hgrc</tt>"
+msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
+msgstr "Pokiaľ chcete nastaviť Commit ako predvolený editor pre Mercurial, nastavte nasledujúce vo vašom <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
@@ -457,25 +425,21 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgstr "Použiť tmavý režim"
 
 #, fuzzy
-#~| msgid "Commit main window - dark mode"
 #~ msgid "Main window - dark mode"
 #~ msgstr "Hlavné okno Commitu - tmavý režim"
 
 #, fuzzy
-#~| msgid "Commit welcome window - dark mode"
 #~ msgid "Welcome window - dark mode"
 #~ msgstr "Uvítacie okno Commitu - tmavý režim"
 
 #, fuzzy
-#~| msgid "Supports Mercurial commit messages"
 #~ msgid "Support multiple comments"
 #~ msgstr "Podporuje správy commitov Mercurial"
 
 #~ msgid "Message title length hint"
 #~ msgstr "Zobrazenie nápovedy dĺžky titulku"
 
-#~ msgid ""
-#~ "Highlights overflow of title when it exceeds 50 characters (customizable)"
+#~ msgid "Highlights overflow of title when it exceeds 50 characters (customizable)"
 #~ msgstr "Zvýraznenie prekročenia dĺžky titulku po 50 znakoch (nastaviteľné)"
 
 #~ msgid "Translate to French"
@@ -508,15 +472,14 @@ msgstr "https://www.mercurial-scm.org/wiki/editor"
 #~ msgid "Spell checking"
 #~ msgstr "Kontrola pravopisu"
 
-#~ msgid ""
-#~ "Dark theme support: the overflow highlight is adjusted according to your "
-#~ "theme"
-#~ msgstr ""
-#~ "Podpora tmavých tém: zvýraznenie prekročenia dĺžky titulku je upravené "
-#~ "podľa vašej témy"
+#~ msgid "Dark theme support: the overflow highlight is adjusted according to your theme"
+#~ msgstr "Podpora tmavých tém: zvýraznenie prekročenia dĺžky titulku je upravené podľa vašej témy"
 
 #~ msgid "Shows a welcome window when launched from desktop"
 #~ msgstr "Pri spustení z plochy zobraziť uvítacie okno"
 
 #~ msgid "Sonny Piers"
 #~ msgstr "Sonny Piers"
+
+#~ msgid "⚠️ Action required. After updating, please launch the application and follow the instructions."
+#~ msgstr "⚠️ Požadovaná akcia. Po aktualizácii spustite aplikáciu a postupujte podľa pokynov."
