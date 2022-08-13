@@ -1,14 +1,17 @@
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
+import Gtk from "gi://Gtk";
 
 import Editor from "./editor.js";
 
 import { settings } from "./util.js";
 import { parse, format } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
-import builder from "./window.blp" assert { type: "builder" };
+import Interface from "./window.blp";
 
 export default function Window({ application, file, text, type, readonly }) {
+  const builder = Gtk.Builder.new_from_resource(Interface);
+
   let parsed = {};
   try {
     parsed = parse(text, type);
