@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2021-08-11 13:42+0200\n"
-"Last-Translator: MartinIIOT <https://www.github.com/MartinIIOT>\n"
-"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"PO-Revision-Date: 2022-08-17 07:15+0000\n"
+"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -60,18 +60,16 @@ msgid "Features:"
 msgstr "Funkcie:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr "Zvýraznenie iba pretečenia textu pri commitoch"
+msgstr "Zvýrazňuje pretečenie nadpisu commitu"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:32
-#, fuzzy
 msgid "Inserts a blank line between title and body"
-msgstr "Vložiť prázdny riadok medzi titulok a popis"
+msgstr "Vloží prázdny riadok medzi titulok a popis"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
@@ -88,7 +86,7 @@ msgstr "Podpora tmavého režimu"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Klávesové ovládanie a skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 #, fuzzy
@@ -97,12 +95,11 @@ msgstr "Podporuje späť a znovu"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Výber emotikonov"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-#, fuzzy
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Podporuje správy git commitov, merge správy, správy tagov, správy add -p a správy rebase -i."
+msgstr "Podporuje správy git commitov, merge správy, správy tagov, správy add -patch a správy rebase -i."
 
 #: data/re.sonny.Commit.metainfo.xml:42
 #, fuzzy
@@ -119,12 +116,11 @@ msgstr "Uvítacie okno s nastaveniami a pokynmi"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Zvýrazňuje syntaxiu Gitu, Mercurialu, aj rozdiely"
 
 #: data/re.sonny.Commit.metainfo.xml:57
-#, fuzzy
 msgid "Main window"
-msgstr "Hlavné okno Commitu"
+msgstr "Hlavné okno"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
@@ -132,12 +128,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:75
-#, fuzzy
 msgid "Welcome window"
-msgstr "Uvítacie okno Commitu"
+msgstr "Uvítacie okno"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
@@ -148,9 +143,8 @@ msgid "Add a theme switcher"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:90
-#, fuzzy
 msgid "Improve dark mode support"
-msgstr "Podpora tmavého režimu"
+msgstr "Vylepšiť podporu tmavého režimu"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 #, fuzzy
@@ -163,16 +157,15 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Opraviť kapitalizáciu pri úprave"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
 msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Pridaná podpora pre Mercurial"
+msgstr "Pridať podporu pre gitconfig a hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 #, fuzzy
