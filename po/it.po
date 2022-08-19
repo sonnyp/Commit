@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-19 21:19+0000\n"
+"PO-Revision-Date: 2022-08-21 18:18+0000\n"
 "Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/commit/commit/it/>\n"
 "Language: it\n"
@@ -168,11 +168,11 @@ msgstr "Supporto per la modifica di qualsiasi file"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr "Rendi dinamico il pulsante primario (Tag, Rebase, Commit, …)"
+msgstr "Reso dinamico il pulsante primario (Tag, Rebase, Commit, …)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr "Usa 2 spazi per l'indentazione"
+msgstr "Uso di 2 spazi per l'indentazione"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
@@ -191,7 +191,6 @@ msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "Aggiunte scorciatoie da tastiera per muovere su e giù le righe"
 
 #: data/re.sonny.Commit.metainfo.xml:116
-#, fuzzy
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "Evidenziazione della sintassi per Git, Mercurial e diff"
 
@@ -312,7 +311,7 @@ msgstr "_Tag"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr "_Aggiungi"
+msgstr "A_ggiungi"
 
 #: src/scm.js:10
 #, fuzzy
@@ -364,9 +363,8 @@ msgid "Quit"
 msgstr "Esci"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Annulla"
+msgstr "_Annulla"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
