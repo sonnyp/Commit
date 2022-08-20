@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-02 21:19+0000\n"
+"PO-Revision-Date: 2022-08-21 18:18+0000\n"
 "Last-Translator: Henri <contact@hen.ee>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/commit/commit/et/>\n"
 "Language: et\n"
@@ -66,47 +66,46 @@ msgid "Features:"
 msgstr "Funktsioonid:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
 msgstr "Näitab, et ei ületaks commit pealkirja pikkust"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Tark teksti joondamine"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "Lisab tühja rea pealkirja ja kirjelduse vahel"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr ""
+msgstr "Kommentaarid on ainult lugemiseks ning väljastatud „Vali kõik“est"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "Näitab projekti kausta ja haru akna pealkirjas"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Tume teema tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Kiirklahvid ning kiire klaviatuuriga navigeerimine"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Undo/Redo tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Emoji valija"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
+msgstr "„git commit, merge, tag --annotate, add --patch, rebase --interactive“ tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
@@ -114,15 +113,15 @@ msgstr "Mercurial commit'i tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Automaatne suurtäht commit'i pealkirjas"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Avaaken sätete ning juhenditega"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Git, Mercurial ja diff'ide süntaksi märkimist"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
@@ -138,55 +137,55 @@ msgstr "Kiirklahvid"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr ""
+msgstr "Avaaken"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Muuda akna suurust, et lülitada automaatne vormistus välja"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Lisatud teema lüliti"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Tume teema toe parandused"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "Numpad sisestaja tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Nuppudele mnemoonika"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Suurtähtede kasutuse parandused"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Automaatne suurtähtede kasutuse parandused"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "gitconfig ja hgrc tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Iga faili redigeerimis tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Dünaamiliseks tehtud peamise nupu silt (Rebase, Commit jne)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Kahe tühiku kasutamine taandes"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Menüü nupu lisamine"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -198,35 +197,35 @@ msgstr "Veaparandused"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Kiirklahvid rea liigutamiseks üles või alla"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Highlight syntax Git, Mercurial ja diff'idele"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "Kiirklahvide aken lisatud"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Õigekirja kontrolli eemaldamine ajutiselt"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Undo ja redo tugi"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Sümboolne ikooni lisamine"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Tume teema sätte lisamine"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Teksti redigeerija fokuseerimine"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
@@ -234,11 +233,11 @@ msgstr "GTK4 ja libadwaita uuendus"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "Eelistuste liigutamine avaaknale"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Ainult näita teksti ületäitumist commit'ides"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
@@ -246,61 +245,61 @@ msgstr "Uus rakenduse ikoon"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "Eemaldatud topelt ääris"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "Lisatud eelistuste aken"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "Vaikne pealkirja pikkuse soovitus 50 tähte"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr ""
+msgstr "Vead commit'id eriliste märkidega parandatud"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "Tuvastamatu git rebase parandatud"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "Akna alumised nurgad tehtud ümaraks"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "6px margin lisatud redigeerijale"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
-msgstr ""
+msgstr "Nõuab seadistamist. Pärast uuendamist, palun ava rakendus ning jälgi juhiseid."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr ""
+msgstr "Avaakna näitamine, kui käivitatud töölauast"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "Mercurial tugi lisatud"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "Failisüsteemi load eemaldatud"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "Esialgne väljaanne. Fork'itud Gnomit 2.0ist."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "\"#\" tugi commit sõnumis"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "Õigesti tuvastab käivitaja asukoha"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
@@ -313,27 +312,27 @@ msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Merge"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Märgista"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "_Lisa"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Salvesta"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Redigeerimine"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
@@ -349,31 +348,31 @@ msgstr "Ava emoji menüü"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Liiguta käesolev rida üles/alla"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Vali kõik"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Tühista valik"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Üldine"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Kiirklahvid"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Lahku"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_Tühista"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
