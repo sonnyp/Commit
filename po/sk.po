@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-17 07:15+0000\n"
+"PO-Revision-Date: 2022-08-28 10:15+0000\n"
 "Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>\n"
 "Language: sk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -89,9 +89,8 @@ msgid "Keyboard navigation and shortcuts"
 msgstr "Klávesové ovládanie a skratky"
 
 #: data/re.sonny.Commit.metainfo.xml:38
-#, fuzzy
 msgid "Undo/Redo support"
-msgstr "Podporuje späť a znovu"
+msgstr "Podpora späť a znovu"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
@@ -102,7 +101,6 @@ msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interac
 msgstr "Podporuje správy git commitov, merge správy, správy tagov, správy add -patch a správy rebase -i."
 
 #: data/re.sonny.Commit.metainfo.xml:42
-#, fuzzy
 msgid "Supports Mercurial commit"
 msgstr "Podporuje správy commitov Mercurial"
 
