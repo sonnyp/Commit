@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-28 10:15+0000\n"
+"PO-Revision-Date: 2022-09-04 08:21+0000\n"
 "Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>\n"
 "Language: sk\n"
@@ -166,9 +166,8 @@ msgid "Add support for gitconfig and hgrc"
 msgstr "Pridať podporu pre gitconfig a hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
-#, fuzzy
 msgid "Support editing any file"
-msgstr "Podporuje späť a znovu"
+msgstr "Podpora úpravy akéhokoľvek súboru"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
@@ -180,7 +179,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Pridať tlačítko menu"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -188,7 +187,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Rôzne opravy"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
@@ -196,12 +195,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Zvýrazniť syntaxiu pre Git, Mercurial, aj rozdiely"
 
 #: data/re.sonny.Commit.metainfo.xml:117
-#, fuzzy
 msgid "Add a shortcuts window"
-msgstr "Pridáné okno Predvoľby"
+msgstr "Pridať okno predvolieb"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
@@ -228,9 +226,8 @@ msgid "Port to GTK 4 and libadwaita"
 msgstr "Port na GTK 4 a libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:139
-#, fuzzy
 msgid "Move preferences to welcome window"
-msgstr "Predvoľby presunuté do uvítacieho okna"
+msgstr "Presunúť predvoľby do uvítacieho okna"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
@@ -269,9 +266,8 @@ msgid "Add 6px margin to editor"
 msgstr "Pridaný 6px okraj do editoru"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Požadovaná akcia. Po aktualizácii spustite aplikáciu a postupujte podľa pokynov."
+msgstr "⚠️ Vyžadovaná akcia. Po aktualizácii prosím spustite aplikáciu a postupujte podľa pokynov."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -313,11 +309,11 @@ msgstr ""
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Štítok"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "Pri_dať"
 
 #: src/scm.js:10
 msgid "_Rebase"
@@ -325,23 +321,23 @@ msgstr ""
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Uložiť"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Upravovanie"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Uložiť a potvrdiť"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Zrušiť a zamietnuť"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Otvoriť výber emotikonov"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
@@ -349,7 +345,7 @@ msgstr ""
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Vybrať všetko"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
@@ -357,11 +353,11 @@ msgstr ""
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Všeobecné"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Klávesové skratky"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
@@ -369,7 +365,7 @@ msgstr "Ukončiť"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_O"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
