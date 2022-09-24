@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-21 18:18+0000\n"
+"PO-Revision-Date: 2022-09-25 13:17+0000\n"
 "Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/commit/commit/it/>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -300,12 +300,10 @@ msgid "_Commit"
 msgstr "_Commit"
 
 #: src/scm.js:7
-#, fuzzy
 msgid "_Merge"
 msgstr "_Merge"
 
 #: src/scm.js:8
-#, fuzzy
 msgid "_Tag"
 msgstr "_Tag"
 
@@ -314,7 +312,6 @@ msgid "A_dd"
 msgstr "A_ggiungi"
 
 #: src/scm.js:10
-#, fuzzy
 msgid "_Rebase"
 msgstr "_Rebase"
 
