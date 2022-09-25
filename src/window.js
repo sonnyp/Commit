@@ -48,6 +48,7 @@ export default function Window({ application, file, text, type, readonly }) {
   }
 
   const { buffer, source_view, editor } = Editor({
+    application,
     builder,
     button_save,
     type,
@@ -74,7 +75,6 @@ export default function Window({ application, file, text, type, readonly }) {
   });
   action_save.connect("activate", () => {
     const { text } = buffer;
-
     const value =
       parsed.is_message && !editor.isWiderThanWrapWidthRequest()
         ? format(
@@ -108,3 +108,4 @@ function save({ file, value, readonly }) {
     }
   }
 }
+

@@ -11,7 +11,7 @@ import { isEmptyCommitMessage } from "./scm.js";
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 const style_manager = Adw.StyleManager.get_default();
 
-export default function editor({ builder, button_save, parsed }) {
+export default function editor({ application, builder, button_save, parsed }) {
   const {
     body,
     comment,
@@ -54,6 +54,16 @@ export default function editor({ builder, button_save, parsed }) {
   buffer.connect("changed", () => {
     const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
     button_save.set_sensitive(!is_empty);
+
+    // Disable the save shortcut when the commit message is empty
+    if (is_empty) {
+      application.set_accels_for_action("win.save", []);
+    } else {
+      application.set_accels_for_action("win.save", [
+        "<Control>Return",
+        "<Control>KP_Enter",
+      ]);
+    };
 
     if (!is_message) return;
 
@@ -254,3 +264,4 @@ function Capitalizer() {
     }
   };
 }
+
