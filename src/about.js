@@ -8,11 +8,11 @@ export default function About({ application, version }) {
     application_name: "Commit",
     developers: ["Sonny Piers https://sonny.re", "Aral Balkan https://ar.al/"],
     artists: ["Tobias Bernard <tbernard@gnome.org>"],
-    comments: _("Commit message editor"),
     copyright: "© 2020-2022 Sonny Piers\n© 2018-2020 Aral Balkan",
     license_type: Gtk.License.GPL_3_0,
     version,
     website: "https://github.com/sonnyp/Commit",
+    issue_url: "https://github.com/sonnyp/Commit/issues",
     transient_for: application.get_active_window(),
     modal: true,
     application_icon: "re.sonny.Commit",
@@ -28,10 +28,9 @@ export default function About({ application, version }) {
     // "John Doe https://john.com",
     "Sergey Bugaev https://mastodon.technology/@bugaevc",
     "Christopher Davis https://social.libre.fi/brainblasted",
-    "axtlos https://github.com/axtloss"
+    "axtlos https://github.com/axtloss",
   ]);
   dialog.present();
 
   return { dialog };
 }
-
