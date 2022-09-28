@@ -5,7 +5,7 @@ import Gtk from "gi://Gtk";
 import Editor from "./editor.js";
 
 import { settings } from "./util.js";
-import { parse, format } from "./scm.js";
+import { parse, format, isEmptyCommitMessage } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
 import Interface from "./window.blp";
 
@@ -74,6 +74,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_save.connect("activate", () => {
+    if (isEmptyCommitMessage(editor.buffer.text, editor.comment_prefix)) return
     const { text } = buffer;
     const value =
       parsed.is_message && !editor.isWiderThanWrapWidthRequest()
@@ -108,4 +109,5 @@ function save({ file, value, readonly }) {
     }
   }
 }
+
 
