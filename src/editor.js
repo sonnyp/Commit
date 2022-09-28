@@ -63,7 +63,7 @@ export default function editor({ application, builder, button_save, parsed }) {
         "<Control>Return",
         "<Control>KP_Enter",
       ]);
-    };
+    }
 
     if (!is_message) return;
 
