@@ -48,7 +48,6 @@ export default function Window({ application, file, text, type, readonly }) {
   }
 
   const { buffer, source_view, editor } = Editor({
-    application,
     builder,
     button_save,
     type,
