@@ -55,16 +55,6 @@ export default function editor({ application, builder, button_save, parsed }) {
     const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
     button_save.set_sensitive(!is_empty);
 
-    // Disable the save shortcut when the commit message is empty
-    if (is_empty) {
-      application.set_accels_for_action("win.save", []);
-    } else {
-      application.set_accels_for_action("win.save", [
-        "<Control>Return",
-        "<Control>KP_Enter",
-      ]);
-    }
-
     if (!is_message) return;
 
     // Check first line length and highlight characters beyond the limit.
