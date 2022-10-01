@@ -11,7 +11,7 @@ import { isEmptyCommitMessage } from "./scm.js";
 const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
 const style_manager = Adw.StyleManager.get_default();
 
-export default function editor({ application, builder, button_save, parsed }) {
+export default function editor({ builder, button_save, parsed }) {
   const {
     body,
     comment,
@@ -254,4 +254,3 @@ function Capitalizer() {
     }
   };
 }
-
