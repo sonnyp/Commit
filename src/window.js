@@ -73,7 +73,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_save.connect("activate", () => {
-    if (isEmptyCommitMessage(editor.buffer.text, editor.comment_prefix)) return
+    if (isEmptyCommitMessage(editor.buffer.text, parsed.comment_prefix)) return
     const { text } = buffer;
     const value =
       parsed.is_message && !editor.isWiderThanWrapWidthRequest()
@@ -108,5 +108,3 @@ function save({ file, value, readonly }) {
     }
   }
 }
-
-
