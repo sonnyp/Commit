@@ -1,5 +1,4 @@
 pkgdatadir = join_paths(get_option('datadir'), meson.project_name())
-gnome = import('gnome')
 
 gjspack = find_program('../troll/gjspack/bin/gjspack')
 gresource = custom_target(meson.project_name() + '.gresource',
@@ -16,6 +15,7 @@ gresource = custom_target(meson.project_name() + '.gresource',
   ],
   install: true,
   install_dir: pkgdatadir,
+  build_always_stale: true,
 )
 
 bin_conf = configuration_data()
