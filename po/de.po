@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-01 11:19+0000\n"
+"PO-Revision-Date: 2022-10-07 19:19+0000\n"
 "Last-Translator: Alexander Botor <alexander.botor@das-ernste.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/commit/commit/de/>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -58,13 +58,12 @@ msgid "Features:"
 msgstr "Besonderheiten:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr "Titel wird hervorgehebt, wenn er mehr als 50 Zeichen lang ist (anpassbar)"
+msgstr "Hebt überhängende Zeichen des Commit-Titels hervor"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Automatischer Zeilenumbruch"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 #, fuzzy
@@ -82,97 +81,91 @@ msgstr "Zeigt Projektordner und Zweig im Fensterkopf an"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Beachtet Dunkel-Modus"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Tastatur-Navigation und -Kürzel"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Rückgängig/Wiederholen"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Emoji-Auswahl"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-#, fuzzy
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Unterstützt git commit Nachrichten, merge Nachrichten, tag Nachrichten, add -p Nachrichten und rebase -i Nachrichten"
+msgstr "Unterstützt folgende git-Befehle: commit, merge, tag --annotate, add --patch, rebase -interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
-#, fuzzy
 msgid "Supports Mercurial commit"
-msgstr "Untrestüzt Mercurial commit Nachrichten"
+msgstr "Unterstützt Mercurial commit"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Titel automatisch großschreiben"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Willkommens-Fenster mit Einstellungen und Anleitung"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Syntax hervorheben für Git, Mercurial und diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:57
-#, fuzzy
 msgid "Main window"
-msgstr "Commit Hauptfenster"
+msgstr "Hauptfenster"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Emoji-Wähler"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Tastaturkürzel"
 
 #: data/re.sonny.Commit.metainfo.xml:75
-#, fuzzy
 msgid "Welcome window"
-msgstr "Commit Willkommensfenster"
+msgstr "Willkommens-Fenster"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Verändere die Größe des Fensters, um die Autoformatierung zu deaktivieren"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Stil-Wechsler hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Unterstützung für Dunkel-Modus verbessern"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Untrestüzt Mercurial commit Nachrichten"
+msgstr "Enter-Taste des Nummernblocks unterstützen"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Mnemonics für Buttons hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Großschreiben während \"amend\" reparieren"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Automatische Großschreibung verbessern"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Unterstützung für Mercurial hinzugefügt"
+msgstr "Unterstützung für gitconfig und hgrc hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Jedes Dateiformat bearbeiten"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
