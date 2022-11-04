@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-11-01 20:30+0000\n"
+"PO-Revision-Date: 2022-11-05 01:34+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/commit/commit/es/>\n"
 "Language: es\n"
@@ -31,7 +31,7 @@ msgstr "Editor de mensajes de confirmación"
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
+msgstr ""
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
