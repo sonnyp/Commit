@@ -9,16 +9,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2021-10-09 10:18+0000\n"
-"Last-Translator: BigmenPixel < >\n"
-"Language-Team: Russian < >\n"
+"PO-Revision-Date: 2022-11-13 14:47+0000\n"
+"Last-Translator: Aaron Grella <krutalevex@mail.ru>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/commit/commit/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 41.0\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -28,18 +27,16 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Редактор сообщений коммитов "
+msgstr "Редактор сообщений коммитов"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
-#, fuzzy
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
 msgstr "git;mercurial;hg;scm;gnomit;komet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
-#, fuzzy
 msgid "Title maximum length (in characters)"
-msgstr "Длина заголовка по умолчанию установлена на 50 символов"
+msgstr "Максимальная длина заголовка (в символах)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
@@ -61,35 +58,26 @@ msgstr ""
 "После установки обязательно запустите приложение и следуйте инструкциям."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-#, fuzzy
 msgid ""
 "Commit will pop up automatically when you make a commit in one of your "
 "projects. To save your commit message, press the Commit button or the "
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
-msgstr ""
-"Коммит будет появляться автоматически, когда вы совершаете коммит в одном из "
-"своих проектов. Чтобы сохранить сообщение о коммите, нажмите кнопку Коммит "
-"или в составе <code> ctrl+return </code> ярлык. Чтобы прервать и отклонить "
-"коммит, нажмите кнопку Abort или клавишу <code> Escape </code>."
+msgstr "Commit появится автоматически, когда вы сделаете коммит в одном из ваших проектов. Чтобы сохранить сообщение фиксации, нажмите кнопку фиксации или сочетание клавиш <code>Ctrl+Return</code>. Чтобы прервать и закрыть фиксацию, нажмите кнопку «Прервать» или клавишу <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
 msgstr "Функции:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr ""
-"Подсвечивает переполнение заголовка, если оно превышает 50 символов "
-"(настраивается)"
+msgstr "Выделяет переполнение заголовка коммита"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
 msgstr "Умная обертка заголовка"
 
 #: data/re.sonny.Commit.metainfo.xml:32
-#, fuzzy
 msgid "Inserts a blank line between title and body"
 msgstr "Вставляет пустую строку между заголовком и описанием"
 
@@ -112,7 +100,6 @@ msgid "Keyboard navigation and shortcuts"
 msgstr "Навигация по клавиатуре и ярлыки"
 
 #: data/re.sonny.Commit.metainfo.xml:38
-#, fuzzy
 msgid "Undo/Redo support"
 msgstr "Поддержка отмены"
 
@@ -121,21 +108,17 @@ msgid "Emoji picker"
 msgstr "Эмодзи сборщик"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-#, fuzzy
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr ""
-"Поддерживает сообщения git commit, сообщения merge, сообщения tag, сообщения "
-"add -p и сообщения rebase -i."
+msgstr "Поддерживает команды git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
-#, fuzzy
 msgid "Supports Mercurial commit"
 msgstr "Поддерживает сообщения коммитов Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Автоматически использовать заглавные буквы в названии коммита"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
@@ -146,22 +129,20 @@ msgid "Highlight syntax for Git, Mercurial and diffs"
 msgstr "Подсветка синтаксиса для Git, Mercurial и различий"
 
 #: data/re.sonny.Commit.metainfo.xml:57
-#, fuzzy
 msgid "Main window"
-msgstr "Главное окно Commit"
+msgstr "Главное окно"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Селектор Эмодзи"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
 msgstr "Ярлыки"
 
 #: data/re.sonny.Commit.metainfo.xml:75
-#, fuzzy
 msgid "Welcome window"
-msgstr "Приветственное окно Commit"
+msgstr "Приветственное окно"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
@@ -176,9 +157,8 @@ msgid "Improve dark mode support"
 msgstr "Улучшить поддержку тёмного режима"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Поддерживает сообщения коммитов Mercurial"
+msgstr "Поддержка цифровой клавиатуры"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
@@ -190,12 +170,11 @@ msgstr "Исправить заглавные буквы при изменени
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Улучшить автоматическую капитализацию"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Добавлена поддержка Mercurial"
+msgstr "Добавлена поддержка gitconfig и hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
@@ -230,9 +209,8 @@ msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "Синтаксис выделения для Git, Mercurial и diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:117
-#, fuzzy
 msgid "Add a shortcuts window"
-msgstr "Добавлено окно настроек"
+msgstr "Добавлено окно ярлыков"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
@@ -259,9 +237,8 @@ msgid "Port to GTK 4 and libadwaita"
 msgstr "Перенос на GTK 4 и libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:139
-#, fuzzy
 msgid "Move preferences to welcome window"
-msgstr "Добавлено окно настроек"
+msgstr "Перенесены настройки в окно приветствия"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
@@ -300,13 +277,10 @@ msgid "Add 6px margin to editor"
 msgstr "Добавлено поле 6px в редактор"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
-msgstr ""
-"⚠️ Требуется действие. После обновления запустите приложение и следуйте "
-"инструкциям."
+msgstr "Необходимое действие. После обновления запустите приложение и следуйте инструкциям."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -338,9 +312,8 @@ msgid "translator-credits"
 msgstr "BigmenPixel https://github.com/BigmenPixel0"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
@@ -411,9 +384,8 @@ msgid "About Commit"
 msgstr "О приложении"
 
 #: src/welcome.ui:28
-#, fuzzy
 msgid "Preferences"
-msgstr "Добавлено окно настроек"
+msgstr "Настройки"
 
 #: src/welcome.ui:69
 msgid "Git"
