@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-11-08 15:05+0000\n"
+"PO-Revision-Date: 2022-11-13 14:47+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/commit/commit/gl/>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -136,52 +136,47 @@ msgstr "Cambialo tamaño da xanela para desactivalo formato automático"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Engade un selector de temas"
 
 #: data/re.sonny.Commit.metainfo.xml:90
-#, fuzzy
 msgid "Improve dark mode support"
-msgstr "Soporta modo escuro"
+msgstr "Mellora a compatibilidade do modo escuro"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Soporta desfacer e refacer"
+msgstr "Admite entradas no teclado numérico"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Engadir reglas mnemotécnicos para os botóns"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Corrixilas maiúsculas cando modificas"
 
 #: data/re.sonny.Commit.metainfo.xml:100
-#, fuzzy
 msgid "Improve auto capitalization"
-msgstr "Mellora a autocapitalización (maiúsculas)"
+msgstr "Mellora a capitalización automática"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Engade soporte para Mercurial"
+msgstr "Engade soporte para gitconfig e hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
-#, fuzzy
 msgid "Support editing any file"
-msgstr "Soporta desfacer e refacer"
+msgstr "Admite a edición de calquera ficheiro"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Dinámica a etiqueta do botón principal (Etiqueta, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Use sangría de 2 espazos"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Botón Engadir menú"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -268,9 +263,8 @@ msgid "Add 6px margin to editor"
 msgstr "Engador marxe de 6px ao editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Precísase actuar. Logo da actualización, por favor, inicie a aplicación e siga as instrucións."
+msgstr "Acción necesaria. Despois de actualizar, inicie a aplicación e siga as instrucións."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -302,29 +296,28 @@ msgid "translator-credits"
 msgstr "'Antonio Vega Cabanas <forza4+transCommit@gmail.com>'"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Remitir (commit)"
+msgstr "_Comprometerse"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Fusionar"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Etiquetar"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "Engadir"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Gardar"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -367,9 +360,8 @@ msgid "Quit"
 msgstr "Saír"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Abortar"
+msgstr "_Abortar"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
