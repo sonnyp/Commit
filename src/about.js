@@ -26,7 +26,7 @@ export default function About({ application, version }) {
     // "John Doe <john@example.com>",
     // or
     // "John Doe https://john.com",
-    "Sergey Bugaev https://mastodon.technology/@bugaevc",
+    "Sergey Bugaev https://floss.social/@bugaevc",
     "Christopher Davis https://social.libre.fi/brainblasted",
     "axtlos https://github.com/axtloss",
   ]);
