@@ -153,7 +153,7 @@ Many thanks to its original author [Aral Balkan](https://ar.al) of [Small Techno
 ### Contributors
 
 - [Aral Balkan](https://ar.al)
-- [Sergey Bugaev](https://mastodon.technology/@bugaevc)
+- [Sergey Bugaev](https://floss.social/@bugaevc)
 - [Sonny Piers](https://github.com/sonnyp)
 - [Tobias Bernard](https://tobiasbernard.com/)
 - [Christopher Davis](https://social.libre.fi/brainblasted)
