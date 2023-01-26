@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-07-19 11:22+0000\n"
+"PO-Revision-Date: 2022-08-28 10:15+0000\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/commit/commit/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -132,30 +132,27 @@ msgstr "Uvítací okno"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Chcete-li vypnout automatické formátování, změňte velikost okna"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Přidán přepínač tématu"
 
 #: data/re.sonny.Commit.metainfo.xml:90
-#, fuzzy
 msgid "Improve dark mode support"
-msgstr "Podpora tmavého režimu"
+msgstr "Vylepšena podpora tmavého režimu"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Podpora pro akce zpět a znovu"
+msgstr "Podpora pro vstup z numerické klávesnice"
 
 #: data/re.sonny.Commit.metainfo.xml:92
-#, fuzzy
 msgid "Add mnemonics for buttons"
-msgstr "Přidáno tlačítko menu"
+msgstr "Přidány zkratky pro tlačítka"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Opravena velikost písmen při úpravě"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
@@ -299,32 +296,28 @@ msgid "translator-credits"
 msgstr "Vojtěch Perník <translations@pervoj.cz>"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Commit"
 
 #: src/scm.js:7
-#, fuzzy
 msgid "_Merge"
-msgstr "Spojit"
+msgstr "_Sloučit"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "Vytvořit _tag"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "_Zařadit"
 
 #: src/scm.js:10
-#, fuzzy
 msgid "_Rebase"
-msgstr "Změnit základ"
+msgstr "_Změnit základ"
 
 #: src/scm.js:14 src/window.ui:30
-#, fuzzy
 msgid "_Save"
-msgstr "Uložit"
+msgstr "_Uložit"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -367,9 +360,8 @@ msgid "Quit"
 msgstr "Ukončit"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Přerušit"
+msgstr "_Přerušit"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
