@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-01-28 10:44+0000\n"
+"PO-Revision-Date: 2023-02-19 21:39+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/commit/commit/nl/>\n"
 "Language: nl\n"
@@ -26,7 +26,7 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Commitberichtbewerker"
+msgstr "Bewerker voor commit­berichten"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
