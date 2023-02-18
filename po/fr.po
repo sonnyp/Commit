@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-04-30 10:10+0000\n"
-"Last-Translator: matb <perso@mathieu-bousquet.fr>\n"
+"PO-Revision-Date: 2023-02-19 21:39+0000\n"
+"Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/commit/commit/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -50,9 +50,8 @@ msgid "After installing make sure to launch the application and follow the instr
 msgstr "Après l'installation assurez-vous de lancer l'application et de suivre les instructions."
 
 #: data/re.sonny.Commit.metainfo.xml:21
-#, fuzzy
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
-msgstr "Commit apparaîtra automatiquement lors d'un commit dans l'un de vos projets. Pour enregistrer votre message de commit, appuyez sur le bouton « Commit » ou sur le raccourci <code>Ctrl+Retour</code>. Pour abandonner votre message, appuyez sur « Annuler » ou sur la touche <code>Échap</code>."
+msgstr "Commit apparaîtra automatiquement lors d’un commit dans l’un de vos projets. Pour enregistrer votre message de commit, appuyez sur le bouton « Commit » ou sur le raccourci <code>Ctrl+Retour</code>. Pour abandonner votre message, appuyez sur « Annuler » ou sur la touche <code>Échap</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -133,56 +132,51 @@ msgstr "Fenêtre de bienvenue"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Redimensionner la fenêtre pour désactiver le formatage automatique"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Ajout d’un bouton pour changer le thème"
 
 #: data/re.sonny.Commit.metainfo.xml:90
-#, fuzzy
 msgid "Improve dark mode support"
-msgstr "Support du mode sombre"
+msgstr "Amélioration du support du mode sombre"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Support de l'historique d'annulation"
+msgstr "Prise en charge de la saisie du pavé numérique"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Ajout de mnémoniques pour les boutons"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Correction des majuscules lors des modifications"
 
 #: data/re.sonny.Commit.metainfo.xml:100
-#, fuzzy
 msgid "Improve auto capitalization"
-msgstr "Améliorer la capitalisation automatique"
+msgstr "Amélioration de la capitalisation automatique"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Ajout du support de Mercurial"
+msgstr "Ajout de la prise en charge de gitconfig et hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
-#, fuzzy
 msgid "Support editing any file"
-msgstr "Support de l'historique d'annulation"
+msgstr "Prise en charge de la modification d’un fichier"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Étiquette du bouton primaire dynamique (Tag, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Utilisation de l’indentation à 2 espaces"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Ajout d’un bouton menu"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -269,9 +263,8 @@ msgid "Add 6px margin to editor"
 msgstr "Ajout d'une marge de 6px à l'éditeur"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Action requise. Après la mise à jour, merci de lancer l'application et de suivre les instructions."
+msgstr "Action requise. Après la mise à jour, merci de lancer l’application et de suivre les instructions."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -302,32 +295,32 @@ msgstr "Détection correcte du chemin vers l'exécutable"
 msgid "translator-credits"
 msgstr ""
 "Thomas Citharel <gnome@tcit.fr>\n"
-"JeanDeLaMouche @JeanDeLaMouche"
+"JeanDeLaMouche @JeanDeLaMouche\n"
+"Irénée Thirion"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Merge"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Tag"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "A_dd"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Enregistrer"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -370,9 +363,8 @@ msgid "Quit"
 msgstr "Quitter"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Abandonner"
+msgstr "_Abandonner"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
