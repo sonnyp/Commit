@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-02-19 21:39+0000\n"
+"PO-Revision-Date: 2023-03-17 11:38+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/commit/commit/nl/>\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -26,7 +26,7 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Bewerker voor commit­berichten"
+msgstr "Bewerk commit­berichten"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
