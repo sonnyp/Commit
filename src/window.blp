@@ -18,7 +18,7 @@ Adw.ApplicationWindow window {
         label: _("_Abort");
         use-underline: true;
         action-name: "win.cancel";
-        tooltip-text: _("Cancel and dismiss");
+        tooltip-text: _("Cancel and Dismiss");
       }
 
       [end]
@@ -27,7 +27,7 @@ Adw.ApplicationWindow window {
         use-underline: true;
         sensitive: false;
         action-name: "win.save";
-        tooltip-text: _("Save and confirm");
+        tooltip-text: _("Save and Confirm");
 
         styles [
           "suggested-action",
@@ -41,6 +41,7 @@ Adw.ApplicationWindow window {
         primary: true;
         icon-name: "open-menu-symbolic";
         menu-model: app-menu;
+        tooltip-text: _("Main Menu");
         halign: end;
         valign: end;
         margin-end: 12;
