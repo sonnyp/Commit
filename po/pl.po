@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-07-26 12:17+0000\n"
-"Last-Translator: Carlod <carlod@disroot.org>\n"
+"PO-Revision-Date: 2023-01-04 19:49+0000\n"
+"Last-Translator: Maciej Błędkowski <mble@tuta.io>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/commit/commit/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -39,11 +39,11 @@ msgstr "Maksymalna długość tytułu (w znakach)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Maksymalna długość wierszy body (w znakach)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
-msgstr "Commit jest edytorem, który pomaga lepiej napisać wiadomości commit w Git i Mercurial"
+msgstr "Commit jest edytorem, który pomaga w pisaniu lepszych wiadomości commit'ów w Git i Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid "After installing make sure to launch the application and follow the instructions."
@@ -51,20 +51,19 @@ msgstr "Po zainstalowaniu, uruchom aplikacje i postępuj zgodnie z instrukcjami.
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
-msgstr "Commit pojawi się automatycznie, gdy zrobisz commit w jednym swoich projektów. Aby zapisać wiadomość commit, naciśnij przycisk Commit lub kombinacje klawiszy _Ctrl+Return_. Aby przerwać lub odrzucić Commit, wciśnij przycisk Anuluj lub klawisz <code>Escape</code>."
+msgstr "Commit pojawi się automatycznie, gdy zrobisz commit w jednym swoich projektów. Aby zapisać wiadomość commit'ową, naciśnij przycisk Commit lub kombinacje klawiszy <code>Ctrl+Return</code>. Aby przerwać lub odrzucić Commit, wciśnij przycisk Anuluj lub klawisz <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
 msgstr "Funkcje:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr "Podświetlanie tylko przepełnienie tekstu w commitach"
+msgstr "Podświetla wychodzący po za limit tytuł commit'a"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Inteligentne zawijanie body"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
@@ -93,7 +92,7 @@ msgstr "Obsługa cofania i ponawiania"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Selektor emoji"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
@@ -113,7 +112,7 @@ msgstr "Okno powitalne z ustawieniami i instrukcjami"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Podświetlanie składni dla Git, Mercurial i diff'ów"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
@@ -121,7 +120,7 @@ msgstr "Główne okno"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Selektor emoji"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
@@ -133,7 +132,7 @@ msgstr "Okno powitalne"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Zmień rozmiar okna, aby wyłączyć automatyczne formatowanie"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
@@ -144,13 +143,12 @@ msgid "Improve dark mode support"
 msgstr "Poprawiono wsparcie dla ciemnego motywu"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Obsługa cofania i ponawiania"
+msgstr "Obsługa klawiatury numerycznej"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Dodaj mnemoniki dla przycisków"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
@@ -170,11 +168,11 @@ msgstr "Wsparcie edycji dowolnego pliku"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Spraw, aby etykieta przycisku głównego była dynamiczna (Tag, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Użyj 2 spacji jako wcięcia"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
@@ -311,7 +309,7 @@ msgstr "_Tag"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "_Dodaj"
 
 #: src/scm.js:10
 msgid "_Rebase"
@@ -335,11 +333,11 @@ msgstr "Anuluj i odrzuć"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Otwórz selektor emoji"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Przesuń bieżący wiersz w górę/dół"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
