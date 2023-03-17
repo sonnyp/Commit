@@ -29,6 +29,7 @@ export default function About({ application, version }) {
     "Sergey Bugaev https://floss.social/@bugaevc",
     "Christopher Davis https://social.libre.fi/brainblasted",
     "axtlos https://github.com/axtloss",
+    "Felipe Kinoshita https://mastodon.social/@fkinoshita",
   ]);
   dialog.present();
 
