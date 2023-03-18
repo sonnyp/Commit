@@ -2,7 +2,6 @@ import Adw from "gi://Adw?version=1";
 import GtkSource from "gi://GtkSource?version=5";
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
-import { programInvocationName } from "system";
 
 import Application from "./application.js";
 
@@ -14,11 +13,6 @@ GtkSource.init();
 export function main(argv) {
   const application = new Application();
 
-  console.debug("argv", argv);
-  console.debug("programInvocationName", programInvocationName);
-  console.debug("_", GLib.getenv("_"));
-  console.debug("PWD", GLib.get_current_dir());
-
   if (__DEV__) {
     const restart = new Gio.SimpleAction({
       name: "restart",
@@ -26,13 +20,7 @@ export function main(argv) {
     });
     restart.connect("activate", () => {
       application.quit();
-      GLib.spawn_async(
-        null,
-        [programInvocationName, ...argv],
-        null,
-        GLib.SpawnFlags.DEFAULT,
-        null,
-      );
+      GLib.spawn_async(null, argv, null, GLib.SpawnFlags.DEFAULT, null);
     });
     application.add_action(restart);
     application.set_accels_for_action("app.restart", ["<Control><Shift>Q"]);
