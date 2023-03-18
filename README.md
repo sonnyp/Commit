@@ -59,7 +59,7 @@ Thank you for your help!
 ```sh
 cd Commit
 git submodule update --init --recursive
-G_MESSAGES_DEBUG=Gjs-Console ./re.sonny.Commit --readonly test/fixtures/with-body/COMMIT_EDITMSG
+./src/local.js --readonly test/fixtures/with-body/COMMIT_EDITMSG
 ```
 
 Make changes and hit `Ctrl+Shift+Q` on the Commit window to restart it.

@@ -2,7 +2,7 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import { gettext as _ } from "gettext";
 
-export default function About({ application, version }) {
+export default function About({ application }) {
   const dialog = new Adw.AboutWindow({
     application,
     application_name: "Commit",
@@ -10,7 +10,7 @@ export default function About({ application, version }) {
     artists: ["Tobias Bernard <tbernard@gnome.org>"],
     copyright: "© 2020-2022 Sonny Piers\n© 2018-2020 Aral Balkan",
     license_type: Gtk.License.GPL_3_0,
-    version,
+    version: pkg.version,
     website: "https://github.com/sonnyp/Commit",
     issue_url: "https://github.com/sonnyp/Commit/issues",
     transient_for: application.get_active_window(),

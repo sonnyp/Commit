@@ -1,7 +1,7 @@
 {
-  "app-id": "re.sonny.Commit",
+  "id": "re.sonny.Commit",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "43",
+  "runtime-version": "44beta",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Commit",
   "finish-args": [
@@ -20,8 +20,8 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-          "tag": "v0.2.0",
-          "commit": "87cedc2c7e48b01dc1b07aef937e2fe02111b18c"
+          "tag": "v0.6.0",
+          "commit": "9adcab2d225fd6435edc85c72a0b67e33880e00b"
         }
       ]
     },

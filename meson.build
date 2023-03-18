@@ -1,4 +1,4 @@
-project('re.sonny.Commit',
+project('Commit',
   version: '3.3.0',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0'
@@ -6,6 +6,12 @@ project('re.sonny.Commit',
 
 gnome = import('gnome')
 i18n = import('i18n')
+
+app_id = 're.sonny.Commit'
+prefix = get_option('prefix')
+bindir = join_paths(prefix, 'bin')
+datadir = join_paths(prefix, get_option('datadir'))
+pkgdatadir = join_paths(datadir, app_id)
 
 subdir('data')
 subdir('src')

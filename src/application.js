@@ -9,11 +9,13 @@ import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
 import { settings } from "./util.js";
 
+import "./style.css";
+
 const textDecoder = new TextDecoder();
 
 const style_manager = Adw.StyleManager.get_default();
 
-export default function Application({ version }) {
+export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Commit",
     flags:
@@ -22,7 +24,6 @@ export default function Application({ version }) {
       /* We can have more than one instance active at once. */
       Gio.ApplicationFlags.NON_UNIQUE,
   });
-  application.set_resource_base_path("/re/sonny/Commit/src");
 
   let readonly = false;
 
@@ -72,7 +73,7 @@ export default function Application({ version }) {
     parameter_type: null,
   });
   action_about.connect("activate", () => {
-    About({ application, version });
+    About({ application });
   });
   application.add_action(action_about);
 
