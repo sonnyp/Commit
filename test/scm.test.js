@@ -127,7 +127,7 @@ This is another line.`,
   );
   assert.is(
     parse(readTest("with-body/COMMIT_EDITMSG"), "commit").detail,
-    `master`,
+    `main`,
   );
   assert.is(
     parse(readTest("with-body/COMMIT_EDITMSG"), "commit").comment,
@@ -135,8 +135,8 @@ This is another line.`,
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# On branch master
-# Your branch is up-to-date with 'origin/master'.
+# On branch main
+# Your branch is up to date with 'origin/main'.
 #
 # Changes to be committed:
 #	modified:   README.md
@@ -179,7 +179,7 @@ Closes #123`,
   assert.is(parse(readTest("without-body/COMMIT_EDITMSG"), "commit").body, ``);
   assert.is(
     parse(readTest("without-body/COMMIT_EDITMSG"), "commit").detail,
-    `master`,
+    `main`,
   );
   assert.is(
     parse(readTest("without-body/COMMIT_EDITMSG"), "commit").comment,
@@ -187,12 +187,11 @@ Closes #123`,
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# On branch master
-#
-# Initial commit
+# On branch main
+# Your branch is up to date with 'origin/main'.
 #
 # Changes to be committed:
-#	new file:   a.txt
+#	modified:   README.md
 #`,
   );
   assert.is(

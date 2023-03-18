@@ -1,15 +1,13 @@
 import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
 import GtkSource from "gi://GtkSource";
-import Adw from "gi://Adw";
 
 import CommitEditor from "./CommitEditor.js";
 
 import { settings } from "./util.js";
 import { isEmptyCommitMessage } from "./scm.js";
 
-const HIGHLIGHT_BACKGROUND_TAG_NAME = "highlightBackground";
-const style_manager = Adw.StyleManager.get_default();
+const TAG_TITLE_TOO_LONG = "TAG_TITLE_TOO_LONG";
 
 export default function editor({ builder, button_save, parsed }) {
   const {
@@ -38,18 +36,11 @@ export default function editor({ builder, button_save, parsed }) {
 
   const buffer = source_view.get_buffer();
 
-  // Tag: highlight background.
-  const highlightBackgroundTag = Gtk.TextTag.new(HIGHLIGHT_BACKGROUND_TAG_NAME);
-  buffer.tag_table.add(highlightBackgroundTag);
-
-  function setHighlightTagColor() {
-    const [, color] = source_view
-      .get_style_context()
-      .lookup_color(style_manager.dark ? "purple_5" : "yellow_1");
-    highlightBackgroundTag.background = color.to_string();
-  }
-  setHighlightTagColor();
-  style_manager.connect("notify::dark", setHighlightTagColor);
+  const tag_title_too_long = new Gtk.TextTag({
+    name: TAG_TITLE_TOO_LONG,
+    foreground: "#e01b24",
+  });
+  buffer.tag_table.add(tag_title_too_long);
 
   buffer.connect("changed", () => {
     const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
@@ -73,7 +64,7 @@ export default function editor({ builder, button_save, parsed }) {
     // highlighted piece of the first line and paste it and we don’t want it
     // highlighted on subsequent lines if they do that.)
     buffer.remove_tag_by_name(
-      HIGHLIGHT_BACKGROUND_TAG_NAME,
+      TAG_TITLE_TOO_LONG,
       startOfTextIterator,
       endOfTextIterator,
     );
@@ -84,7 +75,7 @@ export default function editor({ builder, button_save, parsed }) {
       const startOfOverflowIterator =
         buffer.get_iter_at_offset(title_length_hint);
       buffer.apply_tag(
-        highlightBackgroundTag,
+        tag_title_too_long,
         startOfOverflowIterator,
         endOfFirstLineIterator,
       );

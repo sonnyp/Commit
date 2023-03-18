@@ -22,7 +22,7 @@ export default function Window({ application, file, text, type, readonly }) {
   }
 
   const window = builder.get_object("window");
-  if (__DEV__) window.add_css_class("devel");
+  // if (__DEV__) window.add_css_class("devel");
 
   let title = GLib.path_get_basename(GLib.get_current_dir());
   if (parsed.detail) title += ` (${parsed.detail})`;
