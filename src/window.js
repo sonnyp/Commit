@@ -1,6 +1,7 @@
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
+import Adw from "gi://Adw";
 
 import Editor from "./editor.js";
 
@@ -8,6 +9,8 @@ import { settings } from "./util.js";
 import { parse, format, isEmptyCommitMessage } from "./scm.js";
 import ThemeSelector from "./ThemeSelector.js";
 import Interface from "./window.blp";
+
+Gio._promisify(Adw.MessageDialog.prototype, "choose", "choose_finish");
 
 export default function Window({ application, file, text, type, readonly }) {
   const builder = Gtk.Builder.new_from_resource(Interface);
@@ -22,7 +25,7 @@ export default function Window({ application, file, text, type, readonly }) {
   }
 
   const window = builder.get_object("window");
-  // if (__DEV__) window.add_css_class("devel");
+  if (__DEV__) window.add_css_class("devel");
 
   let title = GLib.path_get_basename(GLib.get_current_dir());
   if (parsed.detail) title += ` (${parsed.detail})`;
@@ -61,10 +64,16 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_cancel.connect("activate", () => {
-    if (type && type !== "config") {
-      save({ file, value: "", readonly });
-    }
-    application.quit();
+    const { text } = buffer;
+
+    abort({
+      type,
+      file,
+      value: text.trim(),
+      readonly,
+      window,
+      application,
+    }).catch(logError);
   });
   window.add_action(action_cancel);
 
@@ -101,12 +110,44 @@ export default function Window({ application, file, text, type, readonly }) {
   return { window };
 }
 
+async function abort({ type, file, value, readonly, window, application }) {
+  if (type === "config") {
+    application.quit();
+    return;
+  }
+
+  if (type === "commit" && value) {
+    const cancel = "cancel";
+    const discard = "discard";
+    const dialog = new Adw.MessageDialog({
+      heading: _("Discard Message?"),
+      body: _("Commit message will be lost."),
+      close_response: "cancel",
+      modal: true,
+      transient_for: window,
+    });
+    dialog.add_response(cancel, _("Cancel"));
+    dialog.add_response(discard, _("Discard"));
+    dialog.set_response_appearance(
+      "discard",
+      Adw.ResponseAppearance.DESTRUCTIVE,
+    );
+    dialog.present();
+
+    const response = await dialog.choose(null);
+    if (response === cancel) return;
+  }
+
+  save({ file, value: "", readonly });
+  application.quit();
+}
+
 function save({ file, value, readonly }) {
-  if (!readonly) {
-    try {
-      GLib.file_set_contents(file.get_path(), value);
-    } catch (err) {
-      logError(err);
-    }
+  if (readonly) return;
+
+  try {
+    GLib.file_set_contents(file.get_path(), value);
+  } catch (err) {
+    logError(err);
   }
 }

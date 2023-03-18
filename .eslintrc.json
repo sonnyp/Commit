@@ -31,7 +31,8 @@
     "__DEV__": "readonly",
     "TextDecoder": "readonly",
     "TextEncoder": "readonly",
-    "console": "readonly"
+    "console": "readonly",
+    "_": "readonly"
   },
   "rules": {
     "no-unused-vars": [
