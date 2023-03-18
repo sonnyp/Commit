@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-01 11:19+0000\n"
-"Last-Translator: Alexander Botor <alexander.botor@das-ernste.de>\n"
+"PO-Revision-Date: 2023-02-17 15:38+0000\n"
+"Last-Translator: Leo <leomerh96@outlook.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/commit/commit/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -58,18 +58,16 @@ msgid "Features:"
 msgstr "Besonderheiten:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
-#, fuzzy
 msgid "Highlights overflow of the commit title"
-msgstr "Titel wird hervorgehebt, wenn er mehr als 50 Zeichen lang ist (anpassbar)"
+msgstr "Hebt überhängende Zeichen des Commit-Titels hervor"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Automatischer Zeilenumbruch"
 
 #: data/re.sonny.Commit.metainfo.xml:32
-#, fuzzy
 msgid "Inserts a blank line between title and body"
-msgstr "Einfügen einer Leerzeile zwischen Titel und Beschreibung"
+msgstr "Fügt eine Leerzeile zwischen Titel und Text ein"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
@@ -82,190 +80,179 @@ msgstr "Zeigt Projektordner und Zweig im Fensterkopf an"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Beachtet Dunkel-Modus"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Tastatur-Navigation und -Kürzel"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Rückgängig/Wiederholen"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Emoji-Auswahl"
 
 #: data/re.sonny.Commit.metainfo.xml:41
-#, fuzzy
 msgid "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "Unterstützt git commit Nachrichten, merge Nachrichten, tag Nachrichten, add -p Nachrichten und rebase -i Nachrichten"
+msgstr "Unterstützt folgende git-Befehle: commit, merge, tag --annotate, add --patch, rebase -interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
-#, fuzzy
 msgid "Supports Mercurial commit"
-msgstr "Untrestüzt Mercurial commit Nachrichten"
+msgstr "Unterstützt Mercurial commit"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Titel automatisch großschreiben"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Willkommens-Fenster mit Einstellungen und Anleitung"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Syntax hervorheben für Git, Mercurial und diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:57
-#, fuzzy
 msgid "Main window"
-msgstr "Commit Hauptfenster"
+msgstr "Hauptfenster"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Emoji-Wähler"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Tastaturkürzel"
 
 #: data/re.sonny.Commit.metainfo.xml:75
-#, fuzzy
 msgid "Welcome window"
-msgstr "Commit Willkommensfenster"
+msgstr "Willkommens-Fenster"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Verändere die Größe des Fensters, um die Autoformatierung zu deaktivieren"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Stil-Wechsler hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Unterstützung für Dunkel-Modus verbessern"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Untrestüzt Mercurial commit Nachrichten"
+msgstr "Enter-Taste des Nummernblocks unterstützen"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Mnemonics für Buttons hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Großschreiben während \"amend\" reparieren"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Automatische Großschreibung verbessern"
 
 #: data/re.sonny.Commit.metainfo.xml:101
-#, fuzzy
 msgid "Add support for gitconfig and hgrc"
-msgstr "Unterstützung für Mercurial hinzugefügt"
+msgstr "Unterstützung für gitconfig und hgrc hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Jedes Dateiformat bearbeiten"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Der Hauptbutton ist nun dynamisch (Commit, Tag, Rebase, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "2 Leerzeichen als Einrückung verwenden"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Schaltfläche Menü hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME-Plattform 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Verschiedene Korrekturen"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Tastaturkurzbefehle zum Verschieben von Zeilen nach oben und unten hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Syntax für Git, Mercurial und Diffs hervorheben"
 
 #: data/re.sonny.Commit.metainfo.xml:117
-#, fuzzy
 msgid "Add a shortcuts window"
-msgstr "Einstellungsfenster hinzufügt"
+msgstr "Fenster für Kurzbefehle hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Rechtschreibprüfung vorübergehend entfernen"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Rückgängig machen und Wiederherstellen unterstützen"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Symbolisches Zeichen hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Einstellung für den dunklen Modus hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Texteditor fokussieren"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "Auf GTK 4 und libadwaita portieren"
 
 #: data/re.sonny.Commit.metainfo.xml:139
-#, fuzzy
 msgid "Move preferences to welcome window"
-msgstr "Einstellungsfenster hinzufügt"
+msgstr "Einstellungen in das Willkommensfenster verschieben"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Textüberlauf nur bei Commits hervorheben"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "Neues App-Symbol"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "Doppelten Rand entfernen"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
 msgstr "Einstellungsfenster hinzufügen"
 
 #: data/re.sonny.Commit.metainfo.xml:150
-#, fuzzy
 msgid "Set default title length hint to 50 characters"
-msgstr "Standardhinweis für die Titellänge auf 50 Zeichen festgelegt"
+msgstr "Standardhinweis für die Titellänge auf 50 Zeichen festlegen"
 
 #: data/re.sonny.Commit.metainfo.xml:151
-#, fuzzy
 msgid "Fix reading commits with special characters"
-msgstr "Fehler beim Lesen von Commits mit Sonderzeichen behoben"
+msgstr "Fehler beim Lesen von Commits mit Sonderzeichen beheben"
 
 #: data/re.sonny.Commit.metainfo.xml:152
-#, fuzzy
 msgid "Fix git rebase not recognized"
-msgstr "Fehler von nicht erkanntem git rebase behoben"
+msgstr "Fehler von nicht erkanntem Git-Neubasieren beheben"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
@@ -276,9 +263,8 @@ msgid "Add 6px margin to editor"
 msgstr "Dem Editor 6 px Rand hinzugefügt"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Aktion erforderlich. Anwendong nach der Aktualisierung neu starten und den Anweisungen folgen."
+msgstr "Aktion erforderlich. Bitte starten Sie nach der Aktualisierung die Anwendung und folgen Sie den Anweisungen."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -306,87 +292,84 @@ msgstr "Korrektes Erkennen des Pfades der ausführbaren Datei"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
-#, fuzzy
 msgid "translator-credits"
-msgstr "Milo Ivir <mail@milotype.de>"
+msgstr "translator-credits"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "Zusa_mmenführen"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Markieren"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "_Hinzufügen"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Neubasieren"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Speichern"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Bearbeitung"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Speichern und bestätigen"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Abbrechen und verwerfen"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Emoji-Auswahl öffnen"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Aktuelle Zeile nach oben/unten verschieben"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Alles auswählen"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Alles abwählen"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Tastaturkurzbefehle"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Beenden"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_Abbrechen"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
 msgstr "Über Commit"
 
 #: src/welcome.ui:28
-#, fuzzy
 msgid "Preferences"
-msgstr "Einstellungsfenster hinzufügt"
+msgstr "Einstellungen"
 
 #: src/welcome.ui:69
 msgid "Git"
