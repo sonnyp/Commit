@@ -57,6 +57,11 @@ export default function Window({ application, file, text, type, readonly }) {
     parsed,
   });
 
+  let has_changes = false;
+  buffer.connect("changed", () => {
+    has_changes = true;
+  });
+
   window.set_application(application);
 
   const action_cancel = new Gio.SimpleAction({
@@ -73,6 +78,7 @@ export default function Window({ application, file, text, type, readonly }) {
       readonly,
       window,
       application,
+      has_changes,
     }).catch(logError);
   });
   window.add_action(action_cancel);
@@ -110,36 +116,28 @@ export default function Window({ application, file, text, type, readonly }) {
   return { window };
 }
 
-async function abort({ type, file, value, readonly, window, application }) {
-  if (type === "config") {
+function shouldSaveOnAbort({ type }) {
+  return type !== "config";
+}
+
+async function abort({
+  type,
+  file,
+  value,
+  readonly,
+  window,
+  application,
+  has_changes,
+}) {
+  if (!shouldSaveOnAbort({ type })) {
     application.quit();
     return;
   }
 
-  if (type === "commit" && value) {
-    const cancel = "cancel";
-    const discard = "discard";
-    const dialog = new Adw.MessageDialog({
-      heading: _("Discard Message?"),
-      body: _("Commit message will be lost."),
-      close_response: "cancel",
-      modal: true,
-      transient_for: window,
-    });
-    dialog.add_response(cancel, _("Cancel"));
-    dialog.add_response(discard, _("Discard"));
-    dialog.set_response_appearance(
-      "discard",
-      Adw.ResponseAppearance.DESTRUCTIVE,
-    );
-    dialog.present();
-
-    const response = await dialog.choose(null);
-    if (response === cancel) return;
+  if (await confirmDiscard({ type, value, window, has_changes })) {
+    save({ file, value: "", readonly });
+    application.quit();
   }
-
-  save({ file, value: "", readonly });
-  application.quit();
 }
 
 function save({ file, value, readonly }) {
@@ -150,4 +148,33 @@ function save({ file, value, readonly }) {
   } catch (err) {
     logError(err);
   }
+}
+
+function shouldConfirmOnDiscard({ type, value, has_changes }) {
+  if (!has_changes) return false;
+  if (type !== "commit") return false;
+  if (!value) return false;
+
+  return true;
+}
+
+async function confirmDiscard({ type, value, window, has_changes }) {
+  if (!shouldConfirmOnDiscard({ type, value, has_changes })) return true;
+
+  const cancel = "cancel";
+  const discard = "discard";
+  const dialog = new Adw.MessageDialog({
+    heading: _("Discard changes?"),
+    close_response: "cancel",
+    modal: true,
+    transient_for: window,
+  });
+  dialog.add_response(cancel, _("Cancel"));
+  dialog.add_response(discard, _("Discard"));
+  dialog.set_response_appearance("discard", Adw.ResponseAppearance.DESTRUCTIVE);
+  dialog.set_default_response("discard");
+  dialog.present();
+
+  const response = await dialog.choose(null);
+  return response === discard;
 }
