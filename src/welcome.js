@@ -55,8 +55,13 @@ export default function Welcome({ application }) {
 }
 
 function getCommand() {
-  const { programInvocationName } = system;
+  const FLATPAK_ID = GLib.getenv("FLATPAK_ID");
 
+  if (FLATPAK_ID) {
+    return `flatpak run ${FLATPAK_ID}`;
+  }
+
+  const { programInvocationName } = system;
   // re.sonny.Commit
   if (programInvocationName === GLib.path_get_basename(programInvocationName)) {
     return programInvocationName;
