@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-09-25 13:17+0000\n"
+"PO-Revision-Date: 2023-03-23 15:37+0000\n"
 "Last-Translator: Davide <davide.ferracin@protonmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/commit/commit/it/>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/commit/commit/it/"
+">\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -43,7 +44,9 @@ msgstr "Lunghezza massima del corpo del messaggio (in caratteri)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid "Commit is an editor that helps you write better Git and Mercurial commit messages."
-msgstr "Commit è un editor che aiuta a scrivere messaggi di commit per Git e Mercurial migliori."
+msgstr ""
+"Commit è un editor che aiuta a scrivere dei migliori messaggi di commit per "
+"Git e Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid "After installing make sure to launch the application and follow the instructions."
@@ -132,11 +135,11 @@ msgstr "Schermata di benvenuto"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr "Ridimensiona la finestra per disabilitare l'auto formattazione"
+msgstr "Ridimensiona la finestra per disabilitare la formattazione automatica"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr "Aggiungi un commutatore di temi"
+msgstr "Aggiunto pulsante per cambiare tema"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
@@ -144,19 +147,19 @@ msgstr "Migliorato il supporto per il tema scuro"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr "Supporto per il tasto enter del tastierino numerico"
+msgstr "Supporto per il tasto Invio del tastierino numerico"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr "Aggiungi gli aiuti mnemonici per i bottoni"
+msgstr "Aggiunta di aiuti mnemonici per i pulsanti"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr "Sistemato il maiuscolo quando si modifica"
+msgstr "Correzione le maiuscole negli «amend»"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr "Migliora la gestione automatica delle lettere maiuscole"
+msgstr "Migliorata la gestione automatica delle maiuscole"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
@@ -188,7 +191,7 @@ msgstr "Correzioni varie"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "Aggiunte scorciatoie da tastiera per muovere su e giù le righe"
+msgstr "Aggiunte scorciatoie da tastiera per spostare su e giù le righe"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
@@ -276,7 +279,7 @@ msgstr "Aggiunta supporto per Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr "Rimozione del permesso del filesystem"
+msgstr "Rimozione del permesso per il filesystem"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
@@ -284,11 +287,11 @@ msgstr "Versione iniziale. Fork di Gnomit 2.0."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr "Supporto di \"#\" nei messaggi di commit"
+msgstr "Supporto per \"#\" nei messaggi di commit"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr "Corretto riconoscimento del percorso dell'eseguibile"
+msgstr "Corretto il riconoscimento del percorso dell'eseguibile"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
@@ -337,7 +340,7 @@ msgstr "Scegli un emoji"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr "Muovi la riga corrente su o giù"
+msgstr "Sposta la riga corrente su o giù"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
@@ -398,7 +401,9 @@ msgstr "Mercurial"
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
 msgid "To set Commit as default editor for Mercurial, set the following in your <tt>hgrc</tt>"
-msgstr "Per impostare Commit come editor predefinito per Mercurial, impostare ciò che segue nel proprio <tt>hgrc6</tt>"
+msgstr ""
+"Per impostare Commit come editor predefinito per Mercurial, aggiungere la "
+"seguente configurazione al proprio <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
