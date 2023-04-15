@@ -9,15 +9,17 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-11-13 14:47+0000\n"
-"Last-Translator: Aaron Grella <krutalevex@mail.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/commit/commit/ru/>\n"
+"PO-Revision-Date: 2023-04-16 23:51+0000\n"
+"Last-Translator: Daudix UFO <ddaudix@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/commit/commit/ru/"
+">\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -333,7 +335,7 @@ msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr "_Save"
+msgstr "_Сохранить"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -377,7 +379,7 @@ msgstr "Выйти"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr "_Abort"
+msgstr "_Отменить"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
