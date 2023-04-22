@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-28 10:15+0000\n"
-"Last-Translator: Burak Şen <buraksen7@hotmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/commit/commit/tr/>\n"
+"PO-Revision-Date: 2023-04-22 07:53+0000\n"
+"Last-Translator: Eren İnce <erenreis571@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/commit/commit/tr/"
+">\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -67,346 +68,356 @@ msgstr "Özellikler:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "İşleme başlığının taşmasını vurgular"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Akıllı vücut sarma"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "Başlık ve gövde arasına boş bir satır ekler"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr ""
+msgstr "Yorumlar salt okunurdur ve \"Tümünü Seç\"ten hariç tutulur"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "Pencere başlığında proje klasörünü ve dalı görüntüler"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Karanlık mod desteği"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Klavye navigasyonu ve kısayollar"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Geri al/Yinele desteği"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Emoji seçici"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr ""
+"Git işlemelerini destekler (commit, merge, tag --annotate, add --patch, "
+"rebase --interactive)"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr ""
+msgstr "Mercuiral işlemeyi destekler"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "İşleme başlığını otomatik olarak büyük harfle yaz"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Ayarlar ve talimatlar içeren karşılama penceresi"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Git, Mercurial ve farklar için sözdizimini vurgulayın"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr ""
+msgstr "Ana pencere"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Emoji seçici"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Kısayollar"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr ""
+msgstr "Karşılama penceresi"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
 msgstr ""
+"Otomatik biçimlendirmeyi devre dışı bırakmak için pencereyi yeniden "
+"boyutlandırın"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Bir tema değiştirici ekle"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Karanlık mod desteğini geliştirin"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "Numpad girişini destekler"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Düğmeler için anımsatıcılar ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Değişiklik yaparken büyük harf kullanımını düzeltin"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Otomatik büyük harf kullanımını iyileştirin"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "Gitconfig ve hgrc için destek ekle"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Herhangi bir dosyayı düzenlemeyi destekler"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
 msgstr ""
+"Birincil düğme etiketini dinamik yap (Etiket, Yeniden Temel, İşlem, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "2 boşluk girintisi kullanın"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Menü düğmesi ekle"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME Platformu 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Çeşitli düzeltmeler"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Satırları yukarı ve aşağı taşımak için klavye kısayolları ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Git, Mercurial ve farklar için sözdizimini vurgulayın"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "Bir kısayol penceresi ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Yazım denetimini geçici olarak kaldır"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Geri alma ve yineleme desteği"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Sembolik simge ekle"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Karanlık mod ayarı ekle"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Metin düzenleyiciye odaklan"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "GTK 4 ve libadwaita'ya bağlantı noktası"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "Tercihleri karşılama penceresine taşı"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Yalnızca işlemelerde metin taşmasını vurgulayın"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "Yeni uygulama ikonu"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "Çift kenarlığı kaldır"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "Tercihler penceresi ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "Varsayılan başlık uzunluğu ipucunu 50 karaktere ayarla"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr ""
+msgstr "Özel karakterlerle okuma işlemelerini düzeltin"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "Git rebase tanınmadı düzeltildi"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "Pencerelerin alt köşelerini yuvarlatın"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "Düzenleyiciye 6px kenar boşluğu ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
+"Eylem Gerekli. Güncellemeden sonra, lütfen uygulamayı başlatın ve "
+"talimatları izleyin."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr ""
+msgstr "Masaüstünden başlatıldığında bir karşılama penceresi göster"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "Mercurial için destek ekleyin"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "Dosya sistemi iznini kaldır"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "İlk sürüm. Gnomit 2.0'dan çatallanmıştır."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "İşleme mesajlarında \"#\" desteği"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "Çalıştırılabilir yolu düzgün bir şekilde tanımlayın"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr ""
+msgstr "Eren İnce <erenince@proton.me>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "_İşleme"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Birleştirme"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Etiket"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "A_dd"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Yeniden tabanlama"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Kaydet"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Düzenleme"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Kaydet ve onayla"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "İptal et ve kapat"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Emoji seçiciyi aç"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Geçerli satırı yukarı/aşağı taşı"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Hepsini Seç"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Tümünün Seçimini Kaldır"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Klavye Kısayolları"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Çık"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_İptal"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "İşleme Hakkında"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "Tercihler"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
+"Commit'i Git için varsayılan düzenleyici olarak ayarlamak için Terminal'de "
+"aşağıdaki komutu çalıştırın"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Panoya kopyala"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "Belgeler"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
@@ -414,7 +425,9 @@ msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
 msgstr ""
+"Commit'i Mercurial için varsayılan düzenleyici olarak ayarlamak üzere "
+"<tt>hgrc</tt> içinde aşağıdakini ayarlayın"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
