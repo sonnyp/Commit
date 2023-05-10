@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-04-30 16:47+0000\n"
+"PO-Revision-Date: 2023-05-11 00:52+0000\n"
 "Last-Translator: duckienome <xvchattw@duck.com>\n"
 "Language-Team: Urdu <https://hosted.weblate.org/projects/commit/commit/ur/>\n"
 "Language: ur\n"
@@ -35,23 +35,27 @@ msgstr ""
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr ""
+msgstr "عنوان کی زیادہ سے زیادہ لمبائی (حروف میں)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "جسمانی سطر کی زیادہ سے زیادہ لمبائی (حروف میں)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
 msgstr ""
+"کمٹ ایک ایڈیٹر ہے جو آپ کو بہتر گٹ اور مرکیوریل کمٹ پیغامات لکھنے میں مدد "
+"کرتا ہے."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
 msgstr ""
+"انسٹال کرنے کے بعد ایپلی کیشن کو لانچ کرنا اور ہدایات پر عمل کرنا یقینی "
+"بنائیں."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -63,7 +67,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr ""
+msgstr "خصوصیات:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
