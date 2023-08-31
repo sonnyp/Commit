@@ -10,5 +10,5 @@
   },
   "mesonbuild.configureOnOpen": false,
   "mesonbuild.buildFolder": "_build",
-  "mesonbuild.mesonPath": "/home/sonny/Projects/Commit/.flatpak/meson.sh"
+  "mesonbuild.mesonPath": "${workspaceFolder}/.flatpak/meson.sh"
 }
