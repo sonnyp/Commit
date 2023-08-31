@@ -27,6 +27,20 @@
       ]
     },
     {
+      "name": "libspelling",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Ddocs=false"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitlab.gnome.org/chergert/libspelling.git",
+          "commit": "b5268093bf2f1df82064007bd18b4d9008e069e7"
+        }
+      ]
+    },
+    {
       "name": "Commit",
       "buildsystem": "meson",
       "builddir": true,

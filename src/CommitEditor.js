@@ -3,6 +3,7 @@ import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
 import Adw from "gi://Adw";
 import GLib from "gi://GLib";
+import Spelling from "gi://Spelling";
 
 import Template from "./CommitEditor.blp" assert { type: "uri" };
 
@@ -56,6 +57,15 @@ export default GObject.registerClass(
 
       this.update_style();
       style_manager.connect("notify::dark", this.update_style.bind(this));
+
+      const checker = Spelling.Checker.get_default();
+      const adapter = Spelling.TextBufferAdapter.new(this.buffer, checker);
+      const extra_menu = adapter.get_menu_model();
+
+      this.view.set_extra_menu(extra_menu);
+      this.view.insert_action_group('spelling', adapter);
+
+      adapter.set_enabled(true);
     }
 
     set wrap_width_request(val) {
