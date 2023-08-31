@@ -30,6 +30,7 @@ export default function About({ application }) {
     "Christopher Davis https://social.libre.fi/brainblasted",
     "axtlos https://github.com/axtloss",
     "Felipe Kinoshita https://mastodon.social/@fkinoshita",
+    "EncryptedEasty https://github.com/EncryptedEasty",
   ]);
   dialog.present();
 
