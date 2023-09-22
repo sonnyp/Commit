@@ -8,8 +8,7 @@
 >
   <name>Commit</name>
   <shortdesc>Commit message editor</shortdesc>
-  <description
-  >Commit is an editor that helps you write better Git and Mercurial commit messages.</description>
+  <description>Commit is an editor that helps you write better Git and Mercurial commit messages.</description>
 
   <homepage rdf:resource="https://github.com/sonnyp/Commit/" />
   <bug-database rdf:resource="https://github.com/sonnyp/Commit/issues" />
@@ -19,6 +18,7 @@
     <foaf:Person>
       <foaf:name>Sonny Piers</foaf:name>
       <foaf:mbox rdf:resource="mailto:sonnyp@gnome.org" />
+      <gnome:userid>sonnyp</gnome:userid>
       <foaf:account>
         <foaf:OnlineAccount>
             <foaf:accountServiceHomepage rdf:resource="https://github.com/" />
@@ -27,9 +27,7 @@
       </foaf:account>
       <foaf:account>
         <foaf:OnlineAccount>
-          <foaf:accountServiceHomepage
-            rdf:resource="https://gitlab.gnome.org"
-          />
+          <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org"/>
           <foaf:accountName>sonny</foaf:accountName>
         </foaf:OnlineAccount>
       </foaf:account>

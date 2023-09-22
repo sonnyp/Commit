@@ -4,12 +4,11 @@ using Adw 1;
 Adw.ApplicationWindow window {
   resizable: true;
   default-width: 560;
-  default-height: 660;
-  title: _("Commit");
+  default-height: 640;
+  title: "Commit";
 
-  Box {
-    orientation: vertical;
-
+  Adw.ToolbarView {
+    [top]
     Adw.HeaderBar {
       [end]
       MenuButton menubutton {

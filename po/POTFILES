@@ -19,3 +19,6 @@ src/ShortcutsWindow.blp
 src/ShortcutsWindow.js
 src/application.js
 src/main.js
+
+troll/src/widgets/ThemeSelector.blp
+troll/src/widgets/ThemeSelector.js

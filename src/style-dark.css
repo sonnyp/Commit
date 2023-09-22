@@ -1,0 +1,5 @@
+window.editor-window {
+  /* https://gitlab.gnome.org/GNOME/gtksourceview/-/blob/5.10.0/data/styles/Adwaita-dark.xml?ref_type=tags#L106 */
+  background-color: #262626;
+}
+

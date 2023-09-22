@@ -7,9 +7,10 @@ Adw.ApplicationWindow window {
   default-height: 272;
   title: "Commit";
 
-  Box {
-    orientation: vertical;
+  styles ["editor-window"]
 
+  Adw.ToolbarView toolbar_view {
+    [top]
     Adw.HeaderBar {
       show-start-title-buttons: false;
       show-end-title-buttons: false;
