@@ -7,7 +7,7 @@ import Editor from "./editor.js";
 
 import { settings } from "./util.js";
 import { parse, format, isEmptyCommitMessage } from "./scm.js";
-import ThemeSelector from "./ThemeSelector.js";
+import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
 import Interface from "./window.blp";
 
 Gio._promisify(Adw.MessageDialog.prototype, "choose", "choose_finish");

@@ -89,7 +89,8 @@ export default GObject.registerClass(
 
     update_style() {
       const scheme = style_manager.dark ? "Adwaita-dark" : "Adwaita";
-      this.buffer.set_style_scheme(scheme_manager.get_scheme(scheme));
+      const style_scheme = scheme_manager.get_scheme(scheme);
+      this.buffer.set_style_scheme(style_scheme);
     }
 
     isWiderThanWrapWidthRequest() {

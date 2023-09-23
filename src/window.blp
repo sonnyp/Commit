@@ -7,9 +7,11 @@ Adw.ApplicationWindow window {
   default-height: 272;
   title: "Commit";
 
-  Box {
-    orientation: vertical;
+  Adw.ToolbarView toolbar_view {
+    // Because of the right margin
+    top-bar-style: raised;
 
+    [top]
     Adw.HeaderBar {
       show-start-title-buttons: false;
       show-end-title-buttons: false;

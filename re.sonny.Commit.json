@@ -1,49 +1,56 @@
 {
   "id": "re.sonny.Commit",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "44",
+  "runtime-version": "45",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Commit",
   "finish-args": [
     "--share=ipc",
     "--socket=fallback-x11",
     "--socket=wayland",
-    "--require-version=1.1.2",
     "--device=dri",
     "--filesystem=home"
   ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/man",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/share/man",
+    "/share/pkgconfig",
+    "/share/installed-tests",
+    "*.la",
+    "*.a"
+  ],
   "modules": [
     {
-      "name": "blueprint",
+      "name": "blueprint-compiler",
       "buildsystem": "meson",
-      "builddir": true,
+      "cleanup": ["*"],
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-          "tag": "v0.6.0",
-          "commit": "9adcab2d225fd6435edc85c72a0b67e33880e00b"
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.10.0/blueprint-compiler-v0.10.0.tar.gz",
+          "sha512": "1f2a9097e3d6a030385c371a01e32caefab6f7ede1979b43492255b504250ac7f44ae22a97656a7c33c0e518236b95d6074baf8f87c53df1fbb1e42eceb39a87"
         }
       ]
     },
     {
       "name": "libspelling",
       "buildsystem": "meson",
-      "config-opts": [
-        "-Ddocs=false"
-      ],
+      "config-opts": ["-Ddocs=false", "-Dvapi=false"],
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/chergert/libspelling.git",
-          "commit": "b5268093bf2f1df82064007bd18b4d9008e069e7"
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/libspelling/0.2/libspelling-0.2.0.tar.xz",
+          "sha256": "fdc5609e02818eca6fc172ff164caa8e52dba638d7590130af3dfb1f28b53421"
         }
       ]
     },
     {
       "name": "Commit",
       "buildsystem": "meson",
-      "builddir": true,
       "sources": [
         {
           "type": "dir",

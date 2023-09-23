@@ -20,25 +20,22 @@
     </p>
     <p>
       Commit will pop up automatically when you make a commit in one of your projects.
-      To save your commit message, press the Commit button or the <code
-      >Ctrl+Return</code> shortcut.
-      To abort and dismiss Commit, press the Abort button or the <code
-      >Escape</code> key.
+      To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut.
+      To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key.
     </p>
     <p>Features:</p>
     <ul>
       <li>Highlights overflow of the commit title</li>
       <li>Smart body wrapping</li>
       <li>Inserts a blank line between title and body</li>
-      <!-- <li>Spell checking</li> -->
-      <li>Comments are readonly and excluded from "Select All"</li>
+      <li>Spell checking</li>
+      <li>Comments are read-only and excluded from "Select All"</li>
       <li>Displays project folder and branch in window header</li>
       <li>Dark mode support</li>
       <li>Keyboard navigation and shortcuts</li>
       <li>Undo/Redo support</li>
       <li>Emoji picker</li>
-      <li
-      >Supports git commit, merge, tag --annotate, add --patch, rebase --interactive</li>
+      <li>Supports git commit, merge, tag --annotate, add --patch, rebase --interactive</li>
       <li>Supports Mercurial commit</li>
       <li>Auto capitalize the commit title</li>
       <li>Welcome window with settings and instructions</li>
@@ -83,6 +80,14 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="4.1" date="2023-09-23">
+      <description>
+        <ul>
+          <li>Add spell check using libspelling</li>
+          <li>GNOME 45</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.0" date="2023-03-22">
       <description>
         <ul>
