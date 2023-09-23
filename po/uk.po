@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-08-21 18:18+0000\n"
-"Last-Translator: Henri <contact@hen.ee>\n"
-"Language-Team: Estonian <https://hosted.weblate.org/projects/commit/commit/et/>\n"
-"Language: et\n"
+"PO-Revision-Date: 2022-11-05 01:34+0000\n"
+"Last-Translator: Andrew Nitrogenesis <nitrogenesis.developer@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/commit/commit/uk/>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.2-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -26,7 +26,7 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Commit sõnumiredaktor"
+msgstr "Редактор коммітів Git"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
@@ -35,23 +35,23 @@ msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr "Pealkirja maksimaalne pikkus (tähtedes)"
+msgstr "Максимальна довжина заголовка (у символах)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr "Põhiteksti maksimaalne pikkus (tähtedes)"
+msgstr "Максимальна довжина вмісту (у символах)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
-msgstr "Commit on redaktor, mis aitab Sinul kirjutada paremaid Git ja Mercurial commit'i sõnumeid."
+msgstr "Commit - це редактор, який допомогає Вам писати кращі комміти Git та Mercurial."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
-msgstr "Pärast programmi allalaadimist, käivita rakendus ja järgi juhiseid."
+msgstr "Після встановлення запустіть застосунок та дотримуйтесь інструкцій."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -59,268 +59,268 @@ msgid ""
 "projects. To save your commit message, press the Commit button or the "
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
-msgstr "Commit automaatselt avaneb, kui teed sinu projektile commit'i. Et salvestada commit'i sõnum, vajuta Commit nupule või <code>ctrl+return</code> kiirklahvikombinatsioonile. Et commit'i tühistada, vajuta Tühista nupule või <code>escape</code> klahvile."
+msgstr "Комміт з'явиться автоматично, коли ви зробите комміт у одному з своїх проектів. Щоб зберегти своє повідомлення, натисніть кнопку Commit або клавіатурне скорочення <code>Ctrl+Return</code>. Щоб переривати та відхилити комміт, натисніть кнопку \"Abort\" або клавішу <code>Escape </code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr "Funktsioonid:"
+msgstr "Особливості:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr "Näitab, et ei ületaks commit pealkirja pikkust"
+msgstr "Виділення символів, що перевищують межі"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr "Tark teksti joondamine"
+msgstr "Розумне обгортання вмісту"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr "Lisab tühja rea pealkirja ja kirjelduse vahel"
+msgstr "Вставка порожнього рядка між заголовком та вмістом"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr "Kommentaarid on ainult lugemiseks ning väljastatud „Vali kõik“est"
+msgstr "Коментарі доступні лише для читання і вилучені з \"Обрати усе\""
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr "Näitab projekti kausta ja haru akna pealkirjas"
+msgstr "Відображення гілки та текі проекта у заголовку вікна"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr "Tume teema tugi"
+msgstr "Підтримка темного режиму"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr "Kiirklahvid ning kiire klaviatuuriga navigeerimine"
+msgstr "Навігація клавіатурою та клавіатурні скорочення"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr "Undo/Redo tugi"
+msgstr "Підтримка Скасувати/Повторити (Undo/Redo)"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr "Emoji valija"
+msgstr "Вибір емоджи"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "„git commit, merge, tag --annotate, add --patch, rebase --interactive“ tugi"
+msgstr "Підтримка git commit, merge, tag --annotate, add --patch, rebase --interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr "Mercurial commit'i tugi"
+msgstr "Підтримка коммітів Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr "Automaatne suurtäht commit'i pealkirjas"
+msgstr "Автоматична капіталізація заголовка комміту"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr "Avaaken sätete ning juhenditega"
+msgstr "Вікно вітання з налаштуваннями та інструкціями"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "Git, Mercurial ja diff'ide süntaksi märkimist"
+msgstr "Виділення синтаксису для Gir, Mercurial та diff"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr "Põhiaken"
+msgstr "Головне вікно"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr "Emoji valija"
+msgstr "Вибір емоджи"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr "Kiirklahvid"
+msgstr "Скорочення"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr "Avaaken"
+msgstr "Вікно вітання"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr "Muuda akna suurust, et lülitada automaatne vormistus välja"
+msgstr "Змініть розмір вікна щоб вимкнути автоматичне форматування"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr "Lisatud teema lüliti"
+msgstr "Додано перемикач тем"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr "Tume teema toe parandused"
+msgstr "Покращено підтримку темного режиму"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr "Numpad sisestaja tugi"
+msgstr "Додано підтримку Enter на numpad"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr "Nuppudele mnemoonika"
+msgstr "Додано мнемоніку для кнопок"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr "Suurtähtede kasutuse parandused"
+msgstr "Виправлено капіталізацію під час поправок"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr "Automaatne suurtähtede kasutuse parandused"
+msgstr "Покращено автоматичну капіталізацію"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr "gitconfig ja hgrc tugi"
+msgstr "Додано підтримку gitconfig та hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr "Iga faili redigeerimis tugi"
+msgstr "Додано підтримку редагування будь-якого файлу"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr "Dünaamiliseks tehtud peamise nupu silt (Rebase, Commit jne)"
+msgstr "Зроблено динамічний текст на головній кнопці (Tag, Rebase, Commit, тощо)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr "Kahe tühiku kasutamine taandes"
+msgstr "Додано використання відступу з двома пробілами"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr "Menüü nupu lisamine"
+msgstr "Додано кнопку меню"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr "GNOME platvorm 42"
+msgstr "Платформа GNOME 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr "Veaparandused"
+msgstr "Різні виправлення"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "Kiirklahvid rea liigutamiseks üles või alla"
+msgstr "Додано клавіатурні скороченя щоб переміщати рядки вгору та вниз"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "Highlight syntax Git, Mercurial ja diff'idele"
+msgstr "Додано виділення синтаксису для Git, Mercurial and diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr "Kiirklahvide aken lisatud"
+msgstr "Додано вікно скорочень"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr "Õigekirja kontrolli eemaldamine ajutiselt"
+msgstr "Тимчасово прибрано перевірку правописання"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr "Undo ja redo tugi"
+msgstr "Додано підтримку скасування та повторення (undo/redo)"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr "Sümboolne ikooni lisamine"
+msgstr "Додано сиволичну іконку"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr "Tume teema sätte lisamine"
+msgstr "Додане налаштування \"темний режим\""
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr "Teksti redigeerija fokuseerimine"
+msgstr "Зфокусовано редактор"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr "GTK4 ja libadwaita uuendus"
+msgstr "Портовано на GTK4 і libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr "Eelistuste liigutamine avaaknale"
+msgstr "Переміщено параметри у вікно вітання"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr "Ainult näita teksti ületäitumist commit'ides"
+msgstr "Додано виділення тільки тексту, який перевищує межі"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr "Uus rakenduse ikoon"
+msgstr "Додано нову іконку застосунку"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr "Eemaldatud topelt ääris"
+msgstr "Прибрано подвійні межі"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr "Lisatud eelistuste aken"
+msgstr "Додано вікно налаштувань"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr "Vaikne pealkirja pikkuse soovitus 50 tähte"
+msgstr "Значення за замовчуванням для заголовка встановлено рівним 50"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr "Vead commit'id eriliste märkidega parandatud"
+msgstr "Виправлено читання коммітів зі спеціальними символами"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr "Tuvastamatu git rebase parandatud"
+msgstr "Виправлено \"git rebase не визнано\""
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr "Akna alumised nurgad tehtud ümaraks"
+msgstr "Зроблено нижні кути вікна закругленими"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr "6px margin lisatud redigeerijale"
+msgstr "Додано відступ у 6 пікселів у редакторі"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
-msgstr "Nõuab seadistamist. Pärast uuendamist, palun ava rakendus ning jälgi juhiseid."
+msgstr "Потрібна дія. Після оновлення, будь ласка, запустіть застосунок та дотримуйтесь інструкцій."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr "Avaakna näitamine, kui käivitatud töölauast"
+msgstr "Додано показування вікна вітання коли запущено зі стільниці"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr "Mercurial tugi lisatud"
+msgstr "Додано підтримку Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr "Failisüsteemi load eemaldatud"
+msgstr "Прибрано дозвіл до файлової системи"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr "Esialgne väljaanne. Fork'itud Gnomit 2.0ist."
+msgstr "Початковий випуск. Форкнуто з Gnomit 2.0."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr "\"#\" tugi commit sõnumis"
+msgstr "Додано підтримку \"#\" у комміті"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr "Õigesti tuvastab käivitaja asukoha"
+msgstr "Виконаний шлях тепер розпізнається належним чином"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr "Henri https://hen.ee"
+msgstr "Andrew Nitrogenesis (OSS Ukrainization Project) https://github.com/nitrogenez"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr "_Commit"
+msgstr "_Комміт"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr "_Merge"
+msgstr "_Об'єднання"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr "_Märgista"
+msgstr "_Тегування"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr "_Lisa"
+msgstr "_Додати"
 
 #: src/scm.js:10
 msgid "_Rebase"
@@ -328,59 +328,59 @@ msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr "_Salvesta"
+msgstr "_Зберегти"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr "Redigeerimine"
+msgstr "Редагування"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr "Salvesta ja kinnita"
+msgstr "Зберегти та підтвердити"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr "Tühista"
+msgstr "Скасувати та відхилити"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr "Ava emoji menüü"
+msgstr "Відкрити вибір емоджи"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr "Liiguta käesolev rida üles/alla"
+msgstr "Перемістити цей рядок вгору/вниз"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr "Vali kõik"
+msgstr "Обрати усе"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr "Tühista valik"
+msgstr "Відхилити усе"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr "Üldine"
+msgstr "Загальне"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr "Kiirklahvid"
+msgstr "Клавіатурні Скорочення"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr "Lahku"
+msgstr "Вийти"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr "_Tühista"
+msgstr "_Перервати"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr "Teave"
+msgstr "Про Commit"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr "Eelistused"
+msgstr "Налаштування"
 
 #: src/welcome.ui:69
 msgid "Git"
@@ -389,15 +389,15 @@ msgstr "Git"
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
-msgstr "Et seadistada Commit Git'i vaikeredaktoriks, käivita antud käsk terminalis (konsoolis)"
+msgstr "Щоб встановити Commit звичайним редактором для Git запустіть цю команду у Терміналі"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr "Kopeeri lõikelauda"
+msgstr "Скопіювати до буферу обміну"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr "Dokumentatsioon"
+msgstr "Документація"
 
 #: src/welcome.ui:112
 msgid ""
@@ -413,7 +413,7 @@ msgstr "Mercurial"
 msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
-msgstr "Et seadistada Commit Mercurial'i vaikeredaktoriks, lisa antud read <tt>hgrc</tt>'sse"
+msgstr "Щоб встановити Commit як звичайний редактор для Mercurial, встановіть це у Вашому <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
