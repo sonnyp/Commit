@@ -10,7 +10,6 @@ import ShortcutsWindow from "./ShortcutsWindow.js";
 import { settings } from "./util.js";
 
 import "./style.css";
-import "./style-dark.css";
 
 const textDecoder = new TextDecoder();
 

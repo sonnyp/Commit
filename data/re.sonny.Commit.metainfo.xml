@@ -20,10 +20,8 @@
     </p>
     <p>
       Commit will pop up automatically when you make a commit in one of your projects.
-      To save your commit message, press the Commit button or the <code
-      >Ctrl+Return</code> shortcut.
-      To abort and dismiss Commit, press the Abort button or the <code
-      >Escape</code> key.
+      To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut.
+      To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key.
     </p>
     <p>Features:</p>
     <ul>
@@ -86,7 +84,6 @@
       <description>
         <ul>
           <li>Add spell check using libspelling</li>
-          <li>Visual refinements</li>
           <li>GNOME 45</li>
         </ul>
       </description>

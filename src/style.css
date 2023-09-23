@@ -3,8 +3,3 @@
   border-radius: 8px;
 }
 
-window.editor-window {
-  /* https://gitlab.gnome.org/GNOME/gtksourceview/-/blob/5.10.0/data/styles/Adwaita.xml?ref_type=tags#L104 */
-  background-color: #FCFCFC;
-}
-

@@ -7,9 +7,10 @@ Adw.ApplicationWindow window {
   default-height: 272;
   title: "Commit";
 
-  styles ["editor-window"]
-
   Adw.ToolbarView toolbar_view {
+    // Because of the right margin
+    top-bar-style: raised;
+
     [top]
     Adw.HeaderBar {
       show-start-title-buttons: false;
