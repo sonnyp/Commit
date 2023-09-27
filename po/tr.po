@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-09-27 00:56+0000\n"
+"PO-Revision-Date: 2023-09-28 01:59+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/commit/commit/tr/"
 ">\n"
@@ -164,7 +164,7 @@ msgstr "Koyu kip desteği iyileştirildi"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr "Sayısal tuş takımı girişini destekler"
+msgstr "Sayısal tuş takımı girişini destekle"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
@@ -353,15 +353,15 @@ msgstr "Düzenleme"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr "Kaydet ve Onayla"
+msgstr "Kaydet ve onayla"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr "İptal Et ve Kapat"
+msgstr "İptal et ve kapat"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr "Emoji Seçiciyi Aç"
+msgstr "Emoji seçiciyi aç"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
