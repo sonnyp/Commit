@@ -8,8 +8,6 @@ src/util.js
 src/wrap.js
 src/scm.js
 src/editor.js
-src/ThemeSelector.blp
-src/ThemeSelector.js
 src/window.blp
 src/window.js
 src/welcome.blp
