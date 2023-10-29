@@ -15,7 +15,8 @@ export default function Welcome({ application }) {
 
   const button_hint = builder.get_object("button_hint");
   button_hint.set_range(...getRange("title-length-hint"));
-  button_hint.set_increments(1, 10);
+  button_hint.get_adjustment().set_step_increment(1);
+  button_hint.get_adjustment().set_page_increment(10);
   settings.bind(
     "title-length-hint",
     button_hint,
@@ -25,7 +26,8 @@ export default function Welcome({ application }) {
 
   const button_wrap = builder.get_object("button_wrap");
   button_wrap.set_range(...getRange("body-length-wrap"));
-  button_wrap.set_increments(1, 10);
+  button_wrap.get_adjustment().set_step_increment(1);
+  button_wrap.get_adjustment().set_page_increment(10);
   settings.bind(
     "body-length-wrap",
     button_wrap,
