@@ -170,7 +170,7 @@ msgstr "Suporte para modificar quaisquer arquivos"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Faça o rótulo do botão principal dinâmico (Tag, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
@@ -231,7 +231,7 @@ msgstr "Move preferências para a janela de boas-vindas"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Destacar apenas o excesso de texto em commits"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
@@ -306,23 +306,23 @@ msgstr "Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "Merge"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "Marcação"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "Adicionar"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "Salvar"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -350,7 +350,7 @@ msgstr "Selecionar tudo"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Desmarque tudo"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
