@@ -3,7 +3,11 @@
   <id>re.sonny.Commit</id>
   <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
   <name translatable="no">Commit</name>
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name translatable="no">Sonny Piers</developer_name>
+  <developer id="github.com">
+      <name translatable="no">Sonny Piers</name>
+  </developer>
   <update_contact>sonnyp@gnome.org</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
@@ -42,10 +46,10 @@
       <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
   </description>
-  <url type="homepage">https://commit.sonny.re</url>
-  <url type="bugtracker">https://commit.sonny.re/feedback</url>
-  <url type="donation">https://commit.sonny.re/donate</url>
-  <url type="translate">https://commit.sonny.re/translate</url>
+  <url type="homepage">https://github.com/sonnyp/Commit</url>
+  <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
+  <url type="translate">https://hosted.weblate.org/engage/commit/</url>
+  <url type="vcs-browser">https://github.com/sonnyp/Commit</url>
   <screenshots>
     <screenshot type="default">
       <image>
@@ -81,7 +85,7 @@
   <content_rating type="oars-1.1" />
   <releases>
     <release version="4.1" date="2023-09-23">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Add spell check using libspelling</li>
           <li>GNOME 45</li>
@@ -89,7 +93,7 @@
       </description>
     </release>
     <release version="4.0" date="2023-03-22">
-      <description>
+      <description translatable="no">
         <ul>
           <li>GNOME 44</li>
           <li>Ask for confirmation before dismissing changes</li>
@@ -101,7 +105,7 @@
       </description>
     </release>
     <release version="3.3.0" date="2022-07-21">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Add a theme switcher</li>
           <li>Improve dark mode support</li>
@@ -112,7 +116,7 @@
       </description>
     </release>
     <release version="3.2.0" date="2022-04-23">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Improve auto capitalization</li>
           <li>Add support for gitconfig and hgrc</li>
@@ -127,7 +131,7 @@
       </description>
     </release>
     <release version="3.1.0" date="2022-03-20">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Add keyboard shortcuts for moving lines up and down</li>
           <li>Highlight syntax for Git, Mercurial, and diffs</li>
@@ -139,7 +143,7 @@
       </description>
     </release>
     <release version="3.0.0" date="2021-10-14">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Remove spell check temporarily</li>
           <li>Support undo and redo</li>
@@ -151,7 +155,7 @@
       </description>
     </release>
     <release version="2.2.0" date="2021-09-20">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Move preferences to welcome window</li>
           <li>Only highlight text overflow on commits</li>
@@ -161,7 +165,7 @@
       </description>
     </release>
     <release version="2.1.0" date="2021-05-16">
-      <description>
+      <description translatable="no">
         <ul>
           <li>Add a Preferences window</li>
           <li>Set default title length hint to 50 characters</li>
@@ -173,7 +177,7 @@
       </description>
     </release>
     <release version="2.0.0" date="2021-05-01">
-      <description>
+      <description translatable="no">
         <p>
           Action required. After updating, please launch the application and
           follow the instructions.
@@ -186,7 +190,7 @@
       </description>
     </release>
     <release version="1.0.0" date="2021-04-06">
-      <description>
+      <description translatable="no">
         <p>Initial release. Forked from Gnomit 2.0.</p>
         <ul>
           <li>Support "#" in commit message</li>
