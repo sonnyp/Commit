@@ -8,25 +8,26 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-01-07 18:48+0000\n"
-"Last-Translator: Tomo <tomodachi94@protonmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/commit/commit/ja/>\n"
+"PO-Revision-Date: 2024-03-03 16:01+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/commit/commit/"
+"ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
-msgstr "コミット"
+msgstr "Commit"
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "コミットのメセージエディター"
+msgstr "コミットメッセージエディター"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
@@ -35,17 +36,18 @@ msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr "タイトルの極度長さ（キャラクター）"
+msgstr "タイトルの最大文字数"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr "本文の極度長さ（キャラクター）"
+msgstr "本文の最大文字数"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
-msgstr "コミットはエディターで、ギットやメルキリアルのメッセジ著すをたすけてます。"
+msgstr "Commit は、Git や Mercurial "
+"のコミットメッセージをより良く書けるエディターです。"
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
@@ -60,6 +62,11 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
+"プロジェクトでコミットすると、Commit "
+"が自動的にポップアップします。コミットメッセージを保存するには、\"コミット\" "
+"ボタンか、<code>Ctrl+Return</code> ショートカットキーを押します。Commit "
+"を中断して却下するには、\"中断\" ボタンか <code>Escape</code> "
+"キーを押します。"
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
@@ -67,11 +74,11 @@ msgstr "機能:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "コミットタイトル超過時に強調表示"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr "インテリジェントのテクストラッピング"
+msgstr "スマートに本文を折り返し"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
@@ -80,36 +87,38 @@ msgstr "タイトルと本文の真ん中を改行の挿す"
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr ""
+msgstr "コメントは表示のみで、\"すべて選択\" の対象外"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr "ウィンドウのヘッダーにプロジェクトフォルダとブランチを表示する"
+msgstr "ウィンドウのヘッダーにプロジェクトフォルダーとブランチを表示"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr "ダークモードの特徴"
+msgstr "ダークモードへの対応"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr "キーボードナビゲーションとショートカット"
+msgstr "キーボードでの操作とショートカット"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr "アンドゥとリドゥの特徴"
+msgstr "元に戻す/やり直す への対応"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr "エモジセレクター"
+msgstr "絵文字ピッカー"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "対応するコマンドは<code>git commit</code>や<code>git merge</code>や<code>git tag --annotate</code>や<code>git add --patch</code>や<code>git rebase --interactive</code>である"
+msgstr ""
+"git commit / merge / tag --annotate / add --patch / rebase --interactive "
+"に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr "Mercurialコミットをサポート"
+msgstr "Mercurial コミットに対応"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
@@ -117,33 +126,31 @@ msgstr "コミットのタイトルを自動的に大文字にする"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr "歓迎のウィンドーはコンフィグと説明書である"
+msgstr "ようこそウィンドウに設定項目と説明を表示"
 
 #: data/re.sonny.Commit.metainfo.xml:45
-#, fuzzy
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "ギットやメルキリアルやディフのシンタックスハイライト"
+msgstr "Git、Mercurial、diff のシンタックスハイライトに対応"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr "正面のウィンドー"
+msgstr "メインウィンドウ"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr "エモジのセレクタ"
+msgstr "絵文字セレクター"
 
 #: data/re.sonny.Commit.metainfo.xml:69
-#, fuzzy
 msgid "Shortcuts"
-msgstr "キーボードショートカット"
+msgstr "ショートカット"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr "歓迎のウィンドー"
+msgstr "ようこそウィンドウ"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "ウィンドウをサイズ変更して自動フォーマットを無効化"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
@@ -151,43 +158,43 @@ msgstr "テーマスイッチャーの追加"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "ダークモードへの対応を改善"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "テンキーの Enter キーに対応"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "ボタンにニーモニックを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "amend 時の大文字化の不具合を修正"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "自動大文字化を改善"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr "gitconfigとhgrcのサポート追加"
+msgstr "gitconfig と hgrc に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr "何でもファイルのエディットのサポート"
+msgstr "任意ファイルの編集に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "主ボタンのラベルを動的に切り替え (タグを追加、リベース、コミット など)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr "間隔2個インデント用"
+msgstr "インデントにスペース2つを使用"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "メニューボタンを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -195,228 +202,233 @@ msgstr "GNOMEプラットフォーム 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr "色々直す"
+msgstr "様々な修正"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "行を上下に移動するキーボードショートカットの追加"
+msgstr "行を上下に移動するキーボードショートカットを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "ギットやメルキリアルやディフのシンタックスハイライト"
+msgstr "Git、Mercurial、diff のシンタックスハイライト"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "ショートカットウィンドウを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "スペルチェック機能を一時的に削除"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "元に戻す/やり直す に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "シンボリックアイコンを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "ダークモードの設定を追加"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "テキストエディターにフォーカスを設定"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "GTK 4 と libadwaita への移植"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "設定項目をようこそウィンドウに移動"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "コミットメッセージでテキストの超過のみをハイライト表示するように修正"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "新しいアプリアイコン"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "重複する枠線を削除"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "設定ウィンドウを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "デフォルトのタイトル最大文字数を 50 文字に設定"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr ""
+msgstr "特殊文字が含まれるコミットを読み込めるように修正"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "git rebase が認識されない不具合を修正"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "ウィンドウ下部の隅を丸めるように変更"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "エディターに 6 px のマージンを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
-msgstr ""
+msgstr "アクションが必要です。アップデート後、アプリケーションを起動し、指示に従って"
+"ください。"
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr ""
+msgstr "デスクトップから起動した際にようこそウィンドウを表示"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "Mercurial に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "ファイルシステムアクセス権限を削除"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "初リリース。Gnomit 2.0 からフォークしました。"
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "コミットメッセージ内の \"#\" に対応"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "実行可能ファイルのパスを適切に認識するように修正"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
 msgstr ""
+"Tomo\n"
+"Ryo Nakano"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "コミット(_C)"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "マージ(_M)"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "タグを追加(_T)"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "追加(_D)"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "リベース(_R)"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "保存(_S)"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "編集"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "保存して確認"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "キャンセルして中断"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "絵文字ピッカーを開く"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "現在の行を 上/下 に移動"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "すべて選択"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "すべて選択解除"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "キーボードショートカット"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "終了する"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "Commit について(_A)"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "Commit について"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "設定"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
-msgstr ""
+msgstr "Commit を Git "
+"のデフォルトエディターに設定するには、端末で以下のコマンドを実行してください"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "クリップボードにコピー"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメンテーション"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
-msgstr ""
+msgstr "https://git-scm.com/book/ja/v2/Git-のカスタマイズ-Git-の設定#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
 msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
-msgstr ""
+msgstr "Commit を Mercurial のデフォルトエディターに設定するには、<tt>hgrc</tt> "
+"に以下を設定してください"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
