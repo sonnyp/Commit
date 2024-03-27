@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-03-03 16:01+0000\n"
+"PO-Revision-Date: 2024-03-28 18:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/commit/commit/hi/>"
 "\n"
@@ -152,11 +152,11 @@ msgstr "स्वागत विंडो"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr "ऑटो फ़ॉर्मेटिंग अक्षम करने के लिए विंडो का आकार बदलें"
+msgstr "स्वतः स्वरूपण अक्षम करने के लिए विंडो का आकार बदला"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr "थीम स्विचर जोड़ें"
+msgstr "थीम स्विचर जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
@@ -168,7 +168,7 @@ msgstr "नमपैड एंटर का समर्थन करता ह�
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr "बटनों के लिए निमोनिक्स जोड़ता है"
+msgstr "बटनों के लिए निमोनिक्स जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
@@ -184,7 +184,7 @@ msgstr "gitconfig और hgrc के लिए समर्थन जोड़�
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr "किसी भी फ़ाइल को संपादित करने का समर्थन करें"
+msgstr "किसी भी फाइल को संपादित करने का समर्थन करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
@@ -192,11 +192,11 @@ msgstr "प्राथमिक बटन लेबल को गतिशी�
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr "2 रिक्त स्थान इंडेंटेशन का उपयोग करें"
+msgstr "2 रिक्त स्थान इंडेंटेशन का उपयोग करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr "मेनू बटन जोड़ें"
+msgstr "मेनू बटन जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -208,7 +208,7 @@ msgstr "विभिन्न सुधार"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "लाइनों को ऊपर और नीचे ले जाने के लिए कीबोर्ड शॉर्टकट जोड़ें"
+msgstr "लाइनों को ऊपर और नीचे ले जाने के लिए कीबोर्ड शॉर्टकट जोड़े गए"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
@@ -216,19 +216,19 @@ msgstr "Git, Mercurial और diffs के लिए सिंटैक्स �
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr "एक शॉर्टकट विंडो जोड़ें"
+msgstr "शॉर्टकट विंडो जोड़ी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr "वर्तनी जाँच को अस्थायी रूप से हटाएँ"
+msgstr "वर्तनी जांच अस्थायी रूप से हटा दी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr "पूर्ववत करें और पुनः करें का समर्थन करें"
+msgstr "पूर्ववत और पुनः करें का समर्थन करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr "प्रतीकात्मक चिह्न जोड़ता है"
+msgstr "प्रतीकात्मक चिह्न जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
@@ -236,7 +236,7 @@ msgstr "गहरे मोड की सेटिंग जोड़ी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr "टेक्स्ट एडिटर पर फोकस करें"
+msgstr "टेक्स्ट एडिटर पर फोकस करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
@@ -268,19 +268,19 @@ msgstr "डिफ़ॉल्ट शीर्षक लंबाई संके
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr "विशेष वर्णों के साथ कमिट को पढ़ने को ठीक करता है"
+msgstr "विशेष वर्णों के साथ कमिट को पढ़ने को ठीक किया गया"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr "Git rebase पहचाने नहीं जाने को ठीक करता है"
+msgstr "Git रिबेस पहचाने नहीं जाने को ठीक किया गया"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr "विंडोज़ के निचले कोनों को गोलाकार बनाएं"
+msgstr "विंडो के निचले कोनों को गोलाकार बनाया"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr "संपादक में 6px मार्जिन जोड़ता है"
+msgstr "संपादक में 6px मार्जिन जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
@@ -292,7 +292,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr "डेस्कटॉप से लॉन्च होने पर एक स्वागत विंडो दिखाएं"
+msgstr "डेस्कटॉप से लॉन्च होने पर एक स्वागत विंडो दिखाता है"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
@@ -300,7 +300,7 @@ msgstr "Mercurial के लिए समर्थन जोड़ता है"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr "फ़ाइल सिस्टम अनुमति हटाएँ"
+msgstr "फाइल सिस्टम अनुमति हटा दी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
@@ -321,27 +321,27 @@ msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr "_Commit"
+msgstr "Commit (_C)"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr "_Merge"
+msgstr "Merge (_M)"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr "_टैग"
+msgstr "टैग (_T)"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr "_जोड़ें"
+msgstr "जोड़ें (_d)"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr "_Rebase"
+msgstr "Rebase (_R)"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr "_सहेजें"
+msgstr "सहेजें (_S)"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -385,7 +385,7 @@ msgstr "छोड़ें"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr "_निरस्त"
+msgstr "निरस्त (_A)"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
