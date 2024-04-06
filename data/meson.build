@@ -19,7 +19,7 @@ appstream_file = i18n.merge_file(
   output: 're.sonny.Commit.metainfo.xml',
   po_dir: '../po',
   install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 # Validate Appdata
