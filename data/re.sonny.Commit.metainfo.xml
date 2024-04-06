@@ -2,8 +2,8 @@
 <component type="desktop">
   <id>re.sonny.Commit</id>
   <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
-  <name translatable="no">Commit</name>
-  <developer_name translatable="no">Sonny Piers</developer_name>
+  <name translate="no">Commit</name>
+  <developer_name translate="no">Sonny Piers</developer_name>
   <update_contact>sonnyp@gnome.org</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
@@ -81,7 +81,7 @@
   <content_rating type="oars-1.1" />
   <releases>
     <release version="4.1" date="2023-09-23">
-      <description>
+      <description translate="no">
         <ul>
           <li>Add spell check using libspelling</li>
           <li>GNOME 45</li>
@@ -89,7 +89,7 @@
       </description>
     </release>
     <release version="4.0" date="2023-03-22">
-      <description>
+      <description translate="no">
         <ul>
           <li>GNOME 44</li>
           <li>Ask for confirmation before dismissing changes</li>
@@ -101,7 +101,7 @@
       </description>
     </release>
     <release version="3.3.0" date="2022-07-21">
-      <description>
+      <description translate="no">
         <ul>
           <li>Add a theme switcher</li>
           <li>Improve dark mode support</li>
@@ -112,7 +112,7 @@
       </description>
     </release>
     <release version="3.2.0" date="2022-04-23">
-      <description>
+      <description translate="no">
         <ul>
           <li>Improve auto capitalization</li>
           <li>Add support for gitconfig and hgrc</li>
@@ -127,7 +127,7 @@
       </description>
     </release>
     <release version="3.1.0" date="2022-03-20">
-      <description>
+      <description translate="no">
         <ul>
           <li>Add keyboard shortcuts for moving lines up and down</li>
           <li>Highlight syntax for Git, Mercurial, and diffs</li>
@@ -139,7 +139,7 @@
       </description>
     </release>
     <release version="3.0.0" date="2021-10-14">
-      <description>
+      <description translate="no">
         <ul>
           <li>Remove spell check temporarily</li>
           <li>Support undo and redo</li>
@@ -151,7 +151,7 @@
       </description>
     </release>
     <release version="2.2.0" date="2021-09-20">
-      <description>
+      <description translate="no">
         <ul>
           <li>Move preferences to welcome window</li>
           <li>Only highlight text overflow on commits</li>
@@ -161,7 +161,7 @@
       </description>
     </release>
     <release version="2.1.0" date="2021-05-16">
-      <description>
+      <description translate="no">
         <ul>
           <li>Add a Preferences window</li>
           <li>Set default title length hint to 50 characters</li>
@@ -173,7 +173,7 @@
       </description>
     </release>
     <release version="2.0.0" date="2021-05-01">
-      <description>
+      <description translate="no">
         <p>
           Action required. After updating, please launch the application and
           follow the instructions.
@@ -186,7 +186,7 @@
       </description>
     </release>
     <release version="1.0.0" date="2021-04-06">
-      <description>
+      <description translate="no">
         <p>Initial release. Forked from Gnomit 2.0.</p>
         <ul>
           <li>Support "#" in commit message</li>
