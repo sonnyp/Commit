@@ -2,23 +2,11 @@ data/re.sonny.Commit.desktop
 data/re.sonny.Commit.gschema.xml
 data/re.sonny.Commit.metainfo.xml
 
-src/CommitEditor.blp
-src/CommitEditor.js
-src/util.js
-src/wrap.js
+src/ShortcutsWindow.blp
+src/about.js
 src/scm.js
-src/editor.js
-src/ThemeSelector.blp
-src/ThemeSelector.js
+src/welcome.blp
 src/window.blp
 src/window.js
-src/welcome.blp
-src/welcome.js
-src/about.js
-src/ShortcutsWindow.blp
-src/ShortcutsWindow.js
-src/application.js
-src/main.js
 
 troll/src/widgets/ThemeSelector.blp
-troll/src/widgets/ThemeSelector.js
