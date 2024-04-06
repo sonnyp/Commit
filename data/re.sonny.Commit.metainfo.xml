@@ -45,10 +45,10 @@
       <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
   </description>
-  <url type="homepage">https://commit.sonny.re</url>
-  <url type="bugtracker">https://commit.sonny.re/feedback</url>
-  <url type="donation">https://commit.sonny.re/donate</url>
-  <url type="translate">https://commit.sonny.re/translate</url>
+  <url type="homepage">https://github.com/sonnyp/Commit</url>
+  <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
+  <url type="translate">https://hosted.weblate.org/engage/commit/</url>
+  <url type="vcs-browser">https://github.com/sonnyp/Commit</url>
   <screenshots>
     <screenshot type="default">
       <image>
