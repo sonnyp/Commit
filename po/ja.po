@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-03-03 16:01+0000\n"
+"PO-Revision-Date: 2024-04-21 10:50+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/commit/commit/"
 "ja/>\n"
@@ -82,7 +82,7 @@ msgstr "スマートに本文を折り返し"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr "タイトルと本文の真ん中を改行の挿す"
+msgstr "タイトルと本文の間に空行を挿入"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
@@ -198,7 +198,7 @@ msgstr "メニューボタンを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr "GNOMEプラットフォーム 42"
+msgstr "GNOME プラットフォーム 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
@@ -278,7 +278,7 @@ msgstr "ウィンドウ下部の隅を丸めるように変更"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr "エディターに 6 px のマージンを追加"
+msgstr "エディターに 6px のマージンを追加"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
