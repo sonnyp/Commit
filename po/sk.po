@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-10-07 07:10+0000\n"
-"Last-Translator: Milan Šalka <salka.milan@googlemail.com>\n"
+"PO-Revision-Date: 2024-05-01 18:07+0000\n"
+"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>"
 "\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.5.3-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -39,6 +39,7 @@ msgid "Title maximum length (in characters)"
 msgstr "Maximálna dĺžka titulku (v znakoch)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
+#, fuzzy
 msgid "Body lines maximum length (in characters)"
 msgstr "Body linky maximálna dĺžka (v charakteroch)"
 
@@ -48,7 +49,7 @@ msgstr "Commit je editor, ktorý vám pomôže lepšie napísať správy commito
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid "After installing make sure to launch the application and follow the instructions."
-msgstr "Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa inštrukcií."
+msgstr "Po inštalácii nezabudnite aplikáciu spustiť a postupovať podľa pokynov."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid "Commit will pop up automatically when you make a commit in one of your projects. To save your commit message, press the Commit button or the <code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the Abort button or the <code>Escape</code> key."
