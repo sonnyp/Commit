@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-05-01 18:07+0000\n"
-"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
+"PO-Revision-Date: 2024-05-02 19:07+0000\n"
+"Last-Translator: Milan Šalka <salka.milan@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/commit/commit/sk/>"
 "\n"
 "Language: sk\n"
@@ -39,7 +39,6 @@ msgid "Title maximum length (in characters)"
 msgstr "Maximálna dĺžka titulku (v znakoch)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
-#, fuzzy
 msgid "Body lines maximum length (in characters)"
 msgstr "Body linky maximálna dĺžka (v charakteroch)"
 
