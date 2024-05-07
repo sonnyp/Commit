@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-03-28 18:01+0000\n"
+"PO-Revision-Date: 2024-05-08 05:07+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/commit/commit/hi/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.4-rc\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -27,7 +27,7 @@ msgstr "Commit"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Commit संदेश संपादक"
+msgstr "कमिट संदेश संपादक"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
@@ -40,7 +40,7 @@ msgstr "शीर्षक की अधिकतम लंबाई (अक्�
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr "अधिकतम टेक्स्ट लाइन लंबाई (वर्णों में)"
+msgstr "अधिकतम मुख्य भाग पंक्तियों की लंबाई (वर्णों में)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
@@ -55,8 +55,7 @@ msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
 msgstr ""
-"इंस्टॉल करने के बाद एप्लिकेशन लॉन्च करना सुनिश्चित करें और निर्देशों का पालन "
-"करें।"
+"स्थापना के बाद अनुप्रयोग लॉन्च करना सुनिश्चित करें और निर्देशों का पालन करें।"
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -65,35 +64,35 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
-"जब आप अपने किसी प्रोजेक्ट के लिए प्रतिबद्धता बनाते हैं तो Commit स्वचालित रू"
-"प से पॉप अप हो जाएगा। अपना प्रतिबद्ध संदेश सहेजने के लिए, Commit बटन या "
-"<code>Ctrl+Return</code> शॉर्टकट दबाएँ। Commit को निरस्त करने और ख़ारिज करने "
-"के लिए, निरस्त करें बटन या <code>Escape</code> कुंजी दबाएँ।"
+"जब आप अपने किसी परियोजनाओं के लिए कमिट बनाते हैं तो Commit स्वचालित रूप से खु"
+"ल जाएगा। अपना कमिट संदेश सहेजने के लिए, Commit बटन या <code>Ctrl+Return</"
+"code> शॉर्टकट दबाएं। Commit को निरस्त करने और ख़ारिज करने के लिए, निरस्त करें"
+" बटन या <code>Escape</code> कुंजी दबाएं।"
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr "विशेषताएँ:"
+msgstr "विशेषताएं:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr "Commit शीर्षक के अतिप्रवाह पर प्रकाश डालता है"
+msgstr "कमिट शीर्षक के अतिप्रवाह पर प्रकाश डालता है"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr "स्मार्ट बॉडी रैपिंग"
+msgstr "होशियार मुख्य भाग का लपेटन"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr "शीर्षक और मुख्य भाग के बीच एक रिक्त रेखा सम्मिलित करता है"
+msgstr "शीर्षक और मुख्य भाग के बीच एक रिक्त पंक्ति सम्मिलित करता है"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr "टिप्पणियाँ केवल पढ़ने के लिए हैं और \"सभी चुनें\" से बाहर रखी गई हैं"
+msgstr "टिप्पणियां केवल-पढ़नेयोग्य हैं और \"सभी चुनें\" से बाहर रखी गई हैं"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr "विंडो हेडर में प्रोजेक्ट फ़ोल्डर और शाखा प्रदर्शित करता है"
+msgstr "विंडो शीर्षलेख में परियोजना फोल्डर और शाखा प्रदर्शित करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
@@ -105,11 +104,11 @@ msgstr "कीबोर्ड नेविगेशन और शॉर्टक
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr "पूर्ववत करें/पुनः करें समर्थन"
+msgstr "पूर्ववत/पुनः करें का समर्थन"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr "इमोजी चुनने वाला"
+msgstr "इमोजी पिकर"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
@@ -120,11 +119,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr "Mercurial commit का समर्थन करता है"
+msgstr "Mercurial कमिट का समर्थन करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr "Commit शीर्षक को स्वतः बड़े अक्षरों में लिखें"
+msgstr "कमिट शीर्षक को स्वतः बड़े अक्षरों में लिखें"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
@@ -132,7 +131,7 @@ msgstr "सेटिंग्स और निर्देशों के स�
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "Git, Mercurial और diffs के लिए सिंटैक्स हाइलाइट करें"
+msgstr "Git, Mercurial और diffs के लिए वाक्यविन्यास चिन्हांकित करें"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
@@ -144,7 +143,7 @@ msgstr "इमोजी चयनकर्ता"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr "शॉर्टकट्स"
+msgstr "शॉर्टकट"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
@@ -156,7 +155,7 @@ msgstr "स्वतः स्वरूपण अक्षम करने क�
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr "थीम स्विचर जोड़ा गया"
+msgstr "थीम बदलने का समर्थन"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
@@ -164,7 +163,7 @@ msgstr "बेहतर गहरे मोड का समर्थन"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr "नमपैड एंटर का समर्थन करता है"
+msgstr "numpad enter का समर्थन करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
@@ -208,11 +207,11 @@ msgstr "विभिन्न सुधार"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "लाइनों को ऊपर और नीचे ले जाने के लिए कीबोर्ड शॉर्टकट जोड़े गए"
+msgstr "पंक्तियों को ऊपर और नीचे ले जाने के लिए कीबोर्ड शॉर्टकट जोड़े गए"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "Git, Mercurial और diffs के लिए सिंटैक्स को हाइलाइट करता है"
+msgstr "Git, Mercurial और diffs के लिए वाक्यविन्यास चिन्हांकित करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
@@ -236,7 +235,7 @@ msgstr "गहरे मोड की सेटिंग जोड़ी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr "टेक्स्ट एडिटर पर फोकस करता है"
+msgstr "पाठ संपादक पर केंद्रित करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
@@ -248,7 +247,7 @@ msgstr "प्राथमिकताओं को स्वागत विं
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr "केवल कमिट पर टेक्स्ट ओवरफ़्लो को हाइलाइट करता है"
+msgstr "केवल कमिट पर पाठ अतिप्रवाह को चिन्हांकित करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
@@ -256,15 +255,15 @@ msgstr "नया ऐप आइकन"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr "डबल बॉर्डर हटा दिया गया"
+msgstr "दोहरी सीमा हटा दी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr "एक प्राथमिकताएँ विंडो जोड़ी गई"
+msgstr "प्राथमिकता विंडो जोड़ी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr "डिफ़ॉल्ट शीर्षक लंबाई संकेत को 50 वर्णों पर सेट करता है"
+msgstr "तयशुदा शीर्षक लंबाई संकेत को 50 वर्णों पर तय करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
@@ -280,39 +279,39 @@ msgstr "विंडो के निचले कोनों को गोल�
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr "संपादक में 6px मार्जिन जोड़ा गया"
+msgstr "संपादक में 6px हाशिया जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
-"कार्रवाई आवश्यक है। अपडेट करने के बाद, कृपया एप्लिकेशन लॉन्च करें और "
+"कार्रवाई आवश्यक है। अद्यतन करने के बाद, कृपया अनुप्रयोग लॉन्च करें और "
 "निर्देशों का पालन करें।"
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr "डेस्कटॉप से लॉन्च होने पर एक स्वागत विंडो दिखाता है"
+msgstr "डेस्कटॉप से लॉन्च होने पर स्वागत विंडो दिखाता है"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr "Mercurial के लिए समर्थन जोड़ता है"
+msgstr "Mercurial के लिए समर्थन जोड़ा गया"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr "फाइल सिस्टम अनुमति हटा दी गई"
+msgstr "फाइलसिस्टम अनुमति हटा दी गई"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr "प्रारंभिक रिहाई। Gnomit 2.0 से फोर्क्ड।"
+msgstr "प्रारंभिक रिलीज़। Gnomit 2.0 से फोर्क किया गया।"
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr "प्रतिबद्ध संदेश में \"#\" का समर्थन करता है"
+msgstr "कमिट संदेश में \"#\" का समर्थन करता है"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr "निष्पादन योग्य पथ को ठीक से पहचानता है"
+msgstr "निष्पादनयोग्य पथ को ठीक से पहचानता है"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
@@ -321,11 +320,11 @@ msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr "Commit (_C)"
+msgstr "कमिट (_C)"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr "Merge (_M)"
+msgstr "मर्ज (_M)"
 
 #: src/scm.js:8
 msgid "_Tag"
@@ -337,7 +336,7 @@ msgstr "जोड़ें (_d)"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr "Rebase (_R)"
+msgstr "रिबेस (_R)"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
@@ -361,7 +360,7 @@ msgstr "इमोजी चयनकर्ता खोलें"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr "वर्तमान लाइन को ऊपर/नीचे ले जाएँ"
+msgstr "वर्तमान लाइन को ऊपर/नीचे ले जाएं"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
@@ -373,7 +372,7 @@ msgstr "सभी अचयनित करें"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr "जनरल"
+msgstr "सामान्य"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
@@ -385,7 +384,7 @@ msgstr "छोड़ें"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr "निरस्त (_A)"
+msgstr "निरस्त करें (_A)"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
@@ -393,7 +392,7 @@ msgstr "Commit के बारे में"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr "प्राथमिकताएँ"
+msgstr "प्राथमिकताएं"
 
 #: src/welcome.ui:69
 msgid "Git"
@@ -403,8 +402,8 @@ msgstr "Git"
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
-"Git के लिए Commit को डिफ़ॉल्ट संपादक के रूप में सेट करने के लिए टर्मिनल में "
-"निम्न कमांड चलाएँ"
+"Git के लिए Commit को तयशुदा संपादक के रूप में तय करने के लिए टर्मिनल में निम्"
+"न कमांड चलाएं"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
@@ -412,7 +411,7 @@ msgstr "क्लिपबोर्ड पर कॉपी करें"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr "प्रलेखन"
+msgstr "दस्तावेज़ीकरण"
 
 #: src/welcome.ui:112
 msgid ""
@@ -430,8 +429,8 @@ msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
 msgstr ""
-"Mercurial के लिए Commit को डिफ़ॉल्ट संपादक के रूप में सेट करने के लिए, अपने "
-"<tt>hgrc</tt> में निम्नलिखित सेट करें"
+"Mercurial के लिए Commit को तयशुदा संपादक के रूप में तय करने के लिए, अपने "
+"<tt>hgrc</tt> में निम्नलिखित निर्धारित करें"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
