@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-04-25 10:07+0000\n"
+"PO-Revision-Date: 2024-05-16 15:01+0000\n"
 "Last-Translator: Mirko Colaluca <m.colaluca@emobitaly.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/commit/commit/it/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.1-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -27,7 +27,7 @@ msgstr "Esegui"
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "Editor del messaggio di commit"
+msgstr "Esegui l'editor dei messaggi"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
