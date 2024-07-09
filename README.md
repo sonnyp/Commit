@@ -8,7 +8,7 @@ Commit is an editor that helps you write better Git and Mercurial commit message
 
 https://apps.gnome.org/Commit
 
-<a href='https://flathub.org/apps/details/re.sonny.Commit'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
+<a href='https://flathub.org/apps/details/re.sonny.Commit'><img alt='Download on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/></a>
 
 ## Installation
 
