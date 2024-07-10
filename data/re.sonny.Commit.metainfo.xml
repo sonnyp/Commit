@@ -5,7 +5,7 @@
   <name translate="no">Commit</name>
   <developer_name translate="no">Sonny Piers</developer_name>
   <developer id="re.sonny">
-      <name translate="no">Sonny Piers</name>
+    <name translate="no">Sonny Piers</name>
   </developer>
   <update_contact>sonnyp@gnome.org</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
@@ -45,10 +45,11 @@
       <li>Highlight syntax for Git, Mercurial and diffs</li>
     </ul>
   </description>
-  <url type="homepage">https://github.com/sonnyp/Commit</url>
-  <url type="bugtracker">https://github.com/sonnyp/Commit/issues</url>
-  <url type="translate">https://hosted.weblate.org/engage/commit/</url>
-  <url type="vcs-browser">https://github.com/sonnyp/Commit</url>
+  <url type="homepage">https://commit.sonny.re</url>
+  <url type="bugtracker">https://commit.sonny.re/feedback</url>
+  <url type="donation">https://commit.sonny.re/donate</url>
+  <url type="translate">https://commit.sonny.re/translate</url>
+  <url type="vcs-browser">https://commit.sonny.re/source</url>
   <screenshots>
     <screenshot type="default">
       <image>
