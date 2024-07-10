@@ -38,7 +38,8 @@ export default function Welcome({ application }) {
   const command = getCommand();
 
   const git_text = builder.get_object("git_text");
-  git_text.label = `<tt>git config --global core.editor "${command}"</tt>`;
+  git_text.label = `<tt>git config --global core.editor "${command}"\n` +
+    'git config --global --unset sequence.editor</tt>';
   const git_copy = builder.get_object("git_copy");
   git_copy.connect("clicked", () => {
     git_copy.get_clipboard().set(git_text.get_text());

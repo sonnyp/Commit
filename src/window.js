@@ -27,6 +27,20 @@ export default function Window({ application, file, text, type, readonly }) {
   const window = builder.get_object("window");
   if (__DEV__) window.add_css_class("devel");
 
+  settings.bind(
+    "window-width",
+    window,
+    "default-width",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+
+  settings.bind(
+    "window-height",
+    window,
+    "default-height",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+
   let title = GLib.path_get_basename(GLib.get_current_dir());
   if (parsed.detail) title += ` (${parsed.detail})`;
   window.set_title(title);

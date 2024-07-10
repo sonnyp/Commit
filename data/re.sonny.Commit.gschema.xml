@@ -13,6 +13,16 @@
       <summary>Body lines maximum length (in characters)</summary>
     </key>
 
+    <key name='window-height' type='i'>
+      <default>272</default>
+      <summary>The height of the commit message window.</summary>
+    </key>
+
+    <key name='window-width' type='i'>
+      <default>654</default>
+      <summary>The width of the commit message window.</summary>
+    </key>
+
     <key name="color-scheme" type="i">
       <default>0</default>
     </key>
