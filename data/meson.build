@@ -19,13 +19,16 @@ appstream_file = i18n.merge_file(
   output: 're.sonny.Commit.metainfo.xml',
   po_dir: '../po',
   install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
-appstream_util = find_program('appstream-util', required: false)
-if appstream_util.found()
-  test('Validate appstream file', appstream_util,
-    args: ['validate', appstream_file]
+appstreamcli = find_program('appstreamcli', required: false)
+if appstreamcli.found()
+  test(
+    'Validate appstream file',
+    appstreamcli,
+    args: ['validate', '--no-net', '--explain', appstream_file],
+    workdir: meson.current_build_dir(),
   )
 endif
 
