@@ -9,7 +9,7 @@
     "--socket=fallback-x11",
     "--socket=wayland",
     "--device=dri",
-    "--filesystem=home"
+    "--filesystem=host"
   ],
   "cleanup": [
     "/include",
