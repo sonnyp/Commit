@@ -1,7 +1,7 @@
 {
   "id": "re.sonny.Commit",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "46",
+  "runtime-version": "47",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Commit",
   "finish-args": [
@@ -32,7 +32,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-          "tag": "v0.12.0"
+          "tag": "v0.14.0"
         }
       ]
     },
@@ -43,8 +43,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/libspelling/0.2/libspelling-0.2.0.tar.xz",
-          "sha256": "fdc5609e02818eca6fc172ff164caa8e52dba638d7590130af3dfb1f28b53421"
+          "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.0.tar.xz",
+          "sha256": "00c63970d708a0ef3bcba40e708a06d7030114cb9f210c74583ffad56d36e3dd"
         }
       ]
     },

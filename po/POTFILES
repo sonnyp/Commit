@@ -13,7 +13,6 @@ troll/src/widgets/ThemeSelector.blp
 
 src/CommitEditor.blp
 src/CommitEditor.js
-src/util.js
 src/wrap.js
 src/editor.js
 troll/src/widgets/ThemeSelector.js
@@ -21,3 +20,8 @@ src/welcome.js
 src/ShortcutsWindow.js
 src/application.js
 src/main.js
+
+src/settings.js
+src/preferences.js
+src/preferences.blp
+troll/src/builder.js

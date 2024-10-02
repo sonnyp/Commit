@@ -1,52 +1,32 @@
-import Gtk from "gi://Gtk";
 import system from "system";
 import GLib from "gi://GLib";
-import Gio from "gi://Gio";
 
-import { settings } from "./util.js";
-import Interface from "./welcome.blp";
+import { global as config } from "./settings.js";
+
+import resource from "./welcome.blp" with { type: "uri" };
+import { build } from "../troll/src/builder.js";
+import { saveConfig, setupRows } from "./preferences.js";
 
 export default function Welcome({ application }) {
-  const builder = Gtk.Builder.new_from_resource(Interface);
+  const { window, spin_hint, spin_wrap, git_text, git_copy, hg_text, hg_copy } =
+    build(resource);
 
-  const window = builder.get_object("window");
+  setupRows({ spin_hint, spin_wrap, config });
+  application.connect("shutdown", () => {
+    saveConfig({ spin_hint, spin_wrap, config });
+  });
+
   window.set_application(application);
   if (__DEV__) window.add_css_class("devel");
 
-  const button_hint = builder.get_object("button_hint");
-  button_hint.set_range(...getRange("title-length-hint"));
-  button_hint.get_adjustment().set_step_increment(1);
-  button_hint.get_adjustment().set_page_increment(10);
-  settings.bind(
-    "title-length-hint",
-    button_hint,
-    "value",
-    Gio.SettingsBindFlags.DEFAULT,
-  );
-
-  const button_wrap = builder.get_object("button_wrap");
-  button_wrap.set_range(...getRange("body-length-wrap"));
-  button_wrap.get_adjustment().set_step_increment(1);
-  button_wrap.get_adjustment().set_page_increment(10);
-  settings.bind(
-    "body-length-wrap",
-    button_wrap,
-    "value",
-    Gio.SettingsBindFlags.DEFAULT,
-  );
-
   const command = getCommand();
 
-  const git_text = builder.get_object("git_text");
   git_text.label = `<tt>git config --global core.editor "${command}"</tt>`;
-  const git_copy = builder.get_object("git_copy");
   git_copy.connect("clicked", () => {
     git_copy.get_clipboard().set(git_text.get_text());
   });
 
-  const hg_text = builder.get_object("hg_text");
   hg_text.label = `<tt>[ui]\neditor=${command}</tt>`;
-  const hg_copy = builder.get_object("hg_copy");
   hg_copy.connect("clicked", () => {
     hg_copy.get_clipboard().set(hg_text.get_text());
   });
@@ -75,13 +55,4 @@ function getCommand() {
     programInvocationName,
     GLib.get_current_dir(),
   );
-}
-
-function getRange(key) {
-  const range = settings.get_range(key).unpack()[1].unpack();
-
-  return [
-    range.get_child_value(0).get_int32(),
-    range.get_child_value(1).get_int32(),
-  ];
 }
