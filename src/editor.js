@@ -166,7 +166,7 @@ export default function editor({ builder, button_save, parsed }) {
   }
 
   // Only select commit message body (not the comment) on select all.
-  source_view.connect_after("select-all", (self, selected) => {
+  source_view.connect_after("select-all", (_self, selected) => {
     if (!selected) return;
 
     // Redo the selection to limit it to the commit message

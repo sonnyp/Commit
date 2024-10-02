@@ -63,7 +63,7 @@ export default GObject.registerClass(
       const extra_menu = adapter.get_menu_model();
 
       this.view.set_extra_menu(extra_menu);
-      this.view.insert_action_group('spelling', adapter);
+      this.view.insert_action_group("spelling", adapter);
 
       adapter.set_enabled(true);
     }

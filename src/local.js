@@ -7,6 +7,7 @@ import Gio from "gi://Gio";
 
 import { build as gjspack } from "../troll/gjspack/src/gjspack.js";
 
+// eslint-disable-next-line no-restricted-globals
 imports.package.init({
   name: "re.sonny.Commit",
   version: "dev",

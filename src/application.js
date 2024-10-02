@@ -36,7 +36,7 @@ export default function Application() {
     null,
   );
 
-  application.connect("handle-local-options", (self, options) => {
+  application.connect("handle-local-options", (_self, options) => {
     if (options.contains("readonly")) readonly = true;
 
     return -1;
@@ -44,7 +44,7 @@ export default function Application() {
 
   // Open gets called when a file is passed as a command=line argument.
   // We expect Git or Mercurial to pass us one file.
-  application.connect("open", (self, files, hint) => {
+  application.connect("open", (_self, files, _hint) => {
     console.debug(
       "open",
       files.map((file) => file.get_path()),
@@ -120,7 +120,7 @@ function openEditor({ file, application, readonly }) {
     const [, contents] = GLib.file_get_contents(file_path);
     text = textDecoder.decode(contents);
   } catch (err) {
-    logError(err);
+    console.error(err);
     application.quit();
     return;
   }

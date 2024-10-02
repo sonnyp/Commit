@@ -4,6 +4,7 @@ import { exit, programArgs, programInvocationName } from "system";
 import GLib from "gi://GLib";
 import { setConsoleLogDomain } from "console";
 
+// eslint-disable-next-line no-restricted-globals
 imports.package.init({
   name: "@app_id@",
   version: "@version@",

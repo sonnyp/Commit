@@ -2,6 +2,7 @@ import GLib from "gi://GLib";
 import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
+import { gettext as _ } from "gettext";
 
 import Editor from "./editor.js";
 
@@ -20,7 +21,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parsed = parse(text, type);
   } catch (err) {
     if (__DEV__) {
-      logError(err);
+      console.error(err);
     }
   }
 
@@ -79,7 +80,7 @@ export default function Window({ application, file, text, type, readonly }) {
       window,
       application,
       has_changes,
-    }).catch(logError);
+    }).catch(console.error);
   });
   window.add_action(action_cancel);
 
@@ -146,7 +147,7 @@ function save({ file, value, readonly }) {
   try {
     GLib.file_set_contents(file.get_path(), value);
   } catch (err) {
-    logError(err);
+    console.error(err);
   }
 }
 
