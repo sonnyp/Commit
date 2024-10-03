@@ -5,6 +5,7 @@ import CommitEditor from "./CommitEditor.js";
 
 import { isEmptyCommitMessage } from "./scm.js";
 import {
+  AUTO_CAPITALIZE_TITLE,
   BODY_LENGTH_WRAP,
   local as config,
   TITLE_LENGTH_HINT,
@@ -110,7 +111,9 @@ export default function editor({ overlay, button_save, parsed }) {
     buffer.connect("end-user-action", () => {
       let { cursor_position } = buffer;
 
-      capitalizer(buffer, cursor_position);
+      if (config[AUTO_CAPITALIZE_TITLE]) {
+        capitalizer(buffer, cursor_position);
+      }
 
       // Take measurements
       let lines = buffer.text.split("\n");

@@ -32,6 +32,12 @@ Adw.ApplicationWindow window {
         }
 
         Adw.PreferencesRow {
+          Adw.SwitchRow switch_capitalize_title {
+            title: _("Auto capitalize title");
+          }
+        }
+
+        Adw.PreferencesRow {
           Adw.SpinRow spin_wrap {
             title: _("Body lines maximum length (in characters)");
             numeric: true;

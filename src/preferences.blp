@@ -18,6 +18,14 @@ Adw.PreferencesWindow window {
       }
 
       Adw.PreferencesRow {
+        title: _("Auto capitalize title");
+
+        Adw.SwitchRow switch_capitalize_title {
+          title: _("Auto capitalize title");
+        }
+      }
+
+      Adw.PreferencesRow {
         title: _("Body lines maximum length (in characters)");
 
         Adw.SpinRow spin_wrap {

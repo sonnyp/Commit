@@ -8,12 +8,21 @@ import { build } from "../troll/src/builder.js";
 import { saveConfig, setupRows } from "./preferences.js";
 
 export default function Welcome({ application }) {
-  const { window, spin_hint, spin_wrap, git_text, git_copy, hg_text, hg_copy } =
-    build(resource);
+  const {
+    window,
+    spin_hint,
+    spin_wrap,
+    switch_capitalize_title,
+    git_text,
+    git_copy,
+    hg_text,
+    hg_copy,
+  } = build(resource);
 
-  setupRows({ spin_hint, spin_wrap, config });
+  const objects = { spin_hint, spin_wrap, switch_capitalize_title };
+  setupRows({ ...objects, config });
   application.connect("shutdown", () => {
-    saveConfig({ spin_hint, spin_wrap, config });
+    saveConfig({ ...objects, config });
   });
 
   window.set_application(application);
