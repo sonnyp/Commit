@@ -89,7 +89,8 @@
         <ul>
           <li>Allow usage with repository on mounted disks</li>
           <li>Fix display of repository name</li>
-          <li>Support per-repo configuration</li>
+          <li>Add setting for disabling title auto capitalization</li>
+          <li>Support per-repository configuration</li>
           <li>GNOME 47</li>
         </ul>
       </description>
