@@ -5,7 +5,7 @@ import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 import Spelling from "gi://Spelling";
 
-import Template from "./CommitEditor.blp" assert { type: "uri" };
+import Template from "./CommitEditor.blp" with { type: "uri" };
 
 import "./language-specs/git.lang";
 import "./language-specs/hg.lang";
