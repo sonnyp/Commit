@@ -3,12 +3,14 @@ import Gio from "gi://Gio";
 
 export const TITLE_LENGTH_HINT = "title-length-hint";
 export const BODY_LENGTH_WRAP = "body-length-wrap";
+export const AUTO_CAPITALIZE_TITLE = "auto-capitalize-title";
 
 export const MIN_TITLE_LENGTH_HINT = 50;
 export const MIN_BODY_LENGTH_WRAP = 50;
 
 const DEFAULT_TITLE_LENGTH_HINT = 50;
 const DEFAULT_BODY_LENGTH_WRAP = 72;
+const DEFAULT_AUTO_CAPITALIZE_TITLE = true;
 
 export const MAX_TITLE_LENGTH_HINT = GLib.MAXINT32;
 export const MAX_BODY_LENGTH_WRAP = GLib.MAXINT32;
@@ -24,6 +26,7 @@ class Config {
 
   [TITLE_LENGTH_HINT];
   [BODY_LENGTH_WRAP];
+  [AUTO_CAPITALIZE_TITLE];
 
   constructor({ file }) {
     this.file = file;
@@ -55,6 +58,11 @@ class Config {
       BODY_LENGTH_WRAP,
       this[BODY_LENGTH_WRAP],
     );
+    this.key_file.set_boolean(
+      "re.sonny.Commit",
+      AUTO_CAPITALIZE_TITLE,
+      this[AUTO_CAPITALIZE_TITLE],
+    );
 
     this.key_file.save_to_file(this.file.get_path());
   }
@@ -80,6 +88,10 @@ local.load = function load() {
   this[BODY_LENGTH_WRAP] =
     getSafeKey(local.key_file, "get_integer", BODY_LENGTH_WRAP) ??
     global[BODY_LENGTH_WRAP];
+
+  this[AUTO_CAPITALIZE_TITLE] =
+    getSafeKey(local.key_file, "get_boolean", AUTO_CAPITALIZE_TITLE) ??
+    global[AUTO_CAPITALIZE_TITLE];
 };
 
 global.load = function load() {
@@ -94,6 +106,10 @@ global.load = function load() {
     getSafeKey(global.key_file, "get_integer", BODY_LENGTH_WRAP) ??
     settings.get_int(BODY_LENGTH_WRAP) ??
     DEFAULT_BODY_LENGTH_WRAP;
+
+  this[AUTO_CAPITALIZE_TITLE] =
+    getSafeKey(global.key_file, "get_boolean", AUTO_CAPITALIZE_TITLE) ??
+    DEFAULT_AUTO_CAPITALIZE_TITLE;
 };
 
 global.load();
