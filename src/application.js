@@ -7,9 +7,9 @@ import Welcome from "./welcome.js";
 import { getType } from "./scm.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
-import { settings } from "./util.js";
 
 import "./style.css";
+import { settings } from "./settings.js";
 
 const textDecoder = new TextDecoder();
 

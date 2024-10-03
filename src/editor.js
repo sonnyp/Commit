@@ -1,15 +1,20 @@
 import Gtk from "gi://Gtk";
-import Gio from "gi://Gio";
 import GtkSource from "gi://GtkSource";
 
 import CommitEditor from "./CommitEditor.js";
 
-import { settings } from "./util.js";
 import { isEmptyCommitMessage } from "./scm.js";
+import {
+  BODY_LENGTH_WRAP,
+  local as config,
+  TITLE_LENGTH_HINT,
+} from "./settings.js";
 
-const TAG_TITLE_TOO_LONG = "TAG_TITLE_TOO_LONG";
+const tag_title_too_long = new Gtk.TextTag({
+  foreground: "#e01b24",
+});
 
-export default function editor({ builder, button_save, parsed }) {
+export default function editor({ overlay, button_save, parsed }) {
   const {
     body,
     comment,
@@ -20,29 +25,25 @@ export default function editor({ builder, button_save, parsed }) {
     is_message,
   } = parsed;
 
-  const overlay = builder.get_object("overlay");
   const widget = new CommitEditor({ language });
   overlay.set_child(widget);
   const source_view = widget.view;
 
   source_view.set_show_right_margin(is_message);
 
-  settings.bind(
-    "body-length-wrap",
-    widget,
-    "wrap-width-request",
-    Gio.SettingsBindFlags.DEFAULT,
-  );
-
   const buffer = source_view.get_buffer();
-
-  const tag_title_too_long = new Gtk.TextTag({
-    name: TAG_TITLE_TOO_LONG,
-    foreground: "#e01b24",
-  });
   buffer.tag_table.add(tag_title_too_long);
 
-  buffer.connect("changed", () => {
+  function update() {
+    config.load();
+    widget.wrap_width_request = config[BODY_LENGTH_WRAP];
+    updateHighlight();
+  }
+  update();
+
+  buffer.connect("changed", updateHighlight);
+
+  function updateHighlight() {
     const is_empty = isEmptyCommitMessage(buffer.text, comment_prefix);
     button_save.set_sensitive(!is_empty);
 
@@ -63,13 +64,13 @@ export default function editor({ builder, button_save, parsed }) {
     // whole text. (We don’t do just the first line as someone might copy a
     // highlighted piece of the first line and paste it and we don’t want it
     // highlighted on subsequent lines if they do that.)
-    buffer.remove_tag_by_name(
-      TAG_TITLE_TOO_LONG,
+    buffer.remove_tag(
+      tag_title_too_long,
       startOfTextIterator,
       endOfTextIterator,
     );
 
-    const title_length_hint = settings.get_int("title-length-hint");
+    const title_length_hint = config[TITLE_LENGTH_HINT];
     // Highlight the overflow area, if any.
     if (firstLineLength > title_length_hint) {
       const startOfOverflowIterator =
@@ -80,7 +81,7 @@ export default function editor({ builder, button_save, parsed }) {
         endOfFirstLineIterator,
       );
     }
-  });
+  }
 
   // This is not user undo-able
   // if it was we could wrap it between
@@ -182,7 +183,7 @@ export default function editor({ builder, button_save, parsed }) {
     return false;
   });
 
-  return { source_view, buffer, editor: widget };
+  return { source_view, buffer, editor: widget, update };
 }
 
 // Method courtesy: https://stackoverflow.com/questions/51396490/getting-a-string-length-that-contains-unicode-character-exceeding-0xffff#comment89813733_51396686

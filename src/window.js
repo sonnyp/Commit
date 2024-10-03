@@ -1,20 +1,22 @@
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
-import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import { gettext as _ } from "gettext";
 
 import Editor from "./editor.js";
 
-import { settings } from "./util.js";
 import { parse, format, isEmptyCommitMessage } from "./scm.js";
 import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
-import Interface from "./window.blp";
+import { BODY_LENGTH_WRAP, local as config } from "./settings.js";
+import Preferences from "./preferences.js";
+
+import resource from "./window.blp" with { type: "uri" };
+import { build } from "../troll/src/builder.js";
 
 Gio._promisify(Adw.MessageDialog.prototype, "choose", "choose_finish");
 
 export default function Window({ application, file, text, type, readonly }) {
-  const builder = Gtk.Builder.new_from_resource(Interface);
+  const { window, menu_button, button_save, overlay } = build(resource);
 
   let parsed = {};
   try {
@@ -25,7 +27,6 @@ export default function Window({ application, file, text, type, readonly }) {
     }
   }
 
-  const window = builder.get_object("window");
   if (__DEV__) window.add_css_class("devel");
 
   let title = GLib.path_get_basename(GLib.get_current_dir());
@@ -33,26 +34,20 @@ export default function Window({ application, file, text, type, readonly }) {
   window.set_title(title);
 
   // Popover menu theme switcher
-  const button_menu = builder.get_object("menubutton");
-  const popover = button_menu.get_popover();
-  popover.add_child(new ThemeSelector(), "themeswitcher");
+  menu_button.get_popover().add_child(new ThemeSelector(), "themeswitcher");
 
-  const button_save = builder.get_object("button_save");
   button_save.label = parsed.action;
 
   // Set a 3px padding on the bottom right floating menu button
   {
-    const margin_box = builder
-      .get_object("menubutton")
-      .get_first_child()
-      .get_first_child();
+    const margin_box = menu_button.get_first_child().get_first_child();
     ["top", "end", "start", "bottom"].forEach((dir) => {
       margin_box["margin_" + dir] = 10;
     });
   }
 
-  const { buffer, source_view, editor } = Editor({
-    builder,
+  const { buffer, source_view, editor, update } = Editor({
+    overlay,
     button_save,
     type,
     parsed,
@@ -93,13 +88,10 @@ export default function Window({ application, file, text, type, readonly }) {
 
     if (isEmptyCommitMessage(text, parsed.comment_prefix)) return;
 
+    config.load();
     const value =
       parsed.is_message && !editor.isWiderThanWrapWidthRequest()
-        ? format(
-            text,
-            settings.get_int("body-length-wrap"),
-            parsed.comment_prefix,
-          )
+        ? format(text, config[BODY_LENGTH_WRAP], parsed.comment_prefix)
         : text;
 
     save({
@@ -110,6 +102,15 @@ export default function Window({ application, file, text, type, readonly }) {
     application.quit();
   });
   window.add_action(action_save);
+
+  const action_preferences = new Gio.SimpleAction({
+    name: "preferences",
+    parameter_type: null,
+  });
+  action_preferences.connect("activate", () => {
+    Preferences({ application, update });
+  });
+  application.add_action(action_preferences);
 
   // https://github.com/sonnyp/Commit/issues/33
   window.set_focus(source_view);

@@ -1,5 +1,5 @@
 project('Commit',
-  version: '4.1',
+  version: '4.2',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0'
 )

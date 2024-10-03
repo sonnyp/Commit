@@ -10,8 +10,8 @@
   <shortdesc>Commit message editor</shortdesc>
   <description>Commit is an editor that helps you write better Git and Mercurial commit messages.</description>
 
-  <homepage rdf:resource="https://github.com/sonnyp/Commit/" />
-  <bug-database rdf:resource="https://github.com/sonnyp/Commit/issues" />
+  <homepage rdf:resource="https://commit.sonny.re" />
+  <bug-database rdf:resource="https://commit.sonny.re/feedback" />
   <programming-language>JavaScript</programming-language>
 
   <platform>GTK 4</platform>

@@ -39,7 +39,7 @@ Adw.ApplicationWindow window {
 
     Overlay overlay {
       [overlay]
-      MenuButton menubutton {
+      MenuButton menu_button {
         primary: true;
         icon-name: "open-menu-symbolic";
         menu-model: app-menu;
@@ -61,6 +61,11 @@ menu app-menu {
   section {
     item {
       custom: "themeswitcher";
+    }
+
+    item {
+      label: _("Preferences");
+      action: "app.preferences";
     }
   }
 
