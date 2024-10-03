@@ -18,22 +18,21 @@ export const settings = new Gio.Settings({
   path: "/re/sonny/Commit/",
 });
 
-class GitConfig {
+class Config {
   key_file = new GLib.KeyFile();
-  #file;
+  file;
 
-  [TITLE_LENGTH_HINT] = DEFAULT_TITLE_LENGTH_HINT;
-  [BODY_LENGTH_WRAP] = DEFAULT_BODY_LENGTH_WRAP;
+  [TITLE_LENGTH_HINT];
+  [BODY_LENGTH_WRAP];
 
   constructor({ file }) {
-    this.#file = file;
-    this.load();
+    this.file = file;
   }
 
-  load(update = true) {
+  _load() {
     try {
       this.key_file.load_from_file(
-        this.#file.get_path(),
+        this.file.get_path(),
         GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS,
       );
     } catch (err) {
@@ -41,30 +40,10 @@ class GitConfig {
         throw err;
       }
     }
-
-    if (!update) return;
-
-    const title_length_hint = getSafeKey(
-      this.key_file,
-      "get_integer",
-      TITLE_LENGTH_HINT,
-    );
-    if (typeof title_length_hint === "number") {
-      this[TITLE_LENGTH_HINT] = title_length_hint;
-    }
-
-    const body_length_wrap = getSafeKey(
-      this.key_file,
-      "get_integer",
-      BODY_LENGTH_WRAP,
-    );
-    if (typeof body_length_wrap === "number") {
-      this[BODY_LENGTH_WRAP] = body_length_wrap;
-    }
   }
 
   save() {
-    this.load(false);
+    this._load();
 
     this.key_file.set_integer(
       "re.sonny.Commit",
@@ -76,7 +55,8 @@ class GitConfig {
       BODY_LENGTH_WRAP,
       this[BODY_LENGTH_WRAP],
     );
-    this.key_file.save_to_file(this.#file.get_path());
+
+    this.key_file.save_to_file(this.file.get_path());
   }
 }
 
@@ -86,8 +66,38 @@ const file_gitconfig_global = Gio.File.new_for_path(
 const file_gitconfig_local = Gio.File.new_for_path(
   GLib.get_current_dir(),
 ).get_child(".gitconfig");
-export const global = new GitConfig({ file: file_gitconfig_global });
-export const local = new GitConfig({ file: file_gitconfig_local });
+
+export const local = new Config({ file: file_gitconfig_local });
+export const global = new Config({ file: file_gitconfig_global });
+
+local.load = function load() {
+  this._load();
+
+  this[TITLE_LENGTH_HINT] =
+    getSafeKey(local.key_file, "get_integer", TITLE_LENGTH_HINT) ??
+    global[TITLE_LENGTH_HINT];
+
+  this[BODY_LENGTH_WRAP] =
+    getSafeKey(local.key_file, "get_integer", BODY_LENGTH_WRAP) ??
+    global[BODY_LENGTH_WRAP];
+};
+
+global.load = function load() {
+  this._load();
+
+  this[TITLE_LENGTH_HINT] =
+    getSafeKey(global.key_file, "get_integer", TITLE_LENGTH_HINT) ??
+    settings.get_int(TITLE_LENGTH_HINT) ??
+    DEFAULT_TITLE_LENGTH_HINT;
+
+  this[BODY_LENGTH_WRAP] =
+    getSafeKey(global.key_file, "get_integer", BODY_LENGTH_WRAP) ??
+    settings.get_int(BODY_LENGTH_WRAP) ??
+    DEFAULT_BODY_LENGTH_WRAP;
+};
+
+global.load();
+local.load();
 
 function getSafeKey(key_file, method, name) {
   try {
@@ -100,26 +110,4 @@ function getSafeKey(key_file, method, name) {
       throw err;
     }
   }
-}
-
-export function getConfig() {
-  local.load();
-  global.load();
-
-  const title_length_hint =
-    getSafeKey(local.key_file, "get_integer", TITLE_LENGTH_HINT) ??
-    getSafeKey(global.key_file, "get_integer", TITLE_LENGTH_HINT) ??
-    settings.get_int(TITLE_LENGTH_HINT) ??
-    DEFAULT_TITLE_LENGTH_HINT;
-
-  const body_length_wrap =
-    getSafeKey(local.key_file, "get_integer", BODY_LENGTH_WRAP) ??
-    getSafeKey(global.key_file, "get_integer", BODY_LENGTH_WRAP) ??
-    settings.get_int(BODY_LENGTH_WRAP) ??
-    DEFAULT_BODY_LENGTH_WRAP;
-
-  return {
-    [TITLE_LENGTH_HINT]: title_length_hint,
-    [BODY_LENGTH_WRAP]: body_length_wrap,
-  };
 }

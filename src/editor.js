@@ -4,9 +4,15 @@ import GtkSource from "gi://GtkSource";
 import CommitEditor from "./CommitEditor.js";
 
 import { isEmptyCommitMessage } from "./scm.js";
-import { BODY_LENGTH_WRAP, getConfig, TITLE_LENGTH_HINT } from "./settings.js";
+import {
+  BODY_LENGTH_WRAP,
+  local as config,
+  TITLE_LENGTH_HINT,
+} from "./settings.js";
 
-const TAG_TITLE_TOO_LONG = "TAG_TITLE_TOO_LONG";
+const tag_title_too_long = new Gtk.TextTag({
+  foreground: "#e01b24",
+});
 
 export default function editor({ overlay, button_save, parsed }) {
   const {
@@ -26,20 +32,15 @@ export default function editor({ overlay, button_save, parsed }) {
   source_view.set_show_right_margin(is_message);
 
   const buffer = source_view.get_buffer();
+  buffer.tag_table.add(tag_title_too_long);
 
-  let config;
   function update() {
-    config = getConfig();
+    config.load();
     widget.wrap_width_request = config[BODY_LENGTH_WRAP];
     updateHighlight();
   }
   update();
 
-  const tag_title_too_long = new Gtk.TextTag({
-    name: TAG_TITLE_TOO_LONG,
-    foreground: "#e01b24",
-  });
-  buffer.tag_table.add(tag_title_too_long);
   buffer.connect("changed", updateHighlight);
 
   function updateHighlight() {
@@ -63,8 +64,8 @@ export default function editor({ overlay, button_save, parsed }) {
     // whole text. (We don’t do just the first line as someone might copy a
     // highlighted piece of the first line and paste it and we don’t want it
     // highlighted on subsequent lines if they do that.)
-    buffer.remove_tag_by_name(
-      TAG_TITLE_TOO_LONG,
+    buffer.remove_tag(
+      tag_title_too_long,
       startOfTextIterator,
       endOfTextIterator,
     );

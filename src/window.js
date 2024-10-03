@@ -7,7 +7,7 @@ import Editor from "./editor.js";
 
 import { parse, format, isEmptyCommitMessage } from "./scm.js";
 import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
-import { BODY_LENGTH_WRAP, getConfig } from "./settings.js";
+import { BODY_LENGTH_WRAP, local as config } from "./settings.js";
 import Preferences from "./preferences.js";
 
 import resource from "./window.blp" with { type: "uri" };
@@ -88,9 +88,10 @@ export default function Window({ application, file, text, type, readonly }) {
 
     if (isEmptyCommitMessage(text, parsed.comment_prefix)) return;
 
+    config.load();
     const value =
       parsed.is_message && !editor.isWiderThanWrapWidthRequest()
-        ? format(text, getConfig()[BODY_LENGTH_WRAP], parsed.comment_prefix)
+        ? format(text, config[BODY_LENGTH_WRAP], parsed.comment_prefix)
         : text;
 
     save({
