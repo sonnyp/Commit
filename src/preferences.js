@@ -16,14 +16,12 @@ export default function Preferences({ application, update }) {
 
   const objects = { spin_hint, spin_wrap, switch_capitalize_title };
   setupRows({ ...objects, config });
-  window.connect("close-request", () => {
+  window.connect("closed", () => {
     saveConfig({ ...objects, config });
     update();
   });
 
-  window.set_transient_for(application.get_active_window());
-  window.set_application(application);
-  window.present();
+  window.present(application.get_active_window());
 
   return { window };
 }
