@@ -8,48 +8,55 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-10-06 09:15+0000\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
+"Language-Team: Romanian <https://hosted.weblate.org/projects/commit/commit/"
+"ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
-msgstr ""
+msgstr "Commit"
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr ""
+msgstr "Editor de mesaje de comitere de modificări (commit)"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr ""
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr ""
+msgstr "Lungimea maximă a titlului (în caractere)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Lungimea maximă a liniilor corpului (în caractere)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
 msgstr ""
+"Commit este un editor care vă ajută să scrieți mesaje de comitere de "
+"modificări, Git și Mercurial, mai bune."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
 msgstr ""
+"După instalare, asigurați-vă că lansați aplicația și urmați instrucțiunile."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -58,353 +65,379 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
+"Commit va apărea automat când faceți o modificare într-unul dintre "
+"proiectele dvs. Pentru a salva mesajul de comitere a modificării, apăsați "
+"butonul «Comitere modificări» sau comanda rapidă <code>Ctrl+Return</code>. "
+"Pentru a anula și a revoca Comiterea modificărilor, apăsați butonul «Anulare»"
+" sau tasta <code>Escape</code>."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr ""
+msgstr "Caracteristici:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "Evidențiază depășirea titlului mesajului de comitere a modificărilor"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Încadrare inteligentă a corpului mesajului"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "Inserează o linie goală între titlu și corp"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr ""
+"Comentariile sunt numai-pentru-citire și sunt excluse din „Selectați toate”"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "Afișează dosarul proiectului și ramura în antetul ferestrei"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Suport pentru modul întunecat"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Navigare și comenzi rapide de la tastatură"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Suport pentru anulare/refacere"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Selector de pictograme „emoji”"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr ""
+"Funcționează cu git commit, merge, tag --annotate, add --patch, rebase "
+"--interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr ""
+msgstr "Acceptă comanda commit de la Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
 msgstr ""
+"Pune automat în majusculă începutul titlului mesajului de comitere a "
+"modificărilor"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
 msgstr ""
+"Fereastră de bun venit cu configurarea și instrucțiunile de uz ale "
+"programului"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Evidențiere sintaxă pentru Git, Mercurial și diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr ""
+msgstr "Fereastra principală"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Selector de pictograme „emoji”"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Combinații taste rapide"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr ""
+msgstr "Fereastră de bun venit"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Redimensionați fereastra pentru a dezactiva formatarea automată"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Adăugați un comutator de teme"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Îmbunătățirea suportului pentru modul întunecat"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "Acceptă intrarea de la tastatura numerică"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Adaugă elemente mnemonice pentru butoane"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Corectarea majusculelor la modificare"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Îmbunătățirea scrierii automate cu majuscule"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "Adaugă suport pentru gitconfig și hgrc"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Oferă suport pentru editarea oricărui fișier"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
 msgstr ""
+"Fă ca eticheta butonului principal să fie dinamică («Etichetă», «Rebase», «"
+"Comitere modificări», ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Utilizează 2 spații pentru indentare"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Adaugă butonul de meniu"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "Platforma GNOME 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Diverse corectări"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr ""
+"Adăugați comenzi rapide de la tastatură pentru deplasarea liniilor în sus și "
+"în jos"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Evidențiere sintaxă pentru Git, Mercurial și diffs"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "Adăugați o fereastră cu comenzi rapide"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Elimină temporar verificarea ortografică"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Suport pentru anulare și refacere"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Adaugă o pictogramă simbolică"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Adaugă opțiunea de alegere a modului întunecat"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Focalizează editorul de text"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "Adaptarea la GTK 4 și libadwaita"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "Mutarea preferințelor în fereastra de întâmpinare"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
 msgstr ""
+"Evidențiază doar depășirea textului din mesajulde comitere a modificărilor"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "Pictogramă nouă pentru aplicație"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "Elimină marginea dublă"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "Adăugarea unei ferestre Preferențe"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "Stabilește lungimea implicită a titlului la 50 de caractere"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
 msgstr ""
+"Corectarea citirii mesajelor de comitere a modificărilor cu caractere "
+"speciale"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "Corectare git rebase nerecunoscut"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "Rotunjește colțurile de jos ale ferestrelor"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "Adaugă o margine de 6px la editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
+"Acțiune necesară. După actualizare, vă rugăm să lansați aplicația și să "
+"urmați instrucțiunile."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
 msgstr ""
+"Afișează o fereastră de întâmpinare la lansarea din meniul de aplicații al "
+"biroului"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "Adaugă suport pentru Mercurial"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "Elimină permisiunea sistemului de fișiere"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "Versiune inițială. Desprinsă din Gnomit 2.0."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "Suport pentru „#” în mesajul de comitere al modificărilor"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "Recunoașterea corectă a rutei executabile"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr ""
+msgstr "Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "_Comitere modificări"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Fuzionare"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Etichetă"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "A_dăugare"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Salvează"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Editare"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Salvează și confirmă"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Anulare și revocare"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Deschide selectorul de pictograme „emoji”"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Mută linia curentă în sus/jos"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Selectează tot"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Deselectează tot"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Combinații taste rapide"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Ieșire"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_Anulare"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "Despre Commit"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "Preferințe"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
+"Pentru a stabili Commit ca editor implicit pentru Git, executați următoarea "
+"comandă în Terminal"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Copiază în clipboard"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "Documentație"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
@@ -412,7 +445,9 @@ msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
 msgstr ""
+"Pentru a stabili Commit ca editor implicit pentru Mercurial, definiți "
+"următoarele în <tt>hgrc</tt>"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
