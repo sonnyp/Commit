@@ -2,9 +2,8 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import { gettext as _ } from "gettext";
 
-export default function About({ application }) {
-  const dialog = new Adw.AboutWindow({
-    application,
+export default function About() {
+  const dialog = new Adw.AboutDialog({
     application_name: "Commit",
     developers: ["Sonny Piers https://sonny.re", "Aral Balkan https://ar.al/"],
     artists: ["Tobias Bernard <tbernard@gnome.org>"],
@@ -13,8 +12,6 @@ export default function About({ application }) {
     version: pkg.version,
     website: "https://commit.sonny.re",
     issue_url: "https://commit.sonny.re/feedback",
-    transient_for: application.get_active_window(),
-    modal: true,
     application_icon: "re.sonny.Commit",
     // TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
     translator_credits: _("translator-credits"),
@@ -32,7 +29,7 @@ export default function About({ application }) {
     "Felipe Kinoshita https://mastodon.social/@fkinoshita",
     "EncryptedEasty https://github.com/EncryptedEasty",
   ]);
-  dialog.present();
+  dialog.present(null);
 
   return { dialog };
 }

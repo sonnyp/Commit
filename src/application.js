@@ -73,7 +73,7 @@ export default function Application() {
     parameter_type: null,
   });
   action_about.connect("activate", () => {
-    About({ application });
+    About();
   });
   application.add_action(action_about);
 

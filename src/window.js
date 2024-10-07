@@ -13,7 +13,7 @@ import Preferences from "./preferences.js";
 import resource from "./window.blp" with { type: "uri" };
 import { build } from "../troll/src/builder.js";
 
-Gio._promisify(Adw.MessageDialog.prototype, "choose", "choose_finish");
+Gio._promisify(Adw.AlertDialog.prototype, "choose", "choose_finish");
 
 export default function Window({ application, file, text, type, readonly }) {
   const { window, menu_button, button_save, overlay } = build(resource);
@@ -108,7 +108,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_preferences.connect("activate", () => {
-    Preferences({ application, update });
+    Preferences({ update });
   });
   application.add_action(action_preferences);
 
@@ -165,18 +165,15 @@ async function confirmDiscard({ type, value, window, has_changes }) {
 
   const cancel = "cancel";
   const discard = "discard";
-  const dialog = new Adw.MessageDialog({
+  const dialog = new Adw.AlertDialog({
     heading: _("Discard changes?"),
     close_response: "cancel",
-    modal: true,
-    transient_for: window,
   });
   dialog.add_response(cancel, _("Cancel"));
   dialog.add_response(discard, _("Discard"));
   dialog.set_response_appearance("discard", Adw.ResponseAppearance.DESTRUCTIVE);
   dialog.set_default_response("discard");
-  dialog.present();
 
-  const response = await dialog.choose(null);
+  const response = await dialog.choose(window, null);
   return response === discard;
 }
