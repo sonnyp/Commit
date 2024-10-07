@@ -2,7 +2,7 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import { gettext as _ } from "gettext";
 
-export default function About({ application }) {
+export default function About() {
   const dialog = new Adw.AboutDialog({
     application_name: "Commit",
     developers: ["Sonny Piers https://sonny.re", "Aral Balkan https://ar.al/"],
@@ -29,7 +29,7 @@ export default function About({ application }) {
     "Felipe Kinoshita https://mastodon.social/@fkinoshita",
     "EncryptedEasty https://github.com/EncryptedEasty",
   ]);
-  dialog.present(application.get_active_window());
+  dialog.present(null);
 
   return { dialog };
 }

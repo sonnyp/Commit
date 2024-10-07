@@ -108,7 +108,7 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_preferences.connect("activate", () => {
-    Preferences({ application, update });
+    Preferences({ update });
   });
   application.add_action(action_preferences);
 
@@ -168,15 +168,12 @@ async function confirmDiscard({ type, value, window, has_changes }) {
   const dialog = new Adw.AlertDialog({
     heading: _("Discard changes?"),
     close_response: "cancel",
-    modal: true,
-    transient_for: window,
   });
   dialog.add_response(cancel, _("Cancel"));
   dialog.add_response(discard, _("Discard"));
   dialog.set_response_appearance("discard", Adw.ResponseAppearance.DESTRUCTIVE);
   dialog.set_default_response("discard");
-  dialog.present(this);
 
-  const response = await dialog.choose(this);
+  const response = await dialog.choose(window, null);
   return response === discard;
 }

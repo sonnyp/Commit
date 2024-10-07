@@ -10,7 +10,7 @@ import {
   AUTO_CAPITALIZE_TITLE,
 } from "./settings.js";
 
-export default function Preferences({ application, update }) {
+export default function Preferences({ update }) {
   const { window, spin_hint, spin_wrap, switch_capitalize_title } =
     build(resource);
 
@@ -21,7 +21,7 @@ export default function Preferences({ application, update }) {
     update();
   });
 
-  window.present(application.get_active_window());
+  window.present(null);
 
   return { window };
 }
