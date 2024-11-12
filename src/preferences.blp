@@ -2,23 +2,21 @@ using Gtk 4.0;
 using Adw 1;
 
 Adw.PreferencesDialog window {
-  title: _("Preferences");
-
   Adw.PreferencesPage {
     Adw.PreferencesGroup {
       description: _("For the current repository");
 
       Adw.SpinRow spin_hint {
-        title: _("Title maximum length (in characters)");
+        title: _("Title Maximum Length (in characters)");
         numeric: true;
       }
 
       Adw.SwitchRow switch_capitalize_title {
-        title: _("Auto capitalize title");
+        title: _("Auto Capitalize Title");
       }
 
       Adw.SpinRow spin_wrap {
-        title: _("Body lines maximum length (in characters)");
+        title: _("Body Lines Maximum Length (in characters)");
         numeric: true;
       }
     }
