@@ -1,13 +1,14 @@
 using Gtk 4.0;
 using GtkSource 5;
 
-template $CommitEditor : ScrolledWindow {
+template $CommitEditor: ScrolledWindow {
   vexpand: true;
 
   GtkSource.View view {
     buffer: GtkSource.Buffer buffer {
       enable-undo: true;
     };
+
     monospace: true;
     show-right-margin: true;
     wrap-mode: word;
