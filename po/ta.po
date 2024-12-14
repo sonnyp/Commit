@@ -8,48 +8,54 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-12-16 00:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/commit/commit/ta/>"
+"\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.9-rc\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
-msgstr ""
+msgstr "கமிட்"
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr ""
+msgstr "செய்தி எடிட்டரைச் செய்யுங்கள்"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr ""
+msgstr "git; மெர்குரியல்; Hg; scm; gnomit; கோமட்; வால்மீன்;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr ""
+msgstr "தலைப்பு அதிகபட்ச நீளம் (எழுத்துக்களில்)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "உடல் கோடுகள் அதிகபட்ச நீளம் (எழுத்துகளில்)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
 msgstr ""
+"கமிட் என்பது ஒரு எடிட்டர், இது சிறந்த அறிவிலி மற்றும் மெர்குரியல் கமிட் செய்திகளை எழுத "
+"உதவுகிறது."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
 msgstr ""
+"நிறுவிய பின் பயன்பாட்டைத் தொடங்குவதை உறுதிசெய்து வழிமுறைகளைப் பின்பற்றவும்."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -58,353 +64,367 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
+"உங்கள் திட்டங்களில் ஒன்றில் நீங்கள் ஈடுபடும்போது கமிட் தானாகவே பாப் அப் செய்யும். உங்கள் கமிட் "
+"செய்தியைச் சேமிக்க, கமிட் பொத்தான் அல்லது <code> ctrl+திரும்ப </code> குறுக்குவழியை "
+"அழுத்தவும். கருக்கலைப்பு செய்ய மற்றும் நிராகரிக்க, கருக்கலைப்பு பொத்தானை அழுத்தவும் அல்லது "
+"<code> தப்பிக்க </code> விசையை அழுத்தவும்."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr ""
+msgstr "அம்சங்கள்:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "கமிட் தலைப்பின் சிறப்பம்சங்கள்"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "அறிவுள்ள உடல் மடக்குதல்"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "தலைப்பு மற்றும் உடலுக்கு இடையில் ஒரு வெற்று கோட்டை செருகும்"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr ""
+"கருத்துகள் படிக்கக்கூடியவை மற்றும் \"அனைத்தையும் தேர்ந்தெடுக்கவும்\" என்பதிலிருந்து "
+"விலக்கப்படுகின்றன"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "திட்ட கோப்புறை மற்றும் கிளையை சாளர தலைப்பில் காட்டுகிறது"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "இருண்ட பயன்முறை உதவி"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "விசைப்பலகை வழிசெலுத்தல் மற்றும் குறுக்குவழிகள்"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "ஆதரவை செயல்தவிர்க்கவும்/மீண்டும் செய்யவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "ஈமோசி பிக்கர்"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr ""
+"Git commact, forge, tag --annotate, கூட்டு - -patch, redase -interactive"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr ""
+msgstr "மெர்குரியல் கமிட்டத்தை ஆதரிக்கிறது"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "ஆட்டோ கமிட் தலைப்பை மூலதனமாக்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "அமைப்புகள் மற்றும் வழிமுறைகளுடன் சாளரத்தை வரவேற்கிறோம்"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
 msgstr ""
+"அறிவிலி, மெர்குரியல் மற்றும் வேறுபாடுகளுக்கான தொடரியல் முன்னிலைப்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr ""
+msgstr "முதன்மை சாளரம்"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "ஈமோசி தேர்வாளர்"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "குறுக்குவழிகள்"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr ""
+msgstr "வரவேற்பு சாளரம்"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "ஆட்டோ வடிவமைப்பை முடக்க சாளரத்தை அளவை மாற்றவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "கருப்பொருள் ச்விட்சரைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "இருண்ட பயன்முறை ஆதரவை மேம்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "எண்பலகை ENTER ஐ ஆதரிக்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "பொத்தான்களுக்கு நினைவூட்டல் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "திருத்தும்போது மூலதனத்தை சரிசெய்யவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "வாகன மூலதனத்தை மேம்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "GitConfig மற்றும் HGRC க்கு ஆதரவைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "எந்த கோப்பையும் திருத்துவதற்கு ஆதரவளிக்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "முதன்மை பொத்தான் சிட்டை மாறும் (குறிச்சொல், மறுதொடக்கம், கமிட், ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "2 இடங்கள் உள்தள்ளலைப் பயன்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "பட்டியல் பொத்தானைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "க்னோம் இயங்குதளம் 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "பல்வேறு திருத்தங்கள்"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr ""
+"வரிகளை மேலே மற்றும் கீழ் நகர்த்த விசைப்பலகை குறுக்குவழிகளைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr ""
+"அறிவிலி, மெர்குரியல் மற்றும் வேறுபாடுகளுக்கான தொடரியல் முன்னிலைப்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "குறுக்குவழிகள் சாளரத்தைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "எழுத்துப்பிழை சோதனை தற்காலிகமாக அகற்றவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "செயல்தவிர்க்கவும் மீண்டும் செய்யவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "குறியீட்டு ஐகானைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "இருண்ட பயன்முறை அமைப்பைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "உரை எடிட்டரை மையப்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "சி.டி.கே 4 மற்றும் லிபாட்வைட்டா வரை துறைமுகம்"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "சாளரத்தை வரவேற்க விருப்பங்களை நகர்த்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "கமிட்சில் உரை வழிதல் மட்டுமே முன்னிலைப்படுத்தவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "புதிய பயன்பாட்டு படவுரு"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "இரட்டை எல்லையை அகற்று"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "விருப்பத்தேர்வுகள் சாளரத்தைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "இயல்புநிலை தலைப்பு நீள குறிப்பை 50 எழுத்துகளுக்கு அமைக்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr ""
+msgstr "சிறப்பு எழுத்துக்களுடன் வாசிப்பு கமிட்டுகளை சரிசெய்யவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "Git மறுதொடக்கம் அங்கீகரிக்கப்படவில்லை"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "சாளரங்கள் கீழ் மூலைகளை வட்டமாக ஆக்குங்கள்"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "எடிட்டரில் 6px விளிம்பைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
+"நடவடிக்கை தேவை. புதுப்பித்த பிறகு, விண்ணப்பத்தைத் தொடங்கி வழிமுறைகளைப் பின்பற்றவும்."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr ""
+msgstr "டெச்க்டாப்பில் இருந்து தொடங்கும்போது வரவேற்பு சாளரத்தைக் காட்டு"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "மெர்குரியலுக்கு ஆதரவைச் சேர்க்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "கோப்பு முறைமை அனுமதியை அகற்று"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "தொடக்க வெளியீடு. க்னோமிட் 2.0 இலிருந்து முட்கரண்டி."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "கமிட் செய்தியில் \"#\" ஐ ஆதரிக்கவும்"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "இயங்கக்கூடிய பாதையை சரியாக அங்கீகரிக்கவும்"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr ""
+msgstr "மொழிபெயர்ப்பாளர்-வரவு"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "_COMMIT"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_மர்ச்"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_TAG"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "A_dd"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_ ரிபேச்"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_சேவ்"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "திருத்துதல்"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "சேமித்து உறுதிப்படுத்தவும்"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "ரத்து செய்து தள்ளுபடி"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "திறந்த ஈமோசி தேர்வு"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "தற்போதைய வரியை மேலே/கீழ் நகர்த்தவும்"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "அனைத்தையும் தெரிவுசெய்"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "அனைத்தையும் தேர்ந்தெடுக்கவும்"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "பொது"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "விசைப்பலகை குறுக்குவழிகள்"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "வெளியேறு"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_போர்ட்"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "கமிட் பற்றி"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "விருப்பத்தேர்வுகள்"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "அறிவிலி"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
+"GIT க்கான இயல்புநிலை எடிட்டராக உறுதிப்பாட்டை அமைக்க முனையத்தில் பின்வரும் கட்டளையை "
+"இயக்கவும்"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "கிளிப்போர்டுக்கு நகலெடுக்கவும்"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "ஆவணப்படுத்துதல்"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "மெர்குரியல்"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
@@ -412,7 +432,9 @@ msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
 msgstr ""
+"மெர்குரியலுக்கான இயல்புநிலை எடிட்டராக உறுதிப்பாட்டை அமைக்க, பின்வருவனவற்றை உங்கள் <tt> "
+"HGRC </tt> இல் அமைக்கவும்"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
