@@ -8,26 +8,23 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-10-18 04:02+0000\n"
-"Last-Translator: Kim Seohyun <kshjessica@ewhain.net>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/commit/commit/ko/>"
-"\n"
-"Language: ko\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.1\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
-msgstr "커밋"
+msgstr ""
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr "커밋 메시지 편집기"
+msgstr ""
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
@@ -36,24 +33,23 @@ msgstr ""
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr "제목 최대 길이 (문자)"
+msgstr ""
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr "본문 최대 길이 (문자)"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
-msgstr "Commit은 당신이 더 나은 Git이나 Mercurial 커밋 메시지를 작성할 수 있게 하는 "
-"편집기입니다."
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
-msgstr "설치가 완료되면 애플리케이션을 실행하고 지시 사항을 따르십시오."
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -62,257 +58,251 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
-"커밋은 프로젝트 중 하나에서 커밋을 만들 때 자동으로 나타납니다. 커밋 "
-"메시지를 저장하려면 커밋 버튼이나 <code>Ctrl+Return</code> 단축키를 "
-"누르십시오. 커밋을 중단하고 취소하려면 중단 버튼이나 <code>Escape</code> "
-"키를 누르십시오."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr "기능:"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr "커밋 제목의 내용이 넘침을 강조함"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr "스마트 바디 랩핑"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr "제목과 본문 사이에 빈 줄을 한 칸 넣으십시오"
+msgstr ""
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr "위의 완료되지 않은 문자열 오류는 읽기 전용이며 '모두 선택'에서 제외됨"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr "창 헤더에 프로젝트 폴더와 브랜치를 표시함"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr "다크 모드 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr "키보드 탐색 및 바로 가기"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr "실행 취소/다시 실행 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr "이모지 선택기"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
-msgstr "git 커밋, 병합, 태그 --annotate, 추가 --patch, 리베이스 --interactive를 "
-"지원함"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr "Mercurial 커밋 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr "커밋 제목 자동 대문자화"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr "설정 및 안내 지시사항이 있는 환영 창"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr "Git, Mercurial 및 diffs 을 위한 구문 강조 표시"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr "메인 윈도우"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr "이모지 선택기"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr "바로가기"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr "환영창"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr "창 크기를 조절해 자동 포맷팅 비활성화"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr "테마 변경기 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr "향상된 다크 모드 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr "키패드 엔터 키 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr "버튼에 단축키 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr "수정 시 대소문자 수정"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr "자동 대문자화 개선"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr "gitconfig와 hgrc 지원 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr "임의의 파일 편집 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr "주 버튼 레이블을 동적으로 만들기 (태그, 리베이스, 커밋, ...)"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr "2칸 공백 들여쓰기 사용"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr "메뉴 버튼 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr "GNOME Platform 42"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr "다양한 수정"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr "행을 위로 이동 및 아래로 이동하는 단축키 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr "Git, Mercurial 및 diffs을 위한 구문 하이라이트"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr "단축기 창 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr "맞춤법 검사기 임시 제거"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr "실행 취소 및 다시 실행 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr "상징적 아이콘 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr "다크모드 세팅 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr "텍스트 편집기 포커스"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr "GTK 4 와 libadwaita 로 이동"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr "환영 창으로 환경 설정 이동"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr "커밋의 텍스트 오버플로우만 하이라이트"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr "새로운 앱 아이콘"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr "이중 경계 제거"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr "환경 설정 창 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr "기본 제목 길이 힌트를 50자로 설정"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr "특수 문자를 포함하는 커밋 읽기 수정"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr "인식 되지 않은 git rebase 수정"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr "창의 하단 모퉁이 둥글게 만들기"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr "에디터에 6px 여백 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
-msgstr "조치가 필요합니다. 업데이트 후, 애플리케이션을 실행하고 지시 사항을 "
-"따르십시오."
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr "데스크톱에서 실행될 때 환영 창 표시"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr "Mercurial 지원 추가"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr "파일 시스템 권한 제거"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr "최초 릴리스. Gnomit 2.0에서 포크됨."
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr "커밋 메시지에서 '#' 지원"
+msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr "실행 가능한 경로를 올바르게 인식하기"
+msgstr ""
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr "번역자-크레딧"
+msgstr ""
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
@@ -425,4 +415,4 @@ msgstr ""
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr "https://www.mercurial-scm.org/wiki/editor"
+msgstr ""
