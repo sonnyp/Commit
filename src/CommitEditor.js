@@ -11,7 +11,6 @@ import "./language-specs/git.lang";
 import "./language-specs/hg.lang";
 
 const scheme_manager = GtkSource.StyleSchemeManager.get_default();
-const style_manager = Adw.StyleManager.get_default();
 const language_manager = GtkSource.LanguageManager.get_default();
 language_manager.set_search_path([
   ...language_manager.get_search_path(),
@@ -55,8 +54,9 @@ export default GObject.registerClass(
 
       this.buffer.set_language(language_manager.get_language(this.language));
 
+      this.style_manager = Adw.StyleManager.get_default();
       this.update_style();
-      style_manager.connect("notify::dark", this.update_style.bind(this));
+      this.style_manager.connect("notify::dark", this.update_style.bind(this));
 
       const checker = Spelling.Checker.get_default();
       const adapter = Spelling.TextBufferAdapter.new(this.buffer, checker);
@@ -88,7 +88,7 @@ export default GObject.registerClass(
     }
 
     update_style() {
-      const scheme = style_manager.dark ? "Adwaita-dark" : "Adwaita";
+      const scheme = this.style_manager.dark ? "Adwaita-dark" : "Adwaita";
       const style_scheme = scheme_manager.get_scheme(scheme);
       this.buffer.set_style_scheme(style_scheme);
     }

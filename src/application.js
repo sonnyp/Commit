@@ -13,8 +13,6 @@ import { settings } from "./settings.js";
 
 const textDecoder = new TextDecoder();
 
-const style_manager = Adw.StyleManager.get_default();
-
 export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Commit",
@@ -61,6 +59,7 @@ export default function Application() {
 
   application.connect("startup", () => {
     console.debug("startup");
+    setColorScheme();
   });
 
   application.connect("activate", () => {
@@ -140,8 +139,8 @@ function openEditor({ file, application, readonly }) {
 }
 
 function setColorScheme() {
+  const style_manager = Adw.StyleManager.get_default();
   const color_scheme = settings.get_int("color-scheme");
   style_manager.set_color_scheme(color_scheme);
 }
-setColorScheme();
 settings.connect("changed::color-scheme", setColorScheme);
