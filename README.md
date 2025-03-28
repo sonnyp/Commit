@@ -64,7 +64,7 @@ Thank you for your help!
 
 ```sh
 cd Commit
-git submodule update --init --recursive
+git clone https://github.com/sonnyp/troll
 ./src/local.js --readonly test/fixtures/with-body/COMMIT_EDITMSG
 ```
 

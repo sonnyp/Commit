@@ -54,6 +54,12 @@
       "buildsystem": "meson",
       "sources": [
         {
+          "type": "git",
+          "url": "https://github.com/sonnyp/troll.git",
+          "commit": "8b0275948eedec9ed0378f9bdda1aa4aac3062ba",
+          "dest": "troll"
+        },
+        {
           "type": "dir",
           "path": "."
         }
