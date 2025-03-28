@@ -7,7 +7,7 @@ export default function About() {
     application_name: "Commit",
     developers: ["Sonny Piers https://sonny.re", "Aral Balkan https://ar.al/"],
     artists: ["Tobias Bernard <tbernard@gnome.org>"],
-    copyright: "© 2020-2022 Sonny Piers\n© 2018-2020 Aral Balkan",
+    copyright: "© 2020-2025 Sonny Piers\n© 2018-2020 Aral Balkan",
     license_type: Gtk.License.GPL_3_0,
     version: pkg.version,
     website: "https://commit.sonny.re",
