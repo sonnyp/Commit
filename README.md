@@ -42,7 +42,11 @@ or set and use the move-to-center keybinding
 gsettings set org.gnome.desktop.wm.keybindings move-to-center "['<Super><Control><Shift>Space']"
 ```
 
-</details>
+### Toolbx container
+
+If you use git from a [Toolbx](https://containertoolbx.org/) container, simply install `flatpak` in that container and `git commit` will be able to lunch Commit from your host.
+
+<!--
 
 ## Translation
 
@@ -53,6 +57,8 @@ If you'd like to help translating Commit into your language, please head over to
 </a>
 
 Thank you for your help!
+
+-->
 
 ## Development
 
@@ -160,7 +166,7 @@ Many thanks to its original author [Aral Balkan](https://ar.al) of [Small Techno
 
 ## Copyright
 
-- © 2020-2022 [Sonny Piers](https://github.com/sonnyp)
+- © 2020-2025 [Sonny Piers](https://github.com/sonnyp)
 - © 2018-2020 [Aral Balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
