@@ -9,7 +9,8 @@
     "--socket=fallback-x11",
     "--socket=wayland",
     "--device=dri",
-    "--filesystem=host"
+    "--filesystem=host",
+    "--filesystem=xdg-config/git"
   ],
   "cleanup": [
     "/include",
@@ -24,6 +25,26 @@
     "*.a"
   ],
   "modules": [
+    {
+      "name": "libportal",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dbackend-gtk3=disabled",
+        "-Dbackend-gtk4=enabled",
+        "-Dbackend-qt5=disabled",
+        "-Dbackend-qt6=disabled",
+        "-Dvapi=false",
+        "-Ddocs=false",
+        "-Dtests=false"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz",
+          "sha256": "de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f"
+        }
+      ]
+    },
     {
       "name": "blueprint-compiler",
       "buildsystem": "meson",
