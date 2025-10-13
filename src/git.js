@@ -3,6 +3,8 @@ import GLib from "gi://GLib";
 
 import { getHostConfigHomePath, isFile } from "./helpers.js";
 
+// https://git-scm.com/docs/git-config#FILES
+
 export async function getGlobalGitconfig(
   path_host_config_home = getHostConfigHomePath(),
 ) {
