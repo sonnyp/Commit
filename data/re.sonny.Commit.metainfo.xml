@@ -81,6 +81,7 @@
     <release version="4.4" date="2025-10-13">
       <description translate="no">
         <ul>
+          <li>Support XDG_CONFIG_HOME git config</li>
           <li>GNOME Platform 49</li>
         </ul>
       </description>
