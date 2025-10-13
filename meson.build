@@ -1,4 +1,4 @@
-project('Commit', version: '4.3', meson_version: '>= 0.59.0', license: 'GPL-3.0')
+project('Commit', version: '4.4', meson_version: '>= 0.59.0', license: 'GPL-3.0')
 
 gnome = import('gnome')
 i18n = import('i18n')

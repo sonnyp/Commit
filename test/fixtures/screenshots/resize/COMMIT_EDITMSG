@@ -1,0 +1,37 @@
+If you need more space to express yourself, resize the window
+
+Commit will disable wrapping, show a ruler and let you format the text freely.
+
+ *                     (a)                       (b)            DIMM   BLK-REGION
+ *           +----------+--------------+----------+---------+
+ * +------+  |  blk2.0  |     pm0.0    |  blk2.1  |  pm1.0  |    0      region2
+ * | imc0 +--+- - - - - region0 - - - -+----------+         +
+ * +--+---+  |  blk3.0  |     pm0.0    |  blk3.1  |  pm1.0  |    1      region3
+ *    |      +----------+--------------v----------v         v
+ * +--+---+                            |                    |
+ * | cpu0 |                                    region1
+ * +--+---+                            |                    |
+ *    |      +-------------------------^----------^         ^
+ * +--+---+  |                 blk4.0             |  pm1.0  |    2      region4
+ * | imc1 +--+-------------------------+----------+         +
+ * +------+  |                 blk5.0             |  pm1.0  |    3      region5
+ *           +-------------------------+----------+-+-------+
+ *
+ * +--+---+
+ * | cpu1 |
+ * +--+---+                   (Hotplug DIMM)
+ *    |      +----------------------------------------------+
+ * +--+---+  |                 blk6.0/pm7.0                 |    4      region6/7
+ * | imc0 +--+----------------------------------------------+
+ * +------+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+#
+# Initial commit
+#
+# Changes to be committed:
+#   new file: a.txt
+#

@@ -59,12 +59,6 @@
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/emoji.png
-      </image>
-      <caption>Emoji selector</caption>
-    </screenshot>
-    <screenshot>
-      <image>
         https://raw.githubusercontent.com/sonnyp/Commit/main/data/screenshots/shortcuts.png
       </image>
       <caption>Shortcuts</caption>
@@ -84,10 +78,17 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="4.4" date="2025-10-13">
+      <description translate="no">
+        <ul>
+          <li>GNOME Platform 49</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.3" date="2025-03-28">
       <description translate="no">
         <ul>
-          <li>Use GNOME 48</li>
+          <li>GNOME Platform 48</li>
         </ul>
       </description>
     </release>
@@ -98,7 +99,7 @@
           <li>Fix display of repository name</li>
           <li>Support per-repository configuration</li>
           <li>Add setting for disabling title auto capitalization</li>
-          <li>GNOME 47</li>
+          <li>GNOME Platform 47</li>
         </ul>
       </description>
     </release>
@@ -106,14 +107,14 @@
       <description translate="no">
         <ul>
           <li>Add spell check using libspelling</li>
-          <li>GNOME 45</li>
+          <li>GNOME platform 45</li>
         </ul>
       </description>
     </release>
     <release version="4.0" date="2023-03-22">
       <description translate="no">
         <ul>
-          <li>GNOME 44</li>
+          <li>GNOME platform 44</li>
           <li>Ask for confirmation before dismissing changes</li>
           <li>Show the name of the repository in the title bar</li>
           <li>Prevent shortcut from saving empty commit (by axtloss)</li>
