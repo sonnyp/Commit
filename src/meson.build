@@ -27,7 +27,6 @@ custom_target(
     '--prefix', '/re/sonny/Commit',
     '--project-root', meson.project_source_root(),
     '--resource-root', meson.project_source_root() / 'src',
-    '--blueprint-compiler', blueprint_compiler,
     '--no-executable', '@INPUT0@',
     '--potfiles', '@INPUT1@',
     '@OUTDIR@',
