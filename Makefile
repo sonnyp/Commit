@@ -28,6 +28,7 @@ test:
 	# gtk-builder-tool validate src/*.ui
 	./troll/tst/bin.js test/scm.test.js
 	./troll/tst/bin.js test/wrap.test.js
+	./troll/tst/bin.js test/helpers.test.js
 	flatpak-builder --show-manifest re.sonny.Commit.json > /dev/null
 	find po/ -type f -name "*po" -print0 | xargs -0 -n1 msgfmt -o /dev/null --check
 

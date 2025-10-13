@@ -25,3 +25,5 @@ src/settings.js
 src/preferences.js
 src/preferences.blp
 troll/src/builder.js
+src/helpers.js
+src/git.js
