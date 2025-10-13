@@ -1,7 +1,7 @@
 {
   "id": "re.sonny.Commit",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "48",
+  "runtime-version": "49",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Commit",
   "finish-args": [
@@ -24,19 +24,6 @@
     "*.a"
   ],
   "modules": [
-    {
-      "name": "blueprint-compiler",
-      "buildsystem": "meson",
-      "cleanup": ["*"],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-          "commit": "04ef0944db56ab01307a29aaa7303df6067cb3c0",
-          "tag": "v0.16.0"
-        }
-      ]
-    },
     {
       "name": "libspelling",
       "buildsystem": "meson",

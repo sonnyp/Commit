@@ -15,7 +15,7 @@ configure_file(
   install_dir: get_option('bindir'),
 )
 
-blueprint_compiler = find_program('/app/bin/blueprint-compiler', 'blueprint-compiler')
+blueprint_compiler = find_program('blueprint-compiler')
 gjspack = find_program(meson.project_source_root() / 'troll/gjspack/bin/gjspack', 'gjspack')
 custom_target(
   'gjspack',
