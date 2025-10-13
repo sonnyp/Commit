@@ -1,6 +1,7 @@
 import GLib from "gi://GLib";
 import Gio from "gi://Gio";
-import Xdp from "gi://Xdp";
+
+import { getGlobalGitconfig } from "./git.js";
 
 export const TITLE_LENGTH_HINT = "title-length-hint";
 export const BODY_LENGTH_WRAP = "body-length-wrap";
@@ -69,34 +70,10 @@ class Config {
   }
 }
 
-let config_dir;
-
-if (Xdp.Portal.running_under_sandbox()) {
-  // We can't use GLib.get_user_config_dir() here since it will
-  // return the sandbox's XDG_CONFIG_HOME
-  config_dir =
-    GLib.getenv("HOST_XDG_CONFIG_HOME") ??
-    GLib.build_pathv(GLib.DIR_SEPARATOR_S, [GLib.get_home_dir(), ".config"]);
-} else {
-  config_dir = GLib.get_user_config_dir();
-}
-
-const path_gitconfig_global = GLib.build_pathv(GLib.DIR_SEPARATOR_S, [
-  config_dir,
-  "git",
-  "config",
-]);
-let file_gitconfig_global = Gio.File.new_for_path(path_gitconfig_global);
-
-if (!file_gitconfig_global.query_exists(null)) {
-  file_gitconfig_global = Gio.File.new_for_path(GLib.get_home_dir()).get_child(
-    ".gitconfig",
-  );
-}
-
 const file_gitconfig_local = Gio.File.new_for_path(
   GLib.get_current_dir(),
 ).get_child(".gitconfig");
+const file_gitconfig_global = await getGlobalGitconfig();
 
 export const local = new Config({ file: file_gitconfig_local });
 export const global = new Config({ file: file_gitconfig_global });

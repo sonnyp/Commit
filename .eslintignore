@@ -4,3 +4,4 @@ flatpak/
 node_modules/
 repo/
 troll/
+builddir
