@@ -1,5 +1,5 @@
 [user]
-	email = sonnyp@gnome.org
+	email = commit@sonny.re
 	name = Sonny Piers
 [core]
 	editor = flatpak run --file-forwarding re.sonny.Commit @@

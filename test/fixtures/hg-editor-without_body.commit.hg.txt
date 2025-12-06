@@ -3,6 +3,6 @@
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
 HG: Leave message empty to abort commit.
 HG: --
-HG: user: Sonny Piers <sonnyp@gnome.org>
+HG: user: Sonny Piers <commit@sonny.re>
 HG: branch 'default'
 HG: added foobar

@@ -268,7 +268,7 @@ pick 688174c Im ok`,
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
 HG: Leave message empty to abort commit.
 HG: --
-HG: user: Sonny Piers <sonnyp@gnome.org>
+HG: user: Sonny Piers <commit@sonny.re>
 HG: branch 'default'
 HG: added foobar
 `,
@@ -305,7 +305,7 @@ hello`,
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
 HG: Leave message empty to abort commit.
 HG: --
-HG: user: Sonny Piers <sonnyp@gnome.org>
+HG: user: Sonny Piers <commit@sonny.re>
 HG: branch 'default'
 HG: added foobar
 `,
@@ -320,19 +320,19 @@ HG: added foobar
     `Squashed commit of the following:
 
 commit a0cd27f9567cfaf278b0af1e5f8e158397babb35
-Author: Sonny Piers <sonnyp@gnome.org>
+Author: Sonny Piers <commit@sonny.re>
 Date:   Sat Jan 15 16:42:24 2022 +0100
 
     add b.txt
 
 commit de9914cb5224550b41b6880da31a11a143be04b2
-Author: Sonny Piers <sonnyp@gnome.org>
+Author: Sonny Piers <commit@sonny.re>
 Date:   Sat Jan 15 16:42:12 2022 +0100
 
     add foo to a.txt
 
 commit 44b63dfb9196a4dbd71d027cad6575494472d970
-Author: Sonny Piers <sonnyp@gnome.org>
+Author: Sonny Piers <commit@sonny.re>
 Date:   Sat Jan 15 16:42:00 2022 +0100
 
     add a.txt`,
