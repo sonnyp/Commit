@@ -1,5 +1,6 @@
 import Gtk from "gi://Gtk";
 import GtkSource from "gi://GtkSource";
+import Gdk from "gi://Gdk";
 
 import CommitEditor from "./CommitEditor.js";
 
@@ -34,6 +35,29 @@ export default function editor({ overlay, button_save, parsed }) {
 
   const buffer = source_view.get_buffer();
   buffer.tag_table.add(tag_title_too_long);
+
+  // Set up keyboard shortcut for comment toggle (Ctrl+/)
+  const event_controller = new Gtk.EventControllerKey();
+  source_view.add_controller(event_controller);
+  
+  event_controller.connect("key-pressed", (controller, keyval, keycode, state) => {
+    const ctrl_pressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
+    const shift_pressed = (state & Gdk.ModifierType.SHIFT_MASK) !== 0;
+    
+    // Check for Ctrl+/ (line comment toggle)
+    if (ctrl_pressed && !shift_pressed && keyval === Gdk.KEY_slash) {
+      toggleLineComment(buffer, comment_prefix || "#");
+      return true; // Event handled
+    }
+    
+    // Check for Ctrl+Shift+A (block comment toggle)
+    if (ctrl_pressed && shift_pressed && (keyval === Gdk.KEY_A || keyval === Gdk.KEY_a)) {
+      toggleBlockComment(buffer, comment_prefix || "#");
+      return true; // Event handled
+    }
+    
+    return false; // Event not handled
+  });
 
   function update() {
     config.load();
@@ -248,4 +272,183 @@ function Capitalizer() {
       );
     }
   };
+}
+
+// Toggle line comment functionality
+function toggleLineComment(buffer, commentPrefix) {
+  const [hasSelection, start, end] = buffer.get_selection_bounds();
+  
+  let startLine, endLine;
+  
+  if (hasSelection) {
+    // Get line numbers for selection
+    startLine = start.get_line();
+    endLine = end.get_line();
+    
+    // If selection ends at the beginning of a line, don’t include it
+    if (end.get_line_offset() === 0 && endLine > startLine) {
+      endLine--;
+    }
+  } else {
+    // No selection, work with current line
+    const cursor = buffer.get_iter_at_mark(buffer.get_insert());
+    startLine = cursor.get_line();
+    endLine = startLine;
+  }
+  
+  // Check if all lines in range are commented
+  const allCommented = areAllLinesCommented(buffer, startLine, endLine, commentPrefix);
+  
+  buffer.begin_user_action();
+  
+  if (allCommented) {
+    // Uncomment all lines
+    for (let lineNum = startLine; lineNum <= endLine; lineNum++) {
+      uncommentLine(buffer, lineNum, commentPrefix);
+    }
+  } else {
+    // Comment all lines
+    for (let lineNum = startLine; lineNum <= endLine; lineNum++) {
+      commentLine(buffer, lineNum, commentPrefix);
+    }
+  }
+  
+  buffer.end_user_action();
+}
+
+function areAllLinesCommented(buffer, startLine, endLine, commentPrefix) {
+  const text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
+  const lines = text.split('\n');
+  
+  for (let lineNum = startLine; lineNum <= endLine; lineNum++) {
+    if (lineNum >= lines.length) continue;
+    
+    const lineText = lines[lineNum];
+    const trimmed = lineText.trimStart();
+    
+    // Empty lines don’t count
+    if (trimmed.length === 0) continue;
+    
+    // If any non-empty line is not commented, return false
+    if (!trimmed.startsWith(commentPrefix)) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+function commentLine(buffer, lineNum, commentPrefix) {
+  const text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
+  const lines = text.split('\n');
+  
+  if (lineNum >= lines.length) return;
+  
+  const lineText = lines[lineNum];
+  
+  // Don’t comment empty lines
+  if (lineText.trim().length === 0) return;
+  
+  // Find first non-whitespace character
+  const match = lineText.match(/\S/);
+  if (match) {
+    const offset = match.index;
+    
+    // Calculate absolute offset from start of buffer
+    let absoluteOffset = 0;
+    for (let i = 0; i < lineNum; i++) {
+      absoluteOffset += lines[i].length + 1; // +1 for newline
+    }
+    absoluteOffset += offset;
+    
+    const insertPos = buffer.get_iter_at_offset(absoluteOffset);
+    buffer.insert(insertPos, commentPrefix + " ", -1);
+  }
+}
+
+function uncommentLine(buffer, lineNum, commentPrefix) {
+  const text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
+  const lines = text.split('\n');
+  
+  if (lineNum >= lines.length) return;
+  
+  const lineText = lines[lineNum];
+  const trimmed = lineText.trimStart();
+  
+  // Check if line is commented
+  if (!trimmed.startsWith(commentPrefix)) return;
+  
+  // Find the comment prefix position
+  const leadingWhitespace = lineText.length - trimmed.length;
+  
+  // Calculate absolute offsets from start of buffer
+  let lineStartOffset = 0;
+  for (let i = 0; i < lineNum; i++) {
+    lineStartOffset += lines[i].length + 1; // +1 for newline
+  }
+  
+  const commentStartOffset = lineStartOffset + leadingWhitespace;
+  let commentEndOffset = commentStartOffset + commentPrefix.length;
+  
+  // Check if there's a space after the comment prefix
+  if (commentEndOffset < text.length && text[commentEndOffset] === " ") {
+    commentEndOffset++;
+  }
+  
+  const commentStart = buffer.get_iter_at_offset(commentStartOffset);
+  const commentEnd = buffer.get_iter_at_offset(commentEndOffset);
+  
+  buffer.delete(commentStart, commentEnd);
+}
+
+// Toggle block comment functionality (Ctrl+Shift+A)
+function toggleBlockComment(buffer, commentPrefix) {
+  const [hasSelection, start, end] = buffer.get_selection_bounds();
+  
+  if (!hasSelection) {
+    // No selection, nothing to do for block comments
+    return;
+  }
+  
+  const startOffset = start.get_offset();
+  const endOffset = end.get_offset();
+  
+  const text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
+  const selectedText = text.substring(startOffset, endOffset);
+  
+  // Block comment markers (using the comment prefix)
+  const blockStart = commentPrefix + " ";
+  const blockEnd = " " + commentPrefix;
+  
+  buffer.begin_user_action();
+  
+  // Check if selection is already block commented
+  if (selectedText.startsWith(blockStart) && selectedText.endsWith(blockEnd)) {
+    // Uncomment: remove block comment markers
+    const uncommented = selectedText.substring(
+      blockStart.length, 
+      selectedText.length - blockEnd.length
+    );
+    
+    buffer.delete(start, end);
+    buffer.insert(buffer.get_iter_at_offset(startOffset), uncommented, -1);
+    
+    // Restore selection
+    const newStart = buffer.get_iter_at_offset(startOffset);
+    const newEnd = buffer.get_iter_at_offset(startOffset + uncommented.length);
+    buffer.select_range(newStart, newEnd);
+  } else {
+    // Comment: add block comment markers
+    const commented = blockStart + selectedText + blockEnd;
+    
+    buffer.delete(start, end);
+    buffer.insert(buffer.get_iter_at_offset(startOffset), commented, -1);
+    
+    // Restore selection (including the comment markers)
+    const newStart = buffer.get_iter_at_offset(startOffset);
+    const newEnd = buffer.get_iter_at_offset(startOffset + commented.length);
+    buffer.select_range(newStart, newEnd);
+  }
+  
+  buffer.end_user_action();
 }
