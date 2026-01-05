@@ -1,5 +1,7 @@
-import wrapbody from "./wrap.js";
+import GLib from "gi://GLib";
 import { gettext as _ } from "gettext";
+
+import wrapbody from "./wrap.js";
 
 const actions = {
   commit: _("_Commit"),
@@ -112,7 +114,10 @@ export function parse(text, type) {
   };
 }
 
-export function getType(filename) {
+export function getType(file) {
+  const file_path = file.get_path();
+  const filename = GLib.path_get_basename(file_path);
+
   // Git
   if (filename.endsWith("COMMIT_EDITMSG")) return "commit";
   if (filename.endsWith("MERGE_MSG")) return "merge";
@@ -120,6 +125,8 @@ export function getType(filename) {
   if (filename.endsWith("addp-hunk-edit.diff")) return "add -p";
   if (filename.endsWith("git-rebase-todo")) return "rebase";
   if (filename.endsWith(".gitconfig")) return "config";
+  if (file_path.endsWith("/git/config")) return "config";
+  if (file_path.endsWith(".git/config")) return "config";
   if (filename.endsWith(".hgrc")) return "config";
   // Mercurial
   if (filename.endsWith(".commit.hg.txt")) return "hg";

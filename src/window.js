@@ -119,7 +119,7 @@ export default function Window({ application, file, text, type, readonly }) {
 }
 
 function shouldSaveOnAbort({ type }) {
-  return type !== "config";
+  return type !== null && type !== "config";
 }
 
 async function abort({
