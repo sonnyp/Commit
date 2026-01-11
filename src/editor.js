@@ -346,7 +346,9 @@ function toggleLineComment(buffer, commentPrefix) {
       }
 
       const commentStart = buffer.get_iter_at_offset(commentStartOffset);
+      if (!commentStart.editable(true)) continue;
       const commentEnd = buffer.get_iter_at_offset(commentEndOffset);
+      if (!commentEnd.editable(true)) continue;
 
       buffer.delete(commentStart, commentEnd);
 
@@ -366,6 +368,8 @@ function toggleLineComment(buffer, commentPrefix) {
         const absoluteOffset = lineStartOffset + offset;
 
         const insertPos = buffer.get_iter_at_offset(absoluteOffset);
+        if (!insertPos.editable(true)) continue;
+
         buffer.insert(insertPos, commentPrefix + " ", -1);
 
         lines[lineNum] =
