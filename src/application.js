@@ -124,7 +124,7 @@ function openEditor({ file, application, readonly }) {
     return;
   }
 
-  const type = getType(GLib.path_get_basename(file_path));
+  const type = getType(file);
   const { window } = Window({
     application,
     file,

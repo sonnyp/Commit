@@ -3,7 +3,6 @@
   <id>re.sonny.Commit</id>
   <launchable type="desktop-id">re.sonny.Commit.desktop</launchable>
   <name translate="no">Commit</name>
-  <developer_name translate="no">Sonny Piers</developer_name>
   <developer id="re.sonny">
     <name translate="no">Sonny Piers</name>
   </developer>

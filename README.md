@@ -166,7 +166,7 @@ Many thanks to its original author [Aral Balkan](https://ar.al) of [Small Techno
 
 ## Copyright
 
-- © 2020-2025 [Sonny Piers](https://github.com/sonnyp)
+- © 2020 [Sonny Piers](https://github.com/sonnyp)
 - © 2018-2020 [Aral Balkan](https://ar.al), [Small Technology Foundation](https://small-tech.org)
 
 ## License
