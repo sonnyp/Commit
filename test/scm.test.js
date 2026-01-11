@@ -50,12 +50,34 @@ this is wrapped as well.
 });
 
 test("getType", () => {
-  assert.is(getType("/foo/bar/addp-hunk-edit.diff"), "add -p");
-  assert.is(getType("/foo/bar/COMMIT_EDITMSG"), "commit");
-  assert.is(getType("/foo/bar/rebase-merge/git-rebase-todo"), "rebase");
-  assert.is(getType("/foo/bar/MERGE_MSG"), "merge");
-  assert.is(getType("/foo/bar/TAG_EDITMSG"), "tag");
-  assert.is(getType("/foo/bar/hg-editor-foo.commit.hg.txt"), "hg");
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/addp-hunk-edit.diff")),
+    "add -p",
+  );
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/COMMIT_EDITMSG")),
+    "commit",
+  );
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/rebase-merge/git-rebase-todo")),
+    "rebase",
+  );
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/MERGE_MSG")), "merge");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/TAG_EDITMSG")), "tag");
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/hg-editor-foo.commit.hg.txt")),
+    "hg",
+  );
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.gitconfig")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/git/config")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.git/config")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.hgrc")), "config");
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/.hg/hgrc-not-shared")),
+    "config",
+  );
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.hg/hgrc")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/hg/hgrc")), "config");
 });
 
 test("isEmptyCommitMessage", () => {
