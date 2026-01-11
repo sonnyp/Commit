@@ -1,4 +1,3 @@
-import GLib from "gi://GLib";
 import { gettext as _ } from "gettext";
 
 import wrapbody from "./wrap.js";
@@ -116,20 +115,24 @@ export function parse(text, type) {
 
 export function getType(file) {
   const file_path = file.get_path();
-  const filename = GLib.path_get_basename(file_path);
+  const basename = file.get_basename();
 
   // Git
-  if (filename.endsWith("COMMIT_EDITMSG")) return "commit";
-  if (filename.endsWith("MERGE_MSG")) return "merge";
-  if (filename.endsWith("TAG_EDITMSG")) return "tag";
-  if (filename.endsWith("addp-hunk-edit.diff")) return "add -p";
-  if (filename.endsWith("git-rebase-todo")) return "rebase";
-  if (filename.endsWith(".gitconfig")) return "config";
+  if (basename === "COMMIT_EDITMSG") return "commit";
+  if (basename === "MERGE_MSG") return "merge";
+  if (basename === "TAG_EDITMSG") return "tag";
+  if (basename === "addp-hunk-edit.diff") return "add -p";
+  if (basename === "git-rebase-todo") return "rebase";
+  if (basename === ".gitconfig") return "config";
   if (file_path.endsWith("/git/config")) return "config";
-  if (file_path.endsWith(".git/config")) return "config";
-  if (filename.endsWith(".hgrc")) return "config";
+  if (file_path.endsWith("/.git/config")) return "config";
   // Mercurial
-  if (filename.endsWith(".commit.hg.txt")) return "hg";
+  if (basename.endsWith(".commit.hg.txt")) return "hg";
+  // https://www.man7.org/linux/man-pages/man5/hgrc.5.html#FILES
+  if (basename === ".hgrc") return "config";
+  if (file_path.endsWith("/.hg/hgrc")) return "config";
+  if (file_path.endsWith("/.hg/hgrc-not-shared")) return "config";
+  if (file_path.endsWith("/hg/hgrc")) return "config";
   // Unknown
   return null;
 }

@@ -71,6 +71,13 @@ test("getType", () => {
   assert.is(getType(Gio.File.new_for_path("/foo/bar/.gitconfig")), "config");
   assert.is(getType(Gio.File.new_for_path("/foo/bar/git/config")), "config");
   assert.is(getType(Gio.File.new_for_path("/foo/bar/.git/config")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.hgrc")), "config");
+  assert.is(
+    getType(Gio.File.new_for_path("/foo/bar/.hg/hgrc-not-shared")),
+    "config",
+  );
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/.hg/hgrc")), "config");
+  assert.is(getType(Gio.File.new_for_path("/foo/bar/hg/hgrc")), "config");
 });
 
 test("isEmptyCommitMessage", () => {
