@@ -79,8 +79,8 @@ export default function editor({ overlay, button_save, parsed }) {
     const endOfFirstLineIterator = buffer.get_iter_at_offset(firstLineLength);
 
     // Start with a clean slate: remove any background highlighting on the
-    // whole text. (We don't do just the first line as someone might copy a
-    // highlighted piece of the first line and paste it and we don't want it
+    // whole text. (We don’t do just the first line as someone might copy a
+    // highlighted piece of the first line and paste it and we don’t want it
     // highlighted on subsequent lines if they do that.)
     buffer.remove_tag(
       tag_title_too_long,
@@ -145,7 +145,7 @@ export default function editor({ overlay, button_save, parsed }) {
         /* and the second line is empty (to avoid
              https://source.small-tech.org/gnome/gnomit/gjs/issues/27) */
         unicodeLength(lines[1].replace(/ /g, "")) === 0 &&
-        /* and person didn't reach here by deleting existing content */
+        /* and person didn’t reach here by deleting existing content */
         numberOfLinesInCommitMessage > previousNumberOfLinesInCommitMessage
       ) {
         // Delete the newline
@@ -168,7 +168,7 @@ export default function editor({ overlay, button_save, parsed }) {
         /* in the correct place */
         cursor_position === firstLineLength + 1 &&
         numberOfLinesInCommitMessage === numberOfLinesInComment + 3 &&
-        /* and person didn't reach here by deleting existing content */
+        /* and person didn’t reach here by deleting existing content */
         numberOfLinesInCommitMessage > previousNumberOfLinesInCommitMessage
       ) {
         // Insert a second newline.
