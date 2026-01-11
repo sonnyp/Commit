@@ -41,11 +41,13 @@ export default function editor({ overlay, button_save, parsed }) {
   source_view.add_controller(event_controller);
   
   event_controller.connect("key-pressed", (controller, keyval, keycode, state) => {
+    if (!comment_prefix) return false // Event not handled
+
     const ctrl_pressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
     
     // Check for Ctrl+/ (line comment toggle)
     if (ctrl_pressed && keyval === Gdk.KEY_slash) {
-      toggleLineComment(buffer, comment_prefix || "#");
+      toggleLineComment(buffer, comment_prefix);
       return true; // Event handled
     }
     
