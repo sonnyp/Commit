@@ -42,7 +42,7 @@ export default function editor({ overlay, button_save, parsed }) {
 
   event_controller.connect(
     "key-pressed",
-    (controller, keyval, keycode, state) => {
+    (_controller, keyval, _keycode, state) => {
       if (!comment_prefix) return false; // Event not handled
 
       const ctrl_pressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
