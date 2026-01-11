@@ -80,7 +80,7 @@
     <release version="4.5" date="2026-01-11">
       <description translate="no">
         <ul>
-          <li>Add "Toggle Line Comment" shortcut
+          <li>Add "Toggle Line Comment" shortcut</li>
           <li>Fix type detection for XDG_CONFIG_HOME</li>
         </ul>
       </description>
