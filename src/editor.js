@@ -39,20 +39,23 @@ export default function editor({ overlay, button_save, parsed }) {
   // Set up keyboard shortcut for comment toggle (Ctrl+/)
   const event_controller = new Gtk.EventControllerKey();
   source_view.add_controller(event_controller);
-  
-  event_controller.connect("key-pressed", (controller, keyval, keycode, state) => {
-    if (!comment_prefix) return false // Event not handled
 
-    const ctrl_pressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
-    
-    // Check for Ctrl+/ (line comment toggle)
-    if (ctrl_pressed && keyval === Gdk.KEY_slash) {
-      toggleLineComment(buffer, comment_prefix);
-      return true; // Event handled
-    }
-    
-    return false; // Event not handled
-  });
+  event_controller.connect(
+    "key-pressed",
+    (controller, keyval, keycode, state) => {
+      if (!comment_prefix) return false; // Event not handled
+
+      const ctrl_pressed = (state & Gdk.ModifierType.CONTROL_MASK) !== 0;
+
+      // Check for Ctrl+/ (line comment toggle)
+      if (ctrl_pressed && keyval === Gdk.KEY_slash) {
+        toggleLineComment(buffer, comment_prefix);
+        return true; // Event handled
+      }
+
+      return false; // Event not handled
+    },
+  );
 
   function update() {
     config.load();
@@ -271,13 +274,13 @@ function Capitalizer() {
 
 function toggleLineComment(buffer, commentPrefix) {
   const [hasSelection, start, end] = buffer.get_selection_bounds();
-  
+
   let startLine, endLine;
-  
+
   if (hasSelection) {
     startLine = start.get_line();
     endLine = end.get_line();
-    
+
     if (end.get_line_offset() === 0 && endLine > startLine) {
       endLine--;
     }
@@ -286,72 +289,93 @@ function toggleLineComment(buffer, commentPrefix) {
     startLine = cursor.get_line();
     endLine = startLine;
   }
-  
-  const text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
-  const lines = text.split('\n');
-  
+
+  const text = buffer.get_text(
+    buffer.get_start_iter(),
+    buffer.get_end_iter(),
+    false,
+  );
+  const lines = text.split("\n");
+
   let allCommented = true;
   for (let lineNum = startLine; lineNum <= endLine; lineNum++) {
     if (lineNum >= lines.length) continue;
-    
+
     const lineText = lines[lineNum];
     const trimmed = lineText.trimStart();
-    
+
     if (trimmed.length === 0) continue;
-    
+
     if (!trimmed.startsWith(commentPrefix)) {
       allCommented = false;
       break;
     }
   }
-  
+
   buffer.begin_user_action();
-  
+
   for (let lineNum = startLine; lineNum <= endLine; lineNum++) {
     if (lineNum >= lines.length) continue;
-    
+
     const lineText = lines[lineNum];
-    
+
     if (lineText.trim().length === 0) continue;
-    
+
     const trimmed = lineText.trimStart();
     const leadingWhitespace = lineText.length - trimmed.length;
-    
+
     let lineStartOffset = 0;
     for (let i = 0; i < lineNum; i++) {
       lineStartOffset += lines[i].length + 1;
     }
-    
+
     if (allCommented && trimmed.startsWith(commentPrefix)) {
       const commentStartOffset = lineStartOffset + leadingWhitespace;
       let commentEndOffset = commentStartOffset + commentPrefix.length;
-      
-      const currentText = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), false);
-      if (commentEndOffset < currentText.length && currentText[commentEndOffset] === " ") {
+
+      const currentText = buffer.get_text(
+        buffer.get_start_iter(),
+        buffer.get_end_iter(),
+        false,
+      );
+      if (
+        commentEndOffset < currentText.length &&
+        currentText[commentEndOffset] === " "
+      ) {
         commentEndOffset++;
       }
-      
+
       const commentStart = buffer.get_iter_at_offset(commentStartOffset);
       const commentEnd = buffer.get_iter_at_offset(commentEndOffset);
-      
+
       buffer.delete(commentStart, commentEnd);
-      
-      lines[lineNum] = lineText.substring(0, leadingWhitespace) + 
-                       lineText.substring(leadingWhitespace + commentPrefix.length + 
-                       (currentText[commentStartOffset + commentPrefix.length] === " " ? 1 : 0));
+
+      lines[lineNum] =
+        lineText.substring(0, leadingWhitespace) +
+        lineText.substring(
+          leadingWhitespace +
+            commentPrefix.length +
+            (currentText[commentStartOffset + commentPrefix.length] === " "
+              ? 1
+              : 0),
+        );
     } else if (!allCommented) {
       const match = lineText.match(/\S/);
       if (match) {
         const offset = match.index;
         const absoluteOffset = lineStartOffset + offset;
-        
+
         const insertPos = buffer.get_iter_at_offset(absoluteOffset);
         buffer.insert(insertPos, commentPrefix + " ", -1);
-        
-        lines[lineNum] = lineText.substring(0, offset) + commentPrefix + " " + lineText.substring(offset);
+
+        lines[lineNum] =
+          lineText.substring(0, offset) +
+          commentPrefix +
+          " " +
+          lineText.substring(offset);
       }
     }
   }
-  
+
   buffer.end_user_action();
 }
