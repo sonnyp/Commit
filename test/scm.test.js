@@ -120,10 +120,6 @@ test("parse", () => {
     "#",
   );
   assert.is(
-    parse(readTest("addp-hunk-edit.diff"), "add -p").comment_separator,
-    "\n#",
-  );
-  assert.is(
     parse(readTest("addp-hunk-edit.diff"), "add -p").cursor_position,
     0,
   );
@@ -299,11 +295,6 @@ HG: added foobar
     parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
       .comment_prefix,
     "HG:",
-  );
-  assert.is(
-    parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")
-      .comment_separator,
-    "\nHG:",
   );
   assert.is(
     parse(readTest("hg-editor-without_body.commit.hg.txt"), "hg")

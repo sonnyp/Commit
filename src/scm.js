@@ -16,12 +16,16 @@ export function parse(text, type) {
 
   if (type === "config") {
     return {
-      cursor_position: 0,
-      action,
       body: text,
       comment: "",
-      text,
+      detail: undefined,
+      comment_prefix: "#",
+      cursor_position: 0,
+      read_only_index: -1,
       language: "ini",
+      action,
+      is_message: false,
+      text,
     };
   }
 
@@ -33,8 +37,6 @@ export function parse(text, type) {
     comment_prefix = "HG:";
     language = "hg";
   }
-
-  const comment_separator = `\n${comment_prefix}`;
 
   // If this is a git add -p hunk edit message, then we cannot
   // split at the first comment as the message starts with a comment.
@@ -103,7 +105,6 @@ export function parse(text, type) {
     comment,
     detail,
     comment_prefix,
-    comment_separator,
     cursor_position,
     read_only_index,
     language,
