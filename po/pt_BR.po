@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2022-10-24 17:40+0000\n"
-"Last-Translator: Patrícia Matos <patriciamatos85@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/commit/commit/pt_BR/>\n"
+"PO-Revision-Date: 2023-11-10 00:34+0000\n"
+"Last-Translator: Felix-Pedro <pedrogomes.felix@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
+"commit/commit/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 "X-Project-Style: gnome\n"
 
 #. TRANSLATORS: Don't translate
@@ -81,7 +82,7 @@ msgstr "Exibe pastas e branches de projeto no cabeçalho da janela"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr "Suporte a modo escuro"
+msgstr "Suporte ao modo escuro"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
@@ -144,9 +145,8 @@ msgid "Improve dark mode support"
 msgstr "Melhorar suporte a modo escuro"
 
 #: data/re.sonny.Commit.metainfo.xml:91
-#, fuzzy
 msgid "Support numpad enter"
-msgstr "Suporte desfazer e refazer"
+msgstr "Suporte ao enter do teclado númerico"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
@@ -170,7 +170,7 @@ msgstr "Suporte para modificar quaisquer arquivos"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Tornar o texto do primeiro botão dinâmico (Tag, Rebase, Commit,...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
@@ -182,7 +182,7 @@ msgstr "Adicionar botão de menu"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
@@ -193,7 +193,6 @@ msgid "Add keyboard shortcuts for moving lines up and down"
 msgstr "Adiciona atalhos de teclado para mover linhas para cima e para baixo"
 
 #: data/re.sonny.Commit.metainfo.xml:116
-#, fuzzy
 msgid "Highlight syntax for Git, Mercurial, and diffs"
 msgstr "Realce de sintaxe para git, Mercurial e diffs"
 
@@ -207,15 +206,15 @@ msgstr "Remove a verificação ortográfica temporariamente"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr "Suporte desfazer e refazer"
+msgstr "Suporte para desfazer e refazer"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr "Adiciona ícone simbólico"
+msgstr "Adicionar ícone simbólico"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr "Adiciona configuração de modo escuro"
+msgstr "Adicionar configuração de modo escuro"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
@@ -231,7 +230,7 @@ msgstr "Move preferências para a janela de boas-vindas"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Apenas realçe texto que ultrapassar os limites nos commits"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
@@ -266,9 +265,9 @@ msgid "Add 6px margin to editor"
 msgstr "Adiciona uma margem de 6px ao editor"
 
 #: data/re.sonny.Commit.metainfo.xml:160
-#, fuzzy
 msgid "Action required. After updating, please launch the application and follow the instructions."
-msgstr "⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."
+msgstr ""
+"⚠️ Ação necessária. Após atualizar, inicie o aplicativo e siga as instruções."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
@@ -300,17 +299,16 @@ msgid "translator-credits"
 msgstr "Rafael Fontenelle <rafaelff@gnome.org>"
 
 #: src/scm.js:5 src/scm.js:6
-#, fuzzy
 msgid "_Commit"
-msgstr "Commit"
+msgstr "_Commit"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Merge"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Tag"
 
 #: src/scm.js:9
 msgid "A_dd"
@@ -318,11 +316,11 @@ msgstr ""
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "_Rebase"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Save"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
@@ -350,7 +348,7 @@ msgstr "Selecionar tudo"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Deselecionar todos"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
@@ -365,9 +363,8 @@ msgid "Quit"
 msgstr "Sair"
 
 #: src/window.ui:19
-#, fuzzy
 msgid "_Abort"
-msgstr "Abortar"
+msgstr "_Abortar"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
