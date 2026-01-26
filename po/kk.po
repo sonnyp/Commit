@@ -8,49 +8,53 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-01-27 18:05+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://hosted.weblate.org/projects/commit/commit/kk/>"
+"\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
 msgid "Commit"
-msgstr ""
+msgstr "Коммит"
 
 #: data/re.sonny.Commit.desktop:5 data/re.sonny.Commit.metainfo.xml:10
 #: src/about.js:9
 msgid "Commit message editor"
-msgstr ""
+msgstr "Коммит хабарламасының редакторы"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:13
 msgid "git;mercurial;hg;scm;gnomit;komet;comet;"
-msgstr ""
+msgstr "git;mercurial;hg;scm;gnomit;komet;comet;"
 
 #: data/re.sonny.Commit.gschema.xml:7 src/welcome.ui:36
 msgid "Title maximum length (in characters)"
-msgstr ""
+msgstr "Атаудың максималды ұзындығы (таңба саны)"
 
 #: data/re.sonny.Commit.gschema.xml:13 src/welcome.ui:54
 msgid "Body lines maximum length (in characters)"
-msgstr ""
+msgstr "Негізгі мәтін жолдарының максималды ұзындығы (таңба саны)"
 
 #: data/re.sonny.Commit.metainfo.xml:13
 msgid ""
 "Commit is an editor that helps you write better Git and Mercurial commit "
 "messages."
 msgstr ""
+"Коммит — бұл Git және Mercurial коммит хабарламаларын жақсырақ жазуға "
+"көмектесетін редактор."
 
 #: data/re.sonny.Commit.metainfo.xml:17
 msgid ""
 "After installing make sure to launch the application and follow the "
 "instructions."
-msgstr ""
+msgstr "Орнатқаннан кейін қолданбаны іске қосып, нұсқауларды орындаңыз."
 
 #: data/re.sonny.Commit.metainfo.xml:21
 msgid ""
@@ -59,353 +63,363 @@ msgid ""
 "<code>Ctrl+Return</code> shortcut. To abort and dismiss Commit, press the "
 "Abort button or the <code>Escape</code> key."
 msgstr ""
+"Жобаларыңыздың бірінде коммит жасағанда Коммит қолданбасы автоматты түрде "
+"пайда болады. Коммит хабарламасын сақтау үшін Коммит батырмасын немесе <code>"
+"Ctrl+Return</code> жарлығын басыңыз. Коммит қолданбасын тоқтату және жабу "
+"үшін Тоқтату батырмасын немесе <code>Escape</code> пернесін басыңыз."
 
 #: data/re.sonny.Commit.metainfo.xml:28
 msgid "Features:"
-msgstr ""
+msgstr "Мүмкіндіктер:"
 
 #: data/re.sonny.Commit.metainfo.xml:30
 msgid "Highlights overflow of the commit title"
-msgstr ""
+msgstr "Коммит атауының шектен асуын түспен белгілейді"
 
 #: data/re.sonny.Commit.metainfo.xml:31 data/re.sonny.Commit.metainfo.xml:119
 msgid "Smart body wrapping"
-msgstr ""
+msgstr "Негізгі мәтінді ақылды тасымалдау"
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "Атауы мен негізгі мәтін арасына бос жол кірістіреді"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
-msgstr ""
+msgstr "Түсініктемелер тек оқу үшін және \"Барлығын таңдау\" ішіне кірмейді"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "Терезе атауында жоба бумасын және тармағын көрсетеді"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Қараңғы режимді қолдау"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Пернетақта навигациясы және жарлықтар"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Болдырмау/Қайталау мүмкіндігі"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Эмодзи таңдаушысы"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
 "Supports git commit, merge, tag --annotate, add --patch, rebase --interactive"
 msgstr ""
+"Git commit, merge, tag --annotate, add --patch, rebase --interactive қолдайды"
 
 #: data/re.sonny.Commit.metainfo.xml:42
 msgid "Supports Mercurial commit"
-msgstr ""
+msgstr "Mercurial коммитін қолдайды"
 
 #: data/re.sonny.Commit.metainfo.xml:43 data/re.sonny.Commit.metainfo.xml:118
 msgid "Auto capitalize the commit title"
-msgstr ""
+msgstr "Коммит атауының бірінші әрпін автоматты түрде бас әріпке айналдыру"
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Баптаулары мен нұсқаулары бар қарсы алу терезесі"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
-msgstr ""
+msgstr "Git, Mercurial және diffs үшін синтаксисті түспен белгілеу"
 
 #: data/re.sonny.Commit.metainfo.xml:57
 msgid "Main window"
-msgstr ""
+msgstr "Негізгі терезе"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr ""
+msgstr "Эмодзи таңдаушысы"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
-msgstr ""
+msgstr "Жарлықтар"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr ""
+msgstr "Қарсы алу терезесі"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Автоматты пішімдеуді сөндіру үшін терезе өлшемін өзгертіңіз"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Тема ауыстырғышын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Қараңғы режимді қолдауды жақсарту"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "Цифрлық пернетақтадағы Enter пернесін қолдау"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
-msgstr ""
+msgstr "Батырмалар үшін мнемоникаларды қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:93
 msgid "Fix capitalization when amending"
-msgstr ""
+msgstr "Өзгерту (amending) кезінде бас әріппен жазуды түзету"
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Автоматты бас әріпке айналдыруды жақсарту"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "gitconfig және hgrc қолдауын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Кез келген файлды түзетуді қолдау"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
-msgstr ""
+msgstr "Негізгі батырма белгісін динамикалық ету (Tag, Rebase, Commit, ...)"
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "2 бос орын шегінісін пайдалану"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Мәзір батырмасын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
-msgstr ""
+msgstr "GNOME Platform 42"
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Әртүрлі түзетулер"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
-msgstr ""
+msgstr "Жолдарды жоғары және төмен жылжыту үшін пернетақта жарлықтарын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:116
 msgid "Highlight syntax for Git, Mercurial, and diffs"
-msgstr ""
+msgstr "Git, Mercurial және diffs үшін синтаксисті түспен белгілеу"
 
 #: data/re.sonny.Commit.metainfo.xml:117
 msgid "Add a shortcuts window"
-msgstr ""
+msgstr "Жарлықтар терезесін қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:127
 msgid "Remove spell check temporarily"
-msgstr ""
+msgstr "Емлені тексеруді уақытша алып тастау"
 
 #: data/re.sonny.Commit.metainfo.xml:128
 msgid "Support undo and redo"
-msgstr ""
+msgstr "Болдырмау мен қайталауды қолдау"
 
 #: data/re.sonny.Commit.metainfo.xml:129
 msgid "Add symbolic icon"
-msgstr ""
+msgstr "Символдық таңбашаны қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:130
 msgid "Add dark mode setting"
-msgstr ""
+msgstr "Қараңғы режим баптауын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:131
 msgid "Focus the text editor"
-msgstr ""
+msgstr "Мәтін редакторына фокустау"
 
 #: data/re.sonny.Commit.metainfo.xml:132
 msgid "Port to GTK 4 and libadwaita"
-msgstr ""
+msgstr "GTK 4 және libadwaita нұсқаларына көшіру"
 
 #: data/re.sonny.Commit.metainfo.xml:139
 msgid "Move preferences to welcome window"
-msgstr ""
+msgstr "Баптауларды қарсы алу терезесіне жылжыту"
 
 #: data/re.sonny.Commit.metainfo.xml:140
 msgid "Only highlight text overflow on commits"
-msgstr ""
+msgstr "Коммиттер кезінде тек мәтіннің шектен асуын түспен белгілеу"
 
 #: data/re.sonny.Commit.metainfo.xml:141
 msgid "New app icon"
-msgstr ""
+msgstr "Қолданбаның жаңа таңбашасы"
 
 #: data/re.sonny.Commit.metainfo.xml:142
 msgid "Remove double border"
-msgstr ""
+msgstr "Қос жиекті алып тастау"
 
 #: data/re.sonny.Commit.metainfo.xml:149
 msgid "Add a Preferences window"
-msgstr ""
+msgstr "Баптаулар терезесін қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:150
 msgid "Set default title length hint to 50 characters"
-msgstr ""
+msgstr "Атау ұзындығының әдепкі нұсқауын 50 таңбаға орнату"
 
 #: data/re.sonny.Commit.metainfo.xml:151
 msgid "Fix reading commits with special characters"
-msgstr ""
+msgstr "Арнайы таңбалары бар бекітулерді оқуды түзету"
 
 #: data/re.sonny.Commit.metainfo.xml:152
 msgid "Fix git rebase not recognized"
-msgstr ""
+msgstr "Git rebase танылмауын түзету"
 
 #: data/re.sonny.Commit.metainfo.xml:153
 msgid "Make windows bottom corners rounded"
-msgstr ""
+msgstr "Терезелердің төменгі бұрыштарын дөңгелектеу"
 
 #: data/re.sonny.Commit.metainfo.xml:154
 msgid "Add 6px margin to editor"
-msgstr ""
+msgstr "Редакторға 6 пиксельдік өріс қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:160
 msgid ""
 "Action required. After updating, please launch the application and follow "
 "the instructions."
 msgstr ""
+"Әрекет қажет. Жаңартқаннан кейін қолданбаны іске қосып, нұсқауларды "
+"орындаңыз."
 
 #: data/re.sonny.Commit.metainfo.xml:165
 msgid "Show a welcome window when launched from desktop"
-msgstr ""
+msgstr "Жұмыс үстелінен іске қосылғанда қош келдіңіз терезесін көрсету"
 
 #: data/re.sonny.Commit.metainfo.xml:166
 msgid "Add support for Mercurial"
-msgstr ""
+msgstr "Mercurial қолдауын қосу"
 
 #: data/re.sonny.Commit.metainfo.xml:167
 msgid "Remove filesystem permission"
-msgstr ""
+msgstr "Файлдық жүйе рұқсатын алып тастау"
 
 #: data/re.sonny.Commit.metainfo.xml:173
 msgid "Initial release. Forked from Gnomit 2.0."
-msgstr ""
+msgstr "Алғашқы шығарылым. Gnomit 2.0 нұсқасынан тармақталған."
 
 #: data/re.sonny.Commit.metainfo.xml:175
 msgid "Support \"#\" in commit message"
-msgstr ""
+msgstr "Бекіту хабарламасында \"#\" таңбасын қолдау"
 
 #: data/re.sonny.Commit.metainfo.xml:176
 msgid "Properly recognize executable path"
-msgstr ""
+msgstr "Орындалатын файл жолын дұрыс анықтау"
 
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/about.js:18
 msgid "translator-credits"
-msgstr ""
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
-msgstr ""
+msgstr "_Коммит"
 
 #: src/scm.js:7
 msgid "_Merge"
-msgstr ""
+msgstr "_Біріктіру"
 
 #: src/scm.js:8
 msgid "_Tag"
-msgstr ""
+msgstr "_Тег қосу"
 
 #: src/scm.js:9
 msgid "A_dd"
-msgstr ""
+msgstr "Қ_осу"
 
 #: src/scm.js:10
 msgid "_Rebase"
-msgstr ""
+msgstr "Қа_йта орналастыру"
 
 #: src/scm.js:14 src/window.ui:30
 msgid "_Save"
-msgstr ""
+msgstr "_Сақтау"
 
 #: src/ShortcutsWindow.ui:10
 msgid "Editing"
-msgstr ""
+msgstr "Түзету"
 
 #: src/ShortcutsWindow.ui:17 src/window.ui:37
 msgid "Save and confirm"
-msgstr ""
+msgstr "Сақтау және растау"
 
 #: src/ShortcutsWindow.ui:26 src/window.ui:25
 msgid "Cancel and dismiss"
-msgstr ""
+msgstr "Бас тарту және жабу"
 
 #: src/ShortcutsWindow.ui:35
 msgid "Open emoji chooser"
-msgstr ""
+msgstr "Эмодзи таңдаушысын ашу"
 
 #: src/ShortcutsWindow.ui:46
 msgid "Move current line up/down"
-msgstr ""
+msgstr "Ағымдағы жолды жоғары/төмен жылжыту"
 
 #: src/ShortcutsWindow.ui:54
 msgid "Select All"
-msgstr ""
+msgstr "Барлығын таңдау"
 
 #: src/ShortcutsWindow.ui:62
 msgid "Unelect All"
-msgstr ""
+msgstr "Таңдауды алып тастау"
 
 #: src/ShortcutsWindow.ui:69
 msgid "General"
-msgstr ""
+msgstr "Жалпы"
 
 #: src/ShortcutsWindow.ui:76 src/window.ui:79
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Пернетақта жарлықтары"
 
 #: src/ShortcutsWindow.ui:82
 msgid "Quit"
-msgstr ""
+msgstr "Шығу"
 
 #: src/window.ui:19
 msgid "_Abort"
-msgstr ""
+msgstr "_Тоқтату"
 
 #: src/window.ui:83 src/welcome.ui:184
 msgid "About Commit"
-msgstr ""
+msgstr "Коммит қолданбасы туралы"
 
 #: src/welcome.ui:28
 msgid "Preferences"
-msgstr ""
+msgstr "Баптаулар"
 
 #: src/welcome.ui:69
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: src/welcome.ui:73
 msgid ""
 "To set Commit as default editor for Git run the following command in Terminal"
 msgstr ""
+"Коммит қолданбасын Git үшін әдепкі редактор ретінде орнату үшін Терминалда "
+"келесі команданы орындаңыз"
 
 #: src/welcome.ui:100 src/welcome.ui:155
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Алмасу буферіне көшіру"
 
 #: src/welcome.ui:108 src/welcome.ui:163
 msgid "Documentation"
-msgstr ""
+msgstr "Құжаттама"
 
 #: src/welcome.ui:112
 msgid ""
 "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 msgstr ""
+"https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_editor"
 
 #: src/welcome.ui:123
 msgid "Mercurial"
-msgstr ""
+msgstr "Mercurial"
 
 #. TRANSLATORS: Don't translate <tt>hgrc</tt>
 #: src/welcome.ui:128
@@ -413,7 +427,9 @@ msgid ""
 "To set Commit as default editor for Mercurial, set the following in your "
 "<tt>hgrc</tt>"
 msgstr ""
+"Коммит қолданбасы Mercurial үшін әдепкі редактор ретінде орнату үшін <tt>"
+"hgrc</tt> файлында келесіні орнатыңыз"
 
 #: src/welcome.ui:167
 msgid "https://www.mercurial-scm.org/wiki/editor"
-msgstr ""
+msgstr "https://www.mercurial-scm.org/wiki/editor"
