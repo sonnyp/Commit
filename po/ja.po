@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2024-04-21 10:50+0000\n"
+"PO-Revision-Date: 2026-03-21 13:48+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/commit/commit/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -316,7 +316,7 @@ msgstr "実行可能ファイルのパスを適切に認識するように修正
 msgid "translator-credits"
 msgstr ""
 "Tomo\n"
-"Ryo Nakano"
+"Ryo Nakano <ryonakaknock3@gmail.com>"
 
 #: src/scm.js:5 src/scm.js:6
 msgid "_Commit"
