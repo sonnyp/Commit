@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: re.sonny.Commit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-21 11:19+0200\n"
-"PO-Revision-Date: 2023-09-24 20:01+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/commit/commit/fi/"
-">\n"
+"PO-Revision-Date: 2026-04-13 11:09+0000\n"
+"Last-Translator: Kieli Puoli <kielipuoli@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/commit/commit/"
+"fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #. TRANSLATORS: Don't translate
 #: data/re.sonny.Commit.desktop:4 src/welcome.ui:9
@@ -82,32 +82,34 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:32
 msgid "Inserts a blank line between title and body"
-msgstr ""
+msgstr "Lisää tyhjän rivin otsikon ja varsinaisen tekstin väliin"
 
 #. <li>Spell checking</li>
 #: data/re.sonny.Commit.metainfo.xml:34
 msgid "Comments are readonly and excluded from \"Select All\""
 msgstr ""
+"Kommentit ovat vain luku -muotoisia eivätkä sisälly Valitse kaikki -"
+"toimintoon"
 
 #: data/re.sonny.Commit.metainfo.xml:35
 msgid "Displays project folder and branch in window header"
-msgstr ""
+msgstr "Näyttää projektikansion ja haaran ikkunan ylätunnisteessa"
 
 #: data/re.sonny.Commit.metainfo.xml:36
 msgid "Dark mode support"
-msgstr ""
+msgstr "Tumman tilan tuki"
 
 #: data/re.sonny.Commit.metainfo.xml:37
 msgid "Keyboard navigation and shortcuts"
-msgstr ""
+msgstr "Siirtyminen näppäimistöllä ja pikanäppäinkomennot"
 
 #: data/re.sonny.Commit.metainfo.xml:38
 msgid "Undo/Redo support"
-msgstr ""
+msgstr "Kumoa- ja Tee uudelleen -komentojen tuki"
 
 #: data/re.sonny.Commit.metainfo.xml:39
 msgid "Emoji picker"
-msgstr ""
+msgstr "Emojinvalitsin"
 
 #: data/re.sonny.Commit.metainfo.xml:41
 msgid ""
@@ -124,7 +126,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:44
 msgid "Welcome window with settings and instructions"
-msgstr ""
+msgstr "Tervetuloikkuna, jossa on asetukset ja ohjeet"
 
 #: data/re.sonny.Commit.metainfo.xml:45
 msgid "Highlight syntax for Git, Mercurial and diffs"
@@ -136,7 +138,7 @@ msgstr "Pääikkuna"
 
 #: data/re.sonny.Commit.metainfo.xml:63
 msgid "Emoji selector"
-msgstr "Emojivalitsin"
+msgstr "Emojinvalitsin"
 
 #: data/re.sonny.Commit.metainfo.xml:69
 msgid "Shortcuts"
@@ -144,23 +146,23 @@ msgstr "Pikanäppäimet"
 
 #: data/re.sonny.Commit.metainfo.xml:75
 msgid "Welcome window"
-msgstr "Tervetuloa-ikkuna"
+msgstr "Tervetuloikkuna"
 
 #: data/re.sonny.Commit.metainfo.xml:81
 msgid "Resize the window to disable auto formatting"
-msgstr ""
+msgstr "Automaattisen muotoilun poistaminen käytöstä ikkunan kokoa muuttamalla"
 
 #: data/re.sonny.Commit.metainfo.xml:89
 msgid "Add a theme switcher"
-msgstr ""
+msgstr "Teemanvaihtotoiminto lisätty"
 
 #: data/re.sonny.Commit.metainfo.xml:90
 msgid "Improve dark mode support"
-msgstr ""
+msgstr "Tumman tilan tukea parannettu"
 
 #: data/re.sonny.Commit.metainfo.xml:91
 msgid "Support numpad enter"
-msgstr ""
+msgstr "Numeronäppäimistön tuki"
 
 #: data/re.sonny.Commit.metainfo.xml:92
 msgid "Add mnemonics for buttons"
@@ -172,15 +174,15 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:100
 msgid "Improve auto capitalization"
-msgstr ""
+msgstr "Automaattista kirjasinkokotoimintoa parannettu"
 
 #: data/re.sonny.Commit.metainfo.xml:101
 msgid "Add support for gitconfig and hgrc"
-msgstr ""
+msgstr "Lisätty tuki gitconfigille ja hgrc:lle"
 
 #: data/re.sonny.Commit.metainfo.xml:102
 msgid "Support editing any file"
-msgstr ""
+msgstr "Minkä tahansa tiedoston muokkauksen tuki"
 
 #: data/re.sonny.Commit.metainfo.xml:104
 msgid "Make the primary button label dynamic (Tag, Rebase, Commit, ...)"
@@ -188,11 +190,11 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:105
 msgid "Use 2 spaces indentation"
-msgstr ""
+msgstr "Sisennys kahdella välilyönnillä"
 
 #: data/re.sonny.Commit.metainfo.xml:106
 msgid "Add menu button"
-msgstr ""
+msgstr "Valikkopainike lisätty"
 
 #: data/re.sonny.Commit.metainfo.xml:107
 msgid "GNOME Platform 42"
@@ -200,7 +202,7 @@ msgstr ""
 
 #: data/re.sonny.Commit.metainfo.xml:108 data/re.sonny.Commit.metainfo.xml:120
 msgid "Various fixes"
-msgstr ""
+msgstr "Useita korjauksia"
 
 #: data/re.sonny.Commit.metainfo.xml:115
 msgid "Add keyboard shortcuts for moving lines up and down"
