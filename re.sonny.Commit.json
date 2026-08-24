@@ -1,7 +1,7 @@
 {
   "id": "re.sonny.Commit",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "49",
+  "runtime-version": "51beta",
   "sdk": "org.gnome.Sdk",
   "command": "re.sonny.Commit",
   "finish-args": [
@@ -25,44 +25,26 @@
   ],
   "modules": [
     {
-      "name": "libportal",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dbackend-gtk3=disabled",
-        "-Dbackend-gtk4=enabled",
-        "-Dbackend-qt5=disabled",
-        "-Dbackend-qt6=disabled",
-        "-Dvapi=false",
-        "-Ddocs=false",
-        "-Dtests=false"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz",
-          "sha256": "de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f"
-        }
-      ]
-    },
-    {
-      "name": "libspelling",
-      "buildsystem": "meson",
-      "config-opts": ["-Ddocs=false", "-Dvapi=false"],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.9.tar.xz",
-          "sha256": "d093fd35ae0f1c98fb58876505287fc0a885e47da9d2411d6d7cd595f34d4ebf"
-        }
-      ]
-    },
-    {
       "name": "Commit",
       "buildsystem": "meson",
       "sources": [
         {
           "type": "dir",
           "path": "."
+        }
+      ],
+      "modules": [
+        {
+          "name": "libspelling",
+          "buildsystem": "meson",
+          "config-opts": ["-Ddocs=false", "-Dvapi=false"],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.10.tar.xz",
+              "sha256": "56e3f01a3a18b575beea4c34349f99cdaba316e1f7c271b1231f7bcf5d9af73b"
+            }
+          ]
         }
       ]
     }
