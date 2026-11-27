@@ -12,10 +12,6 @@ import {
   TITLE_LENGTH_HINT,
 } from "./settings.js";
 
-const tag_title_too_long = new Gtk.TextTag({
-  foreground: "#e01b24",
-});
-
 export default function editor({ overlay, button_save, parsed }) {
   const {
     body,
@@ -32,6 +28,10 @@ export default function editor({ overlay, button_save, parsed }) {
   const source_view = widget.view;
 
   source_view.set_show_right_margin(is_message);
+
+  const tag_title_too_long = new Gtk.TextTag({
+    foreground: "#e01b24",
+  });
 
   const buffer = source_view.get_buffer();
   buffer.tag_table.add(tag_title_too_long);
@@ -216,9 +216,9 @@ function unicodeLength(str) {
   return [...str].length;
 }
 
-const readonlyTag = Gtk.TextTag.new("readonly");
-readonlyTag.editable = false;
 function markCommentReadonly({ buffer, read_only_index }) {
+  const readonlyTag = Gtk.TextTag.new("readonly");
+  readonlyTag.editable = false;
   buffer.tag_table.add(readonlyTag);
 
   const endOfText = buffer.get_end_iter();

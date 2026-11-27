@@ -18,6 +18,7 @@ Gio._promisify(Adw.AlertDialog.prototype, "choose", "choose_finish");
 export default function Window({ application, file, text, type, readonly }) {
   const { window, menu_button, button_save, overlay } = build(resource);
 
+  let preferences_window = null;
   let parsed = {};
   try {
     parsed = parse(text, type);
@@ -99,7 +100,7 @@ export default function Window({ application, file, text, type, readonly }) {
       value,
       readonly,
     });
-    application.quit();
+    window.close();
   });
   window.add_action(action_save);
 
@@ -108,9 +109,23 @@ export default function Window({ application, file, text, type, readonly }) {
     parameter_type: null,
   });
   action_preferences.connect("activate", () => {
-    Preferences({ update });
+    if (preferences_window) {
+      preferences_window.present();
+      return;
+    }
+
+    const { window: preferences } = Preferences({ update });
+    preferences_window = preferences;
+    preferences.connect("closed", () => {
+      preferences_window = null;
+    });
   });
-  application.add_action(action_preferences);
+  window.add_action(action_preferences);
+
+  window.connect("close-request", () => {
+    preferences_window?.close();
+    return false;
+  });
 
   // https://github.com/sonnyp/Commit/issues/33
   window.set_focus(source_view);
@@ -132,13 +147,13 @@ async function abort({
   has_changes,
 }) {
   if (!shouldSaveOnAbort({ type })) {
-    application.quit();
+    window.close();
     return;
   }
 
   if (await confirmDiscard({ type, value, window, has_changes })) {
     save({ file, value: "", readonly });
-    application.quit();
+    window.close();
   }
 }
 

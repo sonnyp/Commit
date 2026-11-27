@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=re.sonny.Commit
+Exec=@bindir@/re.sonny.Commit --gapplication-service

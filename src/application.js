@@ -12,15 +12,14 @@ import "./style.css";
 import { settings } from "./settings.js";
 
 const textDecoder = new TextDecoder();
+let welcome_window = null;
 
 export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Commit",
     flags:
       /* We handle file opens. */
-      Gio.ApplicationFlags.HANDLES_OPEN |
-      /* We can have more than one instance active at once. */
-      Gio.ApplicationFlags.NON_UNIQUE,
+      Gio.ApplicationFlags.HANDLES_OPEN,
   });
 
   let readonly = false;
@@ -98,7 +97,17 @@ export default function Application() {
 }
 
 function openWelcome({ application }) {
-  Welcome({ application });
+  if (welcome_window) {
+    welcome_window.present();
+    return;
+  }
+
+  const { window } = Welcome({ application });
+  welcome_window = window;
+  window.connect("close-request", () => {
+    welcome_window = null;
+    return false;
+  });
 
   const quit = new Gio.SimpleAction({
     name: "quit",

@@ -56,7 +56,13 @@ export default GObject.registerClass(
 
       this.style_manager = Adw.StyleManager.get_default();
       this.update_style();
-      this.style_manager.connect("notify::dark", this.update_style.bind(this));
+      this._style_manager_handler = this.style_manager.connect(
+        "notify::dark",
+        this.update_style.bind(this),
+      );
+      this.connect("destroy", () => {
+        this.style_manager.disconnect(this._style_manager_handler);
+      });
 
       const checker = Spelling.Checker.get_default();
       const adapter = Spelling.TextBufferAdapter.new(this.buffer, checker);
