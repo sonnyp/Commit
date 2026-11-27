@@ -45,3 +45,13 @@ endif
 
 install_data('icons/re.sonny.Commit.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
 install_data('icons/re.sonny.Commit-symbolic.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/symbolic/apps'))
+
+service_conf = configuration_data()
+service_conf.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
+
+configure_file(
+  input: 're.sonny.Commit.service',
+  output: 're.sonny.Commit.service',
+  configuration: service_conf,
+  install_dir: join_paths(get_option('datadir'), 'dbus-1/services'),
+)

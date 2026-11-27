@@ -21,8 +21,14 @@ export default function Welcome({ application }) {
 
   const objects = { spin_hint, spin_wrap, switch_capitalize_title };
   setupRows({ ...objects, config });
-  application.connect("shutdown", () => {
+  const save = () => {
     saveConfig({ ...objects, config });
+  };
+  const shutdown_handler = application.connect("shutdown", save);
+  window.connect("close-request", () => {
+    save();
+    application.disconnect(shutdown_handler);
+    return false;
   });
 
   window.set_application(application);

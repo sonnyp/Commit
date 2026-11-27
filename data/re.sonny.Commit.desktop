@@ -7,6 +7,7 @@ Terminal=false
 Type=Application
 Categories=Development;Utility;RevisionControl;TextEditor;GNOME;GTK;
 StartupNotify=true
+DBusActivatable=true
 Icon=re.sonny.Commit
 # TRANSLATORS: Don't translate
 Keywords=git;mercurial;hg;scm;gnomit;komet;comet;
